@@ -1,0 +1,112 @@
+---
+permalink: api/reference_element_api_deletevolumeaccessgroup.html 
+sidebar: sidebar 
+keywords: volume,access,group,groups,delete,deleting,DeleteVolumeAccessGroup 
+summary: Sie können DeleteVolumeAccessGroup verwenden, um eine Volume-Zugriffsgruppe zu löschen. 
+---
+= DeleteVolumeAccessGroup
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwenden Sie können `DeleteVolumeAccessGroup` Zum Löschen einer Zugriffsgruppe für Volumes.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+VolumeAccessGroupID
+ a| 
+Die ID der zu löschenden Volume-Zugriffsgruppe.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+DeleteOrphanInitiatoren
+ a| 
+Gibt an, ob Initiatorgruppen gelöscht werden sollen oder nicht. Mögliche Werte:
+
+* True: Löschen von Initiatorobjekten, nachdem sie aus einer Volume-Zugriffsgruppe entfernt wurden.
+* False: Löschen Sie keine Initiator-Objekte, nachdem sie aus einer Volume-Zugriffsgruppe entfernt wurden. Dies ist die Standardeinstellung.
+
+ a| 
+boolesch
+ a| 
+Falsch
+ a| 
+Nein
+
+
+
+ a| 
+Erzwingen
+ a| 
+Durch das Hinzufügen dieses Flags wird die Zugriffsgruppe des Volumes auch dann gelöscht, wenn sie über eine virtuelle Netzwerk-ID oder ein virtuelles Tag verfügt. Mögliche Werte:
+
+* True: Volume Access Group wird gelöscht.
+* False: Standard. Löschen Sie die Zugriffsgruppe für Volumes nicht, wenn sie über eine virtuelle Netzwerk-ID oder ein virtuelles Tag verfügt.
+
+ a| 
+boolesch
+ a| 
+Falsch
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode hat keine Rückgabewerte.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "DeleteVolumeAccessGroup",
+   "params": {
+          "force": true,
+	  "volumeAccessGroupID"  : 3
+   },
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+   "id" : 1,
+   "result": {}
+}
+----
+
+
+== Neu seit Version
+
+9.6

@@ -1,0 +1,129 @@
+---
+permalink: api/reference_element_api_testldapauthentication.html 
+sidebar: sidebar 
+keywords: ldap,auth,authentication,test,testing,testldapauthentication 
+summary: Mit der TestLdapAuthentication-Methode können Sie die derzeit aktivierten LDAP-Authentifizierungseinstellungen validieren. Wenn die Konfiguration korrekt ist, gibt der API-Aufruf die Gruppenmitgliedschaft des getesteten Benutzers zurück. 
+---
+= TestLdapAuthentifizierung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `TestLdapAuthentication` Methode zum Validieren der derzeit aktivierten LDAP-Authentifizierungseinstellungen. Wenn die Konfiguration korrekt ist, gibt der API-Aufruf die Gruppenmitgliedschaft des getesteten Benutzers zurück.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Benutzername
+ a| 
+Der zu testenden Benutzername.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Passwort
+ a| 
+Das Kennwort für den zu testenden Benutzernamen.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+LdapKonfiguration
+ a| 
+Ein ldapConfiguration Objekt, das getestet werden soll. Wenn Sie diesen Parameter angeben, testet das System die angegebene Konfiguration, auch wenn die LDAP-Authentifizierung derzeit deaktiviert ist.
+ a| 
+xref:reference_element_api_ldapconfiguration.adoc[LdapKonfiguration]
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Gruppen
+ a| 
+Liste der LDAP-Gruppen, die den getesteten Benutzer als Mitglied enthalten.
+ a| 
+Array erledigen
+
+
+
+ a| 
+Benutzer-DN
+ a| 
+Der vollständige LDAP Distinguished Name des geprüften Benutzers.
+ a| 
+Zeichenfolge
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+"method": "TestLdapAuthentication",
+"params": {"username":"admin1",
+           "password":"admin1PASS"
+      },
+  "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+ "id": 1,
+ "result": {
+    "groups": [
+        "CN=StorageMgmt,OU=PTUsers,DC=prodtest,DC=solidfire,DC=net"
+      ],
+        "userDN": "CN=Admin1 Jones,OU=PTUsers,DC=prodtest,DC=solidfire,DC=net"
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6

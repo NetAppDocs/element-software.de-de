@@ -1,0 +1,172 @@
+---
+permalink: api/reference_element_api_startbulkvolumewrite.html 
+sidebar: sidebar 
+keywords: volume,bulk,start,starting,write,session,startbulkvolumewrite 
+summary: Sie können die StartBulkVolumeWrite-Methode verwenden, um eine Schreibsitzung für Massenvolumes auf einem bestimmten Volume zu starten. 
+---
+= StartBulkVolumeWrite
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `StartBulkVolumeWrite` Methode zum Starten einer Schreibsitzung für das Massenvolumen auf einem angegebenen Volume
+
+Auf einem Volume können nur zwei Massenvorgänge gleichzeitig ausgeführt werden. Beim Initialisieren der Sitzung werden Daten von einer externen Backup-Quelle in ein Element Storage Volume geschrieben. Auf die externen Daten wird von einem Webserver zugegriffen, der auf einem Element Storage Node ausgeführt wird. Server-Interaktionsinformationen für externen Datenzugriff werden von einem auf dem Speichersystem ausgeführten Skript übergeben.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Formatieren
+ a| 
+Das Format der Volume-Daten. Kann entweder sein:
+
+* `uncompressed`: Jedes Byte des Volumens wird ohne Kompression zurückgegeben.
+* `native`: Opaque Daten werden zurückgegeben, die kleiner und effizienter gespeichert und auf einem nachfolgenden Massenvolumen geschrieben sind.
+
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+VolumeID
+ a| 
+Die ID des Volumes, auf das geschrieben werden soll.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Skript
+ a| 
+Der Name eines ausführbaren Skripts. Wenn kein Skriptname angegeben wird, sind der Schlüssel und die URL erforderlich, um auf Element Storage-Nodes zuzugreifen. Das Skript wird auf dem primären Knoten ausgeführt, und der Schlüssel und die URL werden an das Skript zurückgegeben, so dass der lokale Webserver kontaktiert werden kann.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+ScriptParameter
+ a| 
+JSON-Parameter, die an das Skript übergeben werden sollen.
+ a| 
+JSON-Objekt
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Merkmale
+ a| 
+JSON-Attribute für den Massenvolumenjob.
+ a| 
+JSON-Objekt
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Asynchron
+ a| 
+Die ID des asynchronen Prozesses, der auf den Abschluss überprüft werden soll.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Taste
+ a| 
+Undurchsichtige Taste, die die Sitzung eindeutig identifiziert.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+url
+ a| 
+URL zum Zugriff auf den Webserver des Knotens.
+ a| 
+Zeichenfolge
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "StartBulkVolumeWrite",
+   "params": {
+      "volumeID" : 5,
+      "format"  : "native",
+   },
+   "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+   "id" : 1,
+   "result" : {
+      "asyncHandle" : 1,
+      "key" : "11eed8f086539205beeaadd981aad130",
+      "url" : "https://127.0.0.1:44000/"
+   }
+}
+----
+
+
+== Neu seit Version
+
+9.6

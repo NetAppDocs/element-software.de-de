@@ -1,0 +1,95 @@
+---
+permalink: api/reference_element_api_getpatchinfo.html 
+sidebar: sidebar 
+keywords: get,patch,info,patches,getpatchinfo 
+summary: Mithilfe der Methode GetPatchInfo können Sie Informationen über Patches abrufen, die auf einem Knoten installiert sind. 
+---
+= GetPatchInfo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `GetPatchInfo` Methode zum Abrufen von Informationen über auf einem Storage-Node installierte Element Software Patches
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+| `force`  a| 
+Erzwingen der Ausführung auf allen Nodes im Storage Cluster. Sie brauchen dies nur, wenn Sie die API einer Cluster-IP-Adresse anstelle eines einzelnen Node ausgeben. Mögliche Werte:
+
+* `true`
+* `false`
+
+| boolesch | `false` | Nein 
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+| Patches | Objekt mit Informationen zu den auf diesem Node installierten Patches | JSON-Objekt 
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "GetPatchInfo",
+   "params": {
+      "force": false,
+      },
+   "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+    "id": 1,
+    "result": {
+        "patches": {
+          "SUST936": {
+          "date": "Wed 09 Dec 2020 10:41:59 PM UTC",
+          "description": "BMC fixes",
+          "newFiles": [
+              "None"
+          ],
+          "patchedFiles": [
+              "Patched_file_1.bin",
+              "Patched_file_2.dat",
+              "Patched_file_3.tgz"
+          ]
+          }
+        }
+    }
+}
+
+----
+
+
+== Neu seit Version
+
+12.3

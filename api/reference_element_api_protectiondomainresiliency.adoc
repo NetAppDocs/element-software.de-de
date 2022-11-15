@@ -1,0 +1,51 @@
+---
+permalink: api/reference_element_api_protectiondomainresiliency.html 
+sidebar: sidebar 
+keywords: object,objects,protectionDomainResiliency 
+summary: 'Das ProtectionDomainResiliency-Objekt enthält den Resiliency-Status dieses Storage-Clusters. Die Ausfallsicherheit zeigt an, dass der Storage-Cluster sich automatisch von einem oder mehreren Ausfällen abheilen kann und das alles innerhalb einer einzelnen Sicherungsdomäne des zugehörigen Protection Domain-Typs. Ein Storage-Cluster gilt als geheilt, wenn es während des Ausfalls eines einzelnen Storage-Node mit dem Lesen und Schreiben von Daten fortfahren kann \(a Status bekannt als Node Tolerance\).' 
+---
+= SchutzDomaininAusfallsicherheit
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das ProtectionDomainResiliency-Objekt enthält den Resiliency-Status dieses Storage-Clusters. Die Ausfallsicherheit zeigt an, dass sich das Storage-Cluster dank des zugehörigen Protection Domain-Typs automatisch bei einem oder mehreren Ausfällen abheilen kann. Ein Storage-Cluster gilt als geheilt, wenn es mit dem Ausfall eines einzelnen Storage-Nodes weiterhin Daten lesen und schreiben kann (Node-Toleranz).
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+SchutzSchemeResilienzen
+ a| 
+Eine Liste von Objekten (eines für jedes Schutzschema) mit Ausfallsicherheitsdaten für den zugehörigen Typ der Sicherungsdomäne.
+ a| 
+xref:reference_element_api_protectionschemeresiliency.adoc[SicherungAusfallsicherheit] Array erledigen
+
+
+
+ a| 
+SingleFailureThresholdBytesForBlockData
+ a| 
+Die maximale Anzahl von Bytes, die im Storage Cluster gespeichert werden können, bevor die Funktion zur automatischen Heilung eines Node-Toleranzzustands verliert.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+NachhaltigkeitForEnsemble
+ a| 
+Die vorhergesagte Anzahl gleichzeitiger Ausfälle, die auftreten können, ohne die Fähigkeit zu verlieren, automatisch zu einem Zustand der Knotentoleranz für das Ensemble Quorum zu heilen.
+ a| 
+Ganzzahl
+
+|===

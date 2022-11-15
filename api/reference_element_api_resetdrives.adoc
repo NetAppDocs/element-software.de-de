@@ -1,0 +1,116 @@
+---
+permalink: api/reference_element_api_resetdrives.html 
+sidebar: sidebar 
+keywords: drive,drives,remove,removing,data,reset,resetting,resetdrives,erase 
+summary: Mithilfe der Methode „ResetDrives“ können Laufwerke proaktiv initialisiert und alle auf einem Laufwerk vorhandenen Daten entfernt werden. Das Laufwerk kann dann in einem vorhandenen Node wiederverwendet oder in einem aktualisierten Node verwendet werden. 
+---
+= Erneutes Ansetzen von Laufwerken
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `ResetDrives` Methode zum proaktiven Initialisieren von Laufwerken und Entfernen aller derzeit auf einem Laufwerk befindlichen Daten. Das Laufwerk kann dann in einem vorhandenen Node wiederverwendet oder in einem aktualisierten Node verwendet werden.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Laufwerke
+ a| 
+Liste der zu rücksetzenden Gerätenamen (keine Fahrerkennungen).
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Erzwingen
+ a| 
+Setzen Sie auf true, um das Laufwerk zurückzusetzen.
+ a| 
+boolesch
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Details
+ a| 
+Details zu Laufwerken, die zurückgesetzt werden.
+ a| 
+JSON-Objekt-Array
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "ResetDrives",
+   "params": {
+      "drives" : "slot3",
+      "force" : true
+   },
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+   "details": {
+    "drives": [
+    {
+      "drive": "slot3",
+      "returnCode": 0,
+      "stderr": " * Unlocking /dev/slot9 .[ ok ]\ * Setting master password /dev/slot9 .[ ok ]\ * Secure erasing /dev/slot9 (hdparm) [tries=0/1] ...........................[ ok ]",
+      "stdout": ""
+    }
+   ]
+  },
+  "duration": "00:00:28.501269",
+  "result": "Passed"
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6

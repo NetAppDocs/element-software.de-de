@@ -1,0 +1,95 @@
+---
+permalink: api/reference_element_api_removevirtualnetwork.html 
+sidebar: sidebar 
+keywords: virtual,network,networks,remove,removing,removevirtualnetwork 
+summary: Sie können die Methode RemoveVirtualNetwork verwenden, um ein zuvor hinzugefügtes virtuelles Netzwerk zu entfernen. 
+---
+= RemoveVirtualNetwork
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `RemoveVirtualNetwork` Methode zum Entfernen eines zuvor hinzugefügten virtuellen Netzwerks.
+
+
+NOTE: Diese Methode erfordert entweder die VirtualNetworkID oder die virtualNetworkTag als Parameter, aber nicht beides.
+
+
+NOTE: Sie können ein virtuelles Netzwerk nicht entfernen, wenn ihm Initiatoren zugeordnet sind. Heben Sie die Zuordnung der Initiatoren zunächst auf, und entfernen Sie dann das virtuelle Netzwerk.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+VirtualNetworkID
+ a| 
+Netzwerk-ID, die das zu entfernende virtuelle Netzwerk identifiziert.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+VirtualNetworkTag
+ a| 
+Netzwerk-Tag, das das zu entfernende virtuelle Netzwerk identifiziert.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode hat keine Rückgabewerte.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "RemoveVirtualNetwork",
+  "params": {
+     "virtualNetworkID": 5
+    }
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+   "id": 1,
+   "result": {}
+}
+----
+
+
+== Neu seit Version
+
+9.6

@@ -1,0 +1,22 @@
+---
+permalink: storage/task_system_manage_fips_create_a_cluster_supporting_fips_drives.html 
+sidebar: sidebar 
+keywords: fips, security, federal information processing standards, 140-2, cluster, create 
+summary: 'Für die Implementierung von Lösungen in vielen Kundenumgebungen wird die Sicherheit immer wichtiger. Federal Information Processing Standards \ (FIPS\) sind Standards für Computersicherheit und Interoperabilität. Die nach FIPS 140-2 zertifizierte Verschlüsselung für Daten im Ruhezustand ist Bestandteil der Gesamtlösung.' 
+---
+= Erstellen eines Clusters, das FIPS-Laufwerke unterstützt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Für die Implementierung von Lösungen in vielen Kundenumgebungen wird die Sicherheit immer wichtiger. Federal Information Processing Standards (FIPS) sind Standards für die Sicherheit und Interoperabilität von Computern. Die nach FIPS 140-2 zertifizierte Verschlüsselung für Daten im Ruhezustand ist Bestandteil der Gesamtlösung.
+
+* link:task_system_manage_fips_avoid_mixing_nodes_for_fips_drives.html["Vermeiden Sie das Kombinieren von Nodes für FIPS-Laufwerke"]
+* link:task_system_manage_fips_enable_encryption_at_rest.html["Verschlüsselung für Daten im Ruhezustand aktivieren"]
+* link:task_system_manage_fips_identify_nodes_ready_for_fips_drives["Ermitteln, ob Nodes für die FIPS-Laufwerksfunktion bereit sind"]
+* link:task_system_manage_fips_enable_the_fips_drives_feature.html["Aktivierung der FIPS-Laufwerksfunktion"]
+* link:task_system_manage_fips_check_the_fips_drive_status.html["Prüfen Sie den FIPS-Laufwerksstatus"]
+* link:task_system_manage_fips_troubleshoot_the_fips_drive_feature["Fehlerbehebung für die FIPS-Laufwerksfunktion"]
+

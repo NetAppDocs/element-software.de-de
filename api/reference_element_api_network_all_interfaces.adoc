@@ -1,0 +1,69 @@
+---
+permalink: api/reference_element_api_network_all_interfaces.html 
+sidebar: sidebar 
+keywords: object,objects,network 
+summary: 'Das Objekt Network \(all Interfaces\) erfasst Informationen zur Konfiguration der Netzwerkschnittstelle für einen Storage-Node. Sie können die Methoden getconfig und GetNetworkConfig verwenden, um diese Informationen für einen Speicherknoten abzurufen.' 
+---
+= Netzwerk (alle Schnittstellen)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Netzwerk-Objekt (alle Schnittstellen) sammelt Informationen über die Konfiguration der Netzwerkschnittstelle für einen Storage-Node. Sie können das verwenden `GetConfig` Und `GetNetworkConfig` Methoden zum Abrufen dieser Informationen für einen Storage-Node
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Bond10G
+ a| 
+Konfigurationsinformationen für die Bond10G Bond10G Schnittstelle.
+ a| 
+xref:reference_element_api_network_bonded_interfaces.adoc[Netzwerk (verbundene Schnittstellen)]
+
+
+
+ a| 
+Bond1G
+ a| 
+Konfigurationsinformationen für die Bond1G Bond1G Schnittstelle.
+ a| 
+xref:reference_element_api_network_bonded_interfaces.adoc[Netzwerk (verbundene Schnittstellen)]
+
+
+
+ a| 
+Eth0-5
+ a| 
+Ein Objekt für jede Ethernet-Schnittstelle im Storage Node, das Konfigurationsinformationen für die Schnittstelle beschreibt. Diese Objekte werden mit der Nummer 0 bis 5 nummeriert, um dem Schnittstellennamen zu entsprechen.
+ a| 
+xref:reference_element_api_network_ethernet_interfaces.adoc[Netzwerk (Ethernet-Schnittstellen)]
+
+
+
+ a| 
+lo
+ a| 
+Konfigurationsinformationen für die Loopback-Schnittstelle.
+ a| 
+xref:reference_element_api_network_local_interfaces.adoc[Netzwerk (lokale Schnittstellen)]
+
+|===
+
+
+== Weitere Informationen
+
+* xref:reference_element_api_getconfig.adoc[Getconfig]
+* xref:reference_element_api_getnetworkconfig.adoc[GetNetworkConfig]
+

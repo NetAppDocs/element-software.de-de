@@ -1,0 +1,71 @@
+---
+permalink: api/reference_element_api_getorigin.html 
+sidebar: sidebar 
+keywords: origin,get,getting,getorigin,certificate 
+summary: Sie können die GetOrigin-Methode verwenden, um das Origin-Zertifikat zu erhalten, für den der Knoten erstellt wurde. 
+---
+= GetOrigin
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `GetOrigin` Methode zum Abrufen des Ursprungs-Zertifikats, für den der Knoten erstellt wurde.
+
+
+
+== Parameter
+
+
+NOTE: Bei dieser Methode wird „Null“ zurückgegeben, wenn keine Ausgangszertifizierung vorliegt.
+
+Diese Methode hat keine Eingabeparameter.
+
+
+
+== Rückgabewert
+
+Auf diese Weise werden die Zertifizierungsinformationen des Anbieters zurückgegeben.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+ "method": "GetOrigin",
+ "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "integrator": "SolidFire",
+  "<signature>": {
+    "pubkey": [public key info],
+    "version": 1,
+    "data": [signature info]
+  },
+   "contract-id": "none",
+   "location": "Boulder, CO",
+   "organization": "Engineering",
+   "type": "element-x"
+  }
+ ]
+}
+----
+
+
+== Neu seit Version
+
+9.6

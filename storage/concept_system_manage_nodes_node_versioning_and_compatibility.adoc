@@ -1,0 +1,32 @@
+---
+permalink: storage/concept_system_manage_nodes_node_versioning_and_compatibility.html 
+sidebar: sidebar 
+keywords: compatibility, node version, clusters, software version, compatible versions, major, minor, micro 
+summary: Die Node-Kompatibilität basiert auf der auf einem Node installierten Version der Element Software. Bei Element Software-basierten Storage-Clustern wird automatisch ein Node zur Element Softwareversion im Cluster Image erstellt, wenn der Node und das Cluster nicht kompatible Versionen aufweisen. 
+---
+= Node-Versionierung und -Kompatibilität
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Node-Kompatibilität basiert auf der auf einem Node installierten Version der Element Software. Bei Element Software-basierten Storage-Clustern wird automatisch ein Node zur Element Softwareversion im Cluster Image erstellt, wenn der Node und das Cluster nicht kompatible Versionen aufweisen.
+
+In der folgenden Liste werden die Signifikanzstufen der Softwareversion, aus der die Versionsnummer der Element Software bestand, beschrieben:
+
+* *Major*
++
+Die erste Zahl bezeichnet eine Software-Version. Ein Node mit einer Hauptkomponentennummer kann keinem Cluster mit Nodes einer anderen Major-Patch-Nummer hinzugefügt werden. Bei Nodes mit gemischten Hauptversionen kann kein Cluster erstellt werden.
+
+* *Klein*
++
+Die zweite Zahl bezeichnet kleinere Software-Funktionen oder Verbesserungen an vorhandenen Softwarefunktionen, die zu einer größeren Version hinzugefügt wurden. Diese Komponente wird innerhalb einer Hauptversionskomponente erhöht, um anzugeben, dass diese inkrementelle Version nicht mit anderen inkrementellen Versionen von Element Software mit einer anderen kleineren Komponente kompatibel ist. Beispielsweise ist 11.0 nicht mit 11.1 kompatibel und 11.1 nicht mit 11.2 kompatibel.
+
+* *Mikro*
++
+Die dritte Zahl bezeichnet einen kompatiblen Patch (inkrementelle Freigabe) für die Element-Softwareversion, die von den Hauptkomponenten dargestellt wird. Beispielsweise ist 11.0.1 kompatibel mit 11.0.2, und 11.0.2 ist kompatibel mit 11.0.3.
+
+
+
+Major- und Minor-Versionsnummern müssen für Kompatibilität übereinstimmen. Micronummern müssen nicht übereinstimmen, um Kompatibilität zu gewährleisten.

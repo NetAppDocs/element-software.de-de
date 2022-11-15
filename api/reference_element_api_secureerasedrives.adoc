@@ -1,0 +1,99 @@
+---
+permalink: api/reference_element_api_secureerasedrives.html 
+sidebar: sidebar 
+keywords: drive,drives,secure,erase,reset,resetting,encryption,key,secureerasedrives 
+summary: Sie können die Methode SecureEraseDrives verwenden, um alle Restdaten von Laufwerken zu entfernen, die den Status „verfügbar“ aufweisen. Sie können diese Methode verwenden, wenn Sie ein Laufwerk ersetzen, das sich dem Ende seiner Lebensdauer nähert, und das sensible Daten enthielt. Bei dieser Methode wird mit dem Befehl Security Erase Unit ein vorbestimmtes Muster auf das Laufwerk geschrieben und der Verschlüsselungsschlüssel auf dem Laufwerk zurückgesetzt. Diese asynchrone Methode kann mehrere Minuten in Anspruch nehmen. 
+---
+= SecureEraseDrives
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `SecureEraseDrives` Methode zum Entfernen von Restdaten von Laufwerken mit dem Status „verfügbar“. Sie können diese Methode verwenden, wenn Sie ein Laufwerk ersetzen, das sich dem Ende seiner Lebensdauer nähert, und das sensible Daten enthielt. Bei dieser Methode wird mit dem Befehl Security Erase Unit ein vorbestimmtes Muster auf das Laufwerk geschrieben und der Verschlüsselungsschlüssel auf dem Laufwerk zurückgesetzt. Diese asynchrone Methode kann mehrere Minuten in Anspruch nehmen.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Laufwerke
+ a| 
+Liste der Laufwerk-IDs zum sicheren Löschen.
+ a| 
+Integer-Array
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Asynchron
+ a| 
+Handle-Wert, der zum Abrufen des Operationsergebnisses verwendet wird.
+ a| 
+Ganzzahl
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "SecureEraseDrives",
+   "params": {
+     "drives"  : [3, 4, 5]
+   },
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+   "id" : 1
+   "result" : {
+     "asyncHandle" : 1
+   }
+}
+----
+
+
+== Neu seit Version
+
+9.6
+
+
+
+== Weitere Informationen
+
+* xref:reference_element_api_getasyncresult.adoc[GetAsyncResult]
+* xref:reference_element_api_listdrives.adoc[ListenLaufwerke]
+

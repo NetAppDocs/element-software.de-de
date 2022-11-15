@@ -1,0 +1,118 @@
+---
+permalink: api/reference_element_api_modifyvolumepair.html 
+sidebar: sidebar 
+keywords: volume,pair,pairs,modify,modifying,edit,editing,changing,change,modifyvolumepair,paired 
+summary: 'Sie können die ModifyVolumePair-Methode verwenden, um die Replikation zwischen einem Volume-Paar zu unterbrechen oder neu zu starten. Diese Methode wird auf dem Quell-Volume \(das Volume mit Lese-/Schreibzugriff\) festgelegt.' 
+---
+= ModifyVolumePair
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `ModifyVolumePair` Methode zum Anhalten oder Neustarten der Replikation zwischen einem Volume-Paar. Diese Methode wird auf dem Quellvolume (das Volumen mit Lese-/Schreibzugriff) festgelegt.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+
+
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+VolumeID
+ a| 
+Identifikationsnummer des zu ändernden Volumens.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Betriebsanleitung
+ a| 
+Die Remote-Replikation kann auf dem Quell-Volume (Lese-/Schreib-Volume) angehalten oder neu gestartet werden. Mögliche Werte:
+
+* Wahr: Volume-Replizierung anhalten
+* False: Volume-Replikation neu starten.
+
+
+Wenn kein Wert angegeben wird, wird keine Änderung in der Replikation durchgeführt.
+ a| 
+boolesch
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Modus
+ a| 
+Volume-Replizierungsmodus Mögliche Werte:
+
+* Async: Schreibvorgänge werden bestätigt, wenn sie lokal abgeschlossen wurden. Das Cluster wartet nicht, bis Schreibvorgänge zum Ziel-Cluster repliziert werden.
+* Sync: Die Quelle bestätigt den Schreibvorgang, wenn die Daten lokal und auf dem Remote-Cluster gespeichert werden.
+* Snapshots: Es werden nur Snapshots repliziert, die auf dem Quell-Cluster erstellt wurden. Aktive Schreibvorgänge vom Quell-Volume werden nicht repliziert.
+
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat keinen Rückgabewert.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "ModifyVolumePair",
+  "params": {
+    "pausedManual": false,
+    "volumeID": 5,
+    "mode": "sync"
+   },
+  "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+   "id" : 1,
+   "result" : {}
+}
+----
+
+
+== Neu seit Version
+
+9.6

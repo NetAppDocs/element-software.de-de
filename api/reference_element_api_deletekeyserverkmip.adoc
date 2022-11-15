@@ -1,0 +1,78 @@
+---
+permalink: api/reference_element_api_deletekeyserverkmip.html 
+sidebar: sidebar 
+keywords: KMIP,key server,deleting,delete 
+summary: 'Sie können die DeleteKeyServerkmip-Methode verwenden, um einen vorhandenen Key Management Interoperability Protocol \(KMIP\)-Schlüsselserver zu löschen. Sie können einen Schlüsselserver löschen, es sei denn, er ist der letzte seinem Provider zugewiesene, und dieser Provider stellt derzeit verwendete Schlüssel zur Verfügung.' 
+---
+= DeleteKeyServerkmip
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `DeleteKeyServerKmip` Methode zum Löschen eines vorhandenen KMIP-Schlüsselservers (Key Management Interoperability Protocol) Sie können einen Schlüsselserver löschen, es sei denn, er ist der letzte seinem Provider zugewiesene, und dieser Provider stellt derzeit verwendete Schlüssel zur Verfügung.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+KeyServer-ID
+ a| 
+Die ID des zu löschenden KMIP-Schlüsselservers.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode hat die Werte ohne Rückgabewert. Der Löschvorgang wird als erfolgreich betrachtet, wenn keine Fehler vorliegen.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "DeleteKeyServerKmip",
+  "params": {
+     "keyServerID": 15
+  },
+"id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+   "id": 1,
+   "result":
+      {}
+}
+----
+
+
+== Neu seit Version
+
+11.7

@@ -1,0 +1,55 @@
+---
+permalink: storage/reference_system_manage_drives_drives_details.html 
+sidebar: sidebar 
+keywords: drives, details, manage, filter, cluster 
+summary: Auf der Seite Laufwerke auf der Registerkarte Cluster finden Sie eine Liste der aktiven Laufwerke im Cluster. Sie können die Seite filtern, indem Sie auf den Registerkarten „aktiv“, „verfügbar“, „Entfernen“, „Löschen“ und „Fehlgeschlagen“ auswählen. 
+---
+= Laufwerke für Details
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Auf der Seite Laufwerke auf der Registerkarte Cluster finden Sie eine Liste der aktiven Laufwerke im Cluster. Sie können die Seite filtern, indem Sie auf den Registerkarten „aktiv“, „verfügbar“, „Entfernen“, „Löschen“ und „Fehlgeschlagen“ auswählen.
+
+Beim ersten Initialisieren eines Clusters ist die Liste der aktiven Laufwerke leer. Sie können Laufwerke hinzufügen, die einem Cluster nicht zugewiesen sind und auf der Registerkarte verfügbar aufgeführt sind, nachdem ein neues SolidFire Cluster erstellt wurde.
+
+Die folgenden Elemente werden in der Liste der aktiven Laufwerke angezeigt.
+
+* *Fahrausweis*
++
+Die dem Laufwerk zugewiesene sequenzielle Nummer.
+
+* *Knoten-ID*
++
+Die Node-Nummer, die beim Hinzufügen des Node zum Cluster zugewiesen ist.
+
+* *Knotenname*
++
+Der Name des Knotens, der das Laufwerk beherbergt.
+
+* *Slot*
++
+Die Steckplatznummer, in der sich das Laufwerk befindet.
+
+* * Kapazität*
++
+Die Größe des Laufwerks, in GB.
+
+* *Seriell*
++
+Die Seriennummer des Laufwerks.
+
+* *Tragen Sie Rest*
++
+Die Verschleißanzeige.
+
++
+Das Storage-System meldet den ungefähren Verschleiß der einzelnen Solid State Drives (SSDs) zum Schreiben und Löschen von Daten. Ein Laufwerk, das 5 Prozent seiner entworfenen Schreib- und Löschzyklen verbraucht hat, meldet 95 Prozent verbleibende Abnutzung. Die Informationen zum Laufwerksverschleiß werden vom System nicht automatisch aktualisiert. Sie können die Seite aktualisieren oder schließen und neu laden, um die Informationen zu aktualisieren.
+
+* *Typ*
++
+Der Laufwerkstyp. Der Typ kann entweder Block- oder Metadaten sein.
+
+

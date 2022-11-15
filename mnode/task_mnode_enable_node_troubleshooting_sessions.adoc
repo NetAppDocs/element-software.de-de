@@ -1,0 +1,239 @@
+---
+sidebar: sidebar 
+permalink: mnode/task_mnode_enable_node_troubleshooting_sessions.html 
+summary: Ab Element 12.5 können Sie das sfReadonly Benutzerkonto auf dem Management-Node aktivieren, um Systemkomponenten ohne Hilfe von NetApp Support Fehler zu beheben. Sie können außerdem den Zugriff auf den Remote-Support-Tunnel für eine erweiterte Fehlerbehebung aktivieren und öffnen. 
+keywords: netapp, sfreadonly, connect to support, support tunnel, rst, mnode, management node 
+---
+= Zugriff auf Storage-Nodes mithilfe von SSH für die grundlegende Fehlerbehebung
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ab Element 12.5 können Sie das sfReadonly System-Konto auf den Storage-Nodes für eine grundlegende Fehlerbehebung nutzen. Sie können außerdem den Zugriff auf den Remote-Support-Tunnel für eine erweiterte Fehlerbehebung aktivieren und öffnen.
+
+Das sfReadonly Systemkonto ermöglicht den Zugriff auf die Ausführung grundlegender Befehle zur Fehlerbehebung im Linux-System und Netzwerk, einschließlich `ping`.
+
+
+WARNING: Sofern nicht vom NetApp Support beraten, werden Änderungen an diesem System nicht unterstützt, sodass Sie Ihren Support-Vertrag aufgeben und möglicherweise die Daten instabil oder unzugänglich machen können.
+
+.Bevor Sie beginnen
+* *Schreibberechtigungen*: Stellen Sie sicher, dass Sie Schreibberechtigungen in das aktuelle Arbeitsverzeichnis haben.
+* *(Optional) Generieren Sie Ihr eigenes Schlüsselpaar*: Laufen `ssh-keygen` Aus Windows 10, MacOS oder Linux-Distribution. Dies ist eine einmalige Aktion, um ein Benutzerschlüsselpaar zu erstellen und kann für zukünftige Fehlerbehebungssitzungen verwendet werden. Möglicherweise möchten Sie Zertifikate verwenden, die mit Mitarbeiterkonten verknüpft sind, was auch in diesem Modell funktionieren würde.
+* *SSH-Funktion auf dem Management-Node aktivieren*: Um die Remote-Zugriffsfunktion im Verwaltungsmodus zu aktivieren, siehe link:task_mnode_ssh_management.html["Diesem Thema"]. Für Managementservices ab Version 2.18 ist die Möglichkeit für den Remote-Zugriff auf dem Management-Node standardmäßig deaktiviert.
+* *SSH-Funktion auf dem Storage-Cluster aktivieren*: Um die Remote-Zugriffsfunktion auf den Storage-Cluster-Knoten zu aktivieren, siehe link:https://docs.netapp.com/us-en/element-software/storage/task_system_manage_cluster_enable_and_disable_support_access.html["Diesem Thema"].
+* *Firewall-Konfiguration*: Wenn sich Ihr Management-Knoten hinter einem Proxy-Server befindet, sind die folgenden TCP-Ports in der Datei sshd.config erforderlich:
++
+[cols="15,25,60"]
+|===
+| TCP-Port | Beschreibung | Verbindungsrichtung 
+
+
+| 443 | API-Aufrufe/HTTPS zur Umkehrung der Port-Weiterleitung über offenen Support-Tunnel zur Web-UI | Management-Node zu Storage-Nodes 
+
+
+| 22 | SSH-Login-Zugriff | Management-Node zu Storage-Nodes oder von Storage-Nodes zum Management-Node 
+|===
+
+
+.Fehlerbehebungsoptionen
+*  a cluster node
+*  a cluster node with NetApp Support
+*  a node that is not part of cluster
+
+
+
+
+== Fehlerbehebung für einen Cluster-Node
+
+Sie können grundlegende Fehlerbehebungsmaßnahmen mit dem sfReadonly Systemkonto durchführen:
+
+.Schritte
+. SSH zum Management-Node mit Ihren Account-Anmeldedaten, die Sie beim Installieren der Management-Node-VM ausgewählt haben.
+. Wechseln Sie am Management-Node zu `/sf/bin`.
+. Suchen Sie das passende Skript für Ihr System:
++
+** SignSshKeys.ps1
+** SignSshKeys.py
+** SignSshKeys.sh
++
+[NOTE]
+====
+SignSshKeys.ps1 ist abhängig von PowerShell 7 oder höher und SignSshKeys.py ist abhängig von Python 3.6.0 oder höher und dem https://docs.python-requests.org/["Anträgen-Modul"^].
+
+Der `SignSshKeys` Skript-Schreibvorgänge `user`, `user.pub`, und `user-cert.pub` Dateien in das aktuelle Arbeitsverzeichnis, die später vom verwendet werden `ssh` Befehl. Wenn dem Skript jedoch eine öffentliche Schlüsseldatei zur Verfügung gestellt wird, ist nur a verfügbar `<public_key>` Datei (mit `<public_key>` Ersetzt durch das Präfix der in das Skript übergebenen öffentlichen Schlüsseldatei) wird in das Verzeichnis geschrieben.
+
+====
+
+
+. Führen Sie das Skript auf dem Management-Node aus, um die SSH-Schlüsselkette zu generieren. Das Skript ermöglicht den SSH-Zugriff über das sfReadonly Systemkonto über alle Nodes im Cluster hinweg.
++
+[listing]
+----
+SignSshKeys --ip [ip address] --user [username] --duration [hours] --publickey [public key path]
+----
++
+.. Ersetzen Sie den Wert in [ ] Klammern (einschließlich der Klammern) für jeden der folgenden Parameter:
++
+
+NOTE: Sie können entweder den abgekürzten oder den vollständigen Parameter verwenden.
+
++
+*** *--ip: -i [ip-Adresse]*: IP-Adresse des Ziel-Knotens für die API, gegen die ausgeführt werden soll.
+*** *--user: Cluster-Benutzer verwendet, um den API-Aufruf auszuführen.
+*** *(Optional) --duration -d [hours]*: Die Dauer eines signierten Schlüssels sollte als Ganzzahl in Stunden gültig sein. Die Standardeinstellung ist 24 Stunden.
+*** *(Optional) --publickey (öffentlicher Schlüsselpfad)*: Der Weg zu einem öffentlichen Schlüssel, wenn der Benutzer sich entscheidet, einen zu liefern.
+
+
+.. Vergleichen Sie Ihre Angaben mit dem folgenden Beispielbefehl. In diesem Beispiel `10.116.139.195` Die IP des Storage-Nodes `admin` Ist der Cluster-Benutzername und die Dauer der Schlüsselgültigkeit zwei Stunden:
++
+[listing]
+----
+sh /sf/bin/SignSshKeys.sh --ip 10.116.139.195 --user admin --duration 2
+----
+.. Führen Sie den Befehl aus.
+
+
+. SSH an die Node-IPs:
++
+[listing]
+----
+ssh -i user sfreadonly@[node_ip]
+----
++
+Sie können grundlegende Linux-System- und Netzwerk-Fehlerbehebungsbefehle wie ausführen `ping`, Und anderen schreibgeschützten Befehlen.
+
+. (Optional) Deaktivieren link:task_mnode_ssh_management.html["Remote-Zugriffsfunktion"] Nach Abschluss der Fehlerbehebung erneut.
++
+
+NOTE: SSH bleibt auf dem Management-Node aktiviert, wenn Sie ihn nicht deaktivieren. Die SSH-fähige Konfiguration bleibt auf dem Management-Node durch Updates und Upgrades bestehen, bis sie manuell deaktiviert ist.
+
+
+
+
+
+== Fehlerbehebung für einen Cluster Node mit NetApp Support
+
+NetApp Support kann bei einer Systemkonto eine erweiterte Fehlerbehebung durchführen, sodass Techniker eine umfassendere Elementdiagnose durchführen können.
+
+.Schritte
+. SSH zum Management-Node mit Ihren Account-Anmeldedaten, die Sie beim Installieren der Management-Node-VM ausgewählt haben.
+. Führen Sie den rst-Befehl mit der Port-Nummer aus, die von NetApp Support gesendet wurde, um den Support-Tunnel zu öffnen:
++
+`rst -r  sfsupport.solidfire.com -u element -p <port_number>`
+
++
+Der NetApp Support meldet sich mithilfe des Support-Tunnels am Management-Node an.
+
+. Wechseln Sie am Management-Node zu `/sf/bin`.
+. Suchen Sie das passende Skript für Ihr System:
++
+** SignSshKeys.ps1
+** SignSshKeys.py
+** SignSshKeys.sh
++
+[NOTE]
+====
+SignSshKeys.ps1 ist abhängig von PowerShell 7 oder höher und SignSshKeys.py ist abhängig von Python 3.6.0 oder höher und dem https://docs.python-requests.org/["Anträgen-Modul"^].
+
+Der `SignSshKeys` Skript-Schreibvorgänge `user`, `user.pub`, und `user-cert.pub` Dateien in das aktuelle Arbeitsverzeichnis, die später vom verwendet werden `ssh` Befehl. Wenn dem Skript jedoch eine öffentliche Schlüsseldatei zur Verfügung gestellt wird, ist nur a verfügbar `<public_key>` Datei (mit `<public_key>` Ersetzt durch das Präfix der in das Skript übergebenen öffentlichen Schlüsseldatei) wird in das Verzeichnis geschrieben.
+
+====
+
+
+. Führen Sie das Skript aus, um die SSH-Schlüsselkette mit dem zu generieren `--sfadmin` Flagge. Das Skript ermöglicht SSH über alle Nodes hinweg.
++
+[listing]
+----
+SignSshKeys --ip [ip address] --user [username] --duration [hours] --sfadmin
+----
++
+[NOTE]
+====
+Für SSH als `--sfadmin` Um einen Cluster-Knoten zu erhalten, müssen Sie die SSH-Schlüsselanhänger mit einem generieren `--user` Mit `supportAdmin` Zugriff auf das Cluster.
+
+Zu konfigurieren `supportAdmin` Zugriff für Cluster-Administratorkonten können Sie die Element UI oder die APIs verwenden:
+
+** link:../storage/concept_system_manage_manage_cluster_administrator_users.html#view-cluster-admin-details["Konfigurieren Sie den Zugriff auf „SupportAdmin“ über die Element UI"]
+** Konfigurieren `supportAdmin` Zugriff über APIs und Hinzufügen `"supportAdmin"` Als der `"access"` Geben Sie die API-Anforderung ein:
++
+*** link:../api/reference_element_api_addclusteradmin.html["Konfigurieren Sie den Zugriff auf „SupportAdmin“ für ein neues Konto"]
+*** link:../api/reference_element_api_modifyclusteradmin.html["Konfigurieren Sie den Zugriff auf „SupportAdmin“ für ein vorhandenes Konto"]
++
+Um die zu bekommen `clusterAdminID`, Sie können die verwenden link:../api/reference_element_api_listclusteradmins.html["ListenClusteradministratoren"] API:
+
+
+
+
+
+Hinzufügen `supportAdmin` Zugriff: Sie müssen über Cluster-Administrator- oder Administratorrechte verfügen.
+
+====
++
+.. Ersetzen Sie den Wert in [ ] Klammern (einschließlich der Klammern) für jeden der folgenden Parameter:
++
+
+NOTE: Sie können entweder den abgekürzten oder den vollständigen Parameter verwenden.
+
++
+*** *--ip: -i [ip-Adresse]*: IP-Adresse des Ziel-Knotens für die API, gegen die ausgeführt werden soll.
+*** *--user: Cluster-Benutzer verwendet, um den API-Aufruf auszuführen.
+*** *(Optional) --duration -d [hours]*: Die Dauer eines signierten Schlüssels sollte als Ganzzahl in Stunden gültig sein. Die Standardeinstellung ist 24 Stunden.
+
+
+.. Vergleichen Sie Ihre Angaben mit dem folgenden Beispielbefehl. In diesem Beispiel `192.168.0.1` Die IP des Storage-Nodes `admin` Ist der Cluster-Benutzername, die Schlüsseldauer beträgt zwei Stunden, und `--sfadmin` Ermöglicht NetApp Support Node-Zugriff zur Fehlerbehebung:
++
+[listing]
+----
+sh /sf/bin/SignSshKeys.sh --ip 192.168.0.1 --user admin --duration 2 --sfadmin
+----
+.. Führen Sie den Befehl aus.
+
+
+. SSH an die Node-IPs:
++
+[listing]
+----
+ssh -i user sfadmin@[node_ip]
+----
+. Um den Remote Support-Tunnel zu schließen, geben Sie Folgendes ein:
++
+`rst --killall`
+
+. (Optional) Deaktivieren link:task_mnode_ssh_management.html["Remote-Zugriffsfunktion"] Nach Abschluss der Fehlerbehebung erneut.
++
+
+NOTE: SSH bleibt auf dem Management-Node aktiviert, wenn Sie ihn nicht deaktivieren. Die SSH-fähige Konfiguration bleibt auf dem Management-Node durch Updates und Upgrades bestehen, bis sie manuell deaktiviert ist.
+
+
+
+
+
+== Fehlerbehebung für einen Node, der nicht zum Cluster gehört
+
+Sie können grundlegende Fehlerbehebung für einen Node ausführen, der noch nicht zu einem Cluster hinzugefügt wurde. Sie können das sfReadonly System-Konto zu diesem Zweck mit oder ohne Hilfe von NetApp Unterstützung verwenden. Wenn ein Management-Node eingerichtet wurde, können Sie ihn für SSH verwenden und das angegebene Skript für diese Aufgabe ausführen.
+
+. Führen Sie auf einem Windows-, Linux- oder Mac-Computer mit installiertem SSH-Client das entsprechende Skript für Ihr von NetApp Support bereitgestellte System aus.
+. SSH an die Node-IP:
++
+[listing]
+----
+ssh -i user sfreadonly@[node_ip]
+----
+. (Optional) Deaktivieren link:task_mnode_ssh_management.html["Remote-Zugriffsfunktion"] Nach Abschluss der Fehlerbehebung erneut.
++
+
+NOTE: SSH bleibt auf dem Management-Node aktiviert, wenn Sie ihn nicht deaktivieren. Die SSH-fähige Konfiguration bleibt auf dem Management-Node durch Updates und Upgrades bestehen, bis sie manuell deaktiviert ist.
+
+
+
+[discrete]
+== Weitere Informationen
+
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["Seite „NetApp HCI Ressourcen“"^]
+

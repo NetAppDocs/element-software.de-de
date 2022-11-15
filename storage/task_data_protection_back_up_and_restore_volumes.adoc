@@ -1,0 +1,28 @@
+---
+permalink: storage/task_data_protection_back_up_and_restore_volumes.html 
+sidebar: sidebar 
+keywords: volumes, backup and restore 
+summary: Backups und Restores von Volumes auf anderen SolidFire Storage sowie sekundäre Objektspeicher, die mit Amazon S3 oder OpenStack Swift kompatibel sind. 
+---
+= Backup und Restore von Volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Backups und Restores von Volumes auf anderen SolidFire Storage sowie sekundäre Objektspeicher, die mit Amazon S3 oder OpenStack Swift kompatibel sind.
+
+Wenn Sie Volumes aus OpenStack Swift oder Amazon S3 wiederherstellen, benötigen Sie Manifest-Informationen aus dem ursprünglichen Backup-Prozess. Wenn Sie ein Volume wiederherstellen, das auf einem SolidFire Storage-System gesichert wurde, sind keine Manifest-Informationen erforderlich.
+
+
+
+== Weitere Informationen
+
+* xref:task_data_protection_back_up_volume_to_amazon_s3.adoc[Volumes werden in einem Amazon S3-Objektspeicher gesichert]
+* xref:task_data_protection_back_up_volume_to_openstack_swift.adoc[Volumes werden in einem OpenStack Swift Objektspeicher gesichert]
+* xref:task_data_protection_back_up_volume_to_solidfire.adoc[Sicherung eines Volumes auf einem SolidFire Storage-Cluster]
+* xref:task_data_protection_restore_volume_from_backup_on_amazon_s3.adoc[Wiederherstellung eines Volumes aus einem Backup auf einem Amazon S3-Objektspeicher]
+* xref:task_data_protection_restore_volume_from_backup_on_openstack_swift.adoc[Wiederherstellung eines Volumes aus dem Backup in einem OpenStack Swift Objektspeicher]
+* xref:task_data_protection_restore_volume_from_backup_on_solidfire.adoc[Wiederherstellung eines Volumes aus einem Backup auf einem SolidFire Storage-Cluster]
+

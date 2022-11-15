@@ -1,0 +1,27 @@
+---
+permalink: storage/task_data_protection_edit_members_of_group_snapshot.html 
+sidebar: sidebar 
+keywords: group snapshot members, edit 
+summary: Sie können die Aufbewahrungseinstellungen für Mitglieder eines bestehenden Gruppen-Snapshots bearbeiten. 
+---
+= Bearbeiten von Mitgliedern des Gruppenschnappschusses
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Aufbewahrungseinstellungen für Mitglieder eines bestehenden Gruppen-Snapshots bearbeiten.
+
+. Klicken Sie Auf *Datenschutz* > *Snapshots*.
+. Klicken Sie auf die Registerkarte *Mitglieder*.
+. Klicken Sie auf das Aktionen-Symbol für das Gruppenmitglied, das Sie bearbeiten möchten.
+. Wählen Sie im Menü Ergebnis die Option *Bearbeiten*.
+. Um die Replikationseinstellung für den Snapshot zu ändern, wählen Sie eine der folgenden Optionen aus:
++
+** Klicken Sie auf *Keep Forever*, um den Snapshot auf dem System auf unbestimmte Zeit zu behalten.
+** Klicken Sie auf *Aufbewahrungszeitraum festlegen* und verwenden Sie die Datumspinnboxen, um eine Zeitdauer für das System auszuwählen, um den Snapshot zu behalten.
+
+
+. Klicken Sie Auf *Änderungen Speichern*.
+

@@ -1,0 +1,40 @@
+---
+permalink: storage/concept_system_manage_cluster_configure_cluster_settings.html 
+sidebar: sidebar 
+keywords: configure, cluster, threshold, support access, encryption at rest, virtual volumes, ntp broadcast, client, snapmirror 
+summary: Sie können die Einstellungen für das gesamte Cluster anzeigen und ändern und Cluster-spezifische Aufgaben über die Registerkarte Cluster der Element UI ausführen. 
+---
+= Konfigurieren Sie Cluster-Einstellungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Einstellungen für das gesamte Cluster anzeigen und ändern und Cluster-spezifische Aufgaben über die Registerkarte Cluster der Element UI ausführen.
+
+Sie können Einstellungen wie den Schwellenwert für die Clusterfülle konfigurieren, Zugriff, Verschlüsselung im Ruhezustand, virtuelle Volumes, SnapMirror, Und NTP-Broadcast-Client.
+
+.Optionen
+* xref:concept_data_manage_vvol_work_virtual_volumes.adoc[Arbeiten mit virtuellen Volumes]
+* xref:task_snapmirror_use_replication_between_element_and_ontap_clusters.adoc[SnapMirror Replizierung zwischen Element und ONTAP Clustern]
+* xref:task_system_manage_cluster_set_the_cluster_full_threshold.adoc[Legen Sie den Schwellenwert für den vollen Cluster fest]
+* xref:task_system_manage_cluster_enable_and_disable_support_access.adoc[Aktivieren und deaktivieren Sie den Zugriff auf den Support]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Flash_Storage/SF_Series/How_are_the_blockSpace_thresholds_calculated_for_Element["Wie werden die BlockSpace Schwellenwerte für Element berechnet"]
+* xref:task_system_manage_cluster_enable_and_disable_encryption_for_a_cluster.adoc[Aktivieren und Deaktivieren der Verschlüsselung für ein Cluster]
+* xref:concept_system_manage_cluster_terms_manage_the_terms_of_use_banner.adoc[Banner für Nutzungsbedingungen verwalten]
+* xref:task_system_manage_cluster_ntp_configure.adoc[Konfigurieren Sie die Network Time Protocol-Server für das abzufragenden Cluster]
+* xref:concept_system_manage_snmp_manage_snmp.adoc[SNMP managen]
+* xref:concept_system_manage_drives_managing_drives.adoc[Verwalten Sie Laufwerke]
+* xref:concept_system_manage_nodes_manage_nodes.adoc[Managen von Nodes]
+* xref:concept_system_manage_virtual_manage_virtual_networks.adoc[Managen Sie virtuelle Netzwerke]
+* xref:task_system_manage_fc_view_fibre_channel_ports_details.adoc[Zeigen Sie Details zu Fibre Channel-Ports an]
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

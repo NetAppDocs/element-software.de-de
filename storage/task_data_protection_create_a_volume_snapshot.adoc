@@ -1,0 +1,48 @@
+---
+permalink: storage/task_data_protection_create_a_volume_snapshot.html 
+sidebar: sidebar 
+keywords: volume snapshot, create, active volume, preserve volume 
+summary: Sie können einen Snapshot eines aktiven Volumes erstellen, um das Volume Image zu einem beliebigen Zeitpunkt beizubehalten. Sie können bis zu 32 Snapshots für ein einzelnes Volume erstellen. 
+---
+= Erstellen eines Volume-Snapshots
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können einen Snapshot eines aktiven Volumes erstellen, um das Volume Image zu einem beliebigen Zeitpunkt beizubehalten. Sie können bis zu 32 Snapshots für ein einzelnes Volume erstellen.
+
+. Klicken Sie Auf *Management* > *Volumes*.
+. Klicken Sie auf das Symbol *Aktionen* für das Volumen, das Sie für den Snapshot verwenden möchten.
+. Wählen Sie im Menü Ergebnis die Option *Snapshot* aus.
+. Geben Sie im Dialogfeld *Snapshot des Volumes erstellen* den neuen Snapshot-Namen ein.
+. *Optional:* Aktivieren Sie das Kontrollkästchen *Snapshot in Replikation einschließen, wenn gepaart* aktiviert ist, um sicherzustellen, dass der Snapshot bei der Replikation erfasst wird, wenn das übergeordnete Volume gekoppelt ist.
+. Um die Aufbewahrung für den Snapshot festzulegen, wählen Sie eine der folgenden Optionen aus:
++
+** Klicken Sie auf *Keep Forever*, um den Snapshot auf dem System auf unbestimmte Zeit zu behalten.
+** Klicken Sie auf *Aufbewahrungszeitraum festlegen* und verwenden Sie die Datumspinnboxen, um eine Zeitdauer für das System auszuwählen, um den Snapshot zu behalten.
+
+
+. So erstellen Sie einen einzigen, sofortigen Snapshot:
++
+.. Klicken Sie Auf *Momentaufnahme Jetzt Aufnehmen*.
+.. Klicken Sie Auf**Snapshot Erstellen**.
+
+
+. So planen Sie die Ausführung des Snapshots für einen späteren Zeitpunkt:
++
+.. Klicken Sie Auf *Snapshot Zeitplan Erstellen*.
+.. Geben Sie einen *neuen Terminplannamen* ein.
+.. Wählen Sie aus der Liste einen *Terminplantyp* aus.
+.. *Optional:* Aktivieren Sie das Kontrollkästchen *wiederkehrender Zeitplan*, um den geplanten Snapshot regelmäßig zu wiederholen.
+.. Klicken Sie Auf *Zeitplan Erstellen*.
+
+
+
+
+
+
+== Weitere Informationen
+
+xref:task_data_protection_schedule_a_snapshot_task.adoc[Planen Sie einen Snapshot]

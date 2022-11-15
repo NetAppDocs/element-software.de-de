@@ -1,0 +1,25 @@
+---
+permalink: storage/task_data_manage_vol_access_group_remove_initiators_from_an_access_group.html 
+sidebar: sidebar 
+keywords: initiator, remove from volume access group, access groups, remove initiator 
+summary: Wenn Sie einen Initiator aus einer Zugriffsgruppe entfernen, kann er nicht mehr auf die Volumes in dieser Volume-Zugriffsgruppe zugreifen. Der normale Account-Zugriff auf das Volume wird nicht unterbrochen. 
+---
+= Entfernen Sie Initiatoren aus einer Zugriffsgruppe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie einen Initiator aus einer Zugriffsgruppe entfernen, kann er nicht mehr auf die Volumes in dieser Volume-Zugriffsgruppe zugreifen. Der normale Account-Zugriff auf das Volume wird nicht unterbrochen.
+
+Das Ändern von CHAP-Einstellungen in einem Konto oder das Entfernen von Initiatoren oder Volumes aus einer Zugriffsgruppe kann dazu führen, dass Initiatoren unerwartet den Zugriff auf Volumes verlieren. Um zu überprüfen, ob der Volume-Zugriff nicht unerwartet verloren geht, melden Sie sich iSCSI-Sitzungen ab, die von einem Konto oder einer Zugriffsgruppenänderung betroffen sind, und überprüfen Sie, ob die Initiatoren nach Abschluss der Änderungen an den Initiatoreinstellungen und den Cluster-Einstellungen eine Verbindung zu Volumes herstellen können.
+
+.Schritte
+. Klicken Sie Auf *Verwaltung* > *Zugriffsgruppen*.
+. Klicken Sie auf das Symbol *Aktionen* für die Zugriffsgruppe, die Sie entfernen möchten.
+. Wählen Sie im Menü Ergebnis die Option *Bearbeiten*.
+. Klicken Sie unter Add Initiatoren im Dialogfeld *Edit Volume Access Group* auf den Pfeil in der Liste *Initiatoren*.
+. Wählen Sie für jeden Initiator das x-Symbol aus, das Sie aus der Zugriffsgruppe entfernen möchten.
+. Klicken Sie Auf *Änderungen Speichern*.
+

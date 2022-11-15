@@ -1,0 +1,57 @@
+---
+permalink: storage/concept_monitor_understand_cluster_fullness_levels.html 
+sidebar: sidebar 
+keywords: cluster fullness levels, understanding, fullness levels 
+summary: 'Der Cluster, auf dem Element Software ausgeführt wird, generiert Cluster-Fehler, um den Storage-Administrator zu warnen, wenn die Kapazität des Clusters knapp wird. Es gibt drei Ebenen der Cluster-Fülle, die alle in der NetApp Element UI angezeigt werden: Warnung, Fehler und kritisch.' 
+---
+= Erläuterung der Cluster-Auslastungsebenen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der Cluster, auf dem Element Software ausgeführt wird, generiert Cluster-Fehler, um den Storage-Administrator zu warnen, wenn die Kapazität des Clusters knapp wird. Es gibt drei Ebenen der Cluster-Fülle, die alle in der NetApp Element UI angezeigt werden: Warnung, Fehler und kritisch.
+
+Das System verwendet den BlockClusterFull-Fehlercode, um vor der Speicherfülle des Clusterblocks zu warnen. Sie können die Schweregrade für die Cluster-Fülle über die Registerkarte Meldungen der Element UI anzeigen.
+
+Die folgende Liste enthält Informationen zum Schweregrad BlockClusterFull:
+
+* *Warnung*
++
+Dies ist eine vom Kunden konfigurierbare Warnung, die angezeigt wird, wenn sich die Blockgröße des Clusters dem Fehlergrad nähert. Diese Stufe wird standardmäßig auf drei Prozent unter der Fehlerebene festgelegt und kann über die Element-UI und -API optimiert werden. Sie müssen so schnell wie möglich zusätzliche Kapazität hinzufügen oder Kapazität freisetzen.
+
+* *Fehler*
++
+Wenn sich das Cluster in diesem Status befindet und ein Node verloren geht, ist nicht genügend Kapazität im Cluster vorhanden, um die Double Helix Datensicherung wiederherzustellen. Erstellung neuer Volumes, Klone und Snapshots werden allesamt gesperrt, während sich das Cluster in diesem Zustand befindet. Dies ist kein sicherer oder empfohlener Status für ein Cluster in. Sie müssen zusätzliche Kapazität hinzufügen oder Kapazität sofort freisetzen.
+
+* * Kritisch*
++
+Dieser kritische Fehler ist aufgetreten, da das Cluster zu 100 Prozent verbraucht wird. Die Lösung befindet sich im schreibgeschützten Zustand und es können keine neuen iSCSI-Verbindungen zum Cluster hergestellt werden. Wenn Sie diese Phase erreichen, müssen Sie sofort freisetzen oder mehr Kapazität hinzufügen.
+
+
+
+Das System verwendet den MetadaClusterFull Fehlercode, um über die Speicherfülle des Clusters zu warnen. Sie können die Cluster-Metadaten-Storage-Fülle im Abschnitt Cluster-Kapazität auf der Übersichtsseite der Registerkarte Berichterstellung in der Element UI anzeigen.
+
+Die folgende Liste enthält Informationen zu den Schweregraden für MetadataClusterFull:
+
+* *Warnung*
++
+Dies ist eine vom Kunden konfigurierbare Warnung, die angezeigt wird, wenn sich die Metatdatenkapazität des Clusters dem Schweregrad „Fehler“ nähert. Standardmäßig wird diese Ebene auf drei Prozent unter der Fehlerebene gesetzt und kann über die Element-API optimiert werden. Sie müssen so schnell wie möglich zusätzliche Kapazität hinzufügen oder Kapazität freisetzen.
+
+* *Fehler*
++
+Wenn sich das Cluster in diesem Status befindet und ein Node verloren geht, ist nicht genügend Kapazität im Cluster vorhanden, um die Double Helix Datensicherung wiederherzustellen. Erstellung neuer Volumes, Klone und Snapshots werden allesamt gesperrt, während sich das Cluster in diesem Zustand befindet. Dies ist kein sicherer oder empfohlener Status für ein Cluster in. Sie müssen zusätzliche Kapazität hinzufügen oder Kapazität sofort freisetzen.
+
+* * Kritisch*
++
+Dieser kritische Fehler ist aufgetreten, da das Cluster zu 100 Prozent verbraucht wird. Die Lösung befindet sich im schreibgeschützten Zustand und es können keine neuen iSCSI-Verbindungen zum Cluster hergestellt werden. Wenn Sie diese Phase erreichen, müssen Sie sofort freisetzen oder mehr Kapazität hinzufügen.
+
+
+
+
+NOTE: Folgendes gilt für Cluster-Schwellenwerte mit zwei Nodes:
+
+* Metadaten-Fehler liegt 20 % unter dem kritischen Wert.
+* Unter dem kritischen Block-Auslastungsfehler liegt ein Block-Laufwerk (einschließlich ungenutzter Kapazität). Das bedeutet, dass es sich um zwei Blocklaufwerke handelt, die weniger kritisch sind.
+

@@ -1,0 +1,83 @@
+---
+permalink: api/reference_element_api_host.html 
+sidebar: sidebar 
+keywords: object,objects,host 
+summary: Das Hostobjekt enthält Informationen über einen Host virtueller Volumes. Sie können die ListVirtualVolumeHosts-Methode verwenden, um diese Informationen für alle virtuellen Volume-Hosts zu erhalten. 
+---
+= Host (virtuelle Volumes)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Hostobjekt enthält Informationen über einen Host virtueller Volumes. Sie können das verwenden `ListVirtualVolumeHosts` Die Methode, um diese Informationen für alle Hosts des virtuellen Volumes zu erhalten.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Bindungen
+ a| 
+Eine Liste von Objekten, die die Bindungen für den Host des virtuellen Volumes beschreiben.
+ a| 
+Integer-Array
+
+
+
+ a| 
+Cluster-ID
+ a| 
+Die eindeutige ID des Clusters, mit dem dieser Host verknüpft ist.
+ a| 
+UUID
+
+
+
+ a| 
+HostAddress
+ a| 
+Die IP-Adresse oder der DNS-Name des virtuellen Volume-Hosts.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+InitiatorNames
+ a| 
+Eine Liste der Initiator-IQNs für den Host des virtuellen Volumes.
+ a| 
+String-Array
+
+
+
+ a| 
+VirtualVolumeHost ID
+ a| 
+Die eindeutige ID dieses virtuellen Volume-Hosts.
+ a| 
+UUID
+
+
+
+ a| 
+VisibleProtocolEndpointIDs
+ a| 
+Eine Liste der IDs von Protokollendpunkten, die auf diesem Host sichtbar sind.
+ a| 
+UUID-Array
+
+|===
+
+
+== Weitere Informationen
+
+xref:reference_element_api_listvirtualvolumehosts.adoc[ListVirtualVolumeHosts]

@@ -1,0 +1,32 @@
+---
+permalink: storage/task_data_protection_back_up_a_volume_snapshot_to_an_amazon_s3_object_store.html 
+sidebar: sidebar 
+keywords: volume snapshot, backup, amazon S3 object store 
+summary: Sie können ein Backup von SolidFire Snapshots auf externen Objektspeichern erstellen, die mit Amazon S3 kompatibel sind. 
+---
+= Sichern Sie einen Volume Snapshot in einem Amazon S3-Objektspeicher
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein Backup von SolidFire Snapshots auf externen Objektspeichern erstellen, die mit Amazon S3 kompatibel sind.
+
+. Klicken Sie Auf**Data Protection** > *Snapshots*.
+. Klicken Sie auf das Symbol *Aktionen* für den Snapshot, den Sie sichern möchten.
+. Klicken Sie im Menü Ergebnis auf *Sichern nach*.
+. Wählen Sie im Dialogfeld * Integriertes Backup* unter *Backup in* die Option *S3* aus.
+. Wählen Sie eine Option unter *Datenformat* aus:
++
+** *Native*: Ein komprimiertes Format, das nur von SolidFire-Speichersystemen lesbar ist.
+** *Unkomprimiert*: Ein unkomprimiertes Format, das mit anderen Systemen kompatibel ist.
+
+
+. Geben Sie einen Hostnamen ein, der für den Zugriff auf den Objektspeicher im Feld *Hostname* verwendet werden soll.
+. Geben Sie im Feld *Zugriffsschlüssel-ID* eine Zugriffsschlüssel-ID für das Konto ein.
+. Geben Sie den geheimen Zugriffsschlüssel für das Konto im Feld * Secret Access Key* ein.
+. Geben Sie den S3-Bucket ein, in dem die Sicherung im Feld *S3 Bucket* gespeichert werden soll.
+. *Optional*: Geben Sie im Feld *Nametag* einen Namensschild ein, der dem Präfix angefügt werden soll.
+. Klicken Sie Auf *Lesen Starten*.
+

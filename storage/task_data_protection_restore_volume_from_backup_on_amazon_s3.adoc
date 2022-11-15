@@ -1,0 +1,36 @@
+---
+permalink: storage/task_data_protection_restore_volume_from_backup_on_amazon_s3.html 
+sidebar: sidebar 
+keywords: volume restore, amazon s3 object store 
+summary: Sie können ein Volume anhand einer Backup auf einem Amazon S3-Objektspeicher wiederherstellen. 
+---
+= Wiederherstellung eines Volumes aus einem Backup auf einem Amazon S3-Objektspeicher
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein Volume anhand einer Backup auf einem Amazon S3-Objektspeicher wiederherstellen.
+
+. Klicken Sie Auf *Berichterstellung* > *Ereignisprotokoll*.
+. Suchen Sie das Backup-Ereignis, das das Backup erstellt hat, das Sie wiederherstellen müssen.
+. Klicken Sie in der Spalte *Details* für die Veranstaltung auf *Details anzeigen*.
+. Kopieren Sie die Manifestinformationen in die Zwischenablage.
+. Klicken Sie Auf *Management* > *Volumes*.
+. Klicken Sie auf das Symbol Aktionen für das Volume, das Sie wiederherstellen möchten.
+. Klicken Sie im Menü Ergebnis auf *aus* wiederherstellen.
+. Wählen Sie im Dialogfeld * Integrierter Restore* unter *Wiederherstellen von* die Option *S3* aus.
+. Wählen Sie unter *Datenformat* die Option aus, die der Datensicherung entspricht:
++
+** *Native*: Ein komprimiertes Format, das nur von SolidFire-Speichersystemen lesbar ist.
+** *Unkomprimiert*: Ein unkomprimiertes Format, das mit anderen Systemen kompatibel ist.
+
+
+. Geben Sie einen Hostnamen ein, der für den Zugriff auf den Objektspeicher im Feld *Hostname* verwendet werden soll.
+. Geben Sie im Feld *Zugriffsschlüssel-ID* eine Zugriffsschlüssel-ID für das Konto ein.
+. Geben Sie den geheimen Zugriffsschlüssel für das Konto im Feld * Secret Access Key* ein.
+. Geben Sie den S3-Bucket ein, in dem die Sicherung im Feld *S3 Bucket* gespeichert werden soll.
+. Fügen Sie die Manifest-Informationen in das Feld * Manifestieren* ein.
+. Klicken Sie Auf *Schreiben Starten*.
+

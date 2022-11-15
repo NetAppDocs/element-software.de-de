@@ -1,0 +1,23 @@
+---
+permalink: storage/concept_intro_clusters.html 
+sidebar: sidebar 
+keywords: clusters, about clusters, collection of nodes, nodes in a cluster, block storage, logical group, add nodes, access cluster 
+summary: Ein Cluster ist der Hub eines SolidFire Storage-Systems und besteht aus einer Sammlung von Nodes. Sie müssen mindestens vier Nodes in einem Cluster aufweisen, damit die SolidFire Storage-Effizienz realisiert werden kann. Ein Cluster wird im Netzwerk als einzelne logische Gruppe angezeigt und kann dann als Block-Storage genutzt werden. 
+---
+= Cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ein Cluster ist der Hub eines SolidFire Storage-Systems und besteht aus einer Sammlung von Nodes. Sie müssen mindestens vier Nodes in einem Cluster aufweisen, damit die SolidFire Storage-Effizienz realisiert werden kann. Ein Cluster wird im Netzwerk als einzelne logische Gruppe angezeigt und kann dann als Block-Storage genutzt werden.
+
+Durch das Erstellen eines neuen Clusters wird ein Node als Kommunikationsinhaber für ein Cluster initialisiert und stellt die Netzwerkkommunikation für jeden Node im Cluster her. Dieser Prozess wird nur einmal für jedes neue Cluster durchgeführt. Sie können ein Cluster mithilfe der Element UI oder der API erstellen.
+
+Sie können ein Cluster horizontal skalieren, indem Sie weitere Nodes hinzufügen. Wenn Sie einen neuen Node hinzufügen, wird der Service nicht unterbrochen, und der Cluster nutzt die Performance und Kapazität des neuen Node automatisch.
+
+Administratoren und Hosts können über virtuelle IP-Adressen auf das Cluster zugreifen. Jeder Node im Cluster kann die virtuellen IP-Adressen hosten. Die Management Virtual IP (MVIP) ermöglicht das Clustermanagement über eine 1-GbE-Verbindung, während die Speicher-virtuelle IP (SVIP) den Host-Zugriff auf Speicher über eine 10-GbE-Verbindung ermöglicht. Diese virtuellen IP-Adressen ermöglichen konsistente Verbindungen unabhängig von der Größe oder dem Aufbau eines SolidFire Clusters. Wenn ein Node, der eine virtuelle IP-Adresse hostet, ausfällt, beginnt ein anderer Node im Cluster mit dem Hosten der virtuellen IP-Adresse.
+
+
+NOTE: Ab Element Version 11.0 können Nodes mit IPv4, IPv6 oder beiden Adressen für ihr Managementnetzwerk konfiguriert werden. Dies gilt sowohl für Storage-Nodes als auch für Management-Nodes, mit Ausnahme von Management-Node 11.3 und höher, der IPv6 nicht unterstützt. Beim Erstellen eines Clusters kann nur eine einzelne IPv4- oder IPv6-Adresse für den MVIP verwendet werden, und der entsprechende Adresstyp muss auf allen Knoten konfiguriert werden.

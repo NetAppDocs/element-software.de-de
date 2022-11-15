@@ -1,0 +1,43 @@
+---
+permalink: setup/task_setup_create_a_volume_access_group_for_fibre_channel_clients.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Volume-Zugriffsgruppen ermöglichen die Kommunikation zwischen Fibre Channel Clients und Volumes auf einem SolidFire Storage-System. Das Zuordnen von Fibre Channel-Client-Initiatoren \(WWPN\) zu den Volumes einer Volume-Zugriffsgruppe ermöglicht den sicheren Daten-I/O zwischen einem Fibre Channel-Netzwerk und einem SolidFire Volume.' 
+---
+= Erstellen einer Volume-Zugriffsgruppe für Fibre Channel-Clients
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Volume-Zugriffsgruppen ermöglichen die Kommunikation zwischen Fibre Channel Clients und Volumes auf einem SolidFire Storage-System. Das Zuordnen von Fibre Channel-Client-Initiatoren (WWPN) zu den Volumes einer Volume-Zugriffsgruppe ermöglicht den sicheren Daten-I/O zwischen einem Fibre Channel-Netzwerk und einem SolidFire Volume.
+
+Sie können auch iSCSI-Initiatoren zu einer Volume-Zugriffsgruppe hinzufügen. Dadurch können die Initiatoren auf dieselben Volumes in der Volume-Zugriffsgruppe zugreifen.
+
+.Schritte
+. Klicken Sie Auf *Verwaltung* > *Zugriffsgruppen*.
+. Klicken Sie Auf *Zugriffsgruppe Erstellen*.
+. Geben Sie im Feld *Name* einen Namen für die Zugriffsgruppe des Volumes ein.
+. Wählen Sie die Fibre Channel-Initiatoren aus der Liste *Unbound Fibre Channel Initiatoren* aus, und fügen Sie sie hinzu.
++
+
+NOTE: Sie können Initiatoren zu einem späteren Zeitpunkt hinzufügen oder löschen.
+
+. *Optional:* Wählen und fügen Sie einen iSCSI-Initiator aus der Liste *Initiatoren* hinzu.
+. So hängen Sie Volumes an die Zugriffsgruppe an:
++
+.. Wählen Sie ein Volume aus der Liste *Volumes* aus.
+.. Klicken Sie Auf *Volumen Anhängen*.
+
+
+. Klicken Sie Auf *Zugriffsgruppe Erstellen*.
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

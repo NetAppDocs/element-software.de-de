@@ -1,0 +1,236 @@
+---
+permalink: api/reference_element_api_createsnapshot.html 
+sidebar: sidebar 
+keywords: volume,volumes,create,creating,snapshot,snapshots,CreateSnapshot 
+summary: Mithilfe von CreateSnapshot können Sie eine zeitpunktgenaue Kopie eines Volume erstellen. Sie können einen Snapshot von einem beliebigen Volume oder von einem vorhandenen Snapshot erstellen. 
+---
+= Erstellen von Snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwenden Sie können `CreateSnapshot` Erstellen einer zeitpunktgenauen Kopie eines Volumes Sie können einen Snapshot von einem beliebigen Volume oder von einem vorhandenen Snapshot erstellen.
+
+Wenn Sie mit dieser API-Methode keine SnapshotID bereitstellen, wird ein Snapshot aus dem aktiven Zweig des Volumes erstellt. Wenn das Volume, von dem der Snapshot erstellt wird, in einem Remote-Cluster repliziert wird, kann der Snapshot auch auf dasselbe Ziel repliziert werden. Verwenden Sie den Parameter enableRemoteReplication, um die Snapshot-Replikation zu aktivieren.
+
+
+NOTE: Sie können Snapshots erstellen, wenn die Cluster-Fülle sich an Phase 1, 2 oder 3 befindet. Sie können keine Snapshots erstellen, wenn die Cluster-Fülle die Phase 4 oder 5 erreicht.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+`attributes`
+ a| 
+Liste von Name-Wert-Paaren im JSON-Objektformat.
+ a| 
+JSON-Objekt
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+`enableRemoteReplication`
+ a| 
+Gibt an, ob der Snapshot zum Remote-Speicher repliziert werden soll oder nicht. Mögliche Werte:
+
+* `true`: Der Snapshot wird auf den Remote-Speicher repliziert.
+* `false`: Der Snapshot wird nicht auf den Remote-Speicher repliziert werden.
+
+ a| 
+boolesch
+ a| 
+Falsch
+ a| 
+Nein
+
+
+
+| `ensureSerialCreation`  a| 
+Gibt an, dass der Snapshot nicht erstellt werden soll, wenn eine vorherige Snapshot-Replikation ausgeführt wird. Mögliche Werte sind:
+
+* `true`: So wird sichergestellt, dass jeweils nur ein Snapshot repliziert wird. Die Erstellung eines neuen Snapshots schlägt fehl, wenn noch eine vorherige Snapshot-Replikation ausgeführt wird.
+* `false`: Standard. Diese Snapshot-Erstellung ist zulässig, wenn noch eine andere Snapshot-Replikation ausgeführt wird.
+
+| boolesch | `false` | Nein 
+
+
+| Zeit für AufwandsZeit  a| 
+Geben Sie die Zeit an, nach der der Snapshot entfernt werden kann. Kann nicht mit verwendet werden `retention`. Wenn weder ExpirationTime noch Retention angegeben werden, läuft der Snapshot nicht ab. Das Zeitformat ist eine Datumstringfolge nach ISO 8601 für die zeitbasierte Ablaufzeit, da sie sonst nicht abläuft. Der Wert von `null` Bewirkt, dass der Snapshot dauerhaft aufbewahrt wird. Der Wert von `fifo` Bewirkt, dass der Snapshot im ersten Schritt beibehalten wird, relativ zu anderen FIFO-Snapshots auf dem Volumen. Die API schlägt fehl, wenn kein FIFO-Speicherplatz verfügbar ist.
+| Zeichenfolge | Keine | Nein 
+
+
+ a| 
+`name`
+ a| 
+Der Name des Snapshots. Wenn kein Name eingegeben wird, wird das Datum und die Uhrzeit der Snapshot-Erstellung verwendet. Die maximal zulässige Namenslänge beträgt 255 Zeichen.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+`retention`
+ a| 
+Dieser Parameter ist mit dem identisch `expirationTime` Parameter, außer das Zeitformat ist HH:mm:ss Wenn keine `expirationTime` Und `retention` Sind angegeben, dass der Snapshot nicht abläuft.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+`snapMirrorLabel`
+ a| 
+Das von der SnapMirror Software verwendete Etikett, um die Richtlinie zur Snapshot-Aufbewahrung auf einem SnapMirror Endpunkt anzugeben.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+`snapshotID`
+ a| 
+Eindeutige ID eines Snapshots, aus dem der neue Snapshot erstellt wird. Die übergebene Snapshot-ID muss ein Snapshot auf dem angegebenen Volume sein.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+`volumeID`
+ a| 
+Eindeutige ID des Volume-Images, aus dem kopiert werden soll
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Prüfsumme
+ a| 
+Eine Zeichenfolge, die die richtigen Ziffern im gespeicherten Snapshot darstellt. Diese Prüfsumme kann später verwendet werden, um andere Snapshots zu vergleichen, um Fehler in den Daten zu erkennen.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Snapshot-ID
+ a| 
+Eindeutige ID des neuen Snapshots.
+ a| 
+Snapshot-ID
+
+
+
+ a| 
+snapshot
+ a| 
+Ein Objekt, das Informationen über den neu erstellten Snapshot enthält.
+ a| 
+xref:reference_element_api_snapshot.adoc[snapshot]
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "CreateSnapshot",
+   "params": {
+      "volumeID": 1
+   },
+   "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "checksum": "0x0",
+      "snapshot": {
+        "attributes": {},
+        "checksum": "0x0",
+        "createTime": "2016-04-04T17:14:03Z",
+        "enableRemoteReplication": false,
+        "expirationReason": "None",
+        "expirationTime": null,
+        "groupID": 0,
+        "groupSnapshotUUID": "00000000-0000-0000-0000-000000000000",
+        "name": "2016-04-04T17:14:03Z",
+        "snapshotID": 3110,
+        "snapshotUUID": "6f773939-c239-44ca-9415-1567eae79646",
+        "status": "done",
+        "totalSize": 5000658944,
+        "virtualVolumeID": null,
+        "volumeID": 1
+      },
+        "snapshotID": 3110
+  }
+}
+----
+
+
+== Ausnahme
+
+Wenn der angezeigt wird, wird eine xNotPrimärausnahme angezeigt `CreateSnapshot` Die API wird aufgerufen und der Snapshot wird nicht erstellt. Dieses Verhalten ist zu erwarten. Wiederholen Sie den `CreateSnapshot` API-Aufruf.
+
+
+
+== Neu seit Version
+
+9.6

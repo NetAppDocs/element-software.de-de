@@ -1,0 +1,21 @@
+---
+permalink: storage/task_data_manage_vol_access_group_delete.html 
+sidebar: sidebar 
+keywords: access group, delete 
+summary: Sie können eine Zugriffsgruppe löschen, wenn sie nicht mehr benötigt wird. Sie müssen Initiator-IDs und Volume-IDs nicht aus der Volume-Zugriffsgruppe löschen, bevor Sie die Gruppe löschen. Nachdem Sie die Zugriffsgruppe gelöscht haben, wird der Gruppenzugriff auf die Volumes abgebrochen. 
+---
+= Löschen Sie eine Zugriffsgruppe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine Zugriffsgruppe löschen, wenn sie nicht mehr benötigt wird. Sie müssen Initiator-IDs und Volume-IDs nicht aus der Volume-Zugriffsgruppe löschen, bevor Sie die Gruppe löschen. Nachdem Sie die Zugriffsgruppe gelöscht haben, wird der Gruppenzugriff auf die Volumes abgebrochen.
+
+. Klicken Sie Auf *Verwaltung* > *Zugriffsgruppen*.
+. Klicken Sie auf das Symbol *Aktionen* für die Zugriffsgruppe, die Sie löschen möchten.
+. Klicken Sie im Menü Ergebnis auf *Löschen*.
+. Um auch die Initiatoren zu löschen, die dieser Zugriffsgruppe zugeordnet sind, aktivieren Sie das Kontrollkästchen *Initiatoren löschen in dieser Zugriffsgruppe*.
+. Bestätigen Sie die Aktion.
+

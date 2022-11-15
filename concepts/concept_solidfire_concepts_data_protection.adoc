@@ -1,0 +1,203 @@
+---
+permalink: concepts/concept_solidfire_concepts_data_protection.html 
+sidebar: sidebar 
+keywords: what is, element, solidfire, replication, clone, snapshot, protection domain, double helix 
+summary: Zu den Datensicherungsfunktionen gehören Remote-Replizierung, Volume Snapshots, Volume-Klonen, Protection Domains und Hochverfügbarkeit mit Double Helix Technologie. 
+---
+= Datensicherung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zu den Datensicherungsfunktionen gehören Remote-Replizierung, Volume Snapshots, Volume-Klonen, Protection Domains und Hochverfügbarkeit mit Double Helix Technologie.
+
+Element Storage-Datensicherung umfasst folgende Konzepte:
+
+*  replication types
+*  snapshots for data protection
+*  clones
+*  and restore process overview for Element storage
+*  Domains
+* ,Benutzerdefinierte Sicherungsdomänen
+*  Helix high availability
+
+
+
+
+== Typen der Remote-Replizierung
+
+Die Remote-Replikation von Daten kann folgende Formen annehmen:
+
+*  and asynchronous replication between clusters
+*  replication
+*  between Element and ONTAP clusters using SnapMirror
+
+
+Weitere Informationen finden Sie unter https://www.netapp.com/us/media/tr-4741.pdf["TR-4741: NetApp Element Software Remote Replication"^].
+
+
+
+=== Synchrone und asynchrone Replizierung zwischen Clustern
+
+Für Cluster mit NetApp Element Software ermöglicht Echtzeitreplizierung die schnelle Erstellung von Remote-Kopien von Volume-Daten.
+
+Ein Storage-Cluster kann mit bis zu vier anderen Storage-Clustern gekoppelt werden. Sie können Volume-Daten für Failover- und Failback-Szenarien synchron oder asynchron von einem Cluster in einem Cluster-Paar replizieren.
+
+
+
+==== Synchrone Replizierung
+
+Die synchrone Replizierung repliziert die Daten kontinuierlich vom Quell-Cluster zum Ziel-Cluster und wird von Latenz, Paketverlust, Jitter und Bandbreite beeinträchtigt.
+
+Synchrone Replizierung eignet sich für die folgenden Situationen:
+
+* Replizierung mehrerer Systeme über kurze Entfernungen
+* Ein Disaster-Recovery-Standort lokal an der Quelle
+* Zeitkritische Applikationen und der Schutz von Datenbanken
+* Business-Continuity-Applikationen, bei denen der sekundäre Standort als primärer Standort fungieren muss, wenn der primäre Standort ausfällt
+
+
+
+
+==== Asynchrone Replizierung
+
+Die asynchrone Replikation repliziert kontinuierlich Daten von einem Quellcluster zu einem Zielcluster, ohne auf die Bestätigungen aus dem Zielcluster zu warten. Während der asynchronen Replizierung werden Schreibvorgänge dem Client (Applikation) bestätigt, nachdem sie im Quell-Cluster durchgeführt wurden.
+
+Asynchrone Replizierung eignet sich für die folgenden Situationen:
+
+* Der Disaster-Recovery-Standort ist weit von der Quelle entfernt und die Applikation toleriert keine durch das Netzwerk verursachten Latenzen.
+* Das Netzwerk, das die Quell- und Ziel-Cluster verbindet, weist Bandbreiteneinschränkungen auf.
+
+
+
+
+=== Reine Snapshot Replizierung
+
+Bei der Datensicherung nur mit Snapshots werden geänderte Daten zu einem bestimmten Zeitpunkt in ein Remote-Cluster repliziert. Es werden nur die Snapshots repliziert, die auf dem Quellcluster erstellt wurden. Aktive Schreibvorgänge vom Quell-Volume sind nicht.
+
+Sie können die Häufigkeit der Snapshot Replikationen festlegen.
+
+Die Snapshot Replizierung hat keine Auswirkungen auf die asynchrone oder synchrone Replizierung.
+
+
+
+=== Replizierung zwischen Element und ONTAP Clustern mit SnapMirror
+
+Mit der NetApp SnapMirror Technologie können Snapshots repliziert werden, die mit NetApp Element Software für Disaster Recovery-Zwecke in ONTAP erstellt wurden. In einer SnapMirror Beziehung stellt Element einen Endpunkt dar, und ONTAP ist der andere.
+
+SnapMirror ist eine NetApp Snapshot Replizierungstechnologie für Disaster Recovery, die für das Failover von primärem Storage auf sekundärem Storage an einem externen Standort ausgelegt ist. Die SnapMirror Technologie erstellt ein Replikat bzw. eine Spiegelung der Arbeitsdaten im sekundären Storage, von dem aus Sie bei einem Ausfall am primären Standort weiterhin Daten bereitstellen können. Daten werden auf Volume-Ebene gespiegelt.
+
+Die Beziehung zwischen dem Quell-Volume im primären Storage und dem Ziel-Volume im sekundären Storage wird als Datensicherungsbeziehung bezeichnet. Die Cluster werden als Endpunkte bezeichnet, in denen sich die Volumes befinden und die Volumes, die die replizierten Daten enthalten, müssen peed sein. Eine Peer-Beziehung ermöglicht einen sicheren Datenaustausch zwischen Clustern und Volumes.
+
+SnapMirror wird nativ auf den NetApp ONTAP Controllern ausgeführt und ist in Element integriert, das auf NetApp HCI und SolidFire Clustern ausgeführt wird. Die Logik zur Steuerung von SnapMirror befindet sich in ONTAP Software. Daher müssen alle SnapMirror Beziehungen mindestens ein ONTAP System erfordern, um die Koordination durchzuführen. Benutzer managen die Beziehungen zwischen Element- und ONTAP-Clustern. Dies erfolgt hauptsächlich über die Element UI. Einige Managementaufgaben befinden sich jedoch im NetApp ONTAP System Manager. Benutzer können SnapMirror auch über die CLI und die API managen, die sowohl in ONTAP als auch in Element verfügbar sind.
+
+Siehe https://fieldportal.netapp.com/content/616239["TR-4651: NetApp SolidFire SnapMirror Architektur und Konfiguration"^] (anmeldung erforderlich)
+
+Sie müssen die SnapMirror Funktion auf Cluster-Ebene manuell mit der Element Software aktivieren. Die SnapMirror Funktion ist standardmäßig deaktiviert und wird nicht automatisch im Rahmen einer neuen Installation oder eines Upgrades aktiviert.
+
+Nach der Aktivierung von SnapMirror können Sie SnapMirror Beziehungen über die Registerkarte Datensicherung in der Element Software erstellen.
+
+NetApp Element Software 10.1 und höher unterstützt SnapMirror Funktionen zum Kopieren und Wiederherstellen von Snapshots mit ONTAP Systemen.
+
+Systeme mit Element 10.1 und höher beinhalten Code, der direkt mit SnapMirror auf ONTAP Systemen mit 9.3 oder höher kommunizieren kann. Die Element API bietet Methoden zur Aktivierung der SnapMirror Funktion in Clustern, Volumes und Snapshots. Zudem umfasst die Element UI Funktionen zum Managen von SnapMirror Beziehungen zwischen Element Software und ONTAP Systemen.
+
+Beginnend mit Element 10.3 und ONTAP 9.4 Systemen können ONTAP-basierte Volumes in Element Volumes repliziert werden, und zwar in bestimmten Anwendungsfällen mit eingeschränkter Funktionalität.
+
+Weitere Informationen finden Sie in der ONTAP-Dokumentation.
+
+
+
+== Volume Snapshots zur Datensicherung
+
+Ein Volume Snapshot ist eine zeitpunktgenaue Kopie eines Volumes, mit der Sie später ein Volume auf diesen speziellen Zeitpunkt wiederherstellen können.
+
+Während Snapshots einem Volume-Klon ähneln, sind Snapshots lediglich Replikate von Volume-Metadaten. Sie können also nicht mounten oder darauf schreiben. Das Erstellen eines Volume-Snapshots nimmt ebenfalls nur eine geringe Menge an Systemressourcen und Platz in Anspruch, sodass die Snapshot-Erstellung schneller als das Klonen erfolgt.
+
+Sie können Snapshots in einem Remote-Cluster replizieren und als Sicherungskopie des Volumes verwenden. Dadurch können Sie ein Rollback eines Volumes zu einem bestimmten Zeitpunkt mit dem replizierten Snapshot durchzuführen. Sie können auch einen Klon eines Volumes aus einem replizierten Snapshot erstellen.
+
+Sie können ein Backup von Snapshots aus einem Element Cluster auf einem externen Objektspeicher oder auf einem anderen Element Cluster erstellen. Wenn Sie einen Snapshot in einem externen Objektspeicher sichern, müssen Sie über eine Verbindung zum Objektspeicher verfügen, der Lese-/Schreibvorgänge ermöglicht.
+
+Sie können einen Snapshot eines einzelnen Volumes oder mehrerer zur Datensicherheit erstellen.
+
+
+
+== Volume-Klone
+
+Ein Klon eines einzelnen oder mehrerer Volumes ist eine zeitpunktgenaue Kopie der Daten. Wenn Sie ein Volume klonen, erstellt das System einen Snapshot des Volume und erstellt dann eine Kopie der Daten, auf die der Snapshot verweist.
+
+Dies ist ein asynchroner Prozess und die erforderliche Zeit hängt von der Größe des zum Klonen benötigten Volumes und der aktuellen Cluster-Last ab.
+
+Das Cluster unterstützt bis zu zwei aktuell laufende Klonanforderungen pro Volume und bis zu acht aktive Volume-Klonvorgänge gleichzeitig. Anforderungen, die über diese Grenzen hinausgehen, werden zur späteren Verarbeitung in die Warteschlange gestellt.
+
+
+
+== Übersicht über Backup- und Restore-Prozesse für Element Storage
+
+Backups und Restores von Volumes mit anderen SolidFire Storage-Systemen sowie in sekundären Objektspeichern mit Amazon S3 oder OpenStack Swift möglich.
+
+Sie können ein Volume unter folgender Adresse sichern:
+
+* Ein SolidFire Storage-Cluster
+* Ein Amazon S3-Objektspeicher
+* OpenStack Swift Objektspeicher
+
+
+Wenn Sie Volumes aus OpenStack Swift oder Amazon S3 wiederherstellen, benötigen Sie Manifest-Informationen aus dem ursprünglichen Backup-Prozess. Wenn Sie ein Volume wiederherstellen, das auf einem SolidFire Storage-System gesichert wurde, sind keine Manifest-Informationen erforderlich.
+
+
+
+== Sicherungsdomänen
+
+Eine Protection Domain ist ein Knoten oder eine Gruppe von Knoten, die so gruppiert sind, dass ein Teil oder sogar alle Knoten ausfallen könnten, ohne dass die Datenverfügbarkeit beeinträchtigt wird. Protection-Domänen ermöglichen es einem Storage-Cluster, automatisch den Verlust eines Chassis (Chassis-Affinität) oder einer gesamten Domäne (Chassis-Gruppe) zu heilen.
+
+Sie können die Überwachung der Schutzdomäne manuell mit dem Erweiterungspunkt für die NetApp Element-Konfiguration im NetApp Element-Plug-in für vCenter Server aktivieren. Sie können einen Schutz-Domain-Schwellenwert basierend auf Node- oder Chassis-Domänen auswählen. Sie können die Überwachung von Schutzdomänen auch über die Element-API oder die Web-Benutzeroberfläche aktivieren.
+
+Ein Protection Domain-Layout weist jeden Knoten einer bestimmten Protection Domain zu.
+
+Es werden zwei unterschiedliche Protection Domain Layouts unterstützt, sogenannte Protection Domain Levels.
+
+* Auf Node-Ebene befindet sich jeder Node in einer eigenen Protection Domain.
+* Auf Chassis-Ebene befinden sich nur Nodes, die sich ein Chassis teilen, in derselben Protection Domain.
++
+** Das Layout auf Chassis-Ebene wird automatisch von der Hardware bestimmt, wenn der Node zum Cluster hinzugefügt wird.
+** In einem Cluster, in dem sich jeder Node in einem separaten Chassis befindet, sind diese beiden Ebenen funktional identisch.
+
+
+
+
+Wenn Sie ein neues Cluster erstellen und Storage-Nodes verwenden, die sich in einem gemeinsam genutzten Chassis befinden, sollten Sie möglicherweise über die Protection Domains-Funktion einen Ausfallschutz auf Chassis-Ebene in Betracht ziehen.
+
+
+
+== Benutzerdefinierte Sicherungsdomänen
+
+Sie können ein benutzerdefiniertes Schutz-Domain-Layout definieren, das Ihrem spezifischen Gehäuse- und Node-Layout entspricht und wo jeder Knoten mit einer und nur einer benutzerdefinierten Schutzdomäne verknüpft ist. Standardmäßig ist jeder Knoten derselben benutzerdefinierten Standard-Schutzdomäne zugewiesen.
+
+Falls keine benutzerdefinierten Sicherungsdomänen zugewiesen sind:
+
+* Der Cluster-Vorgang wird nicht beeinträchtigt.
+* Die benutzerdefinierte Ebene ist weder tolerant noch widerstandsfähig.
+
+
+Wenn Sie benutzerdefinierte Protection Domains für einen Cluster konfigurieren, gibt es drei mögliche Schutzstufen, die Sie im Element Web UI Dashboard sehen können:
+
+* Nicht geschützt: Das Speicher-Cluster ist nicht vor dem Ausfall einer seiner benutzerdefinierten Schutz-Domains geschützt. Um dies zu beheben, fügen Sie dem Cluster zusätzliche Speicherkapazität hinzu oder konfigurieren Sie die benutzerdefinierten Schutz-Domains des Clusters neu, um das Cluster vor möglichen Datenverlusten zu schützen.
+* Fehlertolerant: Der Speicher-Cluster verfügt über genügend freie Kapazität, um Datenverlust nach dem Ausfall einer seiner benutzerdefinierten Schutz-Domains zu verhindern.
+* Fehler ausfallsicher: Der Speicher-Cluster verfügt über genügend freie Kapazität, um sich nach dem Ausfall einer seiner benutzerdefinierten Schutz-Domains selbst zu heilen. Nach Abschluss des Heilungsprozesses wird das Cluster vor Datenverlust geschützt, wenn weitere Domänen ausfallen sollten.
+
+
+Wenn mehr als eine benutzerdefinierte Schutzdomäne zugewiesen wird, weist jedes Subsystem Duplikate zu separaten benutzerdefinierten Schutzdomänen zu. Ist dies nicht möglich, so wird das Zuweisen von Duplikaten zu separaten Nodes rückgängig gemacht. Jedes Subsystem (z. B. Behälter, Schichten, Protokollendpunktanbieter und Ensemble) erledigt dies unabhängig voneinander.
+
+Über die Element-UI lassen sich link:../storage/task_data_protection_configure_custom_protection_domains.html["Konfigurieren Sie benutzerdefinierte Sicherungsdomänen"], Oder Sie können die folgenden API-Methoden verwenden:
+
+* link:../api/reference_element_api_getprotectiondomainlayout.html["GetProtectionDomainLayout"] - Zeigt an, in welchem Gehäuse und in welcher benutzerdefinierten Schutzdomäne sich jeder Knoten befindet.
+* link:../api/reference_element_api_setprotectiondomainlayout.html["SetProtectionDomainLayout"] - Ermöglicht die Zuweisung einer benutzerdefinierten Schutzdomäne zu jedem Knoten.
+
+
+
+
+== Hochverfügbarkeit mit Double Helix
+
+Die Double Helix Datensicherung ist eine Replizierungsmethode, die mindestens zwei redundante Datenkopien auf alle Laufwerke innerhalb eines Systems verteilt. Der Ansatz „RAID-less“ ermöglicht es einem System, mehrere gleichzeitige Ausfälle auf allen Ebenen des Storage-Systems zu absorbieren und schnell zu reparieren.

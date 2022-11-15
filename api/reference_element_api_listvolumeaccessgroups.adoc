@@ -1,0 +1,138 @@
+---
+permalink: api/reference_element_api_listvolumeaccessgroups.html 
+sidebar: sidebar 
+keywords: volume,access,group,groups,list,listing,listvolumeaccessgroups 
+summary: Sie können die Methode ListVolumeAccessGroups verwenden, um Informationen über die Volume-Zugriffsgruppen zu erhalten, die sich derzeit im System befinden. 
+---
+= ListVolumeAccessGroups
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `ListVolumeAccessGroups` Methode zum Abrufen von Informationen zu den Volume-Zugriffsgruppen, die sich derzeit im System befinden.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Grenze
+ a| 
+Maximale Anzahl der zurückzukehrbaren VolumeAccessGroup-Objekte. Sich gegenseitig ausschließen mit dem Parameter VolumeAccessGroups.
+ a| 
+Ganzzahl
+ a| 
+Unbegrenzt
+ a| 
+Nein
+
+
+
+ a| 
+StartVolumeAccessGroupID
+ a| 
+Die Zugriffsgruppen-ID des Volumes, mit der die Liste gestartet werden soll. Sich gegenseitig ausschließen mit dem Parameter VolumeAccessGroups.
+ a| 
+Ganzzahl
+ a| 
+0
+ a| 
+Nein
+
+
+
+ a| 
+VolumeAccessGroups
+ a| 
+Liste der abzurufenden VolumeAccessGroupID-Werte. Die startVolumeAccessGroupID und die Parameter Limit schließen sich gegenseitig aus.
+ a| 
+Integer-Array
+ a| 
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+VolumeAccessGroups
+ a| 
+Eine Liste von Objekten, die die einzelnen Volume-Zugriffsgruppen beschreiben
+ a| 
+xref:reference_element_api_volumeaccessgroup.adoc[VolumeAccessGroup] Array erledigen
+
+
+
+ a| 
+VolumeAccessGroupsNotFound
+ a| 
+Eine Liste der Volume-Zugriffsgruppen, die vom System nicht gefunden wurden. Diese Option wird angezeigt, wenn Sie den Parameter „VolumeAccessGroups“ verwendet haben und das System eine oder mehrere von Ihnen angegebene Volume-Zugriffsgruppen nicht finden konnte.
+ a| 
+Integer-Array
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "ListVolumeAccessGroups",
+   "params": {
+      "startVolumeAccessGroupID": 3,
+      "limit"   : 1
+   },
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "volumeAccessGroups": [
+      {
+        "attributes": {},
+        "deletedVolumes": [],
+        "initiatorIDs": [],
+        "initiators": [],
+        "name": "example1",
+        "volumeAccessGroupID": 3,
+        "volumes": []
+      }
+    ]
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6

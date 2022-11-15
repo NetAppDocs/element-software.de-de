@@ -1,0 +1,34 @@
+---
+permalink: storage/task_replication_plan_cluster_and_volume_pairing.html 
+sidebar: sidebar 
+keywords: cluster, volume pairing, plan for, real-time replication 
+summary: Für die Echtzeitreplizierung müssen zwei Storage Cluster, auf denen Element Software ausgeführt wird, Volumes auf jedem Cluster gepaart werden und die Replizierung validiert werden. Nach Abschluss der Replikation sollten Sie die Volume-Beziehung löschen. 
+---
+= Planen der Paarung von Clustern und Volumes für die Replizierung in Echtzeit
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Für die Echtzeitreplizierung müssen zwei Storage Cluster, auf denen Element Software ausgeführt wird, Volumes auf jedem Cluster gepaart werden und die Replizierung validiert werden. Nach Abschluss der Replikation sollten Sie die Volume-Beziehung löschen.
+
+.Was Sie und#8217;ll benötigen
+* Für ein oder beide Cluster, die gekoppelt werden, müssen Sie über Administratorrechte verfügen.
+* Alle Node-IP-Adressen in Management- und Storage-Netzwerken für gepaarte Cluster werden miteinander verbunden.
+* Die MTU aller verbundenen Nodes muss identisch sein und von einem End-to-End-System zwischen den Clustern unterstützt werden.
+* Beide Speichercluster sollten eindeutige Cluster-Namen, MVIPs, SVIPs und alle Node-IP-Adressen haben.
+* Der Unterschied zwischen den Element Software-Versionen auf den Clustern ist nicht größer als eine Hauptversion. Wenn der Unterschied größer ist, muss ein Cluster aktualisiert werden, um die Datenreplizierung durchzuführen.
+
+
+
+NOTE: WAN Accelerator Appliances wurden von NetApp bei der Datenreplizierung nicht für den Einsatz qualifiziert. Diese Appliances beeinträchtigen die Komprimierung und Deduplizierung, wenn sie zwischen zwei Clustern, bei denen Daten repliziert werden, bereitgestellt werden. Stellen Sie sicher, dass Sie die Auswirkungen jeder WAN Accelerator Appliance vollständig qualifizieren, bevor Sie sie in einer Produktionsumgebung bereitstellen.
+
+
+
+== Weitere Informationen
+
+* xref:task_replication_pair_clusters.adoc[Paarung von Clustern zur Replizierung]
+* xref:task_replication_pair_volumes.adoc[Paar Volumes]
+* xref:task_replication_assign_replication_source_and_target_to_paired_volumes.adoc[Weisen Sie gepaarten Volumes eine Replikationsquelle und ein Replikationsziel zu]
+

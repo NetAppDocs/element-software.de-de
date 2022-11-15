@@ -1,0 +1,217 @@
+---
+permalink: api/reference_element_api_syncjob.html 
+sidebar: sidebar 
+keywords: object,objects,syncjob 
+summary: Das syncJob-Objekt enthält Informationen zu Klon-, Remote-Replikation- oder Slice-Synchronisierungsjobs, die auf einem Cluster ausgeführt werden. 
+---
+= SyncJob
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das syncJob-Objekt enthält Informationen zu Klon-, Remote-Replikation- oder Slice-Synchronisierungsjobs, die auf einem Cluster ausgeführt werden.
+
+Sie können Synchronisierungsinformationen mit dem abrufen `ListSyncJobs` API-Methode.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+BlockenPerSecond
+ a| 
+Die Anzahl der Datenblöcke, die pro Sekunde vom Quell-Cluster zum Ziel-Cluster übertragen werden. Nur vorhanden, wenn das Typmitglied auf Remote gesetzt ist.
+ a| 
+Schweben
+
+
+
+ a| 
+BranchType
+ a| 
+Dieser Wert wird nur für Synchronisierungsaufträge mit Remote-Replikation zurückgegeben. Mögliche Werte:
+
+* snapshot
+* Datenmenge
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Von: Persezweite
+ a| 
+Die Anzahl der Bytes, die der Klon pro Sekunde verarbeitet. Nur vorhanden, wenn das Typenelement auf Klonen oder Slice eingestellt ist.
+ a| 
+Schweben
+
+
+
+ a| 
+KlonID
+ a| 
+Die ID des Klonvorgangs, der gerade ausgeführt wird. Nur vorhanden, wenn das Typmitglied auf Klon gesetzt ist.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+CurrentBytes
+ a| 
+Die Anzahl der Bytes, die der Klon im Quell-Volume verarbeitet hat. Nur vorhanden, wenn das Typenelement auf Klonen oder Slice eingestellt ist.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+DstService-ID
+ a| 
+Die Service-ID, die das primäre Replikat für das Volume hostet. Nur vorhanden, wenn das Typmitglied auf Remote gesetzt ist.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+DstVolumeID
+ a| 
+Die Ziel-Volume-ID. Nur vorhanden, wenn das Typmitglied auf Clone oder Remote gesetzt ist.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Verstrichene Zeit
+ a| 
+Die verstrichene Zeit in Sekunden seit dem Start des Synchronisierungsjobs.
+ a| 
+Schweben
+
+
+
+ a| 
+GroupCloneID
+ a| 
+Die ID des Gruppenklonvorgangs, der gerade ausgeführt wird.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+NodeID
+ a| 
+Gibt den Node an, auf dem der Klon ausgeführt wird. Nur vorhanden, wenn das Typmitglied auf Klon gesetzt ist.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+%Kompletete
+ a| 
+Der Prozentsatz des Synchronisierungsauftrags.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+RestiningTime
+ a| 
+Die geschätzte Zeit in Sekunden, um den Vorgang abzuschließen.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+SliceID
+ a| 
+Die ID des zu synchronisierenden Slice-Laufwerks.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Stufe
+ a| 
+Nur vorhanden, wenn das Typmitglied auf Remote oder Clone eingestellt ist. Mögliche Werte:
+
+* Metadaten: Die Replizierung bestimmt gerade, welche Daten an das Remote-Cluster übertragen werden müssen. Für diese Phase des Replikationsprozesses wird kein Status gemeldet.
+* Daten: Bei der Replizierung wird der Großteil der Daten auf das Remote-Cluster übertragen.
+* Ganz: Zeigt die Abwärtskompatibilität des Slice für Slice-Sync-Jobs an.
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Snapshot-ID
+ a| 
+Die ID des Snapshot, aus dem der Klon erstellt wurde. Nur vorhanden, wenn das Typmitglied auf Klon gesetzt ist.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+SrcService-ID
+ a| 
+Die Quell-Service-ID.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+SrcVolumeID
+ a| 
+Die ID des Quell-Volume.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Insgesamt Bytes
+ a| 
+Die Gesamtzahl der Bytes des Klons. Nur vorhanden, wenn das Typenelement auf Klonen oder Slice eingestellt ist.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Typ
+ a| 
+Typ des Synchronisierungsvorgangs. Mögliche Werte:
+
+* Klon
+* Schneiden
+* Block-Storage
+* Remote
+
+ a| 
+Zeichenfolge
+
+|===
+
+
+== Weitere Informationen
+
+xref:reference_element_api_listsyncjobs.adoc[ListSyncJobs]

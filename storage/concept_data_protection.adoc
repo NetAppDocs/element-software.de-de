@@ -1,0 +1,52 @@
+---
+permalink: storage/concept_data_protection.html 
+sidebar: sidebar 
+keywords: data protection, protect your data, snapshots, replication, back up 
+summary: Die NetApp Element Software ermöglicht die Datensicherung auf unterschiedliche Weise mit Funktionen wie Snapshots für einzelne Volumes oder Volume-Gruppen, mit Replizierung zwischen Clustern und Volumes auf Element sowie mit Replizierung auf ONTAP Systemen. 
+---
+= Sichern Sie Ihre Daten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die NetApp Element Software ermöglicht die Datensicherung auf unterschiedliche Weise mit Funktionen wie Snapshots für einzelne Volumes oder Volume-Gruppen, mit Replizierung zwischen Clustern und Volumes auf Element sowie mit Replizierung auf ONTAP Systemen.
+
+* *Snapshots*
++
+Bei der Datensicherung nur mit Snapshots werden geänderte Daten zu einem bestimmten Zeitpunkt in ein Remote-Cluster repliziert. Es werden nur die Snapshots repliziert, die auf dem Quellcluster erstellt wurden. Aktive Schreibvorgänge vom Quell-Volume sind nicht.
+
++
+xref:task_data_protection_using_volume_snapshots.adoc[Nutzen Sie Volume Snapshots zur Datensicherung]
+
+* *Remote-Replikation zwischen Clustern und Volumes, die auf Element* ausgeführt werden
++
+Sie können Volume-Daten synchron oder asynchron aus einem der beiden Cluster in einem Cluster-Paar replizieren, die beide im Element für Failover- und Failback-Szenarien ausgeführt werden.
+
++
+xref:task_replication_perform_remote_replication_between_element_clusters.adoc[Remote-Replizierung zwischen Clustern mit NetApp Element Software]
+
+* *Replizierung zwischen Element und ONTAP Clustern mit SnapMirror Technologie*
++
+Mit der NetApp SnapMirror Technologie können Snapshots repliziert werden, die für Disaster Recovery mithilfe von Element in ONTAP erstellt wurden. In einer SnapMirror Beziehung stellt Element einen Endpunkt dar, und ONTAP ist der andere.
+
++
+xref:task_snapmirror_use_replication_between_element_and_ontap_clusters.adoc[SnapMirror Replizierung zwischen Element und ONTAP Clustern]
+
+* *Sichern und Wiederherstellen von Volumes aus SolidFire-, S3- oder Swift-Objektspeichern*
++
+Backups und Restores von Volumes auf anderen SolidFire Storage sowie sekundäre Objektspeicher, die mit Amazon S3 oder OpenStack Swift kompatibel sind.
+
++
+xref:task_data_protection_back_up_and_restore_volumes.adoc[Backup und Restore von Volumes in SolidFire-, S3- oder Swift-Objektspeichern]
+
+
+
+
+
+== Finden Sie weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

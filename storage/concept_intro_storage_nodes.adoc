@@ -1,0 +1,23 @@
+---
+permalink: storage/concept_intro_storage_nodes.html 
+sidebar: sidebar 
+keywords: storage nodes, management nodes, block space, metadata space, data management, storage management, Bond10G, network interface, network, metadata, data storage, storage, drives, network interfaces 
+summary: Ein SolidFire-Storage-Node ist ein Server, der eine Sammlung von Laufwerken enthält, die über die Bond10G-Netzwerkschnittstelle miteinander kommunizieren. Laufwerke im Node enthalten Block- und Metadatenspeicherplatz für den Daten-Storage und das Datenmanagement. 
+---
+= Storage-Nodes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ein SolidFire-Storage-Node ist ein Server, der eine Sammlung von Laufwerken enthält, die über die Bond10G-Netzwerkschnittstelle miteinander kommunizieren. Laufwerke im Node enthalten Block- und Metadatenspeicherplatz für den Daten-Storage und das Datenmanagement.
+
+Storage-Nodes weisen folgende Merkmale auf:
+
+* Jeder Node hat einen eindeutigen Namen. Wenn ein Node-Name nicht von einem Administrator angegeben wird, ist er standardmäßig SF-XXXX, wobei XXXX vier zufällige Zeichen enthält, die vom System generiert werden.
+* Jeder Node verfügt über einen eigenen hochperformanten NVRAM-Schreib-Cache (Non-Volatile Random Access Memory), um die Systemperformance insgesamt zu verbessern und die Schreiblatenz zu reduzieren.
+* Jeder Node ist mit zwei Netzwerken verbunden, Storage und Management, jedes mit zwei unabhängigen Links, um für Redundanz und Performance zu sorgen. Jeder Node benötigt in jedem Netzwerk eine IP-Adresse.
+* Sie können mit neuen Storage-Nodes ein Cluster erstellen oder einem vorhandenen Cluster Storage Nodes hinzufügen, um die Storage-Kapazität und Performance zu steigern.
+* Nodes können jederzeit ohne Serviceunterbrechung zum Cluster hinzugefügt oder aus dem Cluster entfernt werden.
+

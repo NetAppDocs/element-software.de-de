@@ -1,0 +1,564 @@
+---
+permalink: storage/reference_prereq_network_port_requirements.html 
+sidebar: sidebar 
+keywords: network port requirements, TCP ports, firewall, utilities, URL, access attempt, ICMP, MIP, SIP, MVIP, SVIP 
+summary: Möglicherweise müssen Sie die folgenden TCP-Ports über die Edge-Firewall Ihres Rechenzentrums zulassen, damit Sie das System Remote verwalten können und Clients außerhalb Ihres Rechenzentrums eine Verbindung zu Ressourcen herstellen können. Einige dieser Ports sind je nach Nutzung des Systems möglicherweise nicht erforderlich. 
+---
+= Anforderungen an Netzwerk-Ports
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Möglicherweise müssen Sie die folgenden TCP-Ports über die Edge-Firewall Ihres Datacenters zulassen, sodass Sie das System Remote managen und Clients außerhalb Ihres Datacenters eine Verbindung zu Ressourcen herstellen können. Einige dieser Ports sind je nach Nutzung des Systems möglicherweise nicht erforderlich.
+
+Alle Ports sind sofern nicht anders angegeben TCP. Alle Ports sollten eine bidirektionale Kommunikation zwischen dem NetApp Support Server, dem Management-Node und den Nodes zulassen, auf denen die Element Software ausgeführt wird.
+
+[NOTE]
+====
+Die Web-UI und die API von NetApp Hybrid Cloud Control laden Softwarepakete aus dem Online-Software-Repository von NetApp herunter. Aus diesem Grund können einige URLs oder IP-Adressen auf der Grundlage des Inhaltszustellungsnetzwerks auf andere URLs oder IP-Adressen auflösen. Wenn möglich, sollten Sie mit einem Netzwerktechniker zusammenarbeiten, um diese URLs oder IP-Adressen den Firewall-Regeln hinzuzufügen. Gehen Sie dazu wie folgt vor:
+
+.Schritte
+. Verwenden Sie die Wget- oder Curl-Dienstprogramme, um auf eine URL zuzugreifen (z. B. support-sg-nawest.netapp.com).
+. Überprüfen Sie die Konnektivität, wie im folgenden Beispiel gezeigt:
++
+image::network_ports.PNG[Überprüfen Sie die Anschlusskonnektivität]
+
+. Empfangen Sie einen fehlgeschlagene Zugriffe auf die URL (anders als support-sg-nawest.netapp.com).
+. Bearbeiten Sie die Firewall-Regeln, um die neue URL zuzulassen.
+. Wiederholen Sie die obigen Schritte, bis der Zugriffsversuch erfolgreich war.
+
+
+====
+
+TIP: Aktivieren Sie ICMP zwischen dem Managementknoten, Knoten mit Element Software und Cluster MVIP.
+
+Die folgenden Abkürzungen werden in der Tabelle verwendet:
+
+* MIP: Management-IP-Adresse, eine Adresse pro Node
+* SIP: Speicher-IP-Adresse, eine Adresse pro Knoten
+* MVIP: Management der virtuellen IP-Adresse
+* SVIP: Virtuelle Speicher-IP-Adresse
+
+
+[cols="25,25,15,35"]
+|===
+| Quelle | Ziel | Port | Beschreibung 
+
+
+ a| 
+ISCSI-Clients
+ a| 
+Storage Cluster MVIP
+ a| 
+443
+ a| 
+(Optional) UI- und API-Zugriff
+
+
+
+ a| 
+ISCSI-Clients
+ a| 
+Storage Cluster SVIP
+ a| 
+3260
+ a| 
+ISCSI-Kommunikation des Clients
+
+
+
+ a| 
+ISCSI-Clients
+ a| 
+Speicherknoten SIP
+ a| 
+3260
+ a| 
+ISCSI-Kommunikation des Clients
+
+
+
+ a| 
+Management-Node
+ a| 
+sfsupport.solidfire.com
+ a| 
+22
+ a| 
+Reverse-SSH-Tunnel für den Support-Zugriff
+
+
+
+ a| 
+Management-Node
+ a| 
+MIP-Speicher-Node
+ a| 
+22
+ a| 
+SSH-Zugriff für die Unterstützung
+
+
+
+ a| 
+Management-Node
+ a| 
+DNS-Server
+ a| 
+53 TCP/UDP
+ a| 
+DNS-Suche
+
+
+
+ a| 
+Management-Node
+ a| 
+MIP-Speicher-Node
+ a| 
+442
+ a| 
+UI- und API-Zugriff auf Upgrades von Storage-Node und Element Software
+
+
+
+ a| 
+Management-Node
+ a| 
+Storage Cluster MVIP
+ a| 
+442
+ a| 
+UI- und API-Zugriff auf Upgrades von Storage-Node und Element Software
+
+
+
+ a| 
+Management-Node
+ a| 
+Benachrichtigung über neue Version:
+
+* `https://support.netapp.com/aods/`
+
+
+Software-Download:
+
+* `https://support-sg-emea.netapp.com`
+* `https://support-sg-naeast.netapp.com`
+* `https://support-sg-nawest.netapp.com`
+
+ a| 
+443
+ a| 
+Service-Upgrades für Management-Nodes
+
+
+
+ a| 
+Management-Node
+ a| 
+monitoring.solidfire.com
+ a| 
+443
+ a| 
+Berichterstellung für den Storage-Cluster an Active IQ
+
+
+
+ a| 
+Management-Node
+ a| 
+Storage Cluster MVIP
+ a| 
+443
+ a| 
+UI- und API-Zugriff auf Upgrades von Storage-Node und Element Software
+
+
+
+ a| 
+Management-Node
+ a| 
+repo.netapp.com
+ a| 
+443
+ a| 
+Zugriff auf Komponenten, die für die Installation/Aktualisierung einer On-Premises-Implementierung erforderlich sind
+
+
+
+ a| 
+Management-Node
+ a| 
+Witness Node
+ a| 
+9442
+ a| 
+Konfigurations-API-Service pro Node
+
+
+
+ a| 
+Management-Node
+ a| 
+VCenter Server
+ a| 
+9443
+ a| 
+VCenter Plug-in-Registrierung: Der Port kann nach Abschluss der Registrierung geschlossen werden.
+
+
+
+ a| 
+SNMP-Server
+ a| 
+Storage Cluster MVIP
+ a| 
+161 UDP
+ a| 
+SNMP-Abfrage
+
+
+
+ a| 
+SNMP-Server
+ a| 
+MIP-Speicher-Node
+ a| 
+161 UDP
+ a| 
+SNMP-Abfrage
+
+
+
+ a| 
+MIP-Speicher-Node
+ a| 
+DNS-Server
+ a| 
+53 TCP/UDP
+ a| 
+DNS-Suche
+
+
+
+ a| 
+MIP-Speicher-Node
+ a| 
+Management-Node
+ a| 
+80
+ a| 
+Upgrades für Element Software
+
+
+
+ a| 
+MIP-Speicher-Node
+ a| 
+S3/Swift-Endpunkt
+ a| 
+80
+ a| 
+(Optional) HTTP-Kommunikation mit S3/Swift-Endpunkt für Backup und Recovery
+
+
+
+ a| 
+MIP-Speicher-Node
+ a| 
+NTP-Server
+ a| 
+123 UDP
+ a| 
+NTP
+
+
+
+ a| 
+MIP-Speicher-Node
+ a| 
+Management-Node
+ a| 
+162 UDP
+ a| 
+(Optional) SNMP-Traps
+
+
+
+ a| 
+MIP-Speicher-Node
+ a| 
+SNMP-Server
+ a| 
+162 UDP
+ a| 
+(Optional) SNMP-Traps
+
+
+
+ a| 
+MIP-Speicher-Node
+ a| 
+LDAP-Server
+ a| 
+389 TCP/UDP
+ a| 
+(Optional) LDAP-Suche
+
+
+
+ a| 
+MIP-Speicher-Node
+ a| 
+Management-Node
+ a| 
+443
+ a| 
+Upgrades der Element Storage-Firmware
+
+
+
+ a| 
+MIP-Speicher-Node
+ a| 
+Remote Storage Cluster MVIP
+ a| 
+443
+ a| 
+Kommunikation über die Verbindung des Remote-Replikationsclusters
+
+
+
+ a| 
+MIP-Speicher-Node
+ a| 
+MIP für Remote-Storage-Node
+ a| 
+443
+ a| 
+Kommunikation über die Verbindung des Remote-Replikationsclusters
+
+
+
+ a| 
+MIP-Speicher-Node
+ a| 
+S3/Swift-Endpunkt
+ a| 
+443
+ a| 
+(Optional) HTTPS-Kommunikation an S3/Swift-Endpunkt für Backup und Recovery
+
+
+
+ a| 
+MIP-Speicher-Node
+ a| 
+Management-Node
+ a| 
+514 TCP/UDP
+
+10514 TCP/UDP
+ a| 
+Syslog-Weiterleitung
+
+
+
+ a| 
+MIP-Speicher-Node
+ a| 
+Syslog-Server
+ a| 
+514 TCP/UDP
+
+10514 TCP/UDP
+ a| 
+Syslog-Weiterleitung
+
+
+
+ a| 
+MIP-Speicher-Node
+ a| 
+LDAPS Server
+ a| 
+636 TCP/UDP
+ a| 
+LDAPS-Suche
+
+
+
+ a| 
+MIP-Speicher-Node
+ a| 
+MIP für Remote-Storage-Node
+ a| 
+2181
+ a| 
+Cluster-übergreifende Kommunikation für Remote-Replizierung
+
+
+
+ a| 
+Speicherknoten SIP
+ a| 
+Remote-Speicherknoten SIP
+ a| 
+2181
+ a| 
+Cluster-übergreifende Kommunikation für Remote-Replizierung
+
+
+
+ a| 
+Speicherknoten SIP
+ a| 
+Speicherknoten SIP
+ a| 
+3260
+ a| 
+ISCSI miteinander verbinden
+
+
+
+ a| 
+Speicherknoten SIP
+ a| 
+Remote-Speicherknoten SIP
+ a| 
+4000 bis 4020
+ a| 
+Remote-Replizierung: Node-to-Node-Datentransfer
+
+
+
+ a| 
+System Administrator-PC
+ a| 
+Management-Node
+ a| 
+442
+ a| 
+HTTPS-UI-Zugriff auf den Management-Node
+
+
+
+ a| 
+System Administrator-PC
+ a| 
+MIP-Speicher-Node
+ a| 
+442
+ a| 
+HTTPS-UI- und API-Zugriff auf Storage-Node
+
+
+
+ a| 
+System Administrator-PC
+ a| 
+Management-Node
+ a| 
+443
+ a| 
+HTTPS-UI- und API-Zugriff auf den Management-Node
+
+
+
+ a| 
+System Administrator-PC
+ a| 
+Storage Cluster MVIP
+ a| 
+443
+ a| 
+HTTPS-UI- und API-Zugriff auf das Storage-Cluster
+
+
+
+ a| 
+System Administrator-PC
+ a| 
+MIP-Speicher-Node
+ a| 
+443
+ a| 
+Erstellung von HTTPS-Storage-Clustern, UI-Zugriff nach der Implementierung auf das Storage-Cluster
+
+
+
+ a| 
+System Administrator-PC
+ a| 
+Witness Node
+ a| 
+8080
+ a| 
+Witness Node pro Node Web-UI
+
+
+
+ a| 
+VCenter Server
+ a| 
+Storage Cluster MVIP
+ a| 
+443
+ a| 
+VCenter-Plug-in-API-Zugriff
+
+
+
+ a| 
+VCenter Server
+ a| 
+Remote-Plug-in
+ a| 
+8333
+ a| 
+Remote vCenter Plug-in Service
+
+
+
+ a| 
+VCenter Server
+ a| 
+Management-Node
+ a| 
+8443
+ a| 
+(Optional) vCenter Plug-in QoSSIOC-Service.
+
+
+
+ a| 
+VCenter Server
+ a| 
+Storage Cluster MVIP
+ a| 
+8444
+ a| 
+Zugriff auf vCenter VASA Provider (nur VVols)
+
+
+
+ a| 
+VCenter Server
+ a| 
+Management-Node
+ a| 
+9443
+ a| 
+VCenter Plug-in-Registrierung: Der Port kann nach Abschluss der Registrierung geschlossen werden.
+
+|===
+
+
+== Finden Sie weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

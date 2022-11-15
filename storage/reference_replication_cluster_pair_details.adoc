@@ -1,0 +1,40 @@
+---
+permalink: storage/reference_replication_cluster_pair_details.html 
+sidebar: sidebar 
+keywords: cluster pairs, replication, data protection 
+summary: Die Seite Cluster-Paare auf der Registerkarte Datenschutz enthält Informationen zu Clustern, die gekoppelt wurden oder gerade gekoppelt werden. Das System zeigt Pairing- und Fortschrittsmeldungen in der Spalte Status an. 
+---
+= Details zu dem Cluster-Paar
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Seite Cluster-Paare auf der Registerkarte Datenschutz enthält Informationen zu Clustern, die gekoppelt wurden oder gerade gekoppelt werden. Das System zeigt Pairing- und Fortschrittsmeldungen in der Spalte Status an.
+
+* *ID*
++
+Eine systemgenerierte ID für die einzelnen Cluster-Paare:
+
+* *Remote Cluster Name*
++
+Der Name des anderen Clusters im Paar.
+
+* * Remote MVIP*
++
+Die virtuelle Management-IP-Adresse des anderen Clusters im Paar.
+
+* *Status*
++
+Replikationsstatus des Remote-Clusters
+
+* *Replikation Von Volumes*
++
+Die Anzahl der Volumes des Clusters, die zur Replizierung gepaart werden.
+
+* *UUID*
++
+Eine eindeutige ID, die jedem Cluster im Paar gegeben wurde.
+
+

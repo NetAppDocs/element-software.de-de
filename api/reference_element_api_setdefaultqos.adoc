@@ -1,0 +1,139 @@
+---
+permalink: api/reference_element_api_setdefaultqos.html 
+sidebar: sidebar 
+keywords: qos,value,configure,configuring,default,set,setting,setdefaultqos 
+summary: 'Mithilfe der Methode SetDefaultQoS können Sie die Standardwerte Quality of Service \(QoS\) \(gemessen in ein- und Ausgängen pro Sekunde oder IOPS\) für ein Volume konfigurieren.' 
+---
+= SetdefaultQoS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `SetDefaultQoS` Methode zur Konfiguration der standardmäßigen QoS-Werte (Quality of Service) für ein Volume (gemessen in ein- und Ausgaben pro Sekunde oder IOPS)
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+IOPS-Minimum
+ a| 
+Die Mindestanzahl kontinuierlich IOPS, die vom Cluster zu einem Volume bereitgestellt wird.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Maximale IOPS-Werte
+ a| 
+Die maximale Anzahl kontinuierlicher IOPS, die vom Cluster zu einem Volume bereitgestellt wird.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+IOPS
+ a| 
+Die maximale Anzahl an IOPS, die in einem kurzen Burst-Szenario zulässig sind.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+IOPS-Minimum
+ a| 
+Die Mindestanzahl kontinuierlich IOPS, die vom Cluster zu einem Volume bereitgestellt wird.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Maximale IOPS-Werte
+ a| 
+Die maximale Anzahl kontinuierlicher IOPS, die vom Cluster zu einem Volume bereitgestellt wird.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+IOPS
+ a| 
+Die maximale Anzahl an IOPS, die in einem kurzen Burst-Szenario zulässig sind.
+ a| 
+Ganzzahl
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "SetDefaultQoS",
+    "params": {
+        "burstIOPS":8000,
+        "maxIOPS":1000,
+        "minIOPS":200
+    },
+    "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+    "id":1,
+    "result": {
+        "burstIOPS":8000,
+        "maxIOPS":1000,
+        "minIOPS":200
+    ​}
+}
+----
+
+
+== Neu seit Version
+
+9.6

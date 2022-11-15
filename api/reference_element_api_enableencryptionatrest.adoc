@@ -1,0 +1,129 @@
+---
+permalink: api/reference_element_api_enableencryptionatrest.html 
+sidebar: sidebar 
+keywords: encryption,enable,enabling,EnableEncryptionAtRest 
+summary: 'Sie können die EnableVerschlüsselungAtRest-Methode verwenden, um die 256-Bit-Verschlüsselung des Advanced Encryption Standard \(AES\) im Ruhezustand auf dem Cluster zu aktivieren, sodass der Cluster den für die Laufwerke verwendeten Verschlüsselungsschlüssel auf jedem Node verwalten kann. Diese Funktion ist standardmäßig nicht aktiviert.' 
+---
+= EnableVerschlüsselungAtZiel
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `EnableEncryptionAtRest` Methode zur Aktivierung der 256-Bit-Verschlüsselung nach AES (Advanced Encryption Standard) im Ruhezustand im Cluster, damit der Cluster die für die Laufwerke auf jedem Node verwendete Verschlüsselung verwalten kann. Diese Funktion ist standardmäßig nicht aktiviert.
+
+
+TIP: Mithilfe der können Sie den aktuellen Status der Verschlüsselung im Ruhezustand und/oder Softwareverschlüsselung im Ruhezustand auf dem Cluster anzeigen link:../api/reference_element_api_getclusterinfo["Abrufen der Cluster Info-Methode"^]. Sie können das verwenden `GetSoftwareEncryptionAtRestInfo` link:../api/reference_element_api_getsoftwareencryptionatrestinfo["Methode zum Abrufen von Informationen, die das Cluster verwendet, um Daten im Ruhezustand zu verschlüsseln"^].
+
+
+NOTE: Bei dieser Methode wird die Softwareverschlüsselung im Ruhezustand nicht aktiviert. Dies kann nur mit dem durchgeführt werden link:../api/reference_element_api_createcluster.html["Cluster-Methode erstellen"^] Mit `enableSoftwareEncryptionAtRest` Auf einstellen `true`.
+
+Wenn Sie die Verschlüsselung im Ruhezustand aktivieren, managt der Cluster automatisch die Schlüssel intern für die Laufwerke auf jedem Node im Cluster.
+
+Wenn eine keyProviderID angegeben wird, wird das Passwort entsprechend dem Typ des Schlüsselanbieters generiert und abgerufen. Dies erfolgt in der Regel mit einem KMIP-Schlüsselserver (Key Management Interoperability Protocol) im Fall eines KMIP-Schlüsselanbieters. Nach diesem Vorgang gilt der angegebene Anbieter als aktiv und kann erst gelöscht werden, wenn die Verschlüsselung im Ruhezustand deaktiviert ist `DisableEncryptionAtRest` Methode.
+
+
+NOTE: Wenn Sie über einen Node-Typ verfügen, dessen Modellnummer in „-NE“ endet, wird der angezeigt `EnableEncryptionAtRest` Der Methodenanruf schlägt mit der Antwort „Verschlüsselung nicht zulässig. Nicht verschlüsselbarer Node durch das Cluster erkannt“.
+
+
+NOTE: Sie sollten die Verschlüsselung nur aktivieren oder deaktivieren, wenn das Cluster ausgeführt wird und sich in einem ordnungsgemäßen Zustand befindet. Sie können die Verschlüsselung nach Ihrem Ermessen und so oft wie nötig aktivieren oder deaktivieren.
+
+
+NOTE: Dieser Prozess ist asynchron und gibt vor Aktivierung der Verschlüsselung eine Antwort zurück. Sie können das verwenden `GetClusterInfo` Methode zum Abfragen des Systems, um zu sehen, wann der Prozess abgeschlossen ist.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+ID von Schlüsselausweisungs-ID
+ a| 
+Die ID eines KMIP-Schlüsselanbieters zu verwenden.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode hat keine Rückgabewerte.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "EnableEncryptionAtRest",
+   "params": {},
+   "id": 1
+}
+----
+
+
+== Antwortbeispiele
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel aus der EnableVerschlüsselungAtRest-Methode ähnelt. Es gibt kein Ergebnis zu berichten.
+
+[listing]
+----
+{
+   "id": 1,
+   "result": {}
+}
+----
+Während die Verschlüsselung im Ruhezustand auf einem Cluster aktiviert wird, gibt GetClusterInfo ein Ergebnis zurück, das den Status von Verschlüsselung im Ruhezustand („Encryption AttRestState“) als „Enabled“ beschreibt. Nachdem die Verschlüsselung im Ruhezustand vollständig aktiviert ist, ändert sich der zurückgegebene Status in „aktiviert“.
+
+[listing]
+----
+{
+   "id": 1,
+      "result": {
+         "clusterInfo": {
+            "attributes": { },
+               "encryptionAtRestState": "enabling",
+            "ensemble": [
+               "10.10.5.94",
+               "10.10.5.107",
+               "10.10.5.108"
+            ],
+            "mvip": "192.168.138.209",
+            "mvipNodeID": 1,
+            "name": "Marshall",
+            "repCount": 2,
+            "svip": "10.10.7.209",
+            "svipNodeID": 1,
+            "uniqueID": "91dt"
+      }
+   }
+}
+----
+
+
+== Neu seit Version
+
+9.6
+
+[discrete]
+== Weitere Informationen
+
+* link:reference_element_api_secureerasedrives.html["SecureEraseDrives"]
+* link:reference_element_api_getclusterinfo.html["GetClusterInfo"]
+* https://www.netapp.com/data-storage/solidfire/documentation/["Ressourcen-Seite zu NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Dokumentation für frühere Versionen von NetApp SolidFire und Element Produkten"^]
+

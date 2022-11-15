@@ -1,0 +1,40 @@
+---
+permalink: storage/reference_data_manage_volumes_qos_policies_details.html 
+sidebar: sidebar 
+keywords: qos policies 
+summary: Über die Registerkarte Management können Sie Details zu QoS-Richtlinien anzeigen. 
+---
+= Details zu QoS-Richtlinien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Über die Registerkarte Management können Sie Details zu QoS-Richtlinien anzeigen.
+
+* *ID*
++
+Die vom System generierte ID für die QoS-Richtlinie.
+
+* *Name*
++
+Der benutzerdefinierte Name für die QoS-Richtlinie.
+
+* *IOPS-Minimum*
++
+Die Mindestzahl an IOPS für das Volume garantiert.
+
+* *Maximale IOPS*
++
+Maximal zulässige IOPS für das Volume
+
+* *IOPS-Burst*
++
+Die maximale Anzahl an IOPS, die über einen kurzen Zeitraum für das Volume zulässig sind. Standard = 15,000.
+
+* *Bände*
++
+Zeigt die Anzahl der Volumes, die diese Richtlinie verwenden. Diese Zahl verweist auf eine Tabelle von Volumes, auf die die Richtlinie angewendet wurde.
+
+

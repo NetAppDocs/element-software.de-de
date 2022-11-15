@@ -1,0 +1,42 @@
+---
+permalink: api/reference_element_api_loggingserver.html 
+sidebar: sidebar 
+keywords: object,objects,loggingServer 
+summary: Das loggingServer-Objekt enthält Informationen zu allen für das Storage-Cluster konfigurierten Protokollierungs-Hosts. Sie können GetRemoteLoggingHosts verwenden, um zu bestimmen, was die aktuellen Logging Hosts sind und dann SetRemoteLoggingHosts verwenden, um die gewünschte Liste der aktuellen und neuen Logging Hosts festzulegen. 
+---
+= LoggingServer
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das loggingServer-Objekt enthält Informationen zu allen für das Storage-Cluster konfigurierten Protokollierungs-Hosts. Verwenden Sie können `GetRemoteLoggingHosts` Um zu bestimmen, was die aktuellen Protokollierungs-Hosts sind, und verwenden Sie sie dann `SetRemoteLoggingHosts` So legen Sie die gewünschte Liste der aktuellen und neuen Protokollierungs-Hosts fest:
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Host
+ a| 
+IP-Adresse des Protokollservers.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Port
+ a| 
+Portnummer, die für die Kommunikation mit dem Protokollserver verwendet wird.
+ a| 
+Ganzzahl
+
+|===

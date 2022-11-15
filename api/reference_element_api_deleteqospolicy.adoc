@@ -1,0 +1,77 @@
+---
+permalink: api/reference_element_api_deleteqospolicy.html 
+sidebar: sidebar 
+keywords: QoS,policy,policies,delete,deleting,DeleteQoSPolicy 
+summary: Sie können die Methode DeleteQoSPolicy verwenden, um eine QoS-Richtlinie aus dem System zu löschen. Die QoS-Einstellungen für alle mit dieser Richtlinie erstellten oder geänderten Volumes sind unbeeinträchtigt. 
+---
+= DeleteQoSPolicy
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `DeleteQoSPolicy` Methode zum Löschen einer QoS-Richtlinie aus dem System. Die QoS-Einstellungen für alle mit dieser Richtlinie erstellten oder geänderten Volumes sind unbeeinträchtigt.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+QosPolicyID
+ a| 
+Die ID der zu löschenden QoS-Richtlinie
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode hat keine Rückgabewerte.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "id": 663,
+  "method": "DeleteQoSPolicy",
+  "params": {
+    "qosPolicyID": 4
+  }
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 663,
+  "result": {}
+}
+----
+
+
+== Neu seit Version
+
+9.6

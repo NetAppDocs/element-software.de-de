@@ -1,0 +1,60 @@
+---
+permalink: api/reference_element_api_fipsnodereport.html 
+sidebar: sidebar 
+keywords: objects,object,fipsNodeReport 
+summary: Das Objekt fipsNodeReport enthält Informationen zur Unterstützung von FIPS 140-2 für einen einzelnen Node im Storage-Cluster. Sie können diese Informationen mit der GetFipsReport-Methode abrufen. 
+---
+= FipsNodeReport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Objekt fipsNodeReport enthält Informationen zur Unterstützung von FIPS 140-2 für einen einzelnen Node im Storage-Cluster. Sie können diese Informationen mithilfe von abrufen `GetFipsReport` Methode.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+NodeID
+ a| 
+Die ID des Node, der die Informationen meldet.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+FipsDrives
+ a| 
+Gibt an, ob die FIPS 140-2-2-Laufwerkverschlüsselung für diesen Node aktiviert ist. Mögliche Werte:
+
+* Keine: Dieser Node ist nicht zur Verschlüsselung von FIPS-Laufwerken fähig.
+* Partiell: Node ist FIPS-Laufwerksverschlüsselung möglich, aber nicht alle vorhandenen Laufwerke sind FIPS-fähige Laufwerke.
+* Bereit: Node ist für FIPS-Laufwerksverschlüsselung geeignet. Dabei handelt es sich entweder um FIPS-fähige Laufwerke oder es sind keine Laufwerke vorhanden.
+
+ a| 
+FipsDrivesStatusTyp
+
+
+
+ a| 
+HttpsEnabled
+ a| 
+Gibt an, ob die HTTPS-Verschlüsselung nach FIPS 140-2 für diesen Node aktiviert ist oder nicht. Mögliche Werte:
+
+* Wahr: Aktiviert
+* False: Deaktiviert
+
+ a| 
+boolesch
+
+|===

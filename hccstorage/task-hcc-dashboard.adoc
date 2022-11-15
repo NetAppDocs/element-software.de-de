@@ -1,0 +1,138 @@
+---
+sidebar: sidebar 
+permalink: hccstorage/task-hcc-dashboard.html 
+summary: Sie können Speicherressourcen auf dem NetApp Hybrid Cloud Control Dashboard anzeigen. Darüber hinaus können Sie die Storage-Kapazität und die Storage-Performance überwachen. 
+keywords: netapp, element, hcc, hybrid cloud control, storage, storage performance, capacity 
+---
+= Überwachen Sie die Speicherressourcen über das Hybrid Cloud Control Dashboard
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit der NetApp Hybrid Cloud Control Dashboard können Sie alle Storage-Ressourcen auf einen Blick anzeigen. Darüber hinaus können Sie die Storage-Kapazität und die Storage-Performance überwachen.
+
+
+NOTE: Wenn Sie zum ersten Mal eine neue NetApp Hybrid Cloud Control Session starten, kann es möglicherweise zu Verzögerungen beim Laden der NetApp Hybrid Cloud Control Dashboard-Ansicht kommen, wenn der Management-Node viele Cluster verwaltet. Die Ladezeit hängt von der Anzahl der Cluster ab, die aktiv vom Management-Node gemanagt werden. Bei späteren Starts erleben Sie schnellere Ladezeiten.
+
+*  the NetApp HCC Dashboard
+*  storage resources
+*  storage capacity
+*  storage performance
+
+
+
+
+== Zugriff auf das NetApp HCC Dashboard
+
+. Öffnen Sie die IP-Adresse des Management-Node in einem Webbrowser. Beispiel:
++
+[listing]
+----
+https://[management node IP address]
+----
+. Melden Sie sich bei NetApp Hybrid Cloud Control an, indem Sie die Anmeldedaten des SolidFire All-Flash-Storage-Cluster-Administrators bereitstellen.
+. Zeigen Sie das Hybrid Cloud Control Dashboard an.
+
+
+image::hcc_dashboard_all.PNG[HCC-Dashboard]
+
+
+
+== Monitoring von Storage-Ressourcen
+
+Nutzen Sie den Fensterbereich *Storage*, um Ihre gesamte Speicherumgebung anzuzeigen. Sie können die Anzahl der Storage-Cluster, Storage-Nodes und Volumes insgesamt überwachen.
+
+Um Details anzuzeigen, wählen Sie im Bereich Speicher die Option *Details anzeigen*.
+
+image::hcc_dashboard_storage_node_number.PNG[Übersicht Storage]
+
+
+NOTE: Die Gesamtzahl der Storage-Nodes enthält keine Witness-Nodes aus Storage-Clustern mit zwei Nodes. Die Witness-Nodes sind in die Nummer Nodes im Detailbereich für diesen Cluster enthalten.
+
+
+TIP: Um die letzten Speichercluster-Daten anzuzeigen, verwenden Sie die Seite Speichercluster, auf der Abfragen häufiger durchgeführt werden als auf dem Dashboard.
+
+
+
+== Monitoring der Storage-Kapazität
+
+Das Monitoring der Storage-Kapazität Ihrer Umgebung ist von entscheidender Bedeutung. Mit dem Teilfenster Storage-Kapazität können Sie die Effizienz Ihrer Storage-Kapazität bestimmen, wobei oder ohne aktivierte Komprimierung, Deduplizierung und Thin Provisioning-Funktionen die Effizienz erhöht wird.
+
+Auf der Registerkarte *RAW* sehen Sie den gesamten verfügbaren physischen Speicherplatz in Ihrem Cluster sowie Informationen zum bereitgestellten Speicher auf der Registerkarte *EFFEKTIV*.
+
+image::hcc_dashboard_storage_capacity_effective.png[HCC-Dashboard > Bereich Speicherkapazität]
+
+.Schritte
+. Wählen Sie die Registerkarte * RAW* aus, um den gesamten physischen Speicherplatz anzuzeigen, der in Ihrem Cluster verwendet und verfügbar ist.
++
+Sehen Sie sich die vertikalen Linien an, um zu bestimmen, ob die genutzte Kapazität unter dem Wert „Warnung“, „Fehler“ oder „kritische Schwellenwerte“ liegt. Bewegen Sie den Mauszeiger über die Linien, um Details anzuzeigen.
+
++
+
+NOTE: Sie können den Schwellenwert für Warnung festlegen, der standardmäßig 3% unter dem Fehlerschwellenwert liegt. Die Fehler- und kritischen Schwellenwerte sind voreingestellt und können nicht anhand des Designs konfiguriert werden. Der Fehlerschwellenwert gibt an, dass weniger als ein Knoten der Kapazität im Cluster verbleibt. Schritte zum Einstellen des Schwellenwerts finden Sie unter link:../storage/task_system_manage_cluster_set_the_cluster_full_threshold.html["Cluster-Schwellenwert wird eingestellt"].
+
++
+
+TIP: Informationen zur entsprechenden Cluster-Schwellenwertelement-API finden Sie unter link:../api/reference_element_api_getclusterfullthreshold.html["„GetClusterFullThreshold“"] In der Dokumentation _Element Software API_. Weitere Informationen zur Block- und Metadatenkapazität finden Sie unter link:../storage/concept_monitor_understand_cluster_fullness_levels.html["Allgemeines zu Cluster-Auslastungsebenen"] In der Dokumentation _Element Software_.
+
+. Wählen Sie die Registerkarte * EFFECTIVE* aus, um Informationen über den insgesamt bereitgestellten Storage für verbundene Hosts anzuzeigen und Effizienzbewertungen anzuzeigen.
++
+.. Optional können Sie sich *mit Thin Provisioning* um Thin Provisioning-Effizienzraten im Balkendiagramm für die effektive Kapazität anzuzeigen.
+.. *Balkendiagramm für effektive Kapazität*: Prüfen Sie die vertikalen Linien, um festzustellen, ob Ihre verwendete Kapazität unter der Gesamtsumme oder weniger als Warnung, Fehler oder kritische Schwellenwerte liegt. Ähnlich wie die Registerkarte „Raw“ können Sie den Mauszeiger über die vertikalen Linien bewegen, um Details anzuzeigen.
+.. *Effizienz*: Prüfen Sie diese Bewertungen, um festzustellen, welche Vorteile die Effizienz Ihrer Storage-Kapazität durch aktivierte Komprimierung, Deduplizierung und Thin Provisioning-Funktionen erzielt wird. Wenn die Komprimierung beispielsweise „1,3x“ anzeigt, bedeutet dies, dass die Storage-Effizienz bei aktivierter Komprimierung 1.3-mal effizienter ist als ohne sie.
++
+
+NOTE: Die Gesamteffizienz entspricht (maxUsedSpace * Efficiency Factor) / 2, wobei Efficiency Factor = (thinProvisioningFactor * deDuplicationFactor * comressionFactor). Wenn Thin Provisioning nicht aktiviert ist, wird dies nicht in der Gesamteffizienz berücksichtigt.
+
+.. Wenn die effektive Storage-Kapazität einen Fehler oder einen kritischen Schwellenwert überschreitet, sollten Sie die Daten auf dem System löschen.
+
+
+. Für weitere Analysen und historischen Kontext, schauen Sie sich https://activeiq.solidfire.com/["Details zum NetApp SolidFire Active IQ"^].
+
+
+
+
+== Monitoring der Storage-Performance
+
+Sie können sich ansehen, wie viel IOPS oder Durchsatz Sie aus einem Cluster erhalten können, ohne die nützliche Performance dieser Ressource durch Verwendung des Teilfensters „Storage Performance“ zu überschreiten. Die Storage-Performance ist der Punkt, an dem die maximale Auslastung erreicht wird, bevor die Latenz zum Problem wird.
+
+Im Bereich Storage Performance können Sie feststellen, ob die Performance an einem Punkt erreicht wird, an dem die Performance abnimmt, wenn sich die Workloads erhöhen.
+
+Die Informationen in diesem Teilfenster werden alle 10 Sekunden aktualisiert und zeigen einen Durchschnitt aller Punkte im Diagramm an.
+
+Details zur zugehörigen Element-API-Methode finden Sie im link:../api/reference_element_api_getclusterstats.html["GetClusterStats"] Methode in der API-Dokumentation _Element Software_.
+
+.Schritte
+. Zeigen Sie das Teilfenster Speicher-Performance an. Zeigen Sie für Details den Mauszeiger auf Punkte im Diagramm.
++
+.. *IOPS* Registerkarte: Siehe die aktuellen Operationen pro Sekunde. Suchen Sie nach Trends in Daten oder Spitzen. Wenn Sie beispielsweise sehen, dass die maximale IOPS 160.000 beträgt und 100.000 freie oder verfügbare IOPS sind, ziehen Sie möglicherweise nach dem Hinzufügen weiterer Workloads zu diesem Cluster in Betracht. Wenn andererseits zu sehen ist, dass nur 140K verfügbar ist, können Sie unter Umständen Workloads auslagern oder Ihr System erweitern.
++
+image::hcc_dashboard_storage_perform_iops.png[„Storage Performance“ > „IOPS“]
+
+.. *Throughput* Tab: Monitoring-Muster oder Durchsatzspitzen. Überwachen Sie darüber hinaus kontinuierlich hohe Durchsatzwerte. Dies kann darauf hindeuten, dass sich die maximale Performance der Ressource nähert.
++
+image::hcc_dashboard_storage_perform_throughput.png[„Storage Performance“ > „Throughput“]
+
+.. *Auslastung* Registerkarte: Überwachen Sie die Auslastung von IOPS in Bezug auf die insgesamt verfügbaren IOPS, die auf der Clusterebene zusammengefasst sind.
++
+image::hcc_dashboard_storage_perform_utlization.png[„Storage Performance“ > Registerkarte „Auslastung“]
+
+
+
+. Werfen Sie weitere Analysen mit dem NetApp Element Plug-in für vCenter Server an die Storage-Performance.
++
+https://docs.netapp.com/us-en/vcp/vcp_task_reports_volume_performance.html["Performance, die im NetApp Element Plug-in für vCenter Server dargestellt ist"^].
+
+
+
+[discrete]
+== Weitere Informationen
+
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+

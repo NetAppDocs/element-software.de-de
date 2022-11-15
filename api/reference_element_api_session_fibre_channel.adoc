@@ -1,0 +1,90 @@
+---
+permalink: api/reference_element_api_session_fibre_channel.html 
+sidebar: sidebar 
+keywords: object,objects,session 
+summary: Das Sitzungsobjekt enthält Informationen zu jeder Fibre-Channel-Sitzung, die für das Cluster sichtbar ist und auf welchen Zielports es angezeigt wird. Sie können diese Informationen mit der ListFiberChannelSessions API-Methode abrufen. 
+---
+= Sitzung (Fibre Channel)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Sitzungsobjekt enthält Informationen zu jeder Fibre-Channel-Sitzung, die für das Cluster sichtbar ist und auf welchen Zielports es angezeigt wird. Sie können diese Informationen mit dem abrufen `ListFibreChannelSessions` API-Methode.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+InitiatorWWPN
+ a| 
+Der World Wide Port Name (WWPN) des Initiators, der im Ziel-Port angemeldet ist.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+NodeID
+ a| 
+Der Knoten, der die Fibre Channel-Sitzung besitzt.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Initiator
+ a| 
+Informationen über den Server-Initiator dieser Fibre Channel-Sitzung. Mitglieder:
+
+* Alias: Der dem Initiator zugewiesene Anzeigename.
+* Attribute: Die Attribute dieses Initiators.
+* InitiatorID: Die ID dieses Initiators.
+* Initiatorname: Der Name dieses Initiators.
+* VolumeAccessGroups: Eine Liste der Volume-Zugriffsgruppen, die diesem Initiator zugeordnet sind.
+
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+Service-ID
+ a| 
+Die Service-ID des an dieser Sitzung beteiligten Zielports.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+TargetWWPN
+ a| 
+Der WWPN des an dieser Sitzung beteiligten Zielports.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+VolumeAccessGroupID
+ a| 
+Die ID der Volume Access Group, zu der der initiatorWWPN gehört. Wenn es sich nicht um eine Volume Access Group handelt, ist dieser Wert Null.
+ a| 
+Ganzzahl
+
+|===
+
+
+== Weitere Informationen
+
+xref:reference_element_api_listfibrechannelsessions.adoc[ListFiberChannelSessions]

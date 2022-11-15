@@ -1,0 +1,86 @@
+---
+permalink: storage/task_data_manage_vvol_view_virtual_volume_details.html 
+sidebar: sidebar 
+keywords: virtual volumes, view details vvols, vvols performance activity, vSphere 
+summary: Sie können Informationen zu virtuellen Volumes für alle aktiven virtuellen Volumes auf dem Cluster in der Element UI prüfen. Sie können außerdem Performance-Aktivitäten für jedes virtuelle Volume anzeigen, einschließlich Eingaben, Ausgaben, Durchsatz, Latenz, Warteschlangentiefe und Volume-Informationen 
+---
+= Details zu virtuellen Volumes anzeigen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Informationen zu virtuellen Volumes für alle aktiven virtuellen Volumes auf dem Cluster in der Element UI prüfen. Sie können außerdem Performance-Aktivitäten für jedes virtuelle Volume anzeigen, einschließlich Eingaben, Ausgaben, Durchsatz, Latenz, Warteschlangentiefe und Volume-Informationen
+
+.Was Sie und#8217;ll benötigen
+* Die VVols Funktion sollte in der Element UI für den Cluster aktiviert sein.
+* Sie sollten einen zugeordneten Speicher-Container erstellt haben.
+* Sie sollten vSphere Cluster entsprechend der VVols Funktion der Element Software konfigurieren.
+* Sie sollten mindestens eine VM in vSphere erstellt haben.
+
+
+.Schritte
+. Klicken Sie auf *VVols* > *Virtual Volumes*.
++
+Die Informationen für alle aktiven virtuellen Volumes werden angezeigt.
+
+. Klicken Sie auf das Symbol *Aktionen* für das virtuelle Volume, das Sie überprüfen möchten.
+. Wählen Sie im Menü Ergebnis die Option *Details anzeigen*.
+
+
+
+
+== Details
+
+Die Seite Virtual Volumes auf der Registerkarte VVols bietet Informationen zu jedem aktiven virtuellen Volume des Clusters, z. B. Volume-ID, Snapshot ID, ID des übergeordneten virtuellen Volumes und die ID des virtuellen Volumes.
+
+* *Volumen-ID*: Die ID des zugrunde liegenden Volumens.
+* *Snapshot ID*: Die ID des zugrunde liegenden Volumen-Snapshots. Der Wert ist 0, wenn das virtuelle Volume keinen SolidFire-Snapshot darstellt.
+* *Parent Virtual Volume ID*: Die virtuelle Volume-ID des übergeordneten virtuellen Volume. Wenn die ID null ist, ist das virtuelle Volume unabhängig und es besteht keine Verknüpfung zu einem übergeordneten Volume.
+* *Virtual Volume ID*: Die UUID des virtuellen Volumes.
+* *Name*: Der Name, der dem virtuellen Volume zugewiesen ist.
+* *Storage Container*: Der Speicher-Container, der das virtuelle Volume besitzt.
+* *Gast-OS-Typ*: Betriebssystem, das mit dem virtuellen Volume verknüpft ist.
+* *Virtual Volume Typ*: Der virtuelle Volume-Typ: Konfiguration, Daten, Speicher, Swap, oder andere.
+* *Zugriff*: Die Lese-Schreib-Berechtigungen, die dem virtuellen Volume zugewiesen sind.
+* *Größe*: Die Größe des virtuellen Volumes in GB oder gib.
+* *Snapshots*: Die Anzahl der damit verbundenen Snapshots. Klicken Sie auf die Nummer, um die Snapshot-Details zu verknüpfen.
+* *Minimum IOPS*: Die minimale IOPS QoS Einstellung des virtuellen Volumes.
+* *Maximale IOPS*: Die maximale IOPS-QoS-Einstellung des virtuellen Volumes.
+* *Burst IOPS*: Die maximale Burst-QoS-Einstellung des virtuellen Volumes.
+* *VMW_VmID*: Informationen in Feldern, die mit "VMW_" vorstehen, werden von VMware definiert.
+* *Erstellungszeit*: Die Zeit, die die Erstellung des virtuellen Volumes abgeschlossen wurde.
+
+
+
+
+== Details für einzelne virtuelle Volumes
+
+Die Seite Virtual Volumes auf der Registerkarte VVols bietet folgende Informationen zu virtuellen Volumes, wenn Sie ein einzelnes virtuelles Volume auswählen und dessen Details anzeigen.
+
+* *VMW_XXX*: Informationen in Feldern, die mit "VMW_" konfrontiert sind, werden von VMware definiert.
+* *Parent Virtual Volume ID*: Die virtuelle Volume-ID des übergeordneten virtuellen Volume. Wenn die ID null ist, ist das virtuelle Volume unabhängig und es besteht keine Verknüpfung zu einem übergeordneten Volume.
+* *Virtual Volume ID*: Die UUID des virtuellen Volumes.
+* *Virtual Volume Typ*: Der virtuelle Volume-Typ: Konfiguration, Daten, Speicher, Swap, oder andere.
+* *Volumen-ID*: Die ID des zugrunde liegenden Volumens.
+* *Zugriff*: Die Lese-Schreib-Berechtigungen, die dem virtuellen Volume zugewiesen sind.
+* *Kontoname*: Name des Kontos, das den Datenträger enthält.
+* *Zugriffsgruppen*: Zugeordnete Volume-Zugriffsgruppen.
+* *Gesamtvolumen Größe*: Insgesamt bereitgestellte Kapazität in Bytes.
+* *Non-Zero Blocks*: Gesamtzahl von 4KiB Blöcken mit Daten nach Abschluss des letzten Garbage Collection Vorgangs.
+* *Zero Blocks*: Gesamtzahl der 4KiB-Blöcke ohne Daten nach Abschluss der letzten Runde der Müllentnahme.
+* *Snapshots*: Die Anzahl der damit verbundenen Snapshots. Klicken Sie auf die Nummer, um die Snapshot-Details zu verknüpfen.
+* *Minimum IOPS*: Die minimale IOPS QoS Einstellung des virtuellen Volumes.
+* *Maximale IOPS*: Die maximale IOPS-QoS-Einstellung des virtuellen Volumes.
+* *Burst IOPS*: Die maximale Burst-QoS-Einstellung des virtuellen Volumes.
+* *Enable 512*: Da virtuelle Volumes immer 512-Byte-Blockgrößen-Emulation verwenden, ist der Wert immer ja.
+* *Volumen gekoppelt*: Gibt an, ob ein Volumen gekoppelt ist.
+* *Erstellungszeit*: Die Zeit, die die Erstellung des virtuellen Volumes abgeschlossen wurde.
+* *Blocks Größe*: Größe der Blöcke auf dem Volumen.
+* *Nicht ausgerichtete Schreibvorgänge*: Für 512e Volumen, die Anzahl der Schreibvorgänge, die sich nicht an einer grenze des 4k-Sektors befanden. Eine hohe Anzahl von nicht ausgerichteten Schreibvorgängen kann auf eine falsche Ausrichtung der Partition hindeuten.
+* *Nicht ausgerichtete Lesevorgänge*: Für 512e Volumen, die Anzahl der Leseoperationen, die sich nicht an der grenze des 4k-Sektors befanden. Eine hohe Anzahl von nicht ausgerichteten Lesevorgängen kann auf eine falsche Ausrichtung der Partition hindeuten.
+* *ScsiEUIDeviceID*: Weltweit eindeutige SCSI-Geräte-ID für das Volumen im 16-Byte-Format EUI-64.
+* *ScsiNAADeviceID*: Weltweit eindeutige SCSI-Geräte-ID für das Volume im NAA IEEE-Registered Extended-Format.
+* *Attribute*: Liste von Name-Wert-Paaren im JSON-Objektformat.
+

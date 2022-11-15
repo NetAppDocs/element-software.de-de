@@ -1,0 +1,69 @@
+---
+permalink: api/reference_element_api_keyproviderkmip.html 
+sidebar: sidebar 
+keywords: key provider,KMIP,keys 
+summary: 'Das SchlüsselProviderKmip-Objekt beschreibt einen Schlüsselanbieter für das Schlüsselmanagement \ (KMIP\). Ein Schlüsselanbieter ist sowohl ein Mechanismus als auch ein Speicherort zum Abrufen von Authentifizierungsschlüsseln für Cluster-Funktionen wie Verschlüsselung im Ruhezustand.' 
+---
+= KeProviderKmip
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das keProviderKmip-Objekt beschreibt einen KMIP-Schlüsselanbieter (Key Management Interoperability Protocol). Ein Schlüsselanbieter ist sowohl ein Mechanismus als auch ein Speicherort zum Abrufen von Authentifizierungsschlüsseln für Cluster-Funktionen wie Verschlüsselung im Ruhezustand.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+ID von Schlüsselausweisungs-ID
+ a| 
+Die ID des KMIP-Schlüsselanbieters. Dies ist ein eindeutiger Wert, der vom Cluster während der Erstellung des Schlüsselanbieters zugewiesen wird und der nicht geändert werden kann.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+SchlüsselProviderIActive
+ a| 
+Trifft zu, wenn der KMIP-Schlüsselanbieter aktiv ist. Ein Anbieter gilt als aktiv, wenn ausstehende Schlüssel vorhanden sind, die erstellt, aber noch nicht gelöscht wurden und daher als noch in Gebrauch gehalten werden.
+ a| 
+boolesch
+
+
+
+ a| 
+SchlüsselProvidername
+ a| 
+Der Name des KMIP-Schlüsselanbieters.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+KeyServerIDs
+ a| 
+Eine Schlüssel-Server-ID, die diesem Anbieter zugeordnet ist. Der Server muss hinzugefügt werden, bevor dieser Provider aktiv werden kann. Der Server kann nicht entfernt werden, während dieser Provider aktiv ist. Für jeden Provider wird nur eine Server-ID unterstützt.
+ a| 
+Integer-Array
+
+
+
+ a| 
+KmCapabilities
+ a| 
+Den Funktionsumfang dieses KMIP-Anbieters einschließlich Details zur zugrunde liegenden Bibliothek, FIPS-Compliance, SSL-Provider usw.
+ a| 
+Zeichenfolge
+
+|===

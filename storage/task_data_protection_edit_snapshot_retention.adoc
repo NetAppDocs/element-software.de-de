@@ -1,0 +1,28 @@
+---
+permalink: storage/task_data_protection_edit_snapshot_retention.html 
+sidebar: sidebar 
+keywords: snapshot retention, edit, set a retention period, edit retention period 
+summary: 'Sie können den Aufbewahrungszeitraum für einen Snapshot ändern, um zu steuern, wann oder ob das System Snapshots löscht. Die von Ihnen angegebene Aufbewahrungsdauer beginnt, wenn Sie das neue Intervall eingeben. Wenn Sie einen Aufbewahrungszeitraum festlegen, können Sie einen Zeitraum auswählen, der zum aktuellen Zeitpunkt beginnt \(die Aufbewahrung wird nicht aus der Snapshot-Erstellungszeit berechnet\). Sie können Intervalle in Minuten, Stunden und Tagen festlegen.' 
+---
+= Bearbeiten der Snapshot-Aufbewahrung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Aufbewahrungszeitraum für einen Snapshot ändern, um zu steuern, wann oder ob das System Snapshots löscht. Die von Ihnen angegebene Aufbewahrungsdauer beginnt, wenn Sie das neue Intervall eingeben. Wenn Sie einen Aufbewahrungszeitraum festlegen, können Sie einen Zeitraum auswählen, der zum aktuellen Zeitpunkt beginnt (die Aufbewahrung wird nicht aus der Snapshot-Erstellungszeit berechnet). Sie können Intervalle in Minuten, Stunden und Tagen festlegen.
+
+.Schritte
+. Klicken Sie Auf *Datenschutz* > *Snapshots*.
+. Klicken Sie auf das Symbol *Aktionen* für den zu bearbeitenden Snapshot.
+. Klicken Sie im Menü Ergebnis auf *Bearbeiten*.
+. *Optional:* Aktivieren Sie das Kontrollkästchen**Snapshot in Replikation einschließen, wenn gekoppelt**, um sicherzustellen, dass der Snapshot bei der Replikation erfasst wird, wenn das übergeordnete Volume gekoppelt ist.
+. *Optional:* Wählen Sie eine Aufbewahrungsoption für den Snapshot:
++
+** Klicken Sie auf *Keep Forever*, um den Snapshot auf dem System auf unbestimmte Zeit zu behalten.
+** Klicken Sie auf *Aufbewahrungszeitraum festlegen* und verwenden Sie die Datumspinnkästen, um eine Zeitdauer für das System auszuwählen, um den Snapshot beizubehalten.
+
+
+. Klicken Sie Auf *Änderungen Speichern*.
+

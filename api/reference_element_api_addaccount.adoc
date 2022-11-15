@@ -1,0 +1,172 @@
+---
+permalink: api/reference_element_api_addaccount.html 
+sidebar: sidebar 
+keywords: addaccount,add,adding,account,accounts 
+summary: 'Sie können AddAccount verwenden, um dem System ein neues Konto hinzuzufügen. Sie können diese Methode auch verwenden, um unter dem neuen Konto neue Volumes zu erstellen, während das Konto erstellt wird. Die für das Konto angegebenen Einstellungen für das Challenge-Handshake Authentication Protocol \ (CHAP\) gelten für alle Volumes, die dem Konto gehören.' 
+---
+= AddAccount
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwenden Sie können `AddAccount` Um dem System ein neues Konto hinzuzufügen. Sie können diese Methode auch verwenden, um unter dem neuen Konto neue Volumes zu erstellen, während das Konto erstellt wird. Die für das Konto angegebenen CHAP-Einstellungen (Challenge-Handshake Authentication Protocol) gelten für alle Volumes, die dem Konto gehören.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+`attributes`
+ a| 
+Liste von Name-Wert-Paaren im JSON-Objektformat.
+ a| 
+JSON-Objekt
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+`enableChap`
+ a| 
+Gibt an, ob CHAP-Kontoanmeldeinformationen von einem Initiator für den Zugriff auf Volumes verwendet werden können.
+ a| 
+boolesch
+ a| 
+Richtig
+ a| 
+Nein
+
+
+
+ a| 
+`initiatorSecret`
+ a| 
+Der CHAP-Schlüssel, der für den Initiator verwendet werden soll. Dieses Geheimnis muss 12 bis 16 Zeichen lang sein und undurchdringlich sein. Der Initiator-CHAP-Schlüssel muss eindeutig sein und darf nicht mit dem Ziel-CHAP-Schlüssel übereinstimmen. Wenn nicht angegeben, wird ein zufälliges Geheimnis erstellt.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+`targetSecret`
+ a| 
+Der CHAP-Schlüssel, der für das Ziel verwendet werden soll (gegenseitige CHAP-Authentifizierung). Dieses Geheimnis muss 12 bis 16 Zeichen lang sein und undurchdringlich sein. Der Ziel-CHAP-Schlüssel muss eindeutig sein und darf nicht mit dem CHAP-Schlüssel des Initiators übereinstimmen. Wenn nicht angegeben, wird ein zufälliges Geheimnis erstellt.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+`username`
+ a| 
+Der eindeutige Benutzername für dieses Konto. (Muss 1 bis 64 Zeichen lang sein).
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Konto
+ a| 
+Ein Objekt, das Informationen zum neu erstellten Konto enthält.
+ a| 
+xref:reference_element_api_account.adoc[Konto]
+
+
+
+ a| 
+AccountID
+ a| 
+Die ID des neu erstellten Kontoobjekts.
+ a| 
+Ganzzahl
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+	"method": "AddAccount",
+    "params": {
+     "username"  : "bobsmith",
+     "initiatorSecret" : "168[#5A757ru268)",
+     "targetSecret" : "tlt&lt;,8TUYa7bC",
+     "attributes" : {
+       "billingcode" : 2345
+     }
+   },
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "account": {
+      "accountID": 90,
+      "attributes": {
+        "billingcode": 2345
+      },
+      "initiatorSecret": "168[#5A757ru268)",
+      "status": "active",
+      "storageContainerID": "00000000-0000-0000-0000-000000000000",
+      "targetSecret": "tlt&lt;,8TUYa7bC",
+      "username": "bobsmith",
+      "volumes": [],
+      "enableChap": true
+    },
+    "accountID": 90
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6

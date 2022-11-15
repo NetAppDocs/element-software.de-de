@@ -1,0 +1,136 @@
+---
+permalink: api/reference_element_api_modifyvolumeaccessgrouplunassignments.html 
+sidebar: sidebar 
+keywords: volumes,volume,defining,define,modify,modifying,edit,editing,change,changing,modifyvolumeaccessgrouplunassignments,access,group,lun,assignment 
+summary: Sie können die Methode ModifyVolumeAccessGroupLunAssignments verwenden, um benutzerdefinierte LUN-Zuweisungen für bestimmte Volumes zu definieren. 
+---
+= ModifyVolumeAccessGroupLunAssignments
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `ModifyVolumeAccessGroupLunAssignments` Methode zum Definieren benutzerdefinierter LUN-Zuweisungen für bestimmte Volumes
+
+Diese Methode ändert nur die LUN-Werte, die im Parameter „lunAssignments“ in der Zugriffsgruppe „Volume“ festgelegt sind. Alle anderen LUN-Zuweisungen bleiben unverändert.
+
+Die LUN-Zuweisungswerte müssen für Volumes in einer Volume-Zugriffsgruppe eindeutig sein. Sie können keine doppelten LUN-Werte innerhalb einer Volume-Zugriffsgruppe definieren. Sie können jedoch dieselben LUN-Werte auch in verschiedenen Volume-Zugriffsgruppen wieder verwenden.
+
+
+NOTE: Gültige LUN-Werte sind 0 bis 16383. Das System generiert eine Ausnahme, wenn Sie einen LUN-Wert außerhalb dieses Bereichs übergeben. Wenn eine Ausnahme besteht, werden keine der angegebenen LUN-Zuweisungen geändert.
+
+ACHTUNG:
+
+Wenn Sie eine LUN-Zuweisung für ein Volume mit aktiver I/O ändern, kann der I/O unterbrochen werden. Sie sollten die Serverkonfiguration ändern, bevor Sie die Volume-LUN-Zuweisungen ändern.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+
+
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+VolumeAccessGroupID
+ a| 
+Eindeutige Zugriffsgruppen-ID des Volumes, für die die LUN-Zuweisungen geändert werden.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+LunAssignments
+ a| 
+Die Volume-IDs mit den neuen zugewiesenen LUN-Werten.
+ a| 
+Integer-Array
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+VolumeAccessGroupLunAssignments
+ a| 
+Ein Objekt, das Details zu den geänderten LUN-Zuordnungen der Zugriffsgruppe für Volumes enthält.
+ a| 
+JSON-Objekt
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "ModifyVolumeAccessGroupLunAssignments",
+   "params": {
+       "volumeAccessGroupID" : 218,
+       "lunAssignments" : [
+           {"volumeID" : 832, "lun" : 0},
+           {"volumeID" : 834, "lun" : 1}
+        ]
+    },
+    "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "volumeAccessGroupLunAssignments": {
+      "deletedLunAssignments": [],
+      "lunAssignments": [
+        {
+          "lun": 0,
+          "volumeID": 832
+        },
+        {
+          "lun": 1,
+          "volumeID": 834
+        }
+      ],
+      "volumeAccessGroupID": 218
+    }
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6

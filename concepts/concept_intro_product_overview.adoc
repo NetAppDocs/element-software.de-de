@@ -1,0 +1,55 @@
+---
+permalink: concepts/concept_intro_product_overview.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Ein All-Flash-Storage-System von SolidFire besteht aus separaten Hardwarekomponenten \ (Laufwerk und Nodes\), die in einem einzigen Pool von Storage-Ressourcen kombiniert werden. Dieser Unified Cluster stellt ein einziges Storage-System zur Verwendung durch externe Clients dar und wird mit der NetApp Element Software gemanagt.' 
+---
+= Produktübersicht
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ein SolidFire All-Flash-Storage-System besteht aus separaten Hardwarekomponenten (Laufwerke und Nodes), die in einem einzelnen Pool der Storage-Ressourcen kombiniert werden. Dieser Unified Cluster stellt ein einziges Storage-System zur Verwendung durch externe Clients dar und wird mit der NetApp Element Software gemanagt.
+
+Mit der Element Schnittstelle, der API oder anderen Managementtools können Sie die Kapazität und Performance des SolidFire Cluster-Storage überwachen und Storage-Aktivitäten in einer mandantenfähigen Infrastruktur managen.
+
+
+
+== Funktionen der SolidFire
+
+Ein SolidFire System umfasst folgende Funktionen:
+
+* Bietet hochperformanten Storage für Ihre große Private-Cloud-Infrastruktur
+* Flexible Skalierung bei sich ändernden Storage-Anforderungen
+* Verwendet eine API-gestützte Softwareschnittstelle für Storage-Managementelemente
+* Garantierte Performance dank Quality of Service-Richtlinien
+* Umfasst einen automatischen Lastausgleich über alle Nodes im Cluster hinweg
+* Automatische Ausbalancierung von Clustern beim Hinzufügen oder Entfernen von Nodes
+
+
+
+
+== Implementierungsoptionen von SolidFire –
+
+SolidFire bietet verschiedene Implementierungsoptionen:
+
+* Verwenden Sie die von NetApp bereitgestellten Storage-Nodes und sind in die NetApp Element Software integriert
++
+link:../concepts/concept_solidfire_concepts_solidfire_architecture_overview.html["Übersicht über die All-Flash-Storage-Architektur von SolidFire"]
+
+* Verwenden Sie Ihren eigenen Server zur Ausführung von Element Software mithilfe von Container-SolidFire Enterprise SDS
++
+link:../esds/concept_get_started_esds.html["Erste Schritte mit NetApp SolidFire Enterprise SDS"]
+
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/["SolidFire All-Flash-Storage im Überblick"^]
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

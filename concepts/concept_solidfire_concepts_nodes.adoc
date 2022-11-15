@@ -1,0 +1,98 @@
+---
+permalink: concepts/concept_solidfire_concepts_nodes.html 
+sidebar: sidebar 
+keywords: what is, node, management node, storage node, fibre channel, state, pending, active 
+summary: Nodes sind die Hardware, die in einem Cluster gruppiert ist und als Block-Storage- oder Computing-Ressourcen aufgerufen werden kann. 
+---
+= Knoten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nodes sind Hardware- oder virtuelle Ressourcen, die in einem Cluster gruppiert werden, um Block-Storage- und Computing-Funktionen bereitzustellen.
+
+NetApp Element Software definiert verschiedene Node-Rollen für ein Cluster. Die Typen der Node-Rollen sind die folgenden:
+
+*  node
+*  node
+*  Channel node
+
+
+ states of operation,Nodes-Status Abhängig von Cluster-Zuordnung.
+
+
+
+== Management-Node
+
+Ein Management-Node ist eine Virtual Machine, mit der Systemservices wie Monitoring und Telemetrie aktualisiert und bereitgestellt, Cluster-Ressourcen und -Einstellungen gemanagt, Systemtests und Dienstprogramme ausgeführt und der NetApp Support-Zugriff zur Fehlerbehebung aktiviert werden.link:../concepts/concept_intro_management_node.html["Weitere Informationen ."]
+
+
+
+== Storage-Node
+
+Ein SolidFire-Storage-Node ist ein Server, der eine Sammlung von Laufwerken enthält, die über die Bond10G-Netzwerkschnittstelle miteinander kommunizieren. Laufwerke im Node enthalten Block- und Metadatenspeicherplatz für den Daten-Storage und das Datenmanagement. Jeder Node enthält ein Factory Image der NetApp Element Software.
+
+Storage-Nodes weisen folgende Merkmale auf:
+
+* Jeder Node hat einen eindeutigen Namen. Wenn ein Node-Name nicht von einem Administrator angegeben wird, ist er standardmäßig SF-XXXX, wobei XXXX vier zufällige Zeichen enthält, die vom System generiert werden.
+* Jeder Node verfügt über einen eigenen hochperformanten NVRAM-Schreib-Cache (Non-Volatile Random Access Memory), um die Systemperformance insgesamt zu verbessern und die Schreiblatenz zu reduzieren.
+* Jeder Node ist mit zwei Netzwerken verbunden, Storage und Management, jedes mit zwei unabhängigen Links, um für Redundanz und Performance zu sorgen. Jeder Node benötigt in jedem Netzwerk eine IP-Adresse.
+* Sie können mit neuen Storage-Nodes ein Cluster erstellen oder einem vorhandenen Cluster Storage Nodes hinzufügen, um die Storage-Kapazität und Performance zu steigern.
+* Nodes können jederzeit ohne Serviceunterbrechung zum Cluster hinzugefügt oder aus dem Cluster entfernt werden.
+
+
+
+
+== Fibre Channel-Node
+
+SolidFire Fibre Channel Nodes stellen Konnektivität zu einem Fibre Channel Switch bereit, den Sie mit Fibre Channel Clients verbinden können. Fibre Channel Nodes fungieren als Protokollkonverter zwischen den Fibre Channel- und iSCSI-Protokollen. So können Sie jedem neuen oder vorhandenen SolidFire Cluster Fibre Channel-Konnektivität hinzufügen.
+
+Fibre-Channel-Nodes weisen folgende Merkmale auf:
+
+* Fibre Channel Switches managen den Zustand der Fabric und bieten optimierte Verbindungen.
+* Der Datenverkehr zwischen zwei Ports fließt nur durch die Switches; er wird nicht an einen anderen Port übertragen.
+* Der Ausfall eines Ports ist isoliert, hat keine Auswirkungen auf den Betrieb anderer Ports.
+* Mehrere Ports können gleichzeitig in einem Fabric kommunizieren.
+
+
+
+
+== Node-Status des Vorgangs
+
+[role="lead"]
+Je nach Konfigurationsstufe kann ein Node in einem von mehreren Status vorhanden sein.
+
+* *Verfügbar*
++
+Dem Node ist kein Cluster-Name zugewiesen, der noch nicht Teil eines Clusters ist.
+
+* *Ausstehend*
++
+Der Node ist konfiguriert und kann einem zugewiesenen Cluster hinzugefügt werden.
+
++
+Für den Zugriff auf den Node ist keine Authentifizierung erforderlich.
+
+* *Ausstehend Aktiv*
++
+Das System installiert gerade kompatible Element Software auf dem Node. Nach Abschluss der Migration wird der Node in den Status „aktiv“ verschoben.
+
+* * Aktiv*
++
+Der Knoten ist an einem Cluster beteiligt.
+
++
+Zum Ändern des Node ist eine Authentifizierung erforderlich.
+
+
+
+In jedem dieser Zustände werden einige Felder schreibgeschützt.
+
+[discrete]
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

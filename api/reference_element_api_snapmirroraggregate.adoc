@@ -1,0 +1,87 @@
+---
+permalink: api/reference_element_api_snapmirroraggregate.html 
+sidebar: sidebar 
+keywords: object,objects,snapMirrorAggregate 
+summary: Das SnapMirrorAggregat enthält Informationen zu den verfügbaren ONTAP Aggregaten, bei denen es sich um Sammlungen von Festplatten handelt, die Volumes als Storage zur Verfügung gestellt werden. Sie können diese Informationen mit der ListSnapMirrorAggregates API-Methode erhalten. 
+---
+= SnapMirror Aggregat
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das SnapMirrorAggregat enthält Informationen zu den verfügbaren ONTAP Aggregaten, bei denen es sich um Sammlungen von Festplatten handelt, die Volumes als Storage zur Verfügung gestellt werden. Sie können diese Informationen mit der ListSnapMirrorAggregates API-Methode erhalten.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+SnapMirrorEndpointID
+ a| 
+Die ID des Ziel-ONTAP-Systems.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+AggregateName
+ a| 
+Der Name des Aggregats.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+NodeName
+ a| 
+Der Name des ONTAP Node, der zu diesem Aggregat gehört.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+GrößeVerfügbar
+ a| 
+Die Anzahl der im Aggregat verbleibenden verfügbaren Bytes.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+GrößeGesamt
+ a| 
+Die Gesamtgröße (in Bytes) des Aggregats.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+%Usedacacity
+ a| 
+Der Prozentsatz des derzeit verwendeten Speicherplatzes.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+VolumeAnzahl
+ a| 
+Anzahl der Volumes im Aggregat.
+ a| 
+Ganzzahl
+
+|===

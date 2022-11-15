@@ -1,0 +1,54 @@
+---
+permalink: api/concept_element_api_multitenant_networking_api_methods.html 
+sidebar: sidebar 
+keywords: multitenant,network,networking,api,prerequisites,requirements,virtual,tenant 
+summary: Das mandantenfähige Netzwerk in Element Storage-Clustern ermöglicht den Datenverkehr zwischen mehreren Clients, die sich in separaten logischen Netzwerken befinden, ohne Layer-3-Routing mit einem Element Storage-Cluster verbunden werden. 
+---
+= Mandantenfähige Netzwerk-API-Methoden
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das mandantenfähige Netzwerk in Element Storage-Clustern ermöglicht den Datenverkehr zwischen mehreren Clients, die sich in separaten logischen Netzwerken befinden, ohne Layer-3-Routing mit einem Element Storage-Cluster verbunden werden.
+
+Verbindungen zum Storage-Cluster sind im Netzwerk-Stack durch VLAN-Tagging getrennt.
+
+
+
+== Voraussetzungen für die Einrichtung eines mandantenfähigen virtuellen Netzwerks
+
+* Sie müssen den Block der Client-Netzwerk-IP-Adressen identifiziert haben, die den virtuellen Netzwerken auf den Storage-Nodes zugewiesen werden sollen.
+* Sie müssen eine SVIP-Adresse (Client Storage Network IP) für den gesamten Storage-Datenverkehr als Endpunkt angegeben haben.
+
+
+
+
+== Reihenfolge der Vorgänge virtueller Netzwerke
+
+. Verwenden Sie die AddVirtualNetwork-Methode, um die IP-Adressen, die Sie eingeben, in Massen bereitzustellen.
++
+Nachdem Sie ein virtuelles Netzwerk hinzugefügt haben, führt der Cluster automatisch die folgenden Schritte aus:
+
++
+** Jeder Storage-Node erstellt eine virtuelle Netzwerkschnittstelle.
+** Jedem Speicherknoten wird eine VLAN-Adresse zugewiesen, die über das virtuelle SVIP weitergeleitet werden kann.
+** Bei einem Neubooten eines Node bleiben VLAN-IP-Adressen auf jedem Node erhalten.
+
+
+. Wenn die virtuelle Netzwerkschnittstelle und die VLAN-Adressen zugewiesen wurden, können Sie dem virtuellen SVIP Client-Netzwerkverkehr zuweisen.
+
+
+
+
+== Weitere Informationen
+
+* xref:concept_element_api_virtual_network_naming_conventions.adoc[Namenskonventionen für virtuelle Netzwerke]
+* xref:reference_element_api_addvirtualnetwork.adoc[AddVirtualNetwork]
+* xref:reference_element_api_modifyvirtualnetwork.adoc[ModifyVirtualNetwork]
+* xref:reference_element_api_listvirtualnetworks.adoc[ListVirtualNetworks]
+* xref:reference_element_api_removevirtualnetwork.adoc[RemoveVirtualNetwork]
+* https://www.netapp.com/data-storage/solidfire/documentation/["Ressourcen-Seite zu NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Dokumentation für frühere Versionen von NetApp SolidFire und Element Produkten"^]
+

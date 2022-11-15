@@ -1,0 +1,26 @@
+---
+permalink: storage/concept_system_manage_accounts_overview.html 
+sidebar: sidebar 
+keywords: element, chap, cluster, accounts, administrator 
+summary: In SolidFire Storage-Systemen können Mandanten Konten verwenden, um Clients eine Verbindung zu Volumes in einem Cluster zu ermöglichen. Sie können auch Cluster-Administratorkonten für ein SolidFire Storage-System verwalten. 
+---
+= Konten verwalten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+In SolidFire Storage-Systemen können Mandanten Konten verwenden, um Clients eine Verbindung zu Volumes in einem Cluster zu ermöglichen. Wenn Sie ein Volume erstellen, wird es einem bestimmten Konto zugewiesen. Sie können auch Cluster-Administratorkonten für ein SolidFire Storage-System verwalten.
+
+* link:task_data_manage_accounts_work_with_accounts_task.html["Arbeiten Sie mit Konten, die CHAP verwenden"]
+* link:concept_system_manage_manage_cluster_administrator_users.html["Verwalten von Benutzerkonten für Cluster-Administratoren"]
+
+
+
+
+== Finden Sie weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

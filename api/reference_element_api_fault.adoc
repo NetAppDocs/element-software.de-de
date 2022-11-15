@@ -1,0 +1,174 @@
+---
+permalink: api/reference_element_api_fault.html 
+sidebar: sidebar 
+keywords: object,objects,fault 
+summary: Das Fehlerobjekt enthält Informationen über Fehler, die im Cluster erkannt werden. Die ListenClusterStandards-Methode gibt Clusterfehlerinformationen zurück. 
+---
+= Fehler
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Fehlerobjekt enthält Informationen über Fehler, die im Cluster erkannt werden. Der `ListClusterFaults` Die Methode gibt Cluster-Fehlerinformationen zurück.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+ClusterFaultID
+ a| 
+Die eindeutige ID, die jedem Cluster-Fehler zugeordnet ist.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Codieren
+ a| 
+Der Fehlercode für den bestimmten Fehler, der erkannt wurde. Weitere Informationen finden Sie unter Cluster-Fehlercodes.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Daten
+ a| 
+Zusätzliche, Fehler-spezifische Informationen.
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+Datum
+ a| 
+Die aktuelle Zeit im UTC+0-Format.
+ a| 
+ISO 8601-Zeichenfolge
+
+
+
+ a| 
+Details
+ a| 
+Beschreibung der Störung mit weiteren Details.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+DriveID
+ a| 
+Die erste Laufwerk-ID in der Liste der Einfahrten. Wenn die Liste der driveID leer ist (d. h. keine Fehler zurückgegeben wurden, die für Laufwerke erforderlich sind), ist dieser Wert 0.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Fahrausweise
+ a| 
+Eine Liste der DriveID-Werte für die Laufwerke, auf die sich dieser Fehler bezieht. Bei Fehlern, die sich mit Laufwerken befassen, enthalten. Wenn keine, ist dies ein leeres Array.
+ a| 
+Integer-Array
+
+
+
+ a| 
+NodeHardwareFaultID
+ a| 
+Die Kennung, die einem Hardwarefehler im Cluster zugewiesen ist.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+NodeID
+ a| 
+Die Node-ID für den Node, auf den sich dieser Fehler bezieht. Bei Node- und Laufwerksfehlern enthalten; andernfalls auf 0 gesetzt.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Behoben
+ a| 
+Der aufgelöste Status des Fehlers. Mögliche Werte:
+
+* True: Der Fehler wird nicht mehr erkannt.
+* Falsch: Der Fehler ist immer noch vorhanden.
+
+ a| 
+boolesch
+
+
+
+ a| 
+ResolvedDate
+ a| 
+Datum und Uhrzeit, zu der der Fehler behoben wurde.
+ a| 
+ISO 8601-Zeichenfolge
+
+
+
+ a| 
+Service-ID
+ a| 
+Der Dienst, der dem Fehler zugeordnet ist. Dieser Wert ist „0“ (Null), wenn der Fehler nicht einem Dienst zugeordnet ist.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Schweregrad
+ a| 
+Der Schweregrad des Fehlers. Mögliche Werte:
+
+* Warnung: Ein kleines Problem. Das Cluster funktioniert und Upgrades sind auf dieser Schweregrade zulässig.
+* Fehler: Ein Ausfall, der den Service im Allgemeinen nicht beeinträchtigen sollte (außer möglicher Performance-Abfall oder HA-Verlust). Einige Funktionen sind möglicherweise deaktiviert.
+* Kritisch: Ein schwerwiegender Fehler, der den Dienst beeinträchtigt. Das System kann keine API-Anfragen oder Client-I/O bedienen und besteht ein Datenverlustrisiko.
+* BestPractice: Fehler, die durch eine suboptimale Systemkonfiguration ausgelöst werden.
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Typ
+ a| 
+Die Art des Fehlers. Mögliche Werte:
+
+* Node: Ein Fehler, der einen ganzen Node betrifft.
+* Antrieb: Ein Fehler, der einen einzelnen Antrieb betrifft.
+* Cluster: Ein Fehler, der das gesamte Cluster betrifft.
+* Service: Ein Fehler, der einen Dienst auf dem Cluster betrifft.
+* Volumen: Ein Fehler, der ein individuelles Volumen beeinflusst.
+
+ a| 
+Zeichenfolge
+
+|===
+
+
+== Weitere Informationen
+
+* xref:reference_element_api_listclusterfaults.adoc[ListenClusterstandards]
+* link:../storage/reference_monitor_cluster_fault_codes.html["Cluster-Fehlercodes"]
+

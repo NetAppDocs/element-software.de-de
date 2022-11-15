@@ -1,0 +1,90 @@
+---
+permalink: api/reference_element_api_abortsnapmirrorrelationship.html 
+sidebar: sidebar 
+keywords:  
+summary: Die Web-UI der Element Software verwendet die AbortSnapMirrorRelationship-Methode, um SnapMirror Transfers zu stoppen, die bereits gestartet, aber noch nicht abgeschlossen sind. 
+---
+= AbortSnapMirrorBeziehung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Web-UI der Element Software verwendet das `AbortSnapMirrorRelationship` Methode zum Stoppen von SnapMirror Transfers, die gestartet wurden, aber noch nicht abgeschlossen sind.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+SnapMirrorEndpointID
+ a| 
+Die Endpunkt-ID des Remote-ONTAP-Storage-Systems, die mit dem Element Storage-Cluster kommunizieren
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Zielvolumen
+ a| 
+Der Zieldatenträger in der SnapMirror Beziehung.
+ a| 
+xref:reference_element_api_snapmirrorvolumeinfo.adoc[SnapMirrorVolumeInfo]
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+ClearCheckpoint
+ a| 
+Legt fest, ob der Kontrollpunkt für den Neustart gelöscht werden soll oder nicht. Mögliche Werte:
+
+* Richtig
+* Falsch
+
+ a| 
+boolesch
+ a| 
+Falsch
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+SnapMirror Beziehung
+ a| 
+Ein Objekt mit Informationen über die abgebrochene SnapMirror Beziehung.
+ a| 
+xref:reference_element_api_snapmirrorrelationship.adoc[SnapMirror Beziehung]
+
+|===
+
+
+== Neu seit Version
+
+10.1

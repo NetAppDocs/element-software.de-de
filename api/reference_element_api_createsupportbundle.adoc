@@ -1,0 +1,158 @@
+---
+permalink: api/reference_element_api_createsupportbundle.html 
+sidebar: sidebar 
+keywords: create,creating,support,bundle,CreateSupportBundle 
+summary: Sie können das CreateSupportBundle verwenden, um eine Support Bundle-Datei unter dem Verzeichnis des Node zu erstellen. Nach der Erstellung wird das Bundle auf dem Node als tar.gz Datei gespeichert. 
+---
+= CreateSupportBundle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwenden Sie können `CreateSupportBundle` Um eine Support Bundle-Datei unter dem Verzeichnis des Node zu erstellen. Nach der Erstellung wird das Bundle als tar-Datei auf dem Knoten gespeichert (die Option gz-Komprimierung ist über den Parameter extraArgs verfügbar.)
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Beetname
+ a| 
+Eindeutiger Name für das Support-Bundle. Wenn kein Name angegeben wird, werden „Supportbundle“ und der Node-Name als Dateiname verwendet.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+ExtraArgs
+ a| 
+Verwenden Sie '--compress gz', um das Support-Paket als tar.gz-Datei zu erstellen.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+TimeoutSec
+ a| 
+Die Anzahl der Sekunden, die das Skript für das Support-Bundle ausgeführt wird.
+ a| 
+Ganzzahl
+ a| 
+1500
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Details
+ a| 
+Details zum Support-Bundle. Mögliche Werte:
+
+* BundleName: Der in der CreateSupportBundleAPI-Methode angegebene Name. Falls kein Name angegeben wurde, wird „Supportbundle“ verwendet.
+* ExtraArgs: Die Argumente wurden mit dieser Methode bestanden.
+* Dateien: Eine Liste der vom System erstellten Support Bundle-Dateien.
+* Ausgabe: Die Kommandozeilenausgabe aus dem Skript, das das Supportpaket erstellt hat.
+* TimeoutSec: Die Anzahl der Sekunden, die das Skript des Support-Bundles vor dem Anhalten ausgeführt wird.
+* url: URL zum erstellten Support-Paket.
+
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+Dauer
+ a| 
+Die Zeit, die zum Erstellen des Support-Bundles im Format HH:MM:SS.ssssss verwendet wurde.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Ergebnis
+ a| 
+Erfolg oder Misserfolg des Support-Bundle-Vorgangs.
+ a| 
+Zeichenfolge
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+ "method": "CreateSupportBundle",
+"params": {
+  "extraArgs": "--compress gz"
+ },
+"id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+"id": 1,
+"result": {
+  "details": {
+    "bundleName": "supportbundle",
+    "extraArgs": "--compress gz",
+    "files": [
+         "supportbundle.nodehostname.tar.gz"
+     ],
+     "output": "timeout -s KILL 1500s /sf/scripts/sfsupportbundle --quiet --compress gz /tmp/solidfire-dtemp.1L6bdX/supportbundle<br><br>Moved '/tmp/solidfire-dtemp.1L6bdX/supportbundle.nodehostname.tar.gz' to /tmp/supportbundles",
+      "timeoutSec": 1500,
+      "url": [
+          "https://nodeIP:442/config/supportbundles/supportbundle.nodehostname.tar.gz"
+      ]
+    },
+    "duration": "00:00:43.101627",
+    "result": "Passed"
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6

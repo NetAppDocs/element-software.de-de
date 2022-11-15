@@ -1,0 +1,26 @@
+---
+permalink: api/concept_element_api_snapshots_overview.html 
+sidebar: sidebar 
+keywords: snapshot,overview 
+summary: Ein Volume Snapshot ist eine zeitpunktgenaue Kopie eines Volumes. Sie können Snapshots verwenden, um ein Volume wieder in den Zustand zu versetzen, in dem es zum Zeitpunkt der Snapshot-Erstellung war. 
+---
+= Snapshots – Überblick
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ein Volume Snapshot ist eine zeitpunktgenaue Kopie eines Volumes. Sie können Snapshots verwenden, um ein Volume wieder in den Zustand zu versetzen, in dem es zum Zeitpunkt der Snapshot-Erstellung war.
+
+Sie können Volume Snapshots gruppieren, sodass zugehörige Volumes konsistent gesichert oder gesichert werden können. Ein GruppenSnapshot erfasst ein Point-in-Time-Image aller Volume-Slice-Dateien. Anschließend können Sie mit dem Image ein Rollback einer Gruppe von Volumes in einen Zustand mit einem bestimmten Zeitpunkt durchführen und sicherstellen, dass alle Daten über alle Volumes in der Gruppe hinweg konsistent sind.
+
+Sie können Volumen-Snapshots so planen, dass sie in definierten Intervallen autonom auftreten. Sie können Intervalle nach Zeit, Wochentagen oder Monatstagen festlegen. Sie können auch geplante Snapshots verwenden, um sicherzustellen, dass Snapshots zur Archivierung auf einem Remote-Speicher gesichert werden.
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Ressourcen-Seite zu NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Dokumentation für frühere Versionen von NetApp SolidFire und Element Produkten"^]
+

@@ -1,0 +1,26 @@
+---
+permalink: storage/task_replication_perform_remote_replication_between_element_clusters.html 
+sidebar: sidebar 
+keywords: remote replication, clusters, Element software, failover, failback 
+summary: Bei Clustern mit Element Software ermöglicht Echtzeitreplizierung die schnelle Erstellung von Remote-Kopien von Volume-Daten. Ein Storage-Cluster kann mit bis zu vier anderen Storage-Clustern gekoppelt werden. Sie können Volume-Daten für Failover- und Failback-Szenarien synchron oder asynchron von einem Cluster in einem Cluster-Paar replizieren. 
+---
+= Remote-Replizierung zwischen Clustern mit NetApp Element Software
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bei Clustern mit Element Software ermöglicht Echtzeitreplizierung die schnelle Erstellung von Remote-Kopien von Volume-Daten. Ein Storage-Cluster kann mit bis zu vier anderen Storage-Clustern gekoppelt werden. Sie können Volume-Daten für Failover- und Failback-Szenarien synchron oder asynchron von einem Cluster in einem Cluster-Paar replizieren.
+
+Der Replikationsprozess umfasst die folgenden Schritte:
+
+image::../media/replication_element_clusters_workflow.gif[Diagramm „Replication Workfloor“]
+
+* link:task_replication_plan_cluster_and_volume_pairing.html["Planen der Paarung von Clustern und Volumes für die Replizierung in Echtzeit"]
+* link:task_replication_pair_clusters.html["Paarung von Clustern zur Replizierung"]
+* link:task_replication_pair_volumes.html["Paar Volumes"]
+* link:task_replication_validate_volume_replication.html["Volume-Replizierung validieren"]
+* link:task_replication_delete_volume_relationship_after_replication.html["Löschen einer Volume-Beziehung nach der Replikation"]
+* link:task_replication_manage_volume_relationships.html["Managen Sie Volume-Beziehungen"]
+

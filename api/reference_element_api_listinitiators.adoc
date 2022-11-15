@@ -1,0 +1,145 @@
+---
+permalink: api/reference_element_api_listinitiators.html 
+sidebar: sidebar 
+keywords: initiators,initiator,list,listing,listinitiators,iqn,wwpn,iqns,wwpns 
+summary: 'Sie können die ListInitiatoren-Methode verwenden, um die Liste von Initiator-IQNs oder World Wide Port Names \(WWPNs\) zu erhalten.' 
+---
+= ListenInitiatoren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `ListInitiators` Methode zum Abrufen der Liste von Initiator-IQNs oder World Wide Port Names (WWPNs).
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Initiatoren
+ a| 
+Eine Liste der abzurufenden Initiator-IDs. Sie können diesen Parameter oder den StartInitiatorID-Parameter angeben, aber nicht beides.
+ a| 
+Integer-Array
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+StartInitiatorID
+ a| 
+Die Initiator-ID, bei der die Aufnahme gestartet werden soll. Sie können diesen Parameter oder den Parameter der Initiatoren angeben, aber nicht beides.
+ a| 
+Ganzzahl
+ a| 
+0
+ a| 
+Nein
+
+
+
+ a| 
+Grenze
+ a| 
+Die maximale Anzahl der zurückzukehrenden Initiator-Objekte.
+ a| 
+Ganzzahl
+ a| 
+(Unbegrenzt)
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Initiatoren
+ a| 
+Liste der Initiator-Informationen.
+ a| 
+xref:reference_element_api_initiator.adoc[Initiator] Array erledigen
+
+|===
+
+
+== Ausnahmen
+
+Diese Methode kann die folgende Ausnahme haben:
+
+|===
+
+
+| Name | Beschreibung 
+
+
+ a| 
+XInvalidParameter
+ a| 
+Wird angezeigt, wenn Sie sowohl die StartInitiatorID als auch die Initiatoren-Parameter in den gleichen Methodenaufruf einbeziehen.
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "ListInitiators",
+   "params": {},
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "initiators": [
+      {
+        "alias": "",
+        "attributes": {},
+        "initiatorID": 2,
+        "initiatorName": "iqn.1993-08.org.debian:01:c84ffd71216",
+        "volumeAccessGroups": [
+          1
+        ]
+      }
+    ]
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6

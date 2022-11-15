@@ -1,0 +1,81 @@
+---
+permalink: api/reference_element_api_getloginsessioninfo.html 
+sidebar: sidebar 
+keywords: cluster,get,getting,login,session,info,getloginsessioninfo 
+summary: Sie können die Methode GetLoginSessionInfo verwenden, um den Zeitraum zurückzugeben, in dem eine Anmeldeauthentifizierung sowohl für Login-Shells als auch für die TUI gültig ist. 
+---
+= GetLoginSessionInfo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `GetLoginSessionInfo` Methode zur Rückgabe des Zeitraums, in dem eine Anmelde-Authentifizierungssitzung gültig ist, sowohl für Login-Shells als auch für die TUI.
+
+
+
+== Parameter
+
+Diese Methode hat keine Eingabeparameter.
+
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+LoginSessionInfo
+ a| 
+Ein Objekt, das den Gültigkeitszeitraum der Authentifizierung enthält. Mögliche zurückgegebene Objekte:
+
+* Zeitüberschreitung:
++
+Die Zeit in Minuten, zu der diese Sitzung abgelaufen ist. Formatiert in H:mm:ss Beispiel: 1:30:00, 20:00, 5:00. Alle führenden Nullen und Doppelpunkte werden unabhängig vom eingegebenen Format entfernt.
+
+
+ a| 
+JSON-Objekt
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "GetLoginSessionInfo",
+    "params": {},
+  "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+"id": 1,
+  "result" : {
+    "loginSessionInfo" : {
+      "timeout" : "30:00"
+    }
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6

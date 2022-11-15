@@ -1,0 +1,51 @@
+---
+permalink: api/reference_element_api_error.html 
+sidebar: sidebar 
+keywords: objects,object,error 
+summary: Das Fehlerobjekt enthält einen Fehlercode und eine Meldung, wenn während eines Methodenaufrufs ein Fehler auftritt. Alle vom System erzeugten Fehler haben einen Fehlercode von 500. 
+---
+= Fehler
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Fehlerobjekt enthält einen Fehlercode und eine Meldung, wenn während eines Methodenaufrufs ein Fehler auftritt. Alle vom System erzeugten Fehler haben einen Fehlercode von 500.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Codieren
+ a| 
+Der numerische Code, der zur Identifizierung des Fehlers verwendet wird. Alle vom System erzeugten Fehler geben einen Code von 500 zurück.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Name
+ a| 
+Die eindeutige Kennung für den Fehler, der aufgetreten ist. Jede Methode gibt einen dokumentierten Satz von Fehlern zurück, obwohl Sie bereit sein sollten, nicht erkannte Fehler zu behandeln.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Nachricht
+ a| 
+Eine Beschreibung des Fehlers, ggf. mit weiteren Details.
+ a| 
+Zeichenfolge
+
+|===

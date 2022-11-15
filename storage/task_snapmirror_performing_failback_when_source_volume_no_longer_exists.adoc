@@ -1,0 +1,48 @@
+---
+permalink: storage/task_snapmirror_performing_failback_when_source_volume_no_longer_exists.html 
+sidebar: sidebar 
+keywords: failback, perform, source volume, snapmirror, dr, disaster recovery 
+summary: Sie können das ursprüngliche Quell-Volume neu synchronisieren und mit der NetApp Element Benutzeroberfläche zurück sichern. Dieser Abschnitt gilt für Szenarien, in denen das ursprüngliche Quell-Volume verloren wurde, das ursprüngliche Cluster jedoch weiterhin intakt ist. Anweisungen zur Wiederherstellung eines neuen Clusters finden Sie in der Dokumentation auf der NetApp Support Site. 
+---
+= Führen Sie ein Failback durch, wenn das Quell-Volume nicht mehr vorhanden ist
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das ursprüngliche Quell-Volume neu synchronisieren und mit der NetApp Element Benutzeroberfläche zurück sichern. Dieser Abschnitt gilt für Szenarien, in denen das ursprüngliche Quell-Volume verloren wurde, das ursprüngliche Cluster jedoch weiterhin intakt ist. Anweisungen zur Wiederherstellung eines neuen Clusters finden Sie in der Dokumentation auf der NetApp Support Site.
+
+.Was Sie und#8217;ll benötigen
+* Sie verfügen über eine abgegebrochene Replizierungsbeziehung zwischen Element und ONTAP Volumes.
+* Das Elementvolumen ist unwiederbringlich verloren.
+* Der ursprüngliche Volume-Name wird als NICHT GEFUNDEN angezeigt.
+
+
+.Schritte
+. Suchen Sie in der Element UI die Beziehung, die Sie unterbrochen haben, um das Failover auszuführen.
++
+*Best Practice:* notieren Sie sich die SnapMirror Politik und planen Sie Einzelheiten zur ursprünglichen Abgebrochenen Beziehung. Diese Informationen sind erforderlich, wenn die Beziehung neu erstellt wird.
+
+. Klicken Sie auf das Symbol *Aktionen* und klicken Sie auf *Resync rückwärts*.
+. Bestätigen Sie die Aktion.
++
+
+NOTE: Die Operation Reverse Resync erzeugt eine neue Beziehung, in der die Rollen des ursprünglichen Quellvolumens und des Zielvolumens umgekehrt werden (dies führt zu zwei Beziehungen, wenn die ursprüngliche Beziehung besteht). Da das ursprüngliche Volume nicht mehr vorhanden ist, erstellt das System ein neues Element Volume mit demselben Volume-Namen und derselben Volume-Größe wie das ursprüngliche Quell-Volume. Dem neuen Volume wird eine QoS-Standardrichtlinie namens SM-Recovery zugewiesen, die mit einem Standardkonto namens SM-Recovery verknüpft ist. Sie möchten das Konto und die QoS-Richtlinie für alle Volumes manuell bearbeiten, die von SnapMirror erstellt wurden, um die gelöschten ursprünglichen Quell-Volumes zu ersetzen.
+
++
+Daten vom letzten Snapshot werden im Rahmen der umgekehrten Resynchronisierung auf das neue Volume übertragen. Sie können weiterhin auf die Daten zugreifen und diese auf die aktive Partition schreiben, aber Sie müssen alle Hosts auf den aktiven Volume trennen und ein SnapMirror-Update durchführen, bevor Sie die ursprüngliche primäre Beziehung in einem späteren Schritt wieder herstellen. Nach Abschluss der Resynchronisierung und Sicherstellung, dass keine aktiven Sitzungen mit dem Volume auf der Zielseite verbunden sind und dass sich die letzten Daten auf dem ursprünglichen primären Volume befinden, fahren Sie mit den folgenden Schritten fort, um das Failback abzuschließen und das ursprüngliche primäre Volume erneut zu aktivieren:
+
+. Klicken Sie auf das Symbol *Aktionen* der inversen Beziehung, die während der Operation Reverse Resync erstellt wurde, und klicken Sie auf *break*.
+. Klicken Sie auf das Symbol *Aktionen* der ursprünglichen Beziehung, in der das Quellvolume nicht vorhanden ist, und klicken Sie auf *Löschen*.
+. Klicken Sie auf das Symbol *Aktionen* der umgekehrten Beziehung, die Sie in Schritt 4 gebrochen haben, und klicken Sie auf *Resync rückwärts*.
+. Dies kehrt die Quelle und das Ziel um und führt zu einer Beziehung mit der gleichen Volumenquelle und dem gleichen Volume-Ziel wie die ursprüngliche Beziehung.
+. Klicken Sie auf das Symbol *Aktionen* und *Bearbeiten*, um diese Beziehung mit der ursprünglichen QoS-Richtlinie und den Zeitplaneinstellungen zu aktualisieren, die Sie zur Kenntnis genommen haben.
+. Jetzt ist es sicher, die umgekehrte Beziehung zu löschen, die Sie in Schritt 6 umkehren.
+
+
+
+
+== Weitere Informationen
+
+xref:concept_snapmirror_failback_scenarios.adoc[SnapMirror Failback-Szenarien]

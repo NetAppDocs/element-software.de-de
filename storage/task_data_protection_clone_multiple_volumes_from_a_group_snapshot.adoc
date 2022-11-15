@@ -1,0 +1,34 @@
+---
+permalink: storage/task_data_protection_clone_multiple_volumes_from_a_group_snapshot.html 
+sidebar: sidebar 
+keywords: multiple volumes, group snapshot, clone, create, data protection 
+summary: Sie können eine Gruppe von Volumes aus einem zeitpunktgenauen Snapshot in Gruppen klonen. Für diesen Vorgang muss bereits ein Gruppen-Snapshot der Volumes vorhanden sein, da der Gruppen-Snapshot als Basis für die Erstellung der Volumes verwendet wird. Nachdem Sie die Volumes erstellt haben, können Sie sie wie jedes andere Volume im System verwenden. 
+---
+= Klonen mehrerer Volumes aus einem Gruppen-Snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine Gruppe von Volumes aus einem zeitpunktgenauen Snapshot in Gruppen klonen. Für diesen Vorgang muss bereits ein Gruppen-Snapshot der Volumes vorhanden sein, da der Gruppen-Snapshot als Basis für die Erstellung der Volumes verwendet wird. Nachdem Sie die Volumes erstellt haben, können Sie sie wie jedes andere Volume im System verwenden.
+
+Die Volume-Größe und die aktuelle Cluster-Last beeinflussen die Zeit, die zum Abschließen eines Klonvorgangs erforderlich ist.
+
+. Klicken Sie Auf *Datenschutz* > *Snapshots Gruppieren*.
+. Klicken Sie auf das Aktionen-Symbol für den Gruppen-Snapshot, den Sie für die Volume-Klone verwenden möchten.
+. Wählen Sie im Menü Ergebnis die Option *Volumes aus GruppenSnapshot* klonen.
+. Geben Sie im Dialogfeld *Clone Volumes from Group Snapshot* einen *New Volume Name Prefix* ein.
++
+Das Präfix wird auf alle Volumes angewendet, die aus dem Gruppen-Snapshot erstellt wurden.
+
+. *Optional:* Wählen Sie ein anderes Konto aus, zu dem der Klon gehören wird.
++
+Wenn Sie kein Konto auswählen, weist das System dem aktuellen Volume-Konto die neuen Volumes zu.
+
+. *Optional:* Wählen Sie eine andere Zugriffsmethode für die Volumes im Klon aus.
++
+Wenn Sie keine Zugriffsmethode auswählen, verwendet das System den aktuellen Volumenzugriff.
+
+. Klicken Sie Auf *Klonen Starten*.
+

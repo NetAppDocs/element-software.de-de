@@ -1,0 +1,62 @@
+---
+permalink: storage/reference_monitor_iscsi_session_details.html 
+sidebar: sidebar 
+keywords: iscsi sessions, monitor 
+summary: Sie können Informationen zu den iSCSI-Sitzungen anzeigen, die mit dem Cluster verbunden sind. 
+---
+= Details zur iSCSI-Sitzung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Informationen zu den iSCSI-Sitzungen anzeigen, die mit dem Cluster verbunden sind.
+
+In der folgenden Liste werden die Informationen beschrieben, die Sie zu den iSCSI-Sitzungen finden können:
+
+* *Knoten*
++
+Der Node, der die primäre Metadatenpartition für das Volume hostet.
+
+* *Konto*
++
+Der Name des Kontos, zu dem das Volume gehört. Wenn der Wert leer ist, wird ein Strich (-) angezeigt.
+
+* *Lautstärke*
++
+Der auf dem Node angegebene Volume-Name.
+
+* *Volumen-ID*
++
+ID des Volumes, das mit der Ziel-IQN verknüpft ist.
+
+* *Initiator-ID*
++
+Eine vom System generierte ID für den Initiator.
+
+* *Initiator-Alias*
++
+Ein optionaler Name für den Initiator, der es einfacher macht, in einer langen Liste den Initiator zu finden.
+
+* *Initator IP*
++
+Die IP-Adresse des Endpunkts, der die Sitzung initiiert.
+
+* *Initiator-IQN*
++
+Der IQN des Endpunkts, der die Sitzung initiiert.
+
+* *Ziel-IP*
++
+Die IP-Adresse des Node, der das Volume hostet.
+
+* *Ziel-IQN*
++
+Der IQN des Volumes.
+
+* *Erstellt Am*
++
+Datum, an dem die Sitzung eingerichtet wurde.
+
+

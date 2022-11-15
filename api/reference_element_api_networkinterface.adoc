@@ -1,0 +1,125 @@
+---
+permalink: api/reference_element_api_networkinterface.html 
+sidebar: sidebar 
+keywords: object,objects,networkInterface 
+summary: Das Objekt NetworkInterface enthält Konfigurationsinformationen für einzelne Netzwerkschnittstellen auf einem Storage-Node. 
+---
+= Netzwerkschnittstelle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Objekt NetworkInterface enthält Konfigurationsinformationen für einzelne Netzwerkschnittstellen auf einem Storage-Node.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Adresse
+ a| 
+Die IPv4-Managementadresse der Schnittstelle.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+AdresseV6
+ a| 
+Die IPv6-Managementadresse der Schnittstelle.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Rundfunk
+ a| 
+Die Broadcast-Adresse der Schnittstelle.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+MacAddress
+ a| 
+Die MAC-Adresse der Schnittstelle.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+mtu
+ a| 
+Die maximale Übertragungseinheit in Byte der Schnittstelle.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Name
+ a| 
+Der Name der Schnittstelle.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Namespace
+ a| 
+Gibt an, ob dieser Schnittstelle ein virtueller Netzwerk-Namespace zugewiesen ist oder nicht.
+ a| 
+boolesch
+
+
+
+ a| 
+Netzmaske
+ a| 
+Die Subnetzmaske der Schnittstelle.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Status
+ a| 
+Der Betriebsstatus der Schnittstelle.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Typ
+ a| 
+Die Art der Schnittstelle (Bond Master, Bond Slave, etc.).
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+VirtualNetworkTag
+ a| 
+Die VLAN-ID, die der Schnittstelle im virtuellen Netzwerk zugewiesen ist.
+ a| 
+Ganzzahl
+
+|===

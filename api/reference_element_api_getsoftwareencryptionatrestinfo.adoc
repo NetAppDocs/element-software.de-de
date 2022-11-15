@@ -1,0 +1,88 @@
+---
+permalink: api/reference_element_api_getsoftwareencryptionatrestinfo.html 
+sidebar: sidebar 
+keywords: system, api, security, get, getting, software encryption at rest 
+summary: Mit der Methode GetSoftwareVerschlüsselungAtRestInfo erhalten Sie Informationen, die das Cluster zur Verschlüsselung von Daten im Ruhezustand verwendet. 
+---
+= GetSoftwareVerschlüsselungAtRestInfo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `GetSoftwareEncryptionAtRestInfo` Methode zum Abrufen von Softwareverschlüsselungsinformationen im Ruhezustand, die das Cluster verwendet, um Daten im Ruhezustand zu verschlüsseln.
+
+
+
+== Parameter
+
+Diese Methode hat keine Eingabeparameter.
+
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+[cols="4*"]
+|===
+| Parameter | Beschreibung | Typ | Optional 
+
+
+| MasterKeyInfo | Informationen zum aktuellen Master-Schlüssel für Softwareverschlüsselung im Ruhezustand | VerschlüsselungKeyInfo | Richtig 
+
+
+| RekeyMasterKeyAsyncResultID | Die Async Ergebnis-ID des aktuellen oder letzten Rekeyvorgangs (falls vorhanden), sofern sie noch nicht gelöscht wurde. `GetAsyncResult` Die Ausgabe enthält eine `newKey` Feld, das Informationen über den neuen Masterschlüssel und ein enthält `keyToDecommission` Feld, das Informationen zum alten Schlüssel enthält. | Ganzzahl | Richtig 
+
+
+| Bundesland | Der aktuelle Status der Softwareverschlüsselung im Ruhezustand. Mögliche Werte sind `disabled` Oder `enabled`. | Zeichenfolge | Falsch 
+
+
+| Version | Eine Versionsnummer, die bei jeder Aktivierung der Softwareverschlüsselung erhöht wird. | Ganzzahl | Falsch 
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+ "method": "getsoftwareencryptionatrestinfo"
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+    "id": 1,
+    "result": {
+        "masterKeyInfo": {
+            "keyCreatedTime": "2021-09-20T23:15:56Z",
+            "keyID": "4d80a629-a11b-40ab-8b30-d66dd5647cfd",
+            "keyManagementType": "internal"
+        },
+        "state": "enabled",
+        "version": 1
+    }
+}
+----
+
+
+== Neu seit Version
+
+12.3
+
+[discrete]
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Ressourcen-Seite zu NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Dokumentation für frühere Versionen von NetApp SolidFire und Element Produkten"^]
+

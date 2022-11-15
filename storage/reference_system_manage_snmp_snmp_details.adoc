@@ -1,0 +1,28 @@
+---
+permalink: storage/reference_system_manage_snmp_snmp_details.html 
+sidebar: sidebar 
+keywords: snmp, overview, reference, mib, settings, trap 
+summary: 'Auf der SNMP-Seite der Registerkarte Cluster können Sie die folgenden Informationen anzeigen:' 
+---
+= SNMP-Details
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Auf der SNMP-Seite der Registerkarte Cluster können Sie die folgenden Informationen anzeigen:
+
+* *SNMP MIBs*
++
+Die MIB-Dateien, die für Sie zum Anzeigen oder Herunterladen zur Verfügung stehen.
+
+* *Allgemeine SNMP-Einstellungen*
++
+Sie können SNMP aktivieren oder deaktivieren. Nachdem Sie SNMP aktiviert haben, können Sie wählen, welche Version verwendet werden soll. Wenn Sie Version 2 verwenden, können Sie Anfragesteller hinzufügen, und wenn Sie Version 3 verwenden, können Sie USM-Benutzer einrichten.
+
+* *SNMP-Trap-Einstellungen*
++
+Sie können ermitteln, welche Traps erfasst werden sollen. Sie können den Host, Port und die Community-Zeichenfolge für jeden Trap-Empfänger festlegen.
+
+

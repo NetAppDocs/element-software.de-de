@@ -1,0 +1,94 @@
+---
+permalink: api/reference_element_api_binding_vvols.html 
+sidebar: sidebar 
+keywords: binding,object,objects,volume,volumes,virtual 
+summary: Das Bindeobjekt enthält Informationen über die Bindung für ein virtuelles Volume. Mit der ListVirtualVolumeBindings API-Methode können Sie eine Liste dieser Informationen für alle virtuellen Volumes abrufen. 
+---
+= Bindung (virtuelle Volumes)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Bindeobjekt enthält Informationen über die Bindung für ein virtuelles Volume. Sie können eine Liste dieser Informationen für alle virtuellen Volumes mit abrufen `ListVirtualVolumeBindings` API-Methode.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Protokoll-EndpointID
+ a| 
+Die eindeutige ID des Protokollendpunkts.
+ a| 
+UUID
+
+
+
+ a| 
+ProtokolEndpointInBandID
+ a| 
+Die scsiNAADeviceID des Protokollendpunkts.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Protokoll EndpointType
+ a| 
+Der Typ des Protokollendpunkts. SCSI ist der einzige Wert, der für den Protokollendpunkttyp zurückgegeben wird.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+VirtualVolumeBindingID
+ a| 
+Die eindeutige ID des Bindeobjekts für das virtuelle Volume.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+VirtualVolumeHost ID
+ a| 
+Die eindeutige ID des virtuellen Volume-Hosts.
+ a| 
+UUID
+
+
+
+ a| 
+VirtualVolumeID
+ a| 
+Die eindeutige ID des virtuellen Volumes.
+ a| 
+UUID
+
+
+
+ a| 
+VirtualVolumeZweidID
+ a| 
+Die sekundäre ID des virtuellen Volume.
+ a| 
+Zeichenfolge
+
+|===
+
+
+== Weitere Informationen
+
+* xref:reference_element_api_listvirtualvolumebindings.adoc[ListVirtualVolumeBindungen]
+* xref:reference_element_api_protocolendpoint.adoc[ProtocolEndpoint]
+

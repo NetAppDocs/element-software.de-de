@@ -1,0 +1,175 @@
+---
+permalink: api/reference_element_api_network_local_interfaces.html 
+sidebar: sidebar 
+keywords: object,objects,network 
+summary: 'Das Netzwerk \(Local Interfaces\)-Objekt enthält Konfigurationsinformationen für lokale Netzwerkschnittstellen, z. B. die Loopback-Schnittstelle, auf einem Speicherknoten. Sie können die Methoden getconfig und GetNetworkConfig verwenden, um diese Informationen für einen Speicherknoten abzurufen.' 
+---
+= Netzwerk (lokale Schnittstellen)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Netzwerk-Objekt (lokale Schnittstellen) enthält Konfigurationsinformationen für lokale Netzwerkschnittstellen, z. B. die Loopback-Schnittstelle, auf einem Storage-Node. Sie können das verwenden `GetConfig` Und `GetNetworkConfig` Methoden zum Abrufen dieser Informationen für einen Storage-Node
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Familie
+ a| 
+Adressfamilie, die für die Schnittstelle konfiguriert ist. Derzeit wird "inet" für IPv4 unterstützt.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+MacAddress
+ a| 
+Die tatsächliche MAC-Adresse, die der Schnittstelle zugewiesen und vom Netzwerk beobachtet wird.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+MacAdressePermanent
+ a| 
+Die vom Hersteller der Schnittstelle zugewiesene unveränderliche MAC-Adresse.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Methode
+ a| 
+Die Methode zum Konfigurieren der Schnittstelle. Mögliche Werte:
+
+* Loopback: Wird verwendet, um die IPv4-Loopback-Schnittstelle zu definieren.
+* Manuell: Zur Definition von Schnittstellen, die nicht automatisch konfiguriert werden.
+* dhcp: Kann verwendet werden, um eine IP-Adresse über DHCP zu erhalten.
+* Statisch: Zur Definition von Ethernet-Schnittstellen mit statisch zugewiesenen IPv4-Adressen.
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Status
+ a| 
+Der Status der Schnittstelle. Mögliche Werte:
+
+* Down: Die Schnittstelle ist inaktiv.
+* Up: Die Schnittstelle ist bereit, hat aber keine Verbindung.
+* UpAndRunning: Die Schnittstelle ist bereit und ein Link ist aufgebaut.
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+UpAndRunning
+ a| 
+Zeigt an, ob die Schnittstelle bereit ist und über eine Verknüpfung verfügt.
+ a| 
+boolesch
+
+|===
+
+
+== Mitgliedänderbarkeit und Knotenstatus
+
+In dieser Tabelle wird angegeben, ob die Objektparameter für jeden möglichen Node-Status geändert werden können.
+
+|===
+
+
+| Parametername | Verfügbarer Status | Status „ausstehend“ | Aktiver Status 
+
+
+ a| 
+Familie
+ a| 
+Nein
+ a| 
+Nein
+ a| 
+Nein
+
+
+
+ a| 
+MacAddress
+ a| 
+Vom System konfiguriert
+ a| 
+K. A.
+ a| 
+K. A.
+
+
+
+ a| 
+MacAdressePermanent
+ a| 
+Vom System konfiguriert
+ a| 
+K. A.
+ a| 
+K. A.
+
+
+
+ a| 
+Methode
+ a| 
+Nein
+ a| 
+Nein
+ a| 
+Nein
+
+
+
+ a| 
+Status
+ a| 
+Ja.
+ a| 
+Ja.
+ a| 
+Ja.
+
+
+
+ a| 
+UpAndRunning
+ a| 
+Vom System konfiguriert
+ a| 
+K. A.
+ a| 
+K. A.
+
+|===
+
+
+== Weitere Informationen
+
+* xref:reference_element_api_getconfig.adoc[Getconfig]
+* xref:reference_element_api_getnetworkconfig.adoc[GetNetworkConfig]
+

@@ -1,0 +1,47 @@
+---
+permalink: storage/task_system_manage_fips_identify_nodes_ready_for_fips_drives.html 
+sidebar: sidebar 
+keywords: fips, security, federal information processing standards, 140-2 
+summary: Sie sollten überprüfen, ob alle Nodes im Storage Cluster zur Unterstützung von FIPS-Laufwerken bereit sind. Hierzu verwenden Sie die NetApp Element Software GetFipsReport API-Methode. 
+---
+= Ermitteln, ob Nodes für die FIPS-Laufwerksfunktion bereit sind
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie sollten überprüfen, ob alle Nodes im Storage Cluster zur Unterstützung von FIPS-Laufwerken bereit sind. Hierzu verwenden Sie die NetApp Element Software GetFipsReport API-Methode.
+
+Der resultierende Bericht zeigt einen der folgenden Status an:
+
+* Keine: Node unterstützt nicht die FIPS-Laufwerksfunktion.
+* Partiell: Node ist FIPS-fähig, nicht alle Laufwerke sind FIPS-Laufwerke.
+* Bereit: Node ist FIPS-fähig. Alle Laufwerke sind FIPS-Laufwerke oder es sind keine Laufwerke vorhanden.
+
+
+.Schritte
+. Prüfen Sie mithilfe der Element API, ob die Nodes und Laufwerke im Storage-Cluster FIPS-Laufwerke unterstützen:
++
+`GetFipsReport`
+
+. Überprüfen Sie die Ergebnisse, und notieren Sie alle Knoten, die keinen Status von „bereit“ aufweisen.
+. Prüfen Sie bei Knoten, die keinen Status bereit hatten, ob das Laufwerk die FIPS-Laufwerksfunktion unterstützt:
++
+** Geben Sie mithilfe der Element API Folgendes ein: `GetHardwareList`
+** Notieren Sie sich den Wert des *DriveEncrypting CapabilityType*. Ist der FIPS-2, unterstützt die Hardware die FIPS-Laufwerksfunktion.
++
+Siehe Details zu `GetFipsReport` Oder `ListDriveHardware` Im link:../api/index.html["Element-API-Referenz"].
+
+
+
+. Wenn das Laufwerk die FIPS-Laufwerksfunktion nicht unterstützt, ersetzen Sie die Hardware durch FIPS-Hardware (entweder Node oder Laufwerke).
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

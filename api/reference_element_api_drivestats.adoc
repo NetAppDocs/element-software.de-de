@@ -1,0 +1,191 @@
+---
+permalink: api/reference_element_api_drivestats.html 
+sidebar: sidebar 
+keywords: object,objects,driveStats 
+summary: Das Objekt driveStats enthält übergeordnete Aktivitätsmessungen für eine einzelne Festplatte. Mit der API-Methode GetDriveStats können Sie Messinformationen abrufen. 
+---
+= Fahrstollen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Objekt driveStats enthält übergeordnete Aktivitätsmessungen für eine einzelne Festplatte. Mit der API-Methode können Sie Messdaten abrufen `GetDriveStats`.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+ActiveSessions
+ a| 
+Anzahl der iSCSI-Sitzungen, die derzeit dieses Laufwerk verwenden (nur vorhanden für Metadaten-Laufwerke).
+ a| 
+Ganzzahl
+
+
+
+ a| 
+DriveID
+ a| 
+Eindeutige ID des Laufwerks im Cluster
+ a| 
+Ganzzahl
+
+
+
+ a| 
+FailedDieCount
+ a| 
+Anzahl der fehlerhaften Laufwerkselemente.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+LebensRemainingPercent
+ a| 
+Anzeige der Laufwerksverschleißanzeige.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+RettungszeitLesen
+ a| 
+Insgesamt gelesene Bytes von diesem Laufwerk für die Lebensdauer des Laufwerks.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+RettungsWriteBytes
+ a| 
+Gesamtbyte, die für die Lebensdauer des Laufwerks auf dieses Laufwerk geschrieben wurden.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+PowerOnHours
+ a| 
+Anzahl der Stunden, in denen dieses Laufwerk eingeschaltet wurde.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+ReadBytes
+ a| 
+Insgesamt gelesene Bytes vom Laufwerk aufgrund von Client-Operationen.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+ReadOps
+ a| 
+Gesamte Lesevorgänge auf dem Laufwerk aufgrund von Client-Operationen.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Zu verlokalisierteSectors
+ a| 
+Anzahl der fehlerhaften Sektoren, die in diesem Laufwerk ersetzt wurden.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+ReservekapazitätPercent
+ a| 
+Die verfügbare Reservekapazität des Laufwerks.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Zeitstempel
+ a| 
+Die aktuelle Zeit im UTC+0-Format.
+ a| 
+ISO 8601-Datumszeichenfolge
+
+
+
+ a| 
+GesamtDeckkraft
+ a| 
+Gesamtkapazität des Laufwerks in Byte.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Unkorrigierbare Error
+ a| 
+Der gemeldete Wert nicht korrigierbarer Fehler aus dem Monitoring-System der Selbstüberwachung, der Analyse- und Berichtstechnik (SMART) im Laufwerk.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+UsedKapacität
+ a| 
+Genutzte Kapazität des Laufwerks, in Byte.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+UsedMemory
+ a| 
+Die derzeit vom Node, der dieses Laufwerk hostet, verwendete Speichermenge.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+WriteBytes
+ a| 
+Gesamtzahl der Bytes, die aufgrund der Client-Aktivität auf das Laufwerk geschrieben wurden.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Schreiboperationen
+ a| 
+Gesamte Schreibvorgänge auf dem Laufwerk aufgrund der Client-Aktivität.
+ a| 
+Ganzzahl
+
+|===
+
+
+== Weitere Informationen
+
+xref:reference_element_api_getdrivestats.adoc[GetDriveStats]

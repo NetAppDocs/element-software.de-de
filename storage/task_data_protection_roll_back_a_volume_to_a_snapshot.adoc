@@ -1,0 +1,27 @@
+---
+permalink: storage/task_data_protection_roll_back_a_volume_to_a_snapshot.html 
+sidebar: sidebar 
+keywords: volume to snapshot roll back, snapshot roll back, revert changes 
+summary: Sie können ein Volume jederzeit auf einen vorherigen Snapshot zurück verschieben. Hierdurch werden alle Änderungen an dem Volume zurückgesetzt, die seit der Erstellung des Snapshots vorgenommen wurden. 
+---
+= Führen Sie ein Rollback eines Volumes zu einem Snapshot durch
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein Volume jederzeit auf einen vorherigen Snapshot zurück verschieben. Hierdurch werden alle Änderungen an dem Volume zurückgesetzt, die seit der Erstellung des Snapshots vorgenommen wurden.
+
+.Schritte
+. Klicken Sie Auf *Datenschutz* > *Snapshots*.
+. Klicken Sie auf das Symbol *Aktionen* für den Snapshot, den Sie für das Rollback des Volumes verwenden möchten.
+. Wählen Sie im Menü Ergebnis *Rollback Volume to Snapshot* aus.
+. *Optional:* zum Speichern des aktuellen Status des Volumens vor dem Rollback zum Snapshot:
++
+.. Wählen Sie im Dialogfeld *Rollback to Snapshot* den aktuellen Status des Volumes als Snapshot speichern* aus.
+.. Geben Sie einen Namen für den neuen Snapshot ein.
+
+
+. Klicken Sie Auf *Rollback Snapshot*.
+

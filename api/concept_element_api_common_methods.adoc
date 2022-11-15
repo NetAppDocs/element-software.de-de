@@ -1,0 +1,31 @@
+---
+permalink: api/concept_element_api_common_methods.html 
+sidebar: sidebar 
+keywords: common,methods 
+summary: Häufig verwendete Methoden sind Methoden zum Abrufen von Informationen über das Storage-Cluster, die API selbst oder fortlaufende API-Vorgänge. 
+---
+= Gängige Methoden
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Häufig verwendete Methoden sind Methoden zum Abrufen von Informationen über das Storage-Cluster, die API selbst oder fortlaufende API-Vorgänge.
+
+* xref:reference_element_api_getapi.adoc[GetAPI]
+* xref:reference_element_api_getasyncresult.adoc[GetAsyncResult]
+* xref:reference_element_api_getcompletestats.adoc[GetCompleteStats]
+* xref:reference_element_api_getlimits.adoc[GetLimits]
+* xref:reference_element_api_getorigin.adoc[GetOrigin]
+* xref:reference_element_api_getrawstats.adoc[GetRawStats]
+* xref:reference_element_api_listasyncresults.adoc[ListeAsyncResults]
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Ressourcen-Seite zu NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Dokumentation für frühere Versionen von NetApp SolidFire und Element Produkten"^]
+

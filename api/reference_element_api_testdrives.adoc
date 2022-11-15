@@ -1,0 +1,101 @@
+---
+permalink: api/reference_element_api_testdrives.html 
+sidebar: sidebar 
+keywords: drive,drives,test,testing,validating,hardware,testdrives 
+summary: Sie können die TestDrives-Methode verwenden, um eine Hardwarevalidierung auf allen Laufwerken des Knotens auszuführen. Bei dieser Methode werden Hardwareausfälle auf den Laufwerken erkannt und die Ergebnisse der Validierungstests angezeigt. 
+---
+= TestDrives
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `TestDrives` Methode zum Ausführen einer Hardwarevalidierung auf allen Laufwerken auf dem Knoten. Bei dieser Methode werden Hardwareausfälle auf den Laufwerken erkannt und die Ergebnisse der Validierungstests angezeigt.
+
+
+
+== Parameter
+
+Sie können nur die verwenden `TestDrives` Methode auf Nodes, die in einem Cluster nicht „aktiv“ sind
+
+
+NOTE: Dieser Test dauert etwa 10 Minuten.
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Erzwingen
+ a| 
+Setzen Sie auf „true“, um die Laufwerke auf dem Node zu testen.
+ a| 
+boolesch
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Minuten
+ a| 
+Gibt die Anzahl der Minuten für den auszuführenden Test an.
+ a| 
+Ganzzahl
+ a| 
+10
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Details
+ a| 
+Informationen über den Testvorgang erfolgreich oder fehlgeschlagen.
+ a| 
+JSON-Objekt
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "TestDrives",
+   "params": {
+              "force": true,
+              "minutes" : 10
+             },
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Tabelle mit den Testergebnissen für jedes Laufwerk im Node zurück.
+
+
+
+== Neu seit Version
+
+9.6

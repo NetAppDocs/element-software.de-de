@@ -1,0 +1,30 @@
+---
+permalink: storage/task_intro_provide_feedback.html 
+sidebar: sidebar 
+keywords: feedback, web user interface, UI issues, feedback form, relevant information, screenshots 
+summary: Sie können die Webbenutzeroberfläche der Element Software verbessern und alle UI-Probleme beheben, indem Sie das Feedback-Formular verwenden, das über die gesamte Benutzeroberfläche zugänglich ist. 
+---
+= Feedback mitteilen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Webbenutzeroberfläche der Element Software verbessern und alle UI-Probleme beheben, indem Sie das Feedback-Formular verwenden, das über die gesamte Benutzeroberfläche zugänglich ist.
+
+. Klicken Sie auf einer beliebigen Seite in der Element UI auf die Schaltfläche *Feedback*.
+. Geben Sie relevante Informationen in die Felder Zusammenfassung und Beschreibung ein.
+. Fügen Sie hilfreiche Screenshots an.
+. Geben Sie einen Namen und eine E-Mail-Adresse ein.
+. Aktivieren Sie das Kontrollkästchen, um Daten zu Ihrer aktuellen Umgebung einzuschließen.
+. Klicken Sie Auf *Absenden*.
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

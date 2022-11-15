@@ -1,0 +1,163 @@
+---
+permalink: storage/concept_system_manage_manage_cluster_administrator_users.html 
+sidebar: sidebar 
+keywords: element, solidfire, cluster admin, account, create, change, configure, administrator access, edit permissions, change passwords 
+summary: Sie können Cluster-Administratorkonten für ein SolidFire Storage-System verwalten. Zu den verfügbaren Managementfunktionen für den Cluster-Administrator gehören das Erstellen, Löschen und Bearbeiten von Cluster-Administratorkonten, das Ändern des Clusteradministratorkennworts und das Konfigurieren von LDAP-Einstellungen für das Management des Systemzugriffs für Benutzer. 
+---
+= Verwalten von Benutzerkonten für Cluster-Administratoren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Cluster-Administratorkonten für ein SolidFire-Speichersystem verwalten, indem Sie Cluster-Administratorkonten erstellen, löschen und bearbeiten, das Kennwort für den Cluster-Administrator ändern und LDAP-Einstellungen konfigurieren, um den Systemzugriff für Benutzer zu verwalten.
+
+
+
+== Kontotypen für Storage-Cluster-Administratoren
+
+In einem Storage-Cluster mit NetApp Element Software können zwei Arten von Administratorkonten vorhanden sein: Das primäre Cluster-Administratorkonto und ein Cluster-Administratorkonto.
+
+* *Primary Cluster Administrator Account*
++
+Dieses Administratorkonto wird erstellt, wenn das Cluster erstellt wird. Dieses Konto ist das primäre administrative Konto mit der höchsten Zugriffsebene auf das Cluster. Dieses Konto ist analog zu einem Root-Benutzer in einem Linux-System. Sie können das Kennwort für dieses Administratorkonto ändern.
+
+* *Cluster-Administratorkonto*
++
+Sie können einem Cluster-Administratorkonto einen begrenzten administrativen Zugriff gewähren, um bestimmte Aufgaben in einem Cluster auszuführen. Die jedem Cluster-Administratorkonto zugewiesenen Zugangsdaten werden zur Authentifizierung von API- und Element-UI-Anforderungen innerhalb des Storage-Systems verwendet.
+
+
+
+
+NOTE: Ein lokales (nicht-LDAP)-Cluster-Administratorkonto ist erforderlich, um über die UI pro Node auf aktive Knoten in einem Cluster zuzugreifen. Kontoanmeldeinformationen sind für den Zugriff auf einen Node, der noch nicht Teil eines Clusters ist, nicht erforderlich.
+
+
+
+== Zeigen Sie Details zum Cluster-Administrator an
+
+. So erstellen Sie ein Cluster-weites (nicht-LDAP)-Cluster-Administratorkonto:
++
+.. Klicken Sie Auf *Benutzer* > *Cluster Admins*.
+
+
+. Auf der Seite Cluster-Administratoren auf der Registerkarte Benutzer können Sie die folgenden Informationen anzeigen:
++
+** *ID*: Dem Cluster Administrator Konto zugewiesene sequentielle Nummer.
+** *Benutzername*: Der Name, der dem Cluster Administrator-Konto bei der Erstellung gegeben wurde.
+** *Zugriff*: Die dem Benutzerkonto zugewiesenen Benutzerberechtigungen. Mögliche Werte:
++
+*** Lesen
+*** Berichterstellung
+*** Knoten
+*** Laufwerke
+*** Volumes
+*** Konten
+*** Clusteradministratoren
+*** Verwalter
+*** SupportAdmin
+
+
+
+
++
+
+NOTE: Alle Berechtigungen sind für den Zugriffstyp des Administrators verfügbar.
+
++
+** *Typ*: Der Typ des Clusteradministrators. Mögliche Werte:
++
+*** Cluster
+*** Ldap
+
+
+** *Attributes*: Wenn das Cluster-Administratorkonto mit der Element API erstellt wurde, zeigt diese Spalte alle Name-Wert-Paare an, die mit dieser Methode festgelegt wurden.
++
+Siehe link:../api/index.html["NetApp Element Software-API-Referenz"].
+
+
+
+
+
+
+
+== Erstellen eines Cluster-Administratorkontos
+
+Sie können neue Cluster-Administratorkonten mit Berechtigungen erstellen, um den Zugriff auf bestimmte Bereiche des Storage-Systems zu ermöglichen oder einzuschränken. Wenn Sie Berechtigungen für ein Cluster-Administratorkonto festlegen, gewährt das System schreibgeschützte Rechte für alle Berechtigungen, die Sie dem Cluster-Administrator nicht zuweisen.
+
+Wenn Sie ein LDAP-Cluster-Administratorkonto erstellen möchten, stellen Sie sicher, dass LDAP auf dem Cluster konfiguriert ist, bevor Sie beginnen.
+
+link:task_system_manage_enable_ldap_authentication.html["Aktivieren Sie die LDAP-Authentifizierung über die Benutzeroberfläche von Element"]
+
+Sie können später Berechtigungen für Cluster-Administratorkonten für Berichterstellung, Nodes, Laufwerke, Volumes, Konten, Und Cluster-Level-Zugriff. Wenn Sie eine Berechtigung aktivieren, weist das System Schreibzugriff für diese Ebene zu. Das System gewährt dem Administrator-Benutzer schreibgeschützten Zugriff für die Ebenen, die Sie nicht auswählen.
+
+Sie können auch ein vom Systemadministrator erstelltes Cluster-Administratorkonto später entfernen. Sie können das primäre Cluster-Administratorkonto, das beim Erstellen des Clusters erstellt wurde, nicht entfernen.
+
+. So erstellen Sie ein Cluster-weites (nicht-LDAP)-Cluster-Administratorkonto:
++
+.. Klicken Sie Auf *Benutzer* > *Cluster Admins*.
+.. Klicken Sie Auf *Cluster-Admin Erstellen*.
+.. Wählen Sie den Benutzertyp *Cluster* aus.
+.. Geben Sie einen Benutzernamen und ein Kennwort für das Konto ein und bestätigen Sie das Passwort.
+.. Wählen Sie Benutzerberechtigungen aus, die auf das Konto angewendet werden sollen.
+.. Aktivieren Sie das Kontrollkästchen, um der Endnutzer-Lizenzvereinbarung zuzustimmen.
+.. Klicken Sie Auf *Cluster-Admin Erstellen*.
+
+
+. So erstellen Sie ein Cluster-Administratorkonto im LDAP-Verzeichnis:
++
+.. Klicken Sie auf *Cluster* > *LDAP*.
+.. Stellen Sie sicher, dass die LDAP-Authentifizierung aktiviert ist.
+.. Klicken Sie auf *Benutzerauthentifizierung testen* und kopieren Sie den Distinguished Name, der für den Benutzer oder eine der Gruppen angezeigt wird, deren Mitglied der Benutzer ist, damit Sie ihn später einfügen können.
+.. Klicken Sie Auf *Benutzer* > *Cluster Admins*.
+.. Klicken Sie Auf *Cluster-Admin Erstellen*.
+.. Wählen Sie den LDAP-Benutzertyp aus.
+.. Befolgen Sie im Feld Distinguished Name das Beispiel im Textfeld, um einen vollständigen Distinguished Name für den Benutzer oder die Gruppe einzugeben. Alternativ können Sie ihn aus dem Distinguished Name einfügen, den Sie früher kopiert haben.
++
+Wenn der Distinguished Name Teil einer Gruppe ist, hat jeder Benutzer, der Mitglied dieser Gruppe auf dem LDAP-Server ist, Berechtigungen für dieses Administratorkonto.
+
++
+Um LDAP Cluster Admin-Benutzer oder -Gruppen hinzuzufügen, lautet das allgemeine Format des Benutzernamens „`LDAP:<Full Distinguished Name>`“.
+
+.. Wählen Sie Benutzerberechtigungen aus, die auf das Konto angewendet werden sollen.
+.. Aktivieren Sie das Kontrollkästchen, um der Endnutzer-Lizenzvereinbarung zuzustimmen.
+.. Klicken Sie Auf *Cluster-Admin Erstellen*.
+
+
+
+
+
+
+== Berechtigungen für Cluster-Administratoren bearbeiten
+
+Sie können die Berechtigungen für Cluster-Administratorkonten für Berichterstellung, Nodes, Laufwerke, Volumes, Konten, Und Cluster-Level-Zugriff. Wenn Sie eine Berechtigung aktivieren, weist das System Schreibzugriff für diese Ebene zu. Das System gewährt dem Administrator-Benutzer schreibgeschützten Zugriff für die Ebenen, die Sie nicht auswählen.
+
+. Klicken Sie Auf *Benutzer* > *Cluster Admins*.
+. Klicken Sie auf das Symbol Aktionen für den Cluster-Administrator, den Sie bearbeiten möchten.
+. Klicken Sie Auf *Bearbeiten*.
+. Wählen Sie Benutzerberechtigungen aus, die auf das Konto angewendet werden sollen.
+. Klicken Sie Auf *Änderungen Speichern*.
+
+
+
+
+== Ändern Sie Passwörter für Cluster-Administratorkonten
+
+Mithilfe der Element-UI können Sie die Kennwörter für den Cluster-Administrator ändern.
+
+. Klicken Sie Auf *Benutzer* > *Cluster Admins*.
+. Klicken Sie auf das Symbol Aktionen für den Cluster-Administrator, den Sie bearbeiten möchten.
+. Klicken Sie Auf *Bearbeiten*.
+. Geben Sie im Feld Passwort ändern ein neues Passwort ein und bestätigen Sie es.
+. Klicken Sie Auf *Änderungen Speichern*.
+
+
+
+
+== Weitere Informationen
+
+* link:task_system_manage_enable_ldap_authentication.html["Aktivieren Sie die LDAP-Authentifizierung über die Benutzeroberfläche von Element"]
+* link:concept_system_manage_manage_ldap.html["Deaktivieren Sie LDAP"]
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

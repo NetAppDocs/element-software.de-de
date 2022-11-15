@@ -1,0 +1,134 @@
+---
+permalink: api/reference_element_api_createsnapmirrorvolume.html 
+sidebar: sidebar 
+keywords: SnapMirror,endpoints,create,creating,volume,volumes,CreateSnapMirrorVolume 
+summary: Die Element Web-UI erstellt mithilfe der CreateSnapMirrorVolume-Methode ein Volume auf dem Remote-ONTAP-System. 
+---
+= CreateSnapMirrorVolume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Element Web-UI verwendet das `CreateSnapMirrorVolume` Methode zur Erstellung eines Volumes auf dem Remote-ONTAP-System
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+SnapMirrorEndpointID
+ a| 
+Die Endpunkt-ID des Remote-ONTAP-Storage-Systems, die mit dem Element Storage-Cluster kommunizieren
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+vserver
+ a| 
+Der Name des Vserver.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Name
+ a| 
+Der Name des Ziel-ONTAP-Volumes.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Typ
+ a| 
+Der Volume-Typ. Mögliche Werte:
+
+* rw: Volumen für Lese- und Schreibvorgänge
+* ls: Volumen der Lastverteilung
+* datensicherung: Datensicherungs-Volume
+
+
+Wenn kein Typ angegeben wird, ist der Standardtyp dp.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Aggregat
+ a| 
+Das ONTAP Aggregat, in dem das Volume erstellt werden soll. Sie können ListSnapMirrorAggregates verwenden, um Informationen über verfügbare ONTAP Aggregate zu erhalten.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Größe
+ a| 
+Die Größe des Volumes in Byte.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+SnapMirror Volume
+ a| 
+Informationen zu einem SnapMirror Volume
+ a| 
+xref:reference_element_api_snapmirrorvolume.adoc[SnapMirror Volume]
+
+|===
+
+
+== Neu seit Version
+
+10.1

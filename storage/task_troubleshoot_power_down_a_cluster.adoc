@@ -1,0 +1,26 @@
+---
+permalink: storage/task_troubleshoot_power_down_a_cluster.html 
+sidebar: sidebar 
+keywords: cluster, power down, mvip 
+summary: Sie können ein gesamtes Cluster herunterfahren, nachdem Sie den NetApp Support kontaktiert und erste Schritte durchgeführt haben. 
+---
+= Schalten Sie ein Cluster aus
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein gesamtes Cluster herunterfahren, nachdem Sie den NetApp Support kontaktiert und erste Schritte durchgeführt haben.
+
+Bereiten Sie den Cluster für das Herunterfahren vor, indem Sie folgende Schritte durchführen:
+
+* Beenden Sie alle E/A-Vorgänge
+* Trennen Sie alle iSCSI-Sitzungen.
++
+.. Navigieren Sie zur Management Virtual IP (MVIP)-Adresse auf dem Cluster, um die Element-UI zu öffnen.
+.. Beachten Sie die in der Liste Knoten aufgeführten Knoten.
+.. Führen Sie die Shutdown-API-Methode mit der Stopp-Option aus, die für jede Node-ID im Cluster angegeben ist.
+
+
+

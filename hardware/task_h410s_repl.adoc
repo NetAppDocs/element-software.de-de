@@ -1,0 +1,245 @@
+---
+permalink: hardware/task_h410s_repl.html 
+sidebar: sidebar 
+keywords: h410s, replacement, node replacement, maintenance 
+summary: Sie sollten einen Storage-Node ersetzen, wenn ein CPU-Fehler, Probleme mit der Radian-Karte oder andere Probleme mit der Hauptplatine auftreten oder sich nicht einschalten. Die Anweisungen gelten für H410S Storage-Nodes. 
+---
+= Einen H410S Node austauschen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie sollten einen Storage-Node ersetzen, wenn ein CPU-Fehler, Probleme mit der Radian-Karte oder andere Probleme mit der Hauptplatine auftreten oder sich nicht einschalten. Die Anweisungen gelten für H410S Storage-Nodes.
+
+Warnmeldungen in der NetApp Element-Software-UI melden Sie bei Ausfall eines Speicherknoten. Verwenden Sie die Element-UI, um die Seriennummer (Service-Tag) des ausgefallenen Knotens zu erhalten. Sie benötigen diese Informationen, um den fehlgeschlagenen Node im Cluster zu finden.
+
+Hier sehen Sie die Rückseite eines 2-HE-Chassis mit vier Nodes und vier Storage-Nodes:
+
+image::hci_stornode_rear.gif[Diese Abbildung zeigt das 4-Node-Chassis mit vier Storage-Nodes.]
+
+Hier ist die Vorderansicht eines Chassis mit vier Nodes mit H410S Nodes, in dem die entsprechenden Schächte für jeden Node angezeigt werden:
+
+image::hci_stor_node_ssd_bays.gif[Zeigt die mit jedem Node in einem Chassis mit vier Nodes verbundenen Schächte mit H410S Nodes.]
+
+.Was Sie und#8217;ll benötigen
+* Sie haben überprüft, ob Ihr Storage-Node fehlerhaft ist und ersetzt werden muss.
+* Sie haben einen Ersatz-Speicherknoten erhalten.
+* Sie haben ein elektrostatisches Entladungsband (ESD) oder einen anderen antistatischen Schutz.
+* Sie haben jedes Kabel gekennzeichnet, das mit dem Speicher-Node verbunden ist.
+
+
+Hier finden Sie eine grobe Übersicht über die Schritte:
+
+*  to replace the node
+*  the node in the chassis
+*  the node to the cluster
+
+
+
+
+== Bereiten Sie den Austausch des Node vor
+
+Sie sollten den fehlerhaften Storage-Node in der NetApp Element-Software-UI ordnungsgemäß aus dem Cluster entfernen, bevor Sie den Ersatz-Node installieren. Dies ist möglich, ohne dass es zu einer Serviceunterbrechung kommt. Sie sollten die Seriennummer des fehlerhaften Storage Node von der Element UI erhalten und mit der Seriennummer auf dem Aufkleber auf der Rückseite des Node übereinstimmen.
+
+.Schritte
+. Wählen Sie in der Element UI die Option *Cluster* > *Laufwerke*.
+. Entfernen Sie die Laufwerke vom Node mithilfe einer der folgenden Methoden:
++
+[cols="2*"]
+|===
+| Option | Schritte 
+
+
+ a| 
+Um einzelne Laufwerke zu entfernen
+ a| 
+.. Klicken Sie auf *Aktionen* für das Laufwerk, das Sie entfernen möchten.
+.. Klicken Sie Auf *Entfernen*.
+
+
+
+
+ a| 
+Um mehrere Laufwerke zu entfernen
+ a| 
+.. Wählen Sie alle Laufwerke aus, die Sie entfernen möchten, und klicken Sie auf *Massenaktionen*.
+.. Klicken Sie Auf *Entfernen*.
+
+
+|===
+. Wählen Sie *Cluster* > *Knoten*.
+. Notieren Sie sich die Seriennummer (Service-Tag) des fehlerhaften Knotens. Sie sollten sie mit der Seriennummer auf dem Aufkleber auf der Rückseite des Node übereinstimmen.
+. Nachdem Sie die Seriennummer notieren, entfernen Sie den Node wie folgt aus dem Cluster:
++
+.. Wählen Sie für den Knoten, den Sie entfernen möchten, die Schaltfläche *Aktionen*.
+.. Wählen Sie *Entfernen*.
+
+
+
+
+
+
+== Ersetzen Sie den Node im Chassis
+
+Nachdem Sie den fehlerhaften Node mithilfe der NetApp Element Software-UI aus dem Cluster entfernt haben, können Sie den Node physisch vom Chassis entfernen. Sie sollten den Ersatz-Node im selben Steckplatz im Chassis installieren, aus dem Sie den ausgefallenen Node entfernt haben.
+
+.Schritte
+. Tragen Sie vor dem Fortfahren einen antistatischen Schutz.
+. Packen Sie den neuen Storage-Node aus, und stellen Sie ihn auf eine Ebene Fläche in der Nähe des Chassis ein.
++
+Bewahren Sie das Verpackungsmaterial auf, wenn Sie den fehlerhaften Node an NetApp zurücksenden.
+
+. Beschriften Sie jedes Kabel, das an der Rückseite des Storage Node eingesetzt wird, den Sie entfernen möchten.
++
+Nach der Installation des neuen Speicherknoten sollten die Kabel in die ursprünglichen Anschlüsse eingesetzt werden.
+
++
+Dies ist ein Bild, das die Rückseite eines Storage-Nodes anzeigt:
+
++
+image::../media/hci_isi_storage_cabling.png[Diese Abbildung zeigt die Verkabelung des Storage-Nodes.]
+
++
+[cols="2*"]
+|===
+| Port | Details 
+
+
+ a| 
+Port A
+ a| 
+1/10-GbE-RJ45-Port
+
+
+
+ a| 
+Port B
+ a| 
+1/10-GbE-RJ45-Port
+
+
+
+ a| 
+Port C
+ a| 
+10 GbE SFP+ oder SFP28 Port
+
+
+
+ a| 
+Port D
+ a| 
+10 GbE SFP+ oder SFP28 Port
+
+
+
+ a| 
+IPMI
+ a| 
+1/10-GbE-RJ45-Port
+
+|===
+. Trennen Sie alle Kabel vom Storage-Node.
+. Ziehen Sie den Nockengriff auf der rechten Seite des Knotens nach unten, und ziehen Sie den Knoten mit beiden Nockengriffen heraus.
++
+Der Nockengriff, den Sie nach unten ziehen, hat einen Pfeil darauf, um die Richtung anzuzeigen, in der er sich bewegt. Der andere Nockengriff bewegt sich nicht und ist dort, um den Knoten herausziehen zu helfen.
+
++
+image::../media/hci_stor_node_camhandles.gif[In dieser Abbildung]
+
++
+[cols="2*"]
+|===
+| Element | Beschreibung 
+
+
+ a| 
+1
+ a| 
+CAM-Griff zum Herausziehen des Knotens
+
+
+
+ a| 
+2
+ a| 
+CAM-Griff, den Sie nach unten ziehen, bevor Sie den Knoten herausziehen.
+
+|===
++
+
+NOTE: Unterstützen Sie den Node mit beiden Händen, wenn Sie ihn aus dem Chassis ziehen.
+
+. Legen Sie den Knoten auf eine Ebene Fläche.
++
+Sie müssen den Node verpacken und ihn an NetApp zurücksenden.
+
+. Installieren Sie den Ersatzknoten im gleichen Steckplatz im Chassis.
++
+
+IMPORTANT: Stellen Sie sicher, dass Sie beim Einschieben des Node in das Chassis keine übermäßige Kraft verwenden.
+
+. Verschieben Sie die Laufwerke vom entfernten Node und fügen Sie sie in den neuen Node ein.
+. Schließen Sie die Kabel wieder an die Anschlüsse an, von denen Sie sie ursprünglich getrennt haben.
++
+Die Etiketten, die Sie beim Abstecken auf den Kabeln angebracht haben, helfen Ihnen dabei.
+
++
+[NOTE]
+====
+.. Wenn die Luftströmungsöffnungen an der Rückseite des Gehäuses durch Kabel oder Etiketten blockiert sind, kann dies zu vorzeitigen Komponentenausfällen aufgrund einer Überhitzung führen.
+.. Zwingen Sie die Kabel nicht zu den Ports. Kabel, Ports oder beides können beschädigt werden.
+
+
+====
++
+
+TIP: Stellen Sie sicher, dass der Ersatz-Node auf die gleiche Weise wie die anderen Nodes im Chassis verkabelt ist.
+
+. Drücken Sie die Taste an der Vorderseite des Knotens, um ihn wieder einschalten zu können.
+
+
+
+
+== Fügen Sie den Node dem Cluster hinzu
+
+Wenn Sie dem Cluster einen Node hinzufügen oder neue Laufwerke in einem vorhandenen Node installieren, werden die Laufwerke automatisch nach Verfügbarkeit registriert. Sie müssen die Laufwerke zum Cluster entweder über die Element-UI oder -API hinzufügen, bevor sie am Cluster teilnehmen können.
+
+Die Softwareversion auf jedem Node in einem Cluster sollte kompatibel sein. Wenn Sie einem Cluster einen Node hinzufügen, wird im Cluster bei Bedarf die Cluster-Version der Element Software auf dem neuen Node installiert.
+
+.Schritte
+. Wählen Sie *Cluster* > *Knoten*.
+. Wählen Sie *Ausstehend* aus, um die Liste der ausstehenden Knoten anzuzeigen.
+. Führen Sie einen der folgenden Schritte aus:
++
+** Um einzelne Knoten hinzuzufügen, wählen Sie das Symbol *Aktionen* für den Knoten, den Sie hinzufügen möchten.
+** Um mehrere Knoten hinzuzufügen, aktivieren Sie das Kontrollkästchen der Knoten, die hinzugefügt werden sollen, und dann *Massenaktionen*.
++
+
+NOTE: Wenn der Node, den Sie hinzufügen, eine andere Version der Element Software als die Version des Clusters hat, aktualisiert der Cluster den Node asynchron an die Version der auf dem Cluster-Master ausgeführten Element-Software. Nach der Aktualisierung des Node wird er sich automatisch dem Cluster hinzugefügt. Während dieses asynchronen Prozesses liegt der Node in einem `pendingActive` Bundesland.
+
+
+
+. Wählen Sie *Hinzufügen*.
++
+Der Node wird in der Liste der aktiven Nodes angezeigt.
+
+. Wählen Sie in der Element UI die Option *Cluster* > *Laufwerke*.
+. Wählen Sie *verfügbar*, um die Liste der verfügbaren Laufwerke anzuzeigen.
+. Führen Sie einen der folgenden Schritte aus:
++
+** Um einzelne Laufwerke hinzuzufügen, wählen Sie das Symbol *Aktionen* für das Laufwerk, das Sie hinzufügen möchten, und wählen Sie dann *Hinzufügen*.
+** Um mehrere Laufwerke hinzuzufügen, aktivieren Sie die Kontrollkästchen der Laufwerke, die hinzugefügt werden sollen, wählen Sie *Massenaktionen* und dann *Hinzufügen* aus.
+
+
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Ressourcen-Seite zu NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Dokumentation für frühere Versionen von NetApp SolidFire und Element Produkten"^]
+

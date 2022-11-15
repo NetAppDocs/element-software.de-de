@@ -1,0 +1,39 @@
+---
+permalink: api/concept_element_api_asynchronous_methods.html 
+sidebar: sidebar 
+keywords: async,asynchronous,methods,API 
+summary: Einige API-Methoden sind asynchron. Dies bedeutet, dass der von ihnen vorführen Vorgang möglicherweise nicht abgeschlossen ist, wenn die Methode zurückkehrt. Asynchrone Methoden geben ein Handle zurück, das Sie abfragen können, um den Status des Vorgangs anzuzeigen. Statusinformationen für einige Vorgänge können einen prozentualen Anteil der Fertigstellung enthalten. 
+---
+= Asynchrone Methoden
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Einige API-Methoden sind asynchron. Dies bedeutet, dass der von ihnen vorführen Vorgang möglicherweise nicht abgeschlossen ist, wenn die Methode zurückkehrt. Asynchrone Methoden geben ein Handle zurück, das Sie abfragen können, um den Status des Vorgangs anzuzeigen. Statusinformationen für einige Vorgänge können einen prozentualen Anteil der Fertigstellung enthalten.
+
+Wenn Sie einen asynchronen Vorgang abfragen, kann dessen Ergebnis einer der folgenden Typen sein:
+
+* `DriveAdd`: Das System fügt dem Cluster ein Laufwerk hinzu.
+* `BulkVolume`: Das System führt einen Kopiervorgang zwischen Volumes durch, z. B. eine Sicherung oder Wiederherstellung.
+* `Clone`: Das System geklont ein Volumen.
+* `DriveRemoval`: Das System kopiert Daten von einem Laufwerk in Vorbereitung, um es aus dem Cluster zu entfernen.
+* `RtfiPendingNode`: Das System installiert kompatible Software auf einem Knoten, bevor sie dem Cluster hinzugefügt wird.
+
+
+Beachten Sie die folgenden Punkte, wenn Sie asynchrone Methoden verwenden oder den Status eines laufenden asynchronen Vorgangs erhalten:
+
+* Asynchrone Methoden sind in der Dokumentation der einzelnen Methoden angegeben.
+* Asynchrone Methoden geben eine „`Async`“ zurück, ein Griff, der durch die emittierenden API-Methode bekannt ist. Mit dem Handle können Sie den Status oder das Ergebnis des asynchronen Vorgangs abfragen.
+* Sie können das Ergebnis einzelner asynchroner Methoden mit der GetAsyncResult-Methode abrufen. Wenn Sie GetAsyncResult verwenden, um einen abgeschlossenen Vorgang abzufragen, gibt das System das Ergebnis zurück und reinigt das Ergebnis automatisch vom System. Wenn Sie GetAsyncResult verwenden, um eine unvollständige Operation abzufragen, gibt das System das Ergebnis zurück, löscht es aber nicht.
+* Sie können den Status und die Ergebnisse aller ausgeführten oder abgeschlossenen asynchronen Methoden mit der ListAsyncResults-Methode abrufen. In diesem Fall löscht das System die Ergebnisse für abgeschlossene Vorgänge nicht.
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Ressourcen-Seite zu NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Dokumentation für frühere Versionen von NetApp SolidFire und Element Produkten"^]
+

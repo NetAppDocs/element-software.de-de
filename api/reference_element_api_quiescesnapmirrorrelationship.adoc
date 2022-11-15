@@ -1,0 +1,73 @@
+---
+permalink: api/reference_element_api_quiescesnapmirrorrelationship.html 
+sidebar: sidebar 
+keywords: snapmirror,relationship,relationships,quiesce,quiescing,quiescescnapmirrorrelationship 
+summary: Die Web-UI für die Element Software verwendet die QuiesceSnapMirrorRelationship-Methode, um zukünftige Datentransfers für eine SnapMirror Beziehung zu deaktivieren. Wenn eine Übertragung ausgeführt wird, wird der Beziehungsstatus „stillgelegt“, bis die Übertragung abgeschlossen ist. Wenn die aktuelle Übertragung abgebrochen wird, wird sie nicht neu gestartet. Sie können die Datenübertragung für die Beziehung mithilfe der ResumeSnapMirrorRelationship-API-Methode reaktivieren. 
+---
+= QuiesceSnapMirrorBeziehung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Web-UI der Element Software verwendet das `QuiesceSnapMirrorRelationship` Methode zum Deaktivieren zukünftiger Datentransfers für eine SnapMirror Beziehung. Wenn eine Übertragung ausgeführt wird, wird der Beziehungsstatus „stillgelegt“, bis die Übertragung abgeschlossen ist. Wenn die aktuelle Übertragung abgebrochen wird, wird sie nicht neu gestartet. Sie können Datentransfers für die Beziehung mithilfe des neu aktivieren `ResumeSnapMirrorRelationship` API-Methode.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+SnapMirrorEndpointID
+ a| 
+Die Endpunkt-ID des Remote-ONTAP-Storage-Systems, die mit dem Element Storage-Cluster kommunizieren
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Zielvolumen
+ a| 
+Der Zieldatenträger in der SnapMirror Beziehung.
+ a| 
+xref:reference_element_api_snapmirrorvolumeinfo.adoc[SnapMirror Volumeinfo]
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+SnapMirror Beziehung
+ a| 
+Ein Objekt mit Informationen über die stillgelegte SnapMirror Beziehung.
+ a| 
+xref:reference_element_api_snapmirrorrelationship.adoc[SnapMirror Beziehung]
+
+|===
+
+
+== Neu seit Version
+
+10.1

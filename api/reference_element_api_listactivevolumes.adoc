@@ -1,0 +1,111 @@
+---
+permalink: api/reference_element_api_listactivevolumes.html 
+sidebar: sidebar 
+keywords: active,volume,volumes,list,listing,listactivevolumes,cluster 
+summary: 'Sie können die ListActiveVolumes-Methode verwenden, um die Liste der aktiven Volumes anzuzeigen, die sich derzeit im System befinden. Die Liste der Volumen ist in VolumeID-Reihenfolge sortiert und kann in mehreren Teilen \(Seiten\) zurückgegeben werden.' 
+---
+= ListeActiveVolumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `ListActiveVolumes` Methode zum Abrufen der Liste der aktiven Volumes, die sich derzeit im System befinden. Die Liste der VolumeID ist in VolumeID-Reihenfolge sortiert und kann in mehreren Teilen (Seiten) zurückgegeben werden.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+InbegriffenVirtualVolumes
+ a| 
+Virtuelle Volumes sind standardmäßig in der Antwort enthalten. Um virtuelle Volumes auszuschließen, setzen Sie auf false.
+ a| 
+boolesch
+ a| 
+Richtig
+ a| 
+Nein
+
+
+
+ a| 
+StartVolumeID
+ a| 
+Starten der VolumeID für die Rückgabe. Wenn kein Volume mit dieser VolumeID vorhanden ist, wird das nächste Volume nach VolumeID-Reihenfolge als Beginn der Liste verwendet. Um durch die Liste zu blättern, übergeben Sie die VolumeID des letzten Volumes in der vorherigen Antwort + 1.
+ a| 
+Ganzzahl
+ a| 
+0
+ a| 
+Nein
+
+
+
+ a| 
+Grenze
+ a| 
+Maximale Anzahl der zurückkehrbaren Volume-Infoobjekte. 0 (null) liefert alle Volumes (unbegrenzt) zurück.
+ a| 
+Ganzzahl
+ a| 
+(Unbegrenzt)
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Volumes
+ a| 
+Liste der aktiven Volumes.
+ a| 
+xref:reference_element_api_volume.adoc[Datenmenge] Array erledigen
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "ListActiveVolumes",
+   "params": {
+      "startVolumeID"  : 0,
+      "limit" : 1000
+   },
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Aufgrund der Länge dieses Antwortbeispiels wird es in einem ergänzenden Thema dokumentiert.
+
+
+
+== Neu seit Version
+
+9.6

@@ -1,0 +1,100 @@
+---
+permalink: api/reference_element_api_getclusterhardwareinfo.html 
+sidebar: sidebar 
+keywords: get,getting,cluster,hardware,getclusterhardwareinfo 
+summary: Sie können die Methode GetClusterHardwareInfo verwenden, um den Hardwarestatus und Informationen für alle Fibre Channel-Knoten, iSCSI-Knoten und -Laufwerke im Cluster abzurufen. Dazu gehören im Allgemeinen Hersteller, Anbieter, Versionen und weitere zugehörige Hardware-Identifikationsinformationen. 
+---
+= GetClusterHardware-Informationen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `GetClusterHardwareInfo` Methode zum Abrufen des Hardware-Status und der Informationen für alle Fibre Channel-Knoten, iSCSI-Knoten und -Laufwerke im Cluster. Dazu gehören im Allgemeinen Hersteller, Anbieter, Versionen und weitere zugehörige Hardware-Identifikationsinformationen.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Typ
+ a| 
+Geben Sie nur eine der folgenden Arten von Hardwareinformationen in die Antwort ein. Mögliche Werte:
+
+* Laufwerke:
++
+Listet nur Laufwerksinformationen in der Antwort auf.
+
+* Knoten: Listet nur Node-Informationen in der Antwort auf.
+* Alle: Enthält sowohl Laufwerks- als auch Node-Informationen in der Antwort.
+
+
+Wenn dieser Parameter nicht angegeben wird, wird als Typ von allen angenommen.
+ a| 
+Zeichenfolge
+ a| 
+Alle
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+ClusterHardwareInfo
+ a| 
+Hardwareinformationen für alle Nodes und Laufwerke im Cluster Jedes Objekt in dieser Ausgabe ist mit der Node-ID des angegebenen Node gekennzeichnet.
+ a| 
+xref:reference_element_api_hardwareinfo.adoc[HardwareInfo]
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "GetClusterHardwareInfo",
+    "params": {
+        "type": "all"
+    },
+    "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Aufgrund der Länge dieses Antwortbeispiels wird es in einem ergänzenden Thema dokumentiert.
+
+
+
+== Neu seit Version
+
+9.6
+
+
+
+== Weitere Informationen
+
+xref:reference_element_api_response_example_getclusterhardwareinfo.adoc[GetClusterHardware-Informationen]

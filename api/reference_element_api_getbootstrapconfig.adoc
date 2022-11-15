@@ -1,0 +1,173 @@
+---
+permalink: api/reference_element_api_getbootstrapconfig.html 
+sidebar: sidebar 
+keywords: cluster,getting,bootstrap,information,node,GetBootstrapConfig 
+summary: Mit der Methode GetBootstrapConfig können Sie Cluster- und Knoteninformationen aus der Bootstrap-Konfigurationsdatei abrufen. Verwenden Sie diese API-Methode auf einem einzelnen Knoten, bevor er mit einem Cluster verbunden wurde. Die Informationen, die diese Methode zurückgibt, werden beim Erstellen eines Clusters in der Cluster-Konfigurationsschnittstelle verwendet. 
+---
+= GetBootstrapConfig
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `GetBootstrapConfig` Methode zum Abrufen von Cluster- und Node-Informationen aus der Bootstrap-Konfigurationsdatei Verwenden Sie diese API-Methode auf einem einzelnen Knoten, bevor er mit einem Cluster verbunden wurde. Die Informationen, die diese Methode zurückgibt, werden beim Erstellen eines Clusters in der Cluster-Konfigurationsschnittstelle verwendet.
+
+
+
+== Parameter
+
+Diese Methode hat keine Eingabeparameter.
+
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+ClusterName
+ a| 
+Der Name des Clusters.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+mvip
+ a| 
+Cluster-MVIP-Adresse. Leer, wenn der Node nicht Teil eines Clusters ist.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+NodeName
+ a| 
+Der Name des Node.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Knoten
+ a| 
+Liste der Informationen über die einzelnen Nodes, die aktiv auf das Cluster warten Mögliche Werte:
+
+* ChassisType: (String) Hardware-Plattform des Node.
+* cip: (String) Cluster-IP-Adresse des Knotens.
+* Kompatibel: (boolean) gibt an, ob der Knoten mit dem Knoten kompatibel ist, für den der API-Aufruf ausgeführt wurde.
+* Hostname: (Zeichenfolge) Hostname des Knotens.
+* mip: (String) die IPv4-Management-IP-Adresse des Knotens.
+* MipV6: (String) die IPv6-Management-IP-Adresse des Knotens.
+* NodeType: (String)Modellname des Knotens.
+* Version: (String)Version der auf dem Knoten installierten Software.
+
+ a| 
+JSON-Objekt-Array
+
+
+
+ a| 
+svip
+ a| 
+Cluster SVIP-Adresse. Null, wenn der Node nicht Teil eines Clusters ist.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Version
+ a| 
+Die Version der derzeit auf dem Node installierten Element-Software, die mit dieser API-Methode aufgerufen wurde.
+ a| 
+Zeichenfolge
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "GetBootstrapConfig",
+   "params": {},
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+	"id":1,
+	"result":{
+		"clusterName":"testname",
+		"nodeName":"testnode",
+		"svip": "10.117.1.5",
+		"mvip": "10.117.1.6",
+		"nodes":[
+			{
+				"chassisType":"R630",
+				"cip":"10.117.115.16",
+				"compatible":true,
+				"hostname":"NLABP1132",
+				"mip":"10.117.114.16",
+				"mipV6":"fd20:8b1e:b256:45a::16",
+				"nodeType":"SF2405",
+				"role":"Storage",
+				"version":"11.0"
+			},
+			{
+				"chassisType":"R630",
+				"cip":"10.117.115.17",
+				"compatible":true,
+				"hostname":"NLABP1133",
+				"mip":"10.117.114.17",
+				"mipV6":"fd20:8b1e:b256:45a::17",
+				"nodeType":"SF2405",
+				"role":"Storage",
+				"version":"11.0"
+			},
+			{
+				"chassisType":"R630",
+				"cip":"10.117.115.18",
+				"compatible":true,
+				"hostname":"NLABP1134",
+				"mip":"10.117.114.18",
+				"mipV6":"fd20:8b1e:b256:45a::18",
+				"nodeType":"SF2405",
+				"role":"Storage",
+				"version":"11.0"
+			}
+		],
+		"version":"11.0"
+	}
+}
+----
+
+
+== Neu seit Version
+
+9.6
+
+
+
+== Weitere Informationen
+
+xref:reference_element_api_createcluster.adoc[CreateCluster erstellen]

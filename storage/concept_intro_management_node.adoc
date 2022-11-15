@@ -1,0 +1,19 @@
+---
+permalink: storage/concept_intro_management_node.html 
+sidebar: sidebar 
+keywords: what is the management node, what is the mNode 
+summary: 'Der Management-Node \(mNode\) ist eine virtuelle Maschine, die parallel zu einem oder mehreren auf Element basierenden Storage-Clustern ausgeführt wird. Er dient als Upgrade und zur Bereitstellung von Systemservices wie Monitoring und Telemetrie, zum Management von Cluster-Ressourcen und -Einstellungen, zur Ausführung von Systemtests und Dienstprogrammen und zur Aktivierung des NetApp Support-Zugriffs zur Fehlerbehebung.' 
+---
+= Management-Node für Element Software
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der Management-Node (mNode) ist eine Virtual Machine, die parallel zu einem oder mehreren auf Element basierenden Storage-Clustern ausgeführt wird. Er dient als Upgrade und zur Bereitstellung von Systemservices wie Monitoring und Telemetrie, zum Management von Cluster-Ressourcen und -Einstellungen, zur Ausführung von Systemtests und Dienstprogrammen und zur Aktivierung des NetApp Support-Zugriffs zur Fehlerbehebung.
+
+Ab Element 11.3 fungiert der Management Node als Microservice-Host, wodurch sich ausgewählte Softwareservices schneller außerhalb der Hauptversionen aktualisieren lassen. Diese Microservices und Managementservices, wie Active IQ Collector, QoSSIOC für das vCenter Plug-in und mNode Service, werden häufig als Service-Bundles aktualisiert. Zusätzliche Services für Software-Upgrades und Support-Tools (Remote-Support-Tunneling) sind vom Management-Node ebenfalls verfügbar.
+
+
+NOTE: Als Best Practice wird nur ein Management Node mit einer VMware vCenter Instanz verknüpft, sodass nicht dieselben Storage- und Computing-Ressourcen oder vCenter Instanzen in mehreren Management Nodes definiert werden müssen.

@@ -1,0 +1,55 @@
+---
+permalink: api/reference_element_api_resetnetworkconfig.html 
+sidebar: sidebar 
+keywords: network,config,configuration,reset,restetting,factory,default,resetnetworkconfig 
+summary: Sie können die Methode „ResetNetworkConfig“ verwenden, um bei der Lösung von Netzwerkkonfigurationsproblemen für einen einzelnen Knoten zu helfen. Mit dieser Methode wird die Netzwerkkonfiguration eines einzelnen Knotens auf die werkseitigen Standardeinstellungen zurückgesetzt. 
+---
+= NetworkConfig erneut verwenden
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `ResetNetworkConfig` Methode zur Behebung von Problemen bei der Netzwerkkonfiguration für einen einzelnen Knoten. Mit dieser Methode wird die Netzwerkkonfiguration eines einzelnen Knotens auf die werkseitigen Standardeinstellungen zurückgesetzt.
+
+
+NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
+
+
+
+== Parameter
+
+Diese Methode hat keine Eingabeparameter.
+
+
+
+== Rückgabewert
+
+Diese Methode hat keine Rückgabewerte.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "ResetNetworkConfig",
+   "params": {},
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt keine Antwort zurück.
+
+
+
+== Neu seit Version
+
+11.0

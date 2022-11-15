@@ -1,0 +1,87 @@
+---
+permalink: api/reference_element_api_getldapconfiguration.html 
+sidebar: sidebar 
+keywords: ldap,config,configuration,get,getting,getldapconfiguration 
+summary: Sie können die GetLdapConfiguration Methode verwenden, um die derzeit aktive LDAP-Konfiguration auf dem Cluster zu erhalten. 
+---
+= GetLdapConfiguration
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `GetLdapConfiguration` Methode zum Abrufen der derzeit aktiven LDAP-Konfiguration auf dem Cluster.
+
+
+
+== Parameter
+
+Diese Methode hat keine Eingabeparameter.
+
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert.
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+LdapKonfiguration
+ a| 
+Liste der aktuellen LDAP-Konfigurationseinstellungen. Dieser API-Aufruf gibt nicht den Klartext des Suchkontenpassworts zurück. *Hinweis:* Wenn die LDAP-Authentifizierung derzeit deaktiviert ist, sind alle zurückgegebenen Einstellungen mit Ausnahme von "AuthType" und "groupSearchType" leer, die auf "SearchAndBind" bzw. "ActiveDirectory" gesetzt sind.
+ a| 
+xref:reference_element_api_ldapconfiguration.adoc[LdapKonfiguration]
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "GetLdapConfiguration",
+  "params": {},
+  "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "ldapConfiguration": {
+        "authType": "SearchAndBind",
+        "enabled": true,
+        "groupSearchBaseDN": "dc=prodtest,dc=solidfire,dc=net",
+        "groupSearchCustomFilter": "",
+        "groupSearchType": "ActiveDirectory",
+        "searchBindDN": "SFReadOnly@prodtest.solidfire.net",
+        "serverURIs": [
+           "ldaps://111.22.333.444",
+           "ldap://555.66.777.888"
+            ],
+        "userDNTemplate": "",
+        "userSearchBaseDN": "dc=prodtest,dc=solidfire,dc=net",
+        "userSearchFilter": "(&(objectClass=person)(sAMAccountName=%USERNAME%))"
+     }
+   }
+}
+----
+
+
+== Neu seit Version
+
+9.6

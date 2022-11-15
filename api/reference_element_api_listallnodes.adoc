@@ -1,0 +1,120 @@
+---
+permalink: api/reference_element_api_listallnodes.html 
+sidebar: sidebar 
+keywords: cluster,list,listing,node,nodes,all,listallnodes 
+summary: Sie können die Methode ListenAllNodes verwenden, um aktive und ausstehende Nodes im Cluster aufzulisten. 
+---
+= ListenAllNodes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `ListAllNodes` „Methode“ zum Auflisten von aktiven und ausstehenden Nodes im Cluster.
+
+
+
+== Parameter
+
+Diese Methode hat keine Eingabeparameter.
+
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Knoten
+ a| 
+Liste von Objekten, die aktive Nodes im Cluster beschreiben
+ a| 
+xref:reference_element_api_node.adoc[Knoten]
+
+
+
+ a| 
+Hängende ActiveNodes
+ a| 
+Liste von Objekten, die ausstehende aktive Nodes für das Cluster beschreiben.
+ a| 
+xref:reference_element_api_pendingactivenode.adoc[HängenActiveNode] Array erledigen
+
+
+
+ a| 
+Hängende Knoten
+ a| 
+Liste von Objekten, die ausstehende Nodes für das Cluster beschreiben
+ a| 
+xref:reference_element_api_pendingnode.adoc[Hängende Knoten] Array erledigen
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "ListAllNodes",
+   "params": {},
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+	"id": 1,
+	"result": {
+		"nodes": [
+			{
+				"associatedFServiceID": 0,
+				"associatedMasterServiceID": 1,
+				"attributes": {},
+				"chassisName": "CT5TV12",
+				"cip": "10.1.1.1",
+				"cipi": "Bond10G",
+				"fibreChannelTargetPortGroup": null,
+				"mip": "10.1.1.1",
+				"mipi": "Bond1G",
+				"name": "NLABP0704",
+				"nodeID": 1,
+				"nodeSlot": "",
+				"platformInfo": {
+					"chassisType": "R620",
+					"cpuModel": "Intel",
+					"nodeMemoryGB": 72,
+					"nodeType": "SF3010",
+					"platformConfigVersion": "0.0.0.0"
+				},
+				"sip": "10.1.1.1",
+				"sipi": "Bond10G",
+				"softwareVersion": "11.0",
+				"uuid": "4C4C4544-0054",
+				"virtualNetworks": []
+			}
+		],
+		"pendingActiveNodes": [],
+		"pendingNodes": []
+	}
+}
+----
+
+
+== Neu seit Version
+
+9.6

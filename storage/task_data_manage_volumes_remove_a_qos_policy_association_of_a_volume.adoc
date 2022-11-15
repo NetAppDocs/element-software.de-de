@@ -1,0 +1,30 @@
+---
+permalink: storage/task_data_manage_volumes_remove_a_qos_policy_association_of_a_volume.html 
+sidebar: sidebar 
+keywords: remove qos policy, disassociate from a volume, modify 
+summary: Sie können eine QoS-Richtlinienzuordnung aus einem Volume entfernen, indem Sie benutzerdefinierte QoS-Einstellungen auswählen. 
+---
+= Entfernen Sie die QoS-Richtlinienzuordnung eines Volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine QoS-Richtlinienzuordnung aus einem Volume entfernen, indem Sie benutzerdefinierte QoS-Einstellungen auswählen.
+
+Das Volume, das Sie ändern möchten, sollte einer QoS-Richtlinie zugewiesen werden.
+
+. Wählen Sie *Management* > *Volumes*.
+. Klicken Sie auf das Symbol Aktionen für ein Volume, das eine QoS-Richtlinie enthält, die Sie ändern möchten.
+. Klicken Sie Auf *Bearbeiten*.
+. Klicken Sie im Ergebnismenü unter *Quality of Service* auf *Benutzerdefinierte Einstellungen*.
+. Ändern Sie *Min IOPS*, *Max IOPS* und *Burst IOPS* oder behalten Sie die Standardeinstellungen bei.
+. Klicken Sie Auf *Änderungen Speichern*.
+
+
+
+
+== Weitere Informationen
+
+xref:task_data_manage_volumes_deleting_a_qos_policy.adoc[Löschen einer QoS-Richtlinie]

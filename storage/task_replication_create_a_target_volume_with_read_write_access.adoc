@@ -1,0 +1,25 @@
+---
+permalink: storage/task_replication_create_a_target_volume_with_read_write_access.html 
+sidebar: sidebar 
+keywords: target volume, create, read, write access 
+summary: 'Der Replikationsprozess umfasst zwei Endpunkte: Das Quell- und das Ziel-Volume. Wenn Sie das Ziel-Volume erstellen, wird das Volume automatisch auf den Lese-/Schreibmodus gesetzt, um die Daten während der Replikation zu akzeptieren.' 
+---
+= Erstellung eines Ziel-Volumes mit Lese- oder Schreibzugriff
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der Replikationsprozess umfasst zwei Endpunkte: Das Quell- und das Ziel-Volume. Wenn Sie das Ziel-Volume erstellen, wird das Volume automatisch auf den Lese-/Schreibmodus gesetzt, um die Daten während der Replikation zu akzeptieren.
+
+. Wählen Sie *Management* > *Volumes*.
+. Klicken Sie Auf *Volume Erstellen*.
+. Geben Sie im Dialogfeld Neues Volume erstellen den Volume-Namen ein.
+. Geben Sie die Gesamtgröße des Volumes ein, wählen Sie eine Blockgröße für das Volume und wählen Sie das Konto aus, das Zugriff auf das Volume haben soll.
+. Klicken Sie Auf *Volume Erstellen*.
+. Klicken Sie im Fenster „aktiv“ auf das Aktionen-Symbol für das Volume.
+. Klicken Sie Auf *Bearbeiten*.
+. Ändern Sie die Kontozugriffsebene auf Replikationsziel.
+. Klicken Sie Auf *Änderungen Speichern*.
+

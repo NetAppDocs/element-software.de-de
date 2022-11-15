@@ -1,0 +1,37 @@
+---
+permalink: storage/task_data_manage_vol_access_group_view_individual_access_group_details.html 
+sidebar: sidebar 
+keywords: access group details, view, view details, initiators 
+summary: Sie können Details für eine einzelne Zugriffsgruppe, z. B. verbundene Volumes und Initiatoren, in einem grafischen Format anzeigen. 
+---
+= Zeigen Sie die Details einzelner Zugriffsgruppen an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Details für eine einzelne Zugriffsgruppe, z. B. verbundene Volumes und Initiatoren, in einem grafischen Format anzeigen.
+
+. Klicken Sie Auf *Verwaltung* > *Zugriffsgruppen*.
+. Klicken Sie auf das Symbol Aktionen für eine Zugriffsgruppe.
+. Klicken Sie Auf *Details Anzeigen*.
+
+
+
+
+== Details zu Volume-Zugriffsgruppen
+
+Die Seite Zugriffsgruppen auf der Registerkarte Verwaltung enthält Informationen zu Volume Access Groups.
+
+Folgende Informationen werden angezeigt:
+
+* *ID*: Die vom System generierte ID für die Zugriffsgruppe.
+* *Name*: Der Name, der der Zugriffsgruppe bei der Erstellung gegeben wurde.
+* *Aktive Volumes*: Die Anzahl der aktiven Volumes in der Zugriffsgruppe.
+* *Komprimierung*: Die Kompressionseffizienz für die Zugriffsgruppe.
+* *Deduplizierung*: Die Deduplizierungs-Effizienzbewertung für die Zugriffsgruppe.
+* *Thin Provisioning*: Die Thin Provisioning-Effizienzbewertung für die Zugriffsgruppe.
+* *Gesamteffizienz*: Die Gesamteffizienz für die Access Group.
+* *Initiatoren*: Die Anzahl der Initiatoren, die mit der Zugriffsgruppe verbunden sind.
+

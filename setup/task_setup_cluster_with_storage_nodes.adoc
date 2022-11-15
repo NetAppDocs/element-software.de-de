@@ -1,0 +1,30 @@
+---
+permalink: setup/task_setup_cluster_with_storage_nodes.html 
+sidebar: sidebar 
+keywords: element, solidfire, install, setup, node, cluster 
+summary: Analysieren Sie die Reihenfolge, in der ein Cluster mit den Storage-Nodes eingerichtet wird. 
+---
+= Einrichten eines Clusters mit Element Storage Nodes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein Cluster mit Storage-Nodes einrichten und mithilfe von Element Software managen, nachdem Sie Nodes in einer Höheneinheit installiert und verkabeln und dann wieder einschalten. Anschließend können Sie zusätzliche Komponenten in Ihrem Speichersystem installieren und konfigurieren.
+
+.Schritte
+. link:concept_setup_configure_a_storage_node.html["Konfigurieren Sie einen Storage-Node"]
+. link:task_setup_create_a_storage_cluster.html["Erstellen eines Storage-Clusters"]
+. link:task_post_deploy_access_the_element_software_user_interface.html["Melden Sie sich bei der Benutzeroberfläche der Element Software an"]
+. link:task_setup_add_drives_to_a_cluster.html["Fügen Sie dem Cluster Laufwerke hinzu"]
+. link:task_setup_determine_which_solidfire_components_to_install.html["Ermitteln der zu installierenden SolidFire-Komponenten"]
+. link:task_setup_gh_redirect_set_up_a_management_node.html["Richten Sie einen Management-Node ein"]
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+

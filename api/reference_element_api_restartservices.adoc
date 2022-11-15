@@ -1,0 +1,141 @@
+---
+permalink: api/reference_element_api_restartservices.html 
+sidebar: sidebar 
+keywords: restart,service,services,restartservices,restarting,node 
+summary: Sie können die Dienste auf einem Knoten neu starten, indem Sie die Methode RestartServices verwenden. 
+---
+= RestartServices neu starten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `RestartServices` Methode zum Neustart der Dienste auf einem Knoten.
+
+
+
+== Parameter
+
+ACHTUNG:
+
+Diese Methode führt zu einer vorübergehenden Unterbrechung von Node-Services.
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Erzwingen
+ a| 
+Auf „true“ gesetzt, um Dienste auf einem Knoten neu zu starten.
+ a| 
+boolesch
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Service
+ a| 
+Dienstname, der neu gestartet werden soll.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Aktion
+ a| 
+Aktion für den Dienst (Start, Stopp, Neustart).
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Details
+ a| 
+Die Ausgabe des Service-Neustarts, einschließlich Fehler (falls vorhanden).
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+Dauer
+ a| 
+Die Zeit dauerte, in Sekunden die Dienste des Node neu zu starten.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Ergebnis
+ a| 
+Ergebnisse des Neustarts.
+ a| 
+Zeichenfolge
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "RestartServices",
+   "params": {
+              "force" : true
+              "action" : restart,
+             }
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "details": "solidfire stop/waiting\nsolidfire start/running, process 7284\n",
+    "duration": "00:00:02.541594",
+    "result": "Passed"
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6

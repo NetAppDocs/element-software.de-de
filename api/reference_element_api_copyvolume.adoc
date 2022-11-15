@@ -1,0 +1,140 @@
+---
+permalink: api/reference_element_api_copyvolume.html 
+sidebar: sidebar 
+keywords: volume,volumes,CopyVolume,overwrite,overwriting,data 
+summary: 'Sie können die CopyVolume-Methode verwenden, um den Dateninhalt eines vorhandenen Volumes mit dem Dateninhalt eines anderen Volumes \(oder Snapshot\) zu überschreiben. Attribute des Ziel-Volume wie IQN, QoS-Einstellungen, Größe, Konto und Mitgliedschaft für Volume-Zugriffsgruppen werden nicht geändert. Das Ziel-Volume muss bereits vorhanden sein und dieselbe Größe aufweisen wie das Quell-Volume.' 
+---
+= CopyVolume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `CopyVolume` Methode zum Überschreiben des Dateninhalts eines vorhandenen Volumes mit dem Dateninhalt eines anderen Volumes (oder Snapshots). Attribute des Ziel-Volume wie IQN, QoS-Einstellungen, Größe, Konto und Mitgliedschaft für Volume-Zugriffsgruppen werden nicht geändert. Das Ziel-Volume muss bereits vorhanden sein und dieselbe Größe aufweisen wie das Quell-Volume.
+
+Es ist am besten, wenn Clients das Ziel-Volume unmounten, bevor der Vorgang beginnt. Wenn das Zielvolume während des Vorgangs geändert wird, gehen die Änderungen verloren. Dieser Vorgang kann eine variable Zeit in Anspruch nehmen. Sie können das verwenden xref:reference_element_api_getasyncresult.adoc[GetAsyncResult] Methode, um zu bestimmen, wann der Prozess abgeschlossen ist, und xref:reference_element_api_listsyncjobs.adoc[ListSyncJobs] Um den Fortschritt der Kopie anzuzeigen.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+DstVolumeID
+ a| 
+VolumeID des zu überschreibenden Volumes.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+VolumeID
+ a| 
+VolumeID des Volumes, aus dem gelesen werden soll.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Snapshot-ID
+ a| 
+ID des Snapshots, der als Quelle des Klons verwendet wird. Wenn keine ID angegeben wird, wird das aktuelle aktive Volume verwendet.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Asynchron
+ a| 
+Handle-Wert, der zum Abrufen des Operationsergebnisses verwendet wird.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+KlonID
+ a| 
+KlonID für das neu geklonte Volume
+ a| 
+Ganzzahl
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "CopyVolume",
+   "params": {
+      "volumeID" : 3,
+      "dstVolumeID" : 2
+   },
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "asyncHandle": 9,
+    "cloneID": 5
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6
+
+
+
+== Weitere Informationen
+
+* xref:reference_element_api_getasyncresult.adoc[GetAsyncResult]
+* xref:reference_element_api_listsyncjobs.adoc[ListSyncJobs]
+

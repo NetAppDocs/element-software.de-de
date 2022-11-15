@@ -1,0 +1,29 @@
+---
+permalink: storage/task_data_manage_volumes_deleting_a_qos_policy.html 
+sidebar: sidebar 
+keywords: qos policy, delete, volumes 
+summary: Die QoS-Richtlinie kann gelöscht werden, wenn sie nicht mehr benötigt wird. Wenn Sie eine QoS-Richtlinie löschen, behalten alle mit der Richtlinie verknüpften Volumes die QoS-Einstellungen bei, werden aber einer Richtlinie nicht zugeordnet. 
+---
+= Löschen einer QoS-Richtlinie
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die QoS-Richtlinie kann gelöscht werden, wenn sie nicht mehr benötigt wird. Wenn Sie eine QoS-Richtlinie löschen, behalten alle mit der Richtlinie verknüpften Volumes die QoS-Einstellungen bei, werden aber einer Richtlinie nicht zugeordnet.
+
+
+NOTE: Wenn Sie versuchen, die Zuordnung eines Volumes zu einer QoS-Richtlinie aufzuheben, können Sie die QoS-Einstellungen für dieses Volume individuell ändern.
+
+. Wählen Sie *Management* > *QoS-Richtlinien*.
+. Klicken Sie auf das Symbol Aktionen für die QoS-Richtlinie, die Sie löschen möchten.
+. Wählen Sie im Menü Ergebnis die Option *Löschen* aus.
+. Bestätigen Sie die Aktion.
+
+
+
+
+== Weitere Informationen
+
+xref:task_data_manage_volumes_remove_a_qos_policy_association_of_a_volume.adoc[Entfernen Sie die QoS-Richtlinienzuordnung eines Volumes]

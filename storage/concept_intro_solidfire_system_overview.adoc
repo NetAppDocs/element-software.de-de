@@ -1,0 +1,37 @@
+---
+permalink: storage/concept_intro_solidfire_system_overview.html 
+sidebar: sidebar 
+keywords: drives, nodes, unified cluster, nodes, storage nodes, Fibre Channel nodes, FC, cluster, management, Active IQ, system components, components, hardware, storage resources, storage, Element UI, Element software, Element 
+summary: 'Ein SolidFire All-Flash-Storage-System besteht aus separaten Hardwarekomponenten \ (Laufwerk und Nodes\), die über die unabhängige NetApp Element Software auf jedem Node in einem einzelnen Pool an Storage-Ressourcen kombiniert werden. Dieser Unified Cluster wird von externen Clients als einzelnes Storage-System präsentiert und wird als eine Einheit über die UI, die API und andere Managementtools von Element Software gemanagt.' 
+---
+= SolidFire Storage-System
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ein SolidFire All-Flash-Storage-System besteht aus separaten Hardwarekomponenten (Laufwerke und Nodes), die über die unabhängige Ausführung von NetApp Element Software in einem einzelnen Pool an Storage-Ressourcen kombiniert werden. Dieser Unified Cluster wird von externen Clients als einzelnes Storage-System präsentiert und wird als eine Einheit über die UI, die API und andere Managementtools von Element Software gemanagt.
+
+Über die Benutzeroberfläche der NetApp Element Software können Sie SolidFire Cluster Storage-Kapazität und -Performance einrichten und überwachen und Storage-Aktivitäten in einer mandantenfähigen Infrastruktur managen.
+
+image::../media/solidfire_concepts_architecture_image.gif[Element Software – Architekturdiagramm]
+
+Ein SolidFire All-Flash-Storage-System umfasst die folgenden Komponenten:
+
+* Nodes: Physische Hardware, die die Storage-Ressourcen für ein Cluster bereitstellt Es gibt zwei Node-Typen:
++
+** Storage-Nodes: Server mit einer Sammlung von Laufwerken
+** Fibre Channel-Knoten (FC): Werden zur Verbindung von FC-Clients über einen Fibre Channel Switch verwendet.
+
+
+* Cluster: Der Hub des SolidFire Storage-Systems besteht aus mindestens vier Nodes.
+* Management-Node: Ermöglicht Upgrades und die Bereitstellung von Systemservices wie Monitoring und Telemetrie, Management von Cluster-Ressourcen und -Einstellungen, Tests und Utilities sowie NetApp Support-Zugriff zur Fehlerbehebung. Der Management-Node (mNode) ist eine Virtual Machine, die zusammen mit einem Element Software-basierten Storage-Cluster ausgeführt wird.
+* Active IQ: Ein webbasiertes Tool, das kontinuierlich aktualisierte historische Ansichten von Cluster-weiten Daten bietet. Sie können Benachrichtigungen für bestimmte Ereignisse, Schwellenwerte oder Metriken einrichten. Mit Active IQ können Sie die Performance und Kapazität des Systems überwachen und über den Cluster-Zustand auf dem Laufenden bleiben.
+* Laufwerke werden in Storage-Nodes verwendet und speichern Daten für das Cluster. Ein Storage-Node enthält zwei Laufwerkstypen:
++
+** Volume-Metadaten speichern Informationen, die Volumes und andere Objekte innerhalb eines Clusters definieren.
+** Blocklaufwerke speichern Datenblöcke für Applikations-Volumes.
+
+
+

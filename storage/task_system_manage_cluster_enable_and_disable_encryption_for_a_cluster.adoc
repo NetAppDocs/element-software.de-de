@@ -1,0 +1,78 @@
+---
+permalink: storage/task_system_manage_cluster_enable_and_disable_encryption_for_a_cluster.html 
+sidebar: sidebar 
+keywords: enable, disable, encryption at rest, cluster, sed, hardware-based, encryption settings, software-based 
+summary: Mit SolidFire Clustern können Sie alle auf dem Cluster gespeicherten Daten mithilfe von Software- oder hardwarebasierter Verschlüsselung im Ruhezustand verschlüsseln. 
+---
+= Aktivieren und deaktivieren Sie die Verschlüsselung für ein Cluster im Ruhezustand
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit SolidFire Clustern können Sie alle auf Cluster-Laufwerken gespeicherten Daten im Ruhezustand verschlüsseln. Sie können den Cluster-weiten Schutz von Self-Encrypting Drives (SED) mit beiden aktivieren link:../concepts/concept_solidfire_concepts_security.html["Hardware- oder softwarebasierte Verschlüsselung im Ruhezustand"].
+
+Die Hardware-Verschlüsselung im Ruhezustand wird über die Element UI oder API aktiviert. Die Aktivierung der Hardware-Verschlüsselung im Ruhezustand hat keine Auswirkungen auf die Performance und Effizienz des Clusters. Die Softwareverschlüsselung im Ruhezustand ist nur mit der Element API möglich.
+
+Die hardwarebasierte Verschlüsselung für Daten im Ruhezustand ist bei der Cluster-Erstellung standardmäßig nicht aktiviert und kann von der Element UI aktiviert und deaktiviert werden.
+
+
+WARNING: Bei SolidFire All-Flash-Storage-Clustern muss die Softwareverschlüsselung im Ruhezustand während der Cluster-Erstellung aktiviert sein und nach dem Erstellen des Clusters nicht deaktiviert werden können. Für ESDS-Cluster (SolidFire Enterprise SDS) ist die Softwareverschlüsselung im Ruhezustand standardmäßig aktiviert.
+
+.Was Sie und#8217;ll benötigen
+* Sie verfügen über Cluster-Administratorrechte zum Aktivieren oder Ändern von Verschlüsselungseinstellungen.
+* Bei der hardwarebasierten Verschlüsselung im Ruhezustand haben Sie vor der Änderung von Verschlüsselungseinstellungen sichergestellt, dass sich das Cluster in einem ordnungsgemäßen Zustand befindet.
+* Wenn Sie die Verschlüsselung deaktivieren, müssen zwei Knoten an einem Cluster teilnehmen, um auf den Schlüssel zuzugreifen, um die Verschlüsselung auf einem Laufwerk zu deaktivieren.
+
+
+
+
+== Überprüfen Sie den Status der Verschlüsselung im Ruhezustand
+
+Mithilfe der können Sie den aktuellen Status der Verschlüsselung im Ruhezustand und/oder Softwareverschlüsselung im Ruhezustand auf dem Cluster anzeigen link:../api/reference_element_api_getclusterinfo.html["GetClusterInfo"^] Methode. Sie können das verwenden link:../api/reference_element_api_getsoftwareencryptionatrestinfo.html["GetSoftwareVerschlüsselungAtRestInfo"^] Methode zum Abrufen von Informationen, die das Cluster verwendet, um Daten im Ruhezustand zu verschlüsseln.
+
+
+NOTE: Das UI-Dashboard der Element Software unter `https://<MVIP>/` Derzeit wird für hardwarebasierte Verschlüsselung nur die Verschlüsselung im Ruhezustand angezeigt.
+
+.Optionen
+*  hardware-based encryption at rest
+*  software-based encryption at rest
+*  hardware-based encryption at rest
+
+
+
+
+== Hardwarebasierte Verschlüsselung für Daten im Ruhezustand
+
+
+NOTE: Um die Verschlüsselung im Ruhezustand über eine externe Verschlüsselungsmanagementkonfiguration zu aktivieren, müssen Sie die Verschlüsselung im Ruhezustand über die aktivieren link:../api/reference_element_api_enableencryptionatrest.html["API"]. Wenn Sie die Verwendung der Schaltfläche der vorhandenen Element-Benutzeroberfläche aktivieren, wird die Nutzung intern generierter Schlüssel wiederhergestellt.
+
+. Wählen Sie in der Element-UI die Option *Cluster* > *Einstellungen*.
+. Wählen Sie *Verschlüsselung im Ruhezustand aktivieren*.
+
+
+
+
+== Softwarebasierte Verschlüsselung im Ruhezustand aktivieren
+
+
+NOTE: Die Softwareverschlüsselung für Daten im Ruhezustand kann nicht deaktiviert werden, nachdem sie auf dem Cluster aktiviert ist.
+
+. Führen Sie während der Cluster-Erstellung den aus link:../api/reference_element_api_createcluster.html["Cluster-Methode erstellen"] Mit `enableSoftwareEncryptionAtRest` Auf einstellen `true`.
+
+
+
+
+== Deaktivieren Sie die hardwarebasierte Verschlüsselung für Daten im Ruhezustand
+
+. Wählen Sie in der Element-UI die Option *Cluster* > *Einstellungen*.
+. Wählen Sie *Verschlüsselung im Ruhezustand deaktivieren*.
+
+
+[discrete]
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Ressourcen-Seite zu NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Dokumentation für frühere Versionen von NetApp SolidFire und Element Produkten"^]
+

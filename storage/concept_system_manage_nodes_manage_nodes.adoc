@@ -1,0 +1,22 @@
+---
+permalink: storage/concept_system_manage_nodes_manage_nodes.html 
+sidebar: sidebar 
+keywords: nodes, manage, cluster, capacity rule, pairs, stranded nodes 
+summary: Sie können SolidFire Storage und Fibre Channel Nodes über die Seite Nodes auf der Registerkarte Cluster verwalten. 
+---
+= Managen von Nodes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können SolidFire Storage und Fibre Channel Nodes über die Seite Nodes auf der Registerkarte Cluster verwalten.
+
+Wenn ein neu hinzugefügter Node mehr als 50 % der gesamten Cluster-Kapazität beträgt, wird einige der Kapazitäten dieses Node unbrauchbar („ungenutzt“) gemacht, sodass die Kapazitätsregel eingehalten wird. Dies bleibt der Fall, bis mehr Storage hinzugefügt wird. Wenn ein sehr großer Node hinzugefügt wird, der auch die Kapazitätsregel nicht befolgt, kann der zuvor isolierte Node nicht mehr ungenutzt bleiben, während der neu hinzugefügte Node ungenutzt ist. Um dies zu vermeiden, sollte immer paarweise Kapazität hinzugefügt werden. Wenn ein Node ungenutzt wird, ist ein geeigneter Cluster-Fehler zu werfen.
+
+
+
+== Weitere Informationen
+
+xref:task_system_manage_nodes_adding_a_node_to_a_cluster.adoc[Fügen Sie einem Cluster einen Node hinzu]

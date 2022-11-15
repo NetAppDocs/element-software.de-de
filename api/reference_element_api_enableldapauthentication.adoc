@@ -1,0 +1,215 @@
+---
+permalink: api/reference_element_api_enableldapauthentication.html 
+sidebar: sidebar 
+keywords: LDAP,auth,authentication,enable,enabling,EnableLdapAuthentication 
+summary: Mit der Methode EnableLdapAuthentication können Sie eine LDAP-Verzeichnisverbindung für die LDAP-Authentifizierung für ein Cluster konfigurieren. Benutzer, die Mitglieder des LDAP-Verzeichnisses sind, können sich dann mithilfe ihrer LDAP-Anmeldedaten am Speichersystem anmelden. 
+---
+= EnableLdapAuthentifizierung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `EnableLdapAuthentication` Methode zum Konfigurieren einer LDAP-Verzeichnisverbindung für die LDAP-Authentifizierung in einem Cluster. Benutzer, die Mitglieder des LDAP-Verzeichnisses sind, können sich dann mithilfe ihrer LDAP-Anmeldedaten am Speichersystem anmelden.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+AuthType
+ a| 
+Gibt an, welche Benutzerauthentifizierungsmethode verwendet werden soll. Mögliche Werte:
+
+* `DirectBind`
+* `SearchAndBind`
+
+ a| 
+Zeichenfolge
+ a| 
+SucheAndBind
+ a| 
+Nein
+
+
+
+ a| 
+GroupSearchBaseDN
+ a| 
+Der Basis-DN des Baums, um die Unterstruktursuche zu starten.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+GroupSearchType
+ a| 
+Steuert den verwendeten Standardfilter für die Gruppensuche. Mögliche Werte:
+
+* NoGroups: Keine Gruppenunterstützung.
+* ActiveDirectory: Verschachtelte Mitgliedschaft aller Active Directory-Gruppen eines Benutzers.
+* MemberDN: MemberDN-Stilgruppen (einzelne Ebene).
+
+ a| 
+Zeichenfolge
+ a| 
+ActiveDirectory
+ a| 
+Nein
+
+
+
+ a| 
+Server-URIs
+ a| 
+Eine kommagetrennte Liste von LDAP- oder LDAPS-Server-URIs. Sie können einen benutzerdefinierten Port am Ende eines LDAP- oder LDAPS-URI hinzufügen, indem Sie einen Doppelpunkt gefolgt von der Portnummer verwenden. Der URI „ldap://1.2.3.4“ verwendet beispielsweise den Standardport und der URI „ldaps://1.2.3.4:123“ verwendet den benutzerdefinierten Port 123.
+ a| 
+String-Array
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+BenutzerSuchbaseDN
+ a| 
+Der Basis-DN des Baums, um die Unterbaumsuche zu starten. Dieser Parameter ist erforderlich, wenn Sie einen AuthType von SearchAndBind verwenden.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+SuchhinBindDN
+ a| 
+Ein vollständig qualifizierter DN zur Anmeldung bei, um eine LDAP-Suche für den Benutzer durchzuführen. Der DN benötigt Lesezugriff auf das LDAP-Verzeichnis. Dieser Parameter ist erforderlich, wenn Sie einen AuthType von SearchAndBind verwenden.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+SucheBindPasswort
+ a| 
+Das Kennwort für das SuchBindDN-Konto, das für die Suche verwendet wurde. Dieser Parameter ist erforderlich, wenn Sie einen AuthType von SearchAndBind verwenden.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+BenutzerSuchfilter
+ a| 
+Der LDAP-Suchfilter, der beim Abfragen des LDAP-Servers verwendet werden soll. Die Zeichenfolge sollte den Platzhaltertext „%USERNAME%“ haben, der durch den Benutzernamen des authentifizierenden Benutzers ersetzt wird. Zum Beispiel verwendet (&(objectClass=Person)(sAMAccountName=%USERNAME%) das Feld sAMAccountName in Active Directory, um mit dem bei der Cluster-Anmeldung eingegebenen Benutzernamen überein. Dieser Parameter ist erforderlich, wenn Sie einen AuthType von SearchAndBind verwenden.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+BenutzerDNTemplatte
+ a| 
+Eine Zeichenkettenvorlage, mit der ein Muster zum Erstellen eines vollständigen, vom Benutzer bestimmten Namens (DN) definiert wird. Die Zeichenfolge sollte den Platzhaltertext „%USERNAME%“ haben, der durch den Benutzernamen des authentifizierenden Benutzers ersetzt wird. Dieser Parameter ist erforderlich, wenn Sie einen AuthType von DirectBind verwenden.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+GroupSearchCustomFilter
+ a| 
+Für die Verwendung mit dem CustomFilter-Suchtyp, ein LDAP-Filter, mit dem der DNS von Benutzergruppen zurückgegeben werden kann. Der Platzhalter-Text von %USERNAME% und %USDN% kann bei Bedarf durch ihren Benutzernamen und vollständigen Benutzer-DN ersetzt werden.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode hat keine Rückgabewerte.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "EnableLdapAuthentication",
+  "params": {
+     "authType": "SearchAndBind",
+     "groupSearchBaseDN": "dc=prodtest,dc=solidfire,dc=net",
+     "groupSearchType": "ActiveDirectory",
+     "searchBindDN": "SFReadOnly@prodtest.solidfire.net",
+     "searchBindPassword": "zsw@#edcASD12",
+     "sslCert": "",
+     "userSearchBaseDN": "dc=prodtest,dc=solidfire,dc=net",
+     "userSearchFilter": "(&(objectClass=person)(sAMAccountName=%USERNAME%))",
+     "serverURIs":[
+           "ldaps://111.22.333.444",
+           "ldap://555.66.777.888"
+           ]
+       },
+  "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+"id": 1,
+"result": {
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6

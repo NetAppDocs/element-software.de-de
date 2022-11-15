@@ -1,0 +1,25 @@
+---
+permalink: storage/task_replication_pause_replication.html 
+sidebar: sidebar 
+keywords: replication, pause, volume pairs 
+summary: Sie können die Replizierung manuell unterbrechen, wenn Sie die I/O-Verarbeitung für kurze Zeit anhalten müssen. Möglicherweise möchten Sie die Replizierung unterbrechen, wenn die I/O-Verarbeitung stark zulasten und die Verarbeitungslast reduzieren soll. 
+---
+= Unterbrechen Sie die Replikation
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Replizierung manuell unterbrechen, wenn Sie die I/O-Verarbeitung für kurze Zeit anhalten müssen. Möglicherweise möchten Sie die Replizierung unterbrechen, wenn die I/O-Verarbeitung stark zulasten und die Verarbeitungslast reduzieren soll.
+
+. Wählen Sie *Data Protection* > *Volume Pairs*.
+. Klicken Sie auf das Aktionen-Symbol für das Volume-Paar.
+. Klicken Sie Auf *Bearbeiten*.
+. Im Fensterbereich *Volume Pair bearbeiten* wird der Replikationsprozess manuell angehalten.
++
+
+IMPORTANT: Wenn Sie die Volume-Replikation manuell unterbrechen oder fortsetzen, wird die Übertragung der Daten beendet oder fortgesetzt. Vergewissern Sie sich, dass Sie diese Änderungen an beiden Standorten koordiniert haben.
+
+. Klicken Sie Auf *Änderungen Speichern*.
+

@@ -1,0 +1,109 @@
+---
+permalink: api/reference_element_api_setsnmptrapinfo.html 
+sidebar: sidebar 
+keywords: snmp,trap,information,info,setting,set,setsnmptrapinfo 
+summary: 'Sie können die SetSnmpTrapInfo-Methode verwenden, um die Generierung von Cluster-SNMP-Benachrichtigungen \(Traps\) zu aktivieren und zu deaktivieren und die Anzahl der Hosts anzugeben, die die Benachrichtigungen empfangen. Die Werte, die Sie mit jedem Anruf der SetSnmpTrapInfo-Methode übergeben, ersetzen alle Werte, die in einem vorherigen Anruf festgelegt wurden.' 
+---
+= SetSnmpTrapInfo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `SetSnmpTrapInfo` Methode zum Aktivieren und Deaktivieren der Generierung von Cluster-SNMP-Benachrichtigungen (Traps) und zur Angabe der Host-Set, die die Benachrichtigungen empfangen. Die Werte, die Sie mit jedem überschreiten `SetSnmpTrapInfo` Methodenanruf Ersetzen Sie alle Werte, die in einem vorherigen Anruf festgelegt wurden.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Trap-Empfänger
+ a| 
+Liste der Hosts, die die vom Storage-Cluster erzeugten Traps empfangen sollen. Mindestens ein Objekt ist erforderlich, wenn einer der Trap-Typen aktiviert ist. Dieser Parameter ist nur erforderlich, wenn boolesche Parameter auf true gesetzt sind. (Kein Standardwert. Nicht erforderlich.)
+ a| 
+xref:reference_element_api_snmptraprecipient.adoc[SnmpTrapEmpfänger] Array erledigen
+
+
+
+ a| 
+ClusterFaultTrapsmentiert
+ a| 
+Wenn auf „true“ gesetzt ist, wird eine entsprechende Cluster-Fehlerbenachrichtigung an die konfigurierte Liste der Trap-Empfänger gesendet, wenn ein Cluster-Fehler protokolliert wird. (Standardwert: False. Nicht erforderlich.)
+ a| 
+boolesch
+
+
+
+ a| 
+ClusterFaultResolvedTrapsEnabliered
+ a| 
+Wenn auf „true“ gesetzt ist, wird eine entsprechende Benachrichtigung über Cluster-Fehler behoben an die konfigurierte Liste der Trap-Empfänger gesendet, wenn ein Clusterfehler behoben ist. (Standardwert: False. Nicht erforderlich.)
+ a| 
+boolesch
+
+
+
+ a| 
+ClusterEventTrapsmit Funktionen
+ a| 
+Wenn auf „true“ gesetzt ist, wird bei der Protokollierung eines Clusterereignisses eine entsprechende Cluster-Ereignisbenachrichtigung an die konfigurierte Liste der Trap-Empfänger gesendet. (Standardwert: False. Nicht erforderlich.)
+ a| 
+boolesch
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode hat keine Rückgabewerte.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+"method":"SetSnmpTrapInfo",
+"params":{
+    "clusterFaultTrapsEnabled":true,
+    "clusterFaultResolvedTrapsEnabled":true,
+    "clusterEventTrapsEnabled":true,
+    "trapRecipients":[
+    {
+      "host":"192.30.0.10",
+      "port":162,
+      "community":"public"
+    }
+   ]
+  },
+  "id":1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+    "id" : 1,
+    "result" : {}
+}
+----
+
+
+== Neu seit Version
+
+9.6

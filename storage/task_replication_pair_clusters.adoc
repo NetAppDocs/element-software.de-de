@@ -1,0 +1,33 @@
+---
+permalink: storage/task_replication_pair_clusters.html 
+sidebar: sidebar 
+keywords: pair clusters, replication, connect clusters, data protection 
+summary: 'Sie müssen zwei Cluster als ersten Schritt mit der Echtzeitreplizierungsfunktion koppeln. Nachdem Sie zwei Cluster miteinander verbunden haben, können Sie aktive Volumes auf einem Cluster konfigurieren, um kontinuierlich zu einem zweiten Cluster zu replizieren. Dadurch profitieren Sie von kontinuierlicher Datensicherung \(CDP\).' 
+---
+= Paarung von Clustern zur Replizierung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen zwei Cluster als ersten Schritt mit der Echtzeitreplizierungsfunktion koppeln. Nachdem Sie zwei Cluster miteinander verbunden haben, können Sie aktive Volumes auf einem Cluster konfigurieren, sodass sie kontinuierlich zu einem zweiten Cluster repliziert werden. Dadurch profitieren Sie von kontinuierlicher Datensicherung (CDP).
+
+.Was Sie und#8217;ll benötigen
+* Für ein oder beide Cluster, die gekoppelt werden, müssen Sie über Administratorrechte verfügen.
+* Alle Knoten-MIPs und Sips werden miteinander geroutet.
+* Weniger als 2000 ms Paketumlauflatenz zwischen Clustern.
+* Beide Speichercluster sollten eindeutige Cluster-Namen, MVIPs, SVIPs und alle Node-IP-Adressen haben.
+* Der Unterschied zwischen den Element Software-Versionen auf den Clustern ist nicht größer als eine Hauptversion. Wenn der Unterschied größer ist, muss ein Cluster aktualisiert werden, um die Datenreplizierung durchzuführen.
+
+
+
+NOTE: Die Cluster-Paarung erfordert eine vollständige Konnektivität zwischen den Nodes im Managementnetzwerk. Zur Replizierung ist die Verbindung zwischen den einzelnen Nodes im Storage-Cluster-Netzwerk erforderlich.
+
+Ein Cluster kann zu bis zu vier anderen Clustern zur Replizierung von Volumes zusammengefasst werden. Sie können Cluster auch innerhalb der Cluster-Gruppe miteinander kombinieren.
+
+
+
+== Weitere Informationen
+
+xref:reference_prereq_network_port_requirements.adoc[Anforderungen an Netzwerk-Ports]

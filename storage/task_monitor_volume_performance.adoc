@@ -1,0 +1,36 @@
+---
+permalink: storage/task_monitor_volume_performance.html 
+sidebar: sidebar 
+keywords: volume performance, view, view alerts 
+summary: Sie können detaillierte Performance-Informationen für alle Volumes im Cluster anzeigen. Sie können die Informationen nach der Volume-ID oder einer der Performance-Spalten sortieren. Sie können die Informationen auch nach bestimmten Kriterien filtern. 
+---
+= Anzeigen der Volume-Performance
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können detaillierte Performance-Informationen für alle Volumes im Cluster anzeigen. Sie können die Informationen nach der Volume-ID oder einer der Performance-Spalten sortieren. Sie können die Informationen auch nach bestimmten Kriterien filtern.
+
+Sie können ändern, wie oft das System Performanceinformationen auf der Seite aktualisiert, indem Sie auf die Liste *Aktualisieren alle* klicken und einen anderen Wert auswählen. Das Standard-Aktualisierungsintervall ist 10 Sekunden, wenn das Cluster weniger als 1000 Volumes hat, andernfalls beträgt die Standardeinstellung 60 Sekunden. Wenn Sie einen Wert von „nie“ wählen, ist die automatische Aktualisierung der Seite deaktiviert.
+
+Sie können die automatische Aktualisierung durch Klicken auf *Aktivieren der automatischen Aktualisierung* wieder aktivieren.
+
+. Wählen Sie in der Element UI die Option *Berichterstellung* > *Volume Performance*.
+. Klicken Sie in der Liste Volume auf das Aktionen-Symbol für ein Volume.
+. Klicken Sie Auf *Details Anzeigen*.
++
+Unten auf der Seite wird ein Fach mit allgemeinen Informationen zum Volume angezeigt.
+
+. Um weitere Informationen zum Volumen anzuzeigen, klicken Sie auf *Weitere Details*.
++
+Das System zeigt detaillierte Informationen sowie Performance-Diagramme für das Volume an.
+
+
+
+
+
+== Weitere Informationen
+
+xref:reference_monitor_volume_performance_details.adoc[Volume Performance im Detail]

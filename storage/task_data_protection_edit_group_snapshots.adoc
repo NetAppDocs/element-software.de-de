@@ -1,0 +1,37 @@
+---
+permalink: storage/task_data_protection_edit_group_snapshots.html 
+sidebar: sidebar 
+keywords: group snapshots, edit, replication, retention 
+summary: Sie können die Replizierungs- und Aufbewahrungseinstellungen für vorhandene Gruppen-Snapshots bearbeiten. 
+---
+= Gruppenschnappschüsse werden bearbeitet
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Replizierungs- und Aufbewahrungseinstellungen für vorhandene Gruppen-Snapshots bearbeiten.
+
+. Klicken Sie Auf *Datenschutz* > *Snapshots Gruppieren*.
+. Klicken Sie auf das Aktionen-Symbol für den Gruppen-Snapshot, den Sie bearbeiten möchten.
+. Wählen Sie im Menü Ergebnis die Option *Bearbeiten*.
+. *Optional:* zum Ändern der Replikationseinstellung für den Gruppenschnappschuß:
++
+.. Klicken Sie neben *Aktuelle Replikation* auf *Bearbeiten*.
+.. Aktivieren Sie das Kontrollkästchen *jedes Gruppenmitglied in Replikation einschließen bei Paarung*, um sicherzustellen, dass jeder Snapshot bei der Replikation erfasst wird, wenn das übergeordnete Volume gekoppelt ist.
+
+
+. *Optional:* um die Aufbewahrungseinstellung für den Gruppenschnappschuß zu ändern, wählen Sie aus den folgenden Optionen:
++
+.. Klicken Sie neben *Aktuelle Aufbewahrung* auf *Bearbeiten*.
+.. Wählen Sie eine Aufbewahrungsoption für den Gruppen-Snapshot:
++
+*** Klicken Sie auf *Keep Forever*, um den Snapshot auf dem System auf unbestimmte Zeit zu behalten.
+*** Klicken Sie auf *Aufbewahrungszeitraum festlegen* und verwenden Sie die Datumspinnboxen, um eine Zeitdauer für das System auszuwählen, um den Snapshot zu behalten.
+
+
+
+
+. Klicken Sie Auf *Änderungen Speichern*.
+

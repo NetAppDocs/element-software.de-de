@@ -1,0 +1,24 @@
+---
+permalink: storage/task_troubleshoot_remove_mdss_drives.html 
+sidebar: sidebar 
+keywords: mdss, remove, multi-drive slice service 
+summary: 'Sie können die Slice Service \(MDSS\)-Laufwerke mit mehreren Laufwerken entfernen. Dieser Vorgang gilt nur, wenn der Knoten über mehrere Slice-Laufwerke verfügt.' 
+---
+= Entfernen Sie MDSS-Laufwerke
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die MDSS-Laufwerke (Slice Service) mit mehreren Laufwerken entfernen. Dieser Vorgang gilt nur, wenn der Knoten über mehrere Slice-Laufwerke verfügt.
+
+
+NOTE: Wenn das System-Slice-Laufwerk und das Steckplatz-2-Laufwerk ausfallen, schaltet das System die Services ab und entfernt die Laufwerke. Wenn kein Ausfall auftritt und Sie die Laufwerke entfernen, müssen beide Laufwerke gleichzeitig entfernt werden.
+
+. Klicken Sie Auf *Cluster* > *Laufwerke*.
+. Klicken Sie auf der Registerkarte *Available* Drives auf das Kontrollkästchen für die zu entfernenden Slice Drives.
+. Klicken Sie Auf *Massenaktionen*.
+. Klicken Sie Auf *Entfernen*.
+. Bestätigen Sie die Aktion.
+

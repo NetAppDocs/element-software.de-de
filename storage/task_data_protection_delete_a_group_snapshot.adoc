@@ -1,0 +1,28 @@
+---
+permalink: storage/task_data_protection_delete_a_group_snapshot.html 
+sidebar: sidebar 
+keywords: group snapshot, delete 
+summary: Sie können einen Gruppen-Snapshot aus dem System löschen. Wenn Sie den Gruppen-Snapshot löschen, können Sie auswählen, ob alle mit der Gruppe verknüpften Snapshots als einzelne Snapshots gelöscht oder beibehalten werden. 
+---
+= Löschen eines Gruppen-Snapshots
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können einen Gruppen-Snapshot aus dem System löschen. Wenn Sie den Gruppen-Snapshot löschen, können Sie auswählen, ob alle mit der Gruppe verknüpften Snapshots als einzelne Snapshots gelöscht oder beibehalten werden.
+
+Wenn Sie ein Volume oder einen Snapshot löschen, das Mitglied eines Gruppen-Snapshots ist, können Sie nicht mehr zum Gruppen-Snapshot zurückkehren. Sie können jedoch jedes Volume einzeln zurück verschieben.
+
+. Klicken Sie Auf *Datenschutz* > *Snapshots Gruppieren*.
+. Klicken Sie auf das Symbol Aktionen für den zu löschenden Snapshot.
+. Klicken Sie im Menü Ergebnis auf *Löschen*.
+. Wählen Sie im Bestätigungsdialogfeld eine der folgenden Optionen aus:
++
+** Klicken Sie auf *GruppenSnapshot und alle Mitglieder der Gruppe löschen*, um den Gruppen-Snapshot und alle Mitglieder-Snapshots zu löschen.
+** Klicken Sie auf *GruppenSnapshot-Mitglieder als einzelne Snapshots*, um den Gruppen-Snapshot zu löschen, aber alle Mitglieder-Snapshots zu behalten.
+
+
+. Bestätigen Sie die Aktion.
+

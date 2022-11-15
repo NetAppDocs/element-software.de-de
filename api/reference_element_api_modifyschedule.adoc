@@ -1,0 +1,349 @@
+---
+permalink: api/reference_element_api_modifyschedule.html 
+sidebar: sidebar 
+keywords: modify,modifying,edit,editing,change,changing,snapshot,schedule,scheduled,delete,pause,modifyschedule 
+summary: Sie können ModifySchedule verwenden, um die Intervalle zu ändern, in denen ein geplanter Snapshot erstellt wird. Mit dieser Methode können Sie auch einen Zeitplan löschen oder anhalten. 
+---
+= ModifySchedule
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwenden Sie können `ModifySchedule` Um die Intervalle zu ändern, in denen ein geplanter Snapshot stattfindet. Mit dieser Methode können Sie auch einen Zeitplan löschen oder anhalten.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+
+
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Merkmale
+ a| 
+Mit dieser können Sie die Häufigkeit des Snapshot-Auftretens ändern. Mögliche Werte:
+
+* `Days of Week`
+* `Days of Month`
+* `Time Interval`
+
+ a| 
+JSON-Objekt
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Stunden
+ a| 
+Anzahl Stunden zwischen Snapshots oder Stunden, bei denen der Snapshot im Wochentag- oder Monatsmodus stattfinden wird. Gültige Werte sind 0 bis 24.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Name
+ a| 
+Der Name des Snapshots. Wenn kein Name eingegeben wird, wird das Datum und die Uhrzeit der Erstellung des Gruppenschnappschusses verwendet. Die maximal zulässige Namenslänge beträgt 244 Zeichen.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Minuten
+ a| 
+Anzahl der Minuten zwischen Snapshots oder Minuten, bei denen Snapshots im Wochentag- oder Monatsmodus stattfinden. Gültige Werte sind 0 bis 59.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+| LastRunStatus | Das Ergebnis oder der Status der letzten geplanten Snapshot-Erstellung. | Zeichenfolge | Keine | Nein 
+
+
+ a| 
+Angehalten
+ a| 
+Gibt an, ob der Zeitplan angehalten werden soll oder nicht. Gültige Werte:
+
+* `true`
+* `false`
+
+ a| 
+boolesch
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Wiederkehrend
+ a| 
+Gibt an, ob der Zeitplan wiederholt wird oder nicht. Gültige Werte sind:
+
+* `true`
+* `false`
+
+ a| 
+boolesch
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+RunNextInterval
+ a| 
+Verwenden Sie diese Option, um auszuwählen, ob der Snapshot beim nächsten Mal ausgeführt werden soll, wenn der Scheduler aktiv ist. Gültige Werte:
+
+* `true`
+* `false`
+
+
+Wenn der geplante Snapshot auf „true“ gesetzt ist, wird der geplante Snapshot bei der nächsten Aktivierung des Planers ausgeführt und dann auf „false“ zurückgesetzt.
+ a| 
+boolesch
+ a| 
+Falsch
+ a| 
+Nein
+
+
+
+ a| 
+ScheduleID
+ a| 
+Eindeutige ID des Zeitplans.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Planname
+ a| 
+Eindeutiger Name für den Zeitplan. Die maximal zulässige Länge des Plannamens beträgt 244 Zeichen.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Planungstyp
+ a| 
+Gibt den Typ des zu erstellenden Zeitplans an. Der einzige unterstützte Wert ist `snapshot`.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+`scheduleInfo`
+ a| 
+Der eindeutige Name, der dem Zeitplan, den Aufbewahrungszeitraum für den erstellten Snapshot und die Volume-ID des Volumes, aus dem der Snapshot erstellt wurde, gegeben wurde. Gültige Werte:
+
+* `volumeID`: Die ID des Volumens, das in den Schnappschuss aufgenommen werden soll. (Ganze Zahl)
+* `volumes`: Eine Liste der Volume-IDs, die in den Gruppen-Snapshot aufgenommen werden sollen. (Ganzzahliges Array)
+* `name`: Der zu verwendenden Snapshot-Name. (Zeichenfolge)
+* `enableRemoteReplication`: Gibt an, ob der Snapshot in die Remote-Replikation aufgenommen werden soll. (boolesch)
+* `retention`: Die Zeit, die der Schnappschuss in HH:mm:ss beibehalten wird Wenn leer, wird der Snapshot für immer aufbewahrt. (Zeichenfolge)
+* `fifo`: Die Momentaufnahme wird auf First-in-First-Out-Basis (FIFO) beibehalten. (Zeichenfolge)
+* `ensureSerialCreation`: Geben Sie an, ob eine neue Snapshot-Erstellung erlaubt werden soll, wenn eine vorherige Snapshot-Replikation durchgeführt wird. (boolesch)
+
+ a| 
+link:reference_element_api_schedule.html["Zeitplan"^]
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+SnapMirror Label
+ a| 
+Das von der SnapMirror Software verwendete Etikett, um die Richtlinie zur Snapshot-Aufbewahrung auf einem SnapMirror Endpunkt anzugeben.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+ToBeDeleted
+ a| 
+Gibt an, ob der Zeitplan zum Löschen markiert ist. Gültige Werte:
+
+* `true`
+* `false`
+
+ a| 
+boolesch
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Startdatum
+ a| 
+Gibt das Datum an, an dem der Zeitplan zum ersten Mal gestartet wurde oder beginnt.
+ a| 
+ISO 8601-Datumszeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Monthdays
+ a| 
+Die Tage des Monats, an denen ein Schnappschuss gemacht wird. Gültige Werte sind 1 bis 31.
+ a| 
+Integer-Array
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Wochentage
+ a| 
+Tag der Woche wird der Snapshot erstellt. Der Wochentag beginnt am Sonntag mit dem Wert 0 und einem Offset von 1.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Zeitplan
+ a| 
+Ein Objekt, das die geänderten Terminplanattribute enthält.
+ a| 
+xref:reference_element_api_schedule.adoc[Zeitplan]
+
+|===
+
+
+== Anforderungsbeispiel
+
+[listing]
+----
+{
+  "method": "ModifySchedule",
+  "params": {
+    "scheduleName" : "Chicago",
+    "scheduleID" : 3
+    },
+  "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "schedule": {
+      "attributes": {
+        "frequency": "Days Of Week"
+            },
+      "hasError": false,
+      "hours": 5,
+      "lastRunStatus": "Success",
+      "lastRunTimeStarted": null,
+      "minutes": 0,
+      "monthdays": [],
+      "paused": false,
+      "recurring": true,
+      "runNextInterval": false,
+      "scheduleID": 3,
+      "scheduleInfo": {
+        "volumeID": "2"
+            },
+      "scheduleName": "Chicago",
+      "scheduleType": "Snapshot",
+      "startingDate": null,
+      "toBeDeleted": false,
+      "weekdays": [
+        {
+          "day": 2,
+          "offset": 1
+      }
+      ]
+    }
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6

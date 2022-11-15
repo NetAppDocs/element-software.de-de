@@ -1,0 +1,86 @@
+---
+permalink: esds/reference_esds_containerlogs.html 
+sidebar: sidebar 
+keywords: element, solidfire esds, get container logs, sds containers 
+summary: Erfahren Sie mehr über die ESDS-Container von SolidFire und wo Sie die zugehörigen Protokolle abrufen können. Die hier angegebenen Informationen sollen Ihnen bei den ersten Schritten helfen, Protokolle zur Fehlerbehebung zu sammeln. Sie sollten sich am besten an den NetApp Support wenden, in dem geschulte Techniker mit Protokollanalyse bei der Behebung von Problemen helfen können. 
+---
+= Sammelt Containerprotokolle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Erfahren Sie mehr über die ESDS-Container von SolidFire und wo Sie die zugehörigen Protokolle abrufen können. Die hier angegebenen Informationen sollen Ihnen bei den ersten Schritten helfen, Protokolle zur Fehlerbehebung zu sammeln. Am besten engagieren https://www.netapp.com/company/contact-us/support/["NetApp Support"^], Wo ausgebildete Ingenieure gut vertraut mit Protokollanalyse kann helfen, Probleme zu lösen.
+
+SolidFire ESDS umfasst die folgenden Container:
+
+* Element Container (`element`): Beherbergt alle Element-Services in einem einzelnen Container.
+* Element auth Container (`element_auth`): Bietet Multi-Faktor-Authentifizierung (MFA) und Session-Authentifizierungs-Tokens für die Management-UIs.
+* Netzwerk-Watchdog-Container (`sfnetwd`): Bietet Heartbeat-Überwachung der lokalen Elementinstanz und Failover der virtuellen IPs (MVIP und SVIP).
+
+
+Um über SSH auf die Container auf einem ESDS-Knoten zuzugreifen, sollte der Eigentümer des Knotens SSH aktivieren und die Anmeldedaten angeben. Nachdem Sie SSH-Zugriff auf das Host-System haben, können Sie den Status eines oder mehrerer Container mithilfe der überprüfen `podman ps` Befehl. Siehe das folgende Beispiel:
+
+[listing]
+----
+# podman ps
+CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
+f6b8817c024a localhost/solidfire-element:12.2.0.777 --config /sf/etc/... 11 seconds ago Up 10 seconds ago sfnetwd
+c3fed6141259 localhost/solidfire-auth:12.2.0.777 --config /sf/etc/... 11 seconds ago Up 11 seconds ago element_auth
+1ffa8289c701 localhost/solidfire-element:12.2.0.777 --config /sf/etc/... 12 seconds ago Up 12 seconds ago element
+#
+----
+
+IMPORTANT: Wenn einer der Container nicht verfügbar ist oder nicht ausgeführt wird, verwenden Sie Podman nicht, um die Container direkt zu steuern (Stopp oder Start). Element Software wird über das gesteuert `solidfire systemd` Serviceeinheit. Dieser Service verwendet `elementctl` Zur Orchestrierung der Software, die in den drei Element Containern ausgeführt wird Wird Verwendet `systemctl` Um den SolidFire Service auf dem Host zu steuern, ist die empfohlene und unterstützte Methode zum Starten und Stoppen der Element Software auf einem beliebigen Node. Allerdings sollten die Vorgänge auf einem Live-Cluster nur unter den Anleitungen des Supports ausgeführt werden.
+
+Alle Protokolle im Zusammenhang mit SolidFire ESDS finden Sie in `/var/log/solidfire/` Auf dem Host, der über Container-Instanzen hinweg erhalten bleibt. Dieses Verzeichnis enthält die Protokolle aus dem Elementcontainer und enthält das `element_auth/` Und `sfnetwd/` Unterverzeichnisse, die die Protokolle aus dem enthalten `element_auth` Und `sfnetwd` Container. Innerhalb eines Containers können Sie bei auf Container-spezifische Protokolle zugreifen `/var/log`.
+
+
+
+== Verwenden Sie die Benutzeroberfläche von NetApp Hybrid Cloud Control zum Erfassen von Protokollen
+
+Sie können Protokolle zusammen, die an den NetApp Support gesendet werden, um Hilfe bei der Diagnose von Problemen mit Ihren SolidFire ESDS Clustern zu erhalten.
+
+Beachten Sie bei der Protokollsammlung die folgenden Überlegungen:
+
+* Verwenden Sie keine Podman-Befehle, um Protokolle zu sammeln.
+* NetApp Support verwendet eine Erfassung für die Erfassung der Host-Protokolle. Für einen optimalen Support sollten Sie eine Collect installiert haben.
+
+
+.Schritte
+. Öffnen Sie die IP-Adresse des Management-Node in einem Webbrowser. Beispiel:
++
+[listing]
+----
+https://[management node IP address]
+----
+. Melden Sie sich bei NetApp Hybrid Cloud Control an, indem Sie die Anmeldedaten des Storage-Cluster-Administrators bereitstellen.
+. Wählen Sie im Dashboard oben rechts das Menü aus.
+. Wählen Sie *Protokolle Sammeln*.
+. Wählen Sie im Dropdown-Menü *Datumsbereich* einen Datumsbereich aus, um festzulegen, welche Daten die Protokolle enthalten sollen.
++
+Wenn Sie ein benutzerdefiniertes Startdatum angeben, können Sie das Datum auswählen, um den Datumsbereich zu beginnen. Protokolle werden von diesem Datum bis zur aktuellen Zeit gesammelt.
+
+. Wählen Sie im Abschnitt *Protokollsammlung* den Speicher-Cluster oder bestimmte Speicherknoten aus.
+. Wählen Sie *Protokolle sammeln*, um die Protokollsammlung zu starten.
++
+Die Protokollerfassung wird im Hintergrund ausgeführt, und auf der Seite wird der Fortschritt angezeigt.
+
++
+
+NOTE: Abhängig von den gesammelten Protokollen bleibt der Fortschrittsbalken möglicherweise für einige Minuten bei einem bestimmten Prozentsatz oder läuft an einigen Punkten sehr langsam voran.
+
+. Wählen Sie *Protokolle herunterladen*, um das Protokollpaket herunterzuladen.
++
+Das Protokollpaket befindet sich in einem komprimierten UNIX `.tgz` Dateiformat.
+
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Ressourcen-Seite zu NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Dokumentation für frühere Versionen von NetApp SolidFire und Element Produkten"^]
+

@@ -1,0 +1,35 @@
+---
+permalink: storage/concept_system_manage_key_recover_inaccessible_or_invalid_authentication_keys.html 
+sidebar: sidebar 
+keywords: slice drive error, cluster fault, authentication keys 
+summary: Gelegentlich kann es zu einem Fehler kommen, der Benutzereingriff erfordert. Bei einem Fehler wird ein Cluster-Fehler generiert. Die beiden wahrscheinlichsten Fälle werden hier beschrieben. 
+---
+= Wiederherstellen von nicht zugänglichen oder ungültigen Authentifizierungsschlüsseln
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Gelegentlich kann es zu einem Fehler kommen, der Benutzereingriff erfordert. Im Fehlerfall wird ein Cluster-Fehler (auch als Cluster-Fehlercode bezeichnet) generiert. Die beiden wahrscheinlichsten Fälle werden hier beschrieben.
+
+
+
+== Das Cluster kann die Laufwerke nicht entsperren, da ein KmipServerFault-Clusterfehler vorliegt.
+
+Dies kann auftreten, wenn das Cluster zum ersten Mal gebootet wird und der Schlüsselserver nicht zugänglich ist oder der erforderliche Schlüssel nicht verfügbar ist.
+
+. Befolgen Sie ggf. die Wiederherstellungsschritte in den Cluster-Fehlercodes.
+
+
+
+
+== Es kann ein SliceServiceUnHealthy Fehler gesetzt werden, weil die Metadaten-Laufwerke als fehlgeschlagen markiert und in den Status „verfügbar“ gesetzt wurden.
+
+Schritte zum Löschen:
+
+. Fügen Sie die Laufwerke erneut hinzu.
+. Prüfen Sie nach 3 bis 4 Minuten, dass der `sliceServiceUnhealthy` Fehler wurde behoben.
+
+
+Siehe link:reference_monitor_cluster_fault_codes.html["Cluster-Fehlercodes"] Finden Sie weitere Informationen.

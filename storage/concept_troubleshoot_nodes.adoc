@@ -1,0 +1,44 @@
+---
+permalink: storage/concept_troubleshoot_nodes.html 
+sidebar: sidebar 
+keywords: troubleshoot, nodes removing 
+summary: Sie können Nodes zu Wartungs- oder Austauschzwecken aus einem Cluster entfernen. Sie sollten die NetApp Element-UI oder -API verwenden, um Nodes zu entfernen, bevor Sie sie in den Offline-Modus versetzen. 
+---
+= Fehlerbehebung für Nodes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Nodes zu Wartungs- oder Austauschzwecken aus einem Cluster entfernen. Sie sollten die NetApp Element-UI oder -API verwenden, um Nodes zu entfernen, bevor Sie sie in den Offline-Modus versetzen.
+
+Ein Überblick über das Verfahren zum Entfernen von Storage-Nodes:
+
+* Stellen Sie sicher, dass im Cluster genügend Kapazität verfügbar ist, um eine Kopie der Daten auf dem Node zu erstellen.
+* Entfernen Sie Laufwerke aus dem Cluster mithilfe der UI oder der RemoveDrives API-Methode.
++
+Daher werden Daten im System von Laufwerken des Node auf andere Laufwerke im Cluster migriert. Die Dauer dieses Prozesses hängt davon ab, wie viele Daten migriert werden müssen.
+
+* Entfernen Sie den Node aus dem Cluster.
+
+
+Beachten Sie die folgenden Überlegungen, bevor Sie einen Node herunterfahren oder hochfahren:
+
+* Das Herunterfahren von Nodes und Clustern birgt Risiken, wenn die Performance nicht ordnungsgemäß erbracht wird.
++
+Das Herunterfahren eines Node sollte unter Anleitung von NetApp Support erfolgen.
+
+* Wenn ein Node unter jeder Art von Herunterfahren länger als 5.5 Minuten ausgefallen ist, beginnt die Double Helix Datensicherung mit der Aufgabe, einzelne replizierte Blöcke auf einen anderen Node zu schreiben, um die Daten zu replizieren. In diesem Fall wenden Sie sich an den NetApp Support, um Hilfe bei der Analyse des ausgefallenen Nodes zu erhalten.
+* Um einen Knoten sicher neu zu starten oder herunterzufahren, können Sie den API-Befehl Herunterfahren verwenden.
+* Wenn ein Node sich in einem „down“ oder „Off“ befindet, müssen Sie den NetApp Support kontaktieren, bevor Sie ihn wieder in den Online-Status versetzen.
+* Nachdem ein Node wieder online geschaltet wurde, müssen Sie die Laufwerke je nach Dauer des Service zurück zum Cluster hinzufügen.
+
+
+
+
+== Finden Sie weitere Informationen
+
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2844772["Austausch eines fehlerhaften SolidFire-Chassis"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2846861["Austausch eines fehlerhaften H600S-Series-Knotens"]

@@ -1,0 +1,75 @@
+---
+permalink: api/reference_element_api_deletesnapmirrorrelationships.html 
+sidebar: sidebar 
+keywords: SnapMirror,relationship,relationships,delete,deleting,DeleteSnapMirrorRelationships 
+summary: Die Element Web-UI verwendet die DeleteSnapMirrorRelationships-Methode, um eine oder mehrere SnapMirror Beziehungen zwischen einem Quell- und Zielendpunkt zu entfernen. 
+---
+= DeleteSnapMirrorRelationships
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Element Web-UI verwendet das `DeleteSnapMirrorRelationships` Methode zum Entfernen einer oder mehrerer SnapMirror Beziehungen zwischen einem Quell- und Ziel-Endpunkt
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+SnapMirrorEndpointID
+ a| 
+Die Endpunkt-ID des Remote-ONTAP-Storage-Systems, die mit dem Element Storage-Cluster kommunizieren
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+ZielVolumes
+ a| 
+Das Ziel-Volume oder die Volumes in der SnapMirror Beziehung.
+ a| 
+xref:reference_element_api_snapmirrorvolumeinfo.adoc[SnapMirrorVolumeInfo] Array erledigen
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Ergebnis
+ a| 
+Wenn die Löschaktion erfolgreich war, enthält dieses Objekt eine Erfolgsmeldung. Wenn die Aktion fehlgeschlagen ist, enthält sie eine Fehlermeldung.
+ a| 
+JSON-Objekt
+
+|===
+
+
+== Neu seit Version
+
+10.1

@@ -1,0 +1,123 @@
+---
+permalink: api/reference_element_api_modifyclusteradmin.html 
+sidebar: sidebar 
+keywords: modify,modifying,edit,editing,change,changing,cluster,admin,settings,modifyclusteradmin 
+summary: 'Sie können die ModifyClusterAdmin-Methode verwenden, um die Einstellungen für Cluster-Admin, LDAP-Cluster-Admin oder Identity Provider \(IdP\)-Clusteradministrator zu ändern. Sie können den Zugriff für das Administratorcluster-Administratorkonto nicht ändern.' 
+---
+= ModifyClusterAdmin
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `ModifyClusterAdmin` Methode zum Ändern der Einstellungen für Cluster-Admin, LDAP-Cluster-Administrator oder IdP-Clusteradministrator (Identity Provider) von Drittanbietern. Sie können den Zugriff für das Administratorcluster-Administratorkonto nicht ändern.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Datenzugriff
+ a| 
+Steuert, welche Methoden dieser Cluster-Administrator verwenden kann.
+ a| 
+String-Array
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Merkmale
+ a| 
+Liste von Name-Wert-Paaren im JSON-Objektformat.
+ a| 
+JSON-Objekt
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Cluster-AdminID
+ a| 
+ClusterAdminID für den Cluster-Administrator, den LDAP-Cluster-Administrator oder den IdP-Cluster-Administrator zum Ändern.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Passwort
+ a| 
+Passwort, das für die Authentifizierung dieses Clusteradministrators verwendet wird. Dieser Parameter gilt nicht für einen LDAP- oder IdP-Clusteradministrator.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode hat keine Rückgabewerte.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "ModifyClusterAdmin",
+   "params": {
+     "clusterAdminID"  : 2,
+     "password"   : "7925Brc429a"
+   },
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+ "id" : 1
+ "result" : { }
+}
+----
+
+
+== Neu seit Version
+
+9.6
+
+
+
+== Weitere Informationen
+
+xref:reference_element_api_app_b_access_control.adoc[Zugriffssteuerung]

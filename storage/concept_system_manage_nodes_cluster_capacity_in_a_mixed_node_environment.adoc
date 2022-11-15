@@ -1,0 +1,41 @@
+---
+permalink: storage/concept_system_manage_nodes_cluster_capacity_in_a_mixed_node_environment.html 
+sidebar: sidebar 
+keywords: nodes, mixed environment, capacity, cluster capacity, mixed nodes, encrypted, non-encrypted, threshold 
+summary: Sie können verschiedene Node-Typen in einem Cluster kombinieren. SF-Series 2405, 3010, 4805, 6010, 9605 9010, 19210, 38410 und H-Series können gleichzeitig in einem Cluster eingesetzt werden. 
+---
+= Kapazität des Clusters in einer gemischten Node-Umgebung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können verschiedene Node-Typen in einem Cluster kombinieren. SF-Series 2405, 3010, 4805, 6010, 9605 9010, 19210, 38410 und H-Series können gleichzeitig in einem Cluster eingesetzt werden.
+
+Die H-Series besteht aus H610S-1, H610S-2, H610S-4 und H410S Nodes. Diese Nodes sind sowohl 10 GbE als auch 25 GbE fähig.
+
+Am besten dürfen nicht verschlüsselte und verschlüsselte Nodes miteinander kombiniert werden. In einem Cluster mit gemischten Nodes kann kein Node mehr als 33 % der gesamten Cluster-Kapazität enthalten. Beispielsweise ist in einem Cluster mit vier SF-Series 4805 Nodes der größte Node, der allein hinzugefügt werden kann, eine SF-Series 9605. Der Cluster-Kapazitätsschwellenwert wird anhand des potenziellen Verlusts des größten Node in dieser Situation berechnet.
+
+Je nach Element Softwareversion werden die folgenden SF-Series Storage-Nodes nicht unterstützt:
+
+[cols="40,40"]
+|===
+| Beginnt mit... | Storage-Node nicht unterstützt... 
+
+
+| Element 12.7  a| 
+* SF2405
+* SF9608
+
+
+
+
+| Element 12.0  a| 
+* SF3010
+* SF6010
+* SF9010
+
+
+|===
+Wenn Sie versuchen, einen dieser Knoten auf eine nicht unterstützte Elementversion zu aktualisieren, wird ein Fehler angezeigt, der angibt, dass dieser Knoten nicht von Element 12.x unterstützt wird

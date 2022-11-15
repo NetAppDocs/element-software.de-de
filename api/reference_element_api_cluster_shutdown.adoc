@@ -1,0 +1,104 @@
+---
+permalink: api/reference_element_api_cluster_shutdown.html 
+sidebar: sidebar 
+keywords: cluster,shutdown,node,shutting,down,shut,restart 
+summary: Sie können die Shutdown-Methode verwenden, um die Knoten in einem Cluster neu zu starten oder herunterzufahren. Sie können über diese Methode einen einzelnen Node, mehrere Nodes oder alle Nodes im Cluster herunterfahren. 
+---
+= Herunterfahren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `Shutdown` Methode zum Neustart oder Herunterfahren der Nodes in einem Cluster. Sie können über diese Methode einen einzelnen Node, mehrere Nodes oder alle Nodes im Cluster herunterfahren.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Knoten
+ a| 
+Liste der NodeIDs für die Nodes, die neu gestartet oder heruntergefahren werden sollen.
+ a| 
+Integer-Array
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Option
+ a| 
+Aktion, die für den Cluster ausgeführt wird. Mögliche Werte:
+
+* Neustart: Startet das Cluster neu.
+* Stop: Führt eine vollständige Abschaltung durch.
+
+ a| 
+Zeichenfolge
+ a| 
+Neustart
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat keinen Rückgabewert.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "Shutdown",
+   "params": {
+     "nodes": [
+       2,
+       3,
+       4
+     ],
+     "option": "halt"
+   },
+   "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id" : 1,
+  "result" : {
+     "failed": [],
+     "successful": [
+          6
+      [
+   }
+}
+----
+
+
+== Neu seit Version
+
+9.6

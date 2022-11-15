@@ -1,0 +1,27 @@
+---
+permalink: storage/task_replication_change_the_mode.html 
+sidebar: sidebar 
+keywords: volume pairings, replication mode, change, volume pair properties 
+summary: Sie können die Volume-Paar-Eigenschaften bearbeiten, um den Replikationsmodus der Volume-Paar-Beziehung zu ändern. 
+---
+= Ändern Sie den Modus der Replikation
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Volume-Paar-Eigenschaften bearbeiten, um den Replikationsmodus der Volume-Paar-Beziehung zu ändern.
+
+. Wählen Sie *Data Protection* > *Volume Pairs*.
+. Klicken Sie auf das Aktionen-Symbol für das Volume-Paar.
+. Klicken Sie Auf *Bearbeiten*.
+. Wählen Sie im Fensterbereich *Volume Pair bearbeiten* einen neuen Replikationsmodus aus:
++
+** *Echtzeit (Asynchron)*: Schreibvorgänge werden dem Client bestätigt, nachdem sie auf dem Quellcluster erstellt wurden.
+** *Real-Time (Synchronous)*: Schreibvorgänge werden dem Client bestätigt, nachdem sie sowohl auf den Quell- als auch auf den Ziel-Clustern festgelegt sind.
+** *Nur Snapshots*: Nur Snapshots, die auf dem Quellcluster erstellt wurden, werden repliziert. Aktive Schreibvorgänge vom Quell-Volume werden nicht repliziert. *Achtung:* die Änderung der Replikationsmodus ändert den Modus sofort. Vergewissern Sie sich, dass Sie diese Änderungen an beiden Standorten koordiniert haben.
+
+
+. Klicken Sie Auf *Änderungen Speichern*.
+

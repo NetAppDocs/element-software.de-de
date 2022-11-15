@@ -1,0 +1,295 @@
+---
+permalink: api/reference_element_api_cluster.html 
+sidebar: sidebar 
+keywords: objects,object,cluster 
+summary: Das Cluster-Objekt enthält Informationen, die der Node zur Kommunikation mit dem Cluster verwendet. Sie können diese Informationen mit der GetClusterConfig-API-Methode abrufen. 
+---
+= Cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Cluster-Objekt enthält Informationen, die der Node zur Kommunikation mit dem Cluster verwendet. Sie können diese Informationen mit der GetClusterConfig-API-Methode abrufen.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Zipi
+ a| 
+Für die Cluster-Kommunikation verwendete Netzwerkschnittstelle.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Cluster
+ a| 
+Eindeutiger Cluster-Name.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+VerschlüsselungBeschriftung
+ a| 
+Gibt an, ob der Node die Laufwerkverschlüsselung unterstützt.
+ a| 
+boolesch
+
+
+
+ a| 
+Ensemble
+ a| 
+Die Nodes, die am Cluster teilnehmen.
+ a| 
+String-Array
+
+
+
+ a| 
+FipsDriveKonfiguration
+ a| 
+Gibt an, ob der Node FIPS 140-2-2-zertifizierte Laufwerke unterstützt.
+ a| 
+boolesch
+
+
+
+ a| 
+mipi
+ a| 
+Die für das Node-Management verwendete Netzwerkschnittstelle.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Name
+ a| 
+Der Cluster-Name.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+NodeID
+ a| 
+Die Node-ID des Node im Cluster.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+HängenNodeID
+ a| 
+Die ID des ausstehenden Node im Cluster.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Rolle
+ a| 
+Gibt die Rolle des Knotens an.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+sipi
+ a| 
+Die für Storage-Datenverkehr verwendete Netzwerkschnittstelle.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Bundesland
+ a| 
+Der aktuelle Status des Node. Mögliche Werte:
+
+* Verfügbar: Der Node wurde nicht mit einem Cluster-Namen konfiguriert.
+* Ausstehend: Der Node steht für ein bestimmtes benanntes Cluster aus und kann hinzugefügt werden.
+* Aktiv: Der Node ist ein aktives Mitglied eines Clusters und kann keinem anderen Cluster hinzugefügt werden.
+* PendingActive: Der Knoten wird derzeit an das Factory-Software-Image zurückgegeben und ist noch kein aktives Mitglied eines Clusters. Nach Abschluss wechselt es in den Status „aktiv“.
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Version
+ a| 
+Die Version der auf dem Node ausgeführten Software.
+ a| 
+Zeichenfolge
+
+|===
+
+
+== Mitgliedänderbarkeit und Knotenstatus
+
+In dieser Tabelle wird angegeben, ob die Objektparameter für jeden möglichen Node-Status geändert werden können.
+
+|===
+
+
+| Parametername | Verfügbarer Status | Status „ausstehend“ | Aktiver Status 
+
+
+ a| 
+Zipi
+ a| 
+Nein
+ a| 
+Nein
+ a| 
+Nein
+
+
+
+ a| 
+Cluster
+ a| 
+Ja.
+ a| 
+Ja.
+ a| 
+Nein
+
+
+
+ a| 
+VerschlüsselungBeschriftung
+ a| 
+Nein
+ a| 
+Nein
+ a| 
+Nein
+
+
+
+ a| 
+Ensemble
+ a| 
+Nein
+ a| 
+Nein
+ a| 
+Nein
+
+
+
+ a| 
+mipi
+ a| 
+Ja.
+ a| 
+Ja.
+ a| 
+Nein
+
+
+
+ a| 
+Name
+ a| 
+Ja.
+ a| 
+Ja.
+ a| 
+Ja.
+
+
+
+ a| 
+NodeID
+ a| 
+Nein
+ a| 
+Nein
+ a| 
+Nein
+
+
+
+ a| 
+HängenNodeID
+ a| 
+Nein
+ a| 
+Nein
+ a| 
+Nein
+
+
+
+ a| 
+Rolle
+ a| 
+Nein
+ a| 
+Nein
+ a| 
+Nein
+
+
+
+ a| 
+sipi
+ a| 
+Nein
+ a| 
+Nein
+ a| 
+Nein
+
+
+
+ a| 
+Bundesland
+ a| 
+Nein
+ a| 
+Nein
+ a| 
+Nein
+
+
+
+ a| 
+Version
+ a| 
+Nein
+ a| 
+Nein
+ a| 
+Nein
+
+|===
+
+
+== Weitere Informationen
+
+xref:reference_element_api_getclusterconfig.adoc[GetClusterConfig]

@@ -1,0 +1,59 @@
+---
+permalink: api/reference_element_api_removesslcertificate.html 
+sidebar: sidebar 
+keywords: ssl,certificate,cert,remove,removing,cluster,removesslcertificate 
+summary: Mit der Methode RemoveSSLCertificate können Sie das Benutzer-SSL-Zertifikat und den privaten Schlüssel für die Speicherknoten im Cluster entfernen. Nachdem das Zertifikat und der private Schlüssel entfernt wurden, werden die Storage-Nodes so konfiguriert, dass sie das Standardzertifikat und den privaten Schlüssel verwenden. 
+---
+= RemoveSSLZertifikat
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `RemoveSSLCertificate` Methode zum Entfernen des Benutzer-SSL-Zertifikats und des privaten Schlüssels für die Storage-Nodes im Cluster. Nachdem das Zertifikat und der private Schlüssel entfernt wurden, werden die Storage-Nodes so konfiguriert, dass sie das Standardzertifikat und den privaten Schlüssel verwenden.
+
+
+
+== Parameter
+
+Diese Methode hat keine Eingabeparameter.
+
+
+
+== Rückgabewerte
+
+Diese Methode hat keine Rückgabewerte.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+    "method" : "RemoveSSLCertificate",
+    "params" : {},
+    "id" : 3
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+    "id" : 3,
+    "result" : {}
+}
+----
+
+
+== Neu seit Version
+
+10.0

@@ -1,0 +1,54 @@
+---
+permalink: storage/task_system_manage_nodes_adding_a_node_to_a_cluster.html 
+sidebar: sidebar 
+keywords: nodes, add, config, cluster, pending, pairs, capacity, rule 
+summary: Sie können einem Cluster Nodes hinzufügen, wenn mehr Storage benötigt wird oder nach der Cluster-Erstellung. Nodes müssen die Erstkonfiguration erfordern, wenn sie zum ersten Mal eingeschaltet sind. Nachdem der Node konfiguriert wurde, wird er in der Liste der ausstehenden Nodes angezeigt und Sie können ihn einem Cluster hinzufügen. 
+---
+= Fügen Sie einem Cluster einen Node hinzu
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können einem Cluster Nodes hinzufügen, wenn mehr Storage benötigt wird oder nach der Cluster-Erstellung. Nodes müssen die Erstkonfiguration erfordern, wenn sie zum ersten Mal eingeschaltet sind. Nachdem der Node konfiguriert wurde, wird er in der Liste der ausstehenden Nodes angezeigt und Sie können ihn einem Cluster hinzufügen.
+
+Die Softwareversion auf jedem Node in einem Cluster muss kompatibel sein. Wenn Sie einem Cluster einen Node hinzufügen, installiert das Cluster nach Bedarf die Cluster-Version der NetApp Element Software auf dem neuen Node.
+
+Sie können einem vorhandenen Cluster Nodes mit kleineren oder größeren Kapazitäten hinzufügen. Sie können einem Cluster größere Node-Kapazitäten hinzufügen, um eine Kapazitätssteigerung zu ermöglichen. Größere Nodes, die zu einem Cluster mit kleineren Nodes hinzugefügt werden, müssen paarweise hinzugefügt werden. So kann Double Helix die Daten im Fall eines Ausfall eines der größeren Nodes ausreichend Speicherplatz verschieben. Einem größeren Node-Cluster können kleinere Node-Kapazitäten hinzugefügt werden, um die Performance zu verbessern.
+
+
+NOTE: Wenn ein neu hinzugefügter Node mehr als 50 % der gesamten Cluster-Kapazität beträgt, wird einige der Kapazitäten dieses Node unbrauchbar („ungenutzt“) gemacht, sodass die Kapazitätsregel eingehalten wird. Dies bleibt der Fall, bis mehr Storage hinzugefügt wird. Wenn ein sehr großer Node hinzugefügt wird, der auch die Kapazitätsregel nicht befolgt, kann der zuvor isolierte Node nicht mehr ungenutzt bleiben, während der neu hinzugefügte Node ungenutzt ist. Um dies zu vermeiden, sollte immer paarweise Kapazität hinzugefügt werden. Wenn ein Node gestrandet wird, wird der stranddecacity-Cluster-Fehler geworfen.
+
+https://www.youtube.com/embed/2smVHWkikXY?rel=0["NetApp Video: Skalieren nach eigenen Regeln: Erweitern eines SolidFire-Clusters"]
+
+Nodes können zu SolidFire Enterprise SDS-Clustern (SolidFire ESDS) oder zu NetApp HCI Appliances hinzugefügt werden.
+
+SolidFire ESDS-Knoten werden mit einem Node-Typ-Präfix von „`SFC`“ gekennzeichnet, z. B. „`s F.c100.`“
+
+.Schritte
+. Wählen Sie *Cluster* > *Knoten*.
+. Klicken Sie auf *Ausstehend*, um die Liste der ausstehenden Knoten anzuzeigen.
++
+Wenn der Vorgang zum Hinzufügen von Knoten (sowohl SolidFire-ESDS als auch nicht-SolidFire-ESDS-Knoten) abgeschlossen ist, werden sie in der Liste Aktive Knoten angezeigt. Bis dahin werden die ausstehenden Knoten in der Liste „Ausstehend aktiv“ angezeigt.
+
++
+Bei Knoten, die keine SolidFire ESDS-Knoten sind, installiert SolidFire die Element Softwareversion des Clusters auf den ausstehenden Knoten, wenn Sie sie einem Cluster hinzufügen. Dies kann einige Minuten dauern.
+
+. Führen Sie einen der folgenden Schritte aus:
++
+** Um einzelne Knoten hinzuzufügen, klicken Sie auf das Symbol *Aktionen* für den Knoten, den Sie hinzufügen möchten.
+** Um mehrere Knoten hinzuzufügen, aktivieren Sie das Kontrollkästchen der Knoten, die hinzugefügt werden sollen, und dann *Massenaktionen*. *Hinweis:* Wenn der Knoten, den Sie hinzufügen, eine andere Version der Element-Software hat als die Version, die auf dem Cluster ausgeführt wird, aktualisiert der Cluster den Knoten asynchron auf die Version der Element-Software, die auf dem Cluster-Master ausgeführt wird. Nach der Aktualisierung des Node wird er sich automatisch dem Cluster hinzugefügt. Während dieses asynchronen Prozesses befindet sich der Knoten im hängenden Zustand aktiv.
+
+
+. Klicken Sie Auf *Hinzufügen*.
++
+Der Node wird in der Liste der aktiven Nodes angezeigt.
+
+
+
+
+
+== Weitere Informationen
+
+xref:concept_system_manage_nodes_node_versioning_and_compatibility.adoc[Node-Versionierung und -Kompatibilität]

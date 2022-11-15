@@ -1,0 +1,89 @@
+---
+permalink: api/reference_element_api_getloginbanner.html 
+sidebar: sidebar 
+keywords: terms,use,banner,get,getting,getloginbanner,login 
+summary: Sie können die Methode GetLoginBanner verwenden, um das aktuell aktive Banner für Nutzungsbedingungen zu erhalten, das Benutzer sehen, wenn sie sich bei der Element Web-Schnittstelle anmelden. 
+---
+= GetLoginBanner
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `GetLoginBanner` Methode, um das aktuell aktive Banner für Nutzungsbedingungen zu erhalten, das Benutzer sehen, wenn sie sich bei der Element Web-Schnittstelle anmelden.
+
+
+
+== Parameter
+
+Diese Methode hat keine Eingabeparameter.
+
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Banner
+ a| 
+Der aktuelle Text der Nutzungsbedingungen Banner. Dieser Wert kann auch dann Text enthalten, wenn das Banner deaktiviert ist.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Aktiviert
+ a| 
+Der Status der Nutzungsbedingungen Banner. Mögliche Werte:
+
+* True: Das Banner für Nutzungsbedingungen wird bei der Anmeldung auf der Web-Schnittstelle angezeigt.
+* False: Das Banner für Nutzungsbedingungen wird bei der Anmeldung über das Web-Interface nicht angezeigt.
+
+ a| 
+boolesch
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "id": 3411,
+  "method": "GetLoginBanner",
+  "params": {}
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 3411,
+  "result": {
+    "loginBanner": {
+      "banner": "Welcome to NetApp!",
+      "enabled": false
+    }
+  }
+}
+----
+
+
+== Neu seit Version
+
+10.0

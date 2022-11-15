@@ -1,0 +1,60 @@
+---
+permalink: api/reference_element_api_attributes.html 
+sidebar: sidebar 
+keywords: QoS,object,Quality,Service 
+summary: Viele API-Anfragen und -Antworten verwenden Objekte sowie einfache Typen. Objekte sind eine Sammlung von Schlüsselwert-Paaren, wobei der Wert ein einfacher Typ oder möglicherweise ein anderes Objekt ist. Attribute sind benutzerdefinierte Name-Wert-Paare, die vom Benutzer in JSON-Objekten festgelegt werden können. Mithilfe einiger Methoden können Sie beim Erstellen oder Ändern von Objekten Attribute hinzufügen. 
+---
+= Merkmale
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Viele API-Anfragen und -Antworten verwenden Objekte sowie einfache Typen. Objekte sind eine Sammlung von Schlüsselwert-Paaren, wobei der Wert ein einfacher Typ oder möglicherweise ein anderes Objekt ist. Attribute sind benutzerdefinierte Name-Wert-Paare, die vom Benutzer in JSON-Objekten festgelegt werden können. Mithilfe einiger Methoden können Sie beim Erstellen oder Ändern von Objekten Attribute hinzufügen.
+
+Für codierte Attributobjekte gibt es eine Begrenzung von 1000 Byte.
+
+
+
+== Objektmitglied
+
+Dieses Objekt enthält das folgende Mitglied:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Merkmale
+ a| 
+Liste von Name-Wert-Paaren im JSON-Objektformat.
+ a| 
+JSON-Objekt
+
+|===
+
+
+== Anforderungsbeispiel
+
+Das folgende Anforderungsbeispiel verwendet die AddClusterAdmin-Methode:
+
+[listing]
+----
+{
+   "method": "AddClusterAdmin",
+   "params": {
+      "username": "joeadmin",
+      "password": "68!5Aru268)$",
+      "access": [
+         "volume",
+         "reporting"
+      ],
+      "attributes": {
+         "name1": "value1",
+         "name2": "value2",
+         "name3": "value3"
+      }
+   }
+}
+----

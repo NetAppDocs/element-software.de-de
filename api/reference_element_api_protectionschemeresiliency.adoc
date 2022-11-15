@@ -1,0 +1,51 @@
+---
+permalink: api/reference_element_api_protectionschemeresiliency.html 
+sidebar: sidebar 
+keywords: object,objects,protectionSchemeResiliency 
+summary: 'Das Schutzobjekt SchemeResiliency enthält Informationen darüber, ob sich ein Storage-Cluster für ein bestimmtes Schutzschema automatisch vor einem oder mehreren Ausfällen seiner verbundenen SchutzDomainType beheben kann. Ein Storage-Cluster gilt als geheilt, wenn es während des Ausfalls eines einzelnen Storage-Node mit dem Lesen und Schreiben von Daten fortfahren kann \(a Status bekannt als Node Tolerance\).' 
+---
+= SicherungAusfallsicherheit
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Schutzobjekt SchemeResiliency enthält Informationen darüber, ob sich ein Storage-Cluster für ein bestimmtes Schutzschema automatisch vor einem oder mehreren Ausfällen seiner verbundenen SchutzDomainType beheben kann. Ein Storage-Cluster gilt als geheilt, wenn es mit dem Ausfall eines einzelnen Storage-Nodes weiterhin Daten lesen und schreiben kann (Node-Toleranz).
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Schutzschema
+ a| 
+Das derzeitige Sicherungsschema dieses Storage Clusters. Der einzige mögliche Wert ist zweifelleHelix.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+NachhaltigkeitForBlockData
+ a| 
+Die prognostizierte Anzahl an gleichzeitigen Ausfällen kann auftreten, ohne dass die Fähigkeit zur automatischen Heilung eines Status von Node-Toleranz für Daten verloren geht.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+NachhaltigkeitMetadaten
+ a| 
+Die prognostizierte Anzahl an gleichzeitigen Ausfällen kann auftreten, ohne dass die Fähigkeit nicht beeinträchtigt wird, automatisch mit einer Node-Toleranz für Metadaten zu heilen.
+ a| 
+Ganzzahl
+
+|===

@@ -1,0 +1,45 @@
+---
+permalink: storage/reference_post_deploy_change_default_ssl_certificate.html 
+sidebar: sidebar 
+keywords: ssl certificate, SSL, private key, self-signed, cluster, nodes, user-defined certificate, API, change default certificate, certificate, Element API 
+summary: Sie können mithilfe der NetApp Element API das Standard-SSL-Zertifikat und den privaten Schlüssel des Storage-Node im Cluster ändern. 
+---
+= Ändern Sie das Standard-SSL-Zertifikat der Element Software
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können mithilfe der NetApp Element API das Standard-SSL-Zertifikat und den privaten Schlüssel des Storage-Node im Cluster ändern.
+
+Beim Erstellen eines NetApp Element-Software-Clusters erstellt das Cluster ein einzigartiges SSL-Zertifikat (Secure Sockets Layer) mit einem privaten Schlüssel, das für die gesamte HTTPS-Kommunikation über die Element-UI, die UI pro Node oder die APIs verwendet wird. Die Element Software unterstützt selbstsignierte Zertifikate sowie Zertifikate, die von einer vertrauenswürdigen Zertifizierungsstelle (CA) ausgestellt und verifiziert werden.
+
+Sie können die folgenden API-Methoden verwenden, um mehr Informationen über das Standard-SSL-Zertifikat zu erhalten und Änderungen vorzunehmen.
+
+Informationen zu den einzelnen Methoden finden Sie im link:../api/index.html["NetApp Element Software-API-Referenz"].
+
+* *GetSSLZertifikat*
++
+Mit dieser Methode können Sie Informationen über das aktuell installierte SSL-Zertifikat einschließlich aller Zertifikatdetails abrufen.
+
+* *SetSSLZertifikat*
++
+Sie können diese Methode verwenden, um die Cluster- und per-Node-SSL-Zertifikate auf das Zertifikat und den privaten Schlüssel einzustellen, den Sie bereitstellen. Das System überprüft das Zertifikat und den privaten Schlüssel, um zu verhindern, dass ein ungültiges Zertifikat angewendet wird.
+
+* *RemoveSSLZertifikat*
++
+Diese Methode entfernt das aktuell installierte SSL-Zertifikat und den privaten Schlüssel. Das Cluster generiert dann ein neues selbstsigniertes Zertifikat und einen privaten Schlüssel.
+
+
+
+
+NOTE: Das Cluster-SSL-Zertifikat wird automatisch auf alle neuen Nodes angewendet, die dem Cluster hinzugefügt wurden. Jeder Node, der aus dem Cluster entfernt wurde, wird auf ein selbstsigniertes Zertifikat zurückgesetzt und alle benutzerdefinierten Zertifikate und Schlüsselinformationen werden vom Node entfernt.
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

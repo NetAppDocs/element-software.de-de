@@ -1,0 +1,30 @@
+---
+permalink: storage/task_post_deploy_configure_system_options.html 
+sidebar: sidebar 
+keywords: deployment, post deployment options, credentials, components, FIPS security, passwords, MFA, multifactor authentication, mutli-factor authentication, security, EKM, key management, external key management, FIPS 
+summary: 'Nach der Einrichtung des SolidFire Systems sollten Sie möglicherweise einige optionale Aufgaben ausführen. Darüber hinaus können Sie Einstellungen für Multi-Faktor-Authentifizierung, externes Verschlüsselungsmanagement und die Sicherheit Federal Information Processing Standards \ (FIPS\) konfigurieren.' 
+---
+= Konfigurieren Sie nach der Bereitstellung die SolidFire Systemoptionen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nach der Einrichtung des SolidFire Systems sollten Sie möglicherweise einige optionale Aufgaben ausführen.
+
+Wenn Sie die Anmeldedaten im System ändern, sollten Sie die Auswirkungen auf andere Komponenten kennen.
+
+Darüber hinaus können Einstellungen für Multi-Faktor-Authentifizierung, externes Verschlüsselungsmanagement und die Sicherheit von Federal Information Processing Standards (FIPS) konfiguriert werden. Sie sollten sich auch die Aktualisierung von Kennwörtern ansehen, wenn nötig.
+
+
+
+== Weitere Informationen
+
+* link:task_post_deploy_credentials.html["Anmeldedaten in NetApp HCI und NetApp SolidFire ändern"]
+* link:reference_post_deploy_change_default_ssl_certificate.html["Ändern Sie das Standard-SSL-Zertifikat der Element Software"]
+* link:task_post_deploy_credential_change_ipmi_password.html["Ändern Sie das IPMI-Passwort für Knoten"]
+* link:concept_system_manage_mfa_enable_multi_factor_authentication.html["Multi-Faktor-Authentifizierung aktivieren"]
+* link:concept_system_manage_key_get_started_with_external_key_management.html["Erste Schritte mit externem Verschlüsselungsmanagement"]
+* link:task_system_manage_fips_create_a_cluster_supporting_fips_drives.html["Erstellen eines Clusters, das FIPS-Laufwerke unterstützt"]
+

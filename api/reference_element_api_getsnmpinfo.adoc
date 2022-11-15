@@ -1,0 +1,127 @@
+---
+permalink: api/reference_element_api_getsnmpinfo.html 
+sidebar: sidebar 
+keywords: snmp,information,info,get,getting 
+summary: 'Sie können die Methode GetSnmpInfo verwenden, um die aktuellen Informationen zur Konfiguration des einfachen Netzwerkverwaltungsprotokolls \(SNMP\) zu erhalten.' 
+---
+= GetSnmpInfo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `GetSnmpInfo` Methode zum Abrufen der aktuellen Informationen über die Konfiguration des Simple Network Management Protocol (SNMP).
+
+
+
+== Parameter
+
+
+NOTE: GetSnmpInfo ist bei Versionen, die später als die Element-Version 8.0 sind, veraltet. Der xref:reference_element_api_getsnmpstate.adoc[GetSnmpState] Und xref:reference_element_api_setsnmpacl.adoc[SetSnmpACL] Methoden ersetzen die GetSnmpInfo-Methode.
+
+Diese Methode hat keine Eingabeparameter.
+
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Netzwerke
+ a| 
+Liste der für SNMP aktivierten Netzwerke und Zugriffstypen *Hinweis:* Netzwerke werden nur angezeigt, wenn SNMP v3 deaktiviert ist.
+ a| 
+xref:reference_element_api_network_snmp.adoc[Netzwerk]
+
+
+
+ a| 
+Aktiviert
+ a| 
+Gibt an, ob die Knoten im Cluster für SNMP konfiguriert sind. Mögliche Werte:
+
+* Richtig
+* Falsch
+
+ a| 
+boolesch
+
+
+
+ a| 
+SnmpV3Enabled
+ a| 
+Wenn der Knoten im Cluster für SNMP v3 konfiguriert ist. Mögliche Werte:
+
+* Richtig
+* Falsch
+
+ a| 
+boolesch
+
+
+
+ a| 
+UsmUser
+ a| 
+Wenn SNMP v3 aktiviert ist, wird eine Liste der Benutzerzugriffsparameter für SNMP vom Cluster zurückgegeben. Diese wird anstelle des Parameters Netzwerke zurückgegeben.
+ a| 
+xref:reference_element_api_usmuser.adoc[UsmUser]
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "GetSnmpInfo",
+   "params": {},
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+   "id" : 1,
+   "result" : {
+      "enabled" : true,
+      "networks" : [
+         {
+            "access" : "rosys",
+            "cidr" : 0,
+            "community" : "public",
+            "network" : "localhost"
+         }
+      ]
+   }
+}
+----
+
+
+== Neu seit Version
+
+9.6
+
+
+
+== Weitere Informationen
+
+* xref:reference_element_api_getsnmpstate.adoc[GetSnmpState]
+* xref:reference_element_api_setsnmpacl.adoc[SetSnmpACL]
+

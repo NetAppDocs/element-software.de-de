@@ -1,0 +1,76 @@
+---
+permalink: storage/concept_prereq_switch_configuration_for_solidfire_clusters.html 
+sidebar: sidebar 
+keywords: cluster switch configuration, best practices for switch configuration, optimal storage performance, node hardware, traffic, cluster, Element software, best practices, switches, switch requirements, storage, performance, storage performance 
+summary: Das NetApp Element Softwaresystem verfügt über bestimmte Switch-Anforderungen und Best Practices für eine optimale Storage-Performance. 
+---
+= Switch-Konfiguration für Cluster mit Element Software
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das NetApp Element Softwaresystem verfügt über bestimmte Switch-Anforderungen und Best Practices für eine optimale Storage-Performance.
+
+Storage-Nodes benötigen je nach spezifischer Node-Hardware 10- oder 25-GbE-Ethernet-Switches für die Kommunikation von iSCSI-Storage-Services und zwischen Nodes innerhalb eines Clusters. 1GbE-Switches können für diese Arten von Datenverkehr verwendet werden:
+
+* Management des Clusters und der Nodes
+* Clusterinternen Managementdatenverkehr zwischen den Nodes
+* Datenverkehr zwischen den Cluster-Knoten und der virtuellen Verwaltungsknoten
+
+
+|===
+
+
+ a| 
+*Best Practice:* bei der Konfiguration von Ethernet-Switches für Cluster-Datenverkehr sollten Sie die folgenden Best Practices umsetzen:
+
+* Für den Datenverkehr außerhalb des Storage-Systems im Cluster können Sie ein Paar 1-GbE-Switches implementieren, um Hochverfügbarkeit und Lastverteilung bereitzustellen.
+* Auf den Storage-Netzwerk-Switches stellen Sie Switches paarweise bereit und konfigurieren und verwenden Jumbo Frames (eine MTU-Größe von 9216 Byte). So wird eine erfolgreiche Installation gewährleistet und Fehler im Speichernetzwerk aufgrund von fragmentierten Paketen vermieden.
+
+
+|===
+Für die Elementbereitstellung sind mindestens zwei Netzwerksegmente erforderlich, eines für jeden der folgenden Verkehrstypen:
+
+* Vereinfachtes
+* Storage/Daten
+
+
+Je nach den NetApp H-Series Storage-Node-Modellen und der geplanten Verkabelungskonfiguration können Sie diese Netzwerke mithilfe separater Switches physisch trennen oder sie über VLANs logisch trennen. Bei den meisten Implementierungen müssen diese Netzwerke jedoch durch VLANs logisch voneinander getrennt werden.
+
+Storage-Nodes müssen vor, während und nach der Implementierung kommunizieren können.
+
+Wenn Sie getrennte Managementnetzwerke für Storage-Nodes implementieren, stellen Sie sicher, dass diese Managementnetzwerke Netzwerkrouten zwischen ihnen haben. Diese Netzwerke müssen über Gateways verfügen, und es muss eine Route zwischen den Gateways vorhanden sein. Stellen Sie sicher, dass jedem neuen Node ein Gateway zugewiesen ist, um die Kommunikation zwischen den Nodes und Managementnetzwerken zu erleichtern.
+
+Für NetApp Element ist Folgendes erforderlich:
+
+* Alle mit NetApp H-Series Storage-Nodes verbundenen Switch-Ports müssen als Spanning Tree Edge Ports konfiguriert sein.
++
+** Bei Cisco Switches, je nach Switch-Modell, Softwareversion und Porttyp, können Sie dies mit einem der folgenden Befehle ausführen:
++
+*** `spanning-tree port type edge`
+*** `spanning-tree port type edge trunk`
+*** `spanning-tree portfast`
+*** `spanning-tree portfast trunk`
+
+
+** Auf Mellanox-Switches kann dies mit dem durchgeführt werden `spanning-tree port type edge` Befehl.
+
+
+* Die Switches, die Storage-Datenverkehr verarbeiten, müssen Geschwindigkeiten von mindestens 10 GbE pro Port unterstützen (bis zu 25 GbE pro Port wird unterstützt).
+* Die Switches, die Managementdatenverkehr verarbeiten, müssen Geschwindigkeiten von mindestens 1 GbE pro Port unterstützen.
+* Sie müssen Jumbo Frames an den Switch-Ports konfigurieren, die Storage Traffic verarbeiten. Für eine erfolgreiche Installation müssen Hosts 9000-Byte-Pakete lückenlos versenden können.
+* Die Netzwerklatenz zwischen allen Storage-Nodes sollte 2 ms nicht überschreiten.
+
+
+Einige Nodes bieten zusätzliche Out-of-Band-Managementfunktionen über einen dedizierten Management-Port. NetApp H300S, H500S und H700S Nodes ermöglichen auch IPMI-Zugriff über Port A Als Best Practice wird empfohlen, das Remote-Management durch die Konfiguration von Out-of-Band-Management für alle Nodes in Ihrer Umgebung zu vereinfachen.
+
+
+
+== Finden Sie weitere Informationen
+
+* https://docs.netapp.com/us-en/hci/docs/hci_prereqs_network_switch.html["Netzwerk- und Switch-Anforderungen des NetApp HCI"^]
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

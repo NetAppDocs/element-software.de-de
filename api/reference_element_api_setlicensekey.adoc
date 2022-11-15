@@ -1,0 +1,115 @@
+---
+permalink: api/reference_element_api_setlicensekey.html 
+sidebar: sidebar 
+keywords: set,setting,license,key 
+summary: Bei SolidFire-SDS-Storage-Clustern können Sie mithilfe der SetLicenseKey-Methode den Lizenzschlüssel für das Storage-Cluster festlegen. Der Lizenzschlüssel für einen Speicher-Cluster besteht aus der Bestellnummer des Clusters kombiniert mit der Seriennummer und aktiviert das Kapazitätsmodell, das Sie für Element Software erworben haben. 
+---
+= SetLicenseKey
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bei SolidFire-SDS-Storage-Clustern können Sie den verwenden `SetLicenseKey` Methode zum Festlegen des Lizenzschlüssels für den Storage-Cluster. Der Lizenzschlüssel für ein Storage-Cluster besteht aus der Bestellnummer des Clusters kombiniert mit der Seriennummer und aktiviert das Kapazitätsmodell, das Sie für Element Software erworben haben.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Auftragsnummer
+ a| 
+Die neue Bestellnummer für diesen Storage Cluster.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Seriennummer
+ a| 
+Die neue Seriennummer für diesen Storage-Cluster.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Auftragsnummer
+ a| 
+Die neue Bestellnummer des Storage Clusters.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Seriennummer
+ a| 
+Die neue Seriennummer des Storage-Clusters.
+ a| 
+Zeichenfolge
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "SetLicenseKey",
+  "params": {
+    "orderNumber": "33601",
+    "serialNumber": "30G56E3WV"   },
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+   "id" : 1,
+   "result" : {
+      "serialNumber": "30G56E3WV",
+      "orderNumber": "33601"
+     }
+   }
+}
+----
+
+
+== Neu seit Version
+
+12.2

@@ -1,0 +1,48 @@
+---
+permalink: api/reference_element_api_remoteclustersnapshotstatus.html 
+sidebar: sidebar 
+keywords: object,objects,remoteClusterSnapshotStatus 
+summary: Das entfernte ClusterSnapshotStatus-Objekt enthält die UUID und den Status eines Snapshots, der auf einem Remote-Storage-Cluster gespeichert ist. Sie können diese Informationen mit den ListenSnapshots oder ListGroupSnapshots API-Methoden erhalten. 
+---
+= EntfernteClusterSnapshotStatus
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der `remoteClusterSnapshotStatus` Objekt enthält die UUID und den Status eines Snapshots, der auf einem Remote-Storage-Cluster gespeichert ist. Sie können diese Informationen mit erhalten `ListSnapshots` Oder `ListGroupSnapshots` API-Methoden
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+EntferntStatus
+ a| 
+Der Replikationsstatus des Remote-Snapshots auf dem Zielcluster, wie vom Quellcluster aus gesehen. Mögliche Werte:
+
+* Vorhanden: Der Snapshot ist auf einem Remote-Cluster vorhanden.
+* NotPresent: Der Snapshot ist nicht auf einem Remote-Cluster vorhanden.
+* Synchronisierung: Es handelt sich um ein Ziel-Cluster, in dem der Snapshot repliziert wird.
+* Gelöscht: Dies ist ein Ziel-Cluster. Der Snapshot wurde gelöscht und ist weiterhin auf der Quelle vorhanden.
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+VolumePairUUID
+ a| 
+Die universelle Kennung des Volume-Paares.
+ a| 
+UUID
+
+|===

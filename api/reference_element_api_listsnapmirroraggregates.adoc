@@ -1,0 +1,62 @@
+---
+permalink: api/reference_element_api_listsnapmirroraggregates.html 
+sidebar: sidebar 
+keywords: snapmirror,aggregate,aggregates,list,listing,listsnapmirroraggregates 
+summary: Die Element Software-Web-UI verwendet die ListSnapMirrorAggregates-Methode, um alle SnapMirror Aggregate aufzulisten, die auf dem Remote-ONTAP-System verfügbar sind. Ein Aggregat beschreibt eine Reihe physischer Storage-Ressourcen. 
+---
+= ListSnapMirrorAggregates
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Web-UI der Element Software verwendet das `ListSnapMirrorAggregates` Die Methode zum Auflisten aller SnapMirror Aggregate, die auf dem Remote-ONTAP-System verfügbar sind. Ein Aggregat beschreibt eine Reihe physischer Storage-Ressourcen.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+SnapMirrorEndpointID
+ a| 
+Gibt nur die Aggregate zurück, die mit der angegebenen Endpunkt-ID verknüpft sind. Wird keine Endpunkt-ID angegeben, listet das System Aggregate von allen bekannten SnapMirror Endpunkten auf.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+SnapMirrorAggregates
+ a| 
+Eine Liste der Aggregate, die auf dem ONTAP Storage-System verfügbar sind.
+ a| 
+xref:reference_element_api_snapmirroraggregate.adoc[SnapMirror Aggregat] Array erledigen
+
+|===
+
+
+== Neu seit Version
+
+10.1

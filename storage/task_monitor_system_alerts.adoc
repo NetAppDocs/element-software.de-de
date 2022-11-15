@@ -1,0 +1,106 @@
+---
+permalink: storage/task_monitor_system_alerts.html 
+sidebar: sidebar 
+keywords: system alerts, view, cluster faults, system errors 
+summary: Sie können Benachrichtigungen zu Cluster-Fehlern oder -Fehlern im System anzeigen. Warnmeldungen können Informationen, Warnungen oder Fehler sein und ein guter Indikator für die inwieweit das Cluster läuft. Die meisten Fehler lösen sich automatisch. 
+---
+= Anzeigen von Systemmeldungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Benachrichtigungen zu Cluster-Fehlern oder -Fehlern im System anzeigen. Warnmeldungen können Informationen, Warnungen oder Fehler sein und ein guter Indikator für die inwieweit das Cluster läuft. Die meisten Fehler lösen sich automatisch.
+
+Sie können die API-Methode ListClusterStandards verwenden, um die Alarmüberwachung zu automatisieren. So können Sie über alle auftretenden Warnmeldungen benachrichtigt werden.
+
+. Wählen Sie in der Element-UI die Option *Berichterstellung* > *Alarme* aus.
++
+Das System aktualisiert die Alarme auf der Seite alle 30 Sekunden.
+
++
+Für jedes Ereignis werden die folgenden Informationen angezeigt:
+
++
+|===
+
+
+| Element | Beschreibung 
+
+
+ a| 
+ID
+ a| 
+Eine eindeutige ID, die einer Cluster-Warnmeldung zugeordnet ist.
+
+
+
+ a| 
+Schweregrad
+ a| 
+Der Grad der Wichtigkeit des Alarms. Mögliche Werte:
+
+** Warnung: Ein kleines Problem, das bald Aufmerksamkeit erfordert. Upgrades des Systems sind weiterhin zulässig.
+** Fehler: Ein Ausfall, der zu einer Performance-Verschlechterung oder einem Verlust von Hochverfügbarkeit führen kann. Fehler sollten in der Regel den Dienst nicht anderweitig beeinträchtigen.
+** Kritisch: Ein schwerwiegender Fehler, der den Dienst beeinträchtigt. Das System kann keine API- oder Client-I/O-Anfragen bereitstellen. Ein Betrieb in diesem Zustand kann zu einem potenziellen Datenverlust führen.
+** BestPractice: Eine empfohlene Best Practice für die Systemkonfiguration wird nicht verwendet.
+
+
+
+
+ a| 
+Typ
+ a| 
+Die Komponente, die sich auf den Fehler auswirkt. Nodes, Laufwerk, Cluster, Service oder Volume können verwendet werden.
+
+
+
+ a| 
+Knoten
+ a| 
+Node-ID für den Node, auf den sich dieser Fehler bezieht. Bei Knoten- und Laufwerkfehlern enthalten, andernfalls auf - (Dash) gesetzt.
+
+
+
+ a| 
+Laufwerks-ID
+ a| 
+Laufwerk-ID für das Laufwerk, auf das sich dieser Fehler bezieht. Bei Fahrfehlern enthalten, ansonsten auf - (Dash) eingestellt.
+
+
+
+ a| 
+Fehlercode
+ a| 
+Ein beschreibenden Code, der angibt, was den Fehler verursacht hat.
+
+
+
+ a| 
+Details
+ a| 
+Eine Beschreibung des Fehlers mit zusätzlichen Details.
+
+
+
+ a| 
+Datum
+ a| 
+Datum und Uhrzeit der Fehlerprotokollierung.
+
+|===
+. Klicken Sie auf *Details anzeigen*, um eine individuelle Warnung anzuzeigen, um Informationen über den Alarm anzuzeigen.
+. Um die Details aller Warnmeldungen auf der Seite anzuzeigen, klicken Sie auf die Spalte Details.
++
+Nachdem das System eine Meldung beseitigt hat, werden alle Informationen über die Warnmeldung einschließlich des Datums, an dem sie behoben wurde, in den aufgelösten Bereich verschoben.
+
+
+
+
+
+== Weitere Informationen
+
+* xref:reference_monitor_cluster_fault_codes.adoc[Cluster-Fehlercodes]
+* link:api/index.html["Storage-Management mit der Element API"]
+

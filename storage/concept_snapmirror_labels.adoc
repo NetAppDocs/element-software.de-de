@@ -1,0 +1,18 @@
+---
+permalink: storage/concept_snapmirror_labels.html 
+sidebar: sidebar 
+keywords: labels, snapmirror, retention rules 
+summary: Ein SnapMirror-Label dient als Marker für die Übertragung eines angegebenen Snapshots nach den Aufbewahrungsregeln der Beziehung. 
+---
+= SnapMirror-Labels
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ein SnapMirror-Label dient als Marker für die Übertragung eines angegebenen Snapshots nach den Aufbewahrungsregeln der Beziehung.
+
+Durch das Anwenden eines Labels auf einen Snapshot wird es als Ziel für die SnapMirror Replikation markiert. Aufgabe der Beziehung ist es, die Regeln beim Datentransfer durchzusetzen, indem der passende Snapshot ausgewählt, auf das Ziel-Volume kopiert und die korrekte Anzahl von Kopien aufbewahrt wird. Er bezieht sich auf die Richtlinie zur Bestimmung der Anzahl der Aufbewahrung und des Aufbewahrungszeitraums. Die Richtlinie kann eine beliebige Anzahl von Regeln haben, und jede Regel hat eine eindeutige Kennzeichnung. Dieses Etikett dient als Verbindung zwischen dem Snapshot und der Aufbewahrungsregel.
+
+Es ist das SnapMirror-Label, das angibt, welche Regel für den ausgewählten Snapshot, den Gruppen-Snapshot oder den ausgewählten Zeitplan angewendet wird.

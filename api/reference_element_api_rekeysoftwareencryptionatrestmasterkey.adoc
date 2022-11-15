@@ -1,0 +1,86 @@
+---
+permalink: api/reference_element_api_rekeysoftwareencryptionatrestmasterkey.html 
+sidebar: sidebar 
+keywords: system, api, element, security, rekey, software encryption at rest 
+summary: 'Sie können die Methode RekeySoftwareVerschlüsselungAtRestMasterKey verwenden, um den für die Verschlüsselung von DEKs (Data Encryption Keys) verwendeten Schlüssel für die Softwareverschlüsselung im Ruhezustand neu zu verschlüsseln.' 
+---
+= RekeySoftwareVerschlüsselungAtRestMasterKey
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `RekeySoftwareEncryptionAtRestMasterKey` Methode zum RekeyKey der Softwareverschlüsselung im Ruhezustand, die zur Verschlüsselung von DEKs (Data Encryption Keys) verwendet wird. Während der Cluster-Erstellung wird die Softwareverschlüsselung im Ruhezustand für die Verwendung des internen Key Managements (IKM) konfiguriert. Diese Rekeymethode kann nach der Cluster-Erstellung entweder zur Verwendung von IKM oder External Key Management (EKM) verwendet werden.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter. Wenn der `keyManagementType` Der Parameter wurde nicht angegeben, der Rekeyvorgang wird über die vorhandene Konfiguration für das Verschlüsselungsmanagement durchgeführt. Wenn der `keyManagementType` Ist angegeben und der Schlüsselanbieter ist extern, das `keyProviderID` Außerdem muss der Parameter verwendet werden.
+
+[cols="4*"]
+|===
+| Parameter | Beschreibung | Typ | Optional 
+
+
+| SchlüsselManagementtyp | Die Art der Schlüsselverwaltung, die zum Verwalten des Hauptschlüssels verwendet wird. Mögliche Werte sind:
+`Internal`: Rekey mit interner Schlüsselverwaltung.
+`External`: Rekey mit externer Schlüsselverwaltung. Wenn dieser Parameter nicht angegeben wird, wird der Rekeyvorgang mithilfe der bestehenden Key Management-Konfiguration durchgeführt. | Zeichenfolge | Richtig 
+
+
+| ID von Schlüsselausweisungs-ID | Die ID des zu verwendenden Schlüsselanbieters. Dies ist ein eindeutiger Wert, der als Teil eines der zurückgegeben wird `CreateKeyProvider` Methoden Die ID ist nur erforderlich, wenn `keyManagementType` Ist `External` Und ist ansonsten ungültig. | Ganzzahl | Richtig 
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+[cols="4*"]
+|===
+| Parameter | Beschreibung | Typ | Optional 
+
+
+| Asynchron | Ermitteln Sie den Status der Rekeyoperation mit diesem `asyncHandle` Wert mit `GetAsyncResult`. `GetAsyncResult` Die Ausgabe enthält eine `newKey` Feld, das Informationen über den neuen Masterschlüssel und ein enthält `keyToDecommission` Feld, das Informationen zum alten Schlüssel enthält. | Ganzzahl | Falsch 
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+ "method": "rekeysoftwareencryptionatrestmasterkey",
+ "params": {
+   "keyManagementType": "external",
+   "keyProviderID": "<ID number>"
+ }
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+    "asyncHandle": 1
+}
+----
+
+
+== Neu seit Version
+
+12.3
+
+[discrete]
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Ressourcen-Seite zu NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Dokumentation für frühere Versionen von NetApp SolidFire und Element Produkten"^]
+

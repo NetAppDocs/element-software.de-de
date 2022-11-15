@@ -1,0 +1,232 @@
+---
+permalink: api/reference_element_api_node.html 
+sidebar: sidebar 
+keywords: object,objects,node 
+summary: Das Node-Objekt enthält Informationen zu jedem Node im Cluster. Diese Informationen können Sie mit den Methoden ListActiveNodes und ListAllNodes abrufen. 
+---
+= Knoten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Node-Objekt enthält Informationen zu jedem Node im Cluster. Sie können diese Informationen mithilfe von abrufen `ListActiveNodes` Und `ListAllNodes` Methoden
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+AssoziatedFServiceID
+ a| 
+Die Fibre-Channel-Service-ID für den Node. „0“, wenn der Node kein Fibre Channel-Node ist.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+AssoziiertMasterServiceID
+ a| 
+Master-Service-ID für den Node.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Merkmale
+ a| 
+Liste von Name-Wert-Paaren im JSON-Objektformat.
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+ChassisName
+ a| 
+Eindeutig identifiziert ein Chassis, identisch für alle Nodes in einem einzelnen Chassis.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+cip
+ a| 
+Die Cluster-IP-Adresse, die dem Node zugewiesen ist.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Zipi
+ a| 
+Für die Cluster-Kommunikation verwendete Netzwerkschnittstelle.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+KundenschutzDomainName
+ a| 
+Identifiziert eine benutzerdefinierte Schutzdomäne eindeutig. Dieser Name ist für alle Storage-Nodes in allen Chassis einer bestimmten benutzerdefinierten Sicherungsdomäne identisch.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Fiber ChannelTargetPortGroup
+ a| 
+Die dem Knoten zugeordnete Zielgruppe. „Null“, wenn der Knoten kein Fibre Channel-Knoten ist.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Wartungsmodus
+ a| 
+Zeigt an, in welchem Modus ein Node gewartet werden soll.
+ a| 
+k. A.
+
+
+
+ a| 
+mip
+ a| 
+Die für das Node-Management verwendete IP-Adresse.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+mipi
+ a| 
+Die für das Node-Management verwendete Netzwerkschnittstelle.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Name
+ a| 
+Host-Name für den Node.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+NodeID
+ a| 
+NodeID für diesen Node.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Knotenablagefach
+ a| 
+Bei HCI-Plattformen lautet der Buchstabe „A“, „B“, „C“ oder „D“) für den Chassis-Steckplatz, in dem dieser Node befindet. Bei Storage-Plattformen ist dieser Wert Null.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+PlattformInfo
+ a| 
+Hardwareinformationen für den Node Mitglieder:
+
+* „ChassisType“: Die Hardware-Plattform des Node.
+* CpuModel: Das CPU-Modell der Hardware-Plattform.
+* NodeMemoryGB: Die Speichermenge, die in der physischen Plattform in GB installiert ist.
+* NodeType: Der Name des Node-Modells.
+* PlattformConfigVersion: Die Version der für diese Node-Hardware konfigurierten Software.
+
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+Rolle
+ a| 
+Die Rolle des Node im Cluster. Mögliche Werte:
+
+* Vereinfachtes
+* Storage
+* Computing
+* Zeuge
+
+ a| 
+
+
+
+ a| 
+sip
+ a| 
+Die dem Node zugewiesene Storage-IP-Adresse.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+sipi
+ a| 
+Die für Storage-Datenverkehr verwendete Netzwerkschnittstelle.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Softwareversion
+ a| 
+Gibt die aktuelle Version der auf dem Node ausgeführten Element-Software zurück.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+uuid
+ a| 
+Die universell eindeutige Kennung, die diesem Knoten zugeordnet ist.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+VirtualNetworks
+ a| 
+Objekt, das virtuelle Netzwerk-IP-Adressen und IDs enthält.
+ a| 
+xref:reference_element_api_virtualnetwork.adoc[VirtualNetwork] Array erledigen
+
+|===
+
+
+== Weitere Informationen
+
+* xref:reference_element_api_listactivenodes.adoc[ListenActiveNodes]
+* xref:reference_element_api_listallnodes.adoc[ListenAllNodes]
+

@@ -1,0 +1,31 @@
+---
+permalink: api/concept_element_api_drive_api_methods.html 
+sidebar: sidebar 
+keywords: drive,API,methods,method 
+summary: Mit den Drive-API-Methoden können Laufwerke hinzugefügt und gemanagt werden, die einem Storage-Cluster zur Verfügung stehen. Wenn Sie dem Storage-Cluster einen Storage-Node hinzufügen oder neue Laufwerke in einem vorhandenen Storage-Node installieren, können die Laufwerke dem Storage-Cluster hinzugefügt werden. 
+---
+= Drive-API-Methoden
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit den Drive-API-Methoden können Laufwerke hinzugefügt und gemanagt werden, die einem Storage-Cluster zur Verfügung stehen. Wenn Sie dem Storage-Cluster einen Storage-Node hinzufügen oder neue Laufwerke in einem vorhandenen Storage-Node installieren, können die Laufwerke dem Storage-Cluster hinzugefügt werden.
+
+* xref:reference_element_api_adddrives.adoc[AddDrives]
+* xref:reference_element_api_getdrivehardwareinfo.adoc[GetDriveHardwareInfo]
+* xref:reference_element_api_getdrivestats.adoc[GetDriveStats]
+* xref:reference_element_api_listdrives.adoc[ListenLaufwerke]
+* xref:reference_element_api_listdrivestats.adoc[ListDriveStats]
+* xref:reference_element_api_removedrives.adoc[RemoveDrives]
+* xref:reference_element_api_secureerasedrives.adoc[SecureEraseDrives]
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Ressourcen-Seite zu NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Dokumentation für frühere Versionen von NetApp SolidFire und Element Produkten"^]
+

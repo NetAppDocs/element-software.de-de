@@ -1,0 +1,42 @@
+---
+permalink: api/reference_element_api_protectiondomaintolerance.html 
+sidebar: sidebar 
+keywords: object,objects,protectionDomainTolerance 
+summary: Der ProtectionDomainTolerance-Objekt enthält Informationen darüber, wie der Storage Cluster bei einem oder mehreren Ausfällen Daten weiterhin in einer einzelnen Sicherungsdomäne mit dem zugehörigen Protection Domain-Typ lesen und schreiben kann. 
+---
+= SchutzDominToleranz
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der ProtectionDomainTolerance-Objekt enthält Informationen darüber, wie der Storage Cluster bei einem oder mehreren Ausfällen Daten weiterhin in einer einzelnen Sicherungsdomäne mit dem zugehörigen Protection Domain-Typ lesen und schreiben kann.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+ProtektionSchemeToleranzen
+ a| 
+Eine Liste von Objekten (eines für jedes Schutzschema) mit Ausfalltoleranz-Informationen für den zugehörigen Typ der Schutzdomäne.
+ a| 
+xref:reference_element_api_protectionschemetolerance.adoc[SchutzSchemeToleranz] Array erledigen
+
+
+
+ a| 
+NachhaltigkeitForEnsemble
+ a| 
+Die Anzahl gleichzeitiger Ausfälle innerhalb der entsprechenden Schutzdomäne, die ohne Verlust des Ensemblegorums auftreten können.
+ a| 
+Ganzzahl
+
+|===

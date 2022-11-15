@@ -1,0 +1,37 @@
+---
+permalink: api/reference_element_api_volume_pairing_order_of_operations.html 
+sidebar: sidebar 
+keywords: volume,pairing,order,operations,volumes,pairing,pair,pairs 
+summary: Sie müssen ein Cluster-Paar zwischen zwei entsprechenden Clustern erstellen, bevor Volumes gekoppelt werden können. 
+---
+= Reihenfolge der Vorgänge für die Volume-Kopplung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen ein Cluster-Paar zwischen zwei entsprechenden Clustern erstellen, bevor Volumes gekoppelt werden können.
+
+Verwenden Sie die folgenden API-Methoden, um eine Cluster-Verbindung herzustellen:
+
+* xref:reference_element_api_startvolumepairing.adoc[StartVolumePairing]:
++
+Mit dieser API-Methode wird ein Volume-Kopplungsschlüssel erstellt und zurückgegeben, der zur Erstellung eines Volume-Paares verwendet wird. Der Schlüssel enthält Informationen, die zur Kommunikation zwischen Volumes verwendet werden.
+
+* xref:reference_element_api_completevolumepairing.adoc[CompleteVolumePairing]:
++
+Bei dieser Methode wird der mit dem erstellte Kopplschlüssel verwendet xref:reference_element_api_startvolumepairing.adoc[StartVolumePairing] API-Methode zum Erstellen eines Volume-Paares. Stellen Sie das aus xref:reference_element_api_completevolumepairing.adoc[CompleteVolumePairing] API-Methode mit der VolumeID und VolumePairingKey-Parameter auf das Ziel-Volume.
+
+
+
+Es kann nur eines der gepaarten Volumes als Ziel-Volume für die Replizierung identifiziert werden. Verwenden Sie die xref:reference_element_api_modifyvolumepair.adoc[ModifyVolumePair] API-Methode zur Festlegung der Richtung der Datenreplizierung des Volume durch Identifizierung des Zieldatels Die Daten werden vom Quell-Volume auf das Ziel-Volume repliziert.
+
+
+
+== Weitere Informationen
+
+* xref:reference_element_api_startvolumepairing.adoc[StartVolumePairing]
+* xref:reference_element_api_completevolumepairing.adoc[CompleteVolumePairing]
+* xref:reference_element_api_modifyvolumepair.adoc[ModifyVolumePair]
+

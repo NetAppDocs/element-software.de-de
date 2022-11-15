@@ -1,0 +1,52 @@
+---
+permalink: setup/task_setup_fc_create_a_new_cluster_with_fibre_channel_nodes.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie können ein neues Cluster erstellen, nachdem Sie die einzelnen Fibre Channel Nodes konfiguriert haben. Wenn Sie ein Cluster erstellen, wird automatisch ein Cluster-Administrator-Benutzerkonto für Sie erstellt. Der Clusteradministrator verfügt über die Berechtigung zum Verwalten aller Clusterattribute und kann andere Cluster-Administratorkonten erstellen. 
+---
+= Erstellen Sie ein neues Cluster mit Fibre Channel Nodes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein neues Cluster erstellen, nachdem Sie die einzelnen Fibre Channel Nodes konfiguriert haben. Wenn Sie ein Cluster erstellen, wird automatisch ein Cluster-Administrator-Benutzerkonto für Sie erstellt. Der Clusteradministrator verfügt über die Berechtigung zum Verwalten aller Clusterattribute und kann andere Cluster-Administratorkonten erstellen.
+
+Während der Konfiguration eines neuen Node werden jedem Node 1-GB- oder 10-GB-Management-IP-Adressen (MIP) zugewiesen. Sie müssen eine der bei der Konfiguration erstellten Node-IP-Adressen verwenden, um die Seite Neues Cluster erstellen zu öffnen. Die verwendete IP-Adresse hängt vom Netzwerk ab, das Sie für das Cluster-Management ausgewählt haben.
+
+Sie haben die einzelnen Fibre Channel Nodes konfiguriert.
+
+.Schritte
+. Geben Sie in einem Browserfenster eine Knoten-MIP-Adresse ein.
+. Geben Sie unter Erstellen eines neuen Clusters die folgenden Informationen ein:
++
+** Management-VIP: Routingfähige virtuelle IP im 1-GbE- oder 10-GbE-Netzwerk für Netzwerk-Management-Aufgaben.
+** ISCSI (Storage) VIP: Virtuelle IP im 10-GbE-Netzwerk für Storage und iSCSI-Erkennung.
++
+
+NOTE: Sie können SVIP nicht ändern, nachdem Sie das Cluster erstellt haben.
+
+** Benutzername: Der primäre Clusteradministrator-Benutzername für authentifizierten Zugriff auf das Cluster. Sie müssen den Benutzernamen für die zukünftige Referenz speichern.
++
+
+NOTE: Sie können Groß- und Kleinbuchstaben, Sonderzeichen und Ziffern für den Benutzernamen verwenden.
+
+** Passwort: Passwort für authentifizierten Zugriff auf das Cluster. Sie müssen den Benutzernamen für die zukünftige Referenz speichern. Standardmäßig ist die zwei-Wege-Datensicherung aktiviert. Sie können diese Einstellung nicht ändern.
+
+
+. Lesen Sie die Endbenutzer-Lizenzvereinbarung und klicken Sie auf *Ich stimme zu*.
+. *Optional*: Stellen Sie in der Liste Knoten sicher, dass die Kontrollkästchen für Knoten, die nicht im Cluster enthalten sein sollen, nicht ausgewählt sind.
+. Klicken Sie Auf *Cluster Erstellen*.
++
+Das System kann je nach Anzahl der Nodes im Cluster mehrere Minuten dauern, bis der Cluster erstellt wurde. In einem ordnungsgemäß konfigurierten Netzwerk sollte ein kleines Cluster mit fünf Nodes weniger als eine Minute dauern. Nach dem Erstellen des Clusters wird das Fenster Erstellen eines neuen Clusters an die MVIP-URL-Adresse für den Cluster umgeleitet und die Web-UI angezeigt.
+
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

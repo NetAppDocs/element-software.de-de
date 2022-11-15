@@ -1,0 +1,36 @@
+---
+permalink: storage/task_replication_pair_cluster_using_mvip.html 
+sidebar: sidebar 
+keywords: pair clusters, mvip, connection 
+summary: Sie können zwei Cluster für die Echtzeitreplikation koppeln, indem Sie das MVIP eines Clusters verwenden, um eine Verbindung mit dem anderen Cluster herzustellen. Der Zugriff auf beide Cluster-Administratoren ist zur Verwendung dieser Methode erforderlich. Der Clusteradministrator-Benutzername und das Passwort werden zur Authentifizierung des Clusterzugriffs verwendet, bevor die Cluster gekoppelt werden können. 
+---
+= Koppeln Sie Cluster mit MVIP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können zwei Cluster für die Echtzeitreplikation koppeln, indem Sie das MVIP eines Clusters verwenden, um eine Verbindung mit dem anderen Cluster herzustellen. Der Zugriff auf beide Cluster-Administratoren ist zur Verwendung dieser Methode erforderlich. Der Clusteradministrator-Benutzername und das Passwort werden zur Authentifizierung des Clusterzugriffs verwendet, bevor die Cluster gekoppelt werden können.
+
+. Wählen Sie auf dem lokalen Cluster die Option *Data Protection* > *Cluster Pairs* aus.
+. Klicken Sie Auf *Cluster-Paare*.
+. Klicken Sie auf *Pairing starten* und klicken Sie auf *Ja*, um anzuzeigen, dass Sie Zugriff auf den Remote-Cluster haben.
+. Geben Sie die MVIP-Adresse des Remote-Clusters ein.
+. Klicken Sie auf *Pairing auf Remote Cluster abschließen*.
++
+Geben Sie im Fenster *Authentifizierung erforderlich* den Cluster Administrator Benutzernamen und das Kennwort des Remote-Clusters ein.
+
+. Wählen Sie auf dem Remote-Cluster die Option *Data Protection* > *Cluster Pairs* aus.
+. Klicken Sie Auf *Cluster-Paare*.
+. Klicken Sie Auf *Pairing Abschließen*.
+. Klicken Sie auf die Schaltfläche * Pairing abschließen*.
+
+
+
+
+== Weitere Informationen
+
+* xref:task_replication_pair_cluster_using_pairing_key.adoc[Koppeln Sie Cluster mithilfe eines Kopplschlüssels]
+* https://www.youtube.com/watch?v=HbKxPZnNvn4&feature=youtu.be["Koppeln von Clustern mithilfe von MVIP (Video)"]
+

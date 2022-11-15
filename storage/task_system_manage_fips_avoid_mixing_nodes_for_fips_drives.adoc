@@ -1,0 +1,22 @@
+---
+permalink: storage/task_system_manage_fips_avoid_mixing_nodes_for_fips_drives.html 
+sidebar: sidebar 
+keywords: fips, security, federal information processing standards, 140-2, nodes, drives, ear 
+summary: Damit die Funktion von FIPS-Laufwerken aktiviert werden kann, sollten Nodes, bei denen einige FIPS-Laufwerke unterstützen und andere nicht, nicht kombiniert werden. 
+---
+= Vermeiden Sie das Kombinieren von Nodes für FIPS-Laufwerke
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Damit die Funktion von FIPS-Laufwerken aktiviert werden kann, sollten Nodes, bei denen einige FIPS-Laufwerke unterstützen und andere nicht, nicht kombiniert werden.
+
+Ein Cluster gilt als FIPS-Laufwerke, die den folgenden Bedingungen entsprechen:
+
+* Alle Laufwerke sind als FIPS-Laufwerke zertifiziert.
+* Alle Nodes sind FIPS-Laufwerke.
+* Die Verschlüsselung für Daten im Ruhezustand (OHR) ist aktiviert.
+* Die FIPS-Laufwerksfunktion ist aktiviert. Alle Laufwerke und Nodes müssen FIPS-fähig sein und die Verschlüsselung im Ruhezustand muss aktiviert sein, um die FIPS-Laufwerksfunktion zu aktivieren.
+

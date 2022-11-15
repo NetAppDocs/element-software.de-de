@@ -1,0 +1,57 @@
+---
+permalink: api/reference_element_api_request_object_members.html 
+sidebar: sidebar 
+keywords: request,object,members 
+summary: 'Jede Element Software-API-Anforderung besitzt die folgenden grundlegenden Komponenten:' 
+---
+= Fordern Sie Objektmitglieder an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Jede Element Software-API-Anforderung besitzt die folgenden grundlegenden Komponenten:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Methode
+ a| 
+Name der anzurufenden Methode.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Parameter
+ a| 
+Objekt, das die Parameter für die aufgerufene Methode enthält. Benannte Parameter sind erforderlich. Positionsparameter (als Array übergeben) sind nicht zulässig.
+ a| 
+JSON-Objekt
+ a| 
+{}
+ a| 
+Nein
+
+
+
+ a| 
+id
+ a| 
+Die Kennung, die für die Antwort der Anforderung verwendet wurde, wurde im Ergebnis zurückgegeben.
+ a| 
+Zeichenfolge oder Ganzzahl
+ a| 
+{}
+ a| 
+Nein
+
+|===

@@ -1,0 +1,101 @@
+---
+permalink: api/reference_element_api_setntpinfo.html 
+sidebar: sidebar 
+keywords: ntp,info,set,setting,setntpinfo 
+summary: Sie können die Methode SetNtpInfo verwenden, um NTP auf Cluster-Knoten zu konfigurieren. Die mit dieser Schnittstelle festgelegten Werte gelten für alle Nodes im Cluster. Wenn ein NTP-Broadcast-Server regelmäßig Zeitinformationen über Ihr Netzwerk sendet, können Sie optional Nodes als Broadcast-Clients konfigurieren. 
+---
+= SetNtpInfo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `SetNtpInfo` Methode zum Konfigurieren von NTP auf Cluster-Nodes. Die mit dieser Schnittstelle festgelegten Werte gelten für alle Nodes im Cluster. Wenn ein NTP-Broadcast-Server regelmäßig Zeitinformationen über Ihr Netzwerk sendet, können Sie optional Nodes als Broadcast-Clients konfigurieren.
+
+
+NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
+
+
+
+== Parameter
+
+
+NOTE: Stellen Sie sicher, dass Sie NTP-Server verwenden, die intern zu Ihrem Netzwerk sind, anstatt die Installationsstandards.
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Server
+ a| 
+Liste der NTP-Server, die zu den einzelnen Knoten NTP-Konfigurationen hinzugefügt werden sollen.
+ a| 
+String-Array
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+BroadcastClient
+ a| 
+Aktiviert jeden Node im Cluster als Broadcast-Client
+ a| 
+boolesch
+ a| 
+Falsch
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode hat keine Rückgabewerte.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "SetNtpInfo",
+   "params": {
+     "servers"  : [
+       "ntpserver1.example.org",
+       "ntpserver2.example.org",
+       "ntpserver3.example.org"
+     ],
+     "broadcastclient" : false
+   },
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+    "id" : 1,
+    "result" : {}
+}
+----
+
+
+== Neu seit Version
+
+9.6

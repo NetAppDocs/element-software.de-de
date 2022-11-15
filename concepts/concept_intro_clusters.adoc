@@ -1,0 +1,83 @@
+---
+permalink: concepts/concept_intro_clusters.html 
+sidebar: sidebar 
+keywords: element, solidfire, cluster, what is, authoritative  cluster, rule of thirds, stranded capacity, storage efficiency, storage cluster quorum 
+summary: Ein Cluster ist der Hub eines SolidFire Storage-Systems und besteht aus einer Sammlung von Nodes. Sie müssen mindestens vier Nodes in einem Cluster aufweisen, damit die SolidFire Storage-Effizienz realisiert werden kann. Ein Cluster wird im Netzwerk als einzelne logische Gruppe angezeigt und kann dann als Block-Storage genutzt werden. 
+---
+= Cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ein Cluster ist der Hub eines SolidFire Storage-Systems und besteht aus einer Sammlung von Nodes. Sie müssen mindestens vier Nodes in einem Cluster aufweisen, damit die SolidFire Storage-Effizienz realisiert werden kann. Ein Cluster wird im Netzwerk als einzelne logische Gruppe angezeigt und kann dann als Block-Storage genutzt werden.
+
+Durch das Erstellen eines neuen Clusters wird ein Node als Kommunikationsinhaber für ein Cluster initialisiert und stellt die Netzwerkkommunikation für jeden Node im Cluster her. Dieser Prozess wird nur einmal für jedes neue Cluster durchgeführt. Sie können ein Cluster mithilfe der Element UI oder der API erstellen.
+
+Sie können ein Cluster horizontal skalieren, indem Sie weitere Nodes hinzufügen. Wenn Sie einen neuen Node hinzufügen, wird der Service nicht unterbrochen, und der Cluster nutzt die Performance und Kapazität des neuen Node automatisch.
+
+Administratoren und Hosts können über virtuelle IP-Adressen auf das Cluster zugreifen. Jeder Node im Cluster kann die virtuellen IP-Adressen hosten. Die Management Virtual IP (MVIP) ermöglicht das Clustermanagement über eine 1-GbE-Verbindung, während die Speicher-virtuelle IP (SVIP) den Host-Zugriff auf Speicher über eine 10-GbE-Verbindung ermöglicht. Diese virtuellen IP-Adressen ermöglichen konsistente Verbindungen unabhängig von der Größe oder dem Aufbau eines SolidFire Clusters. Wenn ein Node, der eine virtuelle IP-Adresse hostet, ausfällt, beginnt ein anderer Node im Cluster mit dem Hosten der virtuellen IP-Adresse.
+
+
+NOTE: Ab Element Version 11.0 können Nodes mit IPv4, IPv6 oder beiden Adressen für ihr Managementnetzwerk konfiguriert werden. Dies gilt sowohl für Storage-Nodes als auch für Management-Nodes, mit Ausnahme von Management-Node 11.3 und höher, der IPv6 nicht unterstützt. Beim Erstellen eines Clusters kann nur eine einzelne IPv4- oder IPv6-Adresse für den MVIP verwendet werden, und der entsprechende Adresstyp muss auf allen Knoten konfiguriert werden.
+
+.Mehr auf Clustern
+*  storage clusters
+*  of thirds
+*  capacity
+*  efficiency
+*  cluster quorum
+
+
+
+
+== Autorisierende Storage-Cluster
+
+Der Storage-Cluster ist der Storage-Cluster, mit dem NetApp Hybrid Cloud Control Benutzer authentifizieren kann.
+
+Wenn der Management-Node nur über einen Storage-Cluster verfügt, dann ist er das autorisierende Cluster. Wenn der Management-Node zwei oder mehr Storage-Cluster umfasst, wird einem dieser Cluster als autorisierende Cluster zugewiesen. Nur Benutzer dieses Clusters können sich bei NetApp Hybrid Cloud Control anmelden. Um herauszufinden, welcher Cluster der maßgebliche Cluster ist, können Sie den verwenden `GET /mnode/about` API: In der Antwort die IP-Adresse im `token_url` Feld ist die virtuelle Management-IP-Adresse (MVIP) des autorisierenden Storage-Clusters. Wenn Sie versuchen, sich bei NetApp Hybrid Cloud Control als Benutzer anzumelden, der sich nicht auf dem autorisierenden Cluster befindet, schlägt der Anmeldeversuch fehl.
+
+Viele Funktionen von NetApp Hybrid Cloud Control wurden für den Einsatz mit mehreren Storage-Clustern entwickelt. Allerdings schränkteutig die Authentifizierung und Autorisierung sein. Die Authentifizierung und Autorisierung im Zusammenhang mit der Authentifizierung besteht darin, dass der Benutzer aus dem autorisierenden Cluster Aktionen auf anderen Clustern ausführen kann, die an NetApp Hybrid Cloud Control gebunden sind, auch wenn diese nicht Anwender in den anderen Storage-Clustern sind.
+
+Bevor Sie mit der Verwaltung mehrerer Storage-Cluster fortfahren, sollten Sie sicherstellen, dass die auf den Standards definierten Benutzer auf allen anderen Storage-Clustern mit denselben Berechtigungen definiert sind. Sie können Benutzer über das verwalten link:../storage/concept_system_manage_manage_cluster_administrator_users.html["Benutzeroberfläche von Element Software"].
+
+Siehe link:../mnode/task_mnode_manage_storage_cluster_assets.html["Erstellen und Managen von Storage-Cluster-Assets"] Weitere Informationen zur Arbeit mit den Management-Node-Storage-Cluster-Assets.
+
+
+
+== Drittelregel
+
+Bei einer Kombination von Storage-Node-Typen in einem NetApp SolidFire Storage Cluster kann kein einzelner Storage-Node mehr als 33 % der gesamten Storage Cluster-Kapazität enthalten.
+
+
+
+== Ungenutzte Kapazität
+
+Wenn ein neu hinzugefügter Node mehr als 50 % der gesamten Cluster-Kapazität beträgt, wird einige der Kapazitäten dieses Node unbrauchbar („ungenutzt“) gemacht, sodass die Kapazitätsregel eingehalten wird. Dies bleibt der Fall, bis mehr Storage-Kapazität hinzugefügt wird. Wenn ein sehr großer Node hinzugefügt wird, der auch die Kapazitätsregel nicht befolgt, kann der zuvor isolierte Node nicht mehr ungenutzt bleiben, während der neu hinzugefügte Node ungenutzt ist. Kapazität sollte immer paarweise hinzugefügt werden, um dies zu vermeiden. Wenn ein Node ungenutzt wird, ist ein geeigneter Cluster-Fehler zu werfen.
+
+
+
+== Storage-Effizienz
+
+NetApp SolidFire Storage Cluster nutzen Deduplizierung, Komprimierung und Thin Provisioning, um den physischen Storage-Bedarf für das Speichern eines Volumes zu verringern.
+
+* *Komprimierung*
++
+Bei der Komprimierung wird der physische Storage-Bedarf eines Volumes reduziert, indem Datenblöcke in Komprimierungsgruppen kombiniert werden, die jeweils als einzelne Blöcke gespeichert werden.
+
+* *Deduplizierung*
++
+Dank der Deduplizierung wird die Menge des für ein Volume erforderlichen physischen Storage reduziert, indem doppelte Datenblöcke verworfen werden.
+
+* *Thin Provisioning*
++
+Ein Thin Provisioning-Volume oder eine LUN ist eine LUN, bei der kein vorab reservierter Storage reserviert wird. Stattdessen wird der Storage dynamisch nach Bedarf zugewiesen. Freier Speicherplatz wird wieder dem Storage-System freigegeben, wenn die Daten vom Volume oder von der LUN gelöscht werden
+
+
+
+
+
+== Storage Cluster Quorum
+
+Element Software erstellt ein Storage-Cluster von ausgewählten Nodes, wobei eine replizierte Datenbank der Clusterkonfiguration erhalten bleibt. Zur Teilnahme am Cluster-Ensemble sind mindestens drei Nodes erforderlich, um das Quorum für die Cluster-Ausfallsicherheit zu erhalten.

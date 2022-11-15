@@ -1,0 +1,160 @@
+---
+permalink: api/reference_element_api_pendingnode.html 
+sidebar: sidebar 
+keywords: object,objects,pendingNode 
+summary: Das PendingNode-Objekt enthält Informationen zu einem Node, der einem Cluster hinzugefügt werden kann. Verwenden Sie die API-Methode ListPendingNodes, um eine Liste dieser Informationen für alle ausstehenden Knoten zurückzugeben. Mit der AddNodes-API-Methode können Sie einen beliebigen der aufgeführten Knoten zu einem Cluster hinzufügen. 
+---
+= Hängende Knoten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das PendingNode-Objekt enthält Informationen zu einem Node, der einem Cluster hinzugefügt werden kann. Verwenden Sie die `ListPendingNodes` API-Methode zum Zurückgeben einer Liste dieser Informationen für alle ausstehenden Knoten. Sie können mithilfe der einen beliebigen der aufgeführten Nodes zu einem Cluster hinzufügen `AddNodes` API-Methode.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Zipi
+ a| 
+Die Cluster-IP-Adresse, die dem Node zugewiesen ist.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+ActiveNodeKey
+ a| 
+Ein eindeutiger Schlüssel, mit dem der Node nach einer erfolgreichen Installation der Software automatisch zum Cluster hinzugefügt werden kann.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+ZuweisdNodeID
+ a| 
+Die zugewiesene Node-ID für den Node.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Asynchron
+ a| 
+Die asynchrone Methode handle, mit der Sie den Status des Vorgangs abfragen können.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+ChassisName
+ a| 
+Eindeutig identifiziert ein Chassis, identisch für alle Nodes in einem einzelnen Chassis.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+cip
+ a| 
+Die Cluster-IP-Adresse, die dem Node zugewiesen ist.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+mip
+ a| 
+Die dem Node zugewiesene Management-IP-Adresse.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Knotenablagefach
+ a| 
+Bei HCI-Plattformen lautet der Buchstabe „A“, „B“, „C“ oder „D“) für den Chassis-Steckplatz, in dem dieser Node befindet. Bei Storage-Plattformen ist dieser Wert Null.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+HängenActiveNodeID
+ a| 
+Die ausstehende Node-ID des Node.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+PlattformInfo
+ a| 
+Hardwareinformationen für den Node Mitglieder:
+
+* „ChassisType“: Die Hardware-Plattform des Node.
+* CpuModel: Das CPU-Modell der Hardware-Plattform.
+* NodeMemoryGB: Die Speichermenge, die in der physischen Plattform in GB installiert ist.
+* NodeType: Der Name des Node-Modells.
+* PlattformConfigVersion: Die Version der für diese Node-Hardware konfigurierten Software.
+
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+Rolle
+ a| 
+Die Rolle des Node im Cluster. Mögliche Werte:
+
+* Vereinfachtes
+* Storage
+* Computing
+* Zeuge
+
+ a| 
+
+
+
+ a| 
+sip
+ a| 
+Die dem Knoten zugewiesene Speicher-IP-Adresse (iSCSI).
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Softwareversion
+ a| 
+Die aktuelle Version der auf dem Node ausgeführten Element Software.
+ a| 
+Zeichenfolge
+
+|===
+
+
+== Weitere Informationen
+
+* xref:reference_element_api_addnodes.adoc[AddNodes]
+* xref:reference_element_api_listpendingnodes.adoc[ListenPendingKnoten]
+

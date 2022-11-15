@@ -1,0 +1,26 @@
+---
+permalink: storage/reference_snapmirror_relationship_actions.html 
+sidebar: sidebar 
+keywords: relationships, snapmirror, actions, configure relationships 
+summary: Auf der Seite SnapMirror Beziehungen auf der Registerkarte Datensicherung können Sie eine Beziehung konfigurieren. Die Optionen aus dem Aktionen-Symbol werden hier beschrieben. 
+---
+= Aktionen für SnapMirror Beziehungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Auf der Seite SnapMirror Beziehungen auf der Registerkarte Datensicherung können Sie eine Beziehung konfigurieren. Die Optionen aus dem Aktionen-Symbol werden hier beschrieben.
+
+* *Bearbeiten*: Bearbeitet die verwendete Richtlinie oder den Zeitplan für die Beziehung.
+* *Löschen*: Löscht die SnapMirror-Beziehung. Diese Funktion löscht nicht das Zielvolume.
+* *Initialize*: Führt den ersten Basistransfer der Daten durch, um eine neue Beziehung aufzubauen.
+* *Update*: Führt eine On-Demand-Aktualisierung der Beziehung durch, repliziert neue Daten und Snapshot-Kopien, die seit der letzten Aktualisierung zum Ziel enthalten sind.
+* *Quiesce*: Verhindert weitere Updates für eine Beziehung.
+* *Fortsetzen*: Nimmt eine Beziehung auf, die stillgelegt wird.
+* *Break*: Macht das Zielvolumen Lesen-Schreiben und stoppt alle aktuellen und zukünftigen Transfers. Legen Sie fest, dass Clients das ursprüngliche Quell-Volume nicht verwenden, da durch den umgekehrten Resync-Vorgang das ursprüngliche Quellvolumen schreibgeschützt ist.
+* *Resync*: Stellt eine zerbrochene Beziehung in die gleiche Richtung wieder her, bevor die Pause stattfand.
+* *Reverse Resync*: Automatisiert die notwendigen Schritte, um eine neue Beziehung in die entgegengesetzte Richtung zu erstellen und zu initialisieren. Dies kann nur geschehen, wenn die bestehende Beziehung in einem gebrochenen Zustand ist. Durch diesen Vorgang wird die aktuelle Beziehung nicht gelöscht. Das ursprüngliche Quell-Volume wird auf die zuletzt verwendete Snapshot Kopie zurückgesetzt und mit dem Ziel neu synchronisiert. Alle Änderungen, die seit der letzten erfolgreichen SnapMirror Aktualisierung auf dem ursprünglichen Quell-Volume vorgenommen werden, gehen verloren. Alle vorgenommenen Änderungen oder neu auf das aktuelle Ziel-Volume geschriebenen Daten werden zurück an das ursprüngliche Quell-Volume gesendet.
+* *Abbrechen*: Bricht eine laufende Übertragung ab. Wenn ein SnapMirror Update für eine abgebrochene Beziehung ausgegeben wird, wird die Beziehung mit dem letzten Transfer vom letzten vor dem Abbrechen erstellten Neustart Checkpoint fortgesetzt.
+

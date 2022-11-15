@@ -1,0 +1,56 @@
+---
+permalink: api/reference_element_api_protectiondomainlevel.html 
+sidebar: sidebar 
+keywords: object,objects,protectionDomainLevel 
+summary: Das ProtectionDomainLevel-Objekt enthält Informationen über die aktuelle Toleranz und die Widerstandsfähigkeit des Speicherclusters. Toleranzstufen geben an, dass der Cluster im Fehlerfall Daten lesen und schreiben kann, und die Stabilitätsstufen geben an, dass der Cluster sich automatisch von einem oder mehreren Ausfällen innerhalb seiner zugehörigen Schutzdomäne heilen kann. 
+---
+= SchutzDomainLevel
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Objekt ProtektionDomainLevel enthält Informationen zur aktuellen Toleranz und Ausfallsicherheit des Storage Clusters. Toleranzstufen geben an, dass das Cluster im Falle eines Ausfalls weiterhin Daten lesen und schreiben kann. Die Stabilitätsstufen geben an, dass das Cluster seine Fähigkeit besitzt, sich selbst bei einem oder mehreren Ausfällen seiner zugehörigen Sicherungsdomäne automatisch zu beheben.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+SchutzDomainType
+ a| 
+Der Typ der Schutz-Domain mit der entsprechenden Toleranz und Ausfallsicherheit. Mögliche Werte:
+
+* Knoten: Jeder einzelne Knoten.
+* Chassis: Alle einzelnen Nodes oder alle Storage-Nodes in einem einzelnen Chassis.
+* Kunde: Alle Storage-Nodes in einer einzelnen, vom Kunden definierten Sicherungsdomäne
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Ausfallsicherheit
+ a| 
+Die aktuelle Ausfallsicherheit dieses Clusters aus der Perspektive dieses Schutz-Domain-Typs.
+ a| 
+xref:reference_element_api_protectiondomainresiliency.adoc[SchutzDomaininAusfallsicherheit]
+
+
+
+ a| 
+Toleranz
+ a| 
+Die aktuelle Toleranz für diesen Cluster aus der Perspektive dieses Schutz-Domain-Typs.
+ a| 
+xref:reference_element_api_protectiondomaintolerance.adoc[SchutzDominToleranz]
+
+|===

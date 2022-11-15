@@ -1,0 +1,23 @@
+---
+permalink: storage/task_monitor_node_performance_activity.html 
+sidebar: sidebar 
+keywords: performance activity, nodes, view 
+summary: 'Sie können Performance-Aktivitäten für jeden Node in einem grafischen Format anzeigen. Diese Information bietet Echtzeitstatistiken für CPU und Lese-/Schreib-I/O-Vorgänge pro Sekunde \(IOPS\) für jedes Laufwerk des Node. Das Auslastungsdiagramm wird alle fünf Sekunden aktualisiert, und das Laufwerksstatistiken-Diagramm aktualisiert alle zehn Sekunden.' 
+---
+= Zeigen Sie die Node-Performance-Aktivitäten an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Performance-Aktivitäten für jeden Node in einem grafischen Format anzeigen. Diese Information bietet Echtzeitstatistiken für CPU und Lese-/Schreib-I/O-Vorgänge pro Sekunde (IOPS) für jedes Laufwerk des Node. Das Auslastungsdiagramm wird alle fünf Sekunden aktualisiert, und das Laufwerksstatistiken-Diagramm aktualisiert alle zehn Sekunden.
+
+. Klicken Sie Auf *Cluster* > *Knoten*.
+. Klicken Sie auf *Aktionen* für den Knoten, den Sie anzeigen möchten.
+. Klicken Sie Auf *Details Anzeigen*.
++
+
+NOTE: Sie können bestimmte Punkte in der Zeit auf den Linien- und Balkendiagrammen sehen, indem Sie den Cursor über die Linie oder den Balken positionieren.
+
+

@@ -1,0 +1,125 @@
+---
+permalink: api/reference_element_api_checkproposedcluster.html 
+sidebar: sidebar 
+keywords: cluster,creation,check,proposed,checking,nodes,node,before,CheckProposedCluster 
+summary: Sie können mithilfe der CheckeProposals-Cluster-Methode eine Reihe von Storage-Nodes testen, bevor Sie ein Storage-Cluster mit diesen Nodes erstellen, um mögliche Fehler oder Fehler zu identifizieren, die beim Versuch auftreten würden, z. B. unsymmetrische Funktionen für gemischte Nodes oder Node-Typen, die bei Storage-Clustern mit zwei Nodes nicht unterstützt werden. 
+---
+= CheckeAngebot für Cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `CheckProposedCluster` Methode zum Testen einer Reihe von Storage-Nodes vor der Erstellung eines Storage-Clusters mit ihnen zur Identifizierung der möglichen Fehler oder Fehler, die bei dem Versuch auftreten würden, z. B. unsymmetrische Funktionen für gemischte Nodes oder Node-Typen, die für Storage Cluster mit zwei Nodes nicht unterstützt werden.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Knoten
+ a| 
+Eine Liste der Speicher-IP-Adressen der ursprünglichen Gruppe von Speicher-Nodes, aus denen das Storage-Cluster besteht.
+ a| 
+String-Array
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Erzwingen
+ a| 
+Auf „true“ setzen, um auf allen Storage-Nodes im Storage-Cluster ausgeführt zu werden.
+ a| 
+boolesch
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Antragsteller ClusterValid
+ a| 
+Gibt an, ob die vorgeschlagenen Storage-Nodes ein gültiges Storage-Cluster bilden oder nicht. Mögliche Werte:
+
+* Richtig
+* Falsch
+
+ a| 
+boolesch
+
+
+
+ a| 
+Antragsteller ClusterErrors
+ a| 
+Fehler, die auftreten würden, wenn ein Storage-Cluster mit den vorgeschlagenen Storage-Nodes erstellt würde.
+ a| 
+String-Array
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+	"method": "CheckProposedCluster",
+	"params": {
+	"nodes": [
+		"192.168.1.11",
+		"192.168.1.12",
+		"192.168.1.13",
+		"192.168.1.14"
+	]
+},
+	"id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+	"id": 1,
+	"result": {
+		"proposedClusterValid": true,
+		"proposedClusterErrors": [ ]
+	}
+}
+----
+
+
+== Neu seit Version
+
+11.0

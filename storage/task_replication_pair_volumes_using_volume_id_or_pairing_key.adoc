@@ -1,0 +1,34 @@
+---
+permalink: storage/task_replication_pair_volumes_using_volume_id_or_pairing_key.html 
+sidebar: sidebar 
+keywords: volume pairings, pairing key, volume id, replication 
+summary: Beim Pairing-Prozess werden zwei Volumes entweder über eine Volume-ID oder einen Kopplungsschlüssel gepaart. 
+---
+= Koppeln von Volumes mithilfe einer Volume-ID oder eines Kopplungsschlüssels
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Beim Pairing-Prozess werden zwei Volumes entweder über eine Volume-ID oder einen Kopplungsschlüssel gepaart.
+
+. Koppeln Sie Volumes, indem Sie eine der folgenden Methoden auswählen:
++
+** Verwendung einer Volume-ID: Verwenden Sie diese Methode, wenn der Cluster-Administrator auf beide Cluster zugreifen kann, auf denen Volumes gekoppelt werden sollen. Diese Methode verwendet die Volume-ID des Volume des Remote-Clusters, um eine Verbindung zu initiieren.
+** Verwenden eines Kopplungsschlüssels: Verwenden Sie diese Methode, wenn der Cluster-Administrator nur auf das Quell-Cluster Zugriff hat. Diese Methode generiert einen Kopplungsschlüssel, der auf dem Remote-Cluster zum Abschließen des Volume-Paars verwendet werden kann.
++
+
+NOTE: Der Kopplungsschlüssel für das Volume enthält eine verschlüsselte Version der Volume-Informationen und kann vertrauliche Informationen enthalten. Diesen Schlüssel nur auf sichere Weise freigeben.
+
+
+
+
+
+
+
+== Weitere Informationen
+
+* xref:task_replication_pair_volumes_using_a_volume_id.adoc[Kombinieren Sie Volumes mit einer Volume-ID]
+* xref:task_replication_pair_volumes_using_a_pairing_key.adoc[Koppeln von Volumes mithilfe eines Kopplschlüssels]
+

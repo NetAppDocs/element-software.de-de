@@ -1,0 +1,131 @@
+---
+permalink: api/reference_element_api_listvolumestatsbyvirtualvolume.html 
+sidebar: sidebar 
+keywords: volumes,volume,virtual,stats,list,listing,listvolumestatsbyvirtualvolume,activity 
+summary: Sie können die ListVolumeStatsByVirtualVolume-Methode verwenden, um Volume-Statistiken für alle Volumes im System aufzulisten, die mit dem virtuellen Volume verknüpft sind. Die Erstellung des Volumes ermöglicht die kumulative Statistik. 
+---
+= ListVolumeStatsByVirtualVolume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `ListVolumeStatsByVirtualVolume` Methode zum Auflisten von Volume-Statistiken für alle Volumes im System, die mit dem virtuellen Volume verknüpft sind. Die Erstellung des Volumes ermöglicht die kumulative Statistik.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+VirtualVolumeIDs
+ a| 
+Eine Liste mit einer oder mehreren virtuellen Volume-IDs, für die Informationen abgerufen werden sollen. Wenn Sie diesen Parameter angeben, gibt die Methode Informationen nur zu diesen virtuellen Volumes zurück.
+ a| 
+UUID-String-Array
+ a| 
+Nein
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+VolumeStatistik
+ a| 
+Eine Liste von Objekten, die Aktivitätsinformationen für jedes virtuelle Volume im System enthalten
+ a| 
+xref:reference_element_api_volumestats.adoc[VolumeStatistik] Array erledigen
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "ListVolumeStatsByVirtualVolume",
+  "params": {},
+  "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "volumeStats": [
+      {
+        "accountID": 17,
+        "actualIOPS": 0,
+        "asyncDelay": null,
+        "averageIOPSize": 1074265444,
+        "burstIOPSCredit": 0,
+        "clientQueueDepth": 0,
+        "desiredMetadataHosts": null,
+        "latencyUSec": 0,
+        "metadataHosts": {
+          "deadSecondaries": [],
+          "liveSecondaries": [
+            26
+          ],
+          "primary": 56
+        },
+        "nonZeroBlocks": 36,
+        "readBytes": 18366464,
+        "readBytesLastSample": 0,
+        "readLatencyUSec": 0,
+        "readOps": 156,
+        "readOpsLastSample": 0,
+        "samplePeriodMSec": 500,
+        "throttle": 0,
+        "timestamp": "2016-10-10T17:46:35.914642Z",
+        "unalignedReads": 156,
+        "unalignedWrites": 185,
+        "virtualVolumeID": "070ac0ba-f344-4f4c-b79c-142efa3642e8",
+        "volumeAccessGroups": [],
+        "volumeID": 12518,
+        "volumeSize": 91271200768,
+        "volumeUtilization": 0,
+        "writeBytes": 23652213248,
+        "writeBytesLastSample": 0,
+        "writeLatencyUSec": 0,
+        "writeOps": 185,
+        "writeOpsLastSample": 0,
+        "zeroBlocks": 22282972
+      }
+    ]
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6

@@ -1,0 +1,103 @@
+---
+permalink: api/reference_element_api_getclusterinfo.html 
+sidebar: sidebar 
+keywords: cluster,get,info,getting,getclusterinfo 
+summary: Sie können Konfigurationsinformationen über das Cluster mithilfe der Methode GetClusterInfo zurückgeben. 
+---
+= GetClusterInfo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `GetClusterInfo` „Methode“, um Konfigurationsinformationen über das Cluster zurückzugeben
+
+
+
+== Parameter
+
+Diese Methode hat keine Eingabeparameter.
+
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+ClusterInfo
+ a| 
+Cluster-Informationen
+ a| 
+xref:reference_element_api_clusterinfo.adoc[ClusterInfo]
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "GetClusterInfo",
+   "params": {},
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+    "id": 1,
+    "result": {
+        "clusterInfo": {
+            "attributes": {},
+            "defaultProtectionScheme": "doubleHelix",
+            "enabledProtectionSchemes": [
+                "doubleHelix"
+            ],
+            "encryptionAtRestState": "disabled",
+            "ensemble": [
+                "10.10.10.32",
+                "10.10.10.34",
+                "10.10.10.35",
+                "10.10.10.36",
+                "10.10.10.37"
+            ],
+            "mvip": "10.10.11.225",
+            "mvipInterface": "team1G",
+            "mvipNodeID": 3,
+            "mvipVlanTag": "0",
+            "name": "eSDS-1",
+            "repCount": 2,
+            "softwareEncryptionAtRestState": "enabled",
+            "supportedProtectionSchemes": [
+                "doubleHelix"
+            ],
+            "svip": "10.10.10.111",
+            "svipInterface": "team10G",
+            "svipNodeID": 3,
+            "svipVlanTag": "0",
+            "uniqueID": "psmp",
+            "uuid": "2f575d0c-36fe-406d-9d10-dbc1c306ade7"
+        }
+    }
+}
+----
+
+
+== Neu seit Version
+
+9.6

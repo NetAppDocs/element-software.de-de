@@ -1,0 +1,76 @@
+---
+permalink: api/reference_element_api_disablebmccoldreset.html 
+sidebar: sidebar 
+keywords: BMC cold reset,BMC reset,disable BMC 
+summary: 'Sie können die Methode DisableBmcColdReset verwenden, um die Hintergrundaufgabe zu deaktivieren, die den Baseboard Management Controller \(BMC\) regelmäßig für alle Knoten im Cluster neu setzt.' 
+---
+= DisableBmcColdReset
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `DisableBmcColdReset` Methode zum Deaktivieren der Hintergrundaufgabe, die den Baseboard Management Controller (BMC) regelmäßig für alle Knoten im Cluster zurücksetzt
+
+
+NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
+
+
+
+== Parameter
+
+Diese Methode hat keinen Eingabeparameter.
+
+
+
+== Rückgabewerte
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+CBmcResetDurationMinuten
+ a| 
+Gibt die Zeit zwischen den Rücksetzintervallen zurück. Nach Abschluss des Befehls sollte das Intervall immer 0 sein.
+ a| 
+Ganzzahl
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "DisableBmcColdReset",
+  "params": {},
+  "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+    "id": 1,
+    "result": {
+        "cBmcResetDurationMinutes": 0
+    }
+}
+----
+
+
+== Neu seit Version
+
+12.0

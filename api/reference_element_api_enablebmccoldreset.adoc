@@ -1,0 +1,94 @@
+---
+permalink: api/reference_element_api_enablebmccoldreset.html 
+sidebar: sidebar 
+keywords: BMC cold reset,BMC reset,enable BMC 
+summary: 'Sie können die Methode EnableBmcColdReset verwenden, um eine Hintergrundaufgabe zu aktivieren, die den Baseboard Management Controller \(BMC\) regelmäßig für alle Knoten im Cluster neu setzt.' 
+---
+= EnableBmcColdReset
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `EnableBmcColdReset` Methode zum Aktivieren einer Hintergrundaufgabe, bei der der Baseboard Management Controller (BMC) regelmäßig für alle Knoten im Cluster zurückgesetzt wird.
+
+
+NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Zeitüberschreitung
+ a| 
+Die Zeit zwischen BMC-Reset-Vorgängen in Minuten.
+ a| 
+Ganzzahl
+ a| 
+20160 Minuten
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+CBmcResetDurationMinuten
+ a| 
+Gibt die Zeit zwischen den Rücksetzintervallen zurück. Nach Abschluss des Befehls sollte das Intervall immer 0 sein.
+ a| 
+Ganzzahl
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+    "method": "EnableBmcColdReset",
+    "params": {
+                "timeout": 36000
+    },
+    "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+    "id": 1,
+    "result": {
+        "cBmcResetDurationMinutes": 36000
+    }
+}
+----
+
+
+== Neu seit Version
+
+12.0

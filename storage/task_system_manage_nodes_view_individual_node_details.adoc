@@ -1,0 +1,44 @@
+---
+permalink: storage/task_system_manage_nodes_view_individual_node_details.html 
+sidebar: sidebar 
+keywords: nodes, view, details, vlan, mip, cip, sip, virtual id 
+summary: Sie können Details für einzelne Nodes wie Service-Tags, Laufwerkdetails und Grafiken für die Nutzung und Laufwerksstatistiken anzeigen. Die Seite Nodes der Registerkarte Cluster enthält die Spalte Version, in der Sie die Softwareversion jedes Node anzeigen können. 
+---
+= Zeigen Sie Node-Details an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Details für einzelne Nodes wie Service-Tags, Laufwerkdetails und Grafiken für die Nutzung und Laufwerksstatistiken anzeigen. Die Seite Nodes der Registerkarte Cluster enthält die Spalte Version, in der Sie die Softwareversion jedes Node anzeigen können.
+
+.Schritte
+. Klicken Sie Auf *Cluster* > *Knoten*.
+. Um die Details für einen bestimmten Knoten anzuzeigen, klicken Sie auf das Symbol *Aktionen* für einen Knoten.
+. Klicken Sie Auf *Details Anzeigen*.
+. Überprüfen Sie die Node-Details:
++
+** *Knoten-ID*: Die vom System generierte ID für den Knoten.
+** *Knotenname*: Der Hostname des Knotens.
+** *Verfügbare 4.000 IOPS*: Die für den Knoten konfigurierten IOPS.
+** *Knotenrolle*: Die Rolle, die der Knoten im Cluster hat. Mögliche Werte:
++
+*** Cluster Master: Der Knoten, der clusterweite administrative Aufgaben ausführt und MVIP und SVIP enthält.
+*** Ensemble Node: Ein Knoten, der am Cluster teilnimmt. Je nach Clustergröße gibt es entweder 3 oder 5 Ensemble-Knoten.
+*** Fibre Channel: Ein Node im Cluster.
+
+
+** *Node Typ*: Der Modelltyp des Knotens.
+** *Aktive Laufwerke*: Die Anzahl der aktiven Laufwerke im Knoten.
+** *Management IP*: Die Management-IP-Adresse (MIP), die dem Knoten für 1GbE- oder 10GbE-Netzwerkadministratoraufgaben zugewiesen wurde.
+** *Cluster IP*: Die Cluster IP (CIP) Adresse, die dem Knoten zugewiesen wurde, der für die Kommunikation zwischen Knoten im selben Cluster verwendet wurde.
+** *Speicher-IP*: Die Speicher-IP (SIP)-Adresse, die dem Knoten zugewiesen ist, der für die iSCSI-Netzwerkerkennung und den gesamten Datenverkehr im Datennetz verwendet wird.
+** *Management VLAN ID*: Die virtuelle ID für das Management Local Area Network.
+** *Storage VLAN ID*: Die virtuelle ID für das Storage Local Area Network.
+** *Version*: Die Version der Software, die auf jedem Knoten ausgeführt wird.
+** *Replication Port*: Der Port, der auf Knoten für die Remote-Replikation verwendet wird.
+** *Service-Tag*: Die dem Knoten zugewiesene eindeutige Service-Tag-Nummer.
+
+
+

@@ -1,0 +1,51 @@
+---
+permalink: api/reference_element_api_protectionschemetolerance.html 
+sidebar: sidebar 
+keywords: object,objects,protectionSchemeTolerance 
+summary: Das Protektionsobjekt SchemeTolerance enthält Informationen darüber, ob ein Storage-Cluster für ein bestimmtes Sicherungsschema weiterhin Daten nach Ausfällen lesen und schreiben kann. 
+---
+= SchutzSchemeToleranz
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Protektionsobjekt SchemeTolerance enthält Informationen darüber, ob ein Storage-Cluster für ein bestimmtes Sicherungsschema weiterhin Daten nach Ausfällen lesen und schreiben kann.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Schutzschema
+ a| 
+Das derzeitige Sicherungsschema dieses Storage Clusters. Der einzige mögliche Wert ist zweifelleHelix.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+NachhaltigkeitForBlockData
+ a| 
+Die aktuelle Anzahl gleichzeitiger Ausfälle, die ohne Verlust der Verfügbarkeit der Blockdaten im entsprechenden Sicherungsschema auftreten können.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+NachhaltigkeitMetadaten
+ a| 
+Die aktuelle Anzahl gleichzeitiger Ausfälle, die ohne Verlust der Metadaten-Verfügbarkeit für das zugehörige Schutzschema auftreten können.
+ a| 
+Ganzzahl
+
+|===

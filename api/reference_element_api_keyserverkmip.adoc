@@ -1,0 +1,96 @@
+---
+permalink: api/reference_element_api_keyserverkmip.html 
+sidebar: sidebar 
+keywords: KMIP,key server,keys 
+summary: 'Das keyServerKmip-Objekt beschreibt einen Schlüsselserver für das Key Management Interoperability Protocol \ (KMIP\). Dieser Server eignet sich zum Abrufen von Authentifizierungsschlüsseln für Cluster-Funktionen wie Encryption at Rest.' 
+---
+= KeyServerkmip
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das keyServerkmip-Objekt beschreibt einen KMIP-Schlüsselserver (Key Management Interoperability Protocol). Dieser ist ein Speicherort zum Abrufen von Authentifizierungsschlüsseln für Cluster-Funktionen wie Encryption at Rest.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+ID von Schlüsselausweisungs-ID
+ a| 
+Wenn dieser KMIP-Schlüsselserver einem Provider zugewiesen ist, enthält dieses Mitglied die ID des KMIP-Schlüsselanbieters, dem er zugewiesen ist. Andernfalls ist dieses Mitglied Null.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+KeyServer-ID
+ a| 
+Die ID des KMIP-Schlüsselservers. Dies ist ein eindeutiger Wert, der dem Cluster während der Erstellung eines Schlüsselservers zugewiesen wird. Dieser Wert kann nicht geändert werden.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+KmipAssigneedProviderIActive
+ a| 
+Wenn dieser KMIP-Schlüsselserver einem Provider zugewiesen ist (keyProviderID ist nicht Null), gibt dieses Mitglied an, ob dieser Provider aktiv ist (die Schlüssel angeben, die derzeit verwendet werden). Andernfalls ist dieses Mitglied Null.
+ a| 
+boolesch
+
+
+
+ a| 
+KmipCaCertificate
+ a| 
+Das öffentliche Schlüsselzertifikat der Stammzertifizierungsstelle des externen Schlüsselservers. Mit dieser Funktion wird das vom externen Schlüsselserver in der TLS-Kommunikation präsentierte Zertifikat überprüft. Bei Schlüsselserverclustern, in denen einzelne Server unterschiedliche CAS verwenden, enthält dieses Mitglied eine verkettete Zeichenfolge der Stammzertifikate aller CAS.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+KmipClientZertifikat
+ a| 
+Ein PEM-Format Base64-codiertes PKCS#10 X.509-Zertifikat, das vom Element Storage KMIP-Client verwendet wird.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+KmipKeyServerHostnames
+ a| 
+Die diesem KMIP-Schlüsselserver zugeordneten Hostnamen oder IP-Adressen.
+ a| 
+String-Array
+
+
+
+ a| 
+KmipKeyServerName
+ a| 
+Der Name des KMIP-Schlüsselservers. Dieser Name wird nur für Anzeigezwecke verwendet und muss nicht eindeutig sein.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+KmipKeyServerPort
+ a| 
+Die diesem KMIP-Schlüsselserver zugeordnete Port-Nummer (in der Regel 5696).
+ a| 
+Ganzzahl
+
+|===

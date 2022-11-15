@@ -1,0 +1,62 @@
+---
+permalink: api/reference_element_api_listsnapmirrorendpoints.html 
+sidebar: sidebar 
+keywords: snapmirror,endpoint,endpoints,list,listing,listsnapmirrorendpoints 
+summary: Die Web-UI für die Element Software verwendet die ListSnapMirrorEndpoints, um alle SnapMirror Endpunkte aufzulisten, mit denen das Element Storage-Cluster kommuniziert. 
+---
+= ListSnapMirrorEndpunkte
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Web-UI der Element Software verwendet das `ListSnapMirrorEndpoints` Methode zum Auflisten aller SnapMirror Endpunkte, mit denen das Element Storage-Cluster kommunizieren.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+SnapMirrorEndpointIDs
+ a| 
+Gibt nur die Objekte zurück, die diesen IDs zugeordnet sind. Wenn keine IDs angegeben werden oder das Array leer ist, gibt die Methode alle SnapMirror Endpunkt-IDs zurück.
+ a| 
+Integer-Array
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+SnapMirror Endpunkte
+ a| 
+Eine Liste vorhandener SnapMirror Endpunkte
+ a| 
+xref:reference_element_api_snapmirrorendpoint.adoc[SnapMirror Endpoint] Array erledigen
+
+|===
+
+
+== Neu seit Version
+
+10.0

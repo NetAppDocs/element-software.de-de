@@ -1,0 +1,92 @@
+---
+permalink: api/reference_element_api_getpendingoperation.html 
+sidebar: sidebar 
+keywords: get,getting,pending,operation,getpendingoperation 
+summary: Sie können die Methode GetPendingOperation verwenden, um einen Vorgang auf einem Knoten zu erkennen, der derzeit ausgeführt wird. Diese Methode kann auch verwendet werden, um einen Bericht zu erstellen, wenn eine Operation abgeschlossen ist. 
+---
+= GetPendingOperation
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `GetPendingOperation` Methode zum Erkennen eines Vorgangs auf einem Knoten, der derzeit ausgeführt wird. Diese Methode kann auch verwendet werden, um einen Bericht zu erstellen, wenn eine Operation abgeschlossen ist.
+
+
+
+== Parameter
+
+Diese Methode hat keine Eingabeparameter.
+
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Ausstehend
+ a| 
+Mögliche Werte:
+
+* Wahr: Die Operation läuft noch.
+* Falsch:
++
+Der Vorgang läuft nicht mehr.
+
+
+ a| 
+boolesch
+
+
+
+ a| 
+Betrieb
+ a| 
+Name des Vorgangs, der gerade ausgeführt wird oder abgeschlossen ist.
+ a| 
+Zeichenfolge
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "GetPendingOperation",
+   "params": {},
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+   "id" : 1,
+   "result" : {
+      "pendingOperation" : {
+         "pending" : "true",
+         "operation" : "TestDrivesInternal",
+      }
+   }
+}
+----
+
+
+== Neu seit Version
+
+9.6

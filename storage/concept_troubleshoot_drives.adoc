@@ -1,0 +1,44 @@
+---
+permalink: storage/concept_troubleshoot_drives.html 
+sidebar: sidebar 
+keywords: troubleshoot, drives, ssd, swappable, solid-state drives 
+summary: 'Sie können ein ausgefallenes Solid-State-Laufwerk \ (SSD\) durch ein Ersatzlaufwerk ersetzen. SSDs für SolidFire Storage-Nodes sind Hot-Swap-fähig. Wenn Sie vermuten, dass eine SSD ausgefallen ist, wenden Sie sich an den NetApp Support, um den Fehler zu überprüfen und gehen Sie durch das entsprechende Lösungsverfahren. NetApp Support bietet Ihnen auch Ersatzlaufwerk nach Ihren Service Level Agreements.' 
+---
+= Fehlerbehebung bei Laufwerken
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Fehlerhafte Solid State-Laufwerke (SSD) können durch ein Ersatzlaufwerk ersetzt werden. SSDs für SolidFire Storage-Nodes sind Hot-Swap-fähig. Wenn Sie vermuten, dass eine SSD ausgefallen ist, wenden Sie sich an den NetApp Support, um den Fehler zu überprüfen und gehen Sie durch das entsprechende Lösungsverfahren. NetApp Support bietet Ihnen auch Ersatzlaufwerk nach Ihren Service Level Agreements.
+
+So kann ein ausgefallenes Laufwerk eines aktiven Nodes entfernt und durch ein neues SSD-Laufwerk von NetApp ersetzt werden. Es wird nicht empfohlen, nicht ausgefallene Laufwerke in einem aktiven Cluster zu entfernen.
+
+Sie sollten die von NetApp Support vorgeschlagenen vor-Ort-Ersatzteile aufrecht erhalten, um bei einem Ausfall einen sofortigen Austausch des Laufwerks zu ermöglichen.
+
+
+NOTE: Wenn Sie zu Testzwecken einen Laufwerksausfall simulieren, indem Sie ein Laufwerk von einem Node entfernen, müssen Sie 30 Sekunden warten, bevor Sie das Laufwerk wieder in den Laufwerkschacht einsetzen.
+
+Wenn ein Laufwerk ausfällt, verteilt Double Helix die Daten auf dem Laufwerk auf die Nodes, die im Cluster verbleiben. Mehrere Laufwerkausfälle auf demselben Node stellen kein Problem dar, da die Element Software vor zwei Kopien von Daten auf demselben Node schützt. Ein ausgefallenes Laufwerk führt zu den folgenden Ereignissen:
+
+* Daten werden vom Laufwerk migriert.
+* Die Gesamtkapazität des Clusters wird nach der Kapazität des Laufwerks verringert.
+* Double Helix Datensicherung stellt sicher, dass zwei gültige Kopien der Daten vorhanden sind.
+
+
+
+IMPORTANT: SolidFire Storage-Systeme unterstützen das Entfernen eines Laufwerks nicht, wenn zu wenig Storage für die Datenmigration erforderlich ist.
+
+
+
+== Finden Sie weitere Informationen
+
+* xref:task_troubleshoot_remove_failed_drives.adoc[Entfernen ausgefallener Laufwerke aus dem Cluster]
+* xref:concept_troubleshoot_basic_mdss_drive_troubleshooting.adoc[Grundlegende Fehlersuche bei MDSS-Laufwerken]
+* xref:task_troubleshoot_remove_mdss_drives.adoc[Entfernen Sie MDSS-Laufwerke]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2844771["Austausch von Laufwerken für SolidFire Storage-Nodes"]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2846859["Austausch von Laufwerken für Storage-Nodes der Serie H600S"]
+* link:hardware/concept_h410s_h610s_info.html["H410S und H610S Hardware-Informationen"]
+* link:hardware/concept_sfseries_info.html["Hardwareinformationen zur SF-Series"]
+

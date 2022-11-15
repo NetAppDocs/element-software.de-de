@@ -1,0 +1,160 @@
+---
+permalink: api/reference_element_api_testconnectsvip.html 
+sidebar: sidebar 
+keywords: storage,connection,svip,test,testing,testconnectsvip 
+summary: Sie können die Speicherverbindung zum Storage-Cluster mit der TestConnectSvip-Methode testen. Der Test pingt den SVIP mithilfe von ICMP-Paketen an und stellt, wenn er erfolgreich war, eine Verbindung als iSCSI-Initiator her. 
+---
+= TestConnectSvip
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `TestConnectSvip` Methode zum Testen der Storage-Verbindung zum Storage-Cluster. Der Test pingt den SVIP mithilfe von ICMP-Paketen an und stellt, wenn er erfolgreich war, eine Verbindung als iSCSI-Initiator her.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+svip
+ a| 
+Sie können diesen Wert übergeben, um die Verwaltungsverbindung eines anderen SVIP zu testen. Sie müssen diesen Wert nicht verwenden, wenn Sie die Verbindung zum Ziel-Cluster testen.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Details
+ a| 
+Informationen zum Testverfahren (JSON-Objekt):
+
+* `connected`: Gibt an, ob der Test eine Verbindung zum SVIP herstellen kann (boolescher Wert).
+* `svip`: Der SVIP geprüft gegen (String)
+* `pingBytes`: Einzelheiten der Ping-Tests mit 56 Bytes und 9000 Bytes (Objekt)
++
+** `56`: Ergebnisse des 56-Byte-Ping-Tests (JSON-Objekt):
++
+*** `individualResponseTimes`: Liste der Reaktionszeiten von jedem Ensemble-Knoten (String-Array)
+*** `individualStatus`: Liste des Ping-Status von jedem Ensemble-Knoten (boolescher Array)
+*** `responseTime`: Durchschnittliche Ping-Antwortzeit (String)
+*** `successful`: Gibt an, ob der Ping-Test erfolgreich war (boolesch)
+
+
+** `9000`: Ergebnisse des 9000 Byte Ping Tests (JSON Objekt):
++
+*** `individualResponseTimes`: Liste der Reaktionszeiten von jedem Ensemble-Knoten (String-Array)
+*** `individualStatus`: Liste des Ping-Status von jedem Ensemble-Knoten (boolescher Array)
+*** `responseTime`: Durchschnittliche Ping-Antwortzeit (String)
+*** `successful`: Gibt an, ob der Ping-Test erfolgreich war (boolesch)
+
+
+** `duration`: Dauer für die Durchführung des Tests (Zeichenkette)
+** `result`: Ergebnis des gesamten Tests (String)
+
+
+
+ a| 
+Zeichenfolge
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "TestConnectSvip",
+   "params": {
+      "svip" : "172.27.62.50"
+      },
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "details": {
+      "connected": true,
+      "pingBytes": {
+           "56": {
+               "individualResponseTimes": [
+                   "00:00:00.000152",
+                   "00:00:00.000132",
+                   "00:00:00.000119",
+                   "00:00:00.000114",
+                   "00:00:00.000112"
+              ],
+              "individualStatus": [
+                  true,
+                  true,
+                  true,
+                  true,
+                  true
+              ],
+              "responseTime": "00:00:00.000126",
+              "successful": true
+           },
+          "9000": {
+                "individualResponseTimes": [
+                    "00:00:00.000295",
+                    "00:00:00.000257",
+                    "00:00:00.000172",
+                    "00:00:00.000172",
+                    "00:00:00.000267"
+              ],
+              "individualStatus": [
+                  true,
+                  true,
+                  true,
+                  true,
+                  true
+             ],
+             "responseTime": "00:00:00.000233",
+             "successful": true
+           }
+        },
+        "svip": "172.27.62.50"
+      },
+      "duration": "00:00:00.421907",
+      "result": "Passed"
+   }
+}
+----
+
+
+== Neu seit Version
+
+9.6

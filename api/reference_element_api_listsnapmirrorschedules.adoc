@@ -1,0 +1,60 @@
+---
+permalink: api/reference_element_api_listsnapmirrorschedules.html 
+sidebar: sidebar 
+keywords: snapmirror,schedule,schedules,list,listing,listsnapmirrorschedules,ontap 
+summary: Die Web-UI der Element Software verwendet die Methode ListSnapMirrorSchedules, um eine Liste der verfügbaren Zeitpläne für ein Remote-ONTAP-Cluster zu erhalten. 
+---
+= ListSnapMirrorSchedules
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Web-UI der Element Software verwendet das `ListSnapMirrorSchedules` Methode zum Abrufen einer Liste von Zeitplänen, die in einem Remote-ONTAP-Cluster verfügbar sind.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+SnapMirrorEndpointID
+ a| 
+Falls vorhanden, werden die Zeitpläne für den Endpunkt mit der angegebenen SnapMirror Endpunkt-ID aufgelistet. Falls nicht angegeben, werden die Zeitpläne für alle bekannten SnapMirror Endpunkte aufgelistet.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+SnapMirrorSchedules
+ a| 
+Eine Liste der SnapMirror Zeitpläne auf dem Remote ONTAP Cluster.
+ a| 
+xref:reference_element_api_snapmirrorjobschedulecroninfo.adoc[SnapMirrorJobeCronInfo] Array erledigen
+
+|===
+
+
+== Neu seit Version
+
+10.1

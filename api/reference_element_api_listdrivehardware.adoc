@@ -1,0 +1,130 @@
+---
+permalink: api/reference_element_api_listdrivehardware.html 
+sidebar: sidebar 
+keywords: drive,hardware,list,listing,listdrivehardware,drives 
+summary: Sie können die Methode ListDriveHardware verwenden, um alle Laufwerke aufzulisten, die mit einem Node verbunden sind. Bei der Verwendung auf einzelnen Nodes werden mit dieser Methode Informationen zur Laufwerk-Hardware zurückgegeben. Bei Verwendung auf dem Cluster-Master-Knoten MVIP gibt diese Methode Informationen für alle Laufwerke auf allen Knoten zurück. 
+---
+= ListDriveHardware
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `ListDriveHardware` Methode zum Auflisten aller Laufwerke, die mit einem Node verbunden sind. Bei der Verwendung auf einzelnen Nodes werden mit dieser Methode Informationen zur Laufwerk-Hardware zurückgegeben. Bei Verwendung auf dem Cluster-Master-Knoten MVIP gibt diese Methode Informationen für alle Laufwerke auf allen Knoten zurück.
+
+
+
+== Parameter
+
+
+NOTE: Die "securitySupped": Wahre Zeile der Methodenantwort bedeutet nicht, dass die Laufwerke in der Lage sind zu verschlüsseln; nur dass der Sicherheitsstatus abgefragt werden kann. Wenn Sie über einen Node-Typ mit einer Modellnummer verfügen, die in „-NE“ endet, schlagen Befehle zur Aktivierung der Sicherheitsfunktionen auf diesen Laufwerken fehl.
+
+Diese Methode verfügt über den folgenden Parameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Erzwingen
+ a| 
+Setzen Sie auf true, um diese Methode auf allen Knoten auszuführen.
+ a| 
+boolesch
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Fahrhardware
+ a| 
+Zurückgegeben werden die Informationen über die Laufwerk-Hardware für den Node.
+ a| 
+JSON-Objekt-Array
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+"method": "ListDriveHardware",
+"params": {},
+"id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "driveHardware": [
+      {
+        "canonicalName": "sda",
+        "connected": true,
+        "dev": 2048,
+        "devPath": "/dev/slot0",
+        "driveEncryptionCapability": "fips",
+        "driveType": "Slice",
+        "lifeRemainingPercent": 98,
+        "lifetimeReadBytes": 0,
+        "lifetimeWriteBytes": 14012129542144,
+        "name": "scsi-SATA_SAMSUNG_MZ7GE24S1M9NWAG501251",
+        "path": "/dev/sda",
+        "pathLink": "/dev/slot0",
+        "powerOnHours": 15489,
+        "product": "SAMSUNG MZ7GE240HMGR-00003",
+        "reallocatedSectors": 0,
+        "reserveCapacityPercent": 100,
+        "scsiCompatId": "scsi-SATA_SAMSUNG_MZ7GE24S1M9NWAG501251",
+        "scsiState": "Running",
+        "securityAtMaximum": false,
+        "securityEnabled": true,
+        "securityFrozen": false,
+        "securityLocked": false,
+        "securitySupported": true,
+        "serial": "S1M9NWAG501251",
+        "size": 240057409536,
+        "slot": 0,
+        "uncorrectableErrors": 0,
+        "uuid": "789aa05d-e49b-ff4f-f821-f60eed8e43bd",
+        "vendor": "Samsung",
+        "version": "EXT1303Q"
+      }
+   ]
+}
+----
+
+
+== Neu seit Version
+
+9.6
+
+
+
+== Weitere Informationen
+
+xref:reference_element_api_enableencryptionatrest.adoc[EnableVerschlüsselungAtZiel]

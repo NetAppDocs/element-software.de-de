@@ -1,0 +1,155 @@
+---
+permalink: api/reference_element_api_bulkvolumejob.html 
+sidebar: sidebar 
+keywords: bulkVolumeJob,object,objects,read,write,clones,snapshots,clone,snapshot 
+summary: Das bulkVolumeJob-Objekt enthält Informationen zu Lese- oder Schreibvorgängen des Massenvolumes, wie Klonen oder Snapshot-Erstellung. 
+---
+= BulkVolumeJob
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das bulkVolumeJob-Objekt enthält Informationen zu Lese- oder Schreibvorgängen des Massenvolumes, wie Klonen oder Snapshot-Erstellung.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Merkmale
+ a| 
+JSON-Attribut des Massenvolumenjobs.
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+BulkVolumeID
+ a| 
+Die interne Job-ID für das Massenvolumen.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+CreateTime
+ a| 
+Zeitstempel, der für den Massenvolumenauftrag im UTC+0-Format erstellt wurde.
+ a| 
+ISO 8601-Datumszeichenfolge
+
+
+
+ a| 
+Verstrichene Zeit
+ a| 
+Die Anzahl der Sekunden seit Beginn des Jobs.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Formatieren
+ a| 
+Das Format des Massenvolumes-Vorgangs. Mögliche Werte:
+
+* Komprimiert
+* Nativ
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Taste
+ a| 
+Der eindeutige Schlüssel, der von der Massenvolumensitzung erstellt wird.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+%Kompletete
+ a| 
+Der vom Vorgang gemeldete Prozentsatz des Abgeschlossen.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+RestiningTime
+ a| 
+Die geschätzte verbleibende Zeit in Sekunden.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+SrcVolumeID
+ a| 
+Die ID des Quell-Volume.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Status
+ a| 
+Der Status des Vorgangs. Mögliche Werte:
+
+* Vorbereitung
+* Aktiv
+* Fertig
+* Fehlgeschlagen
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Skript
+ a| 
+Der Name des Skripts, falls vorhanden.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Snapshot-ID
+ a| 
+Die ID des Snapshots, wenn sich ein Snapshot in der Quelle des Jobs mit dem Massenvolumen befindet.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Typ
+ a| 
+Der Typ des Massenvorgangs. Mögliche Werte:
+
+* Lesen
+* Schreiben
+
+ a| 
+Zeichenfolge
+
+|===

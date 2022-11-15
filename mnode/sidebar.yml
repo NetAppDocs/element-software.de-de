@@ -1,0 +1,58 @@
+---
+section: mnode
+title: Arbeiten Sie mit dem Management-Node
+entries:
+- title: Übersicht über Management-Nodes
+  url: "/mnode/task_mnode_work_overview.html"
+- title: Installation oder Wiederherstellung eines Management-Node
+  entries:
+  - title: Installieren Sie einen Management-Node
+    url: "/mnode/task_mnode_install.html"
+  - title: Erstellen einer NetApp HCC-Rolle in vCenter
+    url: "/mnode/task_mnode_create_netapp_hcc_role_vcenter.html"
+  - title: Konfigurieren eines Speicher-Netzwerkschnittstellentoncontrollers (NIC)
+    url: "/mnode/task_mnode_install_add_storage_NIC.html"
+  - title: Wiederherstellung eines Management-Node
+    url: "/mnode/task_mnode_recover.html"
+- title: Greifen Sie auf den Management-Node zu
+  url: "/mnode/task_mnode_access_ui.html"
+- title: Arbeiten Sie mit der Management-Node-UI
+  entries:
+  - title: Übersicht über die Management-Node-UI
+    url: "/mnode/task_mnode_work_overview_UI.html"
+  - title: Konfigurieren der Meldungsüberwachung
+    url: "/mnode/task_mnode_enable_alerts.html"
+  - title: Ändern und Testen der Netzwerk-, Cluster- und Systemeinstellungen des Management-Node
+    url: "/mnode/task_mnode_settings.html"
+  - title: Führen Sie Systemdienstprogramme vom Management-Node aus
+    url: "/mnode/task_mnode_run_system_utilities.html"
+- title: Arbeiten mit DER REST-API des Management-Node
+  entries:
+  - title: Übersicht über DIE REST-API-UI für den Management-Node
+    url: "/mnode/task_mnode_work_overview_API.html"
+  - title: Autorisierung zur Verwendung VON REST-APIs
+    url: "/mnode/task_mnode_api_get_authorizationtouse.html"
+  - title: Monitoring von Active IQ und NetApp
+    url: "/mnode/task_mnode_enable_activeIQ.html"
+  - title: Konfiguration von NetApp Hybrid Cloud Control für mehrere vCenter
+    url: "/mnode/task_mnode_multi_vcenter_config.html"
+  - title: Fügen Sie dem Management-Node eine Controller-Ressource hinzu
+    url: "/mnode/task_mnode_add_assets.html"
+  - title: Erstellen und Managen von Storage-Cluster-Assets
+    url: "/mnode/task_mnode_manage_storage_cluster_assets.html"
+  - title: Vorhandene Controller-Assets können angezeigt oder bearbeitet werden
+    url: "/mnode/task_mnode_edit_vcenter_assets.html"
+  - title: Konfigurieren Sie einen Proxyserver
+    url: "/mnode/task_mnode_configure_proxy_server.html"
+  - title: Überprüfen Sie die Betriebssystem- und Servicestversionen der Management-Nodes
+    url: "/mnode/task_mnode_api_find_mgmt_svcs_version.html"
+  - title: Abrufen von Protokollen von Managementservices
+    url: "/mnode/task_mnode_logs.html"
+- title: Managen von Supportverbindungen
+  entries:
+  - title: Zugriff auf Storage-Nodes mithilfe von SSH für die grundlegende Fehlerbehebung
+    url: "/mnode/task_mnode_enable_node_troubleshooting_sessions.html"
+  - title: Starten Sie eine Remote NetApp Support Sitzung
+    url: "/mnode/task_mnode_enable_remote_support_connections.html"
+  - title: Verwalten der SSH-Funktionalität auf dem Management-Node
+    url: "/mnode/task_mnode_ssh_management.html"

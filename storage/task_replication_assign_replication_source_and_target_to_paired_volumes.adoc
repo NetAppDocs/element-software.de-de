@@ -1,0 +1,54 @@
+---
+permalink: storage/task_replication_assign_replication_source_and_target_to_paired_volumes.html 
+sidebar: sidebar 
+keywords: volume pairings, paired volumes, replication source, assign 
+summary: Nachdem Volumes gekoppelt wurden, müssen Sie ein Quell-Volume und sein Replikationsziel-Volume zuweisen. Eine Replikationsquelle oder ein Replikationsziel kann ein Volume in einem Volume-Paar sein. Sie können dieses Verfahren auch verwenden, um Daten, die an ein Quell-Volume gesendet werden, zu einem Remote-Ziel-Volume umzuleiten, falls das Quell-Volume nicht mehr verfügbar ist. 
+---
+= Weisen Sie gepaarten Volumes eine Replikationsquelle und ein Replikationsziel zu
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nachdem Volumes gekoppelt wurden, müssen Sie ein Quell-Volume und sein Replikationsziel-Volume zuweisen. Eine Replikationsquelle oder ein Replikationsziel kann ein Volume in einem Volume-Paar sein. Sie können dieses Verfahren auch verwenden, um Daten, die an ein Quell-Volume gesendet werden, zu einem Remote-Ziel-Volume umzuleiten, falls das Quell-Volume nicht mehr verfügbar ist.
+
+Sie haben Zugriff auf die Cluster, die die Quell- und Ziel-Volumes enthalten.
+
+.Schritte
+. Vorbereiten des Quellvolumens:
++
+.. Wählen Sie aus dem Cluster, der das Volume enthält, das Sie als Quelle zuweisen möchten, *Management* > *Volumes* aus.
+.. Klicken Sie auf das Symbol *Aktionen* für das Volume, das Sie als Quelle zuweisen möchten, und klicken Sie auf *Bearbeiten*.
+.. Wählen Sie in der Dropdown-Liste *Zugriff* die Option *Lesen/Schreiben* aus.
++
+
+IMPORTANT: Wenn Sie die Quell- und Zielzuweisung umkehren, führt diese Aktion dazu, dass das Volume-Paar die folgende Meldung anzeigt, bis ein neues Replikationsziel zugewiesen ist: `PausedMisconfigured`
+
++
+Durch das Ändern des Zugriffs wird die Volume-Replizierung angehalten, und die Datenübertragung wird beendet. Vergewissern Sie sich, dass Sie diese Änderungen an beiden Standorten koordiniert haben.
+
+.. Klicken Sie Auf *Änderungen Speichern*.
+
+
+. Bereiten Sie das Zielvolumen vor:
++
+.. Wählen Sie aus dem Cluster, der das Volume enthält, das Sie als Ziel zuweisen möchten, *Management* > *Volumes* aus.
+.. Klicken Sie auf das Aktionen-Symbol für das Volume, das Sie als Ziel zuweisen möchten, und klicken Sie auf *Bearbeiten*.
+.. Wählen Sie in der Dropdown-Liste *Zugriff* die Option *Replikationsziel* aus.
++
+
+IMPORTANT: Wenn Sie ein vorhandenes Volume als Replikationsziel zuweisen, werden die Daten auf diesem Volume überschrieben. Es sollte ein neues Ziel-Volume verwendet werden, das keine Daten enthält und exakt die Merkmale des Quell-Volume hat, z. B. Größe, 512-e-Einstellung und QoS-Konfiguration. Das Zielvolume kann größer oder gleich groß sein wie das Quellvolume, kann aber nicht kleiner sein.
+
+.. Klicken Sie Auf *Änderungen Speichern*.
+
+
+
+
+
+
+== Weitere Informationen
+
+* xref:task_replication_pair_volumes_using_a_volume_id.adoc[Kombinieren Sie Volumes mit einer Volume-ID]
+* xref:task_replication_pair_volumes_using_a_pairing_key.adoc[Koppeln von Volumes mithilfe eines Kopplschlüssels]
+

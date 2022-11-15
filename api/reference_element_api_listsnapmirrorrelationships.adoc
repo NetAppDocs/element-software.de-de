@@ -1,0 +1,114 @@
+---
+permalink: api/reference_element_api_listsnapmirrorrelationships.html 
+sidebar: sidebar 
+keywords: snapmirror,endpoints,endpoint,list,listing,listsnapmirrorrelationships 
+summary: Die Element Software-Web-UI verwendet die ListSnapMirrorRelationships-Methode, um eine oder alle SnapMirror Beziehungen in einem Element Storage-Cluster aufzulisten. 
+---
+= ListSnapMirrorBeziehung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Web-UI der Element Software verwendet das `ListSnapMirrorRelationships` Methode zum Auflisten einer oder aller SnapMirror Beziehungen auf einem Element Storage-Cluster.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+SnapMirrorEndpointID
+ a| 
+Listen Sie nur die Beziehungen auf, die mit der angegebenen Endpunkt-ID verknüpft sind. Wird keine Endpunkt-ID angegeben, werden die Beziehungen von allen bekannten SnapMirror Endpunkten aufgelistet.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Zielvolumen
+ a| 
+Beziehungen auflisten, die mit dem angegebenen Zielvolume verknüpft sind.
+ a| 
+xref:reference_element_api_snapmirrorvolumeinfo.adoc[SnapMirrorVolumeInfo]
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+QuelleVolume
+ a| 
+Beziehungen auflisten, die mit dem angegebenen Quell-Volume verknüpft sind
+ a| 
+xref:reference_element_api_snapmirrorvolumeinfo.adoc[SnapMirrorVolumeInfo]
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+vserver
+ a| 
+Beziehungen auf dem angegebenen Vserver auflisten.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Beziehungs-ID
+ a| 
+Beziehungen auflisten, die mit der angegebenen Beziehungs-ID verknüpft sind.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+SnapMirror Beziehung wird durchgeführt
+ a| 
+Eine Liste von Objekten mit Informationen zu SnapMirror Beziehungen.
+ a| 
+xref:reference_element_api_snapmirrorrelationship.adoc[SnapMirror Beziehung] Array erledigen
+
+|===
+
+
+== Neu seit Version
+
+10.1

@@ -1,0 +1,77 @@
+---
+permalink: storage/reference_per_node_cluster_settings_details.html 
+sidebar: sidebar 
+keywords: nodes, changing cluster settings, per-node UI 
+summary: Sie können die Cluster-Einstellungen für einen Storage-Node nach der Cluster-Konfiguration überprüfen und den Node-Hostnamen ändern. 
+---
+= Details zu den Cluster-Einstellungen erhalten Sie über die UI pro Node
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Cluster-Einstellungen für einen Storage-Node nach der Cluster-Konfiguration überprüfen und den Node-Hostnamen ändern.
+
+In der folgenden Liste werden die Clustereinstellungen für einen Speicherknoten beschrieben, die auf der Seite *Cluster-Einstellungen* der Benutzeroberfläche pro Node angezeigt werden (https://<node[] IP>:442/hcc/Node/Cluster-settings).
+
+
+NOTE: Wenn Sie einen SolidFire Enterprise SDS-Cluster ausführen, können die meisten Netzwerkeinstellungen in der Node-UI nach der Node-Implementierung nicht mehr geändert werden.
+
+* * Rolle*
++
+Rolle, die der Node im Cluster hat. Mögliche Werte:
+
++
+** Storage: Storage oder Fibre Channel-Node
+** Management: Node ist ein Management-Node.
+
+
+* *Hostname*
++
+Der Name des Node.
+
+* * Cluster*
++
+Der Name des Clusters.
+
+* *Cluster Mitgliedschaft*
++
+Status des Node. Mögliche Werte:
+
++
+** Verfügbar: Der Node ist keinem Cluster-Namen zugeordnet und ist noch nicht Teil eines Clusters.
+** Ausstehend: Der Node ist konfiguriert und kann einem bestimmten Cluster hinzugefügt werden. Für den Zugriff auf den Node ist keine Authentifizierung erforderlich.
+** PendingActive: Das System installiert gerade kompatible Software auf dem Knoten. Nach Abschluss der Migration wird der Node in den Status „aktiv“ verschoben.
+** Aktiv: Der Knoten nimmt an einem Cluster Teil. Zum Ändern des Node ist eine Authentifizierung erforderlich.
+
+
+* *Version*
++
+Version der Element Software, die auf dem Node ausgeführt wird
+
+* *Ensemble*
++
+Knoten, die Teil des Datenbankensembles sind.
+
+* *Knoten-ID*
++
+ID wird zugewiesen, wenn dem Cluster ein Node hinzugefügt wird.
+
+* * Clusterschnittstelle*
++
+Für die Cluster-Kommunikation verwendete Netzwerkschnittstelle.
+
+* *Management-Schnittstelle*
++
+Management-Netzwerkschnittstelle. Dies ist standardmäßig Bond1G, kann aber auch Bond10G verwenden.
+
+* *Storage-Schnittstelle*
++
+Storage-Netzwerk-Schnittstelle mit Bond10G.
+
+* *Verschlüsselungsfähig*
++
+Gibt an, ob der Node die Laufwerkverschlüsselung unterstützt.
+
+

@@ -1,0 +1,79 @@
+---
+permalink: api/reference_element_api_removekeyserverfromproviderkmip.html 
+sidebar: sidebar 
+keywords: KMIP,key server,unassigning,removing,remove,unassign,removekeyserverfromproviderkmip 
+summary: 'Sie können die Methode RemoveKeyServerFromProviderKmip verwenden, um die Zuweisung des angegebenen Key Management Interoperability Protocol \(KMIP\)-Schlüsselservers vom ihm zugewiesenen Provider zu aufheben. Sie können die Zuweisung eines Schlüsselservers von seinem Provider aufheben, es sei denn, er ist der letzte und sein Provider ist aktiv \ (die Schlüssel zur Verfügung stellen, die derzeit verwendet werden\). Wenn der angegebene Schlüsselserver einem Provider nicht zugewiesen ist, wird keine Aktion ausgeführt und es wird kein Fehler zurückgegeben.' 
+---
+= RemoveKeyServerFromProviderKmip
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `RemoveKeyServerFromProviderKmip` Methode zum Aufheben der Zuweisung des angegebenen KMIP-Schlüsselservers (Key Management Interoperability Protocol) vom Provider, dem er zugewiesen wurde. Sie können die Zuweisung eines Schlüsselservers vom Provider aufheben, es sei denn, er ist der letzte und sein Provider aktiv (die Schlüssel, die derzeit verwendet werden). Wenn der angegebene Schlüsselserver einem Provider nicht zugewiesen ist, wird keine Aktion ausgeführt und es wird kein Fehler zurückgegeben.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+KeyServer-ID
+ a| 
+Die ID des KMIP-Schlüsselservers, der die Zuweisung aufheben soll.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode hat keine Rückgabewerte. Die Entfernung gilt als erfolgreich, solange kein Fehler zurückgegeben wird.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "RemoveKeyServerFromProviderKmip",
+  "params": {
+    "keyServerID": 1
+   },
+"id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+   "id": 1,
+   "result":
+      {}
+    }
+}
+----
+
+
+== Neu seit Version
+
+11.7

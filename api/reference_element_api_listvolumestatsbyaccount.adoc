@@ -1,0 +1,125 @@
+---
+permalink: api/reference_element_api_listvolumestatsbyaccount.html 
+sidebar: sidebar 
+keywords: volumes,volume,stats,list,listing,account,listvolumestatsbyaccount,activity 
+summary: Sie können die ListVolumeStatsByAccount-Methode verwenden, um für jedes Konto holige Volumenaktivitätsmessungen aufzulisten. Werte werden aus allen Volumes des Kontos zusammengefasst. 
+---
+= ListVolumeStatsByKonto
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `ListVolumeStatsByAccount` Methode zum Auflisten von Messungen der Volumenaktivität auf hoher Ebene für jedes Konto. Werte werden aus allen Volumes des Kontos zusammengefasst.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+InbegriffenVirtualVolumes
+ a| 
+Virtuelle Volumes sind standardmäßig in der Antwort enthalten. Um virtuelle Volumes auszuschließen, setzen Sie auf false.
+ a| 
+boolesch
+ a| 
+Richtig
+ a| 
+Nein
+
+
+
+ a| 
+Konten
+ a| 
+Eine Liste der Account-IDs, für die Volume-Statistiken zurückgegeben werden sollen. Wenn keine Daten angegeben werden, werden Statistiken für alle Konten zurückgegeben.
+ a| 
+Integer-Array
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+VolumeStatistik
+ a| 
+Liste der Volume-Aktivitätsinformationen für jedes Konto.*Hinweis:* das volumeID-Mitglied ist für jeden Eintrag 0, da die Werte die Zusammenfassung aller Volumes darstellen, die dem Konto gehören.
+ a| 
+xref:reference_element_api_volumestats.adoc[VolumeStatistik] Array erledigen
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+"method": "ListVolumeStatsByAccount",
+  "params": {"accounts": [3]},
+  "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "volumeStats": [
+      {
+        "accountID": 3,
+        "nonZeroBlocks": 155040175,
+        "readBytes": 3156273328128,
+        "readBytesLastSample": 0,
+        "readOps": 770574543,
+        "readOpsLastSample": 0,
+        "samplePeriodMSec": 500,
+        "timestamp": "2016-10-17T20:42:26.231661Z",
+        "unalignedReads": 0,
+        "unalignedWrites": 0,
+        "volumeAccessGroups": [],
+        "volumeID": 0,
+        "volumeSize": 1127428915200,
+        "writeBytes": 1051988406272,
+        "writeBytesLastSample": 0,
+        "writeOps": 256833107,
+        "writeOpsLastSample": 0,
+        "zeroBlocks": 120211025
+      }
+    ]
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6

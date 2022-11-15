@@ -1,0 +1,67 @@
+---
+permalink: storage/task_per_node_run_system_tests.html 
+sidebar: sidebar 
+keywords: storage nodes, running system tests,s ystem tests, network settings, testing changes 
+summary: Sie können Änderungen an den Netzwerkeinstellungen testen, nachdem Sie sie zur Netzwerkkonfiguration übergeben haben. Sie können die Tests durchführen, um sicherzustellen, dass der Storage-Node stabil ist und ohne Probleme online geschaltet werden kann. 
+---
+= Führen Sie Systemtests über die UI pro Node aus
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Änderungen an den Netzwerkeinstellungen testen, nachdem Sie sie zur Netzwerkkonfiguration übergeben haben. Sie können die Tests durchführen, um sicherzustellen, dass der Storage-Node stabil ist und ohne Probleme online geschaltet werden kann.
+
+Sie haben sich bei der UI pro Node für den Storage-Node angemeldet.
+
+. Klicken Sie Auf *Systemtests*.
+. Klicken Sie neben dem Test, den Sie ausführen möchten, auf *Test ausführen* oder wählen Sie *Alle Tests ausführen*.
++
+
+NOTE: Alle Testvorgänge können zeitaufwändig sein und sollten nur Richtung NetApp Support ausgeführt werden.
+
++
+** *Angeschlossenes Ensemble Testen*
++
+Testet und überprüft die Verbindung zu einem Datenbankensemble. Standardmäßig verwendet der Test das Ensemble für den Cluster, dem der Knoten zugeordnet ist. Alternativ können Sie auch ein anderes Ensemble zur Prüfung der Konnektivität bereitstellen.
+
+** * Testen Sie Connect Mvip*
++
+Sendet eine Pings der angegebenen MVIP-Adresse (Management Virtual IP) und führt dann einen einfachen API-Aufruf an das MVIP aus, um die Konnektivität zu überprüfen. Standardmäßig verwendet der Test das MVIP für das Cluster, dem der Node zugeordnet ist.
+
+** * Testen Sie Connect Svip*
++
+Pings der angegebenen virtuellen Speicher-IP-Adresse (SVIP) mit ICMP-Paketen (Internet Control Message Protocol), die mit der auf dem Netzwerkadapter festgelegten Maximum Transmission Unit (MTU)-Größe übereinstimmen. Er stellt dann eine Verbindung zum SVIP als iSCSI-Initiator her. Standardmäßig verwendet der Test das SVIP für das Cluster, dem der Node zugeordnet ist.
+
+** *Hardware-Konfiguration Testen*
++
+Testet die Richtigkeit aller Hardware-Konfigurationen, validiert die richtigen Firmware-Versionen und bestätigt, dass alle Laufwerke installiert und ordnungsgemäß ausgeführt werden. Dies ist das gleiche wie bei den werkseitigen Tests.
+
++
+
+NOTE: Dieser Test ist ressourcenintensiv und sollte nur auf Anfrage des NetApp Supports ausgeführt werden.
+
+** * Testen Sie Lokale Konnektivität*
++
+Testet die Verbindung zu allen anderen Knoten im Cluster, indem an jeden Knoten die Cluster-IP (CIP) pinging. Dieser Test wird nur auf einem Node angezeigt, wenn der Node Teil eines aktiven Clusters ist.
+
+** *Test Lokalisieren Cluster*
++
+Überprüft, ob der Node das in der Cluster-Konfiguration angegebene Cluster finden kann.
+
+** *Netzwerk-Konfiguration Testen*
++
+Stellt sicher, dass die konfigurierten Netzwerkeinstellungen mit den im System verwendeten Netzwerkeinstellungen übereinstimmen. Dieser Test dient nicht zur Erkennung von Hardwarefehlern, wenn ein Node aktiv an einem Cluster teilnimmt.
+
+** *Ping Testen*
++
+Gibt eine angegebene Liste von Hosts aus oder, wenn keine angegeben werden, erstellt dynamisch eine Liste aller registrierten Nodes im Cluster und pings für einfache Konnektivität.
+
+** *Remote-Verbindung Testen*
++
+Testet die Verbindung zu allen Knoten in Remote-gekoppelten Clustern durch Ping-Signal der Cluster-IP (CIP) an jedem Knoten. Dieser Test wird nur auf einem Node angezeigt, wenn der Node Teil eines aktiven Clusters ist.
+
+
+
+

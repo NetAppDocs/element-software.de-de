@@ -1,0 +1,113 @@
+---
+permalink: api/reference_element_api_snapmirrorpolicy.html 
+sidebar: sidebar 
+keywords: object,objects,snapMirrorPolicy 
+summary: Das SnapMirrorPolicy-Objekt enthält Informationen zu einer SnapMirror-Richtlinie, die auf einem ONTAP System gespeichert ist. 
+---
+= SnapMirror Richtlinie
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das SnapMirrorPolicy-Objekt enthält Informationen zu einer SnapMirror-Richtlinie, die auf einem ONTAP System gespeichert ist.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+SnapMirrorEndpointID
+ a| 
+Die ID des Ziel-ONTAP-Systems.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+PolicyName
+ a| 
+Der der Richtlinie zugewiesene eindeutige Name.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Richtlinientyp
+ a| 
+Der Typ der Richtlinie. Mögliche Werte:
+
+* Async_Mirror
+* Mirror_Vault
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Kommentar
+ a| 
+Eine von Menschen lesbare Beschreibung im Zusammenhang mit der SnapMirror-Richtlinie
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Transferpriorität
+ a| 
+Die Priorität, bei der eine SnapMirror Übertragung ausgeführt wird. Mögliche Werte:
+
+* Normal: Die Standardpriorität. Diese Transfers werden vor Transfers mit höchster Priorität geplant.
+* Niedrig: Diese Transfers haben die niedrigste Priorität und werden nach den meisten normalen Prioritätstransfers geplant.
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Richtlinie
+ a| 
+Eine Liste von Objekten, die die Richtlinienregeln beschreiben
+ a| 
+xref:reference_element_api_snapmirrorpolicyrule.adoc[SnapMirror PolicyRule] Array erledigen
+
+
+
+ a| 
+TotalKeepCount
+ a| 
+Die Gesamtzahl der Aufbewahrung für alle Regeln in der Richtlinie.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+TotalRegeln
+ a| 
+Die Gesamtzahl der Regeln in der Richtlinie.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+VserverName
+ a| 
+Der Name des Vserver für die SnapMirror Richtlinie
+ a| 
+Zeichenfolge
+
+|===

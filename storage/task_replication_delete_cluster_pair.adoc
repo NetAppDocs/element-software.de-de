@@ -1,0 +1,21 @@
+---
+permalink: storage/task_replication_delete_cluster_pair.html 
+sidebar: sidebar 
+keywords: cluster pairs, delete 
+summary: Sie können ein Cluster-Paar aus der Element-UI eines der Cluster im Paar löschen. 
+---
+= Löschen eines Cluster-Paares
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein Cluster-Paar aus der Element-UI eines der Cluster im Paar löschen.
+
+. Klicken Sie Auf *Data Protection* > *Cluster Pairs*.
+. Auf das Aktionen-Symbol für ein Cluster-Paar klicken.
+. Klicken Sie im Menü Ergebnis auf *Löschen*.
+. Bestätigen Sie die Aktion.
+. Führen Sie die Schritte im zweiten Cluster in der Cluster-Paarung erneut aus.
+

@@ -1,0 +1,34 @@
+---
+permalink: storage/task_data_manage_vol_access_group_add_multiple_initiators.html 
+sidebar: sidebar 
+keywords: initiator, add to volume access group, access groups, add multiple initiators, create initiator 
+summary: Sie können einer vorhandenen Volume-Zugriffsgruppe mehrere Initiatoren hinzufügen, um den Zugriff auf Volumes in der Volume-Zugriffsgruppe mit oder ohne CHAP-Authentifizierung zu ermöglichen. 
+---
+= Fügen Sie einer Volume-Zugriffsgruppe mehrere Initiatoren hinzu
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können einer vorhandenen Volume-Zugriffsgruppe mehrere Initiatoren hinzufügen, um den Zugriff auf Volumes in der Volume-Zugriffsgruppe mit oder ohne CHAP-Authentifizierung zu ermöglichen.
+
+Wenn Sie einer Volume-Zugriffsgruppe Initiatoren hinzufügen, haben die Initiatoren Zugriff auf alle Volumes in dieser Volume-Zugriffsgruppe.
+
+
+TIP: Sie können den Initiator für jedes Volume finden, indem Sie auf das Aktionen-Symbol und dann *Details anzeigen* für das Volume in der Liste der aktiven Volumes klicken.
+
+Sie können einer vorhandenen Volume-Zugriffsgruppe mehrere Initiatoren hinzufügen, um den Zugriff auf Volumes zu ermöglichen und jedem Initiator innerhalb dieser Volume-Zugriffsgruppe eindeutige CHAP-Anmeldeinformationen zuzuweisen. Damit können Sie diese Option für bereits vorhandene Volume Access Groups anwenden.
+
+Sie können initator-basierte CHAP-Attribute mit einem API-Aufruf zuweisen. Um einen CHAP-Kontonamen und Anmeldeinformationen pro Initiator hinzuzufügen, müssen Sie den API-Aufruf zum ModifyInitiator verwenden, um CHAP-Zugriff und -Attribute zu entfernen und hinzuzufügen.
+
+Weitere Informationen finden Sie unter link:../api/index.html["Storage-Management mit der Element API"].
+
+.Schritte
+. Klicken Sie Auf *Management* > *Initiatoren*.
+. Wählen Sie die Initiatoren aus, die einer Zugriffsgruppe hinzugefügt werden sollen.
+. Klicken Sie auf die Schaltfläche *Massenaktionen*.
+. Klicken Sie auf *zu Volume Access Group hinzufügen*.
+. Wählen Sie im Dialogfeld zu Volume Access Group hinzufügen eine Zugriffsgruppe aus der Liste *Volume Access Group* aus.
+. Klicken Sie Auf *Hinzufügen*.
+

@@ -1,0 +1,43 @@
+---
+permalink: storage/task_intro_view_api_activity_in_real_time.html 
+sidebar: sidebar 
+keywords: solidfire api, element api, element os, element, viewing the API log, viewing API calls 
+summary: Das Element System nutzt die NetApp Element API als Grundlage für seine Funktionen. Mit der Element UI können Sie verschiedene Arten von API-Aktivitäten in Echtzeit auf dem System anzeigen, während Sie die Schnittstelle verwenden. Mit dem API-Protokoll können Sie vom Benutzer initiierte und Hintergrund-System-API-Aktivitäten sowie API-Aufrufe auf der Seite anzeigen, die Sie derzeit anzeigen. 
+---
+= Zeigt die API-Aktivität an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Element System nutzt die NetApp Element API als Grundlage für seine Funktionen. Mit der Element UI können Sie verschiedene Arten von API-Aktivitäten in Echtzeit auf dem System anzeigen, während Sie die Schnittstelle verwenden. Mit dem API-Protokoll können Sie vom Benutzer initiierte und Hintergrund-System-API-Aktivitäten sowie API-Aufrufe auf der Seite anzeigen, die Sie derzeit anzeigen.
+
+Mithilfe des API-Protokolls können Sie ermitteln, welche API-Methoden für bestimmte Aufgaben verwendet werden. Außerdem erfahren Sie, wie Sie die API-Methoden und -Objekte zum Erstellen benutzerdefinierter Anwendungen verwenden.
+
+Informationen zu den einzelnen Methoden finden Sie unter link:../api/index.html["Element Software-API-Referenz"].
+
+. Klicken Sie in der Element UI-Navigationsleiste auf *API-Protokoll*.
+. So ändern Sie den Typ der API-Aktivität, die im Fenster API-Protokoll angezeigt wird:
++
+.. Wählen Sie *Requests*, um API-Request-Traffic anzuzeigen.
+.. Wählen Sie *Antworten*, um den API-Antwortdatenverkehr anzuzeigen.
+.. Filtern Sie die Typen von API-Traffic, indem Sie eine der folgenden Optionen auswählen:
++
+*** *Benutzer initiiert*: API-Verkehr durch Ihre Aktivitäten während dieser Web-UI-Sitzung.
+*** *Hintergrundabfrage*: API-Traffic, der durch Systemaktivität im Hintergrund erzeugt wird.
+*** *Aktuelle Seite*: API Traffic generiert durch Aufgaben auf der Seite, die Sie gerade sehen.
+
+
+
+
+
+
+
+
+== Weitere Informationen
+
+* link:../api/index.html["Storage-Management mit der Element API"]
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

@@ -1,0 +1,56 @@
+---
+permalink: storage/reference_replication_volume_pairing_warnings.html 
+sidebar: sidebar 
+keywords: volume warnings, messages, replication, data protection 
+summary: 'Die Seite Volume Pairs auf der Registerkarte Datenschutz enthält diese Meldungen, nachdem Sie Volumes gepaart haben. Diese Meldungen können sowohl am Quell- als auch am Zielende des Paares \ (sofern nicht anders angegeben\) in der Listenansicht „replizierte Volumes“ angezeigt werden.' 
+---
+= Warnungen zum Volume-Pairing
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Seite Thevolme Pairs auf der Registerkarte Datenschutz enthält diese Meldungen, nachdem Sie Volumes gepaart haben. Diese Meldungen können an den Quell- und Zielenden des Paares (sofern nicht anders angegeben) in der Listenansicht „replizierte Volumes“ angezeigt werden.
+
+* * PausedClusterFull*
++
+Da das Ziel-Cluster voll ist, können die Quell-Replizierung und der Transfer von Massendaten nicht fortgesetzt werden. Die Meldung wird nur am Quellende des Paares angezeigt.
+
+* *PausedExceedMaxSnapshotCount*
++
+Das Ziel-Volume verfügt bereits über die maximale Anzahl an Snapshots und kann keine zusätzlichen Snapshots replizieren.
+
+* *PausedManual*
++
+Lokales Volume wurde manuell angehalten. Sie muss aufgehoben werden, bevor die Replikation fortgesetzt wird.
+
+* *PausedManualRemote*
++
+Fernlautstärke befindet sich im manuellen Paused-Modus. Um das Remote-Volume vor dem Fortschreiten der Replikation zu unterbrechen, ist ein manueller Eingriff erforderlich.
+
+* *PausedUnkonfiguriert*
++
+Warten auf eine aktive Quelle und ein aktives Ziel. Manuelle Eingriffe sind erforderlich, um die Replikation fortzusetzen.
+
+* *PausedQoS*
++
+Ziel-QoS konnte eingehende I/O nicht aufrechterhalten. Automatische Wiederaufnahme der Replikation. Die Meldung wird nur am Quellende des Paares angezeigt.
+
+* *PausedSlowLink*
++
+Langsame Verbindung wurde erkannt und die Replikation wurde angehalten. Automatische Wiederaufnahme der Replikation. Die Meldung wird nur am Quellende des Paares angezeigt.
+
+* *PausedVolumeSizeMischmatch*
++
+Das Ziel-Volume ist nicht dieselbe Größe wie das Quell-Volume.
+
+* *PausedXCopy*
++
+Ein SCSI XCOPY-Befehl wird an ein Quell-Volume übergeben. Der Befehl muss abgeschlossen sein, bevor die Replikation fortgesetzt werden kann. Die Meldung wird nur am Quellende des Paares angezeigt.
+
+* *StoppedMiskonfiguriert*
++
+Es wurde ein permanenter Konfigurationsfehler erkannt. Das entfernte Volume wurde gelöscht oder entpaart. Es ist keine Korrekturmaßnahme möglich; es muss eine neue Paarung eingerichtet werden.
+
+

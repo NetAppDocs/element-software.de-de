@@ -1,0 +1,140 @@
+---
+permalink: api/reference_element_api_pendingactivenode.html 
+sidebar: sidebar 
+keywords: object,objects,pendingActiveNode 
+summary: Das PendingActiveNode-Objekt enthält Informationen über einen Knoten, der sich derzeit im Status Pendingaktiv befindet, zwischen dem Status „ausstehend“ und „aktiv“. Dies sind Knoten, die derzeit an das werkseitige Softwareabbild zurückgegeben werden. Verwenden Sie die API-Methode ListPendingActiveNodes, um eine Liste dieser Informationen für alle hängenden aktiven Knoten zurückzugeben. 
+---
+= HängenActiveNode
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das PendingActiveNode-Objekt enthält Informationen über einen Knoten, der sich derzeit im Status Pendingaktiv befindet, zwischen dem Status „ausstehend“ und „aktiv“. Dies sind Knoten, die derzeit an das werkseitige Softwareabbild zurückgegeben werden. Verwenden Sie die `ListPendingActiveNodes` API-Methode, um eine Liste dieser Informationen für alle hängenden aktiven Knoten zurückzugeben.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+ActiveNodeKey
+ a| 
+Ein eindeutiger Schlüssel, mit dem der Node nach einer erfolgreichen Installation der Software automatisch zum Cluster hinzugefügt werden kann.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+ZuweisdNodeID
+ a| 
+Die zugewiesene Node-ID für den Node.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Asynchron
+ a| 
+Die asynchrone Methode handle, mit der Sie den Status des Vorgangs abfragen können.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+cip
+ a| 
+Die Cluster-IP-Adresse, die dem Node zugewiesen ist.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+mip
+ a| 
+Die dem Node zugewiesene Management-IP-Adresse.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Knotenablagefach
+ a| 
+Bei HCI-Plattformen lautet der Buchstabe „A“, „B“, „C“ oder „D“) für den Chassis-Steckplatz, in dem dieser Node befindet. Bei Storage-Plattformen ist dieser Wert Null.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+HängenActiveNodeID
+ a| 
+Die ausstehende Node-ID des Node.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+PlattformInfo
+ a| 
+Hardwareinformationen für den Node Mitglieder:
+
+* „ChassisType“: Die Hardware-Plattform des Node.
+* CpuModel: Das CPU-Modell der Hardware-Plattform.
+* NodeMemoryGB: Die Speichermenge, die in der physischen Plattform in GB installiert ist.
+* NodeType: Der Name des Node-Modells.
+* PlattformConfigVersion: Die Version der für diese Node-Hardware konfigurierten Software.
+
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+Rolle
+ a| 
+Die Rolle des Node im Cluster. Mögliche Werte:
+
+* Vereinfachtes
+* Storage
+* Computing
+* Zeuge
+
+ a| 
+
+
+
+ a| 
+sip
+ a| 
+Die dem Knoten zugewiesene Speicher-IP-Adresse (iSCSI).
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Softwareversion
+ a| 
+Die aktuelle Version der auf dem Node ausgeführten Element Software.
+ a| 
+Zeichenfolge
+
+|===
+
+
+== Weitere Informationen
+
+xref:reference_element_api_listpendingactivenodes.adoc[ListPendingActiveNodes]

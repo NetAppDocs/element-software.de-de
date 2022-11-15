@@ -1,0 +1,154 @@
+---
+permalink: api/reference_element_api_createinitiators.html 
+sidebar: sidebar 
+keywords: create,creating,initiator,CreateInitiators,WWPN,IQN,initiators 
+summary: 'Sie können CreateInitiatoren verwenden, um mehrere neue Initiator-IQNs oder World Wide Port Names \(WWPNs\) zu erstellen und diese optional Aliase und Attribute zuzuweisen. Wenn Sie CreateInitiatoren zum Erstellen neuer Initiatoren verwenden, können Sie sie auch zu Volume-Zugriffsgruppen hinzufügen.' 
+---
+= CreateInitiatoren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwenden Sie können `CreateInitiators` Um mehrere neue Initiator-IQNs oder World Wide Port Names (WWPNs) zu erstellen und optional Aliase und Attribute zuzuweisen. Wenn Sie verwenden `CreateInitiators` Zum Erstellen neuer Initiatoren können Sie sie auch zu Volume-Zugriffsgruppen hinzufügen.
+
+Wenn der Vorgang einen der im Parameter angegebenen Initiatoren nicht erstellt, gibt die Methode einen Fehler aus und erstellt keine Initiatoren (ein partieller Abschluss ist nicht möglich).
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Initiatoren
+ a| 
+Eine Liste von Objekten, die die Eigenschaften der einzelnen neuen Initiatoren enthalten. Objekte:
+
+* `alias`: (Optional) der freundliche Name, der diesem Initiator zugewiesen werden soll. (Zeichenfolge)
+* `attributes`: (Optional) ein Satz von JSON-Attributen, die diesem Initiator zugewiesen werden sollen. (JSON-Objekt)
+* `chapUsername`: (Optional) der eindeutige CHAP-Benutzername für diesen Initiator. Setzt den Initiatornamen (IQN) standardmäßig ein, wenn er während der Erstellung nicht angegeben wurde und requiredChap wahr ist. (Zeichenfolge)
+* `initiatorSecret`: (Optional) der CHAP-Schlüssel, der zur Authentifizierung des Initiators verwendet wird. Die Standardeinstellung ist ein zufällig generiertes Geheimnis, wenn es während der Erstellung nicht angegeben wurde und requiredChap wahr ist. (Zeichenfolge)
+* `name`: (Erforderlich) der Name des zu erstellenden Initiators (IQN oder WWPN). (Zeichenfolge)
+* `requireChap`: (Optional) true, wenn CHAP während der Sitzungsanmeldung für diesen Initiator erforderlich ist. (boolesch)
+* `targetSecret`: (Optional) der CHAP-Schlüssel zur Authentifizierung des Ziels (bei Verwendung der gegenseitigen CHAP-Authentifizierung). Die Standardeinstellung ist ein zufällig generiertes Geheimnis, wenn es während der Erstellung nicht angegeben wurde und requiredChap wahr ist. (Zeichenfolge)
+* `virtualNetworkIDs`: (Optional) die Liste der virtuellen Netzwerk-IDs, die diesem Initiator zugeordnet sind. Wenn Sie ein oder mehrere virtuelle Netzwerke definieren, kann sich dieser Initiator nur bei diesen virtuellen Netzwerken anmelden. Wenn Sie keine virtuellen Netzwerke definieren, kann sich dieser Initiator bei allen Netzwerken anmelden.
+* `volumeAccessGroupID`: (Optional) die ID der Volume Access Group, der dieser neu erstellte Initiator hinzugefügt wird. (Ganze Zahl)
+
+ a| 
+JSON-Objekt-Array
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Initiatoren
+ a| 
+Liste von Objekten, die die neu erstellten Initiatoren beschreiben
+ a| 
+xref:reference_element_api_initiator.adoc[Initiator] Array erledigen
+
+|===
+
+
+== Fehler
+
+Mit dieser Methode kann der folgende Fehler zurückgegeben werden:
+
+|===
+
+
+| Name | Beschreibung 
+
+
+ a| 
+XInitiatorExists
+ a| 
+Dieser Wert wird zurückgegeben, wenn der ausgewählte Name des Initiators bereits vorhanden ist.
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "id": 3291,
+  "method": "CreateInitiators",
+  "params": {
+    "initiators": [
+      {
+        "name": "iqn.1993-08.org.debian:01:288170452",
+        "alias": "example1"
+      },
+      {
+        "name": "iqn.1993-08.org.debian:01:297817012",
+        "alias": "example2"
+      }
+    ]
+  }
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 3291,
+  "result": {
+    "initiators": [
+      {
+        "alias": "example1",
+        "attributes": {},
+        "initiatorID": 145,
+        "initiatorName": "iqn.1993-08.org.debian:01:288170452",
+        "volumeAccessGroups": []
+      },
+      {
+        "alias": "example2",
+        "attributes": {},
+        "initiatorID": 146,
+        "initiatorName": "iqn.1993-08.org.debian:01:297817012",
+        "volumeAccessGroups": []
+      }
+    ]
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6
+
+
+
+== Weitere Informationen
+
+xref:reference_element_api_listinitiators.adoc[ListenInitiatoren]

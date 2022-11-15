@@ -1,0 +1,109 @@
+---
+permalink: api/reference_element_api_setnetworkconfig.html 
+sidebar: sidebar 
+keywords: network,config,configuration,set,setting,node,setnetworkconfig 
+summary: Sie können die Methode SetNetworkConfig verwenden, um die Netzwerkkonfiguration für einen Knoten festzulegen. Um die aktuellen Netzwerkeinstellungen für einen Node anzuzeigen, führen Sie die GetNetworkConfig API-Methode aus. 
+---
+= SetNetworkConfig
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `SetNetworkConfig` Methode zum Festlegen der Netzwerkkonfiguration für einen Knoten. Um die aktuellen Netzwerkeinstellungen für einen Node anzuzeigen, führen Sie den aus `GetNetworkConfig` API-Methode.
+
+
+NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
+
+
+
+== Parameter
+
+ACHTUNG:
+
+Wenn der Bond-Modus auf einem Node geändert wird, kann dies zu einem vorübergehenden Verlust der Netzwerkverbindung führen.
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Netzwerk
+ a| 
+Ein Objekt, das die zu ändernden Node-Netzwerkeinstellungen enthält. In diesem Parameter müssen Sie nur die Felder hinzufügen, die Sie in diese Methode als Attribute geändert haben möchten.
+ a| 
+xref:reference_element_api_network_all_interfaces.adoc[Netzwerk (alle Schnittstellen)]
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Netzwerk
+ a| 
+Die neue und aktuelle Netzwerkkonfiguration für den Node.
+ a| 
+xref:reference_element_api_network_all_interfaces.adoc[Netzwerk (alle Schnittstellen)]
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+	"method": "SetNetworkConfig",
+		"params": {
+			"network": {
+				"Bond10G": {
+					"bond-mode": "ALB"
+				},
+				"Bond1G": {
+					"netmask": "255.255.224.0"
+				},
+				"eth0": {
+					"method": "bond"
+				},
+				"lo": {
+					"method": "loopback"
+				}
+			}
+		}
+}
+----
+
+
+== Antwortbeispiel
+
+Die Antwort dieser Methode entspricht der Antwort der Methode GetNetworkConfig. Die Methode zeigt alle Mitglieder für jedes Objekt an und enthält die neuen Werte für alle geänderten Mitglieder.
+
+
+
+== Neu seit Version
+
+9.6
+
+
+
+== Weitere Informationen
+
+* xref:reference_element_api_getnetworkconfig.adoc[GetNetworkConfig]
+* xref:reference_element_api_response_example_getnetworkconfig.adoc[GetNetworkConfig]
+

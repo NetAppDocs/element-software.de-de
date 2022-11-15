@@ -1,0 +1,119 @@
+---
+permalink: api/reference_element_api_listasyncresults.html 
+sidebar: sidebar 
+keywords: async,asynchronous,result,results,get,list,listing,listasyncresults 
+summary: Sie können ListAsyncResults verwenden, um die Ergebnisse aller aktuell ausgeführten und abgeschlossenen asynchronen Methoden auf dem System aufzulisten. Das Abfragen von asynchronen Ergebnissen mit ListeAsyncResults führt nicht dazu, dass abgeschlossene Async ablaufen; Sie können GetAsyncResult verwenden, um alle von ListAsyncResults zurückgegebenen Async-Vorgänge abzufragen. 
+---
+= ListeAsyncResults
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwenden Sie können `ListAsyncResults` Liste der Ergebnisse aller aktuell ausgeführten und abgeschlossenen asynchronen Methoden im System. Abfragen asynchroner Ergebnisse mit `ListAsyncResults` Läuft nicht vollständig Async ab, sondern Sie können es verwenden `GetAsyncResult` Um eine der von zurückgegebenen asynchronen Handles abzufragen `ListAsyncResults`.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Async
+ a| 
+Eine optionale Liste der Ergebnistypen. Sie können diese Liste verwenden, um die Ergebnisse nur auf diese Arten von Operationen zu beschränken. Mögliche Werte:
+
+* DriveAdd: Operationen, bei denen das System ein Laufwerk zum Cluster fügt.
+* BulkVolume: Kopiervorgänge zwischen Volumes wie Backups oder Restores.
+* Klon: Klonvorgänge für Volumes
+* DriveRemoval: Vorgänge mit dem System, das Daten von einem Laufwerk kopiert, um sie aus dem Cluster zu entfernen.
+* RtfiPendingNode: Operationen, bei denen das System die kompatible Software auf einem Knoten installiert, bevor sie dem Cluster hinzugefügt wird.
+
+ a| 
+String-Array
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Asynchrone Handles
+ a| 
+Eine Reihe serialisierter asynchroner Methodenergebnisse.
+ a| 
+JSON-Objekt-Array
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "ListAsyncResults",
+   "params": {
+   },
+   "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+   "id": 1,
+   "result": {
+     "asyncHandles": [
+       {
+         "asyncResultID": 47,
+         "completed": true,
+         "createTime": "2016-01-01T22:29:19Z",
+         "data": {
+           "cloneID": 26,
+           "message": "Clone complete.",
+           "volumeID": 48
+         },
+         "lastUpdateTime": "2016-01-01T22:45:43Z",
+         "resultType": "Clone",
+         "success": true
+      },
+      ...]
+   }
+}
+----
+
+
+== Neu seit Version
+
+9.6
+
+
+
+== Weitere Informationen
+
+xref:reference_element_api_getasyncresult.adoc[GetAsyncResult]

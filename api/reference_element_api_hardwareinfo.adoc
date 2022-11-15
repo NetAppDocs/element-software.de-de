@@ -1,0 +1,200 @@
+---
+permalink: api/reference_element_api_hardwareinfo.html 
+sidebar: sidebar 
+keywords: object,objects,hardwareInfo 
+summary: Das HardwareInfo-Objekt enthält detaillierte Informationen zur Hardware und zum Status jedes Node im Cluster. Sie können diese Informationen mit der GetHardwareInfo API-Methode abrufen. 
+---
+= HardwareInfo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das HardwareInfo-Objekt enthält detaillierte Informationen zur Hardware und zum Status jedes Node im Cluster. Sie können diese Informationen mit dem abrufen `GetHardwareInfo` API-Methode.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+BoardSerial
+ a| 
+Die Seriennummer der DMI-Platine.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Bus
+ a| 
+Informationen zum Hauptplatinen-Medienbus
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+Chassisseriell
+ a| 
+Die Seriennummer des Chassis.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Fahrhardware
+ a| 
+Eine Liste mit Informationen für jedes Laufwerk im Node.
+ a| 
+JSON-Objekt-Array
+
+
+
+ a| 
+Fibre Channel-Ports
+ a| 
+Eine Liste der Fibre Channel-Ports auf dem Node.
+ a| 
+Integer-Array
+
+
+
+ a| 
+HardwareKonfig
+ a| 
+Informationen zur Konfiguration der Peripheriegeräte der Hauptplatine
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+KernelCrashDumpState
+ a| 
+Die Crash Dump-Konfiguration des Betriebssystemkernels.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Speicher
+ a| 
+Hardware-Informationen zu Firmware und Systemspeicher.
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+Netzwerk
+ a| 
+Beschreibung der Hardware aller Netzwerkschnittstellen des Node.
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+Netzwerkschnittstellen
+ a| 
+Der Status der Netzwerkschnittstellen des Node.
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+Knotenablagefach
+ a| 
+Bei HCI-Plattformen lautet der Buchstabe „A“, „B“, „C“ oder „D“) für den Chassis-Steckplatz, in dem dieser Node befindet. Bei Storage-Plattformen ist dieser Wert Null.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+nvram
+ a| 
+NVRAM-Statistiken für den Node.
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+Ursprung
+ a| 
+Der Anbieter der Hauptplatine.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Plattform
+ a| 
+Eine Beschreibung der Chassis-Plattform.
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+Seriell
+ a| 
+Die Seriennummer des Produkts.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Storage
+ a| 
+Informationen für Storage Controller.
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+SystemMemory
+ a| 
+Speichernutzung und Leistungsinformationen des Betriebssystems
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+System
+ a| 
+Der Typ des Node-Chassis.
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+uuid
+ a| 
+Die eindeutige ID des Node.
+ a| 
+UUID
+
+|===
+
+
+== Weitere Informationen
+
+xref:reference_element_api_gethardwareinfo.adoc[GetHardwareInfo]

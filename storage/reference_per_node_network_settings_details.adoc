@@ -1,0 +1,96 @@
+---
+permalink: storage/reference_per_node_network_settings_details.html 
+sidebar: sidebar 
+keywords: network settings, per-node UI, storage node, ui 
+summary: Sie können die Netzwerkeinstellungen des Storage-Nodes ändern, um dem Node einen neuen Satz an Netzwerkattributen zuzuweisen. 
+---
+= Details zu den Netzwerkeinstellungen in der Benutzeroberfläche pro Node
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Netzwerkeinstellungen des Storage-Nodes ändern, um dem Node einen neuen Satz an Netzwerkattributen zuzuweisen.
+
+Wenn Sie sich beim Knoten anmelden, werden auf der Seite *Netzwerkeinstellungen* die Netzwerkeinstellungen für einen Speicherknoten angezeigt (https://<node[] IP>:442/hcc/Node/Network-settings). Sie können entweder *Bond1G* (Management) oder *Bond10G* (Storage) Einstellungen auswählen. In der folgenden Liste werden die Einstellungen beschrieben, die Sie ändern können, wenn sich ein Speicherknoten im Status „verfügbar“, „Ausstehend“ oder „aktiv“ befindet:
+
+
+NOTE: Wenn Sie einen SolidFire Enterprise SDS-Cluster ausführen, können die meisten Netzwerkeinstellungen in der Node-UI nach der Node-Implementierung nicht mehr geändert werden.
+
+* *Methode*
++
+Die Methode zum Konfigurieren der Schnittstelle. Mögliche Methoden:
+
++
+** Loopback: Wird verwendet, um die IPv4-Loopback-Schnittstelle zu definieren.
+** Manuell: Wird verwendet, um Schnittstellen zu definieren, für die keine Konfiguration standardmäßig erfolgt.
+** dhcp: Wird verwendet, um eine IP-Adresse über DHCP zu erhalten.
+** Statisch: Zur Definition von Ethernet-Schnittstellen mit statisch zugewiesenen IPv4-Adressen.
+
+
+* *Verbindungsgeschwindigkeit*
++
+Die von der virtuellen NIC ausgehandelte Geschwindigkeit.
+
+* * IPv4-Adresse*
++
+Die IPv4-Adresse für das eth0-Netzwerk.
+
+* *IPv4-Subnetzmaske*
++
+Adressbereiche des IPv4-Netzwerks.
+
+* * IPv4 Gateway-Adresse*
++
+Netzwerkadresse des Routers für das Senden von Paketen aus dem lokalen Netzwerk.
+
+* * IPv6-Adresse*
++
+Die IPv6-Adresse für das eth0-Netzwerk.
+
+* * IPv6 Gateway-Adresse*
++
+Netzwerkadresse des Routers für das Senden von Paketen aus dem lokalen Netzwerk.
+
+* *MTU*
++
+Größte Paketgröße, die ein Netzwerkprotokoll übertragen kann. Muss größer als oder gleich 1500 sein. Wenn Sie eine zweite Speicher-NIC hinzufügen, sollte der Wert 9000 sein.
+
+* *DNS-Server*
++
+Für die Cluster-Kommunikation verwendete Netzwerkschnittstelle.
+
+* *Domänen Suchen*
++
+Suche nach zusätzlichen MAC-Adressen, die dem System zur Verfügung stehen.
+
+* *Bond-Modus*
++
+Dies kann einer der folgenden Modi sein:
+
++
+** ActivePassive (Standard)
+** ALB
+** LACP
+
+
+* *Status*
++
+Mögliche Werte:
+
++
+** UpAndRunning
+** Runter
+** Hoch
+
+
+* *Virtual Network Tag*
++
+Das Tag wurde beim Erstellen des virtuellen Netzwerks zugewiesen.
+
+* *Routen*
++
+Statische Routen zu bestimmten Hosts oder Netzwerken über die zugewiesene Schnittstelle, die die Routen für die Verwendung konfiguriert sind.
+
+

@@ -1,0 +1,35 @@
+---
+permalink: storage/concept_snapmirror_failback_scenarios.html 
+sidebar: sidebar 
+keywords: failback scenarios, snapmirror, dr, disaster recovery 
+summary: 'Die Disaster Recovery-Funktion von SnapMirror wird in zwei Failback-Szenarien dargestellt. Diese gehen davon aus, dass die ursprüngliche Beziehung über \(Broken\) fehlgeschlagen ist.' 
+---
+= SnapMirror Failback-Szenarien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Disaster Recovery-Funktion von SnapMirror wird in zwei Failback-Szenarien dargestellt. Diese gehen davon aus, dass die ursprüngliche Beziehung (unterbrochen) fehlgeschlagen ist.
+
+Die Schritte aus den entsprechenden Verfahren werden zur Referenz hinzugefügt.
+
+
+NOTE: In den hier gezeigten Beispielen lautet R1 = die ursprüngliche Beziehung, in der der Cluster, auf dem die NetApp Element Software ausgeführt wird, das ursprüngliche Quell-Volume (Element) ist und ONTAP das ursprüngliche Ziel-Volume (ONTAP). R2 und R3 stellen die inversen Beziehungen dar, die durch den umgekehrten Resync-Vorgang erstellt wurden.
+
+Das folgende Bild zeigt das Failback-Szenario, wenn das Quell-Volume noch vorhanden ist:
+
+image::../media/snapmirror_element_failback1.gif[snapmirror Element Failback 1]
+
+Das folgende Bild zeigt das Failback-Szenario, wenn das Quell-Volume nicht mehr existiert:
+
+image::../media/snapmirror_element_failback2.png[snapmirror Element Failback 2]
+
+
+
+== Weitere Informationen
+
+* xref:task_snapmirror_perform_failback_when_source_volume_exists.adoc[Führen Sie ein Failback durch, wenn das Quell-Volume noch vorhanden ist]
+* xref:task_snapmirror_performing_failback_when_source_volume_no_longer_exists.adoc[Führen Sie ein Failback durch, wenn das Quell-Volume nicht mehr vorhanden ist]
+

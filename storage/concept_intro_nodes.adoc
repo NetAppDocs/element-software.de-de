@@ -1,0 +1,14 @@
+---
+permalink: storage/concept_intro_nodes.html 
+sidebar: sidebar 
+keywords: sf-series nodes, nodes, block storage, storage nodes, fibre channel nodes, fc, FC 
+summary: 'Nodes sind die einzelnen Hardware-Komponenten, die in ein Cluster gruppiert sind, auf das als Block-Storage zugegriffen werden kann. In einem SolidFire Storage-System gibt es zwei Node-Typen: Storage Nodes und Fibre Channel Nodes.' 
+---
+= Knoten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nodes sind die einzelnen Hardware-Komponenten, die in ein Cluster gruppiert sind, auf das als Block-Storage zugegriffen werden kann. In einem SolidFire Storage-System gibt es zwei Node-Typen: Storage Nodes und Fibre Channel Nodes.

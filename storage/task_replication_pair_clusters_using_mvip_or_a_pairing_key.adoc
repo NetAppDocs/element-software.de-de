@@ -1,0 +1,30 @@
+---
+permalink: storage/task_replication_pair_clusters_using_mvip_or_a_pairing_key.html 
+sidebar: sidebar 
+keywords: pair cluster, mvip, pairing key, cluster pairing 
+summary: Sie können ein Quell- und Zielcluster mithilfe des MVIP des Zielclusters koppeln, wenn auf beide Cluster-Administratoren Zugriff hat. Wenn der Zugriff des Cluster-Administrators nur auf einem Cluster in einem Cluster-Paar verfügbar ist, kann der Kopplungsschlüssel auf dem Ziel-Cluster verwendet werden, um die Cluster-Paarung abzuschließen. 
+---
+= Koppeln Sie Cluster mithilfe von MVIP oder einem Kopplschlüssel
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein Quell- und Zielcluster mithilfe des MVIP des Zielclusters koppeln, wenn auf beide Cluster-Administratoren Zugriff hat. Wenn der Zugriff des Cluster-Administrators nur auf einem Cluster in einem Cluster-Paar verfügbar ist, kann der Kopplungsschlüssel auf dem Ziel-Cluster verwendet werden, um die Cluster-Paarung abzuschließen.
+
+. Wählen Sie eine der folgenden Methoden, um Cluster zu koppeln:
++
+** Paircluster mit MVIP: Verwenden Sie diese Methode, wenn der Clusteradministrator auf beide Cluster zugreifen kann. Diese Methode verwendet das MVIP des Remote-Clusters, um zwei Cluster zu koppeln.
+** Koppeln Sie Cluster mithilfe eines Kopplungsschlüssels: Verwenden Sie diese Methode, wenn der Cluster-Administrator nur auf einen der Cluster zugreifen kann. Diese Methode generiert einen Kopplungsschlüssel, der auf dem Ziel-Cluster zum Abschließen der Cluster-Kopplung verwendet werden kann.
+
+
+
+
+
+
+== Weitere Informationen
+
+* xref:task_replication_pair_cluster_using_mvip.adoc[Koppeln Sie Cluster mit MVIP]
+* xref:task_replication_pair_cluster_using_pairing_key.adoc[Koppeln Sie Cluster mithilfe eines Kopplschlüssels]
+

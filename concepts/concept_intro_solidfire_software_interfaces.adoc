@@ -1,0 +1,122 @@
+---
+permalink: concepts/concept_intro_solidfire_software_interfaces.html 
+sidebar: sidebar 
+keywords: interfaces, integration, user interface, Plug-in, vCenter, API, node UIs, command line, snapshots, shadow copies, Element software, Element, Element UI, UI, manage storage, utilities, integration utilities 
+summary: Sie können ein SolidFire Storage-System mit NetApp Element Software-Schnittstellen und Integrations-Utilities verwalten. 
+---
+= SolidFire-Softwareschnittstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein SolidFire Storage-System mit verschiedenen NetApp Element Software-Schnittstellen und Integrations-Utilities verwalten.
+
+.Optionen
+*  Element software user interface
+*  Element software API
+*  Element Plug-in for vCenter Server
+*  Hybrid Cloud Control
+*  node UIs
+*  integration utilities and tools
+
+
+
+
+== Benutzeroberfläche der NetApp Element Software
+
+Ermöglicht die Einrichtung von Element Storage, die Überwachung von Cluster-Kapazität und -Performance und das Management von Storage-Aktivitäten in einer mandantenfähigen Infrastruktur. Element ist das Storage-Betriebssystem, das Herzstück eines SolidFire Clusters ist. Element Software wird unabhängig auf allen Nodes im Cluster ausgeführt und ermöglicht den Nodes des Clusters die Kombination der Ressourcen, die externen Clients als einzelnes Storage-System präsentiert werden. Element Software ist für die gesamte Clusterkoordination, den Umfang und das Management des Systems verantwortlich. Die Softwareschnittstelle basiert auf der Element API.
+
+link:../storage/index.html["Storage-Management mit Element Software"]
+
+
+
+== NetApp Element Software-API
+
+Ermöglicht die Verwendung einer Reihe von Objekten, Methoden und Routinen zum Storage Management. Die Element-API basiert auf dem JSON-RPC-Protokoll über HTTPS. Sie können API-Vorgänge in der Element-UI überwachen, indem Sie das API-Protokoll aktivieren. Dadurch können Sie die Methoden anzeigen, die an das System ausgegeben werden. Sie können sowohl Anfragen als auch Antworten aktivieren, um zu sehen, wie das System auf die ausgestellten Methoden antwortet.
+
+link:../api/index.html["Storage-Management mit der Element API"]
+
+
+
+== NetApp Element Plug-in für vCenter Server
+
+Ermöglicht die Konfiguration und das Management von Storage-Clustern mit Element Software über eine alternative Schnittstelle für die Element UI in VMware vSphere.
+
+https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+
+
+
+== NetApp Hybrid Cloud Control
+
+Ermöglicht die Aktualisierung von Element-Storage- und Managementservices sowie das Management von Storage-Ressourcen über die NetApp Hybrid Cloud Control Schnittstelle.
+
+link:../hccstorage/index.html["Managen und überwachen Sie Storage mit der Übersicht über NetApp Hybrid Cloud Control"]
+
+
+
+== UIs für Managementknoten
+
+Der Managementknoten enthält zwei UIs: Eine Benutzeroberfläche zur Verwaltung VON REST-basierten Diensten und eine Benutzeroberfläche pro Node zur Verwaltung von Netzwerk- und Clustereinstellungen sowie Betriebssystemtests und Dienstprogrammen. Über DIE REST-API-UI steht ein Menü mit Service-bezogenen APIs zur Verfügung, die die Service-basierte Systemfunktionalität vom Management-Node aus steuern.
+
+
+
+== Zusätzliche Integrations-Tools
+
+Obwohl Sie Ihren Storage in der Regel mit NetApp Element, der NetApp Element API und dem NetApp Element Plug-in für vCenter Server managen, können Sie auf den Storage mithilfe weiterer Integrationstools und -Tools zugreifen.
+
+
+
+=== Element CLI
+
+https://mysupport.netapp.com/site/tools/tool-eula/elem-cli["Element CLI"^] Ermöglicht die Steuerung eines SolidFire Storage-Systems über eine Befehlszeilenschnittstelle, ohne die Element API verwenden zu müssen.
+
+
+
+=== Element PowerShell Tools
+
+https://mysupport.netapp.com/site/tools/tool-eula/elem-powershell-tools["Element PowerShell Tools"^] Aktivieren Sie die Verwendung einer Sammlung von Microsoft Windows PowerShell Funktionen, die die Element API zum Managen eines SolidFire Storage-Systems verwenden.
+
+
+
+=== Element-SDKs
+
+https://mysupport.netapp.com/site/products/all/details/netapphci-solidfire-elementsoftware/tools-tab["Element-SDKs"^] Ermöglichen Sie die Verwaltung Ihres SolidFire-Clusters mithilfe folgender Tools:
+
+* Element Java SDK: Ermöglicht Programmierern die Integration der Element-API in die Java-Programmiersprache.
+* Element .NET SDK: Ermöglicht Programmierern die Integration der Element-API in die .NET-Programmierplattform.
+* Element Python SDK: Ermöglicht Programmierern die Integration der Element-API in die Programmiersprache Python.
+
+
+
+
+=== SolidFire Postman API Testsuite
+
+Ermöglicht Programmierern, eine Sammlung von zu verwenden link:https://github.com/solidfire/postman["Postman"^] Funktionen, die Element-API-Aufrufe testen.
+
+
+
+=== SolidFire Storage Replication Adapter
+
+https://mysupport.netapp.com/site/products/all/details/elementsra/downloads-tab["SolidFire Storage Replication Adapter"^] Die Integration in VMware Site Recovery Manager (SRM) ermöglicht die Kommunikation mit replizierten SolidFire Storage-Clustern und ermöglicht die Ausführung unterstützter Workflows.
+
+
+
+=== SolidFire VRO
+
+https://mysupport.netapp.com/site/products/all/details/solidfire-vro/downloads-tab["SolidFire VRO"^] Einfache Möglichkeit, die Element API für das Management Ihres SolidFire Storage-Systems mit VMware vRealize Orchestrator zu verwenden
+
+
+
+=== SolidFire VSS Provider
+
+https://mysupport.netapp.com/site/products/all/details/solidfire-vss-provider/downloads-tab["SolidFire VSS Provider"^] Integriert VSS-Schattenkopien in Element Snapshots und Klonen.
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

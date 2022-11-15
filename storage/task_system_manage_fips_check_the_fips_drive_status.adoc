@@ -1,0 +1,37 @@
+---
+permalink: storage/task_system_manage_fips_check_the_fips_drive_status.html 
+sidebar: sidebar 
+keywords: fips, security, federal information processing standards, 140-2, drive, enable 
+summary: Sie können prüfen, ob die Funktion FIPS-Laufwerke auf dem Cluster aktiviert ist, indem Sie die NetApp Element Software GetFeatureStatus API Methode verwenden, die zeigt, ob der Status der aktivierten FIPS-Laufwerke „true“ oder „false“ lautet. 
+---
+= Prüfen Sie den FIPS-Laufwerksstatus
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können mithilfe der NetApp Element Software prüfen, ob die FIPS-Laufwerksfunktion auf dem Cluster aktiviert ist `GetFeatureStatus` API-Methode, die angibt, ob der Status „FIPS Drives enabled“ wahr oder „false“ ist.
+
+. Überprüfen Sie mithilfe der Element API die FIPS-Laufwerksfunktion auf dem Cluster, indem Sie Folgendes eingeben:
++
+`GetFeatureStatus`
+
+. Überprüfen Sie die Ergebnisse der `GetFeatureStatus` API-Aufruf. Wenn der Wert für aktivierte FIPS-Laufwerke den Wert hat, ist die Funktion für FIPS-Laufwerke aktiviert.
++
+[listing]
+----
+{"enabled": true,
+"feature": "FipsDrives"
+}
+----
+
+
+
+
+== Weitere Informationen
+
+* link:../api/index.html["Storage-Management mit der Element API"]
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

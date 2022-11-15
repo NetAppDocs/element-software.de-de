@@ -1,0 +1,26 @@
+---
+permalink: setup/concept_requirements_overview.html 
+sidebar: sidebar 
+keywords:  
+summary: Bevor Sie beginnen, sollten Sie die Voraussetzungen überprüfen. 
+---
+= Anforderungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie beginnen, sollten Sie die Voraussetzungen für die Bereitstellung der NetApp Element-Software, einschließlich Netzwerk- und Portanforderungen, prüfen.
+
+* link:../storage/concept_prereq_networking.html["Netzwerkanforderungen"]
+* link:../storage/concept_prereq_switch_configuration_for_solidfire_clusters.html["Switch-Konfiguration"]
+* link:../storage/reference_prereq_network_port_requirements.html["Anforderungen an Netzwerk-Ports"]
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+

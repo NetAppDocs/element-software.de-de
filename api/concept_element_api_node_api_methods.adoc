@@ -1,0 +1,75 @@
+---
+permalink: api/concept_element_api_node_api_methods.html 
+sidebar: sidebar 
+keywords: node,api,methods 
+summary: Sie können Node-API-Methoden verwenden, um einzelne Nodes zu konfigurieren. Diese Methoden arbeiten auf einzelnen Nodes, die konfiguriert werden müssen, konfiguriert sind, aber noch nicht an einem Cluster beteiligt sind oder aktiv an einem Cluster teilnehmen. Mithilfe von Node-API-Methoden können Sie Einstellungen für einzelne Nodes und das Cluster-Netzwerk, das zur Kommunikation mit dem Node verwendet wird, anzeigen und ändern. Sie müssen diese Methoden für einzelne Nodes ausführen. Sie können keine API-Methoden pro Node für die Adresse des Clusters ausführen. 
+---
+= Node-API-Methoden
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Node-API-Methoden verwenden, um einzelne Nodes zu konfigurieren. Diese Methoden arbeiten auf einzelnen Nodes, die konfiguriert werden müssen, konfiguriert sind, aber noch nicht an einem Cluster beteiligt sind oder aktiv an einem Cluster teilnehmen. Mithilfe von Node-API-Methoden können Sie Einstellungen für einzelne Nodes und das Cluster-Netzwerk, das zur Kommunikation mit dem Node verwendet wird, anzeigen und ändern. Sie müssen diese Methoden für einzelne Nodes ausführen. Sie können keine API-Methoden pro Node für die Adresse des Clusters ausführen.
+
+* xref:reference_element_api_checkpingonvlan.adoc[CheckPingOnVlan]
+* xref:reference_element_api_checkproposednodeadditions.adoc[CheckeAngebot NodeAdditions]
+* xref:reference_element_api_createclustersupportbundle.adoc[CreateClusterSupportBundle]
+* xref:reference_element_api_createsupportbundle.adoc[CreateSupportBundle]
+* xref:reference_element_api_deleteallsupportbundles.adoc[DeleteAllSupportBundles]
+* xref:reference_element_api_disablemaintenancemode.adoc[Instandhaltungmodus]
+* xref:reference_element_api_disablessh.adoc[DisableSsh]
+* xref:reference_element_api_enablemaintenancemode.adoc[Instandhaltungmodus]
+* xref:reference_element_api_enablessh.adoc[EnableSsh]
+* xref:reference_element_api_getclusterconfig.adoc[GetClusterConfig]
+* xref:reference_element_api_getclusterstate.adoc[GetClusterStatus]
+* xref:reference_element_api_getconfig.adoc[Getconfig]
+* xref:reference_element_api_getdriveconfig.adoc[GetDriveConfig]
+* xref:reference_element_api_gethardwareconfig.adoc[VMware HardwareConfig]
+* xref:reference_element_api_gethardwareinfo.adoc[GetHardwareInfo]
+* xref:reference_element_api_getipmiconfig.adoc[GetIpmiConfig]
+* xref:reference_element_api_getipmiinfo.adoc[GetIpmiInfo]
+* xref:reference_element_api_getnetworkconfig.adoc[GetNetworkConfig]
+* xref:reference_element_api_getnetworkinterface.adoc[GetNetworkInterface]
+* xref:reference_element_api_getnodeactivetlsciphers.adoc[GetNodeActiveTlsCiphers]
+* xref:reference_element_api_node_getnodefipsdrivesreport.adoc[GetNodeFipsDrivesReport]
+* xref:reference_element_api_getnodesslcertificate.adoc[GetNodeSSLZertifikat]
+* xref:reference_element_api_getnodesupportedtlsciphers.adoc[GetNodeSupportedTlsCiphers]
+* xref:reference_element_api_getpendingoperation.adoc[GetPendingOperation]
+* xref:reference_element_api_getsshinfo.adoc[GetSshInfo]
+* xref:reference_element_api_listdrivehardware.adoc[ListDriveHardware]
+* xref:reference_element_api_listnetworkinterfaces.adoc[ListNetworkInterfaces]
+* xref:reference_element_api_listtests.adoc[ListTruhen]
+* xref:reference_element_api_listutilities.adoc[ListenUtilities]
+* xref:reference_element_api_removenodesslcertificate.adoc[RemoveNodeSSLZertifikat]
+* xref:reference_element_api_resetdrives.adoc[Erneutes Ansetzen von Laufwerken]
+* xref:reference_element_api_resetnode.adoc[ResetNode neu]
+* xref:reference_element_api_resetnodesupplementaltlsciphers.adoc[ResetNodeErgänzungTlsCiphers]
+* xref:reference_element_api_restartnetworking.adoc[Netzwerk neu starten]
+* xref:reference_element_api_restartservices.adoc[RestartServices neu starten]
+* xref:reference_element_api_setclusterconfig.adoc[SetClusterConfig]
+* xref:reference_element_api_setconfig.adoc[SetConfig]
+* xref:reference_element_api_setnetworkconfig.adoc[SetNetworkConfig]
+* xref:reference_element_api_setnodesslcertificate.adoc[SetNodeSSLZertifikat]
+* xref:reference_element_api_setnodesupplementaltlsciphers.adoc[SetNodeSupplementalTlsCiphers]
+* xref:reference_element_api_node_shutdown.adoc[Herunterfahren]
+* xref:reference_element_api_testconnectensemble.adoc[TestConnectEnsemble]
+* xref:reference_element_api_testconnectmvip.adoc[TestConnectMvip]
+* xref:reference_element_api_testconnectsvip.adoc[TestConnectSvip]
+* xref:reference_element_api_testdrives.adoc[TestDrives]
+* xref:reference_element_api_testhardwareconfig.adoc[TestHardwareConfig]
+* xref:reference_element_api_testlocatecluster.adoc[TestLocateCluster]
+* xref:reference_element_api_testlocalconnectivity.adoc[TestLocalConnectivity]
+* xref:reference_element_api_testnetworkconfig.adoc[TestNetworkConfig]
+* xref:reference_element_api_testping.adoc[TestPing]
+* xref:reference_element_api_testremoteconnectivity.adoc[TestRemoteConnectivity]
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Ressourcen-Seite zu NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Dokumentation für frühere Versionen von NetApp SolidFire und Element Produkten"^]
+

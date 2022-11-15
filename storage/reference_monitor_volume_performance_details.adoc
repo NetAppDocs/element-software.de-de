@@ -1,0 +1,91 @@
+---
+permalink: storage/reference_monitor_volume_performance_details.html 
+sidebar: sidebar 
+keywords: volume performance 
+summary: Auf der Seite Volume Performance auf der Registerkarte Reporting in der Element UI können Sie Performancestatistiken der Volumes anzeigen. 
+---
+= Volume Performance im Detail
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Auf der Seite Volume Performance auf der Registerkarte Reporting in der Element UI können Sie Performancestatistiken der Volumes anzeigen.
+
+In der folgenden Liste werden die Details beschrieben, die Ihnen zur Verfügung stehen:
+
+* *ID*
++
+Die vom System generierte ID für das Volume.
+
+* *Name*
++
+Der Name, der dem Volume bei seiner Erstellung gegeben wurde.
+
+* *Konto*
++
+Der Name des Kontos, das dem Volume zugewiesen wurde.
+
+* *Zugriffsgruppen*
++
+Der Name der Zugriffsgruppe oder der Gruppen des Volumes, der das Volume angehört.
+
+* *Volume-Nutzung*
++
+Ein Prozentwert, der beschreibt, wie viel der Client das Volume verwendet.
+
++
+Mögliche Werte:
+
++
+** 0 = der Client verwendet das Volume nicht
+** 100 = der Client verwendet das Maximum
+** >100 = der Kunde verwendet den Burst
+
+
+* *IOPS insgesamt*
++
+Gesamtzahl der derzeit ausgeführten IOPS (Lese- und Schreibvorgänge) gegenüber dem Volume
+
+* *Lese-IOPS*
++
+Gesamtzahl der Lese-IOPS, die derzeit auf dem Volume ausgeführt wird
+
+* *Schreib-IOPS*
++
+Die Gesamtzahl der momentan ausgeführten Schreib-IOPS gegenüber dem Volume.
+
+* *Gesamtdurchsatz*
++
+Der aktuell ausgeführte Gesamtdurchsatz (Lese- und Schreibvorgänge) gegenüber dem Volume.
+
+* *Lesedurchsatz*
++
+Gesamtmenge des aktuell ausgeführten Lese-Durchsatzes gegenüber dem Volume.
+
+* *Schreibdurchsatz*
++
+Der Gesamtdurchsatz, der derzeit für das Volume ausgeführt wird.
+
+* *Gesamte Latenz*
++
+Die durchschnittliche Zeit in Mikrosekunden, die Lese- und Schreibvorgänge auf einem Volume abzuschließen.
+
+* *Leselatenz*
++
+Die durchschnittliche Zeit in Mikrosekunden, um Lesevorgänge in dem Volume in den letzten 500 Millisekunden abzuschließen.
+
+* *Schreiblatenz*
++
+Der durchschnittliche Zeitaufwand in Mikrosekunden, um Schreibvorgänge in einem Volume in den letzten 500 Millisekunden abzuschließen.
+
+* *Warteschlangentiefe*
++
+Die Anzahl der ausstehenden Lese- und Schreibvorgänge auf dem Volume.
+
+* *Durchschnittliche I/O-Größe*
++
+Durchschnittliche Größe in Byte der letzten I/O-Vorgänge für das Volume in den letzten 500 Millisekunden.
+
+

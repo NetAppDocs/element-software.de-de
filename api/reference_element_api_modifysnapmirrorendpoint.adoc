@@ -1,0 +1,103 @@
+---
+permalink: api/reference_element_api_modifysnapmirrorendpoint.html 
+sidebar: sidebar 
+keywords: modify,modifying,edit,editing,change,changing,snapmirror,endpoint,modifysnapmirrorendpoint 
+summary: Die Web-UI der Element Software verwendet die ModifySnapMirrorEndpoint-Methode, um den Namen und die Managementattribute für einen SnapMirror-Endpunkt zu ändern. 
+---
+= ModifySnapMirrorEndpoint
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Web-UI der Element Software verwendet das `ModifySnapMirrorEndpoint` Methode zum Ändern von Namen und Managementattributen für einen SnapMirror Endpunkt
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+
+
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+SnapMirror EndpointID
+ a| 
+Den zu ändernden SnapMirror Endpunkt
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Management IP
+ a| 
+Die neue Management-IP-Adresse für das ONTAP System.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Benutzername
+ a| 
+Der neue Management-Benutzername für das ONTAP System.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Passwort
+ a| 
+Das neue Managementpasswort für das ONTAP System.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+SnapMirror Endpoint
+ a| 
+Informationen zum geänderten SnapMirror Endpunkt.
+ a| 
+xref:reference_element_api_snapmirrorendpoint.adoc[SnapMirror Endpoint]
+
+|===
+
+
+== Neu seit Version
+
+10.0

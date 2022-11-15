@@ -1,0 +1,65 @@
+---
+permalink: api/reference_element_api_qospolicy.html 
+sidebar: sidebar 
+keywords: object,objects,QoSPolicy,QoS,policy,policies 
+summary: Das Objekt QoSPolicy enthält Informationen über eine QoS-Richtlinie auf einem Storage-Cluster, auf dem die Element Software ausgeführt wird. 
+---
+= QoSPolicy
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Objekt QoSPolicy enthält Informationen über eine QoS-Richtlinie auf einem Storage-Cluster, auf dem die Element Software ausgeführt wird.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+QosPolicyID
+ a| 
+Eine eindeutige ganzzahlige Kennung für die QoSPolicy, die vom Storage-Cluster automatisch zugewiesen wird.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Name
+ a| 
+Der Name der QoS-Richtlinie Zum Beispiel: Gold, Platin oder Silber.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+qos
+ a| 
+Die QoS-Einstellungen, für die diese Richtlinie gilt.
+ a| 
+xref:reference_element_api_qos.adoc[QoS]
+
+
+
+ a| 
+VolumeIDs
+ a| 
+Eine Liste der Volumes, die dieser Richtlinie zugeordnet sind.
+ a| 
+Integer-Array
+
+|===
+
+
+== Weitere Informationen
+
+xref:reference_element_api_getqospolicy.adoc[GetQoSPolicy]

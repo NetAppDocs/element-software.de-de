@@ -1,0 +1,133 @@
+---
+permalink: api/reference_element_api_getvolumeaccessgroupefficiency.html 
+sidebar: sidebar 
+keywords: volume,volumes,get,getting,access,group,efficiency,GetVolumeAccessGroupEfficiency 
+summary: Sie können die GetVolumeAccessGroupEfficiency-Methode verwenden, um Effizienzinformationen über eine Volume-Zugriffsgruppe zu erhalten. Nur die Volume-Zugriffsgruppe, die Sie in dieser API-Methode als Parameter angeben, wird zur Berechnung der Kapazität verwendet. 
+---
+= GetVolumeAccessGroupEffizienz
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `GetVolumeAccessGroupEfficiency` Methode zum Abrufen von Effizienzinformationen über eine Volume-Zugriffsgruppe. Nur die Volume-Zugriffsgruppe, die Sie in dieser API-Methode als Parameter angeben, wird zur Berechnung der Kapazität verwendet.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+VolumeAccessGroupID
+ a| 
+Gibt die Zugriffsgruppe des Volumes an, für die die Kapazität berechnet wird.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Komprimierung
+ a| 
+Die Menge an Speicherplatz, der durch die Datenkomprimierung für alle Volumes in der Volume-Zugriffsgruppe eingespart wurde Angegeben als Verhältnis, in dem ein Wert von 1 bedeutet, dass Daten ohne Komprimierung gespeichert wurden.
+ a| 
+Schweben
+
+
+
+ a| 
+Deduplizierung
+ a| 
+Die Menge an Speicherplatz, die gespeichert wird, indem keine Daten für alle Volumes in der Zugriffsgruppe für Volumes dupliziert werden. Als Verhältnis angegeben.
+ a| 
+Schweben
+
+
+
+ a| 
+Thin Provisioning
+ a| 
+Das Verhältnis des belegten Speicherplatzes zum zugewiesenen Speicherplatz zum Speichern von Daten. Als Verhältnis angegeben.
+ a| 
+Schweben
+
+
+
+ a| 
+Zeitstempel
+ a| 
+Das letzte Mal wurden Effizienzdaten nach der Speicherbereinigung erfasst.
+ a| 
+ISO 8601-Datenzeichenfolge
+
+
+
+ a| 
+MisingVolumes
+ a| 
+Die Volumes, die nicht nach Effizienzdaten abgefragt werden konnten. Fehlende Volumes können durch eine kürzlich erfolgte Speicherbereinigung, einen vorübergehenden Netzwerkverlust oder durch einen Neustart von Diensten seit dem Speicherbereinigung verursacht werden.
+ a| 
+Integer-Array
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "GetVolumeAccessGroupEfficiency",
+   "params": {
+      "volumeAccessGroupID": 1
+   },
+   "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+   "id": 1,
+   "result": {
+       "compression": 2.006012925331075,
+       "deduplication": 1,
+       "missingVolumes": [],
+       "thinProvisioning": 1.009861932938856,
+       "timestamp": "2014-03-10T17:05:27Z"
+   }
+}
+----
+
+
+== Neu seit Version
+
+9.6

@@ -1,0 +1,162 @@
+---
+permalink: api/reference_element_api_createclustersupportbundle.html 
+sidebar: sidebar 
+keywords: CreateClusterSupportBundle,create,cluster,support,bundle,creating 
+summary: Sie können das CreateClusterSupportBundle auf dem Management-Node verwenden, um Supportpakete von allen Knoten eines Clusters zu sammeln. Wenn ein Bundle erstellt wird, wird es auf dem Node als .tar.gz-Datei gespeichert. Sie können diese Methode nur auf einem Management-Node ausführen. Dies funktioniert nicht, wenn Sie auf einem Storage-Node ausgeführt werden. 
+---
+= CreateClusterSupportBundle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `CreateClusterSupportBundle` Auf dem Management-Node, um Support-Bundles von allen Nodes eines Clusters zu erfassen. Die unterstützten Bundles der einzelnen Nodes werden als tar.gz Dateien komprimiert. Das Cluster-Support-Bundle ist eine tar-Datei mit den Knoten-Support-Bundles. Sie können diese Methode nur auf einem Management-Node ausführen. Dies funktioniert nicht, wenn Sie auf einem Storage-Node ausgeführt werden.
+
+
+
+== Parameter
+
+
+NOTE: Sie müssen diese Methode für den Management-Node anrufen. Beispiel:
+
+[listing]
+----
+https://<management node IP>:442/json-rpc/10.0
+----
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+NachlassVervollständigung
+ a| 
+Ermöglicht die Ausführung des Skripts, wenn Pakete nicht von einem oder mehreren Knoten gesammelt werden können.
+ a| 
+boolesch
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Beetname
+ a| 
+Eindeutiger Name für jedes erstellte Supportpaket. Wenn kein Name angegeben wird, werden „Supportbundle“ und der Node-Name als Dateiname verwendet
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+mvip
+ a| 
+Das MVIP des Clusters. Bundles werden von allen Nodes im Cluster gesammelt. Dieser Parameter ist erforderlich, wenn der Node-Parameter nicht angegeben ist.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Knoten
+ a| 
+Die IP-Adressen der Nodes, aus denen Pakete gesammelt werden sollen. Verwenden Sie entweder Knoten oder mvip, jedoch nicht beides, um die Knoten anzugeben, von denen Pakete gesammelt werden sollen. Dieser Parameter ist erforderlich, wenn mvip nicht angegeben wird.
+ a| 
+String-Array
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Passwort
+ a| 
+Das Cluster-Admin-Passwort. *Hinweis:* Dieses Passwort ist als Text bei Eingabe sichtbar.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Benutzername
+ a| 
+Der Benutzername des Cluster-Admin-Benutzers.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode hat keine Rückgabewerte.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+"method": "CreateClusterSupportBundle",
+"params": {
+          "bundlename": "clusterbundle",
+          "mvip": "132.119.120.100"
+     }
+   },
+ "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id":1,
+  "result":{
+   "details":{
+      "bundleName":"clusterbundle",
+      "extraArgs":"",
+      "files":[
+          "/tmp/supportbundles/clusterbundle.cl-4SD5.tar"
+      ],
+      "output":"timeout -s KILL 1790s /usr/local/bin/sfclustersupportbundle --quiet --name=\"clusterbundle\" --target-directory=\"/tmp/solidfire-dtemp.MM7f0m\" --user=\"admin\" --pass=\"admin\" --mvip=132.119.120.100"
+       },
+       "duration":"00:00:24.938127",
+       "result":"Passed"
+    }
+}
+----
+
+
+== Neu seit Version
+
+9.6

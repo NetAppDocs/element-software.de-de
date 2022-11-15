@@ -1,0 +1,57 @@
+---
+permalink: storage/reference_data_protection_snapshot_schedule_details.html 
+sidebar: sidebar 
+keywords: snapshots, snapshot schedules 
+summary: Auf der Seite Data Protection \> Schedules können Sie die folgenden Informationen in der Liste der Snapshot-Zeitpläne anzeigen. 
+---
+= Einzelheiten zum Snapshot Zeitplan
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Auf der Seite Data Protection > Schedules können Sie die folgenden Informationen in der Liste der Snapshot-Zeitpläne anzeigen.
+
+* *ID*
++
+Die vom System generierte ID für den Snapshot.
+
+* *Typ*
++
+Die Art des Zeitplans. Snapshot ist derzeit der einzige Typ, der unterstützt wird.
+
+* *Name*
++
+Der Name, der dem Zeitplan beim Erstellen angegeben wurde. Snapshot-Planungsnamen können bis zu 223 Zeichen lang sein und a–z, 0–9 und Bindestrich (-) Zeichen enthalten.
+
+* *Frequenz*
++
+Die Häufigkeit, mit der der Zeitplan ausgeführt wird. Die Häufigkeit kann in Stunden und Minuten, Wochen oder Monaten eingestellt werden.
+
+* *Wiederkehrend*
++
+Angabe, ob der Zeitplan nur einmal oder in regelmäßigen Abständen ausgeführt werden soll.
+
+* *Manuell Angehalten*
++
+Gibt an, ob der Zeitplan manuell angehalten wurde oder nicht.
+
+* *Volume-IDs*
++
+Die ID des Volumens, das der Zeitplan bei der Ausführung des Zeitplans verwendet.
+
+* *Letzter Lauf*
++
+Das letzte Mal, als der Zeitplan ausgeführt wurde.
+
+* *Status Der Letzten Ausführung*
++
+Das Ergebnis der letzten Planausführung. Mögliche Werte:
+
++
+** Erfolg
+** Ausfall
+
+
+

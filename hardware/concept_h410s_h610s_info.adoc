@@ -1,0 +1,31 @@
+---
+permalink: hardware/concept_h410s_h610s_info.html 
+sidebar: sidebar 
+keywords: h410s, h610s, hardware installation, hardware maintenance 
+summary: Informationen zur Installation und Wartung von Storage Nodes der H-Series sind verfügbar. 
+---
+= H410S und H610S Hardware-Informationen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Informationen zur Installation und Wartung von Storage Nodes der H-Series sind verfügbar.
+
+Im Folgenden finden Sie die Links zu den Installations- und Wartungsinhalten:
+
+* link:task_h410s_h610s_install.html["Storage-Nodes der H-Series installieren"^]
+* link:task_h410s_repl.html["Einen H410S Node austauschen"^]
+* link:task_h610s_repl.html["Austausch eines H610S Nodes"^]
+* link:task_hseries_driverepl.html["Ersetzen Sie Laufwerke"^]
+* link:task_psu_repl.html["Ersetzen Sie ein Netzteil"^]
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Ressourcen-Seite zu NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Dokumentation für frühere Versionen von NetApp SolidFire und Element Produkten"^]
+

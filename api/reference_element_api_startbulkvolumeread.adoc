@@ -1,0 +1,191 @@
+---
+permalink: api/reference_element_api_startbulkvolumeread.html 
+sidebar: sidebar 
+keywords: volume,read,session,start,starting,bulk,startbulkvolumeread 
+summary: Sie können die StartBulkVolumeRead-Methode verwenden, um eine Massenvolumenlesesitzung auf einem bestimmten Volume zu starten. 
+---
+= StartBulkVolumeRead
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `StartBulkVolumeRead` Methode zum Starten einer Lesesitzung für Massenvolumes auf einem angegebenen Volume
+
+Auf einem Volume können nur zwei Massenvorgänge gleichzeitig ausgeführt werden. Wenn Sie die Sitzung initialisieren, werden Daten von einem SolidFire-Speicher-Volume gelesen, das in einer externen Backup-Quelle gespeichert werden soll. Auf die externen Daten wird von einem Webserver zugegriffen, der auf einem Element Storage Node ausgeführt wird. Server-Interaktionsinformationen für externen Datenzugriff werden von einem auf dem Speichersystem ausgeführten Skript übergeben.
+
+Zu Beginn eines Massenvolumes-Lesevorgangs wird ein Snapshot des Volumes erstellt und der Snapshot wird gelöscht, sobald der Lesevorgang abgeschlossen ist. Sie können auch einen Snapshot des Volumes lesen, indem Sie die ID des Snapshot als Parameter eingeben. Wenn Sie einen vorherigen Snapshot lesen, erstellt das System keinen neuen Snapshot des Volumes und löscht auch nicht den vorherigen Snapshot, wenn der Lesevorgang abgeschlossen ist.
+
+
+NOTE: Durch diesen Prozess wird ein neuer Snapshot erstellt, wenn die ID eines vorhandenen Snapshots nicht angegeben wird. Snapshots können erstellt werden, wenn die Cluster-Fülle in Phase 2 oder 3 liegt. Snapshots werden nicht erstellt, wenn die Cluster-Fülle in Phase 4 oder 5 liegt.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Formatieren
+ a| 
+Das Format der Volume-Daten. Kann entweder sein:
+
+* `uncompressed`: Jedes Byte des Volumens wird ohne Kompression zurückgegeben.
+* `native`: Opaque Daten werden zurückgegeben, die kleiner und effizienter gespeichert und auf einem nachfolgenden Massenvolumen geschrieben sind.
+
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+VolumeID
+ a| 
+Die ID des zu lesenden Volumes.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Snapshot-ID
+ a| 
+Die ID eines zuvor erstellten Snapshots, der für das Lesen des Massen-Volumes verwendet wird. Wenn keine ID eingegeben wird, wird ein Snapshot des aktuellen aktiven Volume-Images erstellt.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Skript
+ a| 
+Der Name eines ausführbaren Skripts. Wenn kein Skriptname angegeben wird, sind der Schlüssel und die URL erforderlich, um auf Element Storage-Nodes zuzugreifen. Das Skript wird auf dem primären Knoten ausgeführt, und der Schlüssel und die URL werden an das Skript zurückgegeben, so dass der lokale Webserver kontaktiert werden kann.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+ScriptParameter
+ a| 
+JSON-Parameter, die an das Skript übergeben werden sollen.
+ a| 
+JSON-Objekt
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Merkmale
+ a| 
+JSON-Attribute für den Massenvolumenjob.
+ a| 
+JSON-Objekt
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Asynchron
+ a| 
+Die ID des asynchronen Prozesses, der auf den Abschluss überprüft werden soll.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Taste
+ a| 
+Undurchsichtige Taste, die die Sitzung eindeutig identifiziert.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+url
+ a| 
+URL zum Zugriff auf den Webserver des Knotens.
+ a| 
+Zeichenfolge
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "StartBulkVolumeRead",
+   "params": {
+      "volumeID" : 5,
+      "format"  : "native",
+      "snapshotID" : 2
+   },
+   "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+      "id" : 1,
+   "result" : {
+      "asyncHandle" : 1,
+      "key" : "11eed8f086539205beeaadd981aad130",
+      "url" : "https://127.0.0.1:44000/"
+   }
+}
+----
+
+
+== Neu seit Version
+
+9.6

@@ -1,0 +1,103 @@
+---
+permalink: storage/task_per_node_run_system_utilities.html 
+sidebar: sidebar 
+keywords: storage nodes, running system utilities, system utilities, network settings, testing changes, reboot the node, power cycle, shuts down the node 
+summary: Über die UI pro Node kann der Storage-Node Supportpakete erstellen oder löschen, Konfigurationseinstellungen für Laufwerke zurücksetzen und Netzwerk- oder Cluster-Services neu starten. 
+---
+= Führen Sie Systemdienstprogramme über die UI pro Node aus
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Über die UI pro Node kann der Storage-Node Supportpakete erstellen oder löschen, Konfigurationseinstellungen für Laufwerke zurücksetzen und Netzwerk- oder Cluster-Services neu starten.
+
+Sie haben sich bei der UI pro Node für den Storage-Node angemeldet.
+
+. Klicken Sie Auf *Systemdienstprogramme*.
+. Klicken Sie auf die Schaltfläche für das Systemdienstprogramm, das Sie ausführen möchten.
++
+** *Steuerleistung*
++
+Neubooten, aus- und wieder einschalten oder den Node herunterfahren.
+
++
+
+IMPORTANT: Dieser Vorgang führt zu einem vorübergehenden Verlust der Netzwerkverbindung.
+
++
+Geben Sie die folgenden Parameter an:
+
++
+*** Aktion: Optionen umfassen Neustart und Anhalten (Ausschalten).
+*** Aufwachsverzögerung: Alle zusätzlichen Zeit, bevor der Node wieder online geht.
+
+
+** *Node Logs Sammeln*
++
+Erstellt ein Supportpaket unter dem Verzeichnis /tmp/Bundles des Node.
+
++
+Geben Sie die folgenden Parameter an:
+
++
+*** Bundle-Name: Eindeutiger Name für jedes erstellte Support-Bundle. Wenn kein Name angegeben wird, werden „Supportbundle“ und der Node-Name als Dateiname verwendet.
+*** Zusätzliche Args: Dieser Parameter wird dem skript sf_Make_Support_Bundle zugeführt. Dieser Parameter sollte nur auf Anfrage des NetApp Support verwendet werden.
+*** Timeout sec: Geben Sie die Anzahl der Sekunden an, die auf jede einzelne Ping-Antwort warten sollen.
+
+
+** *Node Logs Löschen*
++
+Löscht alle aktuellen Supportpakete auf dem Knoten, die mit *Cluster Support Bundle erstellen* oder der CreateSupportBundle API-Methode erstellt wurden.
+
+** *Laufwerke Zurücksetzen*
++
+Initialisiert die Laufwerke und entfernt alle auf dem Laufwerk vorhandenen Daten. Sie können das Laufwerk in einem vorhandenen Knoten oder einem aktualisierten Knoten wiederverwenden.
+
++
+Geben Sie den folgenden Parameter an:
+
++
+*** Laufwerke: Liste der Gerätenamen (keine Fahrerkennungen) zum Zurücksetzen.
+
+
+** *Netzwerk-Konfiguration Zurücksetzen*
++
+Unterstützt die Behebung von Netzwerkkonfigurationsproblemen für einen einzelnen Knoten und setzt die Netzwerkkonfiguration eines einzelnen Knotens auf die Werkseinstellungen zurück.
+
+** *Knoten Zurücksetzen*
++
+Setzt einen Knoten auf die Werkseinstellungen zurück. Alle Daten werden entfernt, die Netzwerkeinstellungen für den Node jedoch während dieses Vorgangs erhalten. Nodes können nur zurückgesetzt werden, wenn sie einem Cluster nicht zugewiesen sind und sich im verfügbaren Status befinden.
+
++
+
+IMPORTANT: Bei Verwendung dieser Option werden alle Daten, Pakete (Software-Upgrades), Konfigurationen und Protokolldateien vom Knoten gelöscht.
+
+** *Netzwerk Neu Starten*
++
+Startet alle Netzwerkdienste auf einem Node neu.
+
++
+
+IMPORTANT: Dieser Vorgang kann zu einem vorübergehenden Verlust der Netzwerkverbindung führen.
+
+** *Neustart Service*
++
+Startet die Element Softwareservices auf einem Node neu.
+
++
+
+IMPORTANT: Dieser Vorgang kann zu einer temporären Node-Serviceunterbrechung führen. Sie sollten diesen Vorgang nur auf Anweisung des NetApp Supports durchführen.
+
++
+Geben Sie die folgenden Parameter an:
+
++
+*** Dienst: Dienstname, der neu gestartet werden soll.
+*** Aktion: Aktion, die auf dem Dienst ausgeführt werden soll. Die Optionen umfassen Start, Stopp und Neustart.
+
+
+
+
+

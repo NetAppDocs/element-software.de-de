@@ -1,0 +1,105 @@
+---
+permalink: api/reference_element_api_storagecontainer.html 
+sidebar: sidebar 
+keywords: object,objects,storagecontainer 
+summary: Das storageContainer-Objekt enthält die Attribute eines virtuellen Volume-Storage-Containers. Sie können diese Informationen für jeden Storage-Container im Cluster mithilfe der ListStorageContainers API-Methode abrufen. 
+---
+= Storage Container
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das storageContainer-Objekt enthält die Attribute eines virtuellen Volume-Storage-Containers. Sie können diese Informationen für jeden Storage-Container im Cluster mithilfe von abrufen `ListStorageContainers` API-Methode.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+AccountID
+ a| 
+Die ID des Speichersystemkontos, das mit dem Speichercontainer verknüpft ist.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+InitiatorSecret
+ a| 
+Der CHAP-Authentifizierungsschlüssel für den Initiator, der dem Speichercontainer zugeordnet ist.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Name
+ a| 
+Der Name des Speichercontainers.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Protokoll EndpointType
+ a| 
+Der Endpunkt-Typ des Storage-Containers. SCSI ist der einzige gültige Wert.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Status
+ a| 
+Der Status des Speichercontainers. Mögliche Werte:
+
+* Aktiv: Der Speicherbehälter wird verwendet.
+* Gesperrt: Der Speicherbehälter ist gesperrt.
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+SpeicherkontainerID
+ a| 
+Die eindeutige ID des Speicherbehälters.
+ a| 
+UUID
+
+
+
+ a| 
+TargetSecret
+ a| 
+Der CHAP-Authentifizierungsschlüssel für das Ziel, das dem Speichercontainer zugeordnet ist.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+VirtuellesVolumes
+ a| 
+Eine Liste der IDs der virtuellen Volumes, die dem Speichercontainer zugeordnet sind.
+ a| 
+UUID-Array
+
+|===
+
+
+== Weitere Informationen
+
+xref:reference_element_api_liststoragecontainers.adoc[ListStorageContainer]

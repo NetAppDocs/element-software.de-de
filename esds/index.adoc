@@ -1,0 +1,33 @@
+---
+permalink: esds/index.html 
+sidebar: sidebar 
+keywords: sds, install sds, use sds, solidfire enterprise sds, upgrade sds, monitor sds, maintenance mode 
+summary: Lesen Sie, wie Sie SolidFire Enterprise SDS installieren und verwenden. 
+---
+= Installation und Verwendung von SolidFire Enterprise SDS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Lesen Sie, wie Sie SolidFire Enterprise SDS installieren und verwenden.
+
+* xref:concept_get_started_esds.adoc[Erste Schritte mit NetApp SolidFire Enterprise]
+* xref:concept_esds_prerequisite_tasks.adoc[Führen Sie die erforderlichen Aufgaben für die Installation aus]
+* xref:task_esds_install_using_ansible.adoc[Installieren Sie den SolidFire ESDS]
+* xref:task_esds_postinstallation.adoc[Ausführung von Aufgaben nach der Installation]
+* xref:task_esds_upgrade_cluster.adoc[Aktualisieren Sie die Cluster]
+* xref:concept_esds_monitor_clusters.adoc[Monitoring der Cluster]
+* xref:reference_esds_element_links.adoc[SolidFire ESDS-Speicher managen]
+* xref:task_esds_uninstall.adoc[Deinstallieren Sie SolidFire ESDS]
+* xref:concept_esds_maintain.adoc[ESDS von SolidFire warten]
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Ressourcen-Seite zu NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Dokumentation für frühere Versionen von NetApp SolidFire und Element Produkten"^]
+

@@ -1,0 +1,109 @@
+---
+permalink: api/reference_element_api_setclusterconfig.html 
+sidebar: sidebar 
+keywords: cluster,configuration,set,setting,node,setclusterconfig 
+summary: Sie können die SetClusterConfig-Methode verwenden, um die Konfiguration festzulegen, die ein Knoten verwendet, um mit dem Cluster zu kommunizieren, dem er zugeordnet ist. Um die aktuellen Einstellungen für die Cluster-Schnittstelle für einen Node anzuzeigen, führen Sie die API-Methode GetClusterConfig aus. 
+---
+= SetClusterConfig
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `SetClusterConfig` Methode zum Festlegen der Konfiguration, die ein Node zur Kommunikation mit dem ihm zugeordneten Cluster verwendet. Führen Sie zum Anzeigen der aktuellen Einstellungen für die Cluster-Schnittstelle für einen Node die aus `GetClusterConfig` API-Methode.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Cluster
+ a| 
+Konfigurationsattribute, die während dieses Methodenaufrufs geändert werden sollten. Nur die Felder, die geändert werden sollen, müssen dieser Methode als Mitglieder in diesem Parameter hinzugefügt werden.
+ a| 
+xref:reference_element_api_cluster.adoc[Cluster]
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Cluster
+ a| 
+Konfigurationsinformationen, über die der Node mit dem Cluster kommunizieren kann.
+ a| 
+xref:reference_element_api_cluster.adoc[Cluster]
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "SetClusterConfig",
+   "params": {
+      "cluster": {
+         "name": "myhost",
+         "mipi": "Bond10G"
+      },
+    "id" : 1
+   }
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+   "id" : 1,
+   "result" : {
+      "cluster" : {
+         "cipi" : "Bond10G",
+         "cluster" : "QoS",
+         "ensemble" : [
+            "1:10.10.5.42",
+            "2:10.10.5.43",
+            "3:10.10.5.44",
+            "4:10.10.5.46",
+            "5:10.10.5.47"
+         ],
+          "hostname" : "myhost",
+          "mipi" : "Bond10G",
+          "nodeID" : 1,
+          "sipi" : "Bond10G",
+          "state" : "Active"
+      }
+   }
+}
+----
+
+
+== Neu seit Version
+
+9.6

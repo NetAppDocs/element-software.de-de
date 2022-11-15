@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: monitor-storage-active-iq.html 
+keywords: solidfire, active, iq, activeiq, tool, aiq, monitor, storage 
+summary: Active IQ ist ein webbasiertes Tool, das kontinuierlich aktualisierte historische Ansichten von clusterweiten Daten bietet. Sie können Benachrichtigungen für bestimmte Ereignisse, Schwellenwerte oder Metriken einrichten. Mit Active IQ können Sie die Performance und Kapazität des Systems überwachen und über den Cluster-Zustand auf dem Laufenden bleiben. 
+---
+= Monitoring von Storage mit SolidFire Active IQ
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+https://activeiq.solidfire.com["SolidFire Active IQ"^] Ist ein webbasiertes Tool, das kontinuierlich aktualisierte historische Ansichten von clusterweiten Daten bietet. Sie können Benachrichtigungen für bestimmte Ereignisse, Schwellenwerte oder Metriken einrichten. Mit SolidFire Active IQ können Sie die Performance und Kapazität des Systems überwachen und über den Cluster-Zustand auf dem Laufenden bleiben.
+
+Folgende Informationen zu Ihrem System finden Sie im SolidFire Active IQ:
+
+* Anzahl der Nodes und Status der Nodes: Ordnungsgemäß, offline oder Fehler
+* Grafische Darstellung der CPU-, Speichernutzung und Knotendrosselung
+* Details zum Node, z. B. Seriennummer, Steckplatz im Chassis, Modell und Version der NetApp Element Software, die auf dem Storage-Node ausgeführt wird
+* CPU- und Storage-bezogene Informationen zu Virtual Machines
+
+
+Weitere Informationen zu SolidFire Active IQ finden Sie im https://docs.netapp.com/us-en/solidfire-active-iq/index.html["SolidFire Active IQ-Dokumentation"^].
+
+
+
+== Finden Sie weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+* https://mysupport.netapp.com/site/tools/tool-eula/5ddb829ebd393e00015179b2["NetApp Support-Website  gt; Tools für Active IQ"^]
+

@@ -1,0 +1,154 @@
+---
+permalink: api/reference_element_api_setsnmpinfo.html 
+sidebar: sidebar 
+keywords: snmp,info,setting,set,setsnmpinfo 
+summary: Sie können die SetSnmpInfo-Methode verwenden, um SNMP-Version 2 und Version 3 auf Cluster-Knoten zu konfigurieren. Die Werte, die Sie mit dieser Schnittstelle setzen, gelten für alle Knoten im Cluster und die Werte, die übergeben werden, ersetzen alle Werte, die in einem früheren Aufruf an SetSnmpInfo festgelegt wurden. 
+---
+= SetSnmpInfo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `SetSnmpInfo` Methode zur Konfiguration von SNMP Version 2 und Version 3 auf Cluster-Knoten. Die mit dieser Schnittstelle festgelegten Werte gelten für alle Knoten im Cluster und die Werte, die übergeben werden, ersetzen alle Werte, die in einem vorherigen Aufruf festgelegt wurden `SetSnmpInfo`.
+
+
+
+== Parameter
+
+
+NOTE: SetSnmpInfo ist für Element Version 6.0 und höher veraltet. Verwenden Sie die xref:reference_element_api_enablesnmp.adoc[EnableSnmp] Und xref:reference_element_api_setsnmpacl.adoc[SetSnmpACL] Methoden.
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Netzwerke
+ a| 
+Liste der Netzwerke und welche Art von Zugriff sie auf die SNMP-Server haben, die auf den Cluster-Knoten laufen. Siehe SNMP xref:reference_element_api_network_snmp.adoc[Netzwerk] Objekt für mögliche Werte. Dieser Parameter ist nur für SNMP v2 erforderlich.
+ a| 
+xref:reference_element_api_network_snmp.adoc[Netzwerk] Array erledigen
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Aktiviert
+ a| 
+Wenn auf true gesetzt, ist SNMP auf jedem Knoten im Cluster aktiviert.
+ a| 
+boolesch
+ a| 
+Falsch
+ a| 
+Nein
+
+
+
+ a| 
+SnmpV3Enabled
+ a| 
+Wenn auf „true“ gesetzt ist, ist SNMP v3 auf jedem Knoten im Cluster aktiviert.
+ a| 
+boolesch
+ a| 
+Falsch
+ a| 
+Nein
+
+
+
+ a| 
+UsmUser
+ a| 
+Wenn SNMP v3 aktiviert ist, muss dieser Wert anstelle des Netzwerkparameters übergeben werden. Dieser Parameter ist nur für SNMP v3 erforderlich.
+ a| 
+xref:reference_element_api_usmuser.adoc[UsmUser]
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode hat keine Rückgabewerte.
+
+
+
+== Anforderungsbeispiel mit aktiviertem SNMP v3
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+"method":"SetSnmpInfo",
+"params":{
+    "enabled":true,
+    "snmpV3Enabled":true,
+    "usmUsers":[
+      {
+        "name":"user1",
+        "access":"rouser",
+        "secLevel":"auth",
+        "password":"namex1",
+        "passphrase":"yourpassphrase"
+      }
+    ]
+  },
+ "id":1
+}
+----
+
+
+== Anforderungsbeispiel mit aktiviertem SNMP v2
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+"method":"SetSnmpInfo",
+"params":{
+    "enabled":true,
+    "snmpV3Enabled":false,
+    "networks":[
+      {
+        "community":"public",
+        "access":"ro",
+        "network":"localhost",
+      }
+    ]
+  },
+  "id":1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id" : 1
+  "result" :{
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6

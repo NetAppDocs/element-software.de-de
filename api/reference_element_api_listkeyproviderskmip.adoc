@@ -1,0 +1,127 @@
+---
+permalink: api/reference_element_api_listkeyproviderskmip.html 
+sidebar: sidebar 
+keywords: KMIP,key providers,key,provider,retrieving,listing,list,retrieve,listkeyproviderskmip 
+summary: 'Mit der ListKeyProvidersKmip-Methode können Sie eine Liste aller vorhandenen Key Management Interoperability Protocol \(KMIP\)-Schlüsselanbieter abrufen. Sie können die Liste filtern, indem Sie zusätzliche Parameter angeben.' 
+---
+= ListKeyProvidersKmip
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `ListKeyProvidersKmip` Abrufen einer Liste aller vorhandenen KMIP-Schlüsselanbieter (Key Management Interoperability Protocol) Sie können die Liste filtern, indem Sie zusätzliche Parameter angeben.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+SchlüsselProviderIActive
+ a| 
+Filter haben KMIP-Schlüsselserver-Objekte zurückgegeben, basierend darauf, ob sie aktiv sind. Mögliche Werte:
+
+* Richtig: Nur KMIP-Schlüsselanbieter (die aktiv sind und Schlüssel angeben, die derzeit verwendet werden)
+* Falsch: Gibt nur KMIP-Schlüsselanbieter zurück, die inaktiv sind (keine Schlüssel angeben und gelöscht werden können).
+
+
+Wenn keine Daten angegeben, werden die zurückgegebenen KMIP-Schlüsselanbieter nicht gefiltert, weil sie aktiv sind.
+ a| 
+boolesch
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+KmipKeyProviderHasServerAssign
+ a| 
+Die Filter haben KMIP-Schlüsselanbieter zurückgegeben, basierend darauf, ob einem KMIP-Schlüsselserver zugewiesen ist. Mögliche Werte:
+
+* Richtig: Nur KMIP-Schlüsselanbieter, die über einen KMIP-Schlüsselserver verfügen
+* Falsch: Gibt nur KMIP-Schlüsselanbieter zurück, denen kein KMIP-Schlüsselserver zugewiesen ist.
+
+
+Wenn keine Angabe durchgeführt wird, werden die zurückgegebenen KMIP-Schlüsselanbieter nicht gefiltert, weil sie einen KMIP-Schlüsselserver zugewiesen haben.
+ a| 
+boolesch
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+KmSchlüsselProvider
+ a| 
+Eine Liste der erstellten KMIP-Schlüsselanbieter
+ a| 
+link:reference_element_api_keyproviderkmip.md#["KeyProviderKmip"] Array erledigen
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "ListKeyProvidersKmip",
+  "params": {},
+"id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+   "id": 1,
+   "result":
+    {
+    "kmipKeyProviders": [
+        {
+            "keyProviderID": 15,
+            "kmipCapabilities": "SSL",
+            "keyProviderIsActive": true,
+            "keyServerIDs": [
+                1
+            ],
+            "keyProviderName": "KeyProvider1"
+        }
+    ]
+}
+}
+----
+
+
+== Neu seit Version
+
+11.7

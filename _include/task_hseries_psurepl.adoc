@@ -1,0 +1,106 @@
+= Weitere Informationen
+:allow-uri-read: 
+
+
+Jedes Chassis besitzt zwei Netzteile für Redundanz bei der Stromversorgung. Wenn ein Netzteil defekt ist, sollten Sie es so schnell wie möglich austauschen, um sicherzustellen, dass das Gehäuse über eine redundante Stromquelle verfügt.
+
+.Was Sie und#8217;ll benötigen
+* Sie haben festgestellt, dass das Netzteil defekt ist.
+* Sie haben ein Ersatznetzteil.
+* Sie haben überprüft, dass das zweite Netzteil in Betrieb ist.
+* Sie haben ein elektrostatisches Entladungsband (ESD) oder andere antistatische Vorsichtsmaßnahmen getroffen.
+
+
+Das Ersatzverfahren gilt für die folgenden Node-Modelle:
+
+* Zwei Höheneinheiten (2 HE) mit vier Nodes NetApp HCI-Chassis
+* Eine Rack-Einheit (1 HE) H610S Storage-Chassis
++
+
+NOTE: Bei H610S werden die Begriffe „Node“ und „Chassis“ austauschbar, da Node und Chassis keine separaten Komponenten sind, anders als bei einem 2-HE-Chassis mit vier Nodes.
+
+
+
+Alarme in der Element-UI liefern Informationen über das ausgefallene Netzteil, was sich auf PS1 oder PS2 bezieht. In einem NetApp HCI 2-HE-Chassis mit vier Nodes bezeichnet PS1 die Einheit in der oberen Zeile des Gehäuses und PS2 die Einheit in der unteren Zeile des Gehäuses. Sie können das fehlerhafte Netzteil austauschen, während das Gehäuse eingeschaltet und funktionsfähig ist, solange das redundante Netzteil funktioniert.
+
+
+NOTE: Wenn Sie beide PSUs an einem Node ersetzen, müssen die Netzteile die gleiche Teilenummer und Nennleistung haben. Nicht übereinstimmende Netzteile können das System beschädigen.
+
+.Schritte
+. Suchen Sie das defekte Netzteil im Gehäuse. Die LED auf dem defekten Gerät zeigt gelb an.
++
+
+NOTE: Die Netzteile befinden sich je nach Gehäusetyp unterschiedlich.
+
++
+Die Positionen der Netzteile finden Sie in den folgenden Bildern:
+
++
+[cols="2*"]
+|===
+| Modell | Position der Netzteile 
+
+
+| 2-HE-NetApp HCI-Storage-Chassis mit vier Nodes  a| 
+image::storage_chassis_psu.png[Zeigt die Netzteile in einem 2-HE-Formfaktor]
+
+
+NOTE: Die Nodes in Ihrem Chassis können je nach Node-Typ (Storage oder Computing) unterschiedlich aussehen.
+
+
+
+| H610S Chassis  a| 
+image::h610s_psu.png[Zeigt die Netzteile in einem H610S-Chassis.]
+
+|===
+. Identifizieren Sie den richtigen Knoten mithilfe des blauen Ausziehtags- oder der Seriennummer. Auf dem blauen Pulldown-Tag werden die Seriennummer (S/N) und das Laufwerklayout aufgeführt. Bestätigen Sie die zu wartenden Seriennummer des Node.
++
+** Wenn Sie beide Netzteile austauschen, fahren Sie mit Schritt 3 fort.
+** Wenn Sie nur ein Netzteil ersetzen, fahren Sie mit Schritt 4 fort.
+
+
+. Vergewissern Sie sich, dass der Node heruntergefahren oder bereit ist, heruntergefahren wurde, um den Service zu nutzen. Beachten Sie Folgendes:
++
+** Ein Node, der heruntergefahren wurde, zeigt keine blauen ein/aus-LEDs an den Laufwerken oder dem Netzschalter an.
+** Ein Node, der noch nicht heruntergefahren wurde, zeigt blaue LEDs an den Laufwerken und den Netzschalter an.
+** Ein Node, der heruntergefahren wurde und für den Service bereit ist, zeigt eine blinkende PSU-LED an, die blinkt (grün) und aus (keine Farbe).
+** Ein Node, der noch nicht heruntergefahren wurde, zeigt die grünen LEDs an den Netzteilen an.
+
+
+. Ziehen Sie das Netzkabel vom Netzteil oder von beiden Netzkabeln ab, wenn Sie beide Geräte austauschen.
+. Heben Sie den Nockengriff an, und drücken Sie die blaue Verriegelung, um das Netzteil herauszuschieben.
++
+image::psu-remove.gif[Zeigt den Heben des Nockengriffs und das Netzteil aus dem Gehäuse.]
+
++
+
+NOTE: Die Abbildung ist ein Beispiel. Die Positionen der Netzteile im Gehäuse und die Farbe der Entriegelungstaste variieren je nach Gehäusetyp.
+
++
+
+IMPORTANT: Stellen Sie sicher, dass Sie beide Hände verwenden, um das Gewicht des Netzteils zu unterstützen.
+
++
+Wiederholen Sie die Schritte 3, 4 und 5, wenn Sie ein zweites Netzteil ersetzen.
+
+. Suchen Sie das Etikett an der Netzteileinheit, die Sie aus dem Gehäuse entfernt haben. Das Etikett enthält Angaben zum Hersteller und zur Ausgangsleistung.
++
+
+NOTE: Ersetzen Sie das Netzteil nicht, wenn die Wattleistung des Netzteils Ihrer RMA nicht mit der Leistung des entfernten Netzteils übereinstimmt. Wenden Sie sich an den NetApp Support, um die nächsten Schritte zu erfahren.
+
+. Richten Sie die Kanten des Netzteils mit beiden Händen an der Öffnung im Gehäuse aus. Schieben Sie das Gerät vorsichtig mit dem Nockengriff in das Gehäuse, bis es einrastet, und bringen Sie den Nockengriff in die aufrechte Position zurück.
++
+image::psu-install.gif[Zeigt das Netzteil, das im Chassis installiert wird.]
+
+. Schließen Sie ein oder beide Netzkabel an.
+. Wenn Sie beide Netzteile ausgetauscht haben, fahren Sie mit der Vorderseite des Node fort und drücken Sie den Netzschalter, um die Nodes einschalten zu können. Nach dem Einschalten leuchtet die Betriebsschalter-LED durchgehend blau. Die blauen LEDs für die Laufwerke und die Identifikationstaste beginnen zu blinken.
+. Senden Sie das fehlerhafte Gerät an NetApp zurück. Befolgen Sie die Anweisungen im Lieferumfang, die Sie erhalten haben.
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Ressourcen-Seite zu NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Dokumentation für frühere Versionen von NetApp SolidFire und Element Produkten"^]
+

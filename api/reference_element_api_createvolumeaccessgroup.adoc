@@ -1,0 +1,178 @@
+---
+permalink: api/reference_element_api_createvolumeaccessgroup.html 
+sidebar: sidebar 
+keywords: volume,access,groups,group,create,creating,CreateVolumeAccessGroup 
+summary: Sie können CreateVolumeAccessGroup verwenden, um eine neue Zugriffsgruppe für Volumes zu erstellen. Wenn Sie die Volume-Zugriffsgruppe erstellen, müssen Sie ihr einen Namen geben und optional Initiatoren und Volumes eingeben. 
+---
+= CreateVolumeAccessGroup
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwenden Sie können `CreateVolumeAccessGroup` So erstellen Sie eine neue Zugriffsgruppe für Volumes: Wenn Sie die Volume-Zugriffsgruppe erstellen, müssen Sie ihr einen Namen geben und optional Initiatoren und Volumes eingeben.
+
+Jeder Initiator-IQN, den Sie der Volume Access Group hinzufügen, kann ohne CHAP-Authentifizierung auf beliebige Volumes in der Gruppe zugreifen.
+
+
+NOTE: Geklonte Volumes übernehmen keine Zugriffsgruppenmitgliedschaft für Volumes vom Quell-Volume.
+
+Bei der Erstellung von Volume-Zugriffsgruppen ist Folgendes zu beachten:
+
+* Eine Volume-Zugriffsgruppe kann bis zu 64 Initiator-IQNs enthalten.
+* Ein Initiator kann nur zu einer Volume-Zugriffsgruppe gehören.
+* Eine Volume-Zugriffsgruppe kann bis zu 2000 Volumes enthalten.
+* Jede Volume-Zugriffsgruppe kann zu maximal vier Volume-Zugriffsgruppen gehören.
+
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Initiatoren
+ a| 
+Liste der Initiator-IDs oder Namen (IQNs und WWPNs), die in die Volume-Zugriffsgruppe aufgenommen werden sollen Wenn Sie eine Liste der Initiatornamen übergeben, werden die Initiatoren erstellt, wenn sie noch nicht vorhanden sind. Wenn Sie eine Liste der Initiator-IDs übergeben, gibt die Methode einen Fehler aus, wenn einer der Initiatoren nicht bereits vorhanden ist. Die Weitergabe von Initiatorgruppen ist veraltet. Sie sollten Initiator-IDs verwenden, sobald möglich.
+ a| 
+Integer-Array oder String-Array (veraltet)
+ a| 
+ a| 
+Nein
+
+
+
+ a| 
+Name
+ a| 
+Name der Zugriffsgruppe für Volumes. Nicht unbedingt eindeutig, aber empfohlen. Muss 1 bis 64 Zeichen lang sein.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Volumes
+ a| 
+Liste der Volume-IDs, die in die Volume-Zugriffsgruppe einbezogen werden sollen
+ a| 
+Integer-Array
+ a| 
+ a| 
+Nein
+
+
+
+ a| 
+Merkmale
+ a| 
+Liste von Name-Wert-Paaren im JSON-Objektformat.
+ a| 
+JSON-Objekt
+ a| 
+{}
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+VolumeAccessGroup
+ a| 
+Ein Objekt, das Informationen über die neu erstellte Volume-Zugriffsgruppe enthält.
+ a| 
+xref:reference_element_api_volumeaccessgroup.adoc[VolumeAccessGroup]
+
+
+
+ a| 
+VolumeAccessGroupID
+ a| 
+Die ID der neu erstellten Volume Zugriffsgruppe.
+ a| 
+Ganzzahl
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "CreateVolumeAccessGroup",
+   "params": {
+      "name": "myaccessgroup",
+      "initiators": ["iqn.1993-08.org.debian: 01: a31b1d799d5c"],
+      "volumes": [327],
+      "attributes": {}
+   }
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": null,
+  "result": {
+    "volumeAccessGroup": {
+      "attributes": {},
+      "deletedVolumes": [],
+      "initiatorIDs": [
+        95
+      ],
+      "initiators": [
+        "iqn.1993-08.org.debian: 01: a31b1d799d5c"
+      ],
+      "name": "myaccessgroup",
+      "volumeAccessGroupID": 96,
+      "volumes": [
+        327
+      ]
+    },
+    "volumeAccessGroupID": 96
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6
+
+
+
+== Weitere Informationen
+
+* xref:reference_element_api_getasyncresult.adoc[GetAsyncResult]
+* xref:reference_element_api_listsyncjobs.adoc[ListSyncJobs]
+* xref:reference_element_api_modifyvolume.adoc[UmfyVolume]
+

@@ -1,0 +1,14 @@
+---
+permalink: storage/concept_intro_management_services_for_afa.html 
+sidebar: sidebar 
+keywords: management services, aff 
+summary: Managementservices bieten zentrale und erweiterte Managementfunktionen für SolidFire All-Flash-Storage. Zu diesen Services gehören die Active IQ Systemtelemetrie, Protokollierung und Service-Updates sowie der QoSSIOC-Service für das Element Plug-in für vCenter. 
+---
+= Managementservices für SolidFire All-Flash-Storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Managementservices bieten zentrale und erweiterte Managementfunktionen für SolidFire All-Flash-Storage. Zu diesen Services gehören die Active IQ Systemtelemetrie, Protokollierung und Service-Updates sowie der QoSSIOC-Service für das Element Plug-in für vCenter.

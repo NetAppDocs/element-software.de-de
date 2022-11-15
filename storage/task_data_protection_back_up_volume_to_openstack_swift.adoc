@@ -1,0 +1,32 @@
+---
+permalink: storage/task_data_protection_back_up_volume_to_openstack_swift.html 
+sidebar: sidebar 
+keywords: volume backup, openstack swift object store 
+summary: Sie können ein Backup von Volumes auf externen Objektspeichern erstellen, die mit OpenStack Swift kompatibel sind. 
+---
+= Volumes werden in einem OpenStack Swift Objektspeicher gesichert
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein Backup von Volumes auf externen Objektspeichern erstellen, die mit OpenStack Swift kompatibel sind.
+
+. Klicken Sie Auf *Management* > *Volumes*.
+. Klicken Sie auf das Symbol Aktionen, über das das Volume gesichert werden soll.
+. Klicken Sie im Menü Ergebnis auf *Sichern nach*.
+. Wählen Sie im Dialogfeld * Integriertes Backup* unter *Backup in* die Option *Swift* aus.
+. Wählen Sie unter *Datenformat* ein Datenformat aus:
++
+** *Native*: Ein komprimiertes Format, das nur von SolidFire-Speichersystemen lesbar ist.
+** *Unkomprimiert*: Ein unkomprimiertes Format, das mit anderen Systemen kompatibel ist.
+
+
+. Geben Sie eine URL für den Zugriff auf den Objektspeicher im Feld *URL* ein.
+. Geben Sie im Feld *Benutzername* einen Benutzernamen für das Konto ein.
+. Geben Sie den Authentifizierungsschlüssel für das Konto im Feld *Authentifizierungsschlüssel* ein.
+. Geben Sie den Container ein, in dem das Backup im Feld *Container* gespeichert werden soll.
+. *Optional*: Geben Sie im Feld *Nametag* ein Namensschild ein, das an das Präfix angefügt werden soll.
+. Klicken Sie Auf *Lesen Starten*.
+

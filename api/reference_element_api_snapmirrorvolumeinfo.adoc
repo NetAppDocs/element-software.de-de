@@ -1,0 +1,64 @@
+---
+permalink: api/reference_element_api_snapmirrorvolumeinfo.html 
+sidebar: sidebar 
+keywords: object,objects,snapMirrorVolumeInfo 
+summary: Das SnapMirrorVolumeInfo-Objekt enthält Informationen zu einem Speicherort eines Volumes in einer SnapMirror-Beziehung, z. B. Name und Typ. 
+---
+= SnapMirrorVolumeInfo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das SnapMirrorVolumeInfo-Objekt enthält Informationen zu einem Speicherort eines Volumes in einer SnapMirror-Beziehung, z. B. Name und Typ.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Typ
+ a| 
+Der Volume-Typ. Mögliche Werte:
+
+* SolidFire: Das Volume befindet sich auf einem Storage-Cluster, auf dem die Element Software ausgeführt wird.
+* ONTAP: Das Volume befindet sich auf einem Remote-ONTAP-Cluster.
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+VolumeID
+ a| 
+Die ID des Volume. Nur gültig, wenn „Typ“ SolidFire ist.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+vserver
+ a| 
+Der Name des Vserver, dem dieses Volume gehört. Nur gültig, wenn „Typ“ ONTAP ist.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Name
+ a| 
+Der Name des Volume.
+ a| 
+Zeichenfolge
+
+|===

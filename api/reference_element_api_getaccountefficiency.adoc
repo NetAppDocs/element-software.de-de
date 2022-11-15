@@ -1,0 +1,131 @@
+---
+permalink: api/reference_element_api_getaccountefficiency.html 
+sidebar: sidebar 
+keywords: accounts,account,efficiency,get,getting,GetAccountEfficiency 
+summary: Mit GetAccountEfficiency können Sie Effizienzstatistiken zu einem Volume-Konto abrufen. Diese Methode gibt nur Effizienzinformationen für das Konto zurück, das Sie als Parameter angeben. 
+---
+= GetAccountEffizienz
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwenden Sie können `GetAccountEfficiency` Um Effizienzstatistiken zu einem Volume-Konto zu erhalten. Diese Methode gibt nur Effizienzinformationen für das Konto zurück, das Sie als Parameter angeben.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+AccountID
+ a| 
+Gibt das Volume-Konto an, für das Effizienzstatistiken zurückgegeben werden.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Komprimierung
+ a| 
+Die Menge an Speicherplatz, der durch die Datenkomprimierung für alle Volumes im Konto eingespart wird Als Verhältnis angegeben, in dem ein Wert von „1“ bedeutet, dass Daten ohne Komprimierung gespeichert wurden.
+ a| 
+Schweben
+
+
+
+ a| 
+Deduplizierung
+ a| 
+Die Menge an gespeichertem Speicherplatz, indem keine Daten für alle Volumes im Konto dupliziert werden. Als Verhältnis angegeben.
+ a| 
+Schweben
+
+
+
+ a| 
+MisingVolumes
+ a| 
+Die Volumes, die nicht nach Effizienzdaten abgefragt werden konnten. Fehlende Volumes können durch den GC-Zyklus (Garbage Collection) verursacht werden, der weniger als eine Stunde alt ist, vorübergehend keine Netzwerkverbindung mehr besteht oder Services seit dem GC-Zyklus neu gestartet werden.
+ a| 
+Integer-Array
+
+
+
+ a| 
+Thin Provisioning
+ a| 
+Das Verhältnis des belegten Speicherplatzes zum zugewiesenen Speicherplatz zum Speichern von Daten. Als Verhältnis angegeben.
+ a| 
+Schweben
+
+
+
+ a| 
+Zeitstempel
+ a| 
+Die letzten Effizienzdaten wurden nach der Garbage Collection (GC) im UTC+0-Format erfasst.
+ a| 
+ISO 8601-Datumszeichenfolge
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "GetAccountEfficiency",
+   "params": {
+     "accountID": 3
+   },
+   "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+   "id": 1,
+   "result": {
+       "compression": 2.020468042933262,
+       "deduplication": 2.042488619119879,
+       "missingVolumes": [],
+       "thinProvisioning": 1.010087163391013,
+       "timestamp": "2014-03-10T14:06:02Z"
+   }
+}
+----
+
+
+== Neu seit Version
+
+9.6

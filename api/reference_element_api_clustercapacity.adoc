@@ -1,0 +1,227 @@
+---
+permalink: api/reference_element_api_clustercapacity.html 
+sidebar: sidebar 
+keywords: objects,object,clusterCapacity 
+summary: Das ClusterCapacität Objekt enthält allgemeine Kapazitätsmessungen für das Cluster. Sie können Cluster-Kapazitätsinformationen mit der GetClusterCapacity API-Methode abrufen. Die Speicherplatzmessungen der Objektmitglieder werden in Byte berechnet. 
+---
+= ClusterKapazität
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das ClusterCapacität Objekt enthält allgemeine Kapazitätsmessungen für das Cluster. Sie können Cluster-Kapazitätsinformationen mit der GetClusterCapacity API-Methode abrufen. Die Speicherplatzmessungen der Objektmitglieder werden in Byte berechnet.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+ActiveBlockSpace
+ a| 
+Die Menge an Speicherplatz auf den Block-Laufwerken. Dazu gehören zusätzliche Informationen wie Metadateneinträge und Speicherplatz, der bereinigt werden kann.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+ActiveSessions
+ a| 
+Die Anzahl der aktiven iSCSI-Sitzungen, die mit dem Cluster kommunizieren.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Durchschnittlich IOPS
+ a| 
+Der durchschnittliche IOPS für das Cluster seit Mitternacht Coordinated Universal Time (UTC).
+ a| 
+Ganzzahl
+
+
+
+ a| 
+ClusterRecentIOSize
+ a| 
+Durchschnittliche IOPS-Größe für alle Volumes im Cluster
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Aktuellen IOPS
+ a| 
+Der durchschnittliche IOPS aller Volumes im Cluster in den letzten 5 Sekunden.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Maximale IOPS-Werte
+ a| 
+Die geschätzte maximale IOPS-Kapazität des aktuellen Clusters.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+MaxOverProvisionableSpace
+ a| 
+Die maximale Menge an bereitstellbarem Speicherplatz. Dies ist ein berechneter Wert. Sie können keine neuen Volumes erstellen, wenn der aktuell bereitgestellte Speicherplatz sowie die neue Volume-Größe diese Zahl überschreiten würden. Der Wert berechnet sich wie folgt: `maxOverProvisionableSpace = maxProvisionedSpace * maxMetadataOverProvisionFactor`
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Max. ProvisionedSpace
+ a| 
+Die Gesamtmenge an bereitstellbarem Speicherplatz, wenn alle Volumes zu 100 % gefüllt sind (keine Metadaten, die über Thin Provisioning bereitgestellt wurden).
+ a| 
+Ganzzahl
+
+
+
+ a| 
+MaxUsedMetadataSpace
+ a| 
+Die Anzahl der Bytes auf Volume-Laufwerken, die zum Speichern von Metadaten verwendet werden.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+MaxUsedSpace
+ a| 
+Die Gesamtmenge an Speicherplatz auf allen aktiven Blocklaufwerken.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+NonZeroBlock
+ a| 
+Die Gesamtzahl der 4KiB-Blöcke, die Daten enthalten, nachdem der letzte Speichervorgang abgeschlossen ist.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+PeakActiveSessions
+ a| 
+Die Spitzenzahl der iSCSI-Verbindungen seit Mitternacht UTC.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+PeakIOPS
+ a| 
+Der höchste Wert für aktuelle IOPS seit Mitternacht UTC.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+ProvisionierungSpace
+ a| 
+Der insgesamt in allen Volumes im Cluster bereitgestellte Speicherplatz.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Zeitstempel
+ a| 
+Das Datum und die Uhrzeit im UTC+0-Format, für die der Beleg für die Cluster-Kapazität verwendet wurde.
+ a| 
+ISO 8601-Zeichenfolge
+
+
+
+ a| 
+TotalOps
+ a| 
+Die Gesamtzahl der I/O-Vorgänge, die während der gesamten Nutzungsdauer des Clusters ausgeführt werden,
+ a| 
+Ganzzahl
+
+
+
+ a| 
+UniqueBlocks
+ a| 
+Die Gesamtanzahl der auf den Blocklaufwerken gespeicherten Blöcke. Der Wert umfasst replizierte Blöcke.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+UniqueBlocksUsedSpace
+ a| 
+Die Gesamtmenge an Daten, die die uniqueBlocks auf den Blocklaufwerken aufnehmen. Weitere Informationen dazu, wie sich diese Zahl auf den Wert uniqueBlocks bezieht, finden Sie in der GetclusterCapacity-Methode.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+UsedMetadataSpace
+ a| 
+Die Gesamtzahl der Bytes auf Volume-Laufwerken, die zur Speicherung von Metadaten verwendet werden.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+UsedMetadataSpaceInSnapshots
+ a| 
+Die Anzahl der Bytes auf Volume-Laufwerken, die zum Speichern eindeutiger Daten in Snapshots verwendet werden. Diese Zahl liefert eine Schätzung der Menge an Metadaten, die wiederhergestellt werden würde, indem alle Snapshots auf dem System gelöscht werden.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+UsedSpace
+ a| 
+Der insgesamt von allen Block-Laufwerken im System genutzte Speicherplatz.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+ZeroBlocks
+ a| 
+Die Gesamtzahl der leeren 4KiB-Blöcke ohne Daten, nachdem die letzte Runde der Müllsammlung abgeschlossen ist.
+ a| 
+Ganzzahl
+
+|===
+
+
+== Weitere Informationen
+
+xref:reference_element_api_getclustercapacity.adoc[GetClusterCapacity]

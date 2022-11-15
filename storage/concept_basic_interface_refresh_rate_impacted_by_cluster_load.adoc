@@ -1,0 +1,18 @@
+---
+permalink: storage/concept_basic_interface_refresh_rate_impacted_by_cluster_load.html 
+sidebar: sidebar 
+keywords: data refresh interval, cluster, interval controls, API requests, heavy load cluster, cluster credentials 
+summary: Abhängig von den API-Reaktionszeiten kann das Cluster möglicherweise das Datenaktualisierungsintervall für bestimmte Teile der NetApp Element Softwareseite automatisch anpassen, die Sie anzeigen. 
+---
+= Aktualisierungsrate der Schnittstelle, die von einer Clusterlast beeinflusst wird
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Abhängig von den API-Reaktionszeiten kann das Cluster möglicherweise das Datenaktualisierungsintervall für bestimmte Teile der NetApp Element Softwareseite automatisch anpassen, die Sie anzeigen.
+
+Das Aktualisierungsintervall wird auf die Standardeinstellung zurückgesetzt, wenn Sie die Seite in Ihrem Browser neu laden. Sie können das aktuelle Aktualisierungsintervall anzeigen, indem Sie oben rechts auf der Seite auf den Cluster-Namen klicken. Beachten Sie, dass das Intervall steuert, wie oft API-Anforderungen erstellt werden, nicht wie schnell die Daten vom Server zurückkommen.
+
+Wenn ein Cluster stark beansprucht ist, können API-Anforderungen von der Element UI in die Warteschlange gestellt werden. Wenn die Systemantwort erheblich verzögert wird, z. B. eine langsame Netzwerkverbindung in Verbindung mit einem überlasteten Cluster, werden Sie möglicherweise von der Element UI abgemeldet, wenn das System nicht schnell genug auf API-Anfragen in der Warteschlange reagiert. Wenn Sie zum Abmeldebildschirm umgeleitet werden, können Sie sich erneut anmelden, nachdem Sie eine erste Browser-Authentifizierungsaufforderung abgesagt haben. Wenn Sie zur Übersichtsseite zurückkehren, werden Sie möglicherweise nach Cluster-Anmeldedaten gefragt, wenn diese nicht vom Browser gespeichert werden.

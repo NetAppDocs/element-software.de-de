@@ -1,0 +1,26 @@
+---
+permalink: storage/task_data_manage_vol_access_group_add_volumes.html 
+sidebar: sidebar 
+keywords: access group, add volumes to 
+summary: Sie können Volumes zu einer Volume-Zugriffsgruppe hinzufügen. Jedes Volume kann mehr als einer Zugriffsgruppe für mehrere Volumes angehören. Sie können die Gruppen sehen, zu denen jedes Volume auf der Seite „Aktive Volumes“ gehört. 
+---
+= Fügen Sie einer Zugriffsgruppe Volumes hinzu
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Volumes zu einer Volume-Zugriffsgruppe hinzufügen. Jedes Volume kann mehr als einer Volume-Zugriffsgruppe angehören. Sie können die Gruppen sehen, zu denen jedes Volume gehört, auf der Seite *Active* Volumes.
+
+Mit diesem Verfahren können Sie auch Volumes zu einer Zugriffsgruppe für Fibre Channel-Volumes hinzufügen.
+
+. Klicken Sie Auf *Verwaltung* > *Zugriffsgruppen*.
+. Klicken Sie auf das Symbol Aktionen für die Zugriffsgruppe, der Sie Volumes hinzufügen möchten.
+. Klicken Sie auf die Schaltfläche *Bearbeiten*.
+. Wählen Sie unter Volumes hinzufügen ein Volume aus der Liste *Volumes* aus.
++
+Sie können weitere Volumes hinzufügen, indem Sie diesen Schritt wiederholen.
+
+. Klicken Sie Auf *Änderungen Speichern*.
+

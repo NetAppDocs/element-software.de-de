@@ -1,0 +1,48 @@
+---
+permalink: api/reference_element_api_deletesnapmirrorendpoints.html 
+sidebar: sidebar 
+keywords: SnapMirror,endpoints,endpoint,delete,deleting,DeleteSnapMirrorEndpoints 
+summary: Die Element Web-UI verwendet DeleteSnapMirrorEndpoints, um einen oder mehrere SnapMirror Endpunkte aus dem System zu löschen. 
+---
+= LöteSnapMirrorEndpunkte
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Element Web-UI verwendet `DeleteSnapMirrorEndpoints` Um einen oder mehrere SnapMirror Endpunkte aus dem System zu löschen.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+SnapMirrorEndpointIDs
+ a| 
+Ein Array von IDs von SnapMirror Endpunkten zum Löschen.
+ a| 
+Integer-Array
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode hat keine Rückgabewerte.
+
+
+
+== Neu seit Version
+
+10.0

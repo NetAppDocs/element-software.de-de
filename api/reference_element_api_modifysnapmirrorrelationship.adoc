@@ -1,0 +1,116 @@
+---
+permalink: api/reference_element_api_modifysnapmirrorrelationship.html 
+sidebar: sidebar 
+keywords: modify,modifying,edit,editing,change,changing,snapmirror,relationship,modifysnapmirrorrelationship 
+summary: Sie können ModifySnapMirrorRelationship verwenden, um die Intervalle zu ändern, in denen ein geplanter Snapshot stattfindet. Mit dieser Methode können Sie auch einen Zeitplan löschen oder anhalten. 
+---
+= ModifySnapMirrorRelationship
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwenden Sie können `ModifySnapMirrorRelationship` Um die Intervalle zu ändern, in denen ein geplanter Snapshot stattfindet. Mit dieser Methode können Sie auch einen Zeitplan löschen oder anhalten.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+
+
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Zielvolumen
+ a| 
+Der Zieldatenträger in der SnapMirror Beziehung.
+ a| 
+xref:reference_element_api_snapmirrorvolumeinfo.adoc[SnapMirror Volumeinfo]
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Maximale Transferrate
+ a| 
+Gibt die maximale Datentransferrate zwischen den Volumes in Kilobyte pro Sekunde an. Der Standardwert 0 ist unbegrenzt und erlaubt der SnapMirror Beziehung, die verfügbare Netzwerkbandbreite voll zu nutzen.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+PolicyName
+ a| 
+Gibt den Namen der ONTAP SnapMirror Richtlinie für die Beziehung an.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Planname
+ a| 
+Der Name des vorbestehenden cron-Zeitplans auf dem ONTAP-System, das zum Aktualisieren der SnapMirror-Beziehung verwendet wird.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+SnapMirrorEndpointID
+ a| 
+Die Endpunkt-ID des Remote-ONTAP-Storage-Systems, die mit dem Element Storage-Cluster kommunizieren
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+SnapMirror Beziehung
+ a| 
+Ein Objekt, das die geänderten SnapMirror Beziehungsattribute enthält.
+ a| 
+xref:reference_element_api_snapmirrorrelationship.adoc[SnapMirror Beziehung]
+
+|===
+
+
+== Neu seit Version
+
+10.1

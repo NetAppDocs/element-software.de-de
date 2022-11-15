@@ -1,0 +1,30 @@
+---
+permalink: storage/concept_intro_drives.html 
+sidebar: sidebar 
+keywords: drives, physical drives, cluster data, storage node, volume metadata, block drives, clusters 
+summary: Ein Storage-Node enthält mindestens ein physisches Laufwerk, das zum Speichern eines Teils der Daten für den Cluster verwendet wird. Das Cluster verwendet die Kapazität und Performance des Laufwerks, nachdem das Laufwerk erfolgreich zu einem Cluster hinzugefügt wurde. 
+---
+= Laufwerke
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ein Storage-Node enthält mindestens ein physisches Laufwerk, das zum Speichern eines Teils der Daten für den Cluster verwendet wird. Das Cluster verwendet die Kapazität und Performance des Laufwerks, nachdem das Laufwerk erfolgreich zu einem Cluster hinzugefügt wurde.
+
+Ein Storage-Node enthält zwei Laufwerkstypen:
+
+* *Volume Metadaten Laufwerke*
++
+Diese Laufwerke speichern komprimierte Informationen, die jedes Volume, jeden Klon oder Snapshot in einem Cluster definieren. Die Gesamtkapazität der Metadaten im System bestimmt die maximale Storage-Menge, die als Volumes bereitgestellt werden kann. Die maximale Storage-Größe, die bereitgestellt werden kann, ist unabhängig davon, wie viele Daten tatsächlich auf den Blocklaufwerken des Clusters gespeichert werden. Mit Volume-Metadaten werden Daten redundant über ein Cluster gespeichert, wobei Double Helix Datensicherung zum Einsatz kommt.
+
++
+
+NOTE: Einige Systemereignisprotokolle und Fehlermeldungen beziehen sich auf Volume-Metadatenlaufwerke als Slice-Laufwerke.
+
+* *Blocklaufwerke*
++
+Diese Laufwerke speichern die komprimierten, deduplizierten Datenblöcke für Server-Applikations-Volumes. Block-Laufwerke machen den Großteil der Speicherkapazität des Systems aus. Die meisten Lesezugriffe für bereits im SolidFire Cluster gespeicherte Daten sowie Anfragen zu Daten erfolgen auf den Block-Laufwerken. Die Gesamtkapazität des Blocklaufwerks im System bestimmt die maximale Datenmenge, die unter Berücksichtigung der Auswirkungen von Komprimierung, Thin Provisioning und Deduplizierung gespeichert werden kann.
+
+

@@ -1,0 +1,82 @@
+---
+permalink: api/reference_element_api_listclusterinterfacepreferences.html 
+sidebar: sidebar 
+keywords:  
+summary: Mit der ListClusterInterface Preference-Methode können in Storage-Cluster integrierte Systeme, auf denen Element Software ausgeführt wird, die bestehenden Clusterschnittstelleneinstellungen aufgelistet werden, die auf dem System gespeichert sind. Diese Methode ist für den internen Gebrauch bestimmt. 
+---
+= ListenClusterSchnittstelleneinstellungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der `ListClusterInterfacePreference` Die Methode ermöglicht in Storage-Cluster integrierte Systeme, auf denen Element Software ausgeführt wird, um die im System gespeicherten Voreinstellungen für die Cluster-Schnittstelle aufzulisten. Diese Methode ist für den internen Gebrauch bestimmt.
+
+
+NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
+
+
+
+== Parameter
+
+Diese Methode hat keine Eingabeparameter.
+
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Einstellungen
+ a| 
+Eine Liste der aktuell im Storage-Cluster gespeicherten Cluster-Schnittstellenobjekte, die jeweils den Namen und den Wert der Voreinstellungen enthalten.
+ a| 
+JSON-Objekt-Array
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+	"method": "ListClusterInterfacePreferences",
+    "params": {
+    },
+    "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+	"id": 1,
+	"result": {
+		"preferences": [
+			{
+				"name": "prefname",
+				"value": "testvalue"
+			}
+		]
+	}
+}
+----
+
+
+== Neu seit Version
+
+11.0

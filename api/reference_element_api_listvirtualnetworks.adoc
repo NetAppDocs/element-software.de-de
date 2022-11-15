@@ -1,0 +1,184 @@
+---
+permalink: api/reference_element_api_listvirtualnetworks.html 
+sidebar: sidebar 
+keywords: virtual,network,networks,listing,list,listvirtualnetworks 
+summary: Sie können die Methode ListVirtualNetworks verwenden, um alle konfigurierten virtuellen Netzwerke für den Cluster aufzulisten. 
+---
+= ListVirtualNetworks
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `ListVirtualNetworks` Methode zum Auflisten aller konfigurierten virtuellen Netzwerke für das Cluster.
+
+Mit dieser Methode können Sie die virtuellen Netzwerkeinstellungen im Cluster überprüfen. Für diese Methode sind keine erforderlichen Parameter vorhanden. Um die Ergebnisse zu filtern, können Sie einen oder mehrere VirtualNetworkID- oder VirtualNetworkTag-Werte weitergeben.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+VirtualNetworkID
+ a| 
+Netzwerk-ID zum Filtern der Liste nach einem einzelnen virtuellen Netzwerk.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+VirtualNetworkTag
+ a| 
+Netzwerk-Tag zum Filtern der Liste nach einem einzelnen virtuellen Netzwerk.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+VirtualNetworkIDs
+ a| 
+Netzwerk-IDs, die in die Liste aufgenommen werden sollen.
+ a| 
+Integer-Array
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+VirtualNetworkTags
+ a| 
+Netzwerk-Tag, das in die Liste aufgenommen werden soll.
+ a| 
+Integer-Array
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+VirtualNetworks
+ a| 
+Objekt, das virtuelle Netzwerk-IP-Adressen enthält.
+ a| 
+xref:reference_element_api_virtualnetwork.adoc[VirtualNetwork]
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "ListVirtualNetworks",
+  "params": {
+     "virtualNetworkIDs": [5,6]
+   },
+"id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "virtualNetworks": [
+   {
+    "addressBlocks": [
+   {
+    "available": "11000000",
+    "size": 8,
+    "start": "10.26.250.207"
+   }
+ ],
+    "attributes": null,
+    "gateway": "10.26.250.254",
+    "name": "2250",
+    "namespace": false,
+    "netmask": "255.255.255.0",
+    "svip": "10.26.250.200",
+    "virtualNetworkID": 2250
+   },
+   {
+     "addressBlocks": [
+   {
+     "available": "11000000",
+     "size": 8,
+     "start": "10.26.241.207"
+   }
+  ],
+     "attributes": null,
+     "gateway": "10.26.241.254",
+     "name": "2241",
+     "namespace": false,
+     "netmask": "255.255.255.0",
+     "svip": "10.26.241.200",
+     "virtualNetworkID": 2241
+   },
+  {
+     "addressBlocks": [
+  {
+     "available": "11000000",
+     "size": 8,
+     "start": "10.26.240.207"
+   }
+  ],
+     "attributes": null,
+     "gateway": "10.26.240.254",
+     "name": "2240",
+     "namespace": false,
+     "netmask": "255.255.255.0",
+     "svip": "10.26.240.200",
+     "virtualNetworkID": 2240
+    },
+   {
+  }
+ ]
+}
+----
+
+
+== Neu seit Version
+
+9.6

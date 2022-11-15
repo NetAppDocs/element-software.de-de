@@ -1,0 +1,121 @@
+---
+permalink: api/reference_element_api_checkproposednodeadditions.html 
+sidebar: sidebar 
+keywords: proposed,node,additions,CheckProposedNodeAdditions,storage,checking 
+summary: Mit der CheckeProposals-Methode können Sie einen Satz Storage-Nodes testen, um herauszufinden, ob Sie diese zu einem Storage-Cluster hinzufügen können, ohne dass Fehler oder Best Practices-Verstöße auftreten. 
+---
+= CheckeAngebot NodeAdditions
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `CheckProposedNodeAdditions` Methode zum Testen einer Reihe von Storage-Nodes, um zu ermitteln, ob Sie diese einem Storage Cluster ohne Fehler oder Verstöße gegen die Best Practices hinzufügen können.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Knoten
+ a| 
+Eine Liste der Storage-IP-Adressen von Storage-Nodes, die einem Storage-Cluster hinzugefügt werden können
+ a| 
+String-Array
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Antragsteller ClusterValid
+ a| 
+Gibt an, ob die vorgeschlagenen Storage-Nodes ein gültiges Storage-Cluster bilden oder nicht. Mögliche Werte:
+
+* Richtig
+* Falsch
+
+ a| 
+boolesch
+
+
+
+ a| 
+Antragsteller ClusterErrors
+ a| 
+Fehler, die auftreten würden, wenn ein Storage-Cluster mit den vorgeschlagenen Storage-Nodes erstellt würde. Mögliche Fehlercodes:
+
+* `nodesNoCapacity`: Knoten hatten keine nutzbare Kapazität.
+* `nodesTooLarge`: Knoten stellen für das aktive Schutzschema einen zu großen Teil der Clusterkapazität dar.
+* `nodesConnectFailed`: Verbindung zu Knoten konnte nicht hergestellt werden, um die Hardwarekonfiguration abzufragen.
+* `nodesQueryFailed`: Knoten konnten nicht nach Hardware-Konfiguration abgefragt werden.
+* `nodesClusterMember`: IP-Adressen für Knoten werden bereits im Cluster verwendet.
+* `nonFipsNodeCapable`: Es ist nicht möglich, einen nicht FIPS-fähigen Knoten zum Speicher-Cluster hinzuzufügen, während die Verschlüsselungsfunktion für FIPS 140-2-Laufwerke aktiviert ist.
+* `nonFipsDrivesCapable`: Es ist nicht möglich, einen Knoten mit nicht FIPS-fähigen Laufwerken zum Cluster hinzuzufügen, während die FIPS 140-2 Laufwerksverschlüsselungsfunktion aktiviert ist.
+
+ a| 
+String-Array
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+	"method": "CheckProposedNodeAdditions",
+	"params": {
+	"nodes": [
+		"192.168.1.11",
+		"192.168.1.12",
+		"192.168.1.13",
+		"192.168.1.14"
+	]
+},
+	"id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+	"id": 1,
+	"result": {
+		"proposedClusterValid": true,
+		"proposedClusterErrors": [ ]
+	}
+}
+----
+
+
+== Neu seit Version
+
+11.0

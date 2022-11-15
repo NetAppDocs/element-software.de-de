@@ -1,0 +1,105 @@
+---
+permalink: api/reference_element_api_deleteauthsessionsbyclusteradmin.html 
+sidebar: sidebar 
+keywords: auth sessions,cluster,admin,delete,authentication sessions 
+summary: Sie können die Methode DeleteAuthSessionByClusterAdmin verwenden, um alle mit der angegebenen ClusterAdminID verknüpften Authentifizierungssitzungen zu löschen. Wenn die angegebene ClusterAdminID einer Gruppe von Benutzern zugeordnet ist, werden alle Authentifizierungs-Sessions für alle Mitglieder dieser Gruppe gelöscht. Um eine Liste von Sitzungen zum möglichen Löschen anzuzeigen, verwenden Sie die Methode ListAuthSessionsByClusterAdmin mit dem ClusterAdminID-Parameter. 
+---
+= DeleteAuthSessionByClusterAdmin
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `DeleteAuthSessionsByClusterAdmin` Methode zum Löschen aller mit dem angegebenen verknüpften Authentifizierungssitzungen `ClusterAdminID`. Wenn die angegebene ClusterAdminID einer Gruppe von Benutzern zugeordnet ist, werden alle Authentifizierungs-Sessions für alle Mitglieder dieser Gruppe gelöscht. Um eine Liste von Sitzungen zum möglichen Löschen anzuzeigen, verwenden Sie die Methode ListAuthSessionsByClusterAdmin mit dem `ClusterAdminID` Parameter.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Cluster-AdminID
+ a| 
+Eindeutige Kennung für den Cluster-Administrator
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Sitzungen
+ a| 
+Sitzungsinformationen für die gelöschten Authentifizierungssitzungen.
+ a| 
+link:reference_element_api_authsessioninfo.md#GUID-FF0CE38C-8F99-4F23-8A6F-F6EA4487E808["AuthSessionInfo"]
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "DeleteAuthSessionsByClusterAdmin",
+  "params": {
+    "clusterAdminID": 1
+  }
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+"sessions": [
+      {
+        "accessGroupList": [
+          "administrator"
+        ],
+        "authMethod": "Cluster",
+        "clusterAdminIDs": [
+          1
+        ],
+        "finalTimeout": "2020-03-14T19:21:24Z",
+        "idpConfigVersion": 0,
+        "lastAccessTimeout": "2020-03-11T19:51:24Z",
+        "sessionCreationTime": "2020-03-11T19:21:24Z",
+        "sessionID": "b12bfc64-f233-44df-8b9f-6fb6c011abf7",
+        "username": "admin"
+      }
+    ]
+}
+----
+
+
+== Neu seit Version
+
+12.0

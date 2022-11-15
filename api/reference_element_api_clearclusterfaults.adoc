@@ -1,0 +1,83 @@
+---
+permalink: api/reference_element_api_clearclusterfaults.html 
+sidebar: sidebar 
+keywords: cluster,clear,clearing,fault,faults,support bundles,ClearClusterFaults 
+summary: Sie können die ClearClusterStandards-Methode verwenden, um Informationen über aktuelle und zuvor erkannte Fehler zu löschen. Sowohl behobene als auch ungelöste Fehler können behoben werden. 
+---
+= ClearClusterStandards
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `ClearClusterFaults` Methode zum Löschen von Informationen über aktuelle und zuvor erkannte Fehler. Sowohl behobene als auch ungelöste Fehler können behoben werden.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Fehlertypen
+ a| 
+Bestimmt die Art der zu beseitigen Fehler. Mögliche Werte:
+
+* Aktuell:
++
+Fehler, die derzeit erkannt und nicht behoben wurden.
+
+* Behoben: Fehler, die zuvor entdeckt und behoben wurden.
+* Alles: Sowohl aktuelle als auch gelöste Fehler. Der Fehlerstatus kann durch das Feld „`reSolved`“ des Fehlerobjekts bestimmt werden.
+
+ a| 
+Zeichenfolge
+ a| 
+Behoben
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode hat keine Rückgabewerte.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "ClearClusterFaults",
+   "params": {},
+  "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id" : 1,
+    "result" : {}
+}
+----
+
+
+== Neu seit Version
+
+9.6

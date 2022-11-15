@@ -1,0 +1,42 @@
+---
+permalink: api/reference_element_api_fipsreport.html 
+sidebar: sidebar 
+keywords: object,objects,fipsReport,FIPS,140-2 
+summary: Das Objekt fipsReport enthält Informationen zur Unterstützung von FIPS 140-2 für alle Nodes im Storage-Cluster. Sie können diese Informationen mit der GetFipsReport-Methode abrufen. 
+---
+= FipsReport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Objekt fipsReport enthält Informationen zur Unterstützung von FIPS 140-2 für alle Nodes im Storage-Cluster. Sie können diese Informationen mithilfe von abrufen `GetFipsReport` Methode.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Knoten
+ a| 
+Ein Bericht über den Supportstatus von FIPS 140-2 für jeden Node im Storage-Cluster.
+ a| 
+FipsNodeReport
+
+
+
+ a| 
+FehlerKnoten
+ a| 
+Fehlerinformationen für jeden Node, der nicht mit FIPS 140-2-2-Supportstatus reagiert.
+ a| 
+FipsErrorNodeReport
+
+|===

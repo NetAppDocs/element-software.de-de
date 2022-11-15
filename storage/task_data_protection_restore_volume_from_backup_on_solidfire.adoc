@@ -1,0 +1,40 @@
+---
+permalink: storage/task_data_protection_restore_volume_from_backup_on_solidfire.html 
+sidebar: sidebar 
+keywords: volume restore, solidfire storage cluster 
+summary: Sie können ein Volume aus einem Backup auf einem SolidFire Storage Cluster wiederherstellen. 
+---
+= Wiederherstellung eines Volumes aus einem Backup auf einem SolidFire Storage-Cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein Volume aus einem Backup auf einem SolidFire Storage Cluster wiederherstellen.
+
+Beim Backup oder Restore von einem Cluster auf ein anderes generiert das System einen Schlüssel, der als Authentifizierung zwischen den Clustern verwendet wird. Dieser Schreibschlüssel für das Massenvolumen ermöglicht es dem Quellcluster, sich beim Schreiben auf das Ziel-Volume mit dem Ziel-Cluster zu authentifizieren. Im Rahmen des Backup- oder Wiederherstellungsprozesses müssen Sie vor dem Start des Vorgangs einen Schreibschlüssel für das Massenvolumen vom Zielvolume generieren.
+
+. Klicken Sie auf dem Ziel-Cluster auf *Management* > *Volumes*.
+. Klicken Sie auf das Symbol Aktionen für das Volume, das Sie wiederherstellen möchten.
+. Klicken Sie im Menü Ergebnis auf *aus* wiederherstellen.
+. Wählen Sie im Dialogfeld * Integrierter Restore* unter *Wiederherstellen von* die Option *SolidFire* aus.
+. Wählen Sie unter *Datenformat* die Option aus, die der Datensicherung entspricht:
++
+** *Native*: Ein komprimiertes Format, das nur von SolidFire-Speichersystemen lesbar ist.
+** *Unkomprimiert*: Ein unkomprimiertes Format, das mit anderen Systemen kompatibel ist.
+
+
+. Klicken Sie Auf *Schlüssel Generieren*.
+. Kopieren Sie die *Massenvolume-Schreibschlüssel*-Informationen in die Zwischenablage.
+. Klicken Sie im Quellcluster auf *Verwaltung* > *Volumes*.
+. Klicken Sie auf das Aktionen-Symbol für das Volume, das Sie für die Wiederherstellung verwenden möchten.
+. Klicken Sie im Menü Ergebnis auf *Sichern nach*.
+. Wählen Sie im Dialogfeld * Integriertes Backup* unter *Sichern nach* die Option *SolidFire* aus.
+. Wählen Sie unter *Datenformat* die Option aus, die der Sicherung entspricht.
+. Geben Sie die virtuelle Management-IP-Adresse des Clusters des Ziel-Volumes im Feld *Remote Cluster MVIP* ein.
+. Geben Sie den Benutzernamen für den Remote-Cluster in das Feld *Remote-Cluster-Benutzername* ein.
+. Geben Sie das Kennwort für den Remote-Cluster im Feld * Remote-Cluster-Kennwort* ein.
+. Fügen Sie den Schlüssel aus Ihrer Zwischenablage in das Feld *Massenvolumenschreibschlüssel* ein.
+. Klicken Sie Auf *Lesen Starten*.
+

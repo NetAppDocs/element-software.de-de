@@ -1,0 +1,67 @@
+---
+permalink: storage/task_system_manage_virtual_add_a_virtual_network.html 
+sidebar: sidebar 
+keywords: virtual network, add, cluster configuration, cluster nodes, svip, vlans, vrf, view, network details, 
+summary: Sie können einer Cluster-Konfiguration ein neues virtuelles Netzwerk hinzufügen, um eine mandantenfähige Umgebungsverbindung zu einem Cluster zu ermöglichen, auf dem Element Software ausgeführt wird. 
+---
+= Fügen Sie ein virtuelles Netzwerk hinzu
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können einer Cluster-Konfiguration ein neues virtuelles Netzwerk hinzufügen, um eine mandantenfähige Umgebungsverbindung zu einem Cluster zu ermöglichen, auf dem Element Software ausgeführt wird.
+
+.Was Sie und#8217;ll benötigen
+* Identifizieren Sie den Block der IP-Adressen, der den virtuellen Netzwerken auf den Clusterknoten zugewiesen wird.
+* Geben Sie eine SVIP-Adresse (Storage-Netzwerk-IP) an, die als Endpunkt für den gesamten NetApp Element-Datenverkehr verwendet werden soll.
+
+
+
+IMPORTANT: Für diese Konfiguration müssen Sie die folgenden Kriterien berücksichtigen:
+
+* Bei VLANs, die nicht VRF-aktiviert sind, müssen sich Initiatoren in demselben Subnetz wie das SVIP befinden.
+* VLANs, die VRF-aktiviert sind, müssen sich keine Initiatoren in demselben Subnetz wie die SVIP befinden und Routing wird unterstützt.
+* Der Standard-SVIP erfordert keine Initiatoren, die sich im selben Subnetz wie der SVIP befinden, und Routing wird unterstützt.
+
+
+Wenn ein virtuelles Netzwerk hinzugefügt wird, wird für jeden Node eine Schnittstelle erstellt und jeder benötigt eine virtuelle Netzwerk-IP-Adresse. Die Anzahl der IP-Adressen, die Sie beim Erstellen eines neuen virtuellen Netzwerks angeben, muss der Anzahl der Nodes im Cluster entsprechen oder größer sein. Virtuelle Netzwerkadressen werden von einzelnen Nodes automatisch bereitgestellt und ihnen zugewiesen. Sie müssen den Nodes im Cluster keine virtuellen Netzwerkadressen manuell zuweisen.
+
+.Schritte
+. Klicken Sie Auf *Cluster* > *Netzwerk*.
+. Klicken Sie auf *VLAN erstellen*.
+. Geben Sie im Dialogfeld *Neues VLAN* Werte in die folgenden Felder ein:
++
+** *VLAN-Name*
+** *VLAN-Tag*
+** *SVIP*
+** *Netzmaske*
+** (Optional) *Beschreibung*
+
+
+. Geben Sie die *Starting IP*-Adresse für den IP-Adressbereich in *IP-Adressblöcken* ein.
+. Geben Sie die *Größe* des IP-Bereichs als Anzahl der IP-Adressen ein, die in den Block einbezogen werden sollen.
+. Klicken Sie auf *Einen Block hinzufügen*, um einen nicht kontinuierlichen Block von IP-Adressen für dieses VLAN hinzuzufügen.
+. Klicken Sie auf *VLAN erstellen*.
+
+
+
+
+== Details zum virtuellen Netzwerk anzeigen
+
+.Schritte
+. Klicken Sie Auf *Cluster* > *Netzwerk*.
+. Überprüfen Sie die Details.
++
+** *ID*: Eindeutige ID des VLAN-Netzwerks, das vom System zugewiesen wird.
+** *Name*: Eindeutiger vom Benutzer zugewiesener Name für das VLAN-Netzwerk.
+** *VLAN Tag*: VLAN-Tag, der beim Erstellen des virtuellen Netzwerks zugewiesen wurde.
+** *SVIP*: Speicher virtuelle IP-Adresse, die dem virtuellen Netzwerk zugewiesen ist.
+** *Netzmaske*: Netzmaske für dieses virtuelle Netzwerk.
+** *Gateway*: Eindeutige IP-Adresse eines virtuellen Netzwerk-Gateways. VRF muss aktiviert sein.
+** *VRF aktiviert*: Angabe, ob virtuelles Routing und Forwarding aktiviert ist oder nicht.
+** *Verwendete IPs*: Der Bereich der virtuellen Netzwerk-IP-Adressen, die für das virtuelle Netzwerk verwendet werden.
+
+
+

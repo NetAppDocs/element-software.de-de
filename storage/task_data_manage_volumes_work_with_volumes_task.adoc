@@ -1,0 +1,31 @@
+---
+permalink: storage/task_data_manage_volumes_work_with_volumes_task.html 
+sidebar: sidebar 
+keywords: volumes, work, storage, iscsi, fc, cluster data management, overview of functions 
+summary: Das SolidFire System stellt mithilfe von Volumes Storage bereit. Volumes sind Blockgeräte, auf die über das Netzwerk von iSCSI- oder Fibre Channel-Clients zugegriffen wird. Auf der Seite Volumes auf der Registerkarte Management können Sie Volumes auf einem Node erstellen, bearbeiten, klonen und löschen. Es lassen sich außerdem Statistiken zur Volume-Bandbreite und zur I/O-Auslastung anzeigen. 
+---
+= Arbeiten mit Volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das SolidFire System stellt mithilfe von Volumes Storage bereit. Volumes sind Blockgeräte, auf die über das Netzwerk von iSCSI- oder Fibre Channel-Clients zugegriffen wird. Auf der Seite Volumes auf der Registerkarte Management können Sie Volumes auf einem Node erstellen, bearbeiten, klonen und löschen. Es lassen sich außerdem Statistiken zur Volume-Bandbreite und zur I/O-Auslastung anzeigen.
+
+
+
+== Weitere Informationen
+
+* link:concept_data_manage_volumes_quality_of_service_policies.html["Management von Quality-of-Service-Richtlinien"]
+* link:task_data_manage_volumes.html#create-a-volume["Erstellen eines Volumes"]
+* link:task_data_manage_volumes.html#view-volume-details["Anzeige individueller Performance-Details für Volumes"]
+* link:task_data_manage_volumes.html#edit-active-volumes["Aktive Volumes bearbeiten"]
+* link:task_data_manage_volumes.html#delete-a-volume["Löschen Sie ein Volume"]
+* link:task_data_manage_volumes.html#restore-a-deleted-volume["Wiederherstellen eines gelöschten Volumes"]
+* link:task_data_manage_volumes.html#purge-a-volume["Löschen Sie ein Volumen"]
+* link:task_data_manage_volumes.html#clone-a-volume["Klonen Sie ein Volume"]
+* link:task_data_manage_volumes_assign_luns_to_fibre_channel_volumes.html["Weisen Sie LUNs Fibre Channel Volumes zu"]
+* link:task_data_manage_volumes_apply_a_qos_policy.html["Wenden Sie eine QoS-Richtlinie auf Volumes an"]
+* link:task_data_manage_volumes_remove_a_qos_policy_association_of_a_volume.html["Entfernen Sie die QoS-Richtlinienzuordnung eines Volumes"]
+

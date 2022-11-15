@@ -1,0 +1,140 @@
+---
+permalink: api/reference_element_api_createstoragecontainer.html 
+sidebar: sidebar 
+keywords: create,creating,storage,container,virtual,volume,volumes,vvol,vvols,CreateStorageContainer 
+summary: 'Sie können mithilfe der CreateStorageContainer Methode einen virtuellen Volume \ (VVol\) Storage Container erstellen. Sie können Storage-Container für Berichterstellung und Ressourcenzuweisung verwenden. Sie müssen mindestens einen Storage-Container erstellen, um die Virtual Volumes-Funktion verwenden zu können.' 
+---
+= CreateStorageContainer
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `CreateStorageContainer` Methode zur Erstellung eines Virtual Volume (VVol)-Storage-Containers. Sie können Storage-Container für Berichterstellung und Ressourcenzuweisung verwenden. Sie müssen mindestens einen Storage-Container erstellen, um die Virtual Volumes-Funktion verwenden zu können.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Name
+ a| 
+Name des Speichercontainers. Befolgen Sie die Beschränkungen für die Benennung von Konten der Element Software.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+AccountID
+ a| 
+Ein Konto, das nicht im Speicher gespeichert wird, wird zu einem Speichercontainer.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+InitiatorSecret
+ a| 
+Der Schlüssel für die CHAP-Authentifizierung für den Initiator.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+TargetSecret
+ a| 
+Der Schlüssel zur CHAP-Authentifizierung für das Ziel.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Storage Container
+ a| 
+Objekt mit Informationen über den neu erstellten Storage-Container.
+ a| 
+xref:reference_element_api_storagecontainer.adoc[Storage Container]
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "CreateStorageContainer",
+    "params": {
+        "name" : "example"
+    },
+    "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "storageContainer": {
+      "accountID": 8,
+      "initiatorSecret": "rVTOi25^H.d;cP}l",
+      "name": "example",
+      "protocolEndpointType": "SCSI",
+      "status": "active",
+      "storageContainerID": "a9ec1138-e386-4a44-90d7-b9acbbc05176",
+      "targetSecret": "6?AEIxWpvo6,!boM"
+    }
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6

@@ -1,0 +1,27 @@
+---
+permalink: storage/task_intro_limit_results_by_using_filters.html 
+sidebar: sidebar 
+keywords: filter, filtering, sorting information, viewing lists, unfiltered list 
+summary: 'Sie können Listeninformationen auf Seiten in der Element UI filtern. Wenn Sie Listen \ (wie Volumes und Snapshots\) anzeigen, können Sie einen oder mehrere Filter hinzufügen, um die Informationen zu fokussieren und sie einfacher auf die Seite zu passen.' 
+---
+= Beschränken Sie die Ergebnisse mithilfe von Filtern
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Listeninformationen auf Seiten in der Element UI filtern. Beim Anzeigen von Listen (z. B. Volumes und Snapshots) können Sie einen oder mehrere Filter hinzufügen, um die Informationen zu fokussieren und einfacher auf die Seite einzupassen.
+
+. Klicken Sie beim Anzeigen von Listeninformationen auf *Filter*.
+. Erweitern Sie das Feld *Filter nach*.
+. Wählen Sie eine Spalte aus, nach der das Element links im Feld gefiltert werden soll.
+. Wählen Sie eine Bedingung für die Spalte aus.
+. Text eingeben, nach dem gefiltert werden soll.
+. Klicken Sie Auf *Hinzufügen*.
++
+Das System führt den neuen Filter auf den Informationen in der Liste aus und speichert den neuen Filter vorübergehend im Feld Filtern nach.
+
+. Um einen anderen Filter hinzuzufügen, klicken Sie auf *Hinzufügen* und wählen Sie erneut den Filter aus.
+. Klicken Sie auf *alles löschen*, um die Liste der Filter zu entfernen und die ungefilterten Listeninformationen anzuzeigen.
+

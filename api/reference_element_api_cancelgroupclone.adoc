@@ -1,0 +1,77 @@
+---
+permalink: api/reference_element_api_cancelgroupclone.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie können die Methode „CancelGroupClone“ verwenden, um einen laufenden Klonprozess für eine Gruppe von Volumes zu beenden. Wenn Sie einen Gruppenklonvorgang abbrechen, wird das System abgeschlossen und der damit verbundene Async Handle des Vorgangs entfernt. 
+---
+= GruppenClone abbrechen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `CancelGroupClone` Methode zum Beenden eines laufenden Klonprozesses, der in einer Gruppe von Volumes stattfindet. Wenn Sie einen Gruppenklonvorgang abbrechen, wird das System abgeschlossen und der damit verbundene Async Handle entfernt.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+GroupCloneID
+ a| 
+Die KlonID für den laufenden Klonprozess.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode hat keine Rückgabewerte.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "CancelGroupClone",
+   "params": {
+      "cloneID" : 5,
+   },
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id" : 1,
+  "result" : {}
+}
+----
+
+
+== Neu seit Version
+
+9.6

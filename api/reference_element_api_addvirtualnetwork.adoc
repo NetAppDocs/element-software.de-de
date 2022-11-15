@@ -1,0 +1,206 @@
+---
+permalink: api/reference_element_api_addvirtualnetwork.html 
+sidebar: sidebar 
+keywords: addvirtualnetwork,cluster,add,adding,virtual,network 
+summary: Sie können die AddVirtualNetwork-Methode verwenden, um einem Cluster ein neues virtuelles Netzwerk hinzuzufügen. 
+---
+= AddVirtualNetwork
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `AddVirtualNetwork` Methode zum Hinzufügen eines neuen virtuellen Netzwerks zu einer Cluster-Konfiguration.
+
+Wenn Sie ein virtuelles Netzwerk hinzufügen, wird für jeden Node eine Schnittstelle erstellt und jede Schnittstelle benötigt eine virtuelle Netzwerk-IP-Adresse. Die Anzahl der IP-Adressen, die Sie als Parameter für diese API-Methode angeben, muss der Anzahl der Nodes im Cluster entsprechen oder größer sein. Die Masse des Systems stellt virtuelle Netzwerkadressen bereit und weist sie den einzelnen Knoten automatisch zu. Sie müssen Knoten keine virtuellen Netzwerkadressen manuell zuweisen.
+
+
+NOTE: Die AddVirtualNetwork-Methode wird nur verwendet, um ein neues virtuelles Netzwerk zu erstellen. Wenn Sie Änderungen an einem vorhandenen virtuellen Netzwerk vornehmen möchten, verwenden Sie den xref:reference_element_api_modifyvirtualnetwork.adoc[ModifyVirtualNetwork] Methode.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+AdressenSperren
+ a| 
+Eindeutiger Bereich von IP-Adressen, die in das virtuelle Netzwerk einbezogen werden sollen. Erforderliche Mitglieder für das Objekt:
+
+* Start: Der Beginn des IP-Adressbereichs. (Zeichenfolge)
+* Größe: Die Anzahl der IP-Adressen, die in den Block einbezogen werden sollen. (Ganze Zahl)
+
+ a| 
+JSON-Objekt-Array
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Merkmale
+ a| 
+Liste von Name-Wert-Paaren im JSON-Objektformat.
+ a| 
+JSON-Objekt
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Gateway
+ a| 
+Die IP-Adresse eines Gateways des virtuellen Netzwerks. Dieser Parameter ist nur gültig, wenn der Namespace-Parameter auf „true“ gesetzt ist.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Name
+ a| 
+Ein benutzerdefinierter Name für das neue virtuelle Netzwerk.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Namespace
+ a| 
+Wenn diese Einstellung auf „true“ gesetzt ist, wird die Funktion für routingfähige Speicher-VLANs aktiviert, indem ein Namespace und das darin enthaltene virtuelle Netzwerk erstellt und konfiguriert werden.
+ a| 
+boolesch
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Netzmaske
+ a| 
+Eindeutige Netzwerkmaske für das zu erstellenden virtuelle Netzwerk.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+svip
+ a| 
+Eindeutige Speicher-IP-Adresse für das zu erstellenden virtuelle Netzwerk.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+VirtualNetworkTag
+ a| 
+Ein eindeutiges VLAN-Tag (Virtual Network). Unterstützte Werte sind 1 bis 4094.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+*Hinweis:* Virtuelle Netzwerkparameter müssen für jedes virtuelle Netzwerk eindeutig sein, wenn Sie Namespace auf false setzen.
+
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+VirtualNetworkID
+ a| 
+Die virtuelle Netzwerk-ID des neuen virtuellen Netzwerks.
+ a| 
+Ganzzahl
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "AddVirtualNetwork",
+  "params": {
+    "virtualNetworkTag": 2010,
+    "name": "network1",
+    "addressBlocks" : [
+        { "start": "192.86.5.1", "size": 10 },
+        { "start": "192.86.5.50", "size": 20 }
+    ],
+    "netmask" : "255.255.192.0",
+    "gateway" : "10.0.1.254",
+    "svip" : "192.86.5.200",
+    "attributes" : {}
+    "namespace" : true
+  },
+"id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+   "id": 1,
+   "result":
+      {
+        "virtualNetworkID": 5
+   }
+}
+----
+
+
+== Neu seit Version
+
+9.6

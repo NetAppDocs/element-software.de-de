@@ -1,0 +1,19 @@
+---
+permalink: storage/concept_mnode_work_with_the_management_node.html 
+sidebar: sidebar 
+keywords: management node,mNode 
+summary: 'Mit dem Management-Node \(mNode\) können Sie Systemservices aktualisieren, Cluster-Ressourcen und -Einstellungen managen, Systemtests und Dienstprogramme ausführen, Active IQ für das System-Monitoring konfigurieren und den NetApp Support-Zugriff zur Fehlerbehebung aktivieren.' 
+---
+= Arbeiten Sie mit dem Management-Node
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Management-Node (mNode) verwenden, um Systemservices zu aktualisieren, Cluster-Assets und -Einstellungen zu managen, Systemtests und Dienstprogramme auszuführen, Active IQ für das System-Monitoring zu konfigurieren und den NetApp Support-Zugriff zur Fehlerbehebung zu aktivieren.
+
+
+NOTE: Als Best Practice wird nur ein Management Node mit einer VMware vCenter Instanz verknüpft, sodass nicht dieselben Storage- und Computing-Ressourcen oder vCenter Instanzen in mehreren Management Nodes definiert werden müssen.
+
+Siehe link:../mnode/task_mnode_work_overview.html["Dokumentation des Management-Node"] Finden Sie weitere Informationen.

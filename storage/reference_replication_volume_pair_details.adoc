@@ -1,0 +1,71 @@
+---
+permalink: storage/reference_replication_volume_pair_details.html 
+sidebar: sidebar 
+keywords: volume pairs, replication, data protection 
+summary: Die Seite Volume Pairs auf der Registerkarte Data Protection enthält Informationen zu Volumes, die gekoppelt wurden oder gerade gekoppelt werden. Das System zeigt Pairing- und Fortschrittsmeldungen in der Spalte Volume-Status an. 
+---
+= Details zu Volume-Paaren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Seite Volume Pairs auf der Registerkarte Data Protection enthält Informationen zu Volumes, die gekoppelt wurden oder gerade gekoppelt werden. Das System zeigt Pairing- und Fortschrittsmeldungen in der Spalte Volume-Status an.
+
+* *ID*
++
+Vom System generierte ID für das Volume:
+
+* *Name*
++
+Der Name, der dem Volume bei seiner Erstellung gegeben wurde. Volume-Namen können bis zu 223 Zeichen lang sein und A-z, 0-9 und Bindestrich (-) enthalten.
+
+* *Konto*
++
+Name des Kontos, der dem Volume zugewiesen wurde.
+
+* *Volume-Status*
++
+Replikationsstatus des Volumes
+
+* *Snapshot-Status*
++
+Status des Snapshot-Volumes.
+
+* *Modus*
++
+Die Client-Schreibreplikationsmethode. Folgende Werte sind möglich:
+
++
+** Asynchron
+** Nur Snapshot
+** Synchron
+
+
+* *Richtung*
++
+Richtung der Volume-Daten:
+
++
+** Quell-Volume-Symbol (image:../media/source_icon_for_volume_pairs.png["Gibt an, dass Daten auf ein Ziel-Cluster geschrieben werden"]) Gibt an, dass Daten auf ein Ziel außerhalb des Clusters geschrieben werden.
+** Zielvolume-Symbol (image:../media/target_icon_for_volume_pairs.png["Symbol, das angibt, dass Daten von einer externen Quelle auf das lokale Volume geschrieben werden"]) Gibt an, dass Daten von einer externen Quelle auf das lokale Volume geschrieben werden.
+
+
+* *Async Verzögerung*
++
+Dauer, seit das Volume zuletzt mit dem Remote-Cluster synchronisiert wurde. Wenn das Volume nicht gekoppelt ist, ist der Wert Null.
+
+* * Remote Cluster*
++
+Name des Remote-Clusters, auf dem sich das Volume befindet.
+
+* *Remote Volume ID*
++
+Volume-ID des Volumes im Remote-Cluster.
+
+* *Remote Volume Name*
++
+Name, der dem Remotecomputer bei seiner Erstellung gegeben wurde.
+
+

@@ -1,0 +1,23 @@
+---
+permalink: storage/task_snapmirror_perform_failback_to_element.html 
+sidebar: sidebar 
+keywords: failback, perform a failbacl, Element, snapmirror 
+summary: Wenn das Problem auf der primären Seite gemindert wurde, müssen Sie das ursprüngliche Quell-Volume neu synchronisieren und zur NetApp Element Software zurückkehren. Die entsprechenden Schritte hängen davon ab, ob das ursprüngliche Quell-Volume noch vorhanden ist oder Sie ein Failback auf ein neu erstelltes Volume durchführen müssen. 
+---
+= Führen Sie ein Failback zum Element durch
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn das Problem auf der primären Seite gemindert wurde, müssen Sie das ursprüngliche Quell-Volume neu synchronisieren und zur NetApp Element Software zurückkehren. Die entsprechenden Schritte hängen davon ab, ob das ursprüngliche Quell-Volume noch vorhanden ist oder Sie ein Failback auf ein neu erstelltes Volume durchführen müssen.
+
+
+
+== Weitere Informationen
+
+* xref:task_snapmirror_perform_failback_when_source_volume_exists.adoc[Führen Sie ein Failback durch, wenn das Quell-Volume noch vorhanden ist]
+* xref:task_snapmirror_performing_failback_when_source_volume_no_longer_exists.adoc[Führen Sie ein Failback durch, wenn das Quell-Volume nicht mehr vorhanden ist]
+* xref:concept_snapmirror_failback_scenarios.adoc[SnapMirror Failback-Szenarien]
+

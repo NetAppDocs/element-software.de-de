@@ -1,0 +1,46 @@
+---
+permalink: storage/task_post_deploy_access_the_element_software_user_interface.html 
+sidebar: sidebar 
+keywords: Element UI, accessing, using MVIP, blockers, host name, certificate, messages 
+summary: 'Sie können auf die Element UI über die Management-virtuelle IP \(MVIP\)-Adresse des primären Cluster-Knotens zugreifen.' 
+---
+= Greifen Sie auf die Benutzeroberfläche der Element Software zu
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können über die Management Virtual IP (MVIP)-Adresse des primären Cluster-Knotens auf die Element-UI zugreifen.
+
+Sie müssen sicherstellen, dass Popup-Blocker und NoScript-Einstellungen in Ihrem Browser deaktiviert sind.
+
+Je nach Konfiguration während der Cluster-Erstellung können Sie über IPv4- und IPv6-Adressen auf die UI zugreifen.
+
+. Folgenden Optionen wählbar:
++
+** IPv6: Geben Sie https://[IPv6 MVIP-Adresse ein, z. B.:
++
+[listing]
+----
+https://[fd20:8b1e:b256:45a::1234]/
+----
+** IPv4: Geben Sie https://[IPv4 MVIP-Adresse ein, z. B.:
++
+[listing]
+----
+https://10.123.456.789/
+----
+
+
+. Geben Sie für DNS den Hostnamen ein.
+. Klicken Sie durch alle Authentifizierungszertifikatmeldungen.
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

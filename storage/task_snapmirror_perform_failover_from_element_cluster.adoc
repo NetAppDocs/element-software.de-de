@@ -1,0 +1,32 @@
+---
+permalink: storage/task_snapmirror_perform_failover_from_element_cluster.html 
+sidebar: sidebar 
+keywords: failover, cluster, perform a failover, snapmirror 
+summary: Sie können ein Failover vom Element Cluster durchführen, um für Hosts auf der Zielseite das Lese-/Schreibvolume zu erhalten und auf diese zugreifen zu können. Bevor Sie ein Failover vom Element-Cluster durchführen, müssen Sie die SnapMirror Beziehung unterbrechen. 
+---
+= Führen Sie ein Failover von einem Element Cluster aus
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein Failover vom Element Cluster durchführen, um für Hosts auf der Zielseite das Lese-/Schreibvolume zu erhalten und auf diese zugreifen zu können. Bevor Sie ein Failover vom Element-Cluster durchführen, müssen Sie die SnapMirror Beziehung unterbrechen.
+
+Verwenden Sie die Benutzeroberfläche von NetApp Element, um den Failover auszuführen. Wenn die Element-UI nicht verfügbar ist, können Sie auch den Befehl „Beziehungen unterbrechen“ mit ONTAP System Manager oder ONTAP CLI eingeben.
+
+.Was Sie und#8217;ll benötigen
+* Eine SnapMirror-Beziehung ist vorhanden und hat mindestens einen gültigen Snapshot auf dem Ziel-Volume.
+* Aufgrund ungeplanter Ausfälle oder eines geplanten Ereignisses am primären Standort ist ein Failover auf das Ziel-Volume erforderlich.
+
+
+.Schritte
+. Klicken Sie in der Element UI auf *Data Protection* > *SnapMirror Relationships*.
+. Finden Sie die Beziehung zum Quellvolume, das Sie Failover ausführen möchten.
+. Klicken Sie auf das Symbol *Aktionen*.
+. Klicken Sie Auf *Pause*.
+. Bestätigen Sie die Aktion.
++
+Das Volume auf dem Ziel-Cluster verfügt jetzt über Lese- und Schreibzugriff, kann auf die Applikations-Hosts eingebunden werden, um die Produktions-Workloads wieder aufzunehmen. Durch diese Aktion wird die gesamte SnapMirror-Replikation angehalten. Die Beziehung zeigt einen Abbruch.
+
+

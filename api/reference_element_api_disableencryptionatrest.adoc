@@ -1,0 +1,73 @@
+---
+permalink: api/reference_element_api_disableencryptionatrest.html 
+sidebar: sidebar 
+keywords: element, api, encryption, disable, disabling, at rest, rest, DisableEncryptionAtRest 
+summary: Mit der Methode DisableVerschlüsselungAtRest können Sie die Verschlüsselung entfernen, die zuvor mit der Methode EnableVerschlüsselungAtRest auf den Cluster angewendet wurde. Diese Disable-Methode ist asynchron und gibt eine Antwort zurück, bevor die Verschlüsselung deaktiviert wird. Sie können das System mit der Methode GetClusterInfo abfragen, um zu sehen, wann der Prozess abgeschlossen ist. 
+---
+= UnbeständigkeitVerverschlüsselungAttest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `DisableEncryptionAtRest` Methode zum Entfernen der Verschlüsselung, die zuvor mithilfe des auf den Cluster angewendet wurde `EnableEncryptionAtRest` Methode. Diese Disable-Methode ist asynchron und gibt eine Antwort zurück, bevor die Verschlüsselung deaktiviert wird. Sie können das verwenden `GetClusterInfo` Methode zum Abfragen des Systems, um zu sehen, wann der Prozess abgeschlossen ist.
+
+
+TIP: Mithilfe der können Sie den aktuellen Status der Verschlüsselung im Ruhezustand und/oder Softwareverschlüsselung im Ruhezustand auf dem Cluster anzeigen link:../api/reference_element_api_getclusterinfo["Abrufen der Cluster Info-Methode"^]. Sie können das verwenden `GetSoftwareEncryptionAtRestInfo` link:../api/reference_element_api_getsoftwareencryptionatrestinfo["Methode zum Abrufen von Informationen, die das Cluster verwendet, um Daten im Ruhezustand zu verschlüsseln"^].
+
+
+NOTE: Sie können diese Methode nicht verwenden, um die Softwareverschlüsselung im Ruhezustand zu deaktivieren. Um die Softwareverschlüsselung im Ruhezustand zu deaktivieren, müssen Sie dies durchführen link:reference_element_api_createcluster.html["Erstellen Sie einen neuen Cluster"] Bei deaktivierter Softwareverschlüsselung
+
+
+
+== Parameter
+
+Diese Methode hat keine Eingabeparameter.
+
+
+
+== Rückgabewerte
+
+Diese Methode hat keine Rückgabewerte.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "DisableEncryptionAtRest",
+   "params": {},
+   "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+   "id" : 1,
+  "result" : {}
+}
+----
+
+
+== Neu seit Version
+
+9.6
+
+[discrete]
+== Weitere Informationen
+
+* link:api/reference_element_api_getclusterinfo.html["GetClusterInfo"]
+* https://www.netapp.com/data-storage/solidfire/documentation/["Ressourcen-Seite zu NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Dokumentation für frühere Versionen von NetApp SolidFire und Element Produkten"^]
+

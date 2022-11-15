@@ -1,0 +1,84 @@
+---
+permalink: api/reference_element_api_listbackuptargets.html 
+sidebar: sidebar 
+keywords: backup,target,targets,info,list,listing,listbackuptargets 
+summary: Sie können die Methode ListBackupTargets verwenden, um Informationen über alle Backup-Ziele zu erhalten, die erstellt wurden. 
+---
+= ListBackupTargets
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `ListBackupTargets` Methode zum Abrufen von Informationen über alle erstellten Backup-Ziele.
+
+
+
+== Parameter
+
+Diese Methode hat keine Eingabeparameter.
+
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+BackupTargets
+ a| 
+Für jedes Backup-Ziel zurückgegebene Objekte. Enthaltene Objekte:
+
+* Attribute: Liste von Name-Wert-Paaren im JSON-Objektformat. (JSON-Objekt)
+* BackupTargetID: Eindeutige Kennung, die dem Backup-Ziel zugewiesen ist. (Ganze Zahl)
+* Name: Name des Backupziels. (Zeichenfolge)
+
+ a| 
+JSON-Objekt
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "ListBackupTargets",
+   "params": {},
+   "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+   "id": 1,
+   "result": {
+     "backupTargets": [
+       {
+        "attributes" : {},
+        "backupTargetID" : 1,
+        "name" : "mytargetbackup"
+       }
+    ]
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6

@@ -1,0 +1,37 @@
+---
+permalink: setup/task_setup_add_drives_to_a_cluster.html 
+sidebar: sidebar 
+keywords:  
+summary: Wenn Sie dem Cluster einen Node hinzufügen oder neue Laufwerke in einem vorhandenen Node installieren, werden die Laufwerke automatisch nach Verfügbarkeit registriert. Sie müssen die Laufwerke zum Cluster entweder über die Element-UI oder -API hinzufügen, bevor sie am Cluster teilnehmen können. 
+---
+= Fügen Sie Laufwerke zu einem Cluster hinzu
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie dem Cluster einen Node hinzufügen oder neue Laufwerke in einem vorhandenen Node installieren, werden die Laufwerke automatisch nach Verfügbarkeit registriert. Sie müssen die Laufwerke zum Cluster entweder über die Element-UI oder -API hinzufügen, bevor sie am Cluster teilnehmen können.
+
+Laufwerke werden in der Liste Verfügbare Laufwerke nicht angezeigt, wenn folgende Bedingungen vorliegen:
+
+* Laufwerke befinden sich im Status „aktiv“, „Entfernen“, „Löschen“ oder „Fehlgeschlagen“.
+* Der Knoten, von dem das Laufwerk Teil ist, befindet sich im Status „Ausstehend“.
+
+
+.Schritte
+. Wählen Sie in der Element-Benutzeroberfläche *Cluster* > *Laufwerke* aus.
+. Klicken Sie auf *verfügbar*, um die Liste der verfügbaren Laufwerke anzuzeigen.
+. Führen Sie einen der folgenden Schritte aus:
++
+** Um einzelne Laufwerke hinzuzufügen, klicken Sie auf das *Aktionen* -Symbol für das Laufwerk, das Sie hinzufügen möchten, und klicken Sie auf *Hinzufügen*.
+** Um mehrere Laufwerke hinzuzufügen, aktivieren Sie die Kontrollkästchen der Laufwerke, die hinzugefügt werden sollen, klicken Sie auf *Massenaktionen* und klicken Sie auf *Hinzufügen*.
++
+....
+== Find more information
+* https://www.netapp.com/data-storage/solidfire/documentation[SolidFire and Element Resources page^]
+* https://docs.netapp.com/us-en/vcp/index.html[NetApp Element Plug-in for vCenter Server^]
+....
+
+
+

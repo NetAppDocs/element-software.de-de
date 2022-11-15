@@ -1,0 +1,30 @@
+---
+permalink: storage/task_data_manage_volumes_apply_a_qos_policy.html 
+sidebar: sidebar 
+keywords: qos policy, apply to volumes 
+summary: Sie können Massen eine vorhandene QoS-Richtlinie auf ein oder mehrere Volumes anwenden. 
+---
+= Wenden Sie eine QoS-Richtlinie auf Volumes an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Massen eine vorhandene QoS-Richtlinie auf ein oder mehrere Volumes anwenden.
+
+Die QoS-Richtlinie, die Sie als Massenware anwenden möchten, muss vorhanden sein.
+
+. Wählen Sie *Management* > *Volumes*.
+. Aktivieren Sie in der Liste der Volumes das Kontrollkästchen neben allen Volumes, auf die Sie die QoS-Richtlinie anwenden möchten.
+. Klicken Sie Auf *Massenaktionen*.
+. Klicken Sie im Menü Ergebnis auf *QoS Policy anwenden*.
+. Wählen Sie die QoS-Richtlinie aus der Dropdown-Liste aus.
+. Klicken Sie Auf *Anwenden*.
+
+
+
+
+== Weitere Informationen
+
+xref:concept_data_manage_volumes_quality_of_service_policies.adoc[Quality of Service-Richtlinien]

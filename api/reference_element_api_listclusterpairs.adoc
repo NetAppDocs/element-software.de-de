@@ -1,0 +1,94 @@
+---
+permalink: api/reference_element_api_listclusterpairs.html 
+sidebar: sidebar 
+keywords: cluster,pair,pairs,paired,list,listing,listclusterpairs 
+summary: 'Sie können die Methode „ListClusterpairs“ verwenden, um alle Cluster aufzulisten, die mit dem aktuellen Cluster gekoppelt sind. Diese Methode gibt Informationen zu aktiven und ausstehenden Cluster-Paarungen zurück, z. B. Statistiken über die aktuelle Paarung sowie über die Konnektivität und Latenz \(in Millisekunden\) der Cluster-Paarung.' 
+---
+= ListenClusterpaare
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `ListClusterPairs` Methode zum Auflisten aller Cluster, die mit dem aktuellen Cluster gekoppelt sind. Diese Methode gibt Informationen zu aktiven und ausstehenden Cluster-Paarungen zurück, z. B. Statistiken über die aktuelle Paarung sowie über die Konnektivität und Latenz (in Millisekunden) der Cluster-Paarung.
+
+
+
+== Parameter
+
+Diese Methode hat keinen Eingabeparameter:
+
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Cluster-Paare
+ a| 
+Informationen zu jedem gepaarten Cluster.
+ a| 
+xref:reference_element_api_clusterpair.adoc[Cluster-Paar] Array erledigen
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "ListClusterPairs",
+   "params": {
+      },
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+ "id": 1,
+ "result": {
+   "clusterPairs": [
+     {
+      "clusterName": "cluster2",
+      "clusterPairID": 3,
+      "clusterPairUUID": "9866fbeb-c2f8-4df3-beb9-58a5c4e49c9b",
+      "clusterUUID": 5487,
+      "latency": 1,
+      "mvip": "172.1.1.5",
+      "status": "Connected"
+      "version": "8.0.0.1361"
+     },
+     {
+      "clusterName": "cluster3",
+      "clusterPairID": 2,
+      "clusterPairUUID": "8132a699-ce82-41e0-b406-fb914f976042",
+      "clusterUUID": 1383,
+      "latency": 1,
+      "mvip": "172.1.1.6",
+      "status": "Connected"
+      "version": "8.0.0.1361"
+     }
+   ]
+ }
+----
+
+
+== Neu seit Version
+
+9.6

@@ -1,0 +1,149 @@
+---
+permalink: api/reference_element_api_listclusterfaults.html 
+sidebar: sidebar 
+keywords: cluster,list,listing,fault,faults,listclusterfaults,error,errors 
+summary: Sie können mit der Methode ListClusterStandards Informationen zu allen auf dem Cluster erkannten Fehlern auflisten. Mit dieser Methode können Sie sowohl aktuelle Fehler als auch Fehler auflisten, die behoben wurden. Das System speichert Fehler alle 30 Sekunden im Cache. 
+---
+= ListenClusterstandards
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `ListClusterFaults` Methode zum Auflisten von Informationen zu Fehlern, die im Cluster erkannt wurden. Mit dieser Methode können Sie sowohl aktuelle Fehler als auch Fehler auflisten, die behoben wurden. Das System speichert Fehler alle 30 Sekunden im Cache.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Bestpractices
+ a| 
+Schließen Sie Fehler ein, die durch eine suboptimale Systemkonfiguration ausgelöst werden. Mögliche Werte:
+
+* Richtig
+* Falsch
+
+ a| 
+boolesch
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Fehlertypen
+ a| 
+Bestimmt die Art der zurückgegebenen Fehler. Mögliche Werte:
+
+* Aktuell: Liste der aktiven, nicht behobenen Fehler.
+* Behoben: Listen Sie Fehler auf, die zuvor erkannt und behoben wurden.
+* Alle: Listen Sie sowohl aktuelle als auch aufgelöste Fehler auf. Sie können den Fehlerstatus im „`reSolved`“-Mitglied des Fehlerobjekts sehen.
+
+ a| 
+Zeichenfolge
+ a| 
+Alle
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Fehler
+ a| 
+Ein Objekt, das die angeforderten Cluster-Fehler beschreibt.
+ a| 
+xref:reference_element_api_fault.adoc[Fehler]
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "ListClusterFaults",
+    "params": {
+      "faultTypes": "current",
+      "bestPractices": true
+    },
+    "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "faults": [
+      {
+        "clusterFaultID": 1,
+        "code": "notUsingLACPBondMode",
+        "data": null,
+        "date": "2016-04-26T14:57:04.275286Z",
+        "details": "Bond1G interfaces found not using LACP bond mode. Nodes not set to LACP bond mode: {1,2,4,5}",
+        "driveID": 0,
+        "driveIDs": [],
+        "nodeHardwareFaultID": 0,
+        "nodeID": 0,
+        "resolved": false,
+        "resolvedDate": "",
+        "serviceID": 0,
+        "severity": "bestPractice",
+        "type": "cluster"
+      },
+      {
+        "clusterFaultID": 9,
+        "code": "disconnectedClusterPair",
+        "data": null,
+        "date": "2016-04-26T20:40:08.736597Z",
+        "details": "One of the clusters in a pair may have become misconfigured or disconnected.  Remove the local pairing and retry pairing the clusters. Disconnected Cluster Pairs: []. Misconfigured Cluster Pairs: [3]",
+        "driveID": 0,
+        "driveIDs": [],
+        "nodeHardwareFaultID": 0,
+        "nodeID": 0,
+        "resolved": false,
+        "resolvedDate": "",
+        "serviceID": 0,
+        "severity": "warning",
+        "type": "cluster"
+      }
+    ]
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6

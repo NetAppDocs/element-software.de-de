@@ -1,0 +1,185 @@
+---
+permalink: api/reference_element_api_getclusterversioninfo.html 
+sidebar: sidebar 
+keywords: cluster,version,info,get,getting,getclusterversioninfo 
+summary: Mit der Methode GetClusterVersionInfo können Sie Informationen über die auf jedem Knoten des Clusters ausgeführte Element Softwareversion abrufen. Diese Methode gibt auch Informationen zu Nodes zurück, die sich derzeit beim Aktualisieren der Software befinden. 
+---
+= GetClusterVersionInfo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `GetClusterVersionInfo` Methode zum Abrufen von Informationen über die auf jedem Node im Cluster ausgeführte Element Softwareversion. Diese Methode gibt auch Informationen zu Nodes zurück, die sich derzeit beim Aktualisieren der Software befinden.
+
+
+
+== Cluster-Version Info-Objektmitglieder
+
+Diese Methode verfügt über die folgenden Objektmitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+NodeID
+ a| 
+ID des Node.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+NodeInternalRevision
+ a| 
+Interne Softwareversion des Node.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Knotenversion
+ a| 
+Softwareversion des Node.
+ a| 
+Zeichenfolge
+
+|===
+
+
+== Parameter
+
+Diese Methode hat keine Eingabeparameter.
+
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+ClusterAPIVersion
+ a| 
+Die aktuelle API-Version auf dem Cluster.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+ClusterVersion
+ a| 
+Version der Element Software, die derzeit auf dem Cluster ausgeführt wird.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Cluster-VersionInfo
+ a| 
+Liste der Nodes im Cluster mit Versionsinformationen für jeden Node
+ a| 
+JSON-Objekt-Array
+
+
+
+ a| 
+HängenClusterVersion
+ a| 
+Ist diese Version vorhanden, wird die Cluster-Software derzeit aktualisiert oder auf zurückgesetzt.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+SoftwareVersionInfo
+ a| 
+Der Status eines Upgrades. Objektmitglieder:
+
+* StromstärkeVersion:
++
+Die aktuelle Softwareversion auf einem Node.
+
+* NodeID: ID des Node, der von CurrentVersion auf PendingVersion aktualisiert wird. Dieses Feld ist 0 (Null), wenn keine Aktualisierung durchgeführt wird.
+* Paketname: Name des Softwarepakets, das installiert wird.
+* PendingVersion: Die Version der installierten Software.
+* StartZeit: Datum und Uhrzeit der Installation im UTC+0-Format.
+
+ a| 
+JSON-Objekt
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "GetClusterVersionInfo",
+   "params": {},
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+ "id": 1,
+ "result": {
+   "clusterAPIVersion": "6.0",
+   "clusterVersion": "6.1382",
+   "clusterVersionInfo": [
+   {
+      "nodeID": 1,
+      "nodeInternalRevision": "BuildType=Release Element=carbon Release=carbon ReleaseShort=carbon Version=6.1382 sfdev=6.28 Repository=dev Revision=061511b1e7fb BuildDate=2014-05-28T18:26:45MDT",
+      "nodeVersion": "6.1382"
+   },
+   {
+      "nodeID": 2,
+      "nodeInternalRevision": "BuildType=Release Element=carbon Release=carbon ReleaseShort=carbon Version=6.1382 sfdev=6.28 Repository=dev Revision=061511b1e7fb BuildDate=2014-05-28T18:26:45MDT",
+      "nodeVersion": "6.1382"
+   },
+   {
+      "nodeID": 3,
+      "nodeInternalRevision": "BuildType=Release Element=carbon Release=carbon ReleaseShort=carbon Version=6.1382 sfdev=6.28 Repository=dev Revision=061511b1e7fb BuildDate=2014-05-28T18:26:45MDT",
+      "nodeVersion": "6.1382"
+   },
+   {
+      "nodeID": 4,
+      "nodeInternalRevision": "BuildType=Release Element=carbon Release=carbon ReleaseShort=carbon Version=6.1382 sfdev=6.28 Repository=dev Revision=061511b1e7fb BuildDate=2014-05-28T18:26:45MDT",
+      "nodeVersion": "6.1382"
+   }
+ ],
+   "softwareVersionInfo": {
+      "currentVersion": "6.1382",
+      "nodeID": 0,
+      "packageName": "",
+      "pendingVersion": "6.1382",
+      "startTime": ""
+    }
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6

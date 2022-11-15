@@ -1,0 +1,32 @@
+---
+permalink: storage/task_system_manage_fips_enable_the_fips_drives_feature.html 
+sidebar: sidebar 
+keywords: fips, security, federal information processing standards, 140-2, enable, ear 
+summary: Sie können die Funktion FIPS-Laufwerke mithilfe der NetApp Element-Software EnableFeature API-Methode aktivieren. 
+---
+= Aktivierung der FIPS-Laufwerksfunktion
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Funktion für FIPS-Laufwerke kann über die NetApp Element Software aktiviert werden `EnableFeature` API-Methode.
+
+Die Verschlüsselung im Ruhezustand muss auf dem Cluster aktiviert sein und alle Nodes und Laufwerke müssen FIPS-fähig sein, wie angegeben, wenn der GetFipsReport den Status bereit für alle Nodes anzeigt.
+
+.Schritt
+. Aktivieren Sie mithilfe der Element API FIPS auf allen Laufwerken, indem Sie Folgendes eingeben:
++
+`EnableFeature params: FipsDrives`
+
+
+
+
+
+== Weitere Informationen
+
+* link:../api/index.html["Storage-Management mit der Element API"]
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

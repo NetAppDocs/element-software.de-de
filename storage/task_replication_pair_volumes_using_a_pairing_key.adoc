@@ -1,0 +1,74 @@
+---
+permalink: storage/task_replication_pair_volumes_using_a_pairing_key.html 
+sidebar: sidebar 
+keywords: volume pairings, pairing key, replication 
+summary: Wenn für ein Remote-Cluster keine Cluster-Anmeldedaten vorhanden sind, können Sie ein Volume mithilfe eines Kopplungsschlüssels mit einem anderen Volume auf einem Remote-Cluster koppeln. 
+---
+= Koppeln von Volumes mithilfe eines Kopplschlüssels
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn für ein Remote-Cluster keine Cluster-Anmeldedaten vorhanden sind, können Sie ein Volume mithilfe eines Kopplungsschlüssels mit einem anderen Volume auf einem Remote-Cluster koppeln.
+
+.Was Sie und#8217;ll benötigen
+* Stellen Sie sicher, dass die Cluster, die die Volumes enthalten, gekoppelt sind.
+* Stellen Sie sicher, dass auf dem Remote-Cluster ein Volume zum Koppeln vorhanden ist.
++
+
+NOTE: Sie können eine Replikationsquelle und ein Replikationsziel nach dem Pairing-Prozess zuweisen. Eine Replikationsquelle oder ein Replikationsziel kann ein Volume in einem Volume-Paar sein. Sie sollten ein Ziel-Volume erstellen, das keine Daten enthält und exakt die Merkmale des Quell-Volume hat, z. B. Größe, Einstellung der Blockgröße für die Volumes (512 oder 4 kb) und QoS-Konfiguration. Wenn Sie ein vorhandenes Volume als Replikationsziel zuweisen, werden die Daten auf diesem Volume überschrieben. Das Zielvolume kann größer oder gleich groß sein wie das Quellvolume, kann aber nicht kleiner sein.
+
+
+
+.Schritte
+. Wählen Sie *Management* > *Volumes*.
+. Klicken Sie auf das Symbol *Aktionen* für das Volume, das Sie koppeln möchten.
+. Klicken Sie Auf *Paar*.
+. Wählen Sie im Dialogfeld *Pair Volume* die Option *Pairing starten* aus.
+. Wählen Sie * Ich nicht* aus, um anzugeben, dass Sie keinen Zugriff auf den Remote-Cluster haben.
+. Wählen Sie aus der Liste einen *Replikationsmodus* aus:
++
+** *Echtzeit (Asynchron)*: Schreibvorgänge werden dem Client bestätigt, nachdem sie auf dem Quellcluster erstellt wurden.
+** *Real-Time (Synchronous)*: Schreibvorgänge werden dem Client bestätigt, nachdem sie sowohl auf den Quell- als auch auf den Ziel-Clustern festgelegt sind.
+** *Nur Snapshots*: Nur Snapshots, die auf dem Quellcluster erstellt wurden, werden repliziert. Aktive Schreibvorgänge vom Quell-Volume werden nicht repliziert.
+
+
+. Klicken Sie Auf *Schlüssel Generieren*.
++
+
+NOTE: Diese Aktion generiert einen Textschlüssel für das Koppeln und erstellt ein nicht konfiguriertes Volume-Paar auf dem lokalen Cluster. Wenn Sie den Vorgang nicht abschließen, müssen Sie das Volume-Paar manuell löschen.
+
+. Kopieren Sie den Kopplungsschlüssel in die Zwischenablage Ihres Computers.
+. Der Kopplungsschlüssel kann dem Cluster-Administrator am Remote-Cluster-Standort zugänglich gemacht werden.
++
+
+NOTE: Der Volume-Kopplungsschlüssel sollte sicher behandelt werden und nicht so verwendet werden, dass ein versehentlicher oder ungesicherter Zugriff möglich wäre.
+
++
+
+IMPORTANT: Ändern Sie keine Zeichen im Kopplungsschlüssel. Der Schlüssel wird ungültig, wenn er geändert wird.
+
+. Wählen Sie in der Remote Cluster Element UI die Option *Management* > *Volumes* aus.
+. Klicken Sie auf das Aktionen-Symbol für das Volume, das Sie koppeln möchten.
+. Klicken Sie Auf *Paar*.
+. Wählen Sie im Dialogfeld *Pair Volume* die Option *Complete Pairing* aus.
+. Fügen Sie den Kopplschlüssel aus dem anderen Cluster in die Box *Pairing Key* ein.
+. Klicken Sie Auf *Pairing Abschließen*.
++
+Nachdem Sie die Paarung bestätigt haben, beginnen die beiden Cluster den Prozess, die Volumes zum Koppeln zu verbinden. Während des Pairings können Sie Meldungen in der Spalte *Volume Status* des Fensters *Volume Pairs* sehen. Das Volume-Paar wird angezeigt `PausedMisconfigured` Bis die Quelle und das Ziel des Volume-Paars zugewiesen sind.
+
++
+Nach erfolgreichem Abschluss der Paarung wird empfohlen, die Volumetabelle zu aktualisieren, um die *Pair*-Option aus der *Aktionen*-Liste für das gepaarte Volumen zu entfernen. Wenn Sie die Tabelle nicht aktualisieren, bleibt die Option *Paar* zur Auswahl verfügbar. Wenn Sie die Option *Pair* erneut auswählen, wird eine neue Registerkarte geöffnet, und da das Volume bereits gekoppelt ist, meldet das System einen `StartVolumePairing Failed: xVolumeAlreadyPaired` Fehlermeldung im Fenster *Pair Volume* der Element UI Seite.
+
+
+
+
+
+== Weitere Informationen
+
+* xref:reference_replication_volume_pairing_messages.adoc[Meldungen zur Volume-Kopplung]
+* xref:reference_replication_volume_pairing_warnings.adoc[Warnungen zum Volume-Pairing]
+* xref:task_replication_assign_replication_source_and_target_to_paired_volumes.adoc[Weisen Sie gepaarten Volumes eine Replikationsquelle und ein Replikationsziel zu]
+

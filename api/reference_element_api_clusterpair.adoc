@@ -1,0 +1,107 @@
+---
+permalink: api/reference_element_api_clusterpair.html 
+sidebar: sidebar 
+keywords: objects,object,clusterPair 
+summary: Das ClusterPair-Objekt enthält Informationen über Cluster, die mit dem lokalen Cluster gekoppelt sind. Mit der ListClusterpairs-Methode können Sie eine Liste der ClusterPair-Objekte für das lokale Cluster abrufen. 
+---
+= Cluster-Paar
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das ClusterPair-Objekt enthält Informationen über Cluster, die mit dem lokalen Cluster gekoppelt sind. Mit der ListClusterpairs-Methode können Sie eine Liste der ClusterPair-Objekte für das lokale Cluster abrufen.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+ClusterName
+ a| 
+Der Name des anderen Clusters im Paar.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+ClusterPairID
+ a| 
+Eine eindeutige ID, die jedem Cluster im Paar gegeben wurde.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+ClusterPairUUID
+ a| 
+Die universell eindeutige Kennung für das Cluster-Paar.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+UUID
+ a| 
+Eindeutige Kennung für das Remote-Cluster im Cluster-Paar.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Latenz
+ a| 
+Latenz in Millisekunden zwischen den Clustern.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+mvip
+ a| 
+Die IP-Adresse der Managementverbindung für gepaarte Cluster.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Status
+ a| 
+Der Status der Verbindung zwischen den gekoppelten Clustern. Mögliche Werte:
+
+* Nicht Konfiguriert
+* Verbunden
+* Falsch Konfiguriert
+* Verbindung Getrennt
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Version
+ a| 
+Die Elementversion des anderen Clusters im Paar.
+ a| 
+Zeichenfolge
+
+|===
+
+
+== Weitere Informationen
+
+xref:reference_element_api_listclusterpairs.adoc[ListenClusterpaare]

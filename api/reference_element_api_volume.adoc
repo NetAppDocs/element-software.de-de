@@ -1,0 +1,303 @@
+---
+permalink: api/reference_element_api_volume.html 
+sidebar: sidebar 
+keywords: object,objects,volume 
+summary: Das Volume-Objekt enthält Konfigurationsinformationen über nicht gepaarte oder gepaarte Volumes. Sie enthält keine Laufzeitinformationen oder Nutzungsinformationen und enthält keine Informationen über virtuelle Volumes. 
+---
+= Datenmenge
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Volume-Objekt enthält Konfigurationsinformationen über nicht gepaarte oder gepaarte Volumes. Sie enthält keine Laufzeitinformationen oder Nutzungsinformationen und enthält keine Informationen über virtuelle Volumes.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Datenzugriff
+ a| 
+Der für das Volume zulässige Zugriffstyp. Mögliche Werte:
+
+* `readOnly`: Nur Leseoperationen sind erlaubt.
+* `readWrite`: Lesen und Schreiben sind erlaubt.
+* `locked`: Es sind keine Lese- oder Schreibvorgänge zulässig.
+* `replicationTarget`: Als Zielvolumen in einem replizierten Volume-Paar bestimmt.
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+AccountID
+ a| 
+Die AccountID des Kontos, der das Volumen enthält.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Merkmale
+ a| 
+Liste von Name-Wert-Paaren im JSON-Objektformat.
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+Blocksize
+ a| 
+Die Größe von Blöcken auf dem Volume.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+CreateTime
+ a| 
+Die UTC+0-formatierte Zeit, zu der das Volume erstellt wurde.
+ a| 
+ISO 8601-Zeichenfolge
+
+
+
+ a| 
+AktuellenSchutzschema
+ a| 
+Das Schutzschema, das für dieses Volumen verwendet wird. Wenn ein Volumen von einem Schutzschema in ein anderes konvertiert wird, spiegelt dieses Mitglied das Schutzschema wider, in das das Volumen konvertiert wird.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+DeleteTime
+ a| 
+Die UTC+0-formatierte Zeit, zu der das Volume gelöscht wurde.
+ a| 
+ISO 8601-Zeichenfolge
+
+
+
+ a| 
+Able512e
+ a| 
+Wenn auf „true“ gesetzt ist, bietet das Volume 512-Byte-Sektoremulation.
+ a| 
+boolesch
+
+
+
+ a| 
+AbleSnapMirrorReplication
+ a| 
+Gibt an, ob das Volume für die Replizierung mit SnapMirror Endpunkten verwendet werden kann.
+ a| 
+boolesch
+
+
+
+| FifoGröße | Gibt die maximale Anzahl der Snapshots des zu pflegenden Volumes an, wenn der First-in-First-Out (FIFO)-Snapshot-Aufbewahrungsmodus verwendet wird. | Ganzzahl 
+
+
+ a| 
+iqn
+ a| 
+Der qualifizierte iSCSI-Name des Volumes.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+LastAccessTime
+ a| 
+Das letzte Mal, wenn ein Zugriff (einschließlich I/O) auf das Volume auftrat (formatiert als UTC+0). Wenn die letzte Zugriffszeit nicht bekannt ist, ist dieser Wert Null.
+ a| 
+ISO 8601-Zeichenfolge
+
+
+
+ a| 
+LastAccessTimeIO
+ a| 
+Das letzte Mal, wenn ein I/O zum Volume aufgetreten ist (formatiert als UTC+0). Wenn die letzte Zugriffszeit nicht bekannt ist, ist dieser Wert Null.
+ a| 
+ISO 8601-Zeichenfolge
+
+
+
+| Min50 Größe | Gibt die Mindestanzahl der FIFO-Snapshot-Steckplätze an, die gleichzeitig vom Volume reserviert wurden, wenn der FIFO-Modus (First in First-Out) für die Snapshot-Aufbewahrung verwendet wird. | Ganzzahl 
+
+
+ a| 
+Name
+ a| 
+Der Name des Volumes, der bei der Erstellung angegeben wurde.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Zurückgewinnungsschema
+ a| 
+Wenn ein Volumen von einem Schutzschema in ein anderes konvertiert wird, spiegelt dieses Mitglied das Schutzschema wider, aus dem das Volumen konvertiert wird. Dieses Mitglied ändert sich erst, wenn eine Konvertierung gestartet wird. Wenn ein Volume noch nie konvertiert wurde, ist dieses Mitglied null.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+PurgeTime
+ a| 
+Die UTC+0-formatierte Zeit, zu der das Volume aus dem System gelöscht wurde.
+ a| 
+ISO 8601-Zeichenfolge
+
+
+
+ a| 
+qos
+ a| 
+Die Quality-of-Service-Einstellungen für dieses Volume.
+ a| 
+xref:reference_element_api_qos.adoc[QoS]
+
+
+
+ a| 
+QosPolicyID
+ a| 
+Die dem Volume zugeordnete QoS-Richtlinien-ID. Der Wert ist null, wenn das Volume nicht einer Richtlinie zugeordnet ist.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+ScsiEUIDeviceID
+ a| 
+Weltweit eindeutige SCSI-Gerätekennung für das Volume im 16-Byte-Format auf Basis von EUI-64.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+ScsiNAADeviceID
+ a| 
+Weltweit eindeutige SCSI-Gerätekennung für das Volume im NAA IEEE-Registered Extended-Format.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+SliceCount
+ a| 
+Die Anzahl der Schichten auf dem Volumen. Dieser Wert ist immer „1“.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Status
+ a| 
+Der aktuelle Status des Volumes. Mögliche Werte:
+
+* Init: Ein Volume, das initialisiert wird und nicht für Verbindungen bereit ist.
+* Aktiv: Ein aktives Volume, das für Verbindungen bereit ist.
+* Gelöscht: Ein Volume, das zum Löschen markiert, aber noch nicht gelöscht wurde.
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Summengröße
+ a| 
+Die bereitgestellten Gesamtbyte Kapazität.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+VirtualVolumeID
+ a| 
+Die eindeutige ID des virtuellen Volumes, die dem Volume zugeordnet ist, falls vorhanden.
+ a| 
+UUID
+
+
+
+ a| 
+VolumeAccessGroups
+ a| 
+Liste der IDs Pf Volume Zugriffsgruppen, zu denen ein Volume gehört. Dieser Wert ist eine leere Liste, wenn ein Volume keiner Volume-Zugriffsgruppe angehört.
+ a| 
+Integer-Array
+
+
+
+ a| 
+VolumeConsistencyGroupUUID
+ a| 
+Die universell eindeutige ID der Volume-Konsistenzgruppe, deren Mitglied das Volume ist.
+ a| 
+UUID
+
+
+
+ a| 
+VolumeID
+ a| 
+Spezielle VolumeID für das Volume
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Volumepaar
+ a| 
+Informationen zu einem gepaarten Volume. Nur sichtbar, wenn ein Volume gekoppelt ist. Dieser Wert ist eine leere Liste, wenn das Volume nicht gekoppelt ist.
+ a| 
+xref:reference_element_api_volumepair.adoc[Volumepaar] Array erledigen
+
+
+
+ a| 
+VolumeUUID
+ a| 
+Die universell eindeutige ID des Volumens.
+ a| 
+UUID
+
+|===
+
+
+== Weitere Informationen
+
+* xref:reference_element_api_listactivevolumes.adoc[ListeActiveVolumes]
+* xref:reference_element_api_listdeletedvolumes.adoc[ListDeletedVolumes]
+* xref:reference_element_api_listvolumes.adoc[ListVolumes]
+* xref:reference_element_api_listvolumesforaccount.adoc[ListVolumesForAccount]
+* xref:reference_element_api_qos.adoc[QoS]
+

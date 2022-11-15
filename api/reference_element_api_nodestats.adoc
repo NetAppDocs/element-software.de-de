@@ -1,0 +1,193 @@
+---
+permalink: api/reference_element_api_nodestats.html 
+sidebar: sidebar 
+keywords: object,objects,nodestats 
+summary: Das Objekt nodeStats enthält allgemeine Aktivitätsmessungen für einen Knoten. Sie können die GetNodeStats und ListNodeStats API Methoden verwenden, um einige oder alle nodeStats Objekte zu erhalten. 
+---
+= KnotenStatistiken
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Objekt nodeStats enthält allgemeine Aktivitätsmessungen für einen Knoten. Sie können das verwenden `GetNodeStats` Und `ListNodeStats` API-Methoden, um einige oder alle nodeStats-Objekte zu erhalten.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Zählen
+ a| 
+Die Anzahl der gesamten Proben im Objekt nodeStats.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+cpu
+ a| 
+CPU-Auslastung in %.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+CpuTotal
+ a| 
+Monoton erhöhter Mehrwert der cpu-Auslastung.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+CBytesIn
+ a| 
+Byte in auf der Cluster-Schnittstelle.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+CBytesOut
+ a| 
+Byte out auf der Cluster-Schnittstelle.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+SBytesIn
+ a| 
+Byte in auf der Speicherschnittstelle.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+SBytesOut
+ a| 
+Bytes auf der Speicherschnittstelle entfernt.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+MBytesIn
+ a| 
+Byte in auf der Managementoberfläche.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+MBytesOut
+ a| 
+Byte out auf der Managementoberfläche.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+NetworkUtilizationCluster
+ a| 
+Auslastung der Netzwerkschnittstelle (in %) für die Cluster-Netzwerkschnittstelle.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+NetworkUtilizationStorage
+ a| 
+Auslastung der Netzwerkschnittstelle (in %) für das Speichernetzwerk-Interface.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+ReadLatencyUSecTotal
+ a| 
+Der monoton Mehrwert der Gesamtzeit, die für die Durchführung von Leseoperationen auf dem Node aufgewendet wurde.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+ReadOps
+ a| 
+Monoton erhöhter Wert von gesamten Leseoperationen auf einen Node.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+SsLoadHistogramm
+ a| 
+Histogramm-Daten zur Darstellung der Schichtdienstlast im Laufe der Zeit.
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+Zeitstempel
+ a| 
+Die aktuelle Zeit im UTC+0-Format.
+ a| 
+ISO 8601-Datumszeichenfolge
+
+
+
+ a| 
+UsedMemory
+ a| 
+Gesamtspeicherverbrauch in Byte.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Write eLatencyUSecTotal
+ a| 
+Der monoton Mehrwert der Gesamtzeit, die für die Durchführung von Schreibvorgängen auf den Node aufgewendet wurde.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Schreiboperationen
+ a| 
+Monoton erhöhter Wert aller Schreibvorgänge auf einen Node.
+ a| 
+Ganzzahl
+
+|===
+
+
+== Weitere Informationen
+
+* xref:reference_element_api_getnodestats.adoc[GetNodeStats]
+* xref:reference_element_api_listnodestats.adoc[ListNodeStats]
+

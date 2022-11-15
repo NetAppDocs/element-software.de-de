@@ -1,0 +1,101 @@
+---
+permalink: api/reference_element_api_resyncsnapmirrorrelationship.html 
+sidebar: sidebar 
+keywords: SnapMirror,relationship,resync,resyncing,ResyncSnapMirrorRelationship 
+summary: Die Web-UI der Element Software verwendet die Methode ResyncSnapMirrorRelationship, um eine Spiegelbeziehung zwischen einem Quell- und Zielendpunkt herzustellen oder wiederherzustellen. Wenn Sie eine Beziehung neu synchronisieren, entfernt das System Schnappschüsse auf dem Ziel-Volume, die neuer sind als die allgemeine Snapshot-Kopie, und mountet dann das Ziel-Volume als Datensicherungs-Volume mit der gemeinsamen Snapshot-Kopie als exportierte Snapshot-Kopie. 
+---
+= ResyncSnapMirrorRelationship
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Web-UI der Element Software verwendet das `ResyncSnapMirrorRelationship` Methode zum Aufbau oder zur Wiederherstellung einer Spiegelbeziehung zwischen einem Quell- und Zielendpunkt Wenn Sie eine Beziehung neu synchronisieren, entfernt das System Schnappschüsse auf dem Ziel-Volume, die neuer sind als die allgemeine Snapshot-Kopie, und mountet dann das Ziel-Volume als Datensicherungs-Volume mit der gemeinsamen Snapshot-Kopie als exportierte Snapshot-Kopie.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+SnapMirrorEndpointID
+ a| 
+Die Endpunkt-ID des Remote-ONTAP-Storage-Systems, die mit dem Element Storage-Cluster kommunizieren
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Zielvolumen
+ a| 
+Der Zieldatenträger in der SnapMirror Beziehung.
+ a| 
+xref:reference_element_api_snapmirrorvolumeinfo.adoc[SnapMirror Volumeinfo]
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Maximale Transferrate
+ a| 
+Gibt die maximale Datentransferrate zwischen den Volumes in Kilobyte pro Sekunde an. Der Standardwert 0 ist unbegrenzt und erlaubt der SnapMirror Beziehung, die verfügbare Netzwerkbandbreite voll zu nutzen.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+QuelleVolume
+ a| 
+Das Quell-Volume in der SnapMirror Beziehung.
+ a| 
+xref:reference_element_api_snapmirrorvolumeinfo.adoc[SnapMirror Volumeinfo]
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+SnapMirror Beziehung
+ a| 
+Ein Objekt, das Informationen über die resynchronisierte SnapMirror Beziehung enthält.
+ a| 
+xref:reference_element_api_snapmirrorrelationship.adoc[SnapMirror Beziehung]
+
+|===
+
+
+== Neu seit Version
+
+10.1

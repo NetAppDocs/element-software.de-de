@@ -1,0 +1,26 @@
+---
+permalink: storage/task_data_manage_vvol_delete_a_virtual_volume.html 
+sidebar: sidebar 
+keywords: virtual volume, delete, vvols, use Element UI to delete a vvol 
+summary: Obwohl virtuelle Volumes immer aus der VMware Management-Ebene gelöscht werden sollten, ist die Funktion zum Löschen virtueller Volumes in der Element-UI aktiviert. Sie sollten ein virtuelles Volume nur bei Bedarf aus der Element UI löschen, beispielsweise wenn vSphere virtuelle Volumes auf dem SolidFire Storage nicht bereinigt. 
+---
+= Löschen Sie ein virtuelles Volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Obwohl virtuelle Volumes immer aus der VMware Management-Ebene gelöscht werden sollten, ist die Funktion zum Löschen virtueller Volumes in der Element-UI aktiviert. Sie sollten ein virtuelles Volume nur bei Bedarf aus der Element UI löschen, beispielsweise wenn vSphere virtuelle Volumes auf dem SolidFire Storage nicht bereinigt.
+
+. Wählen Sie *VVols* > *Virtual Volumes* aus.
+. Klicken Sie auf das Aktionen-Symbol für das virtuelle Volume, das Sie löschen möchten.
+. Wählen Sie im Menü Ergebnis die Option *Löschen* aus.
++
+
+IMPORTANT: Sie sollten ein virtuelles Volume von der VMware Management-Ebene löschen, um vor dem Löschen sicherzustellen, dass das virtuelle Volume ordnungsgemäß getrennt wird. Sie sollten ein virtuelles Volume nur bei Bedarf aus der Element UI löschen, beispielsweise wenn vSphere virtuelle Volumes auf dem SolidFire Storage nicht bereinigt. Wenn Sie ein virtuelles Volume aus der Element UI löschen, wird das Volume sofort gelöscht.
+
+. Bestätigen Sie die Aktion.
+. Aktualisieren Sie die Liste der virtuellen Volumes, um zu bestätigen, dass das virtuelle Volume entfernt wurde.
+. *Optional*: Wählen Sie *Reporting* > *Ereignisprotokoll*, um zu bestätigen, dass die Löschung erfolgreich war.
+

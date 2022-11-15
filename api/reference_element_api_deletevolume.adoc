@@ -1,0 +1,160 @@
+---
+permalink: api/reference_element_api_deletevolume.html 
+sidebar: sidebar 
+keywords: volume,volumes,delete,deleting,DeleteVolume 
+summary: 'Sie können die Methode DeleteVolume verwenden, um ein aktives Volume zum Löschen zu markieren. Wenn markiert, wird das Volume \(dauerhaft gelöscht\) gelöscht, nachdem das Bereinigungsintervall abgelaufen ist.' 
+---
+= DeleteVolume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `DeleteVolume` Methode zum Markieren eines aktiven Volumes zum Löschen. Wenn diese Markierung markiert ist, wird das Volumen nach Ablauf des Reinigungsintervalls gelöscht (dauerhaft gelöscht).
+
+Nachdem Sie eine Anfrage zum Löschen eines Volume gestellt haben, werden alle aktiven iSCSI-Verbindungen zum Volume sofort beendet. Während sich das Volume in diesem Zustand befindet, sind keine weiteren Verbindungen zulässig. Ein markiertes Volume wird in Zielermittlungsanfragen nicht zurückgegeben.
+
+Snapshots eines Volumes, die zum Löschen markiert wurden, sind nicht betroffen. Snapshots werden so lange aufbewahrt, bis das Volume aus dem System entfernt wird. Wenn ein Volume zum Löschen markiert ist und gerade ein Lese- oder Schreibvorgang für das Massenvolumen ausgeführt wird, wird der Lese- oder Schreibvorgang für das Massenvolumen angehalten.
+
+Wenn das gelöschte Volume mit einem Volume gekoppelt ist, wird die Replizierung zwischen den gepaarten Volumes ausgesetzt und es werden keine Daten an dieses Volume oder daraus übertragen, während sie sich im gelöschten Zustand befinden. Das entfernte Volume, mit dem das gelöschte Volume gekoppelt wurde, wechselt in einen Status „PausedUnkonfiguriert“ und Daten werden nicht mehr an das gelöschte Volume oder an das gelöschte Volume gesendet. Bis das gelöschte Volume gelöscht ist, kann es wiederhergestellt werden und Datentransfers werden fortgesetzt. Wenn das gelöschte Volume aus dem System gelöscht wird, wird das Volume, mit dem es gepaart wurde, in den Status „StopedMisConfigured“ versetzt und der Status der Volume-Kopplung wurde entfernt. Das gespült Volume ist dauerhaft nicht mehr verfügbar.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+VolumeID
+ a| 
+Die ID des zu löschenden Volumes.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Datenmenge
+ a| 
+Objekt mit Informationen zum gelöschten Volume.
+ a| 
+xref:reference_element_api_volume.adoc[Datenmenge]
+
+
+
+ a| 
+VolumeID
+ a| 
+Die VolumeID des gelöschten Volumes.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Kurve
+ a| 
+Die Kurve ist ein Satz von Schlüsselwert-Paaren. Die Schlüssel sind die E/A-Größe in Byte. Die Werte stellen die Kosten für die Performance eines IOP bei einer bestimmten I/O-Größe dar. Die Kurve wird relativ zu einem 4096-Byte-Vorgang berechnet, der auf 100 IOPS eingestellt ist.
+ a| 
+JSON-Objekt
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "DeleteVolume",
+   "params": {
+      "volumeID"  : 5
+   },
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "volume": {
+      "access": "readWrite",
+      "accountID": 1,
+      "attributes": {
+        "name1": "value1",
+        "name2": "value2",
+        "name3": "value3"
+      },
+      "blockSize": 4096,
+      "createTime": "2016-03-28T16:16:13Z",
+      "deleteTime": "2016-03-31T22:59:42Z",
+      "enable512e": true,
+      "iqn": "iqn.2010-01.com.solidfire:jyay.1459181777648.5",
+      "name": "1459181777648",
+      "purgeTime": "2016-04-01T06:59:42Z",
+      "qos": {
+        "burstIOPS": 150,
+        "burstTime": 60,
+        "curve": {
+          "4096": 100,
+          "8192": 160,
+          "16384": 270,
+          "32768": 500,
+          "65536": 1000,
+          "131072": 1950,
+          "262144": 3900,
+          "524288": 7600,
+          "1048576": 15000
+        },
+        "maxIOPS": 100,
+        "minIOPS": 60
+      },
+      "scsiEUIDeviceID": "6a79617900000005f47acc0100000000",
+      "scsiNAADeviceID": "6f47acc1000000006a79617900000005",
+      "sliceCount": 1,
+      "status": "deleted",
+      "totalSize": 1000341504,
+      "virtualVolumeID": null,
+      "volumeAccessGroups": [
+        1
+      ],
+      "volumeID": 5,
+      "volumePairs": []
+    }
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6

@@ -1,0 +1,54 @@
+---
+permalink: api/reference_element_api_response_object_members.html 
+sidebar: sidebar 
+keywords: response,object,member 
+summary: 'Jeder Element Software-API-Antwortkörper hat die folgenden grundlegenden Bestandteile:' 
+---
+= Mitglieder des Antwortobjekts
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Jeder Element Software-API-Antwortkörper hat die folgenden grundlegenden Bestandteile:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Ergebnis
+ a| 
+Das von der Methode zurückgegebene Objekt. Das System gibt ein Objekt mit benannten Mitgliedern zurück, die dem dokumentierten Rückgabewert der Methode entsprechen. Dieses Mitglied ist nicht vorhanden, wenn ein Fehler aufgetreten ist.
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+Fehler
+ a| 
+Das Objekt wird bei Auftreten eines Fehlers zurückgegeben. Dieses Mitglied ist nur vorhanden, wenn ein Fehler aufgetreten ist.
+ a| 
+Objekt
+
+
+
+ a| 
+id
+ a| 
+Eine Kennung, die der Anforderung der Antwort entspricht, wie in der Anforderung angegeben.
+ a| 
+Zeichenfolge oder Ganzzahl
+
+
+
+ a| 
+UnusedParameter
+ a| 
+Eine Warnmeldung, dass mindestens ein falscher Parameter an die API-Methode übergeben wurde und nicht verwendet wurde.
+ a| 
+Objekt
+
+|===

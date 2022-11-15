@@ -1,0 +1,88 @@
+---
+permalink: api/reference_element_api_getnodeactivetlsciphers.html 
+sidebar: sidebar 
+keywords: tls,cipher,ciphers,get,getting,getnodeactivetlsciphers,accepted 
+summary: Sie können die GetNodeActiveTlsCiphers-Methode auf einem einzelnen Knoten verwenden, um eine Liste der TLS-Chiffren zu erhalten, die derzeit auf diesem Knoten akzeptiert werden. Sie können diese Methode auf Management- und Storage-Nodes verwenden. 
+---
+= GetNodeActiveTlsCiphers
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `GetNodeActiveTlsCiphers` Methode auf einem einzelnen Knoten, um eine Liste der TLS-Chiffren zu erhalten, die derzeit auf diesem Knoten akzeptiert werden. Sie können diese Methode auf Management- und Storage-Nodes verwenden.
+
+
+
+== Parameter
+
+Diese Methode hat keine Eingabeparameter.
+
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+MandatoryCiphers
+ a| 
+Liste der obligatorischen TLS-Chiffren-Suites für den Knoten. Dies sind Chiffren, die auf dem Knoten immer aktiv sind.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+SupplementalCiphers
+ a| 
+Liste der zusätzlichen TLS-Chiffren-Suites für den Knoten.
+ a| 
+Zeichenfolge
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "GetNodeActiveTlsCiphers",
+  "params": {},
+  "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+      "id" : 1,
+      "result" : {
+        "mandatoryCiphers": [
+            "DHE-RSA-AES256-SHA256",
+            "DHE-RSA-AES256-GCM-SHA384",
+            "ECDHE-RSA-AES256-SHA384",
+            "ECDHE-RSA-AES256-GCM-SHA384"
+        ],
+        "supplementalCiphers": [
+            "DHE-RSA-AES128-SHA256",
+            "DHE-RSA-AES128-GCM-SHA256",
+            "ECDHE-RSA-AES128-SHA256",
+            "ECDHE-RSA-AES128-GCM-SHA256"
+        ]
+    }
+}
+----

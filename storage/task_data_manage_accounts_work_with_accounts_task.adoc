@@ -1,0 +1,134 @@
+---
+permalink: storage/task_data_manage_accounts_work_with_accounts_task.html 
+sidebar: sidebar 
+keywords: element, solidfire, accounts, create, delete, change, chap, view, edit 
+summary: In SolidFire Storage-Systemen können Mandanten Konten verwenden, um Clients zum Verbinden mit Volumes auf einem Node zu ermöglichen. Ein Konto enthält die CHAP-Authentifizierung, die für den Zugriff auf die ihm zugewiesenen Volumes erforderlich ist. Wenn Sie ein Volume erstellen, wird es einem bestimmten Konto zugewiesen. 
+---
+= Arbeiten Sie mit Konten, die CHAP verwenden
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+In SolidFire Storage-Systemen können Mandanten Konten verwenden, um Clients eine Verbindung zu Volumes in einem Cluster zu ermöglichen. Ein Konto enthält die CHAP-Authentifizierung (Challenge-Handshake Authentication Protocol), die für den Zugriff auf die ihm zugewiesenen Volumes erforderlich ist. Wenn Sie ein Volume erstellen, wird es einem bestimmten Konto zugewiesen.
+
+Einem Konto können bis zu zweitausend Volumes zugewiesen sein, ein Volume kann jedoch nur zu einem Konto gehören.
+
+
+
+== CHAP-Algorithmen
+
+Ab Element 12.7 werden sichere FIPS-kompatible CHAP-Algorithmen SHA1, SHA-256 und SHA3-256 unterstützt. Wenn in Element 12.7 ein Host-iSCSI-Initiator eine iSCSI-Sitzung mit einem Element-iSCSI-Ziel erstellt, fordert er eine Liste der zu verwendenden CHAP-Algorithmen an. Das Element iSCSI-Ziel wählt den ersten Algorithmus aus, der es aus der vom Host-iSCSI-Initiator angeforderten Liste unterstützt. Um zu überprüfen, ob das Element iSCSI-Ziel den sichersten Algorithmus wählt, müssen Sie den Host-iSCSI-Initiator so konfigurieren, dass eine Liste von Algorithmen gesendet wird, die von der sichersten geordnet sind, z. B. SHA3-256, um die Sicherheit am wenigsten zu gewährleisten. SHA1 oder MD5. Wenn SHA-Algorithmen nicht vom Host-iSCSI-Initiator angefordert werden, wählt das Element iSCSI-Ziel MD5 aus, vorausgesetzt, die vorgeschlagene Algorithmusliste vom Host enthält MD5. Möglicherweise müssen Sie die Host-iSCSI-Initiator-Konfiguration aktualisieren, um die Unterstützung für die sicheren Algorithmen zu aktivieren.
+
+Wenn Sie während eines Upgrades von Element 12.7 die Host-iSCSI-Initiator-Konfiguration aktualisiert haben, um eine Sitzungsanfrage mit einer Liste zu senden, die SHA-Algorithmen enthält, wenn die Storage-Nodes neu gestartet werden, Die neuen sicheren Algorithmen werden aktiviert und neue oder neu verbundene iSCSI-Sitzungen werden über das sicherste Protokoll eingerichtet. Alle bestehenden iSCSI-Sitzungen wechseln während des Upgrades von MD5 auf SHA. Wenn Sie die Host-iSCSI-Initiator-Konfiguration nicht aktualisieren, um SHA anzufordern, werden die vorhandenen iSCSI-Sitzungen weiterhin MD5 verwenden. Nach der Aktualisierung der CHAP-Algorithmen des Host-iSCSI-Initiators sollten die iSCSI-Sitzungen auf der Grundlage von Wartungsaktivitäten schrittweise von MD5 auf SHA umstellen, was zu einer erneuten Verbindung der iSCSI-Sitzung führt.
+
+Der Standard-Host-iSCSI-Initiator in Red hat Enterprise Linux (RHEL) 8.3 verfügt beispielsweise über die `node.session.auth.chap_algs = SHA3-256,SHA256,SHA1,MD5` Die Einstellung hat kommentiert, was zu einem iSCSI-Initiator nur mit MD5 führt. Wenn Sie diese Einstellung auf dem Host kommentieren und den iSCSI-Initiator neu starten, werden iSCSI-Sitzungen von diesem Host ausgelöst, um SHA3-256 zu verwenden.
+
+Bei Bedarf können Sie das verwenden https://docs.netapp.com/us-en/element-software/api/reference_element_api_listiscsisessions.html["ListISSessions"] API-Methode zum Anzeigen der CHAP-Algorithmen, die für jede Sitzung verwendet werden.
+
+
+
+== Erstellen Sie ein Konto
+
+Sie können ein Konto erstellen, um den Zugriff auf Volumes zu ermöglichen.
+
+Jeder Kontoname im System muss eindeutig sein.
+
+. Wählen Sie *Management* > *Konten*.
+. Klicken Sie Auf *Konto Erstellen*.
+. Geben Sie einen *Benutzername* ein.
+. Geben Sie im Abschnitt *CHAP-Einstellungen* die folgenden Informationen ein:
++
+
+NOTE: Lassen Sie die Felder für Anmeldeinformationen leer, um ein Kennwort automatisch zu generieren.
+
++
+** *Initiatorschlüssel* für CHAP-Knoten-Session-Authentifizierung.
+** *Target Secret* für CHAP-Knoten-Session-Authentifizierung.
+
+
+. Klicken Sie Auf *Konto Erstellen*.
+
+
+
+
+== Kontodetails anzeigen
+
+Sie können Leistungsaktivitäten für einzelne Konten in einem grafischen Format anzeigen.
+
+Die Diagramminformationen liefern I/O- und Durchsatzinformationen für das Konto. Die Aktivitätslevel der durchschnittlichen und Spitzenwerte werden in Schritten von 10 Sekunden angezeigt. Diese Statistiken enthalten Aktivitäten für alle Volumes, die dem Konto zugewiesen sind.
+
+. Wählen Sie *Management* > *Konten*.
+. Klicken Sie auf das Symbol Aktionen für ein Konto.
+. Klicken Sie Auf *Details Anzeigen*.
+
+
+Hier sind einige Details:
+
+* *Status*: Der Status des Kontos. Mögliche Werte:
++
+** Aktiv: Ein aktives Konto.
+** Gesperrt: Ein gesperrtes Konto.
+** Entfernt: Ein Konto, das gelöscht und gelöscht wurde.
+
+
+* *Aktive Volumes*: Die Anzahl der aktiven Volumes, die dem Konto zugewiesen sind.
+* *Komprimierung*: Die Komprimierungs-Effizienzbewertung für die dem Konto zugewiesenen Volumes.
+* *Deduplizierung*: Die Deduplizierungs-Effizienzbewertung für die Volumes, die dem Account zugewiesen sind.
+* *Thin Provisioning*: Die Thin Provisioning-Effizienzbewertung für die dem Konto zugewiesenen Volumes.
+* *Gesamteffizienz*: Die Gesamteffizienz-Punktzahl für die dem Account zugewiesenen Volumes.
+
+
+
+
+== Bearbeiten Sie ein Konto
+
+Sie können ein Konto bearbeiten, um den Status zu ändern, die CHAP-Schlüssel zu ändern oder den Kontonamen zu ändern.
+
+Das Ändern von CHAP-Einstellungen in einem Konto oder das Entfernen von Initiatoren oder Volumes aus einer Zugriffsgruppe kann dazu führen, dass Initiatoren unerwartet den Zugriff auf Volumes verlieren. Um zu überprüfen, ob der Volume-Zugriff nicht unerwartet verloren geht, loggen Sie sich immer iSCSI-Sitzungen aus, die von einer Konto- oder Zugriffsgruppenänderung betroffen sind, und überprüfen Sie, ob die Initiatoren nach Abschluss der Änderungen an den Initiatoreinstellungen und den Cluster-Einstellungen eine Verbindung zu Volumes herstellen können.
+
+
+IMPORTANT: Persistente Volumes, die mit Managementservices verknüpft sind, werden einem neuen Konto zugewiesen, das während der Installation oder Aktualisierung erstellt wird. Wenn Sie persistente Volumes verwenden, ändern oder löschen Sie das zugehörige Konto nicht.
+
+. Wählen Sie *Management* > *Konten*.
+. Klicken Sie auf das Symbol Aktionen für ein Konto.
+. Wählen Sie im Menü Ergebnis die Option *Bearbeiten*.
+. *Optional:* Bearbeiten Sie den *Benutzername*.
+. *Optional:* Klicken Sie auf die Dropdown-Liste *Status* und wählen Sie einen anderen Status aus.
++
+
+IMPORTANT: Wenn Sie den Status auf *gesperrt* ändern, werden alle iSCSI-Verbindungen zum Konto beendet, und das Konto kann nicht mehr aufgerufen werden. Volumes, die mit dem Konto verbunden sind, werden gepflegt. Die Volumes können jedoch nicht über iSCSI erkannt werden.
+
+. *Optional:* Bearbeiten Sie unter *CHAP-Einstellungen* die Anmeldeinformationen *Initiator Secret* und *Target Secret* für die Knotensitzauthentifizierung.
++
+
+NOTE: Wenn Sie die *CHAP-Einstellungen*-Anmeldeinformationen nicht ändern, bleiben diese unverändert. Wenn Sie die Felder für die Anmeldeinformationen leer lassen, generiert das System neue Passwörter.
+
+. Klicken Sie Auf *Änderungen Speichern*.
+
+
+
+
+== Löschen Sie ein Konto
+
+Sie können ein Konto löschen, wenn es nicht mehr benötigt wird.
+
+Löschen und löschen Sie alle Volumes, die mit dem Konto verknüpft sind, bevor Sie das Konto löschen.
+
+
+IMPORTANT: Persistente Volumes, die mit Managementservices verknüpft sind, werden einem neuen Konto zugewiesen, das während der Installation oder Aktualisierung erstellt wird. Wenn Sie persistente Volumes verwenden, ändern oder löschen Sie das zugehörige Konto nicht.
+
+. Wählen Sie *Management* > *Konten*.
+. Klicken Sie auf das Aktionen-Symbol für das Konto, das Sie löschen möchten.
+. Wählen Sie im Menü Ergebnis die Option *Löschen* aus.
+. Bestätigen Sie die Aktion.
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

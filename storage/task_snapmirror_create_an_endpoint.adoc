@@ -1,0 +1,42 @@
+---
+permalink: storage/task_snapmirror_create_an_endpoint.html 
+sidebar: sidebar 
+keywords: endpoints, create, snapmirror, ui 
+summary: Sie müssen einen SnapMirror Endpunkt in der NetApp Element-Benutzeroberfläche erstellen, bevor Sie eine Beziehung erstellen können. 
+---
+= Erstellen eines SnapMirror Endpunkts
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen einen SnapMirror Endpunkt in der NetApp Element-Benutzeroberfläche erstellen, bevor Sie eine Beziehung erstellen können.
+
+Ein SnapMirror Endpunkt ist ein ONTAP Cluster, das als Replizierungsziel für ein Cluster dient, auf dem die Element Software ausgeführt wird. Bevor Sie eine SnapMirror Beziehung erstellen, erstellen Sie zuerst einen SnapMirror Endpunkt.
+
+Es können bis zu vier SnapMirror Endpunkte in einem Storage-Cluster, auf dem die Element Software ausgeführt wird, erstellt und gemanagt werden.
+
+
+NOTE: Wenn ein vorhandener Endpunkt ursprünglich mit der API erstellt wurde und keine Anmeldedaten gespeichert wurden, können Sie den Endpunkt in der Element-UI sehen und dessen Existenz überprüfen. Er kann jedoch nicht über die Element-UI gemanagt werden. Dieser Endpunkt kann dann nur mit der Element-API gemanagt werden.
+
+Weitere Informationen zu API-Methoden finden Sie unter link:../api/index.html["Storage-Management mit der Element API"].
+
+.Was Sie und#8217;ll benötigen
+* Sie sollten SnapMirror in der Element UI für den Storage-Cluster aktiviert haben.
+* Ihnen kennen die ONTAP-Anmeldedaten für den Endpunkt.
+
+
+.Schritte
+. Klicken Sie auf *Datensicherung* > *SnapMirror Endpunkte*.
+. Klicken Sie Auf *Endpunkt Erstellen*.
+. Geben Sie im Dialogfeld *Neuen Endpunkt erstellen* die Cluster-Management-IP-Adresse des ONTAP-Systems ein.
+. Geben Sie die mit dem Endpunkt verknüpften Anmeldedaten für den ONTAP-Administrator ein.
+. Lesen Sie weitere Details durch:
++
+** LIFs: Listet die ONTAP clusterübergreifende logische Schnittstellen auf, die zur Kommunikation mit Element verwendet werden.
+** Status: Zeigt den aktuellen Status des SnapMirror-Endpunkts an. Mögliche Werte sind: Verbunden, getrennt und nicht verwaltet.
+
+
+. Klicken Sie Auf *Endpunkt Erstellen*.
+

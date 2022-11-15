@@ -1,0 +1,106 @@
+---
+permalink: setup/concept_setup_configure_a_storage_node.html 
+sidebar: sidebar 
+keywords: configuring node,configure storage node,configuring using TUI,configuring using node UI 
+summary: Sie müssen einzelne Nodes konfigurieren, bevor Sie sie einem Cluster hinzufügen können. Nachdem Sie einen Node in einer Rack-Einheit installiert und verkabeln und einschalten, können Sie die Node-Netzwerkeinstellungen über die UI pro Node oder die Benutzeroberfläche des Node Terminal konfigurieren. 
+---
+= Konfigurieren Sie einen Storage-Node
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen einzelne Nodes konfigurieren, bevor Sie sie einem Cluster hinzufügen können. Nachdem Sie einen Knoten in einer Rack-Einheit installiert und verkabeln und einschalten, können Sie die Knotennetzwerkeinstellungen über die UI pro Node oder die Node Terminal User Interface (TUI) konfigurieren. Stellen Sie sicher, dass Sie über die erforderlichen Netzwerkkonfigurationsinformationen für den Node verfügen, bevor Sie fortfahren.
+
+Es gibt zwei Optionen für die Konfiguration von Speicher-Nodes:
+
+*  a storage node using the per-node UI,UI pro Node: Verwenden Sie die Pro-Node-Benutzeroberfläche (https://<node_management_IP>:442)[] So konfigurieren Sie die Node-Netzwerkeinstellungen.
+*  a storage node using the TUI,TUI: Verwenden Sie die Node Terminal User Interface (TUI), um den Knoten zu konfigurieren.
+
+
+Sie können einem Cluster keinen Node mit DHCP-zugewiesenen IP-Adressen hinzufügen. Über die DHCP-IP-Adresse können Sie den Node zunächst in der UI, der TUI oder der API pro Node konfigurieren. Während dieser Erstkonfiguration können Sie statische IP-Adressinformationen hinzufügen, damit Sie den Node zu einem Cluster hinzufügen können.
+
+Nach der Erstkonfiguration können Sie mit der Management-IP-Adresse des Node auf den Node zugreifen. Anschließend können Sie die Node-Einstellungen ändern, zu einem Cluster hinzufügen oder einen Cluster mit dem Node erstellen. Zudem können Sie mithilfe von Element Software-API-Methoden einen neuen Node konfigurieren.
+
+
+NOTE: Ab Element Version 11.0 können Nodes mit IPv4, IPv6 oder beiden Adressen für ihr Managementnetzwerk konfiguriert werden. Dies gilt sowohl für Storage-Nodes als auch für Management-Nodes, mit Ausnahme von Management-Node 11.3 und höher, der IPv6 nicht unterstützt. Wenn Sie ein Cluster erstellen, kann für das MVIP nur eine einzelne IPv4- oder IPv6-Adresse verwendet werden, und der entsprechende Adresstyp muss auf allen Knoten konfiguriert werden.
+
+
+
+== Konfigurieren Sie einen Storage-Node über die UI pro Node
+
+Sie können Nodes über die Benutzeroberfläche pro Node konfigurieren.
+
+.Über diese Aufgabe
+* Sie können den Node so konfigurieren, dass er eine IPv4- oder eine IPv6-Adresse hat.
+* Sie benötigen die in der TUI angezeigte DHCP-Adresse, um auf einen Knoten zugreifen zu können. Sie können einem Cluster keine DHCP-Adressen verwenden, um einen Node hinzuzufügen.
++
+
+IMPORTANT: Sie sollten die Management-Schnittstellen (Bond1G) und Storage-Schnittstellen (Bond10G) für separate Subnetze konfigurieren. Bond1G- und Bond10G-Schnittstellen für dasselbe Subnetz verursachen Routing-Probleme, wenn Storage Traffic über die Bond1G-Schnittstelle gesendet wird. Wenn Sie dasselbe Subnetz für Management und Storage-Verkehr verwenden müssen, konfigurieren Sie den Management-Traffic manuell, um die Bond10G-Schnittstelle zu verwenden. Dies können Sie für jeden Knoten mithilfe der *Cluster-Einstellungen*-Seite der Pro-Node-Benutzeroberfläche tun.
+
+
+
+.Schritte
+. Geben Sie in einem Browser-Fenster die DHCP-IP-Adresse eines Node ein.
++
+Sie müssen die Erweiterung hinzufügen `:442` Um auf den Node zuzugreifen, z. B. https://172.25.103.6:442[].
+
++
+Die Registerkarte *Network Settings* wird mit dem Abschnitt *Bond1G* geöffnet.
+
+. Geben Sie die 1G-Verwaltungsnetzwerkeinstellungen ein.
+. Klicken Sie Auf *Änderungen Übernehmen*.
+. Klicken Sie auf *Bond10G*, um die Einstellungen des 10G-Speichernetzwerks anzuzeigen.
+. Geben Sie die Einstellungen für das 10G-Speichernetzwerk ein.
+. Klicken Sie Auf *Änderungen Übernehmen*.
+. Klicken Sie Auf *Cluster-Einstellungen*.
+. Geben Sie den Hostnamen für das 10G-Netzwerk ein.
+. Geben Sie den Cluster-Namen ein.
++
+
+IMPORTANT: Dieser Name muss der Konfiguration für alle Nodes hinzugefügt werden, bevor ein Cluster erstellt werden kann. Alle Nodes in einem Cluster müssen identische Cluster-Namen aufweisen. Bei Cluster-Namen wird die Groß-/Kleinschreibung berücksichtigt.
+
+. Klicken Sie Auf *Änderungen Übernehmen*.
+
+
+
+
+== Konfigurieren Sie über die TUI einen Storage-Node
+
+Über die Terminal User Interface (TUI) können Sie die Erstkonfiguration neuer Knoten vornehmen.
+
+Sie sollten die Bond1G (Management)- und Bond10G (Storage)-Schnittstellen für separate Subnetze konfigurieren. Bond1G- und Bond10G-Schnittstellen für dasselbe Subnetz verursachen Routing-Probleme, wenn Storage Traffic über die Bond1G-Schnittstelle gesendet wird. Wenn Sie dasselbe Subnetz für Management und Storage-Verkehr verwenden müssen, konfigurieren Sie den Management-Traffic manuell, um die Bond10G-Schnittstelle zu verwenden. Dies können Sie für jeden Knoten mithilfe der Seite *Cluster* > *Knoten* der Element-Benutzeroberfläche tun.
+
+.Schritte
+. Schließen Sie eine Tastatur und einen Monitor an den Knoten an, und schalten Sie den Knoten ein.
++
+Das NetApp Storage Main Menu der TUI erscheint auf dem tty1 Terminal.
+
++
+
+NOTE: Wenn der Knoten den Konfigurationsserver nicht erreichen kann, zeigt die TUI eine Fehlermeldung an. Überprüfen Sie die Verbindung des Konfigurationsservers oder die Netzwerkverbindung, um den Fehler zu beheben.
+
+. Wählen Sie *Netzwerk* > *Netzwerkkonfiguration*.
++
+
+TIP: Um durch das Menü zu navigieren, drücken Sie die nach-oben- oder nach-unten-Taste. Um zu einer anderen Schaltfläche oder zu den Feldern von den Schaltflächen zu wechseln, drücken Sie *Tab*. Um zwischen Feldern zu navigieren, verwenden Sie die nach-oben- oder nach-unten-Pfeiltasten.
+
+. Wählen Sie *Bond1G (Management)* oder *Bond10G (Storage)* aus, um die 1G- und 10G-Netzwerkeinstellungen für den Node zu konfigurieren.
+. Drücken Sie für die Felder „Bond Mode“ und „Status“ die Taste *Tab*, um die Schaltfläche „Hilfe“ auszuwählen und die verfügbaren Optionen zu ermitteln.
++
+Alle Nodes in einem Cluster müssen identische Cluster-Namen aufweisen. Bei Cluster-Namen wird die Groß-/Kleinschreibung berücksichtigt. Wenn im Netzwerk ein DHCP-Server mit verfügbaren IP-Adressen ausgeführt wird, wird im Feld Adresse die 1-GbE-Adresse angezeigt.
+
+. Drücken Sie *Tab*, um die *OK*-Taste auszuwählen und die Änderungen zu speichern.
++
+Der Node wird in einen ausstehenden Status versetzt, und er kann einem vorhandenen oder einem neuen Cluster hinzugefügt werden.
+
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

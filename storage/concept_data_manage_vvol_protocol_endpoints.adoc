@@ -1,0 +1,18 @@
+---
+permalink: storage/concept_data_manage_vvol_protocol_endpoints.html 
+sidebar: sidebar 
+keywords: protocol endpoint, access, cluster, storage node, iscsi supported 
+summary: Protokollendpunkte sind Zugriffspunkte, die von einem Host zur Storage-Adresse in einem Cluster verwendet werden, auf dem die NetApp Element Software ausgeführt wird. Protokollendpunkte können nicht von einem Benutzer gelöscht oder geändert werden, sind keinem Konto zugeordnet und können nicht einer Volume-Zugriffsgruppe hinzugefügt werden. 
+---
+= Protokollendpunkte
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Protokollendpunkte sind Zugriffspunkte, die von einem Host zur Storage-Adresse in einem Cluster verwendet werden, auf dem die NetApp Element Software ausgeführt wird. Protokollendpunkte können nicht von einem Benutzer gelöscht oder geändert werden, sind keinem Konto zugeordnet und können nicht einer Volume-Zugriffsgruppe hinzugefügt werden.
+
+Ein Cluster, auf dem Element Software ausgeführt wird, erstellt automatisch einen Protokollendpunkt pro Storage-Node im Cluster. Ein Storage-Cluster mit sechs Nodes verfügt beispielsweise über sechs Protokollendpunkte, die jedem ESXi Host zugeordnet sind. Protokollendpunkte werden dynamisch von Element Software gemanagt und ohne Eingriffe erstellt, verschoben oder entfernt. Protokollendpunkte sind das Ziel für Multi-Pathing und fungieren als I/O-Proxy für subsidiäre LUNs. Jeder Protokollendpunkt nutzt eine verfügbare SCSI-Adresse, genau wie ein Standard-iSCSI-Ziel. Protokollendpunkte werden im vSphere Client als ein einzelnes Block-Storage-Gerät (512 Byte) angezeigt, dieses Storage-Gerät kann jedoch nicht formatiert oder als Storage verwendet werden.
+
+ISCSI ist das einzige unterstützte Protokoll. Das Fibre Channel-Protokoll wird nicht unterstützt.

@@ -1,0 +1,75 @@
+---
+permalink: api/reference_element_api_networkinterfacestats.html 
+sidebar: sidebar 
+keywords: object,objects,stats,statistics,networkInterfacestats 
+summary: Das Network Interface Stats-Objekt enthält Netzwerkstatistiken und Fehlerinformationen für einzelne Netzwerkschnittstellen auf einem Storage-Node. 
+---
+= NetworkSchnittstellenStats
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das netzwerkInterface Stats-Objekt enthält Netzwerkstatistiken, die Gesamtzahl der übertragenen und empfangenen Pakete sowie Fehlerinformationen für einzelne Netzwerkschnittstellen auf einem Speicherknoten. Sie können das verwenden `ListNetworkInterfaceStats` API-Methode zum Auflisten dieser Informationen für die Netzwerkschnittstellen auf einem Storage-Node.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+| Kollisionen | Die Anzahl der erkannten Kollisionen. | Ganzzahl 
+
+
+| Name | Der Name der Netzwerkschnittstelle. | Zeichenfolge 
+
+
+| RxBytes | Die Gesamtanzahl der empfangenen Bytes. | Ganzzahl 
+
+
+| RxCrcErrors | Die Anzahl der empfangenen Pakete, bei denen ein CRC-Fehler aufgetreten ist. | Ganzzahl 
+
+
+| RxDrops | Die Anzahl der empfangenen Pakete, die verworfen wurden. | Ganzzahl 
+
+
+| RxErrors | Die Anzahl der empfangenen fehlerhaften oder fehlerhaften Pakete. | Ganzzahl 
+
+
+| RxFifoErrors | Die Anzahl der FIFO-Überlauffehler in den empfangenen Daten. | Ganzzahl 
+
+
+| RxFrameErrors | Die Anzahl der empfangenen Pakete mit Fehler bei der Rahmenausrichtung. | Ganzzahl 
+
+
+| RxLengthErrors | Die Anzahl der empfangenen Pakete mit einem Längenfehler. | Ganzzahl 
+
+
+| RxMischerError | Die Anzahl der vom Empfänger versäumten Pakete. | Ganzzahl 
+
+
+| RxOverErrors | Die Anzahl der Fehler beim Überlauf des Receivers-Ringpuffers für diese Schnittstelle. | Ganzzahl 
+
+
+| RxPackets | Die Gesamtanzahl der empfangenen Pakete. | Ganzzahl 
+
+
+| TxBytes | Die Anzahl der übertragenen Bytes. | Ganzzahl 
+
+
+| TxCarrierErrors | Die Anzahl der Trägerfehler für die Übertragungsseite. | Ganzzahl 
+
+
+| TxErrors | Die Anzahl der Paketübertragungsfehler. | Ganzzahl 
+
+
+| TxFifoErrors | Die Anzahl der FIFO-Überlauffehler auf der Übertragungsseite. | Ganzzahl 
+
+
+| TxPackets | Die Gesamtanzahl der übertragenen Pakete. | Ganzzahl 
+|===

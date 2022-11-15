@@ -1,0 +1,14 @@
+---
+permalink: setup/task_setup_set_up_an_element_storage_system.html 
+sidebar: sidebar 
+keywords:  
+summary: Zur Einrichtung eines NetApp Element Software-Storage-Systems müssen ein Storage-Node konfiguriert, ein Storage-Cluster erstellt und dem Cluster Laufwerke hinzugefügt werden. Wenn Sie ein Fibre Channel-Netzwerk verwenden, können Sie einen Fibre Channel Node konfigurieren. 
+---
+= Richten Sie ein Storage-Element ein
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zur Einrichtung eines NetApp Element Software-Storage-Systems müssen ein Storage-Node konfiguriert, ein Storage-Cluster erstellt und dem Cluster Laufwerke hinzugefügt werden. Wenn Sie ein Fibre Channel-Netzwerk verwenden, können Sie einen Fibre Channel Node konfigurieren.

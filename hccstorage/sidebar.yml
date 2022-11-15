@@ -1,0 +1,32 @@
+---
+section: hccstorage
+title: Management und Monitoring von Storage mit NetApp Hybrid Cloud Control
+url: "/hccstorage/index.html"
+entries:
+- title: Fügen Sie Storage-Cluster mit NetApp Hybrid Cloud Control hinzu und managen
+    Sie sie
+  url: "/hccstorage/task-hcc-manage-storage-clusters.html"
+- title: Konfigurieren Sie vollständig qualifizierten Domänennamen Web UI-Zugriff
+  url: "/hccstorage/task-setup-configure-fqdn-web-ui-access.html"
+- title: Erstellen und managen Sie Benutzerkonten mit NetApp Hybrid Cloud Control
+  url: "/hccstorage/task-hcc-manage-accounts.html"
+- title: Erstellen und managen Sie Volumes mit NetApp Hybrid Cloud Control
+  url: "/hccstorage/task-hcc-manage-vol-management.html"
+- title: Erstellung und Management von Volume-Zugriffsgruppen
+  url: "/hccstorage/task-hcc-manage-vol-access-groups.html"
+- title: Erstellen und Verwalten von Initiatoren
+  url: "/hccstorage/task-hcc-manage-initiators.html"
+- title: Erstellung und Management von QoS-Richtlinien für Volumes
+  url: "/hccstorage/task-hcc-qos-policies.html"
+- title: Überwachen Sie Ihr SolidFire System mit NetApp Hybrid Cloud Control
+  entries:
+  - title: Überwachen Sie die Speicherressourcen über das Hybrid Cloud Control Dashboard
+    url: "/hccstorage/task-hcc-dashboard.html"
+  - title: Zeigen Sie Ihre Inventar auf der Seite Nodes von NetApp Hybrid Cloud Control
+      an
+    url: "/hccstorage/task-hcc-nodes.html"
+  - title: Überwachen Sie Volumes auf Ihrem Storage-Cluster mit NetApp Hybrid Cloud
+      Control
+    url: "/hccstorage/task-hcc-volumes.html"
+  - title: Sammelt Protokolle für die Fehlerbehebung
+    url: "/hccstorage/task-hcc-collectlogs.html"

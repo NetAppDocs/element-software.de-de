@@ -1,0 +1,146 @@
+---
+permalink: api/reference_element_api_testaddressavailability.html 
+sidebar: sidebar 
+keywords: ip,address,availability,test,testing,ensemble,cluster,testaddressavailability 
+summary: Sie können mithilfe der TestAddressAvailability-Methode überprüfen, ob eine bestimmte IP-Adresse auf einer Schnittstelle im Storage-Cluster verwendet wird. 
+---
+= TestAddressAvailability
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `TestAddressAvailability` Methode, um zu überprüfen, ob eine bestimmte IP-Adresse auf einer Schnittstelle innerhalb des Storage-Clusters verwendet wird.
+
+
+NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Schnittstelle
+ a| 
+Die Ziel-Netzwerkschnittstelle (z. B. eth0, Bond10G usw.).
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Adresse
+ a| 
+Die IP-Adresse, nach der auf der Zielschnittstelle gescannt werden soll.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+VirtualNetworkTag
+ a| 
+Die Ziel-VLAN-ID.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Zeitüberschreitung
+ a| 
+Die Zeitüberschreitung in Sekunden zum Testen der Zieladresse.
+ a| 
+Ganzzahl
+ a| 
+5
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Adresse
+ a| 
+Die getestete IP-Adresse.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Verfügbar
+ a| 
+True, wenn die angeforderte IP-Adresse verwendet wird, und false, wenn nicht.
+ a| 
+boolesch
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+	"method": "TestAddressAvailability",
+	"params": {
+		"interface": "Bond10G",
+		"address": "10.0.0.1",
+		"virtualNetworkTag": 1234
+	}
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+	"id": 1,
+	"result": {
+		"address":"10.0.0.1",
+		"available": true
+	}
+}
+----
+
+
+== Neu seit Version
+
+11.0

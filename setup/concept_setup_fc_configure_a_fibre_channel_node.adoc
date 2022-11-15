@@ -1,0 +1,38 @@
+---
+permalink: setup/concept_setup_fc_configure_a_fibre_channel_node.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Mit Fibre Channel Nodes können Sie das Cluster mit einer Fibre Channel-Netzwerkstruktur verbinden. Fibre Channel Nodes werden paarweise hinzugefügt und im aktiv/aktiv-Modus \ betrieben (alle Knoten verarbeiten aktiv den Datenverkehr für das Cluster\). Cluster, die Element Softwareversion 9.0 und höher ausführen, unterstützen bis zu vier Nodes. Cluster mit früheren Versionen unterstützen maximal zwei Nodes.' 
+---
+= Konfigurieren Sie einen Fibre Channel-Node
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit Fibre Channel Nodes können Sie das Cluster mit einer Fibre Channel-Netzwerkstruktur verbinden. Fibre Channel Nodes werden paarweise hinzugefügt und im aktiv/aktiv-Modus betrieben (alle Nodes verarbeiten aktiv den Datenverkehr für das Cluster). Cluster, die Element Softwareversion 9.0 und höher ausführen, unterstützen bis zu vier Nodes. Cluster mit früheren Versionen unterstützen maximal zwei Nodes.
+
+Sie müssen sicherstellen, dass die folgenden Bedingungen erfüllt sind, bevor Sie einen Fibre Channel-Node konfigurieren:
+
+* Mindestens zwei Fibre Channel Nodes sind mit Fibre Channel Switches verbunden.
+* Alle SolidFire Fibre Channel-Ports sollten mit Ihrem Fibre Channel Fabric verbunden sein. Die vier SolidFire-Bond10G-Netzwerkverbindungen sollten an eine LACP-Bond-Gruppe auf Switch-Ebene angeschlossen werden. Dies ermöglicht die beste Gesamt-Performance der Fibre Channel-Systeme.
+* Prüfen und Validieren aller Best Practices für Fibre Channel Cluster in diesem NetApp Knowledge Base Artikel
++
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Element_Software/SolidFire_FC_cluster_best_practice["Best Practice für SolidFire FC Cluster"]
+
+
+
+Für Fibre Channel Nodes und Storage Nodes sind die Schritte für Netzwerk- und Cluster-Konfiguration identisch.
+
+Wenn Sie einen neuen Cluster mit Fibre Channel Nodes und SolidFire Storage Nodes erstellen, sind die WWPN-Adressen (Worldwide Port Name) für die Nodes in der Element UI verfügbar. Sie können die WWPN-Adressen verwenden, um den Fibre Channel-Switch zu Zone.
+
+WWPNs sind im System registriert, wenn Sie ein neues Cluster mit Nodes erstellen. In der Element UI finden Sie die WWPN-Adressen in der Spalte WWPN der Registerkarte FC-Ports, auf die Sie über die Registerkarte Cluster zugreifen.
+
+
+
+== Weitere Informationen
+
+xref:task_setup_fc_add_fibre_channel_nodes_to_a_cluster.adoc[Fügen Sie einem Cluster Fibre Channel Nodes hinzu]
+
+xref:task_setup_fc_create_a_new_cluster_with_fibre_channel_nodes.adoc[Erstellen Sie ein neues Cluster mit Fibre Channel Nodes]

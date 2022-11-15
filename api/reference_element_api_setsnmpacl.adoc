@@ -1,0 +1,104 @@
+---
+permalink: api/reference_element_api_setsnmpacl.html 
+sidebar: sidebar 
+keywords: setsnmpACL,set,setting,snmp,acl,permissions,access,control,list 
+summary: Sie können die SetSnmpACL-Methode verwenden, um SNMP-Zugriffsberechtigungen auf den Clusterknoten zu konfigurieren. Die Werte, die Sie mit dieser Schnittstelle setzen, gelten für alle Knoten im Cluster und die Werte, die übergeben werden, ersetzen alle Werte, die in einem früheren Aufruf an SetSnmpACL festgelegt wurden. Beachten Sie auch, dass die mit dieser Schnittstelle eingestellten Werte alle Netzwerk- oder usmUser-Werte ersetzen, die mit dem SetSnmpInfo gesetzt wurden. 
+---
+= SetSnmpACL
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `SetSnmpACL` Methode zum Konfigurieren von SNMP-Zugriffsberechtigungen auf den Clusterknoten. Die mit dieser Schnittstelle festgelegten Werte gelten für alle Knoten im Cluster und die Werte, die übergeben werden, ersetzen alle Werte, die in einem vorherigen Aufruf festgelegt wurden `SetSnmpACL`. Beachten Sie auch, dass die mit dieser Schnittstelle eingestellten Werte alle Netzwerk- oder usmUser-Werte ersetzen, die mit dem festgelegt wurden `SetSnmpInfo` Methode.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Netzwerke
+ a| 
+Liste der Netzwerke und welche Art von Zugriff sie auf die SNMP-Server haben, die auf den Cluster-Knoten laufen. Weitere Informationen zu möglichen Netzwerkwerten finden Sie unter SNMP-Netzwerkobjekt. Dieser Parameter ist erforderlich, wenn SNMP v3 deaktiviert ist.
+ a| 
+xref:reference_element_api_network_snmp.adoc[Netzwerk]
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+UsmUser
+ a| 
+Liste der Benutzer und der Zugriffstyp für die SNMP-Server, die auf den Clusterknoten ausgeführt werden. Dieser Parameter ist erforderlich, wenn SNMP v3 aktiviert ist.
+ a| 
+xref:reference_element_api_usmuser.adoc[UsmUser]
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode hat keine Rückgabewerte.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "SetSnmpACL",
+  "params": {
+    "usmUsers"  : [
+      {
+         "name": "jdoe",
+         "access": "rouser",
+         "secLevel": "priv",
+         "password": "mypassword",
+         "passphrase": "mypassphrase",
+      }
+    ]
+  },
+  "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id" : 1,
+  "result" : {}
+}
+----
+
+
+== Neu seit Version
+
+9.6
+
+
+
+== Weitere Informationen
+
+xref:reference_element_api_setsnmpinfo.adoc[SetSnmpInfo]

@@ -1,0 +1,36 @@
+---
+permalink: storage/concept_system_monitoring_and_troubleshooting.html 
+sidebar: sidebar 
+keywords: trouble, troubleshoot, monitor, element, alert, event 
+summary: Sie müssen das System zu Diagnosezwecken überwachen und Informationen zu Performance-Trends und Status verschiedener Systemvorgänge erhalten. Möglicherweise müssen Sie Nodes oder SSDs zu Wartungszwecken ersetzen. 
+---
+= Fehler im System beheben
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen das System zu Diagnosezwecken überwachen und Informationen zu Performance-Trends und Status verschiedener Systemvorgänge erhalten. Möglicherweise müssen Sie Nodes oder SSDs zu Wartungszwecken ersetzen.
+
+* link:task_monitor_information_about_system_events.html["Zeigt Informationen zu Systemereignissen an"]
+* link:reference_monitor_status_of_running_tasks.html["Status der ausgeführten Aufgaben anzeigen"]
+* link:task_monitor_system_alerts.html["Anzeigen von Systemmeldungen"]
+* link:task_monitor_node_performance_activity.html["Zeigen Sie die Node-Performance-Aktivitäten an"]
+* link:task_monitor_volume_performance.html["Anzeigen der Volume-Performance"]
+* link:task_monitor_iscsi_sessions.html["Anzeigen von iSCSI-Sitzungen"]
+* link:task_monitor_fibre_channel_sessions.html["Zeigen Sie Fibre-Channel-Sitzungen an"]
+* link:concept_troubleshoot_drives.html["Fehlerbehebung bei Laufwerken"]
+* link:concept_troubleshoot_nodes.html["Fehlerbehebung für Nodes"]
+* link:concept_per_node_work_with_utilities.html["Storage-Nodes: Dienstprogramme pro Node unterstützen"]
+* link:concept_mnode_work_with_the_management_node.html["Arbeiten Sie mit dem Management-Node"]
+* link:concept_monitor_understand_cluster_fullness_levels.html["Erläuterung der Cluster-Auslastungsebenen"]
+
+
+
+
+== Finden Sie weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

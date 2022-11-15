@@ -1,0 +1,112 @@
+---
+permalink: api/reference_element_api_snapmirrornetworkinterface.html 
+sidebar: sidebar 
+keywords: object,objects,snapMirrorNetworkInterface 
+summary: 'Das SnapMirrorNetworkInterface-Objekt enthält Informationen zu den clusterübergreifende logischen Schnittstellen \(LIFs\).' 
+---
+= SnapMirror Netzwerkschnittstelle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das SnapMirrorNetworkInterface-Objekt enthält Informationen zu den Cluster-logischen Schnittstellen (LIFs).
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+AdministrativeStatus
+ a| 
+Gibt an, ob die logische Schnittstelle (LIF) administrativ aktiviert oder deaktiviert ist. Mögliche Werte:
+
+* Hoch
+* Runter
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+SnapMirrorEndpointID
+ a| 
+Die ID des Ziel-ONTAP-Systems.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+SchnittstellenName
+ a| 
+Der LIF-Name.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Netzwerkadresse
+ a| 
+Die IP-Adresse des LIF.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Netzwerkmaske
+ a| 
+Die Netzwerkmaske des LIF.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+OberflächeRole
+ a| 
+Die Rolle des LIF. Mögliche Werte:
+
+* Entf
+* Cluster
+* Daten
+* Node-Management
+* Intercluster
+* Cluster_Management
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+OperationalStatus
+ a| 
+Der Betriebsstatus der logischen Schnittstelle (unabhängig davon, ob sie eine erfolgreiche Verbindung gebildet hat). Dieser Status kann vom Administrationsstatus abweichen, wenn ein Netzwerkproblem vorliegt, das die Funktionsweise der Schnittstelle verhindert. Mögliche Werte:
+
+* Hoch
+* Runter
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+VserverName
+ a| 
+Der Name des Vserver.
+ a| 
+Zeichenfolge
+
+|===

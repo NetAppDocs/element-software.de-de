@@ -1,0 +1,43 @@
+---
+permalink: setup/task_setup_fc_add_fibre_channel_nodes_to_a_cluster.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie können einem Cluster Fibre Channel Nodes hinzufügen, wenn mehr Storage benötigt wird, oder während der Cluster-Erstellung. Fibre Channel-Knoten erfordern die Erstkonfiguration, wenn sie zum ersten Mal eingeschaltet sind. Nachdem der Node konfiguriert wurde, wird er in der Liste der ausstehenden Nodes angezeigt und Sie können ihn einem Cluster hinzufügen. 
+---
+= Fügen Sie einem Cluster Fibre Channel Nodes hinzu
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können einem Cluster Fibre Channel Nodes hinzufügen, wenn mehr Storage benötigt wird, oder während der Cluster-Erstellung. Fibre Channel-Knoten erfordern die Erstkonfiguration, wenn sie zum ersten Mal eingeschaltet sind. Nachdem der Node konfiguriert wurde, wird er in der Liste der ausstehenden Nodes angezeigt und Sie können ihn einem Cluster hinzufügen.
+
+Die Softwareversion auf jedem Fibre Channel-Knoten in einem Cluster muss kompatibel sein. Wenn Sie einem Cluster einen Fibre Channel Node hinzufügen, installiert das Cluster nach Bedarf die Cluster-Version des Elements auf dem neuen Node.
+
+.Schritte
+. Wählen Sie *Cluster* > *Knoten*.
+. Klicken Sie auf *Ausstehend*, um die Liste der ausstehenden Knoten anzuzeigen.
+. Führen Sie einen der folgenden Schritte aus:
++
+** Um einzelne Knoten hinzuzufügen, klicken Sie auf das Symbol *Aktionen* für den Knoten, den Sie hinzufügen möchten.
+** Um mehrere Knoten hinzuzufügen, aktivieren Sie das Kontrollkästchen der Knoten, die hinzugefügt werden sollen, und dann *Massenaktionen*.
++
+
+NOTE: Wenn der Node, den Sie hinzufügen, eine andere Version des Elements als die im Cluster ausgeführte Version hat, aktualisiert der Cluster den Node asynchron an die Version des Elements, das auf dem Cluster-Master ausgeführt wird. Nach der Aktualisierung des Node wird er sich automatisch dem Cluster hinzugefügt. Während dieses asynchronen Prozesses befindet sich der Knoten im hängenden Zustand aktiv.
+
+
+
+. Klicken Sie Auf *Hinzufügen*.
++
+Der Node wird in der Liste der aktiven Nodes angezeigt.
+
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

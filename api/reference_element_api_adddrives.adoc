@@ -1,0 +1,126 @@
+---
+permalink: api/reference_element_api_adddrives.html 
+sidebar: sidebar 
+keywords: drives,adding,cluster,drive,add,adddrives 
+summary: Mit der Methode AddDrives können Sie dem Cluster ein oder mehrere verfügbare Laufwerke hinzufügen, sodass die Laufwerke einen Teil der Daten für den Cluster hosten können. 
+---
+= AddDrives
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `AddDrives` Methode zum Hinzufügen eines oder mehrerer verfügbarer Laufwerke zum Cluster, wodurch die Laufwerke einen Teil der Daten für das Cluster hosten können.
+
+Wenn Sie dem Cluster einen Speicherknoten hinzufügen oder neue Laufwerke in einem bestehenden Knoten installieren, sind die neuen Laufwerke als verfügbar gekennzeichnet und müssen über AddDrives hinzugefügt werden, bevor sie verwendet werden können. Verwenden Sie die xref:reference_element_api_listdrives.adoc[ListenLaufwerke] Methode zum Anzeigen von Laufwerken, die hinzugefügt werden können. Wenn Sie ein Laufwerk hinzufügen, bestimmt das System automatisch den Laufwerkstyp.
+
+Die Methode ist asynchron und gibt sie zurück, sobald die Prozesse zur Ausbalancierung der Laufwerke im Cluster gestartet werden. Es kann jedoch mehr Zeit dauern, bis die Daten im Cluster mit den neu hinzugefügten Laufwerken neu ausgeglichen werden; die Neuverteilung wird auch nach Abschluss des Aufruf der AddDrives-Methode fortgesetzt. Sie können das verwenden xref:reference_element_api_getasyncresult.adoc[GetAsyncResult] Methode zum Abfragen der zurückgegebenen Methode Async. Nachdem die AddDrives-Methode zurückkehrt, können Sie die verwenden xref:reference_element_api_listsyncjobs.adoc[ListSyncJobs] Methode zum Anzeigen des Fortschritts der Datenumverteilung mit den neuen Laufwerken.
+
+
+NOTE: Wenn Sie mehrere Laufwerke hinzufügen, ist es effizienter, sie in einem einzigen AddDrives-Methodenaufruf hinzuzufügen, anstatt mehrere einzelne Methoden mit jeweils einem einzigen Laufwerk zu verwenden. Dies reduziert die Menge an Datenausgleich, die zur Stabilisierung der Storage-Last im Cluster erfolgen muss.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Laufwerke
+ a| 
+Informationen über die einzelnen Laufwerke, die dem Cluster hinzugefügt werden sollen. Mögliche Werte:
+
+* DriveID: Die ID des Laufwerks, das hinzugefügt werden soll (Integer).
+* Typ: Der Typ des hinzufügenden Laufwerks (String). Gültige Werte sind „Slice“, „Block“ oder „Volume“. Wenn keine Angabe erfolgt, weist das System den korrekten Typ zu.
+
+ a| 
+JSON-Objekt-Array
+ a| 
+Keine
+ a| 
+Ja (Typ ist optional)
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Asynchron
+ a| 
+Handle-Wert, der zum Abrufen des Operationsergebnisses verwendet wird.
+ a| 
+Ganzzahl
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "id": 1,
+  "method": "AddDrives",
+  "params": {
+    "drives": [
+      {
+        "driveID": 1,
+        "type": "slice"
+      },
+      {
+        "driveID": 2,
+        "type": "block"
+      },
+      {
+        "driveID": 3,
+        "type": "block"
+      }
+    ]
+  }
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 1,
+  "result" : {
+    "asyncHandle": 1
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6
+
+
+
+== Weitere Informationen
+
+* xref:reference_element_api_getasyncresult.adoc[GetAsyncResult]
+* xref:reference_element_api_listdrives.adoc[ListenLaufwerke]
+* xref:reference_element_api_listsyncjobs.adoc[ListSyncJobs]
+

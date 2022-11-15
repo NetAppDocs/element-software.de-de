@@ -1,0 +1,176 @@
+---
+permalink: api/reference_element_api_enablemaintenancemode.html 
+sidebar: sidebar 
+keywords: maintenance,enable,mode 
+summary: Sie können die Methode EnableInstandhaltungModus verwenden, um einen Speicherknoten für die Wartung vorzubereiten. Wartungsszenarien beinhalten alle Aufgaben, die das Ausschalten oder Neustarten des Node erfordern. 
+---
+= Instandhaltungmodus
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `EnableMaintenanceMode` Methode zum Vorbereiten eines Storage-Nodes für Wartungsarbeiten. Wartungsszenarien beinhalten alle Aufgaben, die das Ausschalten oder Neustarten des Node erfordern.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+ErwegeUnresolvedForcards
+ a| 
+Aktivierung des Wartungsmodus für diesen Node erzwingen, selbst wenn Cluster-Fehler blockiert sind.
+ a| 
+boolesch
+ a| 
+Falsch
+ a| 
+Nein
+
+
+
+ a| 
+Knoten
+ a| 
+Die Liste der Node-IDs, die in den Wartungsmodus versetzt werden sollen. Es wird nur jeweils ein Node unterstützt.
+ a| 
+Integer-Array
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+PerMinutePrimarySwapLimit
+ a| 
+Die Anzahl der primären Schichten, die pro Minute ausgetauscht werden sollen. Wenn nicht angegeben, werden alle primären Schichten gleichzeitig ausgetauscht.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Zeitüberschreitung
+ a| 
+Gibt an, wie lange der Wartungsmodus aktiviert bleiben soll, bevor er automatisch deaktiviert wird. Formatiert als Zeitzeichenfolge (z. B. HH:mm:ss). Wenn nicht angegeben, bleibt der Wartungsmodus aktiviert, bis er explizit deaktiviert ist.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Asynchron
+ a| 
+Sie können die Methode GetAsyncResult verwenden, um diese Async Handle abzurufen und zu bestimmen, wann die Transition des Wartungsmodus abgeschlossen ist.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Stromstärkemodus
+ a| 
+Der aktuelle Status des Wartungsmodus des Node. Mögliche Werte:
+
+* Deaktiviert: Es wurde keine Wartung angefordert.
+* FailedToRecover: Der Knoten konnte nicht aus dem Wartungsmodus wiederherstellen.
+* RecoveringFromMaintenance: Der Knoten wird gerade vom Wartungsmodus wiederhergestellt.
+* VorbereitungForMaintenance: Es werden Maßnahmen ergriffen, um einen Knoten vorzubereiten, der gewartet werden soll.
+* ReadyForMaintenance: Der Knoten ist zur Durchführung der Wartung bereit.
+
+ a| 
+Wartungsmodus (String)
+
+
+
+ a| 
+Anforderungsmodus
+ a| 
+Der angeforderte Wartungsmodus des Node. Mögliche Werte:
+
+* Deaktiviert: Es wurde keine Wartung angefordert.
+* FailedToRecover: Der Knoten konnte nicht aus dem Wartungsmodus wiederherstellen.
+* RecoveringFromMaintenance: Der Knoten wird gerade vom Wartungsmodus wiederhergestellt.
+* VorbereitungForMaintenance: Es werden Maßnahmen ergriffen, um einen Knoten vorzubereiten, der gewartet werden soll.
+* ReadyForMaintenance: Der Knoten ist zur Durchführung der Wartung bereit.
+
+ a| 
+Wartungsmodus (String)
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "EnableMaintenanceMode",
+  "params": {
+    "forceWithUnresolvedFaults": False,
+    "nodes": [6],
+    "perMinutePrimarySwapLimit" : 40,
+    "timeout" : "01:00:05"
+  },
+"id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+   "id": 1,
+   "result":
+      {
+        "requestedMode": "ReadyForMaintenance",
+        "asyncHandle": 1,
+        "currentMode": "Disabled"
+    }
+}
+----
+
+
+== Neu seit Version
+
+12.2
+
+
+
+== Weitere Informationen
+
+http://docs.netapp.com/us-en/hci/docs/concept_hci_storage_maintenance_mode.html["Konzepte des NetApp HCI Storage-Wartungsmodus"^]

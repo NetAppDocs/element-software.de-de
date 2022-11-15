@@ -1,0 +1,27 @@
+---
+section: hardware
+title: Installation und Wartung von Hardware
+url: "/hardware/index.html"
+entries:
+- title: H410S und H610S Hardware-Informationen
+  url: "/hardware/concept_h410s_h610s_info.html"
+  entries:
+  - title: H410S und H610S Nodes installieren
+    url: "/hardware/task_h410s_h610s_install.html"
+  - title: Einen H410S Node austauschen
+    url: "/hardware/task_h410s_repl.html"
+  - title: Austausch eines H610S Nodes
+    url: "/hardware/task_h610s_repl.html"
+  - title: Ersetzen Sie Laufwerke
+    url: "/hardware/task_hseries_driverepl.html"
+  - title: Ersetzen Sie ein Netzteil
+    url: "/hardware/task_psu_repl.html"
+- title: Hardwareinformationen zur SF-Series
+  url: "/hardware/concept_sfseries_info.html"
+  entries:
+  - title: Ein Chassis austauschen
+    url: "/hardware/task_sfseries_chassisrepl.html"
+  - title: Ersetzen Sie Laufwerke
+    url: "/hardware/task_sfseries_driverepl.html"
+  - title: Ersetzen Sie ein Netzteil
+    url: "/hardware/task_sfseries_psurepl.html"

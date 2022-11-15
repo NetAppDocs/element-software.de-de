@@ -1,0 +1,24 @@
+---
+permalink: storage/task_monitor_fibre_channel_sessions.html 
+sidebar: sidebar 
+keywords: fibre channel sessions, fc, FC, sessions 
+summary: 'Sie können die Fibre Channel \(FC\)-Sitzungen anzeigen, die mit dem Cluster verbunden sind. Sie können Informationen so filtern, dass nur die Verbindungen berücksichtigt werden, die im Fenster angezeigt werden sollen.' 
+---
+= Zeigen Sie Fibre-Channel-Sitzungen an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Fibre Channel-Sitzungen (FC) anzeigen, die mit dem Cluster verbunden sind. Sie können Informationen so filtern, dass nur die Verbindungen berücksichtigt werden, die im Fenster angezeigt werden sollen.
+
+. Wählen Sie in der Element-UI die Option *Reporting* > *FC-Sitzungen*.
+. Klicken Sie zum Anzeigen der Filterkriterien auf *Filter*.
+
+
+
+
+== Weitere Informationen
+
+xref:reference_monitor_fibre_channel_session_details.adoc[Details zur Fibre Channel-Sitzung]

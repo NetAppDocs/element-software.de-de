@@ -1,0 +1,147 @@
+---
+permalink: api/reference_element_api_getdrivestats.html 
+sidebar: sidebar 
+keywords: drive,drives,stats,get,getting,getdrivestats 
+summary: Sie können die GetDriveStats-Methode verwenden, um anspruchsvolle Aktivitätsmessungen für einen einzelnen Antrieb zu erhalten. Die Werte werden durch das Hinzufügen des Laufwerks zum Cluster kumulativ erfasst. Einige Werte sind spezifisch für Blocklaufwerke. Statistische Daten werden entweder für Block- oder Metadaten-Laufwerkstypen zurückgegeben, wenn Sie diese Methode ausführen. 
+---
+= GetDriveStats
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `GetDriveStats` Methode, um allgemeine Aktivitätsmessungen für eine einzelne Festplatte zu erhalten. Die Werte werden durch das Hinzufügen des Laufwerks zum Cluster kumulativ erfasst. Einige Werte sind spezifisch für Blocklaufwerke. Statistische Daten werden entweder für Block- oder Metadaten-Laufwerkstypen zurückgegeben, wenn Sie diese Methode ausführen.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+DriveID
+ a| 
+ID des Laufwerks für den Antrag.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Fahrstollen
+ a| 
+Informationen zur Laufwerkaktivität für die angegebene DriveID.
+ a| 
+xref:reference_element_api_drivestats.adoc[Fahrstollen]
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "GetDriveStats",
+   "params": {
+     "driveID": 3
+   },
+   "id" : 1
+}
+----
+
+
+== Beispiel für Antwort (Blocklaufwerk)
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel für ein Blocklaufwerk entspricht:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "driveStats": {
+      "driveID": 10,
+      "failedDieCount": 0,
+      "lifeRemainingPercent": 99,
+      "lifetimeReadBytes": 26471661830144,
+      "lifetimeWriteBytes": 13863852441600,
+      "powerOnHours": 33684,
+      "readBytes": 10600432105,
+      "readOps": 5101025,
+      "reallocatedSectors": 0,
+      "reserveCapacityPercent": 100,
+      "timestamp": "2016-10-17T20:23:45.456834Z",
+      "totalCapacity": 300069052416,
+      "usedCapacity": 6112226545,
+      "usedMemory": 114503680,
+      "writeBytes": 53559500896,
+      "writeOps": 25773919
+    }
+  }
+}
+----
+
+
+== Antwortbeispiel (Volume Metadatenlaufwerk)
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel für ein Volume-Metadatenlaufwerk ähnelt:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "driveStats": {
+      "activeSessions": 8,
+      "driveID": 12,
+      "failedDieCount": 0,
+      "lifeRemainingPercent": 100,
+      "lifetimeReadBytes": 2308544921600,
+      "lifetimeWriteBytes": 1120986464256,
+      "powerOnHours": 16316,
+      "readBytes": 1060152152064,
+      "readOps": 258826209,
+      "reallocatedSectors": 0,
+      "reserveCapacityPercent": 100,
+      "timestamp": "2016-10-17T20:34:52.456130Z",
+      "totalCapacity": 134994670387,
+      "usedCapacity": null,
+      "usedMemory": 22173577216,
+      "writeBytes": 353346510848,
+      "writeOps": 86266238
+    }
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6
+
+
+
+== Weitere Informationen
+
+xref:reference_element_api_listdrives.adoc[ListenLaufwerke]

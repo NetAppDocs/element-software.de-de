@@ -1,0 +1,48 @@
+---
+permalink: setup/index.html 
+sidebar: sidebar 
+keywords: set up storage, storage system, set up, configure node, configuring storage node, add drives, fibre channel, create cluster 
+summary: Erfahren Sie, wie Sie ein Storage-System für Ihre Umgebung einrichten. 
+---
+= Storage einrichten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Erfahren Sie, wie Sie ein Storage-System für Ihre Umgebung einrichten.
+
+* xref:concept_setup_overview.adoc[Storage einrichten]
++
+** xref:task_setup_cluster_with_storage_nodes.adoc[Richten Sie ein Cluster mit Storage-Nodes ein]
++
+*** xref:concept_setup_configure_a_storage_node.adoc[Konfigurieren Sie einen Storage-Node]
+*** xref:task_setup_create_a_storage_cluster.adoc[Erstellen eines Storage-Clusters]
+*** xref:task_post_deploy_access_the_element_software_user_interface.adoc[Melden Sie sich bei der Benutzeroberfläche der Element Software an]
+*** xref:task_setup_add_drives_to_a_cluster.adoc[Fügen Sie dem Cluster Laufwerke hinzu]
+
+
+** xref:task_setup_cluster_with_fibre_channel_nodes.adoc[Richten Sie ein Cluster mit Fibre Channel Nodes ein]Einträge:
++
+*** xref:concept_setup_fc_configure_a_fibre_channel_node.adoc[Konfigurieren Sie einen Fibre Channel-Node]
+*** xref:task_setup_fc_add_fibre_channel_nodes_to_a_cluster.adoc[Fügen Sie einem Cluster Fibre Channel Nodes hinzu]
+*** xref:task_setup_fc_create_a_new_cluster_with_fibre_channel_nodes.adoc[Erstellen Sie ein neues Cluster mit Fibre Channel Nodes]
+*** xref:concept_setup_fc_set_up_zones_for_fibre_channel_nodes.adoc[Einrichten von Zonen für Fibre Channel-Nodes]
+*** xref:task_setup_create_a_volume_access_group_for_fibre_channel_clients.adoc[Erstellen einer Volume-Zugriffsgruppe für Fibre Channel-Clients]
+
+
+** xref:task_setup_determine_which_solidfire_components_to_install.adoc[Ermitteln der zu installierenden SolidFire-Komponenten]
+** xref:/task_setup_gh_redirect_set_up_a_management_node.adoc[Richten Sie einen Management-Node ein]
+** xref:concept_setup_whats_next.adoc[Was kommt als Nächstes?]
+
+
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/["SolidFire All-Flash-Storage im Überblick"^]
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+

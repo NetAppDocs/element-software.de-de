@@ -1,0 +1,133 @@
+---
+permalink: api/reference_element_api_getstoragecontainerefficiency.html 
+sidebar: sidebar 
+keywords: volume,virtual,container,volumes,get,getting,efficiency,vvol,GetStorageContainerEfficiency 
+summary: Mit der GetStorageContainerEffizienz-Methode können Sie Effizienzinformationen zu einem virtuellen Volume-Speichercontainer abrufen. 
+---
+= GetStorageContainerEffizienz
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `GetStorageContainerEfficiency` Methode zum Abrufen von Effizienzinformationen über einen virtuellen Volume-Storage-Container
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+SpeicherkontainerID
+ a| 
+Die ID des Storage Containers, für den Effizienzinformationen abgerufen werden sollen.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Komprimierung
+ a| 
+Die Menge an Speicherplatz, der durch die Datenkomprimierung für alle virtuellen Volumes im Storage-Container eingespart wird Angegeben als Verhältnis, in dem ein Wert von 1 bedeutet, dass Daten ohne Komprimierung gespeichert wurden.
+ a| 
+Schweben
+
+
+
+ a| 
+Deduplizierung
+ a| 
+Die Menge an Speicherplatz, die eingespart wird, indem Daten für alle virtuellen Volumes im Storage-Container nicht dupliziert werden. Als Verhältnis angegeben.
+ a| 
+Schweben
+
+
+
+ a| 
+MisingVolumes
+ a| 
+Die virtuellen Volumes, die nicht nach Effizienzdaten abgefragt werden konnten. Fehlende Volumes können durch den GC-Zyklus (Garbage Collection) verursacht werden, der weniger als eine Stunde alt ist, vorübergehend keine Netzwerkverbindung mehr besteht oder Services seit dem GC-Zyklus neu gestartet werden.
+ a| 
+Integer-Array
+
+
+
+ a| 
+Thin Provisioning
+ a| 
+Das Verhältnis des belegten Speicherplatzes zum zugewiesenen Speicherplatz zum Speichern von Daten. Als Verhältnis angegeben.
+ a| 
+Schweben
+
+
+
+ a| 
+Zeitstempel
+ a| 
+Die letzten Effizienzdaten wurden nach GC erfasst.
+ a| 
+ISO 8601-Datenzeichenfolge
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "GetStorageContainerEfficiency",
+  "params": {
+    "storageContainerID" : "6c95e24f-9f0b-4793-affb-5a4bc6c3d7e1"
+  },
+  "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {
+    "compression": 1,
+    "deduplication": 1,
+    "missingVolumes": [],
+    "thinProvisioning": 1,
+    "timestamp": "2016-04-12T15:39:49Z"
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6

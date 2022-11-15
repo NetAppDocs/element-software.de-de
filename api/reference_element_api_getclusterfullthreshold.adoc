@@ -1,0 +1,300 @@
+---
+permalink: api/reference_element_api_getclusterfullthreshold.html 
+sidebar: sidebar 
+keywords: cluster,get,getting,full,threshold,level,fullness,storage,capacity,getclusterfullthreshold 
+summary: Sie können die Methode GetClusterFullThreshold verwenden, um die für Cluster-Auslastungsstufen festgelegten Phasen anzuzeigen. Bei dieser Methode werden alle Auslastungsmetriken für den Cluster angezeigt. 
+---
+= GetClusterFullThreshold
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `GetClusterFullThreshold` Methode zum Anzeigen der für Cluster-Auslastungsebenen eingestellten Phasen. Bei dieser Methode werden alle Auslastungsmetriken für den Cluster angezeigt.
+
+
+NOTE: Wenn ein Cluster die Error-Phase der Block-Cluster-Fülle erreicht, werden die maximalen IOPS auf allen Volumes linear auf die minimale IOPS des Volumes reduziert, wenn der Cluster der kritischen Phase nähert. So verhindert, dass der Cluster die kritische Phase der Block-Cluster-Fülle erreicht.
+
+
+
+== Parameter
+
+Diese Methode hat keine Eingabeparameter.
+
+
+
+== Rückgabewerte
+
+Diese Methode verfügt über die folgenden Rückgabewerte:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Blockfullness
+ a| 
+Die aktuell berechnete Blockebene der Blockfülle des Clusters
+
+* Stage1Happy: Keine Warnungen oder Fehlerbedingungen. Entspricht dem *gesunden*-Status in der Web-UI.
+* Stage2Aware: Keine Warnungen oder Fehlerbedingungen. Entspricht dem *gesunden*-Status in der Web-UI.
+* Stage3Low: Das System kann nicht vor zwei nicht gleichzeitigen Node-Ausfällen redundante Daten schützen. Entspricht dem Status *Warnung* in der Web-Benutzeroberfläche. Sie können diesen Level in der Web-Benutzeroberfläche konfigurieren (standardmäßig löst das System diese Warnung mit einer Kapazität von 3 % unter dem Fehlerzustand aus).
+* Stage4kritisch: Das System kann nicht redundante Datensicherung bei einem Single Node-Ausfall bieten. Es können keine neuen Volumes oder Klone erstellt werden. Entspricht dem Status *Error* in der Element UI.
+* Stage5CompletelyVerbrauch: Vollständig verbraucht. Das Cluster ist schreibgeschützt und iSCSI-Verbindungen bleiben erhalten, alle Schreibvorgänge werden jedoch ausgesetzt. Entspricht dem *kritischen*-Status in der Element-UI.
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Fülle
+ a| 
+Spiegelt die höchste Ebene der Fülle zwischen "BlockFullness" und "MetadaFullness" wider.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+MaxMetadaÜberProvisionFaktor
+ a| 
+Ein Wert, der repräsentativ für die Anzahl der Zeiten ist, für die Metadaten im Verhältnis zum verfügbaren Speicherplatz überprovisioniert werden können. Wenn beispielsweise genügend Metadatenspeicherplatz vorhanden war, um 100 tib Volumes zu speichern, und diese Zahl auf 5 gesetzt wurde, könnten dann 500 tib an Volumes erstellt werden.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+MetadataFullness
+ a| 
+Die aktuell berechnete Metadatenfülle des Clusters.
+
+* Stage1Happy: Keine Warnungen oder Fehlerbedingungen. Entspricht dem *gesunden*-Status in der Web-UI.
+* Stage2Aware: Keine Warnungen oder Fehlerbedingungen. Entspricht dem *gesunden*-Status in der Web-UI.
+* Stage3Low: Das System kann nicht vor zwei nicht gleichzeitigen Node-Ausfällen redundante Daten schützen. Entspricht dem Status *Warnung* in der Web-Benutzeroberfläche. Sie können diesen Level in der Web-Benutzeroberfläche konfigurieren (standardmäßig löst das System diese Warnung mit einer Kapazität von 3 % unter dem Fehlerzustand aus).
+* Stage4kritisch: Das System kann nicht redundante Datensicherung bei einem Single Node-Ausfall bieten. Es können keine neuen Volumes oder Klone erstellt werden. Entspricht dem Status *Error* in der Element UI.
+* Stage5CompletelyVerbrauch: Vollständig verbraucht. Das Cluster ist schreibgeschützt und iSCSI-Verbindungen bleiben erhalten, alle Schreibvorgänge werden jedoch ausgesetzt. Entspricht dem *kritischen*-Status in der Element-UI.
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+SliceReserveUsedThresholdPunkt
+ a| 
+Fehlerbedingung. Eine Systemwarnung wird ausgelöst, wenn die reservierte Schichtauslastung größer als dieser Wert ist.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Stage2AwareThreshold
+ a| 
+Bewusstseinszustand. Der für die Stufe 2 des Cluster-Schwellenwerts festgelegte Wert.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Stage2BlockThresholdBytes
+ a| 
+Die Anzahl der Bytes, die vom Cluster verwendet werden, auf dem eine Phase 2-Bedingung bestehen soll.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Stage2MetadataThresholdBytes
+ a| 
+Die Anzahl der Metadaten-Bytes, die vom Cluster verwendet werden, auf dem eine Bedingung für die Fülle von Phase 2 vorhanden ist.
+ a| 
+
+
+
+ a| 
+Stage3BlockThresholdBytes
+ a| 
+Die Anzahl der Storage Bytes, die vom Cluster verwendet werden, an dem eine Bedingung für die Fülle von Phase 3 vorhanden sein wird.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Stage3BlockThresholdPercent
+ a| 
+Der Prozentwert, der für Phase 3 festgelegt wurde. Bei diesem Prozentsatz wird eine Warnung im Alarmprotokoll ausgegeben.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Stage3LowThreshold
+ a| 
+Fehlerbedingung. Der Schwellenwert, bei dem eine Systemwarnung aufgrund einer geringen Kapazität in einem Cluster erstellt wird.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Stage3MetadataThresholdBytes
+ a| 
+Die Anzahl der Metadaten-Bytes, die vom Cluster verwendet werden, auf dem eine Bedingung für die Phase 3 der Fülle vorhanden ist.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Stage3MetadataThresholdPercent
+ a| 
+Der Prozentwert, der für die Metadaten-Fülle von „stage3“ festgelegt wurde. Bei diesem Prozentsatz wird eine Warnung im Alarmprotokoll veröffentlicht.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Stage4BlockThresholdBytes
+ a| 
+Die Anzahl der Storage Bytes, die vom Cluster verwendet werden, an dem eine Bedingung für die Fülle von Phase 4 vorhanden sein wird.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Stage4CriticalThreshold
+ a| 
+Fehlerbedingung. Der Schwellenwert, bei dem eine Systemwarnung erstellt wird, um über eine kritisch niedrige Kapazität auf einem Cluster zu warnen.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Stage4MetadataThresholdBytes
+ a| 
+Die Anzahl der Metadaten-Bytes, die vom Cluster verwendet werden, auf dem eine Bedingung für die Phase 4 der Fülle vorhanden ist.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Stage5BlockThresholdBytes
+ a| 
+Die Anzahl der Speicherbyte, die vom Cluster verwendet wird, an dem eine Bedingung für die Phase 5-Fülle vorhanden sein soll.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Stage5MetadataThresholdBytes
+ a| 
+Die Anzahl der Metadaten-Bytes, die vom Cluster verwendet werden, auf dem eine Bedingung für die Phase 5 der Fülle vorhanden ist.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Summe ClusterBytes
+ a| 
+Die physische Kapazität des Clusters, gemessen in Byte.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+SumTotalMetadaClusterBytes
+ a| 
+Der gesamte Speicherplatz, der zum Speichern von Metadaten verwendet werden kann.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Summe - ClusterBytes
+ a| 
+Die Anzahl der im Cluster verwendeten Storage Bytes.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+SuumUseMetadataClusterBytes
+ a| 
+Der Speicherplatz, der auf Volume-Laufwerken zum Speichern von Metadaten verwendet wird.
+ a| 
+Ganzzahl
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method" : "GetClusterFullThreshold",
+   "params" : {},
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id":1,
+  "result":{
+    "blockFullness":"stage1Happy",
+    "fullness":"stage3Low",
+    "maxMetadataOverProvisionFactor":5,
+    "metadataFullness":"stage3Low",
+    "sliceReserveUsedThresholdPct":5,
+    "stage2AwareThreshold":3,
+    "stage2BlockThresholdBytes":2640607661261,
+    "stage3BlockThresholdBytes":8281905846682,
+    "stage3BlockThresholdPercent":5,
+    "stage3LowThreshold":2,
+    "stage4BlockThresholdBytes":8641988709581,
+    "stage4CriticalThreshold":1,
+    "stage5BlockThresholdBytes":12002762096640,
+    "sumTotalClusterBytes":12002762096640,
+    "sumTotalMetadataClusterBytes":404849531289,
+    "sumUsedClusterBytes":45553617581,
+    "sumUsedMetadataClusterBytes":31703113728
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6
+
+
+
+== Weitere Informationen
+
+xref:reference_element_api_modifyclusterfullthreshold.adoc[ModifyClusterFullThreshold]

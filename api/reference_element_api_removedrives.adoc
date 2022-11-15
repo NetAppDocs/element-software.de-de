@@ -1,0 +1,105 @@
+---
+permalink: api/reference_element_api_removedrives.html 
+sidebar: sidebar 
+keywords: cluster,drive,drives,remove,removing,removedrives 
+summary: Mithilfe der Methode RemoveDrives können Laufwerke, die Teil des Clusters sind, proaktiv entfernt werden. Sie können diese Methode verwenden, wenn Sie die Cluster-Kapazität verringern oder Laufwerke ersetzen möchten, die sich dem Ende ihrer Lebensdauer nähern. Alle Daten auf den Laufwerken werden entfernt und auf andere Laufwerke im Cluster migriert, bevor das Laufwerk aus dem Cluster entfernt wird. 
+---
+= RemoveDrives
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `RemoveDrives` Methode zum proaktiven Entfernen von Laufwerken, die Teil des Clusters sind Sie können diese Methode verwenden, wenn Sie die Cluster-Kapazität verringern oder Laufwerke ersetzen möchten, die sich dem Ende ihrer Lebensdauer nähern. Alle Daten auf den Laufwerken werden entfernt und auf andere Laufwerke im Cluster migriert, bevor das Laufwerk aus dem Cluster entfernt wird.
+
+`RemoveDrives` Ist eine asynchrone Methode. Abhängig von der Gesamtkapazität der entfernten Laufwerke kann es einige Minuten dauern, bis alle Daten migriert sind.
+
+Verwenden Sie beim Entfernen mehrerer Laufwerke nur ein einziges `RemoveDrives` Methodenaufruf statt mehreren einzelnen Methoden mit jeweils einem einzigen Laufwerk. Hierdurch wird die Menge an Daten reduziert, die stattfinden muss, um die Storage-Last im Cluster gleichmäßig zu stabilisieren.
+
+Sie können auch Laufwerke mit dem Status „Fehlgeschlagen“ entfernen `RemoveDrives`. Wenn Sie ein Laufwerk mit dem Status „ausgefallen“ entfernen, wird das Laufwerk nicht in den Status „verfügbar“ oder „`aktiv`“ zurückgeführt. Das Laufwerk ist nicht zur Verwendung im Cluster verfügbar.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Laufwerke
+ a| 
+Liste der aus dem Cluster zu entfernenden Auffahrungen.
+ a| 
+Integer-Array
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Asynchron
+ a| 
+Handle-Wert, der zum Abrufen des Operationsergebnisses verwendet wird.
+ a| 
+Ganzzahl
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "RemoveDrives",
+   "params": {
+      "drives"  : [3, 4, 5]
+   },
+   "id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+   "id": 1,
+   "result" : {
+     "asyncHandle": 1
+   }
+}
+----
+
+
+== Neu seit Version
+
+9.6
+
+
+
+== Weitere Informationen
+
+* xref:reference_element_api_getasyncresult.adoc[GetAsyncResult]
+* xref:reference_element_api_listdrives.adoc[ListenLaufwerke]
+

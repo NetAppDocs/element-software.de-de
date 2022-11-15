@@ -1,0 +1,220 @@
+---
+permalink: api/reference_element_api_schedule.html 
+sidebar: sidebar 
+keywords: object,objects,schedule 
+summary: Das Schedule-Objekt enthält Informationen zu einem Zeitplan, der erstellt wurde, um einen Snapshot eines Volumes autonom zu erstellen. Mit der ListSchedules-API-Methode können Sie Zeitplaninformationen für alle Zeitpläne abrufen. 
+---
+= Zeitplan
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Schedule-Objekt enthält Informationen zu einem Zeitplan, der erstellt wurde, um einen Snapshot eines Volumes autonom zu erstellen. Sie können Terminplaninformationen für alle Zeitpläne mit abrufen `ListSchedules` API-Methode.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Merkmale
+ a| 
+Gibt die Häufigkeit des Zeitplaneintretens an. Mögliche Werte:
+
+* Wochentag
+* Tag des Monats
+* Zeitintervall
+
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+HasFehler
+ a| 
+Zeigt an, ob der Zeitplan Fehler enthält. Mögliche Werte:
+
+* Richtig
+* Falsch
+
+ a| 
+boolesch
+
+
+
+ a| 
+Stunden
+ a| 
+Zeigt die Stunden an, die vergehen, bevor der nächste Snapshot erstellt wird. Mögliche Werte sind 0 bis 24.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+LastRunStatus
+ a| 
+Zeigt den Status des letzten geplanten Snapshots an. Mögliche Werte:
+
+* Erfolg
+* Fehlgeschlagen
+
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+LastRunTimeStart
+ a| 
+Zeigt das letzte Mal an, zu dem der Zeitplan gestartet wurde.
+ a| 
+ISO 8601-Datumszeichenfolge
+
+
+
+ a| 
+Minuten
+ a| 
+Zeigt die Minuten an, die vergehen werden, bevor der nächste Snapshot erstellt wird. Mögliche Werte sind 0 bis 59.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Monthdays
+ a| 
+Gibt die Tage des Monats an, an denen ein Snapshot erstellt wird.
+ a| 
+Array erledigen
+
+
+
+ a| 
+Angehalten
+ a| 
+Gibt an, ob der Zeitplan angehalten wurde oder nicht. Mögliche Werte:
+
+* Richtig
+* Falsch
+
+ a| 
+boolesch
+
+
+
+ a| 
+Wiederkehrend
+ a| 
+Gibt an, ob der Zeitplan wiederholt ist oder nicht. Mögliche Werte:
+
+* Richtig
+* Falsch
+
+ a| 
+boolesch
+
+
+
+ a| 
+RunNextInterval
+ a| 
+Gibt an, ob der Zeitplan das nächste Mal ausgeführt wird, wenn der Planer aktiv ist. Wenn wahr, wird der Zeitplan das nächste Mal ausgeführt, wenn der Planer aktiv ist und dieser Wert auf false gesetzt wird. Mögliche Werte:
+
+* Richtig
+* Falsch
+
+ a| 
+boolesch
+
+
+
+ a| 
+ScheduleID
+ a| 
+Die eindeutige ID des Zeitplans.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+ScheduleInfo
+ a| 
+Enthält den eindeutigen Namen des Zeitplans, den Aufbewahrungszeitraum für den erstellten Snapshot und die Volume-ID des Volumes, aus dem der Snapshot erstellt wurde.
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+Planname
+ a| 
+Der dem Zeitplan zugewiesene eindeutige Name.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Planungstyp
+ a| 
+Derzeit werden nur Zeitplantypen von Snapshots unterstützt.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+SnapMirror Label
+ a| 
+Das SnapMirrorLabel, das auf den erstellten Snapshot oder Gruppen-Snapshot angewendet wird, der im ScheduleInfo enthalten ist. Wenn nicht festgelegt, ist dieser Wert Null.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Startdatum
+ a| 
+Gibt das Datum an, an dem der Zeitplan zum ersten Mal gestartet wurde oder beginnt; formatiert in UTC-Zeit.
+ a| 
+ISO 8601-Datumszeichenfolge
+
+
+
+ a| 
+ToBeDeleted
+ a| 
+Gibt an, ob der Zeitplan zum Löschen markiert ist. Mögliche Werte:
+
+* Richtig
+* Falsch
+
+ a| 
+boolesch
+
+
+
+ a| 
+Wochentage
+ a| 
+Gibt die Tage der Woche an, an denen ein Snapshot erstellt wird.
+ a| 
+Array erledigen
+
+|===
+
+
+== Weitere Informationen
+
+xref:reference_element_api_listschedules.adoc[ListSchedules]

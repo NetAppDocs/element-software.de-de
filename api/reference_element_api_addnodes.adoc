@@ -1,0 +1,155 @@
+---
+permalink: api/reference_element_api_addnodes.html 
+sidebar: sidebar 
+keywords: addnodes,node,add,adding,nodes,cluster 
+summary: Sie können die AddNodes-Methode verwenden, um einem Cluster einen oder mehrere neue Knoten hinzuzufügen. 
+---
+= AddNodes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `AddNodes` Methode zum Hinzufügen eines oder mehrerer neuer Nodes zu einem Cluster
+
+Wenn beim ersten Start eines Node, der nicht konfiguriert ist, werden Sie aufgefordert, den Node zu konfigurieren. Sobald Sie den Node konfiguriert haben, wird dieser bei dem Cluster als „ausstehender Node“ registriert. Storage-Cluster, die Element Software ausführen, erstellen automatisch ein Node zur Version auf dem Cluster. Wenn Sie einen ausstehenden Node hinzufügen, enthält die Methodenantwort einen asynchronen Wert, den Sie mit der verwenden können `GetAsyncResult` Methode zum Abfragen des Status des automatischen Bildgebungsprozesses.
+
+Der Vorgang, bei dem ein Fibre-Channel-Node hinzugefügt wird, entspricht dem Hinzufügen des Elements iSCSI-Storage-Nodes zu einem Cluster. Fibre Channel-Knoten sind im System mit einer NodeID registriert. Wenn sie zugänglich werden, werden sie in den Status „ausstehender Knoten“ versetzt. Der `ListAllNodes` Die Methode gibt die hängende NodeID für iSCSI-Knoten sowie alle Fibre-Channel-Knoten zurück, die dem Cluster hinzugefügt werden können.
+
+Wenn Sie einem Cluster einen Knoten hinzufügen, den Sie für ein virtuelles Netzwerk konfiguriert haben, benötigt das System eine ausreichende Anzahl an virtuellen Speicher-IP-Adressen, um dem neuen Knoten eine virtuelle IP zuzuweisen. Wenn für den neuen Knoten keine virtuellen IP-Adressen verfügbar sind, wird das angezeigt `AddNode` Der Vorgang schlägt fehl. Verwenden Sie die `ModifyVirtualNetwork` Methode zum Hinzufügen weiterer Speicher-IP-Adressen zu Ihrem virtuellen Netzwerk.
+
+Sobald Sie einen Node hinzufügen, werden alle Laufwerke des Nodes verfügbar gemacht und können über die hinzugefügt werden `AddDrives` Methode zum Erhöhen der Speicherkapazität des Clusters.
+
+
+NOTE: Es kann einige Sekunden dauern, nachdem ein neuer Knoten hinzugefügt wurde, damit er gestartet und seine Laufwerke so registriert werden können, wie verfügbar.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Automatische Installation
+ a| 
+Wenn wahr, wird beim Hinzufügen eine Rückkehr zum werkseitigen Image (RTFI) auf dem Knoten durchgeführt. Das Standardverhalten ist die Ausführung von RTFI. Wenn der `cEnableAutoInstall` Die Cluster-Konstante ist falsch, sie hat Priorität gegenüber diesem Parameter. Wenn ein Upgrade ausgeführt wird, erfolgt der RTFI-Prozess unabhängig vom Wert für diesen Parameter nicht.
+ a| 
+boolesch
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Hängende Knoten
+ a| 
+Ausstehende NodeIDs für die Nodes, die hinzugefügt werden sollen. Sie können alle ausstehenden Knoten mit der Methode ListPendingNodes auflisten.
+ a| 
+Integer-Array
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Automatische Installation
+ a| 
+Gibt an, ob die hinzugefügten Nodes an das werkseitige Image zurückgegeben werden.
+ a| 
+boolesch
+
+
+
+ a| 
+Knoten
+ a| 
+Eine Reihe von Objekten, die die vorherige „PendingNodeID“ der „nodeID“ zuordnen. Wenn Sie einen ausstehenden Node hinzufügen, auf dem eine inkompatible Softwareversion ausgeführt wird, enthält dieses Array einen Async-Handle-Wert, den Sie mit der GetAsyncResult-Methode verwenden können, um den Status des automatischen Bildgebungsprozesses abzufragen.
+ a| 
+JSON-Objekt-Array
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+   "method": "AddNodes",
+   "params": {
+     "autoInstall" : true,
+     "pendingNodes" : [1]
+   },
+   "id":1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  id: null,
+  result: {
+    autoInstall: true,
+    nodes: [
+      {
+        activeNodeKey: "giAm2ep1hA",
+        assignedNodeID: 6,
+        asyncHandle: 3,
+        cip: "10.10.5.106",
+        mip: "192.168.133.106",
+        pendingNodeID: 2,
+        platformInfo: {
+          chassisType: "R620",
+          cpuModel: "Intel(R) Xeon(R) CPU E5-2640 0 @ 2.50GHz",
+          nodeMemoryGB: 72,
+          nodeType: "SF3010"
+        },
+        sip: "10.10.5.106",
+        softwareVersion: "9.0.0.1077"
+      }
+    ]
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6
+
+
+
+== Weitere Informationen
+
+* xref:reference_element_api_adddrives.adoc[AddDrives]
+* xref:reference_element_api_getasyncresult.adoc[GetAsyncResult]
+* xref:reference_element_api_listallnodes.adoc[ListenAllNodes]
+* xref:reference_element_api_modifyvirtualnetwork.adoc[ModifyVirtualNetwork]
+

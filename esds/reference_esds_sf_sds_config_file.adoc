@@ -1,0 +1,94 @@
+---
+permalink: esds/reference_esds_sf_sds_config_file.html 
+sidebar: sidebar 
+keywords: element, solidfire esds, hardware components, configuration file 
+summary: Jeder Knoten verfügt über eine sf_sds_config.yaml-Datei, die die Liste der Hardware enthält, die von den ESDS-Diensten von SolidFire verwendet werden soll. Nachdem Sie ein Laufwerk ersetzt haben, müssen Sie in dieser Datei die Informationen zum Ersatzlaufwerk für den Node hinzufügen, von dem Sie das Laufwerk ersetzt haben. Diese Datei wird in /opt/sf/ gespeichert. Diese Datei enthält alle Informationen über die Laufwerke im Node. Sie müssen die Details des neuen Laufwerks in dieser Datei jedes Mal eingeben, wenn Sie ein neues Laufwerk hinzufügen. 
+---
+= Inhalt der datei sf_sds_config.yaml
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Jeder Node verfügt über eine `sf_sds_config.yaml` Datei, die die Liste der Hardware enthält, die Sie angeben, die von den ESDS-Diensten von SolidFire verwendet werden soll. Nachdem Sie ein Laufwerk ersetzt haben, sollten Sie die Informationen zum Ersatzlaufwerk in dieser Datei für den Node hinzufügen, von dem Sie das Laufwerk ersetzt haben. Diese Datei wird in gespeichert `/opt/sf/`. Diese Datei enthält alle Informationen über die Laufwerke im Node. Sie sollten die Details des neuen Laufwerks in dieser Datei jedes Mal eingeben, wenn Sie ein neues Laufwerk hinzufügen.
+
+Hier finden Sie den *erforderlichen* Inhalt der Datei:
+
+[cols="4*"]
+|===
+| Taste | Standard | Typ | Beschreibung 
+
+
+ a| 
+SchemaVersion
+ a| 
+„2.0“
+ a| 
+Zeichenfolge
+ a| 
+Die Nummer der Schemaversion für die Datei.
+
+
+
+ a| 
+Netzwerk
+ a| 
+K. A.
+ a| 
+Liste
+ a| 
+Zulässige Werte: ManagementInterface,StorageInterface
+
+
+
+ a| 
+Management-Schnittstelle
+ a| 
+„Team0“
+ a| 
+Zeichenfolge
+ a| 
+Der Name der vorkonfigurierten, redundanten Hostbetriebnetzwerkschnittstelle, die für den Management- und Cluster-Managementdatenverkehr verwendet werden soll.
+
+
+
+ a| 
+Storage Interface
+ a| 
+„team1“
+ a| 
+Zeichenfolge
+ a| 
+Der Name der vorkonfigurierten, redundanten Hostbetriebssystem-Netzwerkschnittstelle für den Speichernetzwerkdatenverkehr (iSCSI-Datenverkehr).
+
+
+
+ a| 
+Datenlaufwerke
+ a| 
+K. A.
+ a| 
+Liste
+ a| 
+Die Liste der Host-Betriebssystempfade zu physischen Speichergeräten, die von SolidFire ESDS verwendet werden. Sie können dies als vollständige Pfade zum Block- oder NVME-Gerät angeben. Die folgenden vollständigen Pfadbeispiele werden unterstützt: /Dev/Disk/by-id/wwn-xxxx-xxxx-xxxx-BEISPIEL, /dev/Disk/by-UUID/nvme-xxxx-xxxxx-EXAMPLE und /dev/sda1
+
+
+
+ a| 
+Cache-Geräte
+ a| 
+K. A.
+ a| 
+Liste
+ a| 
+Der Host-OS-Pfad zum physischen Gerät, das von SolidFire ESDS als Cache-Gerät verwendet wird. Sie sollten es als Listeneintrag angeben. Das folgende Beispiel zeigt einen unterstützten vollständigen Pfad: /Dev/Disk/by-id/nvme-nvme.8086-XXXXXXX-XXXXX-XXXXX-XXXXXXXX-EXAMPLE
+
+|===
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Ressourcen-Seite zu NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Dokumentation für frühere Versionen von NetApp SolidFire und Element Produkten"^]
+

@@ -1,0 +1,122 @@
+---
+permalink: api/reference_element_api_listauthsessionbyusername.html 
+sidebar: sidebar 
+keywords: username,sessions,authentication sessions,list 
+summary: Sie können die Methode ListAuthSessionByUsername verwenden, um alle Auth-Sitzungen für den angegebenen Benutzer aufzulisten. Ein Anrufer, der nicht in der Zugriffsgruppe enthalten ist ClusterAdmins/Administratorrechte dürfen nur seine eigenen Sitzungen auflisten. Ein Anrufer mit ClusterAdmins/Administratorrechten kann Sitzungen eines beliebigen Benutzers auflisten. 
+---
+= ListAuthSessionsByBenutzername
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `ListAuthSessionsByUsername` Methode zum Auflisten aller Auth-Sitzungen für den angegebenen Benutzer. Ein Anrufer, der nicht in der Zugriffsgruppe enthalten ist ClusterAdmins/Administratorrechte dürfen nur seine eigenen Sitzungen auflisten. Ein Anrufer mit ClusterAdmins/Administratorrechten kann Sitzungen eines beliebigen Benutzers auflisten.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+AuthMethod
+ a| 
+Authentifizierungsmethode der zu aufgelistenden Benutzersitzungen. Dieser Parameter kann nur von einem Anrufer in der ClusterAdmins/Administrator-Zugriffsgruppe angegeben werden. Mögliche Werte sind:
+
+* *AutMethod=Cluster* gibt den ClusterAdmin-Benutzernamen an.
+* *AuthMethod=LDAP* gibt den LDAP-DN des Benutzers an.
+* *AutMethod=IDP* gibt entweder die IdP UUID oder die NameID des Benutzers an. Wenn das IdP nicht so konfiguriert ist, dass es eine Option zurückgibt, gibt dies eine zufällige UUID an, die beim Erstellen der Sitzung ausgegeben wurde.
+
+ a| 
+AuthMethod
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Benutzername
+ a| 
+Eindeutige Kennung für den Benutzer.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Sitzungen
+ a| 
+Liste der Sitzungsinformationen für die auth Sessions.
+ a| 
+link:reference_element_api_authsessioninfo.md#GUID-FF0CE38C-8F99-4F23-8A6F-F6EA4487E808["AuthSessionInfo"]
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+    "method": "ListAuthSessionsByUsername",
+    "authMethod": "Cluster",
+    "username": "admin"
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+"sessions": [
+      {
+        "accessGroupList": [
+          "administrator"
+        ],
+        "authMethod": "Cluster",
+        "clusterAdminIDs": [
+          1
+        ],
+        "finalTimeout": "2020-03-14T19:21:24Z",
+        "idpConfigVersion": 0,
+        "lastAccessTimeout": "2020-03-11T19:51:24Z",
+        "sessionCreationTime": "2020-03-11T19:21:24Z",
+        "sessionID": "b12bfc64-f233-44df-8b9f-6fb6c011abf7",
+        "username": "admin"
+      }
+    ]
+}
+----
+
+
+== Neu seit Version
+
+12.0

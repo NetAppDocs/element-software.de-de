@@ -1,0 +1,28 @@
+---
+permalink: storage/task_system_manage_cluster_set_the_cluster_full_threshold.html 
+sidebar: sidebar 
+keywords: cluster fullness, setting threshold, metadata, warning 
+summary: Sie können die Ebene ändern, auf der das System eine Warnung zur Blockclusterfülle generiert, indem Sie die folgenden Schritte durchführen. Darüber hinaus können Sie die ModifyClusterFullThreshold API-Methode verwenden, um den Level zu ändern, auf dem das System eine Block- oder Metadaten-Warnung erzeugt. 
+---
+= Legen Sie den Schwellenwert für den vollen Cluster fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Ebene ändern, auf der das System eine Warnung zur Blockclusterfülle generiert, indem Sie die folgenden Schritte durchführen. Darüber hinaus können Sie die ModifyClusterFullThreshold API-Methode verwenden, um den Level zu ändern, auf dem das System eine Block- oder Metadaten-Warnung erzeugt.
+
+Sie müssen über Administratorrechte für den Cluster verfügen.
+
+.Schritte
+. Klicken Sie Auf *Cluster* > *Einstellungen*.
+. Geben Sie im Abschnitt „Cluster Full Settings“ einen Prozentsatz in *Warnung anheben ein, wenn die Kapazität von _ % verbleibt, bevor Helix nach einem Node-Ausfall nicht wieder herstellen konnte*.
+. Klicken Sie Auf *Änderungen Speichern*.
+
+
+
+
+== Weitere Informationen
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Flash_Storage/SF_Series/How_are_the_blockSpace_thresholds_calculated_for_Element["Wie werden die BlockSpace Schwellenwerte für Element berechnet"^]

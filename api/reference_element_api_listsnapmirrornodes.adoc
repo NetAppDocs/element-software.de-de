@@ -1,0 +1,60 @@
+---
+permalink: api/reference_element_api_listsnapmirrornodes.html 
+sidebar: sidebar 
+keywords: snapmirror,node,nodes,list,listing,listsnapmirrornodes 
+summary: Die Web-UI der Element Software verwendet die Methode ListSnapMirrorNodes, um eine Liste der Knoten in einem Remote-ONTAP-Cluster zu erhalten. 
+---
+= ListSnapMirrorNodes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Web-UI der Element Software verwendet das `ListSnapMirrorNodes` Methode zum Abrufen einer Liste von Knoten in einem Remote-ONTAP-Cluster.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+SnapMirrorEndpointID
+ a| 
+Falls vorhanden, listet das System die Knoten des Endpunktes mit der angegebenen SnapMirrorEndpointID auf. Ist dies nicht der Fall, werden die Nodes aller bekannten SnapMirror Endpunkte aufgelistet.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+SnapMirror Nodes
+ a| 
+Eine Liste der Nodes auf dem ONTAP Cluster.
+ a| 
+xref:reference_element_api_snapmirrornode.adoc[SnapMirror Node] Array erledigen
+
+|===
+
+
+== Neu seit Version
+
+10.1

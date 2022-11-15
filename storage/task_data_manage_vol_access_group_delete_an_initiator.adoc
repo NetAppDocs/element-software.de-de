@@ -1,0 +1,45 @@
+---
+permalink: storage/task_data_manage_vol_access_group_delete_an_initiator.html 
+sidebar: sidebar 
+keywords: initiator delete, deleted multiple initiators 
+summary: Sie können einen Initiator löschen, nachdem er nicht mehr benötigt wird. Wenn Sie einen Initiator löschen, wird dieser vom System aus einer zugehörigen Volume-Zugriffsgruppe entfernt. Verbindungen, die den Initiator verwenden, bleiben gültig, bis die Verbindung zurückgesetzt wird. 
+---
+= Löschen eines Initiators
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können einen Initiator löschen, nachdem er nicht mehr benötigt wird. Wenn Sie einen Initiator löschen, wird dieser vom System aus einer zugehörigen Volume-Zugriffsgruppe entfernt. Verbindungen, die den Initiator verwenden, bleiben gültig, bis die Verbindung zurückgesetzt wird.
+
+.Schritte
+. Klicken Sie Auf *Management* > *Initiatoren*.
+. Führen Sie die Schritte zum Löschen eines einzelnen Initiators oder mehrerer Initiatoren durch:
++
+[cols="25,75"]
+|===
+| Option | Schritte 
+
+
+ a| 
+Löschen Sie den einzelnen Initiator
+ a| 
+.. Klicken Sie auf das Symbol *Aktionen* für den Initiator, den Sie löschen möchten.
+.. Klicken Sie Auf *Löschen*.
+.. Bestätigen Sie die Aktion.
+
+
+
+
+ a| 
+Löschen Sie mehrere Initiatoren
+ a| 
+.. Aktivieren Sie die Kontrollkästchen neben den Initiatoren, die Sie löschen möchten.
+.. Klicken Sie auf die Schaltfläche *Massenaktionen*.
+.. Wählen Sie im Menü Ergebnis die Option *Löschen* aus.
+.. Bestätigen Sie die Aktion.
+
+
+|===
+

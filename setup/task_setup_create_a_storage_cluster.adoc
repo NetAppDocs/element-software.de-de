@@ -1,0 +1,74 @@
+---
+permalink: setup/task_setup_create_a_storage_cluster.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie können ein Storage-Cluster erstellen, nachdem Sie alle einzelnen Nodes konfiguriert haben. Wenn Sie ein Cluster erstellen, wird automatisch ein Cluster-Administrator-Benutzerkonto für Sie erstellt. Der Clusteradministrator verfügt über die Berechtigung zum Verwalten aller Clusterattribute und kann andere Cluster-Administratorkonten erstellen. 
+---
+= Erstellen eines Storage-Clusters
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein Storage-Cluster erstellen, nachdem Sie alle einzelnen Nodes konfiguriert haben. Wenn Sie ein Cluster erstellen, wird automatisch ein Cluster-Administrator-Benutzerkonto für Sie erstellt. Der Clusteradministrator verfügt über die Berechtigung zum Verwalten aller Clusterattribute und kann andere Cluster-Administratorkonten erstellen.
+
+.Was Sie und#8217;ll benötigen
+* Sie haben den Management-Node installiert.
+* Sie haben alle einzelnen Nodes konfiguriert.
+
+
+Während der Konfiguration eines neuen Node werden jedem Node 1-GB- oder 10-GB-Management-IP-Adressen (MIP) zugewiesen. Sie müssen eine der bei der Konfiguration erstellten Node-IP-Adressen verwenden, um die Seite Neues Cluster erstellen zu öffnen. Die verwendete IP-Adresse hängt vom Netzwerk ab, das Sie für das Cluster-Management ausgewählt haben.
+
+[IMPORTANT]
+====
+Wenn Sie Cluster-weit aktivieren möchten link:../concepts/concept_solidfire_concepts_security.html#encryption-at-rest-software["Softwareverschlüsselung für Daten im Ruhezustand"] Bei SolidFire All-Flash-Storage-Clustern müssen Sie dies während der Cluster-Erstellung tun. Ab Element 12.5 müssen Sie während der Cluster-Erstellung in der UI „Cluster erstellen“ die Softwareverschlüsselung im Ruhezustand aktivieren. Für Element 12.3.x und früher müssen Sie den Cluster mithilfe der erstellen link:../api/reference_element_api_createcluster.html["CreateCluster erstellen"] API-Methode und ändern Sie den enableSoftwareVerschlüsselungAtRest-Parameter in `true`. Die Softwareverschlüsselung im Ruhezustand ist für SolidFire ESDS Cluster standardmäßig aktiviert. Bei All-Flash-Storage-Clustern von SolidFire und SolidFire ESDS-Clustern kann die Verschlüsselung von Software im Ruhezustand auf dem Cluster nicht deaktiviert werden. Das können Sie link:../storage/task_system_manage_cluster_enable_and_disable_encryption_for_a_cluster.html["Aktivieren und deaktivieren Sie"] Hardwarebasierte Verschlüsselung für Daten im Ruhezustand nach der Cluster-Erstellung
+
+====
+[NOTE]
+====
+Beim Erstellen eines neuen Clusters müssen folgende Aspekte berücksichtigt werden:
+
+* Wenn Sie Storage-Nodes in einem gemeinsam genutzten Chassis nutzen, sollte möglicherweise der Entwurf für eine Ausfallsicherung auf Chassis-Ebene mithilfe der Schutz-Domänen-Funktion in Betracht gezogen werden.
+* Wenn ein freigegebenes Gehäuse nicht verwendet wird, können Sie ein benutzerdefiniertes Schutz-Domain-Layout definieren.
+
+
+====
+.Schritte
+. Geben Sie in einem Browser-Fenster ein `\https://MIP:443`, Wobei MIP die Management-Node-IP-Adresse ist.
+. Geben Sie unter Erstellen eines neuen Clusters die folgenden Informationen ein:
++
+** Management-VIP: Routingfähige virtuelle IP im 1-GbE- oder 10-GbE-Netzwerk für Netzwerk-Management-Aufgaben.
++
+
+NOTE: Sie können ein neues Cluster mit einer IPv4- oder IPv6-Adresse erstellen.
+
+** ISCSI (Storage) VIP: Virtuelle IP im 10-GbE-Netzwerk für Storage und iSCSI-Erkennung.
++
+
+NOTE: Sie können den MVIP-, SVIP- oder Cluster-Namen nicht ändern, nachdem Sie den Cluster erstellt haben.
+
+** Benutzername: Der primäre Clusteradministrator-Benutzername für authentifizierten Zugriff auf das Cluster. Sie müssen den Benutzernamen für die zukünftige Referenz speichern.
++
+
+NOTE: Sie können Groß- und Kleinbuchstaben, Sonderzeichen und Ziffern für den Benutzernamen und das Passwort verwenden.
+
+** Passwort: Passwort für authentifizierten Zugriff auf das Cluster. Sie müssen das Kennwort für die spätere Referenz speichern. Standardmäßig ist die zwei-Wege-Datensicherung aktiviert. Sie können diese Einstellung nicht ändern.
+
+
+. Lesen Sie die Endbenutzer-Lizenzvereinbarung und wählen Sie *Ich stimme zu*.
+. *Optional*: Stellen Sie in der Liste Knoten sicher, dass die Kontrollkästchen für Knoten, die nicht im Cluster enthalten sein sollen, nicht ausgewählt sind.
+. Wählen Sie *Cluster Erstellen*.
++
+Das System kann je nach Anzahl der Nodes im Cluster mehrere Minuten dauern, bis der Cluster erstellt wurde. In einem ordnungsgemäß konfigurierten Netzwerk sollte ein kleines Cluster mit fünf Nodes weniger als eine Minute dauern. Nach dem Erstellen des Clusters wird das Fenster Erstellen eines neuen Clusters an die MVIP-URL-Adresse für den Cluster umgeleitet und die Element-UI angezeigt.
+
+
+
+
+
+== Finden Sie weitere Informationen
+
+* link:../api/index.html["Storage-Management mit der Element API"]
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

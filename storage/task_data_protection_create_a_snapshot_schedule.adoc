@@ -1,0 +1,47 @@
+---
+permalink: storage/task_data_protection_create_a_snapshot_schedule.html 
+sidebar: sidebar 
+keywords: snapshot schedule, create, volumes, recurring schedule 
+summary: Sie können einen Snapshot eines Volumes oder Volumes so planen, dass er automatisch in bestimmten Intervallen erfolgt. 
+---
+= Erstellen eines Snapshot-Zeitplans
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können einen Snapshot eines Volumes oder Volumes so planen, dass er automatisch in bestimmten Intervallen erfolgt.
+
+Wenn Sie einen Snapshot-Zeitplan konfigurieren, können Sie zwischen verschiedenen Zeitabständen wählen, die auf Wochentagen oder Tagen des Monats basieren. Sie können auch einen wiederkehrenden Zeitplan erstellen und die Tage, Stunden und Minuten vor dem nächsten Snapshot festlegen.
+
+Wenn Sie einen Snapshot für einen Zeitraum planen, der nicht durch 5 Minuten teilbar ist, wird der Snapshot zum nächsten Zeitraum ausgeführt, der durch 5 Minuten teilbar ist. Wenn Sie beispielsweise einen Snapshot für die Ausführung um 12:42:00 UTC planen, wird dieser um 12:45:00 UTC ausgeführt. Ein Snapshot kann nicht in Intervallen von weniger als 5 Minuten ausgeführt werden.
+
+Ab Element 12.5 können Sie die serielle Erstellung aktivieren und auswählen, um die Snapshots von der Benutzeroberfläche aus auf FIFO-Basis (First in First out) zu behalten.
+
+* Die Option *Serienerstellung aktivieren* gibt an, dass jeweils nur ein Snapshot repliziert wird. Die Erstellung eines neuen Snapshots schlägt fehl, wenn noch eine vorherige Snapshot-Replikation ausgeführt wird. Wenn das Kontrollkästchen nicht aktiviert ist, ist eine Snapshot-Erstellung zulässig, wenn noch eine andere Snapshot-Replikation ausgeführt wird.
+* Die *FIFO* Option bietet die Möglichkeit, eine konsistente Anzahl der neuesten Snapshots zu behalten. Wenn das Kontrollkästchen aktiviert ist, werden Snapshots auf FIFO-Basis beibehalten. Nachdem die Warteschlange der FIFO-Snapshots ihre maximale Tiefe erreicht hat, wird der älteste FIFO-Snapshot verworfen, wenn ein neuer FIFO-Snapshot eingefügt wird.
+
+
+.Schritte
+. Wählen Sie *Data Protection* > *Schedules*.
+. Wählen Sie *Zeitplan Erstellen*.
+. Geben Sie im Feld *Volume IDs CSV* eine einzelne Volume-ID oder eine kommagetrennte Liste von Volume-IDs ein, die in den Snapshot-Vorgang aufgenommen werden sollen.
+. Geben Sie einen neuen Planungsnamen ein.
+. Wählen Sie einen Zeitplantyp aus, und legen Sie den Zeitplan aus den verfügbaren Optionen fest.
+. *Optional:* Wählen Sie *wiederkehrender Zeitplan*, um den Snapshot-Zeitplan auf unbestimmte Zeit zu wiederholen.
+. *Optional:* Geben Sie im Feld *New Snapshot Name* einen Namen für den neuen Snapshot ein.
++
+Wenn Sie das Feld leer lassen, verwendet das System die Uhrzeit und das Datum der Erstellung des Snapshots als Namen.
+
+. *Optional:* Aktivieren Sie das Kontrollkästchen *Snapshots in Replikation einschließen bei gepaarten*, um sicherzustellen, dass die Snapshots bei der Replikation erfasst werden, wenn das übergeordnete Volume gekoppelt ist.
+. *Optional:* Aktivieren Sie das Kontrollkästchen *serielle Erstellung aktivieren*, um sicherzustellen, dass jeweils nur ein Snapshot repliziert wird.
+. Um die Aufbewahrung für den Snapshot festzulegen, wählen Sie eine der folgenden Optionen aus:
++
+** *Optional:* Aktivieren Sie das Kontrollkästchen *FIFO (First in First Out)*, um eine konsistente Anzahl der neuesten Snapshots zu erhalten.
+** Wählen Sie * Keep Forever* aus, um den Snapshot auf dem System für unbestimmte Zeit zu behalten.
+** Wählen Sie *Aufbewahrungszeitraum festlegen* und verwenden Sie die Datumspinnboxen, um eine Zeitdauer für das System auszuwählen, um den Snapshot beizubehalten.
+
+
+. Wählen Sie *Zeitplan Erstellen*.
+

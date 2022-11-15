@@ -1,0 +1,22 @@
+---
+permalink: storage/concept_system_manage_drives_managing_drives.html 
+sidebar: sidebar 
+keywords: drives, manage, cluster, element ui, remove drives 
+summary: Jeder Node enthält mindestens ein physisches Laufwerk, für das ein Teil der Daten für das Cluster gespeichert wird. Das Cluster verwendet die Kapazität und Performance des Laufwerks, nachdem das Laufwerk erfolgreich zu einem Cluster hinzugefügt wurde. Sie können die Element UI zum Managen von Laufwerken verwenden. 
+---
+= Verwalten Sie Laufwerke
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Jeder Node enthält mindestens ein physisches Laufwerk, für das ein Teil der Daten für das Cluster gespeichert wird. Das Cluster verwendet die Kapazität und Performance des Laufwerks, nachdem das Laufwerk erfolgreich zu einem Cluster hinzugefügt wurde. Sie können die Element UI zum Managen von Laufwerken verwenden.
+
+
+
+== Finden Sie weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
+

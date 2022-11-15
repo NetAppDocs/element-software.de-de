@@ -1,0 +1,106 @@
+---
+permalink: api/reference_element_api_virtualnetwork.html 
+sidebar: sidebar 
+keywords: object,objects,virtualNetwork 
+summary: Das VirtualNetwork-Objekt enthält Informationen über ein bestimmtes virtuelles Netzwerk. Sie können die API-Methode ListVirtualNetworks verwenden, um eine Liste dieser Informationen für alle virtuellen Netzwerke im System abzurufen. 
+---
+= VirtualNetwork
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das VirtualNetwork-Objekt enthält Informationen über ein bestimmtes virtuelles Netzwerk. Sie können das verwenden `ListVirtualNetworks` API-Methode zum Abrufen einer Liste dieser Informationen für alle virtuellen Netzwerke im System.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+AdressenSperren
+ a| 
+Der Bereich der Adressblöcke, die derzeit dem virtuellen Netzwerk zugewiesen sind. Mitglieder:
+
+* Verfügbar: Binäre Zeichenfolge in "1"s und "0"s. „1“ bedeutet, dass die IP-Adresse verfügbar ist und „0“ bedeutet, dass die IP nicht verfügbar ist. Die Zeichenfolge wird von rechts nach links gelesen, wobei die Ziffer ganz rechts die erste IP-Adresse in der Liste der Adressblöcke ist.
+* Größe: Die Größe dieses Adressblocks.
+* Start: Die erste IP-Adresse im Block.
+
+ a| 
+JSON-Objekt-Array
+
+
+
+ a| 
+Merkmale
+ a| 
+Liste von Name-Wert-Paaren im JSON-Objektformat.
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+Name
+ a| 
+Der Name, der dem virtuellen Netzwerk zugewiesen ist.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Netzmaske
+ a| 
+Die IP-Adresse der Netzmaske für das virtuelle Netzwerk.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+svip
+ a| 
+Die Speicher-IP-Adresse für das virtuelle Netzwerk.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Gateway
+ a| 
+Das Gateway, das für das virtuelle Netzwerk verwendet wird.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+VirtualNetworkID
+ a| 
+Die eindeutige Kennung für ein virtuelles Netzwerk.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+VirtualNetworkTag
+ a| 
+Die VLAN-Tag-ID.
+ a| 
+Ganzzahl
+
+|===
+
+
+== Weitere Informationen
+
+xref:reference_element_api_listvirtualnetworks.adoc[ListVirtualNetworks]

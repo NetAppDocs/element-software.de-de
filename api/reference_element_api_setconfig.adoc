@@ -1,0 +1,121 @@
+---
+permalink: api/reference_element_api_setconfig.html 
+sidebar: sidebar 
+keywords: config,configuration,set,setting,node,setconfig,network,cluster 
+summary: Sie können die SetConfig-Methode verwenden, um die Netzwerk- und Cluster-Informationen für den Node festzulegen. Diese Methode umfasst die gleichen Einstellungen in einer einzigen API-Methode, die sowohl mit SetClusterConfig als auch mit SetNetworkConfig-Methoden verfügbar sind. Nur die Felder, die geändert werden sollen, müssen mit dieser Methode enthalten sein. 
+---
+= SetConfig
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `SetConfig` Methode zum Festlegen der Netzwerk- und Cluster-Informationen für den Node. Diese Methode umfasst die gleichen Einstellungen in einer einzelnen API-Methode, die mit beiden zur Verfügung stehen `SetClusterConfig` Und `SetNetworkConfig` Methoden Nur die Felder, die geändert werden sollen, müssen mit dieser Methode enthalten sein.
+
+
+NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
+
+
+
+== Parameter
+
+ACHTUNG:
+
+Wenn der Bond-Modus auf einem Node geändert wird, kann dies zu einem vorübergehenden Verlust der Netzwerkverbindung führen.
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Cluster
+ a| 
+Cluster-Informationen, die erkennen, wie der Storage-Node mit dem Storage-Cluster kommuniziert, dem er zugeordnet ist.
+ a| 
+xref:reference_element_api_cluster.adoc[Cluster]
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Netzwerk
+ a| 
+Verbindungstypen und aktuelle Einstellungen für jede Netzwerkschnittstelle des Nodes.
+ a| 
+xref:reference_element_api_network_all_interfaces.adoc[Netzwerk (alle Schnittstellen)]
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Konfigurations
+ a| 
+Die neue und aktuelle Konfiguration des Node. Dieses Objekt enthält:
+
+* xref:reference_element_api_cluster.adoc[Cluster]: Cluster-Informationen, die erkennen, wie der Storage-Node mit dem Storage-Cluster kommuniziert, mit dem er verknüpft ist.
+* xref:reference_element_api_network_all_interfaces.adoc[Netzwerk (alle Schnittstellen)]: Netzwerkverbindungstypen und aktuelle Einstellungen für jede Netzwerkschnittstelle des Knotens.
+
+ a| 
+JSON-Objekt
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+	"method": "SetConfig",
+	"params": {
+		"cluster": {
+			"name": "MyHostname"
+		},
+		"network": {
+			"Bond10G": {
+				"bond-mode": "ALB"
+			}
+		}
+	}
+}
+----
+
+
+== Antwortbeispiel
+
+Die Antwort von dieser Methode ist die gleiche wie die Rückkehr für die getconfig Methode. Bei Verwendung von SetConfig werden alle Felder für die Objektanzeige und die aktualisierten Werte angezeigt.
+
+
+
+== Neu seit Version
+
+9.6
+
+
+
+== Weitere Informationen
+
+* xref:reference_element_api_setclusterconfig.adoc[SetClusterConfig]
+* xref:reference_element_api_setnetworkconfig.adoc[SetNetworkConfig]
+* xref:reference_element_api_response_example_getconfig.adoc[Getconfig]
+

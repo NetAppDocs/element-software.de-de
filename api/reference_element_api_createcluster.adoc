@@ -1,0 +1,222 @@
+---
+permalink: api/reference_element_api_createcluster.html 
+sidebar: sidebar 
+keywords: CreateCluster,cluster,create,creating,initialize,initializing 
+summary: 'Sie können die CreateCluster-Methode verwenden, um den Knoten in einem Cluster zu initialisieren, der die Eigentümer der "mvip"- und "svip"-Adressen hat. Jedes neue Cluster wird mithilfe der Management-IP \(MIP\) des ersten Node im Cluster initialisiert. Bei dieser Methode werden auch automatisch alle Nodes hinzugefügt, die im Cluster konfiguriert wurden. Sie müssen diese Methode nur einmal verwenden, wenn ein neues Cluster initialisiert wird.' 
+---
+= CreateCluster erstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `CreateCluster` Methode zum Initialisieren des Knotens in einem Cluster, der Eigentümer der Adressen „mvip“ und „svip“ ist. Jedes neue Cluster wird mit der Management-IP (MIP) des ersten Node im Cluster initialisiert. Bei dieser Methode werden auch automatisch alle Nodes hinzugefügt, die im Cluster konfiguriert wurden. Sie müssen diese Methode nur einmal verwenden, wenn ein neues Cluster initialisiert wird.
+
+
+NOTE: Nachdem Sie sich beim Master-Node für das Cluster angemeldet und den ausgeführt haben xref:reference_element_api_getbootstrapconfig.adoc[GetBootStrapConfig] Methode um die IP-Adressen für die restlichen Nodes, die Sie in den Cluster aufnehmen möchten, zu erhalten, können Sie die CreateCluster-Methode gegen den Master-Knoten für den Cluster ausführen.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Akzepteula
+ a| 
+Geben Sie an, dass Sie die Endnutzer-Lizenzvereinbarung akzeptieren, wenn Sie dieses Cluster erstellen. Um die EULA zu akzeptieren, setzen Sie diesen Parameter auf „true“.
+ a| 
+boolesch
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Merkmale
+ a| 
+Liste von Name-Wert-Paaren im JSON-Objektformat.
+ a| 
+JSON-Objekt
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+EnableSoftwareVerschlüsselungAtest
+ a| 
+Aktivieren Sie diesen Parameter, um eine softwarebasierte Verschlüsselung im Ruhezustand zu verwenden. Standardmäßig auf SolidFire-SDS-Clustern auf „true“ gesetzt. Standardmäßig auf allen anderen Clustern auf false gesetzt. Nach Aktivierung der Softwareverschlüsselung im Ruhezustand kann sie nicht auf dem Cluster deaktiviert werden.
+ a| 
+boolesch
+ a| 
+Richtig
+ a| 
+Nein
+
+
+
+ a| 
+mvip
+ a| 
+Fließende (virtuelle) IP-Adresse für den Cluster im Managementnetzwerk.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Knoten
+ a| 
+CIP/SIP-Adressen der ersten Knotengruppe, die den Cluster einrichten. Die IP-Adresse dieses Node muss in der Liste enthalten sein.
+ a| 
+String-Array
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Auftragsnummer
+ a| 
+Alphanumerische Auftragsnummer. Erforderlich auf softwarebasierten Plattformen
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein (hardwarebasierte Plattformen)
+
+Ja (softwarebasierte Plattformen)
+
+
+
+ a| 
+Passwort
+ a| 
+Anfängliches Passwort für das Cluster-Administratorkonto.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Seriennummer
+ a| 
+Neunstellige alphanumerische Seriennummer. Möglicherweise auf softwarebasierten Plattformen erforderlich
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein (hardwarebasierte Plattformen)
+
+Ja (softwarebasierte Plattformen)
+
+
+
+ a| 
+svip
+ a| 
+Fließende (virtuelle) IP-Adresse für den Cluster im Storage-Netzwerk (iSCSI).
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+
+
+ a| 
+Benutzername
+ a| 
+Benutzername für den Cluster-Administrator.
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode hat keine Rückgabewerte.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "CreateCluster",
+  "params": {
+    "acceptEula": true,
+    "mvip": "10.0.3.1",
+    "svip": "10.0.4.1",
+    "username": "Admin1",
+    "password": "9R7ka4rEPa2uREtE",
+    "attributes": {
+      "clusteraccountnumber": "axdf323456"
+    },
+    "nodes": [
+      "10.0.2.1",
+      "10.0.2.2",
+      "10.0.2.3",
+      "10.0.2.4"
+    ]
+  },
+  "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+"id" : 1,
+"result" : {}
+}
+----
+
+
+== Neu seit Version
+
+9.6
+
+[discrete]
+== Weitere Informationen
+
+* link:reference_element_api_getbootstrapconfig.html["GetBootstrapConfig"]
+* https://www.netapp.com/data-storage/solidfire/documentation/["Ressourcen-Seite zu NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Dokumentation für frühere Versionen von NetApp SolidFire und Element Produkten"^]
+

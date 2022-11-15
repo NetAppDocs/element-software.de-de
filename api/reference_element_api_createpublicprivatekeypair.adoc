@@ -1,0 +1,158 @@
+---
+permalink: api/reference_element_api_createpublicprivatekeypair.html 
+sidebar: sidebar 
+keywords: SSL keys,public and private keys,certificate signing request,creating key pair 
+summary: Sie können die CreatePublicPrivateKeyPair-Methode verwenden, um öffentliche und private SSL-Schlüssel zu erstellen. Mit diesen Schlüsseln können Sie Anforderungen zum Signieren von Zertifikaten erstellen. Es kann für jedes Storage-Cluster nur ein Schlüsselpaar verwendet werden. Bevor Sie diese Methode zum Austausch vorhandener Schlüssel verwenden, stellen Sie sicher, dass die Schlüssel von keinem Provider mehr verwendet werden. 
+---
+= CreatePublicPrivateKeyPair
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `CreatePublicPrivateKeyPair` Methode zum Erstellen von öffentlichen und privaten SSL-Schlüsseln. Mit diesen Schlüsseln können Sie Anforderungen zum Signieren von Zertifikaten erstellen. Es kann für jedes Storage-Cluster nur ein Schlüsselpaar verwendet werden. Bevor Sie diese Methode zum Austausch vorhandener Schlüssel verwenden, stellen Sie sicher, dass die Schlüssel von keinem Provider mehr verwendet werden.
+
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+CommonName
+ a| 
+Das X.509 Distinguished Name *Common Name*-Feld (CN).
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Land
+ a| 
+Das X.509 Distinguished Name *Land* Feld (C).
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+E-Mail-Adresse
+ a| 
+Das X.509 Distinguished Name *E-Mail-Adresse*-Feld (MAIL).
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Ort
+ a| 
+Das X.509 Distinguished Name *Locality Name*-Feld (L).
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Organisation
+ a| 
+Das X.509 Distinguished Name *Organisation Name* Feld (O).
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Organisationseinheit
+ a| 
+Das X.509-Feld Distinguished Name *Organisationseinheit Name* (OU).
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+
+
+ a| 
+Bundesland
+ a| 
+Das Feld X.509 Distinguished Name *State* oder *Province Name* (ST oder SP oder S).
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode hat keine Rückgabewerte. Wenn kein Fehler auftritt, gilt die Schlüsselerstellung als erfolgreich.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "CreatePublicPrivateKeyPair",
+  "params": {
+    "commonName": "Name",
+    "country": "US",
+    "emailAddress" : "email@domain.com"
+   },
+"id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+   "id": 1,
+   "result":
+      {}
+}
+----
+
+
+== Neu seit Version
+
+11.7

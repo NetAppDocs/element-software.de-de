@@ -1,0 +1,158 @@
+---
+permalink: api/reference_element_api_listnetworkinterfaces.html 
+sidebar: sidebar 
+keywords: network,interface,interfaces,list,listing,listnetworkinterfaces 
+summary: Sie können die Methode ListNetworkInterfaces verwenden, um Informationen über jede Netzwerkschnittstelle auf einem Node aufzulisten. Diese API-Methode ist für die Verwendung auf einzelnen Nodes gedacht. Für den Zugriff auf einzelne Nodes ist eine Benutzer-ID und Passwort-Authentifizierung erforderlich. Sie können diese Methode jedoch im Cluster verwenden, wenn der Parameter Force im Methodenaufruf den Wert „true“ angegeben hat. Wenn der Parameter auf dem Cluster verwendet wird, werden alle Schnittstellen aufgeführt. 
+---
+= ListNetworkInterfaces
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `ListNetworkInterfaces` Methode zum Auflisten von Informationen zu jeder Netzwerkschnittstelle auf einem Node. Diese API-Methode ist für die Verwendung auf einzelnen Nodes gedacht. Für den Zugriff auf einzelne Nodes ist eine Benutzer-ID und Passwort-Authentifizierung erforderlich. Sie können diese Methode jedoch im Cluster verwenden, wenn der Parameter Force im Methodenaufruf den Wert „true“ angegeben hat. Wenn der Parameter auf dem Cluster verwendet wird, werden alle Schnittstellen aufgeführt.
+
+
+NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Erzwingen
+ a| 
+Mögliche Werte:
+
+* True: Informationen zu allen Netzwerkschnittstellen im Cluster werden zurückgegeben.
+* False: Es werden keine Informationen zurückgegeben.
+
+ a| 
+boolesch
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Schnittstellen
+ a| 
+Eine Liste der Konfigurationsinformationen für jede Netzwerkschnittstelle des Storage-Nodes (oder des gesamten Storage-Clusters, falls Force =) `true`).
+ a| 
+xref:reference_element_api_networkinterface.adoc[Netzwerkschnittstelle] Array erledigen
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+"method": "ListNetworkInterfaces",
+"params": {},
+"id" : 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+	"id": 1,
+	"result": {
+		"nodes": [
+			{
+				"nodeID": 1,
+				"result": {
+					"interfaces": [
+						{
+							"address": "10.117.80.32",
+							"addressV6": "::",
+							"broadcast": "10.117.95.255",
+							"macAddress": "90:b1:1c:42:e0:1a",
+							"mtu": 9000,
+							"name": "Bond10G",
+							"namespace": false,
+							"netmask": "255.255.240.0",
+							"status": "UpAndRunning",
+							"type": "BondMaster",
+							"virtualNetworkTag": 0
+						},
+						{
+							"address": "10.117.64.32",
+							"addressV6": "::",
+							"broadcast": "10.117.79.255",
+							"macAddress": "90:b1:1c:42:e0:1e",
+							"mtu": 1500,
+							"name": "Bond1G",
+							"namespace": false,
+							"netmask": "255.255.240.0",
+							"status": "UpAndRunning",
+							"type": "BondMaster",
+							"virtualNetworkTag": 0
+						},
+						{
+							"address": "0.0.0.0",
+							"addressV6": "::",
+							"broadcast": "0.0.0.0",
+							"macAddress": "90:b1:1c:42:e0:1a",
+							"mtu": 9000,
+							"name": "eth0",
+							"namespace": false,
+							"netmask": "0.0.0.0",
+							"status": "UpAndRunning",
+							"type": "BondSlave",
+							"virtualNetworkTag": 0
+						},
+						{
+							"address": "127.0.0.1",
+							"addressV6": "::",
+							"broadcast": "0.0.0.0",
+							"macAddress": "00:00:00:00:00:00",
+							"mtu": 0,
+							"name": "lo",
+							"namespace": false,
+							"netmask": "0.0.0.0",
+							"status": "UpAndRunning",
+							"type": "Loopback",
+							"virtualNetworkTag": 0
+						}
+					]
+				}
+			}
+		]
+	}
+}
+----
+
+
+== Neu seit Version
+
+9.6

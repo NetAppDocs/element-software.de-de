@@ -1,0 +1,168 @@
+---
+permalink: api/reference_element_api_event.html 
+sidebar: sidebar 
+keywords: object,objects,event 
+summary: Das Event-Objekt enthält Details zu Ereignissen, die während eines API-Methodenaufrufs oder während des Systemvorgangs auftreten. 
+---
+= Ereignis
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Event-Objekt enthält Details zu Ereignissen, die während eines API-Methodenaufrufs oder während des Systemvorgangs auftreten.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+Details
+ a| 
+Zusätzliche Informationen über das Ereignis.
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+DriveID
+ a| 
+Die DriveID des Laufwerks meldet den Fehler. 0, falls nicht zutreffend.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Fahrausweise
+ a| 
+Eine Liste der Einfahrungs-IDs der Laufwerke, die den Fehler melden. Eine leere Liste, falls nicht zutreffend.
+ a| 
+Integer-Array
+
+
+
+ a| 
+EventID
+ a| 
+Eindeutige ID, die jedem Ereignis zugeordnet ist.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+EventInfoType
+ a| 
+Die Art des Fehlers.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+Nachricht
+ a| 
+Eine Zeichenfolge, die das Ereignis beschreibt, das aufgetreten ist.
+ a| 
+Zeichenfolge
+
+
+
+ a| 
+NodeID
+ a| 
+Die Knoten-ID des Node, der den Fehler meldet. 0, falls nicht zutreffend.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Service-ID
+ a| 
+Die Dienstkennung des Dienstes meldet den Fehler. 0, falls nicht zutreffend.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Schweregrad
+ a| 
+Schweregrad: Das Ereignis meldet.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+ZeitOfVeröffentlichen
+ a| 
+Die Zeit, zu der das Ereignisprotokoll des Clusters das Ereignis empfangen hat, im UTC+0-Format.
+ a| 
+ISO 8601-Datumszeichenfolge
+
+
+
+ a| 
+UhrzeitBericht
+ a| 
+Die Zeit, zu der das Ereignis im Cluster aufgetreten ist, im UTC+0-Format.
+ a| 
+ISO 8601-Datumszeichenfolge
+
+|===
+*Hinweis:* Es kann einen leichten Unterschied zwischen ZeitOfReport und ZeitOfPublish geben, wenn das Ereignis eingetreten ist und nicht sofort veröffentlicht werden konnte.
+
+
+
+== Ereignistypen
+
+In der folgenden Liste werden die möglichen Ereignistypen beschrieben, die das EventInfoType-Mitglied enthalten kann:
+
+* ApiEvent: Ereignisse, die über die API oder die Web-Benutzeroberfläche initiiert werden, um die Einstellungen zu ändern.
+* BinAssignmentsEreignis: Ereignisse im Zusammenhang mit der Zuordnung von Daten zu internen Containern.
+* BinSyncEvent: Ereignisse im Zusammenhang mit der Neuverteilung von Daten zwischen Blockdiensten.
+* BsCheckEvent: Ereignisse im Zusammenhang mit Blockprüfungen.
+* BsKillEvent: Ereignisse im Zusammenhang mit Blockabschlussstellen.
+* BulkOpEvent: Ereignisse, die auf einem gesamten Volume ausgeführt werden, wie z. B. Volume-Backups, Restores, Snapshots oder Klone.
+* KlonEvent: Ereignisse im Zusammenhang mit dem Klonen von Volumes
+* ClusterMasterEvent: Änderungsereignisse bei der Cluster-Konfiguration, z. B. beim Hinzufügen oder Entfernen von Nodes
+* Data Event: Ereignisse zum Lesen und Schreiben von Daten.
+* DbEvent: Veranstaltungen im Zusammenhang mit der Ensemble-Knoten-Datenbank.
+* Drive Event: Ereignisse im Zusammenhang mit dem Laufwerkbetrieb.
+* VerschlüsselungAtRestEvent: Ereignisse im Zusammenhang mit der gespeicherten Datenverschlüsselung.
+* EnsembleEvent: Veranstaltungen im Zusammenhang mit Ensemble Größe zu erhöhen oder verringern.
+* Fiber ChannelEvent: Ereignisse im Zusammenhang mit Fibre Channel Node-Konfiguration oder -Verbindungen.
+* GcEvent: Veranstaltungen im Zusammenhang mit der Müllsammlung. Diese Prozesse laufen alle 60 Minuten, um Storage auf Blocklaufwerken wieder nutzbar zu machen.
+* IeEvent: Ereignisse im Zusammenhang mit internen Systemfehlern.
+* Installationsereignis: Evnts bezieht sich auf automatische Softwareinstallation auf ausstehenden Speicherknoten.
+* ISCSIEvent: Ereignisse im Zusammenhang mit iSCSI-Verbindungs- oder Konfigurationsproblemen.
+* LimitEvent: Ereignisse im Zusammenhang mit der Anzahl von Volumes oder virtuellen Volumes in einem Konto oder im Cluster, die sich dem maximal zulässigen Wert nähern.
+* NetworkEvent: Ereignisse im Zusammenhang mit virtuellen Netzwerken.
+* PlattformHardware Event: Veranstaltungen im Zusammenhang mit Problemen auf Hardware-Geräten erkannt.
+* RemoteClusterEvent: Ereignisse im Zusammenhang mit der Remote-Cluster-Kopplung.
+* SchedulerEvent: Ereignisse im Zusammenhang mit geplanten Snapshots.
+* ServiceEvent: Ereignisse im Zusammenhang mit dem Systemstatus.
+* StatEvent: Ereignisse im Zusammenhang mit Systemstatistiken.
+* SliceEvent: Ereignisse im Zusammenhang mit Metadaten-Speicher.
+* SnmpTrapEvent: Ereignisse im Zusammenhang mit SNMP-Traps.
+* TsEvent: System Transport Service Ereignisse.
+* UnexpectedException: Ereignisse im Zusammenhang mit unerwarteten Fehlern.
+* VasaProviderEvent: Veranstaltungen zu einem VMware VASA Provider.
+
+
+
+
+== Weitere Informationen
+
+xref:reference_element_api_listevents.adoc[ListEvents]

@@ -1,0 +1,75 @@
+---
+permalink: api/reference_element_api_enableidpauthentication.html 
+sidebar: sidebar 
+keywords: IdP,idp,authentication,enable 
+summary: Sie können die Methode EnableIdpAuthentication verwenden, um die Unterstützung für die Authentifizierung mithilfe von IDPs anderer Anbieter für das Cluster zu aktivieren. Sobald die IdP-Authentifizierung aktiviert ist, können LDAP- und Cluster-Administratoren über unterstützte UIs nicht mehr auf das Cluster zugreifen und alle aktiven authentifizierten Sitzungen werden nicht validiert/getrennt. Nur durch Drittanbieter-IDPs authentifizierte Benutzer können über unterstützte UIs auf das Cluster zugreifen. 
+---
+= EnableIdpAuthentifizierung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `EnableIdpAuthentication` Methode, um die Unterstützung für die Authentifizierung mithilfe von Drittanbieter-IDPs für den Cluster zu aktivieren. Sobald die IdP-Authentifizierung aktiviert ist, können LDAP- und Cluster-Administratoren über unterstützte UIs nicht mehr auf das Cluster zugreifen und alle aktiven authentifizierten Sitzungen werden nicht validiert/getrennt. Nur durch Drittanbieter-IDPs authentifizierte Benutzer können über unterstützte UIs auf das Cluster zugreifen.
+
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+IdpKonfigurationID
+ a| 
+UUID für die IdP-Konfiguration eines Drittanbieters. Wenn nur eine IdP-Konfiguration vorhanden ist, wird diese Konfiguration standardmäßig aktiviert. Wenn Sie nur über eine einzige IdpConfiguration verfügen, müssen Sie den Parameter idpConfiguration ID nicht angeben.
+ a| 
+UUID
+ a| 
+Keine
+ a| 
+Nein
+
+|===
+
+
+== Rückgabewerte
+
+Diese Methode hat keine Rückgabewerte.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "EnableIdpAuthentication",
+  "params": {
+    "idpConfigurationID": "f983c602-12f9-4c67-b214-bf505185cfed",
+  }
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+"result": {}
+}
+----
+
+
+== Neu seit Version
+
+12.0

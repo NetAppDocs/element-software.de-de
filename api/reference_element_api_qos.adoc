@@ -1,0 +1,74 @@
+---
+permalink: api/reference_element_api_qos.html 
+sidebar: sidebar 
+keywords: object,objects,QoS 
+summary: 'Das QoS-Objekt enthält Informationen zu Quality of Service \(QoS\)-Einstellungen für Volumes. Volumes, die ohne angegebene QoS-Werte erstellt wurden, werden mit den Standardwerten erstellt. Standardwerte finden Sie unter Verwendung der Methode GetDefaultQoS.' 
+---
+= QoS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das QoS-Objekt enthält Informationen zu QoS-Einstellungen (Quality of Service) für Volumes. Volumes, die ohne angegebene QoS-Werte erstellt wurden, werden mit den Standardwerten erstellt. Standardwerte finden Sie mit der `GetDefaultQoS` Methode.
+
+
+
+== Objektmitglieder verwenden
+
+Dieses Objekt enthält die folgenden Mitglieder:
+
+|===
+| Name | Beschreibung | Typ 
+
+
+ a| 
+IOPS
+ a| 
+Maximal 4 KB IOPS mit Spitzenauslastung über kurze Zeiträume zulässig. Ermöglicht Spitzen von I/O-Aktivitäten über den normalen IOPS-Wert max.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Brennzeit
+ a| 
+Die Länge des Zeitaufwands für BurstIOPS ist zulässig. Der zurückgegebene Wert wird in Sekunden dargestellt. Dieser Wert wird vom System auf Basis der für QoS eingestellten IOPS berechnet.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Kurve
+ a| 
+Die Kurve ist ein Satz von Schlüsselwert-Paaren. Die Schlüssel sind E/A-Größen in Bytes. Die Werte stellen die Kosten für die Performance eines IOP bei einer bestimmten I/O-Größe dar. Die Kurve wird relativ zu einem 4096-Byte-Vorgang berechnet, der auf 100 IOPS eingestellt ist.
+ a| 
+JSON-Objekt
+
+
+
+ a| 
+Maximale IOPS-Werte
+ a| 
+Die gewünschten maximal 4-KB-IOPS konnten über einen längeren Zeitraum hinweg verwendet werden.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+IOPS-Minimum
+ a| 
+Das gewünschte Mindestwert von 4 KB IOPS zu garantieren. Die zulässigen IOPS sinken nur unter dieses Niveau, wenn alle Volumes auf ihren MinIOPS-Wert begrenzt wurden und es weiterhin eine unzureichende Performance-Kapazität gibt.
+ a| 
+Ganzzahl
+
+|===
+
+
+== Weitere Informationen
+
+xref:reference_element_api_getdefaultqos.adoc[GetDefaultQoS]

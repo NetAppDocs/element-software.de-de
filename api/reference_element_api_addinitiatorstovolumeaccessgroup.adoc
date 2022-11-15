@@ -1,0 +1,138 @@
+---
+permalink: api/reference_element_api_addinitiatorstovolumeaccessgroup.html 
+sidebar: sidebar 
+keywords: addinitiatorstovolumeaccessgroup,add,adding,initiators,initiator,volume,access,group 
+summary: Sie können die Methode AddInitiatorsToVolumeAccessGroup verwenden, um Initiatoren zu einer bestimmten Volume-Zugriffsgruppe hinzuzufügen. 
+---
+= AddInitiatorsToVolumeAccessGroup
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `AddInitiatorsToVolumeAccessGroup` Methode zum Hinzufügen von Initiatoren zu einer bestimmten Volume-Zugriffsgruppe.
+
+Das akzeptierte Format eines Initiator IQN ist iqn.yyy-mm, wobei y und m Ziffern sind, gefolgt von Text, der nur Ziffern, Kleinbuchstaben alphabetische Zeichen, einen Punkt (.), Doppelpunkt (:) oder Strich (-) enthalten darf. Das folgende Beispiel zeigt:
+
+[listing]
+----
+iqn.2010-01.com.solidfire:17oi.solidfire-0.1
+----
+Das akzeptierte Format eines Fibre Channel Initiator-WWPN lautet AA:BB:CC:dd:11:22:33:44 oder AabBCCdd11223344. Das folgende Beispiel zeigt:
+
+[listing]
+----
+21:00:00:0e:1e:11:f1:81
+----
+
+
+== Parameter
+
+Diese Methode verfügt über die folgenden Eingabeparameter:
+
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Initiatoren
+ a| 
+Liste der Initiator-IDs oder Namen (IQNs und WWPNs), die in die Volume-Zugriffsgruppe aufgenommen werden sollen Wenn Sie eine Liste der Initiatornamen übergeben, werden die Initiatoren erstellt, wenn sie noch nicht vorhanden sind. Wenn Sie eine Liste der Initiator-IDs übergeben, gibt die Methode einen Fehler aus, wenn einer der Initiatoren nicht bereits vorhanden ist.
+
+Die Weitergabe von Initiatorgruppen ist veraltet. Sie sollten Initiator-IDs verwenden, sobald möglich.
+ a| 
+Integer-Array oder String-Array (veraltet)
+ a| 
+ a| 
+Ja.
+
+
+
+ a| 
+VolumeAccessGroupID
+ a| 
+Die ID der Volume-Zugriffsgruppe zum Hinzufügen des Initiators.
+ a| 
+Ganzzahl
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat den folgenden Rückgabewert:
+
+|===
+
+
+| Name | Beschreibung | Typ 
+
+
+ a| 
+VolumeAccessGroup
+ a| 
+Ein Objekt mit Informationen über die neu geänderte Volume-Zugriffsgruppe.
+ a| 
+xref:reference_element_api_volumeaccessgroup.adoc[VolumeAccessGroup]
+
+|===
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "id": 13171,
+  "method": "AddInitiatorsToVolumeAccessGroup",
+  "params": {
+    "initiators": [116,117],
+    "volumeAccessGroupID": 96
+  }
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 13171,
+  "result": {
+    "volumeAccessGroup": {
+      "attributes": {},
+      "deletedVolumes": [
+        327
+      ],
+      "initiatorIDs": [
+        116,
+        117
+      ],
+      "initiators": [
+        "iqn.1993-08.org.debian:01:181324777",
+        "iqn.1993-08.org.debian:01:181324888"
+      ],
+      "name": "northbanktest",
+      "volumeAccessGroupID": 96,
+      "volumes": [
+        346
+      ]
+    }
+  }
+}
+----
+
+
+== Neu seit Version
+
+9.6
