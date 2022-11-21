@@ -482,11 +482,33 @@ HTTPS-UI- und API-Zugriff auf das Storage-Cluster
  a| 
 System Administrator-PC
  a| 
+Storage Node Baseboard Management Controller (BMC)/Intelligent Platform Management Interface (IPMI) H410 und H600 Serien
+ a| 
+443
+ a| 
+HTTPS-UI- und API-Zugriff auf die Remote-Steuerung des Nodes
+
+
+
+ a| 
+System Administrator-PC
+ a| 
 MIP-Speicher-Node
  a| 
 443
  a| 
 Erstellung von HTTPS-Storage-Clustern, UI-Zugriff nach der Implementierung auf das Storage-Cluster
+
+
+
+ a| 
+System Administrator-PC
+ a| 
+Storage Node BMC/IPMI H410 und H600 Series
+ a| 
+623 UDP
+ a| 
+Remote Management Control Protocol-Port: Dies ist erforderlich, um IPMI-fähige Systeme zu verwalten.
 
 
 
