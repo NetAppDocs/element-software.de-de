@@ -35,7 +35,7 @@ IMPORTANT: Sie müssen ein Upgrade auf das neueste Management Services Bundle du
 
 
 
-NOTE: Eine vollständige Matrix der Firmware und der Treiber-Firmware für Ihre Hardware finden Sie unter https://docs.netapp.com/us-en/hci/docs/fw_storage_nodes.html["Unterstützte Storage-Firmware-Versionen für SolidFire Storage-Nodes"^].
+NOTE: Eine vollständige Matrix der Firmware und der Treiber-Firmware für Ihre Hardware finden Sie unter link:../hardware/fw_storage_nodes.html["Unterstützte Storage-Firmware-Versionen für SolidFire Storage-Nodes"].
 
 [[storage-firmware-upgrade]]
 * *Aktualisierungszeit*: Sie haben genügend Zeit für die Durchführung Ihres Upgrades eingeplant. Bei einem Upgrade auf Element Software 12.5 oder höher variiert die Dauer des Upgradevorgangs je nach aktueller Element Softwareversion und Firmware-Updates.
@@ -54,7 +54,7 @@ NOTE: Eine vollständige Matrix der Firmware und der Treiber-Firmware für Ihre 
 | H610S | 11.7 und früher | 90 Minuten | 40 bis 70 Minuten | 130 bis 160 Minuten müssen Sie auch https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/H_Series/NetApp_H610S_storage_node_power_off_and_on_procedure["Führen Sie ein komplettes Herunterfahren des Node durch, und trennen Sie die Stromversorgung"^] Für jeden H610S Node. 
 |===
 +
-^1^eine vollständige Matrix von Firmware und Treiber-Firmware für Ihre Hardware finden Sie unter https://docs.netapp.com/us-en/hci/docs/fw_storage_nodes.html["Unterstützte Storage-Firmware-Versionen für SolidFire Storage-Nodes"^].
+^1^eine vollständige Matrix von Firmware und Treiber-Firmware für Ihre Hardware finden Sie unter link:../hardware/fw_storage_nodes.html["Unterstützte Storage-Firmware-Versionen für SolidFire Storage-Nodes"].
 
 +
 ^2^Wenn Sie ein Cluster mit einer hohen Lese-IOPS-Last und einer längeren Firmware-Update-Zeit kombinieren, erhöht sich die Zeit für die Datensynchronisierung.

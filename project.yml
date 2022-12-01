@@ -64,7 +64,7 @@ homepage:
     - title: Hardwareinformationen zur SF-Series
       url: "/hardware/concept_sfseries_info.html"
     - title: Unterstützte Firmware-Versionen für NetApp H-Series Storage Nodes
-      url: https://docs.netapp.com/us-en/hci/docs/fw_storage_nodes.html
+      url: "/hardware/fw_storage_nodes.html"
   - title: Storage-Management
     links:
     - title: UI für die Element Software
