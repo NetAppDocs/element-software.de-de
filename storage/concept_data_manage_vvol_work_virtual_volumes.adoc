@@ -20,7 +20,7 @@ Nachdem Sie die VVol Funktionen aktiviert haben, wird eine Registerkarte VVols i
 In vSphere sind die meisten für die Nutzung der Virtual Volumes-Funktion mit Element Software-Storage-Systemen erforderlichen Konfigurationen vorhanden. Informationen zum Registrieren von VASA Provider in vCenter finden Sie im Konfigurationsleitfaden zu VMware vSphere Virtual Volumes für SolidFire Storage_, zum Erstellen und Managen von VVol Datastores und zum Management von Storage auf Basis von Richtlinien.
 
 
-NOTE: Registrieren Sie nicht mehr als einen NetApp Element VASA Provider in einer einzelnen vCenter Instanz. Wenn ein zweiter NetApp Element VASA Provider hinzugefügt wird, macht das alle VVOL Datastores unzugänglich.
+NOTE: Registrieren Sie bei Element 12.5 und früheren Versionen nicht mehr als einen NetApp Element VASA Provider in einer einzelnen vCenter Instanz. Wenn ein zweiter NetApp Element VASA Provider hinzugefügt wird, macht das alle VVOL Datastores unzugänglich.
 
 
 NOTE: VASA-Unterstützung für mehrere vCenters steht als Upgrade-Patch zur Verfügung, wenn Sie bereits einen VASA Provider bei vCenter registriert haben. Laden Sie die VASA39 .tar.gz-Datei von der herunter, um sie zu installieren https://mysupport.netapp.com/products/element_software/VASA39/index.html["NetApp Software-Downloads"] Ort und folgen Sie den Anweisungen im Manifest. Der NetApp Element VASA Provider verwendet ein NetApp Zertifikat. Bei diesem Patch wird das Zertifikat von vCenter nicht verändert, um mehrere vCenters für die Verwendung von VASA und VVols zu unterstützen. Ändern Sie das Zertifikat nicht. Benutzerdefinierte SSL-Zertifikate werden von VASA nicht unterstützt.
