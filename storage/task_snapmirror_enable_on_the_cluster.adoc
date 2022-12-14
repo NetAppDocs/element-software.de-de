@@ -15,6 +15,7 @@ Sie müssen die SnapMirror Funktion auf Cluster-Ebene manuell über die NetApp E
 
 SnapMirror kann nur für Cluster aktiviert werden, auf denen Element Software in Verbindung mit Volumes auf einem NetApp ONTAP System verwendet wird. Sie sollten die SnapMirror Funktion nur aktivieren, wenn Ihr Cluster zur Verwendung mit NetApp ONTAP Volumes verbunden ist.
 
+.Was Sie benötigen
 Der Storage Cluster muss die NetApp Element Software ausführen.
 
 .Schritte

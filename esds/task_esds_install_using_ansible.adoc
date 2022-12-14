@@ -13,13 +13,14 @@ summary: Sie können SolidFire ESDS mit einem Automatisierungs-Tool wie Ansible 
 [role="lead"]
 Sie können SolidFire ESDS mit einem Automatisierungs-Tool wie Ansible installieren. Wenn Sie mit Ansible vertraut sind, können Sie ein Ansible-Playbook erstellen, das mehrere Aufgaben umfasst, wie z. B. das Installieren von SolidFire ESDS und das Erstellen eines Clusters.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Sie haben Ansible auf Ihrem lokalen Server installiert, indem Sie die Anweisungen befolgen https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installation-guide["Hier"^].
 * Sie haben sich mit Ansible-Rollen vertraut gemacht. Siehe https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html["Hier"^].
 * Sie haben alle aufgeführten Vorraussaufgaben ausgeführt link:concept_esds_prerequisite_tasks.html["Hier"^].
 * Sie haben eine Compliance-Prüfung für SolidFire ESDS durchgeführt. Anweisungen zum Ausführen der Compliance-Prüfung finden Sie unter link:concept_esds_prerequisite_tasks.html["Hier"^].
 
 
+.Über diese Aufgabe
 Verwenden Sie Ansible Vault für sensible Informationen, z. B. Passwörter, anstatt nur Klartext zu verwenden. Weitere Informationen finden Sie unter den folgenden Links:
 
 * https://docs.ansible.com/ansible/latest/user_guide/playbooks_vault.html["Verwendung Von Ansible Vault"^]

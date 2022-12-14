@@ -16,6 +16,7 @@ Sie müssen eine SnapMirror Beziehung in der NetApp Element UI erstellen.
 
 NOTE: Wenn ein Volume für SnapMirror noch nicht aktiviert ist und Sie eine Beziehung aus der Element UI erstellen möchten, wird SnapMirror auf diesem Volume automatisch aktiviert.
 
+.Was Sie benötigen
 SnapMirror ist auf dem Volume aktiviert.
 
 .Schritte

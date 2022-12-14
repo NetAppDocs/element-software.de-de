@@ -13,7 +13,7 @@ summary: 'Sie müssen die Funktion von vSphere Virtual Volumes \ (VVols\) manuel
 [role="lead"]
 Sie müssen die Funktion von vSphere Virtual Volumes (VVols) manuell über die NetApp Element Software aktivieren. Im Element Software-System ist die VVols-Funktion standardmäßig deaktiviert und wird nicht automatisch im Rahmen einer neuen Installation oder eines neuen Upgrades aktiviert. Die Aktivierung der VVols-Funktion ist eine einmalige Konfigurationsaufgabe.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Der Cluster muss Element 9.0 oder höher ausführen.
 * Der Cluster muss mit einer ESXi 6.0 Umgebung oder höher verbunden sein, die mit VVols kompatibel ist.
 * Wenn Sie Element 11.3 oder höher verwenden, muss der Cluster mit einer ESXi 6.0 Update 3 oder höher Umgebung verbunden sein.

@@ -15,7 +15,7 @@ Sie können ein Failover vom Element Cluster durchführen, um für Hosts auf der
 
 Verwenden Sie die Benutzeroberfläche von NetApp Element, um den Failover auszuführen. Wenn die Element-UI nicht verfügbar ist, können Sie auch den Befehl „Beziehungen unterbrechen“ mit ONTAP System Manager oder ONTAP CLI eingeben.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Eine SnapMirror-Beziehung ist vorhanden und hat mindestens einen gültigen Snapshot auf dem Ziel-Volume.
 * Aufgrund ungeplanter Ausfälle oder eines geplanten Ereignisses am primären Standort ist ein Failover auf das Ziel-Volume erforderlich.
 

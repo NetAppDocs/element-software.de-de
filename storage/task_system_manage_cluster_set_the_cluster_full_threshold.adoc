@@ -13,6 +13,7 @@ summary: Sie können die Ebene ändern, auf der das System eine Warnung zur Bloc
 [role="lead"]
 Sie können die Ebene ändern, auf der das System eine Warnung zur Blockclusterfülle generiert, indem Sie die folgenden Schritte durchführen. Darüber hinaus können Sie die ModifyClusterFullThreshold API-Methode verwenden, um den Level zu ändern, auf dem das System eine Block- oder Metadaten-Warnung erzeugt.
 
+.Was Sie benötigen
 Sie müssen über Administratorrechte für den Cluster verfügen.
 
 .Schritte

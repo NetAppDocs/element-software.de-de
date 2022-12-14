@@ -73,9 +73,9 @@ Die Element Demo-Knoten-Software ist ein Satz von VMware-Dateien, die in einer .
 
 Beim Installieren des Element Demo Node auf VMware ESXi werden die folgenden Aufgaben ausgeführt:
 
-*  network interfaces
-*  the demo node on an ESXi server
-*  the demo node on an ESXi server
+* <<Konfigurieren Sie die Netzwerkschnittstellen>>
+* <<Registrieren des Demo-Knotens auf einem ESXi-Server>>
+* <<Starten Sie den Demo-Knoten auf einem ESXi-Server>>
 
 
 

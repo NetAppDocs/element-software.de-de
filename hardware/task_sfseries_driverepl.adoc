@@ -13,7 +13,7 @@ summary: Sie können ein ausgefallenes Solid State-Laufwerk gegen ein Ersatzlauf
 [role="lead"]
 Sie können ein ausgefallenes Solid State-Laufwerk gegen ein Ersatzlaufwerk austauschen.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Sie haben ein Ersatzlaufwerk.
 * Sie haben ein elektrostatisches Entladungsband (ESD) oder andere antistatische Vorsichtsmaßnahmen getroffen.
 * Sie haben den NetApp Support kontaktiert, um zu überprüfen, ob die SSD ersetzt werden muss, und um die ordnungsgemäße Behebung des Problems zu gewährleisten.
@@ -22,6 +22,7 @@ Wenn Sie den NetApp Support anrufen, benötigen Sie die Service-Tag-Nummer oder 
 
 
 
+.Über diese Aufgabe
 Die Anweisungen gelten für die folgenden SolidFire Storage-Node-Modelle:
 
 * SF2405
@@ -68,9 +69,9 @@ Beachten Sie bei der Handhabung von Laufwerken die folgenden Best Practices:
 ====
 Hier finden Sie eine grobe Übersicht über die Schritte:
 
-*  the drive from the cluster
-*  the drive from the chassis
-*  the drive to the cluster
+* <<Entfernen Sie das Laufwerk aus dem Cluster>>
+* <<Setzen Sie das Laufwerk aus dem Gehäuse wieder ein>>
+* <<Fügen Sie das Laufwerk dem Cluster hinzu>>
 
 
 

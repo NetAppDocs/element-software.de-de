@@ -37,8 +37,10 @@ CAUTION: Vergewissern Sie sich, dass Sie das Knoten- und Gehäuse-Layout, das be
 . Klicken Sie Auf *Schutzdomänen Konfigurieren*.
 
 
+.Ergebnis
 Je nach der Größe des Clusters kann die Datensynchronisation zwischen Domänen einige Zeit in Anspruch nehmen. Nach Abschluss der Datensynchronisation können Sie auf der Seite *Cluster* > *Nodes* die benutzerdefinierten Schutz-Domain-Zuweisungen anzeigen und das Element Web-UI-Dashboard zeigt den Schutzstatus des Clusters im Fensterbereich *Benutzerdefinierte Schutzdomäne-Funktionszustand* an.
 
+.Mögliche Fehler
 Folgende Fehler werden möglicherweise nach dem Anwenden einer benutzerdefinierten Schutz-Domain-Konfiguration angezeigt:
 
 |===

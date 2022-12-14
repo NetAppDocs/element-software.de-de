@@ -17,7 +17,7 @@ Sie können zwei Volumes für Echtzeitreplizierung kombinieren, die auf verschie
 
 Volume-Paarungen sind immer eins zu eins. Nachdem ein Volume Teil einer Verbindung mit einem Volume auf einem anderen Cluster ist, können Sie es nicht mehr mit einem anderen Volume koppeln.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Sie haben eine Verbindung zwischen Clustern in einem Cluster-Paar hergestellt.
 * Sie haben Cluster-Administratorrechte für ein oder beide Cluster, die gekoppelt werden.
 

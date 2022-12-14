@@ -34,6 +34,7 @@ Sie können einen IP-Adressblock hinzufügen, indem Sie wie folgt vorgehen:
 . Wählen Sie *Änderungen Speichern*.
 
 
+.Link zur Fehlerbehebung in KB-Artikeln
 Link zu den Knowledge Base-Artikeln, um Hilfe bei der Fehlerbehebung bei der Verwaltung Ihrer VLAN-IP-Adressbereiche zu erhalten.
 
 * https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Element_Software/Duplicate_IP_warning_after_adding_a_storage_node_in_VLAN_on_Element_cluster["Doppelte IP-Warnung nach Hinzufügen eines Speicherknoten in VLAN zu Element Cluster"^]

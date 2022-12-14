@@ -22,7 +22,7 @@ Unter Umständen müssen Sie die Daten im Rahmen eines der folgenden Verfahren e
 
 NOTE: Dieser Prozess ist asynchron und gibt eine Antwort zurück, bevor der Rekeyvorgang abgeschlossen ist. Sie können das verwenden link:../api/reference_element_api_getasyncresult.html["GetAsyncResult"] Methode zum Abfragen des Systems, um zu sehen, wann der Prozess abgeschlossen ist.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Mithilfe des haben Sie die Softwareverschlüsselung im Ruhezustand aktiviert link:../api/reference_element_api_createcluster.html["CreateCluster erstellen"] Methode in einem neuen Cluster, das keine Volumes enthält und keinen I/O enthält Verwenden Sie den Link:./API/reference_element_api_getsoftwareencryptionatrestinfo.html[`GetSoftwareEncryptionatRestInfo`] Um zu bestätigen, dass der Staat ist `enabled` Bevor Sie fortfahren.
 * Das ist schon link:../storage/task_system_manage_key_set_up_external_key_management.html["Sie haben eine Vertrauensbeziehung aufgebaut"] Zwischen dem SolidFire-Cluster und einem externen Schlüsselserver (EKS). Führen Sie die aus link:../api/reference_element_api_testkeyserverkmip.html["TestKeyProviderKmip"] Methode, um zu überprüfen, ob eine Verbindung zum Schlüsselanbieter hergestellt wurde.
 

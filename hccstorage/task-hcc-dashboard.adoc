@@ -19,10 +19,10 @@ Mit der NetApp Hybrid Cloud Control Dashboard können Sie alle Storage-Ressource
 
 NOTE: Wenn Sie zum ersten Mal eine neue NetApp Hybrid Cloud Control Session starten, kann es möglicherweise zu Verzögerungen beim Laden der NetApp Hybrid Cloud Control Dashboard-Ansicht kommen, wenn der Management-Node viele Cluster verwaltet. Die Ladezeit hängt von der Anzahl der Cluster ab, die aktiv vom Management-Node gemanagt werden. Bei späteren Starts erleben Sie schnellere Ladezeiten.
 
-*  the NetApp HCC Dashboard
-*  storage resources
-*  storage capacity
-*  storage performance
+* <<Zugriff auf das NetApp HCC Dashboard>>
+* <<Monitoring von Storage-Ressourcen>>
+* <<Monitoring der Storage-Kapazität>>
+* <<Monitoring der Storage-Performance>>
 
 
 

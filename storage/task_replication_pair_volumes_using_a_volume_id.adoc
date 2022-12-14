@@ -13,7 +13,7 @@ summary: Sie können ein Volume mit einem anderen Volume in einem Remote-Cluster
 [role="lead"]
 Sie können ein Volume mit einem anderen Volume in einem Remote-Cluster koppeln, wenn Sie über Cluster-Administratorberechtigungen für das Remote-Cluster verfügen.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Stellen Sie sicher, dass die Cluster, die die Volumes enthalten, gekoppelt sind.
 * Erstellen Sie ein neues Volume auf dem Remote-Cluster.
 +

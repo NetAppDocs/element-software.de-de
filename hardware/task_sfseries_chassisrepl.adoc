@@ -13,7 +13,7 @@ summary: 'Möglicherweise müssen Sie das Gehäuse austauschen, wenn der Lüfter
 [role="lead"]
 Möglicherweise müssen Sie das Gehäuse austauschen, wenn der Lüfter, die CPU (Central Processing Unit) oder ein Duales Inline-Speichermodul (DIMM) ausfällt oder Überhitzungsprobleme oder Probleme mit dem Bootvorgang beheben. Cluster-Fehler in der Benutzeroberfläche der NetApp Element Software (UI) und die blinkende gelbe LED an der Vorderseite des Gehäuses zeigen, dass ein Gehäusetausch erforderlich ist. Wenden Sie sich zunächst an den NetApp Support, bevor Sie fortfahren.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Sie haben den NetApp Support kontaktiert.
 +
 Wenn Sie einen Ersatz bestellen, müssen Sie beim NetApp Support einen Case eröffnen.
@@ -27,6 +27,7 @@ NetApp Support hilft Ihnen bei der Entscheidung, ob RTFI erforderlich ist. Siehe
 * Sie verfügen über eine Tastatur und einen Monitor.
 
 
+.Über diese Aufgabe
 Die Anweisungen in diesem Dokument gelten, wenn Sie ein 1-HE-Chassis (One-Rack Unit) mit einem der folgenden Nodes haben:
 
 * SF2405

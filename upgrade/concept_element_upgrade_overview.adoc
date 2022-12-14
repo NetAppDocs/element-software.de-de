@@ -26,11 +26,11 @@ Zu diesen Komponenten gehören Managementservices, NetApp Hybrid Cloud Control, 
 
 
 ====
-Der ,Systemaktualisierungssequenz Inhalt beschreibt die Aufgaben, die zum Abschluss eines Upgrades eines SolidFire All-Flash-Storage-Systems erforderlich sind. Idealerweise werden diese Verfahren als Teil der größeren Aufrüstsequenz und nicht isoliert durchgeführt. Wenn ein komponentenbasiertes Upgrade oder eine Aktualisierung erforderlich ist, lesen Sie die Verfahrensvoraussetzungen, um sicherzustellen, dass zusätzliche Komplexität bewältigt wird.
+Der <<sys_upgrade,Systemaktualisierungssequenz>> Inhalt beschreibt die Aufgaben, die zum Abschluss eines Upgrades eines SolidFire All-Flash-Storage-Systems erforderlich sind. Idealerweise werden diese Verfahren als Teil der größeren Aufrüstsequenz und nicht isoliert durchgeführt. Wenn ein komponentenbasiertes Upgrade oder eine Aktualisierung erforderlich ist, lesen Sie die Verfahrensvoraussetzungen, um sicherzustellen, dass zusätzliche Komplexität bewältigt wird.
 
 Der link:task_sf_upgrade_all_vsphere.html["VSphere-Upgrade-Sequenz"] Der Inhalt des Element Plug-ins für vCenter Server enthält zusätzliche Schritte vor und nach dem Upgrade, die zur Neuinstallation des Element Plug-ins für vCenter Server erforderlich sind.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Sie führen Management-Node 11.3 oder höher aus. Neuere Versionen des Management-Node verfügen über eine modulare Architektur, die individuelle Services zur Verfügung stellt.
 +
 
@@ -46,7 +46,7 @@ Upgrades mit NetApp Hybrid Cloud Control sind in früheren Service-Bundle-Versio
 
 
 
-== Systemaktualisierungssequenz
+== [[sys_Upgrade]]Systemaktualisierungssequenz
 
 Mithilfe der folgenden Sequenz können Sie Ihr NetApp SolidFire All-Flash-Storage-System für Element 12.5 oder höher aktualisieren.
 

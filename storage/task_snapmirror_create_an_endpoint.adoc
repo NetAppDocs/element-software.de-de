@@ -22,7 +22,7 @@ NOTE: Wenn ein vorhandener Endpunkt ursprünglich mit der API erstellt wurde und
 
 Weitere Informationen zu API-Methoden finden Sie unter link:../api/index.html["Storage-Management mit der Element API"].
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Sie sollten SnapMirror in der Element UI für den Storage-Cluster aktiviert haben.
 * Ihnen kennen die ONTAP-Anmeldedaten für den Endpunkt.
 

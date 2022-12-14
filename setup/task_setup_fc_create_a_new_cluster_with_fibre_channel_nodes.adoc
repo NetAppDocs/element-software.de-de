@@ -15,6 +15,7 @@ Sie können ein neues Cluster erstellen, nachdem Sie die einzelnen Fibre Channel
 
 Während der Konfiguration eines neuen Node werden jedem Node 1-GB- oder 10-GB-Management-IP-Adressen (MIP) zugewiesen. Sie müssen eine der bei der Konfiguration erstellten Node-IP-Adressen verwenden, um die Seite Neues Cluster erstellen zu öffnen. Die verwendete IP-Adresse hängt vom Netzwerk ab, das Sie für das Cluster-Management ausgewählt haben.
 
+.Was Sie benötigen
 Sie haben die einzelnen Fibre Channel Nodes konfiguriert.
 
 .Schritte

@@ -14,12 +14,12 @@ summary: Sie können ein SolidFire Storage-System mit NetApp Element Software-Sc
 Sie können ein SolidFire Storage-System mit verschiedenen NetApp Element Software-Schnittstellen und Integrations-Utilities verwalten.
 
 .Optionen
-*  Element software user interface
-*  Element software API
-*  Element Plug-in for vCenter Server
-*  Hybrid Cloud Control
-*  node UIs
-*  integration utilities and tools
+* <<Benutzeroberfläche der NetApp Element Software>>
+* <<NetApp Element Software-API>>
+* <<NetApp Element Plug-in für vCenter Server>>
+* <<NetApp Hybrid Cloud Control>>
+* <<UIs für Managementknoten>>
+* <<Zusätzliche Integrations-Tools>>
 
 
 

@@ -13,9 +13,10 @@ summary: Sie können ein Banner aktivieren, bearbeiten oder konfigurieren, das e
 [role="lead"]
 Sie können ein Banner aktivieren, bearbeiten oder konfigurieren, das eine Nachricht für den Benutzer enthält.
 
- the Terms of Use banner
- the Terms of Use banner
- the Terms of Use banner
+.Optionen
+<<Aktivieren Sie das Banner für Nutzungsbedingungen>>
+<<Bearbeiten Sie den Banner für Nutzungsbedingungen>>
+<<Deaktivieren Sie den Banner für die Nutzungsbedingungen>>
 
 
 
@@ -40,7 +41,7 @@ NOTE: Überschreiten Sie maximal 4096 Zeichen.
 
 Sie können den Text bearbeiten, den ein Benutzer sieht, wenn er das Anmeldebanner „Nutzungsbedingungen“ ausgewählt hat.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Um die Nutzungsbedingungen zu konfigurieren, müssen Sie über Berechtigungen für Cluster-Administratoren verfügen.
 * Stellen Sie sicher, dass die Funktion „Nutzungsbedingungen“ aktiviert ist.
 
@@ -61,7 +62,7 @@ NOTE: Überschreiten Sie maximal 4096 Zeichen.
 
 Sie können den Banner „Nutzungsbedingungen“ deaktivieren. Bei deaktiviertem Banner wird der Benutzer nicht mehr aufgefordert, die Nutzungsbedingungen bei Verwendung der Element-UI zu akzeptieren.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Um die Nutzungsbedingungen zu konfigurieren, müssen Sie über Berechtigungen für Cluster-Administratoren verfügen.
 * Stellen Sie sicher, dass die Nutzungsbedingungen aktiviert sind.
 

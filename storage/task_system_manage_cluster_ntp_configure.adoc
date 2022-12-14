@@ -22,6 +22,7 @@ Sie können bis zu fünf verschiedene NTP-Server eingeben.
 
 NOTE: Sie können IPv4- und IPv6-Adressen verwenden.
 
+.Was Sie benötigen
 Um diese Einstellung zu konfigurieren, müssen Sie über Berechtigungen für Cluster-Administratoren verfügen.
 
 .Schritte

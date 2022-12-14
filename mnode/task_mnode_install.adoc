@@ -18,7 +18,7 @@ Sie können den Management-Node für Ihr Cluster, auf dem die NetApp Element Sof
 
 Dieses Handbuch richtet sich an SolidFire All-Flash-Storage-Administratoren, die die NetApp Deployment Engine nicht zur Installation von Management-Nodes verwenden.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * In Ihrer Cluster-Version wird die NetApp Element Software 11.3 oder höher ausgeführt.
 * Ihre Installation verwendet IPv4. Der Management-Node 11.3 unterstützt IPv6 nicht.
 +
@@ -50,16 +50,17 @@ NOTE: Wenn IPv6 unterstützt werden soll, können Sie den Management-Node 11.1 v
 * (Management-Node 12.0 und höher mit Proxy-Server) Sie haben die Version 2.16 von NetApp Hybrid Cloud Control auf Managementservices aktualisiert, bevor Sie einen Proxy-Server konfigurieren.
 
 
+.Über diese Aufgabe
 Der Element 12.2 Management-Node ist ein optionales Upgrade. Bei bestehenden Implementierungen wird dieser Bedarf nicht benötigt.
 
 Bevor Sie dieses Verfahren befolgen, sollten Sie ein Verständnis von haben link:../concepts/concept_solidfire_concepts_volumes.html#persistent-volumes["Persistente Volumes"] Und ob du sie nutzen willst oder nicht. Persistente Volumes sind optional, jedoch im Falle eines Datenverlusts bei der Management-Node-Konfiguration empfohlen.
 
 .Schritte
-.  ISO or OVA and deploy the VM
-. ,Erstellen Sie den Management-Node-Administrator, und konfigurieren Sie das Netzwerk
-.  time sync
-.  up the management node
-.  controller assets
+. <<Laden Sie ISO oder OVA herunter, und implementieren Sie die VM>>
+. <<create_mnode_admin,Erstellen Sie den Management-Node-Administrator, und konfigurieren Sie das Netzwerk>>
+. <<Konfigurieren Sie die Zeitsynchronisierung>>
+. <<Richten Sie den Management-Node ein>>
+. <<Controller-Assets konfigurieren>>
 
 
 
@@ -144,7 +145,7 @@ NOTE: Wenn Sie eine zusätzliche NIC benötigen, um den Speicherdatenverkehr zu 
 
 
 
-NOTE: Ab Element 12.3 werden die Teilschritte a bis (e) automatisch ausgeführt. Für Management-Node 12.3 fahren Sie mit fort ,Unterschritt (f) Um die Konfiguration der Zeitsynchronisation abzuschließen.
+NOTE: Ab Element 12.3 werden die Teilschritte a bis (e) automatisch ausgeführt. Für Management-Node 12.3 fahren Sie mit fort <<substep_f_install_config_time_sync,Unterschritt (f)>> Um die Konfiguration der Zeitsynchronisation abzuschließen.
 
 . Melden Sie sich über SSH oder die vom Hypervisor bereitgestellte Konsole beim Management-Node an.
 . NTPD stoppen:

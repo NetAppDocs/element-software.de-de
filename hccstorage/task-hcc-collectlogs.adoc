@@ -16,15 +16,16 @@ keywords: netapp, element, logs, collection, troubleshooting, monitor
 [role="lead"]
 Falls Sie Probleme bei der Installation Ihrer SolidFire All-Flash-Storage haben, können Sie Protokolle erfassen, die Sie an NetApp Support senden, um eine Hilfe bei der Diagnose zu erhalten. Entweder NetApp Hybrid Cloud Control oder DIE REST-API zur Erfassung von Protokollen auf einem Element System.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Stellen Sie sicher, dass auf Ihrer Speichercluster-Version die NetApp Element-Software 11.3 oder höher ausgeführt wird.
 * Stellen Sie sicher, dass Sie einen Management-Node mit Version 11.3 oder höher bereitgestellt haben.
 
 
+.Optionen für die Protokollerfassung
 Wählen Sie eine der folgenden Optionen:
 
-*  NetApp Hybrid Cloud Control to collect logs
-*  the REST API to collect logs
+* <<Verwenden Sie NetApp Hybrid Cloud Control zum Erfassen von Protokollen>>
+* <<VERWENDEN Sie die REST API zum Erfassen von Protokollen>>
 
 
 

@@ -18,7 +18,7 @@ Sie können verfügbare Beschriftungen in einem Dialogfeld für eine vorhandene 
 
 IMPORTANT: Wenn Sie einem Gruppen-Snapshot ein Etikett hinzufügen, werden alle vorhandenen Beschriftungen zu einzelnen Snapshots überschrieben.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * SnapMirror ist auf dem Cluster aktiviert.
 * Die Beschriftung, die Sie hinzufügen möchten, ist bereits in ONTAP vorhanden.
 

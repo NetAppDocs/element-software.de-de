@@ -41,9 +41,9 @@ WARNING: Sofern nicht vom NetApp Support beraten, werden Änderungen an diesem S
 
 
 .Fehlerbehebungsoptionen
-*  a cluster node
-*  a cluster node with NetApp Support
-*  a node that is not part of cluster
+* <<Fehlerbehebung für einen Cluster-Node>>
+* <<Fehlerbehebung für einen Cluster Node mit NetApp Support>>
+* <<Fehlerbehebung für einen Node, der nicht zum Cluster gehört>>
 
 
 

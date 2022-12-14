@@ -13,7 +13,7 @@ summary: 'Sie müssen zwei Cluster als ersten Schritt mit der Echtzeitreplizieru
 [role="lead"]
 Sie müssen zwei Cluster als ersten Schritt mit der Echtzeitreplizierungsfunktion koppeln. Nachdem Sie zwei Cluster miteinander verbunden haben, können Sie aktive Volumes auf einem Cluster konfigurieren, sodass sie kontinuierlich zu einem zweiten Cluster repliziert werden. Dadurch profitieren Sie von kontinuierlicher Datensicherung (CDP).
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Für ein oder beide Cluster, die gekoppelt werden, müssen Sie über Administratorrechte verfügen.
 * Alle Knoten-MIPs und Sips werden miteinander geroutet.
 * Weniger als 2000 ms Paketumlauflatenz zwischen Clustern.

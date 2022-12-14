@@ -13,12 +13,12 @@ summary: Vor der Installation von SolidFire ESDS stellen Sie sicher, dass Ihre U
 [role="lead"]
 Vor der Installation von SolidFire ESDS stellen Sie sicher, dass Ihre Umgebung die Konfigurations-, IP-Adressierung- und Netzwerkanforderungen erfüllt.
 
-.<Strong>Installieren Sie die erforderliche Hardware</strong>
+.*Installieren Sie die erforderliche Hardware*
 * Installieren Sie den unterstützten Server. Siehe https://mysupport.netapp.com/matrix/imt.jsp?components=97283;&solution=1757&isHWU#welcome["NetApp Interoperabilitäts-Matrix (Anmeldung erforderlich)"^] Finden Sie weitere Informationen.
 * Stellen Sie sicher, dass Ihre Hardwarekonfiguration ausgewogen ist und alle Kanäle gefüllt sind. Weitere Informationen zur Maximierung der Bandbreite finden Sie im https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/SolidFire_Enterprise_SDS/How_to_balance_memory_and_maximize_bandwidth_for_your_hardware_configurations["KB-Artikel"^] (anmeldung erforderlich).
 
 
-.<strong>Host (Node) konfigurieren</strong>
+.*Konfigurieren Sie den Host (Knoten)*
 * Installieren Sie Red hat Package Manager auf Basis der unterstützten Versionen, die in aufgeführt sind https://mysupport.netapp.com/matrix/imt.jsp?components=97283;&solution=1757&isHWU#welcome["NetApp Interoperabilitäts-Matrix (Anmeldung erforderlich)"^].
 * Konfigurieren Sie einen NTP-Server (Network Time Protocol) für die Verwendung mit allen Hosts im Netzwerk.
 * Wenn Sie das Installationsziel auswählen, wählen Sie das Optionsfeld aus, um die Partitionierung des Dateisystems manuell zu konfigurieren. Verwenden Sie auf der Seite *Manuelle Partitionierung* die Schaltflächen *+* und *-*, um vorhandene Partitionen zu entfernen und neue Partitionen zu erstellen und diese nach den hier aufgeführten Empfehlungen zu dimensionieren. Mit dem Standard-LVM-Partitionierungsschema können Sie bei Bedarf die Größe später problemlos ändern.
@@ -106,7 +106,7 @@ rhel-7-server-extras-rpms
 
 
 
-.<strong>Installieren Sie die erforderliche Software</strong>
+.*Installieren Sie die erforderliche Software*
 * Installation von Ansible, Git, Podman und Python 3.0
 +
 [NOTE]
@@ -131,7 +131,7 @@ NOTE: Sobald verfügbar, empfiehlt NetApp, Sicherheitsupdates für Ihre Podman-V
 ====
 
 
-.<strong>Überprüfen Sie, ob Ihre Konfiguration mit den Anforderungen von NetApp &#8217;s für die Installation von SolidFire ESDS</strong> übereinstimmt
+.*Überprüfen Sie, ob Ihre Konfiguration den Anforderungen von NetApp für die Installation von SolidFire ESDS* entspricht
 * Verwenden Sie die in aufgeführte SolidFire-ESDS-Konfiguration https://mysupport.netapp.com/matrix/#welcome["NetApp Interoperabilitäts-Matrix-Tool (IMT)"] Als Referenz zu dienen.
 +
 
@@ -184,7 +184,7 @@ NOTE: Selbst wenn Sie das ESDS-System von SolidFire nutzen, sollten Sie die Comp
 
 
 
-.<Strong>Anforderungen an Netzwerk- und IP-Adressen verstehen</strong>
+.*Anforderungen an Netzwerk- und IP-Adressen verstehen*
 * Machen Sie sich mit der Konfiguration und Verwaltung von Netzwerken und Netzwerkschnittstellen in Red hat Package Manager vertraut. Siehe https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide/index["Red hat-Dokumentation"^].
 * Konfigurieren Sie Ihr Netzwerk gemäß den hier angegebenen IP-Anforderungen:
 +
@@ -261,7 +261,7 @@ IMPORTANT: Die hier angegebene Abbildung soll als Beispiel dienen. Ihre tatsäch
 * Ändern Sie den MTU-Switch-Port in 9216 Byte.
 
 
-.<strong>ermöglichen Sie bestimmte Ports durch Ihr Rechenzentrum &#8217;s Firewall</strong>
+.*Erlauben Sie bestimmte Ports durch die Firewall Ihres Rechenzentrums*
 * Wenn `firewalld` Ist auf dem Speicherknoten aktiviert, auf dem Red hat Package Manager ausgeführt wird, stellen Sie sicher, dass die folgenden Ports geöffnet sind, so dass Sie das System Remote verwalten können, Clients außerhalb Ihres Rechenzentrums eine Verbindung zu Ressourcen herstellen können und sicherstellen können, dass interne Dienste ordnungsgemäß funktionieren:
 +
 [cols="4*"]
@@ -446,7 +446,7 @@ firewall-cmd –-reload
 ----
 
 
-.<strong>Konfigurieren Sie Ihr Hostnetzwerk</strong>
+.*Konfigurieren Sie Ihr Hostnetzwerk*
 * Konfigurieren Sie das Hostnetzwerk mit link:task_esds_configure_the_interface_config_files.html["Best Practices in sich vereint"^] Wird bereitgestellt.
 +
 
@@ -454,7 +454,7 @@ IMPORTANT: Führen Sie die Schritte durch, um Ihr Hostnetzwerk so zu konfigurier
 
 
 
-.<stark>komplette zusätzliche Anforderungen</strong>
+.* Zusätzliche Anforderungen erfüllen*
 * Installieren Sie eine Datensammlung, die von NetApp Support für die Erfassung der Host-Protokolle verwendet wird. Sie können eine Collect von installieren https://mysupport.netapp.com/site/tools/tool-eula/activeiq-onecollect["Hier"^]. Sie benötigen ein NetApp Konto, um auf den Download zugreifen zu können. Sie können auch das One Collect Installation Guide und die Versionshinweise am selben Ort finden.
 +
 

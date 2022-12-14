@@ -13,7 +13,7 @@ summary: Wenn für ein Remote-Cluster keine Cluster-Anmeldedaten vorhanden sind,
 [role="lead"]
 Wenn für ein Remote-Cluster keine Cluster-Anmeldedaten vorhanden sind, können Sie ein Volume mithilfe eines Kopplungsschlüssels mit einem anderen Volume auf einem Remote-Cluster koppeln.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Stellen Sie sicher, dass die Cluster, die die Volumes enthalten, gekoppelt sind.
 * Stellen Sie sicher, dass auf dem Remote-Cluster ein Volume zum Koppeln vorhanden ist.
 +

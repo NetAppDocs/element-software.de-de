@@ -13,9 +13,9 @@ summary: Führen Sie dieses Verfahren durch, wenn Sie ein Metadatenlaufwerk oder
 [role="lead"]
 Wählen Sie aus den hier aufgeführten Verfahren, um ein Laufwerk proaktiv zu ersetzen, ein Laufwerk nach dem Ausfall zu ersetzen und ein Cache-Laufwerk zu ersetzen. Ein Metadatenlaufwerk oder ein Blocklaufwerk im SolidFire ESDS-Cluster ersetzen. Auf der Seite Element UI *Cluster > Laufwerke* werden die Informationen zum Laufwerksverschleiß angezeigt.
 
-*  a drive proactively
-*  a faulty drive
-*  a cache drive
+* <<Ersetzen Sie ein Laufwerk proaktiv>>
+* <<Tauschen Sie ein fehlerhaftes Laufwerk aus>>
+* <<Ersetzen Sie ein Cache-Laufwerk>>
 
 
 
@@ -24,7 +24,7 @@ Wählen Sie aus den hier aufgeführten Verfahren, um ein Laufwerk proaktiv zu er
 
 Führen Sie dieses Verfahren durch, wenn Sie ein Metadatenlaufwerk oder ein Blocklaufwerk im SolidFire ESDS-Cluster proaktiv ersetzen möchten. Auf der Seite Element UI *Cluster* > *Drives* werden die Informationen zum Laufwerksverschleiß angezeigt.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Stellen Sie über die NetApp Element Software-UI sicher, dass der Cluster in einem guten Zustand ist und es keine Warnungen oder Cluster-Fehler gibt. Sie können über die Management Virtual IP (MVIP)-Adresse des primären Cluster-Knotens auf die Element-UI zugreifen.
 * Stellen Sie sicher, dass auf dem Cluster keine aktiven Jobs ausgeführt werden.
 * Stellen Sie sicher, dass Sie sich mit allen Schritten vertraut gemacht haben.
@@ -125,7 +125,7 @@ Sie sehen die Seriennummer des neuen Laufwerks, das Sie installiert haben.
 
 Wenn das SolidFire ESDS-Cluster über ein fehlerhaftes Laufwerk verfügt, zeigt die Element-UI eine Warnmeldung an. Bevor Sie das Laufwerk aus dem Cluster entfernen, überprüfen Sie den Grund für Fehler, indem Sie die Informationen in der IPMI-Schnittstelle für Ihren Node/Server anzeigen. Diese Schritte sind anwendbar, wenn Sie ein Block-Laufwerk oder ein Metadaten-Laufwerk ersetzen.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Überprüfen Sie in der NetApp Element-Software-UI, ob das Laufwerk ausgefallen ist. Element zeigt eine Warnmeldung an, wenn ein Laufwerk ausfällt. Sie können über die Management Virtual IP (MVIP)-Adresse des primären Cluster-Knotens auf die Element-UI zugreifen.
 * Stellen Sie sicher, dass Sie sich mit allen Schritten vertraut gemacht haben.
 * Stellen Sie sicher, dass Sie die erforderlichen Vorsichtsmaßnahmen treffen, um elektrostatische Entladung (ESD) beim Umgang mit Laufwerken zu verhindern.
@@ -213,7 +213,7 @@ Sie sehen die Seriennummer des neuen Laufwerks, das Sie installiert haben.
 
 Führen Sie dieses Verfahren durch, wenn Sie das Cache-Laufwerk im SolidFire ESDS-Cluster ersetzen möchten. Das Cache-Laufwerk ist mit Metadaten-Services verknüpft. Auf der Seite Element UI *Cluster* > *Drives* werden die Informationen zum Laufwerksverschleiß angezeigt.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Stellen Sie über die NetApp Element Software-UI sicher, dass der Cluster in einem guten Zustand ist und es keine Warnungen oder Cluster-Fehler gibt. Sie können über die Management Virtual IP (MVIP)-Adresse des primären Cluster-Knotens auf die Element-UI zugreifen.
 * Stellen Sie sicher, dass auf dem Cluster keine aktiven Jobs ausgeführt werden.
 * Stellen Sie sicher, dass Sie sich mit allen Schritten vertraut gemacht haben.

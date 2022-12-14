@@ -13,7 +13,7 @@ summary: Sie können Informationen zu virtuellen Volumes für alle aktiven virtu
 [role="lead"]
 Sie können Informationen zu virtuellen Volumes für alle aktiven virtuellen Volumes auf dem Cluster in der Element UI prüfen. Sie können außerdem Performance-Aktivitäten für jedes virtuelle Volume anzeigen, einschließlich Eingaben, Ausgaben, Durchsatz, Latenz, Warteschlangentiefe und Volume-Informationen
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Die VVols Funktion sollte in der Element UI für den Cluster aktiviert sein.
 * Sie sollten einen zugeordneten Speicher-Container erstellt haben.
 * Sie sollten vSphere Cluster entsprechend der VVols Funktion der Element Software konfigurieren.

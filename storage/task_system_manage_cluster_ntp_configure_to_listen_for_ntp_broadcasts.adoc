@@ -13,7 +13,7 @@ summary: 'Über den Broadcast-Modus können Sie jeden Knoten in einem Cluster an
 [role="lead"]
 Mithilfe des Broadcast-Modus können Sie jeden Node in einem Cluster anweisen, um auf dem Netzwerk nach NTP (Network Time Protocol)-Broadcast-Meldungen von einem bestimmten Server abzuhören.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Um diese Einstellung zu konfigurieren, müssen Sie über Berechtigungen für Cluster-Administratoren verfügen.
 * Sie müssen einen NTP-Server im Netzwerk als Broadcast-Server konfigurieren.
 

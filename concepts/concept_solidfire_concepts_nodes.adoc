@@ -15,12 +15,12 @@ Nodes sind Hardware- oder virtuelle Ressourcen, die in einem Cluster gruppiert w
 
 NetApp Element Software definiert verschiedene Node-Rollen für ein Cluster. Die Typen der Node-Rollen sind die folgenden:
 
-*  node
-*  node
-*  Channel node
+* <<Management-Node>>
+* <<Storage-Node>>
+* <<Fibre Channel-Node>>
 
 
- states of operation,Nodes-Status Abhängig von Cluster-Zuordnung.
+<<Node-Status des Vorgangs,Nodes-Status>> Abhängig von Cluster-Zuordnung.
 
 
 

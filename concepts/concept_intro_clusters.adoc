@@ -23,11 +23,11 @@ Administratoren und Hosts können über virtuelle IP-Adressen auf das Cluster zu
 NOTE: Ab Element Version 11.0 können Nodes mit IPv4, IPv6 oder beiden Adressen für ihr Managementnetzwerk konfiguriert werden. Dies gilt sowohl für Storage-Nodes als auch für Management-Nodes, mit Ausnahme von Management-Node 11.3 und höher, der IPv6 nicht unterstützt. Beim Erstellen eines Clusters kann nur eine einzelne IPv4- oder IPv6-Adresse für den MVIP verwendet werden, und der entsprechende Adresstyp muss auf allen Knoten konfiguriert werden.
 
 .Mehr auf Clustern
-*  storage clusters
-*  of thirds
-*  capacity
-*  efficiency
-*  cluster quorum
+* <<Autorisierende Storage-Cluster>>
+* <<Drittelregel>>
+* <<Ungenutzte Kapazität>>
+* <<Storage-Effizienz>>
+* <<Storage Cluster Quorum>>
 
 
 

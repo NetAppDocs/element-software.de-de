@@ -13,7 +13,7 @@ summary: Sie können einer Cluster-Konfiguration ein neues virtuelles Netzwerk h
 [role="lead"]
 Sie können einer Cluster-Konfiguration ein neues virtuelles Netzwerk hinzufügen, um eine mandantenfähige Umgebungsverbindung zu einem Cluster zu ermöglichen, auf dem Element Software ausgeführt wird.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Identifizieren Sie den Block der IP-Adressen, der den virtuellen Netzwerken auf den Clusterknoten zugewiesen wird.
 * Geben Sie eine SVIP-Adresse (Storage-Netzwerk-IP) an, die als Endpunkt für den gesamten NetApp Element-Datenverkehr verwendet werden soll.
 

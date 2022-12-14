@@ -21,7 +21,7 @@ Wenn Sie SnapMirror für Disaster Recovery von einem SolidFire Storage-Cluster m
 
 
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Der Ziel-Node für Element muss ONTAP zugänglich gemacht worden sein.
 * Das Element Volume muss für die SnapMirror Replizierung aktiviert worden sein.
 

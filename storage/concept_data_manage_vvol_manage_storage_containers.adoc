@@ -108,6 +108,7 @@ TIP: Wenn Sie die Anmeldeinformationen für CHAP-Einstellungen nicht ändern, bl
 
 Sie können Storage Container von der Element UI löschen.
 
+.Was Sie benötigen
 Stellen Sie sicher, dass alle Virtual Machines aus dem VVol Datastore entfernt wurden.
 
 .Schritte

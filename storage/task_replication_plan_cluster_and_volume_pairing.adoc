@@ -13,7 +13,7 @@ summary: Für die Echtzeitreplizierung müssen zwei Storage Cluster, auf denen E
 [role="lead"]
 Für die Echtzeitreplizierung müssen zwei Storage Cluster, auf denen Element Software ausgeführt wird, Volumes auf jedem Cluster gepaart werden und die Replizierung validiert werden. Nach Abschluss der Replikation sollten Sie die Volume-Beziehung löschen.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Für ein oder beide Cluster, die gekoppelt werden, müssen Sie über Administratorrechte verfügen.
 * Alle Node-IP-Adressen in Management- und Storage-Netzwerken für gepaarte Cluster werden miteinander verbunden.
 * Die MTU aller verbundenen Nodes muss identisch sein und von einem End-to-End-System zwischen den Clustern unterstützt werden.

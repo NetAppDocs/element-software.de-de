@@ -20,7 +20,7 @@ Die hardwarebasierte Verschlüsselung für Daten im Ruhezustand ist bei der Clus
 
 WARNING: Bei SolidFire All-Flash-Storage-Clustern muss die Softwareverschlüsselung im Ruhezustand während der Cluster-Erstellung aktiviert sein und nach dem Erstellen des Clusters nicht deaktiviert werden können. Für ESDS-Cluster (SolidFire Enterprise SDS) ist die Softwareverschlüsselung im Ruhezustand standardmäßig aktiviert.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Sie verfügen über Cluster-Administratorrechte zum Aktivieren oder Ändern von Verschlüsselungseinstellungen.
 * Bei der hardwarebasierten Verschlüsselung im Ruhezustand haben Sie vor der Änderung von Verschlüsselungseinstellungen sichergestellt, dass sich das Cluster in einem ordnungsgemäßen Zustand befindet.
 * Wenn Sie die Verschlüsselung deaktivieren, müssen zwei Knoten an einem Cluster teilnehmen, um auf den Schlüssel zuzugreifen, um die Verschlüsselung auf einem Laufwerk zu deaktivieren.
@@ -36,9 +36,9 @@ Mithilfe der können Sie den aktuellen Status der Verschlüsselung im Ruhezustan
 NOTE: Das UI-Dashboard der Element Software unter `https://<MVIP>/` Derzeit wird für hardwarebasierte Verschlüsselung nur die Verschlüsselung im Ruhezustand angezeigt.
 
 .Optionen
-*  hardware-based encryption at rest
-*  software-based encryption at rest
-*  hardware-based encryption at rest
+* <<Hardwarebasierte Verschlüsselung für Daten im Ruhezustand>>
+* <<Softwarebasierte Verschlüsselung im Ruhezustand aktivieren>>
+* <<Deaktivieren Sie die hardwarebasierte Verschlüsselung für Daten im Ruhezustand>>
 
 
 

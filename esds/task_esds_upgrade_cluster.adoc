@@ -13,6 +13,7 @@ summary: 'Mit Ansible können Sie ein unterbrechungsfreies Rolling Upgrade auf I
 [role="lead"]
 Mit Ansible können Sie ein unterbrechungsfreies Rolling Upgrade auf Ihrem SolidFire ESDS Cluster durchführen. Verwenden der `nar_solidfire_sds_upgrade` Rolle von NetApp, Ansible führt Rolling Upgrades für einen Node gleichzeitig durch, während alle Volumes von der Datenverfügbarkeit profitieren.
 
+.Was Sie benötigen
 Stellen Sie sicher, dass die folgenden Bedingungen erfüllt sind, bevor Sie ein Upgrade durchführen:
 
 * Es gibt keine Cluster-Fehler in der Element UI.
@@ -35,6 +36,7 @@ hosts:
 * Die Bestandsdatei hat die folgenden Variablen angegeben: sf_mgmt_virt_ip (MVIP), sf_Cluster_admin_username, sf_Cluster_admin_passwd und solidfire_Element_rpm (Pfad zur neuen RPM-Datei).
 
 
+.Upgrade-Übersicht
 Hier eine Übersicht über die Ereignisse während des Upgrades:
 
 * Die in der Bestandsdatei eingegebenen Informationen werden validiert.

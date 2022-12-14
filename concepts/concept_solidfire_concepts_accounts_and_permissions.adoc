@@ -15,9 +15,9 @@ Um die Storage-Ressourcen in Ihrem System zu verwalten und Zugriff zu gewähren,
 
 Mit Element Storage können Sie folgende Typen von Konten erstellen und verwalten:
 
-*  cluster administrator accounts,Administratorkonten für das Storage-Cluster
-*  accounts,Benutzerkonten für Storage-Volume-Zugriff
-*  cluster user accounts,Maßgebliche Cluster-Benutzerkonten für NetApp Hybrid Cloud Control
+* <<Konten für Storage-Cluster-Administratoren,Administratorkonten für das Storage-Cluster>>
+* <<Benutzerkonten,Benutzerkonten für Storage-Volume-Zugriff>>
+* <<Autorisierende Cluster-Benutzerkonten,Maßgebliche Cluster-Benutzerkonten für NetApp Hybrid Cloud Control>>
 
 
 

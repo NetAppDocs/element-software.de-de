@@ -15,8 +15,8 @@ Sie müssen einzelne Nodes konfigurieren, bevor Sie sie einem Cluster hinzufüge
 
 Es gibt zwei Optionen für die Konfiguration von Speicher-Nodes:
 
-*  a storage node using the per-node UI,UI pro Node: Verwenden Sie die Pro-Node-Benutzeroberfläche (https://<node_management_IP>:442)[] So konfigurieren Sie die Node-Netzwerkeinstellungen.
-*  a storage node using the TUI,TUI: Verwenden Sie die Node Terminal User Interface (TUI), um den Knoten zu konfigurieren.
+* <<Konfigurieren Sie einen Storage-Node über die UI pro Node,UI pro Node>>: Verwenden Sie die Pro-Node-Benutzeroberfläche (https://<node_management_IP>:442)[] So konfigurieren Sie die Node-Netzwerkeinstellungen.
+* <<Konfigurieren Sie über die TUI einen Storage-Node,TUI>>: Verwenden Sie die Node Terminal User Interface (TUI), um den Knoten zu konfigurieren.
 
 
 Sie können einem Cluster keinen Node mit DHCP-zugewiesenen IP-Adressen hinzufügen. Über die DHCP-IP-Adresse können Sie den Node zunächst in der UI, der TUI oder der API pro Node konfigurieren. Während dieser Erstkonfiguration können Sie statische IP-Adressinformationen hinzufügen, damit Sie den Node zu einem Cluster hinzufügen können.

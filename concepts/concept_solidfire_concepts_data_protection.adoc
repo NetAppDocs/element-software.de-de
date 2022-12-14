@@ -15,13 +15,13 @@ Zu den Datensicherungsfunktionen gehören Remote-Replizierung, Volume Snapshots,
 
 Element Storage-Datensicherung umfasst folgende Konzepte:
 
-*  replication types
-*  snapshots for data protection
-*  clones
-*  and restore process overview for Element storage
-*  Domains
-* ,Benutzerdefinierte Sicherungsdomänen
-*  Helix high availability
+* <<Typen der Remote-Replizierung>>
+* <<Volume Snapshots zur Datensicherung>>
+* <<Volume-Klone>>
+* <<Übersicht über Backup- und Restore-Prozesse für Element Storage>>
+* <<Sicherungsdomänen>>
+* <<custom_pd,Benutzerdefinierte Sicherungsdomänen>>
+* <<Hochverfügbarkeit mit Double Helix>>
 
 
 
@@ -30,9 +30,9 @@ Element Storage-Datensicherung umfasst folgende Konzepte:
 
 Die Remote-Replikation von Daten kann folgende Formen annehmen:
 
-*  and asynchronous replication between clusters
-*  replication
-*  between Element and ONTAP clusters using SnapMirror
+* <<Synchrone und asynchrone Replizierung zwischen Clustern>>
+* <<Reine Snapshot Replizierung>>
+* <<Replizierung zwischen Element und ONTAP Clustern mit SnapMirror>>
 
 
 Weitere Informationen finden Sie unter https://www.netapp.com/us/media/tr-4741.pdf["TR-4741: NetApp Element Software Remote Replication"^].
@@ -171,7 +171,7 @@ Wenn Sie ein neues Cluster erstellen und Storage-Nodes verwenden, die sich in ei
 
 
 
-== Benutzerdefinierte Sicherungsdomänen
+== [[Custom_pd]]Benutzerdefinierte Schutzdomänen
 
 Sie können ein benutzerdefiniertes Schutz-Domain-Layout definieren, das Ihrem spezifischen Gehäuse- und Node-Layout entspricht und wo jeder Knoten mit einer und nur einer benutzerdefinierten Schutzdomäne verknüpft ist. Standardmäßig ist jeder Knoten derselben benutzerdefinierten Standard-Schutzdomäne zugewiesen.
 

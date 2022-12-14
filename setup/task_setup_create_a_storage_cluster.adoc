@@ -13,11 +13,12 @@ summary: Sie können ein Storage-Cluster erstellen, nachdem Sie alle einzelnen N
 [role="lead"]
 Sie können ein Storage-Cluster erstellen, nachdem Sie alle einzelnen Nodes konfiguriert haben. Wenn Sie ein Cluster erstellen, wird automatisch ein Cluster-Administrator-Benutzerkonto für Sie erstellt. Der Clusteradministrator verfügt über die Berechtigung zum Verwalten aller Clusterattribute und kann andere Cluster-Administratorkonten erstellen.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Sie haben den Management-Node installiert.
 * Sie haben alle einzelnen Nodes konfiguriert.
 
 
+.Über diese Aufgabe
 Während der Konfiguration eines neuen Node werden jedem Node 1-GB- oder 10-GB-Management-IP-Adressen (MIP) zugewiesen. Sie müssen eine der bei der Konfiguration erstellten Node-IP-Adressen verwenden, um die Seite Neues Cluster erstellen zu öffnen. Die verwendete IP-Adresse hängt vom Netzwerk ab, das Sie für das Cluster-Management ausgewählt haben.
 
 [IMPORTANT]

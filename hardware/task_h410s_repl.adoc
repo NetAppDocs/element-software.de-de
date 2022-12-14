@@ -23,7 +23,7 @@ Hier ist die Vorderansicht eines Chassis mit vier Nodes mit H410S Nodes, in dem 
 
 image::hci_stor_node_ssd_bays.gif[Zeigt die mit jedem Node in einem Chassis mit vier Nodes verbundenen Schächte mit H410S Nodes.]
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Sie haben überprüft, ob Ihr Storage-Node fehlerhaft ist und ersetzt werden muss.
 * Sie haben einen Ersatz-Speicherknoten erhalten.
 * Sie haben ein elektrostatisches Entladungsband (ESD) oder einen anderen antistatischen Schutz.
@@ -32,9 +32,9 @@ image::hci_stor_node_ssd_bays.gif[Zeigt die mit jedem Node in einem Chassis mit 
 
 Hier finden Sie eine grobe Übersicht über die Schritte:
 
-*  to replace the node
-*  the node in the chassis
-*  the node to the cluster
+* <<Bereiten Sie den Austausch des Node vor>>
+* <<Ersetzen Sie den Node im Chassis>>
+* <<Fügen Sie den Node dem Cluster hinzu>>
 
 
 

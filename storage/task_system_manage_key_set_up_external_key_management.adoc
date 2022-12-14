@@ -13,7 +13,7 @@ summary: Sie können diese Schritte ausführen und die aufgeführten Element-API
 [role="lead"]
 Sie können diese Schritte ausführen und die aufgeführten Element-API-Methoden verwenden, um Ihre externe Verschlüsselungsmanagementfunktion einzurichten.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Wenn Sie externes Verschlüsselungsmanagement in Kombination mit Softwareverschlüsselung im Ruhezustand einrichten, ist die Softwareverschlüsselung im Ruhezustand aktiviert link:../api/reference_element_api_createcluster.html["CreateCluster erstellen"] Methode auf einem neuen Cluster, das keine Volumes enthält.
 
 

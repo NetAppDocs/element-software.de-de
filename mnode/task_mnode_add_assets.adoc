@@ -18,7 +18,7 @@ Mithilfe der REST API UI können Sie der Management-Node-Konfiguration eine Cont
 
 Möglicherweise müssen Sie ein Asset hinzufügen, wenn Sie vor Kurzem Ihre Installation skaliert haben und neue Ressourcen nicht automatisch zu Ihrer Konfiguration hinzugefügt wurden. Mithilfe dieser APIs können Sie Ressourcen hinzufügen, die zu Ihrer Installation hinzugefügt wurden.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * In Ihrer Cluster-Version wird die NetApp Element Software 11.3 oder höher ausgeführt.
 * Sie haben einen Management-Node mit Version 11.3 oder höher implementiert.
 * Sie haben eine neue NetApp HCC-Rolle in vCenter erstellt, um die Management-Node-Services-Ansicht auf reine NetApp Ressourcen zu begrenzen. Siehe link:task_mnode_create_netapp_hcc_role_vcenter.html["Erstellen einer NetApp HCC-Rolle in vCenter"]

@@ -13,7 +13,7 @@ summary: Sie können das ursprüngliche Quell-Volume neu synchronisieren und mit
 [role="lead"]
 Sie können das ursprüngliche Quell-Volume neu synchronisieren und mit der NetApp Element Benutzeroberfläche zurück sichern. Dieser Abschnitt gilt für Szenarien, in denen das ursprüngliche Quell-Volume verloren wurde, das ursprüngliche Cluster jedoch weiterhin intakt ist. Anweisungen zur Wiederherstellung eines neuen Clusters finden Sie in der Dokumentation auf der NetApp Support Site.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Sie verfügen über eine abgegebrochene Replizierungsbeziehung zwischen Element und ONTAP Volumes.
 * Das Elementvolumen ist unwiederbringlich verloren.
 * Der ursprüngliche Volume-Name wird als NICHT GEFUNDEN angezeigt.

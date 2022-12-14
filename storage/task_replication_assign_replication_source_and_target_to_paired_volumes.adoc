@@ -13,6 +13,7 @@ summary: Nachdem Volumes gekoppelt wurden, müssen Sie ein Quell-Volume und sein
 [role="lead"]
 Nachdem Volumes gekoppelt wurden, müssen Sie ein Quell-Volume und sein Replikationsziel-Volume zuweisen. Eine Replikationsquelle oder ein Replikationsziel kann ein Volume in einem Volume-Paar sein. Sie können dieses Verfahren auch verwenden, um Daten, die an ein Quell-Volume gesendet werden, zu einem Remote-Ziel-Volume umzuleiten, falls das Quell-Volume nicht mehr verfügbar ist.
 
+.Was Sie benötigen
 Sie haben Zugriff auf die Cluster, die die Quell- und Ziel-Volumes enthalten.
 
 .Schritte

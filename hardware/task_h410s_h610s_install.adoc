@@ -16,12 +16,12 @@ Bevor Sie mit Ihrem All-Flash-Storage-System beginnen, sollten Sie die Storage N
 
 TIP: Siehe link:../media/hseries_isi.pdf["Poster"^] Für eine visuelle Darstellung der Anweisungen.
 
-*  diagrams
-*  for installation
-*  the rails
-*  and cable the nodes
-*  the nodes
-*  a cluster
+* <<Workflow-Diagramme>>
+* <<Installation vorbereiten>>
+* <<Installieren Sie die Schienen>>
+* <<Installieren und verkabeln Sie die Nodes>>
+* <<Konfigurieren Sie die Nodes>>
+* <<Erstellen eines Clusters>>
 
 
 
@@ -87,8 +87,8 @@ Die Hardwarebestellung, die Ihnen zugestellt wurde, enthält eine Reihe von Glei
 
 TIP: Installieren Sie die Hardware von der Unterseite des Racks bis zur Oberseite, um zu verhindern, dass das Gerät umkippeln kann. Wenn Ihr Rack Stabilisatoren beinhaltet, müssen Sie diese vor der Installation der Hardware installieren.
 
-* 
-* 
+* <<H410S>>
+* <<H610S>>
 
 
 
@@ -133,8 +133,8 @@ Der H410S Storage-Node wird in einem 2-HE-Chassis mit vier Nodes installiert. In
 
 CAUTION: Entfernen Sie das gesamte Verpackungsmaterial und die Verpackung vom Gerät. So wird verhindert, dass die Nodes überhitzt und heruntergefahren werden.
 
-* 
-* 
+* <<H410S>>
+* <<H610S>>
 
 
 
