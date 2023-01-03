@@ -12567,4 +12567,6 @@
   <block id="a31b6eafc73ca0db90a0d96e6fb9dc93" category="paragraph-title">Optionen zur Zustandsprüfung</block>
   <block id="2de79e7b8c77e4847d6bcd5a8ee879ce" category="section-title">[[sf_Nodes]]SF38410, SF19210, SF9605 und SF4805</block>
   <block id="63f488c7bb829c89f024839d6aa602f4" category="section-title">[[Custom_pd]]Benutzerdefinierte Schutzdomänen</block>
+  <block id="29d5a1c31c94981fab1916121b43f763" category="cell">BMC/IPMI für Storage-Node</block>
+  <block id="291dd45cc603b1047e92bf5a13259357" category="cell">RMCP-Anschluss Dies ist erforderlich, um IPMI-fähige Systeme zu verwalten.</block>
 </blocks>

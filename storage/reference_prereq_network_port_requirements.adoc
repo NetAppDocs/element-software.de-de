@@ -189,6 +189,9 @@ Zugriff auf Komponenten, die für die Installation/Aktualisierung einer On-Premi
 
 
 
+| Management-Node | BMC/IPMI für Storage-Node | 623 UDP | RMCP-Anschluss Dies ist erforderlich, um IPMI-fähige Systeme zu verwalten. 
+
+
  a| 
 Management-Node
  a| 
@@ -224,13 +227,14 @@ SNMP-Abfrage
 
  a| 
 SNMP-Server
- a| 
-MIP-Speicher-Node
- a| 
+| MIP-Speicher-Node  a| 
 161 UDP
  a| 
 SNMP-Abfrage
 
+
+
+| BMC/IPMI für Storage-Node | Management-Node | 623 UDP | RMCP-Anschluss Dies ist erforderlich, um IPMI-fähige Systeme zu verwalten. 
 
 
  a| 
