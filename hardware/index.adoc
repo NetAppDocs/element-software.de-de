@@ -15,6 +15,7 @@ Erfahren Sie mehr über die Installation und Wartung von Hardware der H-Series u
 
 * xref:concept_h410s_h610s_info.adoc[H410S und H610S Hardware-Informationen]
 * xref:concept_sfseries_info.adoc[Hardwareinformationen zur SF-Series]
+* xref:concept_rtfi_configure.html[Kehren Sie zur Factory Image Information zurück]
 
 
 

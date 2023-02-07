@@ -1,20 +1,6 @@
----
-sidebar: sidebar 
-permalink: mnode/task_mnode_enable_remote_support_connections.html 
-summary: Sie können den Management-Node verwenden, um NetApp Support-Zugriff für die Fehlerbehebung zu aktivieren. 
-keywords: netapp, mnode, management node, connect to support, support tunnel, rst 
----
-= Starten Sie eine Remote NetApp Support Sitzung
-:hardbreaks:
+= 
 :allow-uri-read: 
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ../media/
 
-
-[role="lead"]
-Falls Sie technischen Support für Ihr SolidFire All-Flash-Storage-System benötigen, kann sich NetApp Support per Fernzugriff mit Ihrem System verbinden. Um eine Sitzung zu starten und Remote-Zugriff zu erhalten, kann der NetApp Support eine Reverse Secure Shell-(SSH)-Verbindung zu Ihrer Umgebung öffnen.
 
 Sie können einen TCP-Port für eine SSH-Reverse-Tunnel-Verbindung mit NetApp Support öffnen. Über diese Verbindung kann sich NetApp Support beim Management Node einloggen.
 
@@ -49,12 +35,4 @@ Sie können einen TCP-Port für eine SSH-Reverse-Tunnel-Verbindung mit NetApp Su
 
 NOTE: SSH bleibt auf dem Management-Node aktiviert, wenn Sie ihn nicht deaktivieren. Die SSH-fähige Konfiguration bleibt auf dem Management-Node durch Updates und Upgrades bestehen, bis sie manuell deaktiviert ist.
 
-
-
-
-
-== Weitere Informationen
-
-* https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
-* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
 

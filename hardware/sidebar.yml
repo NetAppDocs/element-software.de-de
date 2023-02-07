@@ -25,3 +25,13 @@ entries:
     url: "/hardware/task_sfseries_driverepl.html"
   - title: Ersetzen Sie ein Netzteil
     url: "/hardware/task_sfseries_psurepl.html"
+- title: Kehren Sie zur Factory Image Information zurück
+  entries:
+  - title: Konfigurieren Sie die Rückkehr zum Werkbild
+    url: "/hardware/concept_rtfi_configure.html"
+  - title: RTFI-Bereitstellungs- und Installationsoptionen
+    url: "/hardware/task_rtfi_deployment_and_install_options.html"
+  - title: Das RTFI-Verfahren
+    url: "/hardware/task_rtfi_process.html"
+  - title: Menü RTFI-Optionen
+    url: "/hardware/task_rtfi_options_menu.html"

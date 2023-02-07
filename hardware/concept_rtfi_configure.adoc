@@ -1,0 +1,40 @@
+---
+permalink: hardware/concept_rtfi_configure.html 
+sidebar: sidebar 
+keywords: rtfi, return, factory, image, nodes, solidfire, software, image 
+summary: NetApp SolidFire Storage-Systeme verwenden den RTFI-Prozess, um ein Software Image auf einen neuen Node zu schreiben oder einen Node auf den ursprünglichen Zustand auf den Werkseinstellungen zurückzusetzen. 
+---
+= Konfigurieren Sie die Rückkehr zum Werkbild
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp SolidFire Storage-Systeme schreiben mithilfe des RTFI-Prozesses (Return to Factory Image) ein Software-Image auf einen neuen Knoten oder stellen einen Knoten auf seinen ursprünglichen Zustand auf den Werkseinstellungen wieder her. Mit dem RTFI-Prozess werden alle vorhandenen Daten und Konfigurationen (falls vorhanden) sicher gelöscht und ein nicht konfiguriertes NetApp Element-Software-Image installiert. Der RTFI-Prozess ist für alle SolidFire-Knoten verfügbar.
+
+SolidFire-Systeme nutzen bei allen Element Software-Installationen einen RTFI-Prozess. Hierzu zählen interne manuelle Installationen von Entwicklern, automatische Installationen durch automatisierte Framework-Tests, Feldinstallationen von Service Engineers und Kunden sowie Installationen verschiedener Integratoren und Partner. Der gleiche RTFI-Prozess wird auf allen SolidFire Knoten verwendet, unabhängig vom verwendeten Chassis oder Node-Typ, um Probleme automatisch zu beheben.
+
+Dieses Handbuch richtet sich an Integratoren, die Storage-Probleme installieren, konfigurieren, verwenden oder Fehler beheben.
+
+* Linux: Sie haben einige Hintergrundinformationen zu Linux-Systemen.
+* Networking: Sie kennen sich mit Servernetzwerken und Netzwerk-Storage aus, einschließlich IP-Adressen, Netmasken und Gateways.
+
+
+
+WARNING: Der RTFI-Prozess ist datenzerstörend und löscht sicher alle Daten und Konfigurationsdetails vom Knoten und installiert ein neues Betriebssystem. Vergewissern Sie sich, dass der für den RTFI-Prozess verwendete Node nicht im Rahmen eines Clusters aktiv ist.
+
+Implementieren und Installieren des ISO-Image (RTFI International Organization for Standardization) und Durchführen des RTFI-Prozesses:
+
+* xref:task_rtfi_deployment_and_install_options.html[RTFI-Bereitstellungs- und Installationsoptionen]
+* xref:task_rtfi_process.html[Führen Sie den RTFI-Prozess aus]
+* xref:task_rtfi_options_menu.html[Menü RTFI-Optionen]
+
+
+
+
+== Weitere Informationen
+
+* https://www.netapp.com/data-storage/solidfire/documentation/["Ressourcen-Seite zu NetApp SolidFire"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Dokumentation für frühere Versionen von NetApp SolidFire und Element Produkten"^]
+

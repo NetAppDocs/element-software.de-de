@@ -6,7 +6,7 @@ settings:
   prod:
     pdf_enabled: true
     harmony_enabled: false
-  langs: de-de,us-en,ja-jp,zh-cn,zh-tw,ko-kr,fr-fr
+  langs: de-de,us-en,ja-jp,ko-kr,zh-cn,zh-tw,fr-fr
 sidebar:
   entries:
   - title: SolidFire und Element Software 12.5 und höher die Dokumentation
@@ -63,6 +63,8 @@ homepage:
       url: "/hardware/concept_h410s_h610s_info.html"
     - title: Hardwareinformationen zur SF-Series
       url: "/hardware/concept_sfseries_info.html"
+    - title: Kehren Sie zur Factory Image Information zurück
+      url: "/hardware/concept_rtfi_configure.html"
     - title: Unterstützte Firmware-Versionen für NetApp H-Series Storage Nodes
       url: "/hardware/fw_storage_nodes.html"
   - title: Storage-Management

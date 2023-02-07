@@ -5393,7 +5393,6 @@
   <block id="e606a329fd1c8e2f2543e5fd1dce6af5" category="doc">Starten Sie eine Remote NetApp Support Sitzung</block>
   <block id="6d76b07dcfce8c041eb64f1886c69449" category="paragraph">Falls Sie technischen Support für Ihr SolidFire All-Flash-Storage-System benötigen, kann sich NetApp Support per Fernzugriff mit Ihrem System verbinden. Um eine Sitzung zu starten und Remote-Zugriff zu erhalten, kann der NetApp Support eine Reverse Secure Shell-(SSH)-Verbindung zu Ihrer Umgebung öffnen.</block>
   <block id="8e5cda5f4d9f852ba16378a9749b0fba" category="paragraph">Sie können einen TCP-Port für eine SSH-Reverse-Tunnel-Verbindung mit NetApp Support öffnen. Über diese Verbindung kann sich NetApp Support beim Management Node einloggen.</block>
-  <block id="38bfc79ee5a8c36f9e9a8af1c01ba34c" category="list-text">Für Managementservices ab Version 2.18 ist die Möglichkeit für den Remote-Zugriff auf dem Management-Node standardmäßig deaktiviert. Informationen zum Aktivieren der Fernzugriffsfunktionen finden Sie unter <block ref="b699ffaa70a5cdf708fca1e6ce6761c0" category="inline-link-macro-rx"></block>.</block>
   <block id="4767b00dd0eab027ad48a79407d1aeb5" category="list-text">Wenn sich der Managementknoten hinter einem Proxyserver befindet, sind die folgenden TCP-Ports in der Datei sshd.config erforderlich:</block>
   <block id="a93bcb5a82072c389a3b8a73489512f7" category="cell">TCP-Port</block>
   <block id="5fb18927ceb46250be02a3e7680918bb" category="cell">Verbindungsrichtung</block>
@@ -5409,7 +5408,6 @@
   <block id="de4c01f12786cbabd5e851ab91fdad19" category="list-text">Um den Remote Support-Tunnel zu schließen, geben Sie Folgendes ein:</block>
   <block id="7096254058ea6f4199f3ce2259f65ecd" category="paragraph"><block ref="b1b71a0e9d112e70acef16e20b39d3ec" prefix="" category="inline-code"></block></block>
   <block id="f6da8069b357b9343a5831a68be0524d" category="inline-link-macro">Remote-Zugriffsfunktion</block>
-  <block id="75be5fb98a5e3aff69e3f0e049934221" category="list-text">(Optional) Deaktivieren <block ref="b551ebda879d60cf3a0931b9f0e794a7" category="inline-link-macro-rx"></block> Ein weiteres Jahr in der</block>
   <block id="f06b081ec97a787aa25df8b401eb55ea" category="admonition">SSH bleibt auf dem Management-Node aktiviert, wenn Sie ihn nicht deaktivieren. Die SSH-fähige Konfiguration bleibt auf dem Management-Node durch Updates und Upgrades bestehen, bis sie manuell deaktiviert ist.</block>
   <block id="40364cffc941dc73991ef44f80028f59" category="summary">Sie können auf die Management-UI oder DIE REST-API-UI zugreifen.</block>
   <block id="1fe2b1dbbee795444f6196afce6ee8d1" category="paragraph">Ab der NetApp Element Softwareversion 11.3 enthält der Managementknoten zwei UIs: Eine Benutzeroberfläche für die Verwaltung VON REST-basierten Diensten und eine UI pro Node zum Verwalten von Netzwerk- und Clustereinstellungen sowie Betriebssystemtests und -Dienstprogrammen.</block>
@@ -12583,4 +12581,99 @@
   <block id="bec35bb5875234837858b1ccdd637fca" category="inline-link">Dokumentation zu Element 11.1 und frühere Versionen</block>
   <block id="724428733630050ab3140356839e2af1" category="list-text"><block ref="724428733630050ab3140356839e2af1" category="inline-link-rx"></block></block>
   <block id="b47307258c4d85ffb5f4141d7a660a9b" category="sidebar">Element 11.8.2 und frühere Dokumentation</block>
+  <block id="cf459a4467554220e1dd70f653a8cf43" category="list-text">Für Managementservices ab Version 2.18 ist die Möglichkeit für den Remote-Zugriff auf dem Management-Node standardmäßig deaktiviert. Informationen zum Aktivieren der Fernzugriffsfunktionen finden Sie unter<block ref="9a48ac510c43b73ee86c7be400c5025f" category="inline-link-rx"></block>.</block>
+  <block id="c9621c561bd7ae37e9a7ee7358f4f792" category="list-text">(Optional) Deaktivieren<block ref="2ec0ebe378e4a0f1bbb70e72c3942887" category="inline-link-rx"></block> Ein weiteres Jahr in der</block>
+  <block id="c046b7ab02983ed5bb8f1b18c0c2c477" category="summary">Laden Sie das RTFI ISO-Image spezifisch für Ihre Element Software-Version von der NetApp Support Site herunter und implementieren Sie es mit einem bootfähigen, installierbaren Medium.</block>
+  <block id="097f61b38015fce3acc737235b76aa70" category="doc">RTFI-Bereitstellungs- und Installationsoptionen</block>
+  <block id="9c093f14319e8253b8c9b37290597239" category="inline-link">NetApp Support Website</block>
+  <block id="57874bd90f9e29e6ba71a930ead4720c" category="paragraph">Der RTFI-Prozess (Return to Factory Image) verwendet ein bootfähiges, installierbares Medium mit einem vollständig eigenständigen, minimalistischen Linux-Betriebssystem, um Element-Software auf einem Knoten bereitzustellen. Sie können das RTFI ISO-Image für Ihre Element Software-Version von der herunterladen<block ref="57a74b5f1bee73af676d67cb0c6480cc" category="inline-link-rx"></block>.</block>
+  <block id="06e3bb8e9a037ad0917c5fde14ff8f72" category="paragraph">Nachdem Sie das RTFI ISO-Image heruntergeladen haben, können Sie es gemäß einer der folgenden gängigen Methoden bereitstellen:</block>
+  <block id="ac34243a64c3c11fd5dfae9a67fb5c55" category="inline-link">So erstellen Sie einen RTFI-Schlüssel zum Neuabbild eines SolidFire-Speicherknoten</block>
+  <block id="4f884078aa6375898281ddc312560016" category="list-text">*Physikalischer USB-Schlüssel*: Sie können eine bootfähige Element-Software ISO auf einen USB-Schlüssel schreiben. Weitere Anweisungen finden Sie im Knowledge Base-Artikel<block ref="13bce1e595d54685f8d64cc0034a2001" category="inline-link-rx"></block>. Stecken Sie den USB-Schlüssel mit der ISO in den Knoten und starten Sie über den USB-Schlüssel.</block>
+  <block id="d61d8eec0353e6b2f885b130fc452ee3" category="inline-link">Wie RTFI ein Knoten über BMC</block>
+  <block id="d03dcff1e3b6625e9de785d38af8f6e7" category="list-text">*Virtuelles Medium mit dem Baseboard Management Controller (BMC) Management Port*: Sie können den BMC verwenden, um sich dynamisch an das ISO auf Ihrem Client-System anzubinden. Die ISO wird dem Host-Betriebssystem als virtuelles Laufwerk (CD oder DVD) zur Verfügung gestellt. Weitere Informationen finden Sie im Knowledge Base-Artikel<block ref="4b8682c85d43082345f6bc4c71b5ee22" category="inline-link-rx"></block>.</block>
+  <block id="b55e051a09464d098caf37534579db9e" category="list-text">*Netzwerkstart mit einer Preboot Execution Environment (PXE), Trivial File Transfer Protocol (TFTP) oder FTP*: Anstatt ein ISO-Image manuell zu entpacken, können Sie es verwenden<block ref="8be83f992a1e8c32d5255d7442d7a6d5" prefix=" " category="inline-code"></block> Automatisches Extrahieren eines Bildes, wenn der RTFI-Prozess es anfordert. Dieser Implementierungsmechanismus erfordert bei der Ersteinrichtung eine größere Zahl, ermöglicht aber eine korrekte Automatisierung und Skalierbarkeit der Installation.</block>
+  <block id="a50f2b7cffecee50756522f1bff4c33c" category="summary">Informieren Sie sich über die RTFI-Menüoptionen, wenn der RTFI-Prozess nicht erfolgreich ist oder Sie nicht an der ersten RTFI-Prozessaufforderung fortfahren möchten.</block>
+  <block id="77dbf78682c95c78602bbd4ddd8b2dea" category="doc">Menü RTFI-Optionen</block>
+  <block id="9b5b88366a81b3273921ec7bd24473ec" category="paragraph">Das folgende Optionsmenü wird angezeigt, wenn der RTFI-Prozess nicht erfolgreich ist oder Sie sich für den Vorgang entscheiden, nicht bei der ersten RTFI-Prozessaufforderung fortzufahren.</block>
+  <block id="15d519c15b019de88039c9915522c5e0" category="image-alt">SolidFire RTFI-Menüoptionen</block>
+  <block id="7c02a8edc8fcb7b39be07fb64a0f6fbd" category="admonition">Wenden Sie sich an den NetApp Support, bevor Sie eine der folgenden Befehlsoptionen verwenden.</block>
+  <block id="1de72c4fc6d69a741fff1cbb7cdb9e90" category="cell">Neu Booten</block>
+  <block id="6ecb13e783913c4fefe2b40033535c81" category="cell">Beendet den RTFI-Prozess und startet den Knoten im aktuellen Status neu. Eine Bereinigung wird nicht durchgeführt.</block>
+  <block id="280a96254b645aa2c2c336ef2e235c37" category="cell">Power Off</block>
+  <block id="5c8def6d9dc8e310e9d8562dd101ae70" category="cell">Normal schaltet den Node im aktuellen Status aus. Eine Bereinigung wird nicht durchgeführt.</block>
+  <block id="fef46e5063ce3dc78b8ae64fa474241d" category="cell">Beenden</block>
+  <block id="db165cdc1bf8f0b0797b9a531a59a50b" category="cell">Beendet den RTFI-Prozess und öffnet eine Eingabeaufforderung.</block>
+  <block id="0ebdc674f39e2ce83809bdac9519442b" category="cell">UploadLogs</block>
+  <block id="f252b4593ad1f40e2cd950a6473acac4" category="cell">Erfasst alle Protokolle des Systems und lädt ein einziges konsolidiertes Protokollarchiv auf eine angegebene URL hoch.</block>
+  <block id="f066cd95321ea01132e513fe4ee9aa3c" category="section-title">Protokolle hochladen</block>
+  <block id="a4230116e8560c445d593876c622ba35" category="paragraph">Sammeln Sie alle Protokolle auf dem System, und laden Sie sie gemäß dem folgenden Verfahren auf eine angegebene URL hoch.</block>
+  <block id="29d320e5d4dd8f01414b4837f938dae6" category="list-text">Geben Sie in der Menüaufforderung RTFI-Optionen *UploadLogs* ein.</block>
+  <block id="f46ba9f1e4858ffdbfa0b2036a6a49f1" category="list-text">Geben Sie die Informationen für das Remote-Verzeichnis ein:</block>
+  <block id="0d40d3a158c6ce7072d2f07537430213" category="list-text">Geben Sie eine URL ein, die das Protokoll enthält. Beispiel:<block ref="bff7b479b0c1b13ecf83a1a6a4145f56" prefix=" " category="inline-code"></block>.</block>
+  <block id="047d0cae4d782dab8337d179fe4f5b75" category="list-text">(Optional) Fügen Sie einen integrierten Benutzernamen und ein Kennwort hinzu. Beispiel:<block ref="63e8c80ff45c05d30697cbfbcc06bf28" prefix=" " category="inline-code"></block>.</block>
+  <block id="c1bef293167e5fe84bd35c7d87d3e929" category="inline-link">Curl</block>
+  <block id="78ca6b367c181cb9d2d8aaf99f090abb" category="admonition">Eine vollständige Palette von Syntaxoptionen finden Sie im<block ref="469ab28c3caae53aa361f6c2c2968307" category="inline-link-rx"></block> Benutzerhandbuch.</block>
+  <block id="d21e2b72d2a8a5794b0eb5a96d76da18" category="paragraph">Die Protokolldatei wird hochgeladen und als a in das angegebene Verzeichnis gespeichert<block ref="7341ea2207ab9817e5cfb5da56632231" prefix=" " category="inline-code"></block> Archivierung:</block>
+  <block id="1879bbdeec7345408533f5ad5a76e7bc" category="section-title">Den Stütztunnel verwenden</block>
+  <block id="0452e943feed5d689f7e440370b58b0c" category="paragraph">Falls Sie technischen Support für Ihr NetApp HCI System oder SolidFire All-Flash-Storage-System benötigen, können Sie sich per Fernzugriff mit Ihrem System verbinden. Um eine Sitzung zu starten und Remote-Zugriff zu erhalten, kann der NetApp Support eine Reverse Secure Shell-(SSH)-Verbindung zu Ihrer Umgebung öffnen.</block>
+  <block id="8a27c335dc4b5de0ebe61120f86c41a6" category="summary">Führen Sie den RTFI-Prozess durch, um die Element-Software auf Ihrem SolidFire-Knoten wiederherzustellen.</block>
+  <block id="3c9456542d0f7f8cea4527e4f2c16afc" category="doc">Das RTFI-Verfahren</block>
+  <block id="575e61926014b5e53fb8abd6b3ca5e2f" category="paragraph">Sie können den RTFI-Prozess (Return to Factory Image) starten, indem Sie mit dem Knoten durch Textkonsolenaufforderungen interagieren, die vor dem Systemstart angezeigt werden.</block>
+  <block id="42f7abee041191982e62a8be28908be9" category="admonition">Der RTFI-Prozess ist datenzerstörend und löscht sicher alle Daten und Konfigurationsdetails vom Knoten und installiert ein neues Betriebssystem. Vergewissern Sie sich, dass der für den RTFI-Prozess verwendete Node nicht im Rahmen eines Clusters aktiv ist.</block>
+  <block id="e6493fad63d5742ed0af1c75392cb2b2" category="image-alt">SolidFire-Warnung vor der Fortsetzung</block>
+  <block id="693999acf2a7b7ac120f9d035e77e6ee" category="paragraph">Der RTFI Prozess führt die folgenden grundlegenden Operationen durch:</block>
+  <block id="c2cd692402e694203d81a5d66d009f63" category="list-text">Startet die Installation nach der Bestätigung durch den Benutzer und validiert das Bild.</block>
+  <block id="c5d989304b00c766e965bc0fa2443aed" category="list-text">Entsperrt alle Laufwerke auf einem Knoten.</block>
+  <block id="9a5aa1da869b4040f524ae9785b78f21" category="list-text">Überprüft und blinkt die Firmware.</block>
+  <block id="2c3ebc91d3c23ca65bb699ec2b7ccfcf" category="list-text">Prüft die Hardware.</block>
+  <block id="2b91c89dcd1e48919f86878407ad759b" category="list-text">Testet Hardware.</block>
+  <block id="efed937b7067e3b9aff1eba0422c2d61" category="list-text">Löscht alle ausgewählten Laufwerke sicher.</block>
+  <block id="3f534029ecbb9b48b864fc3a278db0fc" category="list-text">Partitioniert das Root-Laufwerk und erstellt Dateisysteme.</block>
+  <block id="7c0a0dd3952f3fc7de494542cdc6269b" category="list-text">Kann das Bild einhängen und entpackt werden.</block>
+  <block id="4ce2c84b00ef7e76a2a9152b9d37a5a9" category="list-text">Konfiguriert den Host-Namen, die Netzwerkumgebung (Dynamic Host Configuration Protocol), die Standard-Clusterkonfiguration und den GRUB-Bootloader.</block>
+  <block id="eee23fdb40a5232106f41a844d30d160" category="list-text">Beendet alle Services, sammelt Protokolle und startet neu.</block>
+  <block id="d9ad78cdc934862de52578f1e80348b6" category="inline-link">Dokumentation für Ihre Element Softwareversion</block>
+  <block id="4cafaba2174b734c409ee5766b4c90a8" category="paragraph">Informationen zum Konfigurieren des Knotens nach erfolgreichem Abschluss des RTFI-Prozesses finden Sie im<block ref="ad60dd2928135a9355e0d51cd38822f2" category="inline-link-rx"></block>. Nachdem ein Knoten den RTFI-Prozess erfolgreich abgeschlossen hat, wechselt er standardmäßig in den Status _available_ (nicht konfiguriert).</block>
+  <block id="03c983b266b251bb360f154a87f5a7db" category="section-title">Führen Sie den RTFI-Prozess aus</block>
+  <block id="9bbce3f386ebd93c00f99ac698c4f85e" category="paragraph">Gehen Sie folgendermaßen vor, um die Element Software auf dem SolidFire-Knoten wiederherzustellen.</block>
+  <block id="b85f0ef6fe26601ba97faf1ace649eeb" category="paragraph">Informationen zum Erstellen eines USB-Schlüssels oder zur Verwendung des BMC für den RTFI-Prozess finden Sie unter <block ref="791ffc1d4e47604f0a97e678500315b7" category="inline-link-macro-rx"></block>.</block>
+  <block id="e291c5603b49506d01779471f77ce7c8" category="paragraph">Vergewissern Sie sich, dass Sie die folgenden Anforderungen erfüllen:</block>
+  <block id="4a97b78efa5043e19cc08344b22fccb7" category="list-text">Sie haben Zugriff auf eine Konsole für den SolidFire-Node.</block>
+  <block id="8c84f98354c5ad685a8ff935ecdb2630" category="list-text">Der Knoten, auf dem Sie den RTFI-Prozess ausführen, wird eingeschaltet und mit einem Netzwerk verbunden.</block>
+  <block id="6296642e806806afac83d631b9af85b1" category="list-text">Der Knoten, auf dem Sie den RTFI-Prozess ausführen, ist nicht Teil eines aktiven Clusters.</block>
+  <block id="0571b0f5a86ae432f2cc369dc012c2bb" category="list-text">Sie haben Zugriff auf startfähige Installationsmedien, die das Image der entsprechenden Element Software-Version für Ihre Konfiguration enthalten.</block>
+  <block id="8b9624fb7d79aca8e00398a81dd2a251" category="paragraph">Sollten Sie Bedenken haben, wenden Sie sich an den NetApp Support, bevor Sie den RTFI-Prozess durchführen.</block>
+  <block id="cfb4a0ba322ef691c5c7750716cab452" category="list-text">Schließen Sie einen Monitor und eine Tastatur an die Rückseite des Knotens an, oder stellen Sie eine Verbindung zur BMC IP-Benutzeroberfläche her, und öffnen Sie die *iKVM/HTML5*-Konsole über die Registerkarte *Remote Control* in der Benutzeroberfläche.</block>
+  <block id="c7557300c215bdb19ebba880977d7e07" category="list-text">Stecken Sie einen USB-Schlüssel mit einem entsprechenden Bild in einen der beiden USB-Steckplätze auf der Rückseite des Knotens ein.</block>
+  <block id="968d4ef1e7f507465930737293627daf" category="list-text">Schalten Sie den Knoten ein oder setzen Sie ihn zurück. Wählen Sie während des Startvorgangs Boot Device aus, indem Sie *F11*:</block>
+  <block id="b6254f153b7fbfaa9083fad744821e7d" category="admonition">Sie müssen *F11* mehrmals in schneller Folge auswählen, da der Bildschirm des Startgeräts schnell vorbei geht.</block>
+  <block id="f1bc2c9554d8265988f989dc4284b7c9" category="list-text">Markieren Sie im Menü Start Device Selection die USB-Option.</block>
+  <block id="6b0044748e879c2db8994ce0ab09f5e9" category="paragraph">Die angezeigten Optionen hängen von der verwendeten USB-Marke ab.</block>
+  <block id="07fb023da679c99944a2cd3184d5b048" category="paragraph">Wenn keine USB-Geräte aufgeführt sind, gehen Sie zum BIOS, überprüfen Sie, ob der USB in der Startreihenfolge aufgeführt ist, und versuchen Sie es erneut.</block>
+  <block id="34ea3bdf853f82e7b90076a38a4927f2" category="paragraph">Wenn das Problem dadurch nicht behoben wird, gehen Sie zum BIOS, navigieren Sie zur Registerkarte *Speichern und Beenden*, wählen Sie *Wiederherstellen auf optimierten Standardwerten*, übernehmen und speichern Sie die Einstellungen und starten Sie neu.</block>
+  <block id="dffaf5fedb70fe91b742117c8b085925" category="list-text">Eine Liste der Bilder auf dem hervorgehobenen USB-Gerät wird angezeigt. Wählen Sie die gewünschte Version aus, und wählen Sie ENTER, um den RTFI-Prozess zu starten.</block>
+  <block id="c888f1a4d7fe66bd42dccc90f502b0eb" category="paragraph">Der Name der RTFI-Bildelement-Software und die Versionsnummer werden angezeigt.</block>
+  <block id="1c471bcec9997b35f1b0536f2db260bd" category="list-text">An der ersten Eingabeaufforderung werden Sie benachrichtigt, dass beim Prozess alle Daten vom Node entfernt werden und dass die Daten nach dem Beginn des Prozesses nicht wiederhergestellt werden können. Geben Sie *Ja* ein, um zu beginnen.</block>
+  <block id="5e0421c47931d57fd6c7e95aa68c2f0a" category="admonition">Nach dem Start des Prozesses werden alle Daten- und Konfigurationsdetails dauerhaft vom Node gelöscht. Wenn Sie nicht fortfahren möchten, werden Sie an den weitergeleitet <block ref="77932c831ff186b4e1c8b9859a5d7eac" category="inline-link-macro-rx"></block>.</block>
+  <block id="4dd00ce5dcbd6d37af8112b77fa133b6" category="admonition">Wenn Sie die Konsole während des RTFI-Prozesses ansehen möchten, können Sie die Tasten *alt+F8* drücken, um auf die ausführliche Modus-Konsole umzuschalten. Drücken Sie *alt+F7*, um zur primären GUI zurückzukehren.</block>
+  <block id="d04da2deaed469b70fce11423594fb5b" category="list-text">Geben Sie *No* ein, wenn Sie dazu aufgefordert werden, umfassende Hardware-Tests durchzuführen, es sei denn, Sie haben einen Grund zum Verdacht eines Hardwarefehlers oder werden zur Durchführung der Tests durch NetApp Support weitergeleitet.</block>
+  <block id="49148bcd0950973e3835ff3ac1d306da" category="paragraph">Eine Meldung gibt an, dass der RTFI-Prozess abgeschlossen ist und das System ausgeschaltet wird.</block>
+  <block id="79994edd44080fdaca3e98bf8c66f93c" category="list-text">Entfernen Sie gegebenenfalls alle bootfähigen Installationsmedien, nachdem der Node heruntergefahren wurde.</block>
+  <block id="0ef08fdd0340f572cb03ddb8029b8c00" category="inline-link">Bei der Element Software wird die Storage-Dokumentation eingerichtet</block>
+  <block id="0fcfcb5f175964f2dab3656b95eb1133" category="paragraph">Der Node ist jetzt eingeschaltet und konfiguriert. Siehe<block ref="4e28ca504cf133ef5899b8bf7fd569d6" category="inline-link-rx"></block> Um den Speicher-Node zu konfigurieren.</block>
+  <block id="a3476741cab852ccb1f398965895cb8b" category="paragraph">Wenn während des RTFI-Prozesses eine Fehlermeldung aufgetreten ist, lesen Sie den Abschnitt <block ref="77932c831ff186b4e1c8b9859a5d7eac" category="inline-link-macro-rx"></block>.</block>
+  <block id="5e91308d5923accb9d096d078492d886" category="inline-xref-macro">Kehren Sie zur Factory Image Information zurück</block>
+  <block id="42852fd7f6900d56a8835bef7add4b3a" category="list-text"><block ref="42852fd7f6900d56a8835bef7add4b3a" category="inline-xref-macro-rx"></block></block>
+  <block id="828fd8dc16d0a2aa09370d21cb2adfe6" category="summary">NetApp SolidFire Storage-Systeme verwenden den RTFI-Prozess, um ein Software Image auf einen neuen Node zu schreiben oder einen Node auf den ursprünglichen Zustand auf den Werkseinstellungen zurückzusetzen.</block>
+  <block id="eb7ba68c068d694268bb66cba17505c4" category="doc">Konfigurieren Sie die Rückkehr zum Werkbild</block>
+  <block id="794ea7c2fbea7a73f8dce13333c20292" category="paragraph">NetApp SolidFire Storage-Systeme schreiben mithilfe des RTFI-Prozesses (Return to Factory Image) ein Software-Image auf einen neuen Knoten oder stellen einen Knoten auf seinen ursprünglichen Zustand auf den Werkseinstellungen wieder her. Mit dem RTFI-Prozess werden alle vorhandenen Daten und Konfigurationen (falls vorhanden) sicher gelöscht und ein nicht konfiguriertes NetApp Element-Software-Image installiert. Der RTFI-Prozess ist für alle SolidFire-Knoten verfügbar.</block>
+  <block id="16af21e148236fb23318cd07fa25c4ca" category="paragraph">SolidFire-Systeme nutzen bei allen Element Software-Installationen einen RTFI-Prozess. Hierzu zählen interne manuelle Installationen von Entwicklern, automatische Installationen durch automatisierte Framework-Tests, Feldinstallationen von Service Engineers und Kunden sowie Installationen verschiedener Integratoren und Partner. Der gleiche RTFI-Prozess wird auf allen SolidFire Knoten verwendet, unabhängig vom verwendeten Chassis oder Node-Typ, um Probleme automatisch zu beheben.</block>
+  <block id="a5fc4e2860d49c0da81f6dd65eadf69b" category="paragraph">Dieses Handbuch richtet sich an Integratoren, die Storage-Probleme installieren, konfigurieren, verwenden oder Fehler beheben.</block>
+  <block id="6488398a09e5e3619c68849839032852" category="list-text">Linux: Sie haben einige Hintergrundinformationen zu Linux-Systemen.</block>
+  <block id="88a314dd47a5b577c9b424a096c7a9e8" category="list-text">Networking: Sie kennen sich mit Servernetzwerken und Netzwerk-Storage aus, einschließlich IP-Adressen, Netmasken und Gateways.</block>
+  <block id="229a83df3c23d08a8495591aab99bf5b" category="paragraph">Implementieren und Installieren des ISO-Image (RTFI International Organization for Standardization) und Durchführen des RTFI-Prozesses:</block>
+  <block id="4761cf42d3167c91f942aaa5770bce7b" category="list-text"><block ref="4761cf42d3167c91f942aaa5770bce7b" category="inline-xref-macro-rx"></block></block>
+  <block id="8e03dc636d7913fabfabd316d5e54ac0" category="list-text"><block ref="8e03dc636d7913fabfabd316d5e54ac0" category="inline-xref-macro-rx"></block></block>
+  <block id="82deed01641c36ab7f885c50d27dcaea" category="list-text"><block ref="82deed01641c36ab7f885c50d27dcaea" category="inline-xref-macro-rx"></block></block>
 </blocks>
