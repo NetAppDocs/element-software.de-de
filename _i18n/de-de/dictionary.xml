@@ -12637,7 +12637,6 @@
   <block id="4cafaba2174b734c409ee5766b4c90a8" category="paragraph">Informationen zum Konfigurieren des Knotens nach erfolgreichem Abschluss des RTFI-Prozesses finden Sie im<block ref="ad60dd2928135a9355e0d51cd38822f2" category="inline-link-rx"></block>. Nachdem ein Knoten den RTFI-Prozess erfolgreich abgeschlossen hat, wechselt er standardmäßig in den Status _available_ (nicht konfiguriert).</block>
   <block id="03c983b266b251bb360f154a87f5a7db" category="section-title">Führen Sie den RTFI-Prozess aus</block>
   <block id="9bbce3f386ebd93c00f99ac698c4f85e" category="paragraph">Gehen Sie folgendermaßen vor, um die Element Software auf dem SolidFire-Knoten wiederherzustellen.</block>
-  <block id="b85f0ef6fe26601ba97faf1ace649eeb" category="paragraph">Informationen zum Erstellen eines USB-Schlüssels oder zur Verwendung des BMC für den RTFI-Prozess finden Sie unter <block ref="791ffc1d4e47604f0a97e678500315b7" category="inline-link-macro-rx"></block>.</block>
   <block id="e291c5603b49506d01779471f77ce7c8" category="paragraph">Vergewissern Sie sich, dass Sie die folgenden Anforderungen erfüllen:</block>
   <block id="4a97b78efa5043e19cc08344b22fccb7" category="list-text">Sie haben Zugriff auf eine Konsole für den SolidFire-Node.</block>
   <block id="8c84f98354c5ad685a8ff935ecdb2630" category="list-text">Der Knoten, auf dem Sie den RTFI-Prozess ausführen, wird eingeschaltet und mit einem Netzwerk verbunden.</block>
@@ -12655,14 +12654,12 @@
   <block id="dffaf5fedb70fe91b742117c8b085925" category="list-text">Eine Liste der Bilder auf dem hervorgehobenen USB-Gerät wird angezeigt. Wählen Sie die gewünschte Version aus, und wählen Sie ENTER, um den RTFI-Prozess zu starten.</block>
   <block id="c888f1a4d7fe66bd42dccc90f502b0eb" category="paragraph">Der Name der RTFI-Bildelement-Software und die Versionsnummer werden angezeigt.</block>
   <block id="1c471bcec9997b35f1b0536f2db260bd" category="list-text">An der ersten Eingabeaufforderung werden Sie benachrichtigt, dass beim Prozess alle Daten vom Node entfernt werden und dass die Daten nach dem Beginn des Prozesses nicht wiederhergestellt werden können. Geben Sie *Ja* ein, um zu beginnen.</block>
-  <block id="5e0421c47931d57fd6c7e95aa68c2f0a" category="admonition">Nach dem Start des Prozesses werden alle Daten- und Konfigurationsdetails dauerhaft vom Node gelöscht. Wenn Sie nicht fortfahren möchten, werden Sie an den weitergeleitet <block ref="77932c831ff186b4e1c8b9859a5d7eac" category="inline-link-macro-rx"></block>.</block>
   <block id="4dd00ce5dcbd6d37af8112b77fa133b6" category="admonition">Wenn Sie die Konsole während des RTFI-Prozesses ansehen möchten, können Sie die Tasten *alt+F8* drücken, um auf die ausführliche Modus-Konsole umzuschalten. Drücken Sie *alt+F7*, um zur primären GUI zurückzukehren.</block>
   <block id="d04da2deaed469b70fce11423594fb5b" category="list-text">Geben Sie *No* ein, wenn Sie dazu aufgefordert werden, umfassende Hardware-Tests durchzuführen, es sei denn, Sie haben einen Grund zum Verdacht eines Hardwarefehlers oder werden zur Durchführung der Tests durch NetApp Support weitergeleitet.</block>
   <block id="49148bcd0950973e3835ff3ac1d306da" category="paragraph">Eine Meldung gibt an, dass der RTFI-Prozess abgeschlossen ist und das System ausgeschaltet wird.</block>
   <block id="79994edd44080fdaca3e98bf8c66f93c" category="list-text">Entfernen Sie gegebenenfalls alle bootfähigen Installationsmedien, nachdem der Node heruntergefahren wurde.</block>
   <block id="0ef08fdd0340f572cb03ddb8029b8c00" category="inline-link">Bei der Element Software wird die Storage-Dokumentation eingerichtet</block>
   <block id="0fcfcb5f175964f2dab3656b95eb1133" category="paragraph">Der Node ist jetzt eingeschaltet und konfiguriert. Siehe<block ref="4e28ca504cf133ef5899b8bf7fd569d6" category="inline-link-rx"></block> Um den Speicher-Node zu konfigurieren.</block>
-  <block id="a3476741cab852ccb1f398965895cb8b" category="paragraph">Wenn während des RTFI-Prozesses eine Fehlermeldung aufgetreten ist, lesen Sie den Abschnitt <block ref="77932c831ff186b4e1c8b9859a5d7eac" category="inline-link-macro-rx"></block>.</block>
   <block id="5e91308d5923accb9d096d078492d886" category="inline-xref-macro">Kehren Sie zur Factory Image Information zurück</block>
   <block id="42852fd7f6900d56a8835bef7add4b3a" category="list-text"><block ref="42852fd7f6900d56a8835bef7add4b3a" category="inline-xref-macro-rx"></block></block>
   <block id="828fd8dc16d0a2aa09370d21cb2adfe6" category="summary">NetApp SolidFire Storage-Systeme verwenden den RTFI-Prozess, um ein Software Image auf einen neuen Node zu schreiben oder einen Node auf den ursprünglichen Zustand auf den Werkseinstellungen zurückzusetzen.</block>
@@ -12676,4 +12673,7 @@
   <block id="4761cf42d3167c91f942aaa5770bce7b" category="list-text"><block ref="4761cf42d3167c91f942aaa5770bce7b" category="inline-xref-macro-rx"></block></block>
   <block id="8e03dc636d7913fabfabd316d5e54ac0" category="list-text"><block ref="8e03dc636d7913fabfabd316d5e54ac0" category="inline-xref-macro-rx"></block></block>
   <block id="82deed01641c36ab7f885c50d27dcaea" category="list-text"><block ref="82deed01641c36ab7f885c50d27dcaea" category="inline-xref-macro-rx"></block></block>
+  <block id="98f034cb87c1c327b13fbbbb31bc622b" category="paragraph">Informationen zum Erstellen eines USB-Schlüssels oder zur Verwendung des BMC für den RTFI-Prozess finden Sie unter <block ref="4761cf42d3167c91f942aaa5770bce7b" category="inline-xref-macro-rx"></block>.</block>
+  <block id="a386fc287fd28e52c07d586cfb7aa08b" category="admonition">Nach dem Start des Prozesses werden alle Daten- und Konfigurationsdetails dauerhaft vom Node gelöscht. Wenn Sie nicht fortfahren möchten, werden Sie an den weitergeleitet <block ref="82deed01641c36ab7f885c50d27dcaea" category="inline-xref-macro-rx"></block>.</block>
+  <block id="d9730da4fb3635f5ccd1c078266c9334" category="paragraph">Wenn während des RTFI-Prozesses eine Fehlermeldung aufgetreten ist, lesen Sie den Abschnitt <block ref="82deed01641c36ab7f885c50d27dcaea" category="inline-xref-macro-rx"></block>.</block>
 </blocks>

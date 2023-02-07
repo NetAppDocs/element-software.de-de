@@ -31,7 +31,7 @@ Informationen zum Konfigurieren des Knotens nach erfolgreichem Abschluss des RTF
 
 Gehen Sie folgendermaßen vor, um die Element Software auf dem SolidFire-Knoten wiederherzustellen.
 
-Informationen zum Erstellen eines USB-Schlüssels oder zur Verwendung des BMC für den RTFI-Prozess finden Sie unter link:task_rtfi_deployment_and_install_options.html["RTFI-Bereitstellungs- und Installationsoptionen"].
+Informationen zum Erstellen eines USB-Schlüssels oder zur Verwendung des BMC für den RTFI-Prozess finden Sie unter xref:task_rtfi_deployment_and_install_options.html[RTFI-Bereitstellungs- und Installationsoptionen].
 
 .Bevor Sie beginnen
 Vergewissern Sie sich, dass Sie die folgenden Anforderungen erfüllen:
@@ -71,7 +71,7 @@ Der Name der RTFI-Bildelement-Software und die Versionsnummer werden angezeigt.
 . An der ersten Eingabeaufforderung werden Sie benachrichtigt, dass beim Prozess alle Daten vom Node entfernt werden und dass die Daten nach dem Beginn des Prozesses nicht wiederhergestellt werden können. Geben Sie *Ja* ein, um zu beginnen.
 +
 
-WARNING: Nach dem Start des Prozesses werden alle Daten- und Konfigurationsdetails dauerhaft vom Node gelöscht. Wenn Sie nicht fortfahren möchten, werden Sie an den weitergeleitet link:task_rtfi_options_menu.html["Menü RTFI-Optionen"].
+WARNING: Nach dem Start des Prozesses werden alle Daten- und Konfigurationsdetails dauerhaft vom Node gelöscht. Wenn Sie nicht fortfahren möchten, werden Sie an den weitergeleitet xref:task_rtfi_options_menu.html[Menü RTFI-Optionen].
 
 +
 
@@ -86,7 +86,7 @@ Eine Meldung gibt an, dass der RTFI-Prozess abgeschlossen ist und das System aus
 Der Node ist jetzt eingeschaltet und konfiguriert. Siehe https://docs.netapp.com/us-en/element-software/setup/concept_setup_overview.html["Bei der Element Software wird die Storage-Dokumentation eingerichtet"^] Um den Speicher-Node zu konfigurieren.
 
 +
-Wenn während des RTFI-Prozesses eine Fehlermeldung aufgetreten ist, lesen Sie den Abschnitt link:task_rtfi_options_menu.html["Menü RTFI-Optionen"].
+Wenn während des RTFI-Prozesses eine Fehlermeldung aufgetreten ist, lesen Sie den Abschnitt xref:task_rtfi_options_menu.html[Menü RTFI-Optionen].
 
 
 
