@@ -11,7 +11,7 @@ summary: Das bulkVolumeJob-Objekt enthält Informationen zu Lese- oder Schreibvo
 
 
 [role="lead"]
-Das bulkVolumeJob-Objekt enthält Informationen zu Lese- oder Schreibvorgängen des Massenvolumes, wie Klonen oder Snapshot-Erstellung.
+Der `bulkVolumeJob` Das Objekt enthält Informationen zu Lese- oder Schreibvorgängen auf dem Massenvolume, wie Klonen oder Snapshot-Erstellung.
 
 
 
@@ -24,7 +24,7 @@ Dieses Objekt enthält die folgenden Mitglieder:
 
 
  a| 
-Merkmale
+`attributes`
  a| 
 JSON-Attribut des Massenvolumenjobs.
  a| 
@@ -33,7 +33,7 @@ JSON-Objekt
 
 
  a| 
-BulkVolumeID
+`bulkVolumeID`
  a| 
 Die interne Job-ID für das Massenvolumen.
  a| 
@@ -42,7 +42,7 @@ Ganzzahl
 
 
  a| 
-CreateTime
+`createTime`
  a| 
 Zeitstempel, der für den Massenvolumenauftrag im UTC+0-Format erstellt wurde.
  a| 
@@ -51,7 +51,7 @@ ISO 8601-Datumszeichenfolge
 
 
  a| 
-Verstrichene Zeit
+`elapsedTime`
  a| 
 Die Anzahl der Sekunden seit Beginn des Jobs.
  a| 
@@ -60,7 +60,7 @@ Zeichenfolge
 
 
  a| 
-Formatieren
+`format`
  a| 
 Das Format des Massenvolumes-Vorgangs. Mögliche Werte:
 
@@ -73,7 +73,7 @@ Zeichenfolge
 
 
  a| 
-Taste
+`key`
  a| 
 Der eindeutige Schlüssel, der von der Massenvolumensitzung erstellt wird.
  a| 
@@ -82,7 +82,7 @@ Zeichenfolge
 
 
  a| 
-%Kompletete
+`percentComplete`
  a| 
 Der vom Vorgang gemeldete Prozentsatz des Abgeschlossen.
  a| 
@@ -91,7 +91,7 @@ Ganzzahl
 
 
  a| 
-RestiningTime
+`remainingTime`
  a| 
 Die geschätzte verbleibende Zeit in Sekunden.
  a| 
@@ -100,7 +100,7 @@ Ganzzahl
 
 
  a| 
-SrcVolumeID
+`srcVolumeID`
  a| 
 Die ID des Quell-Volume.
  a| 
@@ -109,7 +109,7 @@ Ganzzahl
 
 
  a| 
-Status
+`status`
  a| 
 Der Status des Vorgangs. Mögliche Werte:
 
@@ -124,7 +124,7 @@ Zeichenfolge
 
 
  a| 
-Skript
+`script`
  a| 
 Der Name des Skripts, falls vorhanden.
  a| 
@@ -133,7 +133,7 @@ Zeichenfolge
 
 
  a| 
-Snapshot-ID
+`snapshotID`
  a| 
 Die ID des Snapshots, wenn sich ein Snapshot in der Quelle des Jobs mit dem Massenvolumen befindet.
  a| 
@@ -142,7 +142,7 @@ Ganzzahl
 
 
  a| 
-Typ
+`type`
  a| 
 Der Typ des Massenvorgangs. Mögliche Werte:
 

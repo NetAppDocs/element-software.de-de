@@ -11,7 +11,7 @@ summary: Das Kontoobjekt enthält Informationen zu einem Konto. Dieses Objekt en
 
 
 [role="lead"]
-Das Kontoobjekt enthält Informationen zu einem Konto. Dieses Objekt enthält nur „konfigurierte“ Informationen über das Konto, keine Laufzeitinformationen oder Nutzungsinformationen.
+Der `account` Objekt enthält Informationen zu einem Konto. Dieses Objekt enthält nur „konfigurierte“ Informationen über das Konto, keine Laufzeitinformationen oder Nutzungsinformationen.
 
 
 
@@ -24,7 +24,7 @@ Dieses Objekt enthält die folgenden Mitglieder:
 
 
  a| 
-AccountID
+`accountID`
  a| 
 Die eindeutige Konto-ID für das Konto.
  a| 
@@ -33,7 +33,7 @@ Ganzzahl
 
 
  a| 
-Merkmale
+`attributes`
  a| 
 Liste von Name-Wert-Paaren im JSON-Objektformat.
  a| 
@@ -42,7 +42,7 @@ JSON-Objekt
 
 
  a| 
-AbleableAbtlg
+`enableChap`
  a| 
 Gibt an, ob CHAP-Kontoanmeldeinformationen von einem Initiator für den Zugriff auf Volumes verwendet werden können.
  a| 
@@ -51,7 +51,7 @@ boolesch
 
 
  a| 
-InitiatorSecret
+`initiatorSecret`
  a| 
 Der Initiator-CHAP-Schlüssel.
  a| 
@@ -60,7 +60,7 @@ Zeichenfolge
 
 
  a| 
-Status
+`status`
  a| 
 Der aktuelle Status des Kontos. Mögliche Werte:
 
@@ -74,7 +74,7 @@ Zeichenfolge
 
 
  a| 
-SpeicherkontainerID
+`storageContainerID`
  a| 
 Die eindeutige ID des mit diesem Konto verknüpften Speichercontainers für virtuelle Volumes.
  a| 
@@ -83,7 +83,7 @@ UUID
 
 
  a| 
-TargetSecret
+`targetSecret`
  a| 
 Der CHAP-Schlüssel des Ziels.
  a| 
@@ -92,7 +92,7 @@ Zeichenfolge
 
 
  a| 
-Benutzername
+`username`
  a| 
 Der Benutzername für das Konto.
  a| 
@@ -101,7 +101,7 @@ Zeichenfolge
 
 
  a| 
-Volumes
+`volumes`
  a| 
 Eine Liste der Volume-IDs für Volumes, die dem Konto gehören.
  a| 

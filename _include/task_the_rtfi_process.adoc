@@ -16,7 +16,7 @@ Der RTFI Prozess führt die folgenden grundlegenden Operationen durch:
 . Überprüft und blinkt die Firmware.
 . Prüft die Hardware.
 . Testet Hardware.
-. Löscht alle ausgewählten Laufwerke sicher.
+. Secure löscht alle ausgewählten Laufwerke.
 . Partitioniert das Root-Laufwerk und erstellt Dateisysteme.
 . Kann das Bild einhängen und entpackt werden.
 . Konfiguriert den Host-Namen, die Netzwerkumgebung (Dynamic Host Configuration Protocol), die Standard-Clusterkonfiguration und den GRUB-Bootloader.

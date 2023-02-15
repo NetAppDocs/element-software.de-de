@@ -11,7 +11,7 @@ summary: Das ClusterConfig-Objekt gibt Informationen zurück, die der Node zur K
 
 
 [role="lead"]
-Das ClusterConfig-Objekt gibt Informationen zurück, die der Node zur Kommunikation mit dem Cluster verwendet.
+Der `clusterConfig` Das Objekt gibt Informationen zurück, die der Node zur Kommunikation mit dem Cluster verwendet.
 
 
 
@@ -24,7 +24,7 @@ Dieses Objekt enthält die folgenden Mitglieder:
 
 
  a| 
-Zipi
+`cipi`
  a| 
 Für die Cluster-Kommunikation verwendete Netzwerkschnittstelle.
  a| 
@@ -33,7 +33,7 @@ Zeichenfolge
 
 
  a| 
-Cluster
+`cluster`
  a| 
 Eindeutiger Name des Clusters.
  a| 
@@ -42,7 +42,7 @@ Zeichenfolge
 
 
  a| 
-VerschlüsselungBeschriftung
+`encryptionCapable`
  a| 
 Gibt an, ob der Node die Verschlüsselung unterstützt.
  a| 
@@ -51,7 +51,7 @@ boolesch
 
 
  a| 
-Ensemble
+`ensemble`
  a| 
 Nodes, die am Cluster teilnehmen.
  a| 
@@ -60,7 +60,7 @@ String-Array
 
 
  a| 
-FipsDriveKonfiguration
+`fipsDriveConfiguration`
  a| 
 Gibt an, ob der Node FIPS 140-2-2-zertifizierte Laufwerke unterstützt.
  a| 
@@ -69,7 +69,7 @@ boolesch
 
 
  a| 
-HasLocalAdmin
+`hasLocalAdmin`
  a| 
 Gibt an, ob der Cluster über einen lokalen Administrator verfügt.
  a| 
@@ -78,7 +78,7 @@ boolesch
 
 
  a| 
-mipi
+`mipi`
  a| 
 Für das Node-Management verwendete Netzwerkschnittstelle.
  a| 
@@ -87,7 +87,7 @@ Zeichenfolge
 
 
  a| 
-Name
+`name`
  a| 
 Eindeutige Kennung für das Cluster
  a| 
@@ -96,7 +96,7 @@ Zeichenfolge
 
 
  a| 
-NodeID
+`nodeID`
  a| 
 Eindeutige Kennung für den Knoten.
  a| 
@@ -105,7 +105,7 @@ Ganzzahl
 
 
  a| 
-HängenNodeID
+`pendingNodeID`
  a| 
 Eindeutige Kennung für den ausstehenden Node.
  a| 
@@ -114,7 +114,7 @@ Ganzzahl
 
 
  a| 
-Rolle
+`role`
  a| 
 Gibt die Rolle des Knotens an.
  a| 
@@ -123,7 +123,7 @@ Zeichenfolge
 
 
  a| 
-sipi
+`sipi`
  a| 
 Für den Storage verwendete Netzwerkschnittstelle.
  a| 
@@ -132,7 +132,7 @@ Zeichenfolge
 
 
  a| 
-Bundesland
+`state`
  a| 
 Gibt den Status des Node an.
  a| 
@@ -141,7 +141,7 @@ Zeichenfolge
 
 
  a| 
-Version
+`version`
  a| 
 Zeigt die Version des Node an.
  a| 

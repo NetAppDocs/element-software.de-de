@@ -11,7 +11,7 @@ summary: Das Objekt authSessionInfo enthält Informationen über eine auth Sessi
 
 
 [role="lead"]
-Das Objekt authSessionInfo enthält Informationen über eine auth Session.
+Der `authSessionInfo` Objekt enthält Informationen über eine auth-Sitzung.
 
 
 
@@ -24,7 +24,7 @@ Dieses Objekt enthält die folgenden Mitglieder:
 
 
  a| 
-Zugreifgruppenliste
+`accessGroupList`
  a| 
 Liste der Zugriffsgruppen für den Benutzer.
  a| 
@@ -33,7 +33,7 @@ String-Array
 
 
  a| 
-AuthMethod
+`authMethod`
  a| 
 Der Berechtigungstyp, den der Cluster-Admin-Benutzer besitzt. Mögliche Werte:
 
@@ -47,7 +47,7 @@ Zeichenfolge
 
 
  a| 
-Cluster-AdminIDs
+`clusterAdminIDs`
  a| 
 Liste der Cluster-AdminID(s), die mit dieser Sitzung verbunden sind. Bei Sitzungen im Zusammenhang mit LDAP oder einem Identitätsanbieter eines Drittanbieters (IdP) handelt es sich hierbei um eine aggregierte Liste mit übereinstimmenden Cluster-AdminIDs, die dieser Sitzung zugeordnet sind.
  a| 
@@ -56,7 +56,7 @@ Integer-Array
 
 
  a| 
-FinalTimeout
+`finalTimeout`
  a| 
 Die Zeit, zu der die Sitzung ungültig wird.Dies wird festgelegt, wenn die Sitzung erstellt wird und nicht geändert werden kann.
  a| 
@@ -65,7 +65,7 @@ Zeichenfolge
 
 
  a| 
-IdpConfigVersion
+`idpConfigVersion`
  a| 
 IDP-Konfigurationsversion, wenn die Sitzung erstellt wurde.
  a| 
@@ -74,7 +74,7 @@ Ganzzahl
 
 
  a| 
-LastAccessTimeout
+`lastAccessTimeout`
  a| 
 Der Zeitpunkt, zu dem die Sitzung aufgrund von Inaktivität ungültig wird.Es wird auf einen neuen Wert gesetzt, wenn auf die Sitzung zugegriffen wird, bis zu dem Zeitpunkt, zu dem die Sitzung ungültig wird, weil finalTimeout erreicht wird.
  a| 
@@ -83,7 +83,7 @@ Zeichenfolge
 
 
  a| 
-SessionCreationTime
+`sessionCreationTime`
  a| 
 Uhrzeit, zu der die Sitzung erstellt wird.
  a| 
@@ -92,7 +92,7 @@ Zeichenfolge
 
 
  a| 
-Sessionid
+`sessionID`
  a| 
 UUID für diese Sitzung.
  a| 
@@ -101,7 +101,7 @@ UUID
 
 
  a| 
-Benutzername
+`username`
  a| 
 Der dieser Sitzung zugeordnete Benutzername. Bei Sitzungen zu LDAP wird dies der LDAP-DN des Benutzers sein. Bei Sitzungen im Zusammenhang mit IdP eines Drittanbieters handelt es sich hierbei um ein willkürliches Namenswertpaar, das für die Prüfung von Operationen innerhalb der Sitzung verwendet wird. Er entspricht nicht notwendigerweise dem Namen eines Cluster-Administrators im Cluster. Beispiel: Eine SAML-Subject-NameID, aber diese wird durch die Konfiguration des IdP und den daraus resultierenden Inhalt der SAML-Assertion vorgegeben.
  a| 

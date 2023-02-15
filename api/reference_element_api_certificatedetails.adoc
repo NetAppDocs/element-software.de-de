@@ -11,7 +11,7 @@ summary: Das Objekt ZertifikateDetails enthält die decodierten Informationen ü
 
 
 [role="lead"]
-Das Objekt ZertifikateDetails enthält die decodierten Informationen über ein Sicherheitszertifikat.
+Der `certificateDetails` Objekt enthält die decodierten Informationen über ein Sicherheitszertifikat.
 
 
 
@@ -24,7 +24,7 @@ Dieses Objekt enthält die folgenden Mitglieder:
 
 
  a| 
-Aussteller
+`issuer`
  a| 
 Der Name des Emittenten.
  a| 
@@ -33,7 +33,7 @@ Zeichenfolge
 
 
  a| 
-Modul
+`modulus`
  a| 
 Das Modul des öffentlichen Schlüssels.
  a| 
@@ -42,7 +42,7 @@ Zeichenfolge
 
 
  a| 
-NotAfter
+`notAfter`
  a| 
 Das Ablaufdatum des Zertifikats.
  a| 
@@ -51,7 +51,7 @@ ISO 8601-Zeichenfolge
 
 
  a| 
-NotBefore
+`notBefore`
  a| 
 Das Startdatum des Zertifikats.
  a| 
@@ -60,7 +60,7 @@ ISO 8601-Zeichenfolge
 
 
  a| 
-Seriell
+`serial`
  a| 
 Die Seriennummer des Zertifikats.
  a| 
@@ -69,7 +69,7 @@ Zeichenfolge
 
 
  a| 
-Sha1Fingerabdruck
+`sha1Fingerprint`
  a| 
 Der Digest der-kodierten Version des Zertifikats.
  a| 
@@ -78,7 +78,7 @@ Zeichenfolge
 
 
  a| 
-Betreff
+`subject`
  a| 
 Der Name des Studienteilnehmers.
  a| 

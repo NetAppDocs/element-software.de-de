@@ -24,7 +24,7 @@ Dieses Objekt enthält die folgenden Mitglieder:
 
 
  a| 
-Protokoll-EndpointID
+`protocolEndpointID`
  a| 
 Die eindeutige ID des Protokollendpunkts.
  a| 
@@ -33,7 +33,7 @@ UUID
 
 
  a| 
-ProtokolEndpointInBandID
+`protocolEndpointInBandID`
  a| 
 Die scsiNAADeviceID des Protokollendpunkts.
  a| 
@@ -42,7 +42,7 @@ Zeichenfolge
 
 
  a| 
-Protokoll EndpointType
+`protocolEndpointType`
  a| 
 Der Typ des Protokollendpunkts. SCSI ist der einzige Wert, der für den Protokollendpunkttyp zurückgegeben wird.
  a| 
@@ -51,7 +51,7 @@ Zeichenfolge
 
 
  a| 
-VirtualVolumeBindingID
+`virtualVolumeBindingID`
  a| 
 Die eindeutige ID des Bindeobjekts für das virtuelle Volume.
  a| 
@@ -60,7 +60,7 @@ Ganzzahl
 
 
  a| 
-VirtualVolumeHost ID
+`virtualVolumeHostID`
  a| 
 Die eindeutige ID des virtuellen Volume-Hosts.
  a| 
@@ -69,7 +69,7 @@ UUID
 
 
  a| 
-VirtualVolumeID
+`virtualVolumeID`
  a| 
 Die eindeutige ID des virtuellen Volumes.
  a| 
@@ -78,7 +78,7 @@ UUID
 
 
  a| 
-VirtualVolumeZweidID
+`virtualVolumeSecondaryID`
  a| 
 Die sekundäre ID des virtuellen Volume.
  a| 
