@@ -1,19 +1,6 @@
----
-permalink: storage/reference_monitor_cluster_fault_codes.html 
-sidebar: sidebar 
-keywords: cluster fault codes, alerts, error codes, view 
-summary: Das System meldet einen Fehler oder einen Status, der durch das Generieren eines Fehlercodes, der auf der Seite „Meldungen“ aufgeführt ist, von Interesse sein könnte. Anhand dieser Codes können Sie ermitteln, welche Komponente des Systems die Warnmeldung erfahren hat und warum die Warnmeldung generiert wurde. 
----
-= Cluster-Fehlercodes
+= 
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
-
-[role="lead"]
-Das System meldet einen Fehler oder einen Status, der durch das Generieren eines Fehlercodes, der auf der Seite „Meldungen“ aufgeführt ist, von Interesse sein könnte. Anhand dieser Codes können Sie ermitteln, welche Komponente des Systems die Warnmeldung erfahren hat und warum die Warnmeldung generiert wurde.
-
-In der folgenden Liste werden die verschiedenen Arten von Codes beschrieben:
 
 * *AuthentifizierungServiceFault*
 +

@@ -9776,7 +9776,6 @@
   <block id="1b3b2f72f429aa6470095a49affa4ebc" category="paragraph">Es ist nicht ausreichend freier Block-Speicherplatz zur Unterstützung eines Single-Node-Verlusts vorhanden. Weitere Informationen zu Cluster-Auslastungsstufen finden Sie in der GetClusterFullThreshold API-Methode. Dieser Cluster-Fehler gibt eine der folgenden Bedingungen an:</block>
   <block id="638768955c5a6f2ab425aae1bce583bc" category="list-text">Stage3Low (Warnung): Benutzerdefinierter Schwellenwert wurde überschritten. Passen Sie Cluster-Volleinstellungen an oder fügen Sie weitere Nodes hinzu.</block>
   <block id="66ee2d060cdf84b1fec9ae435d8f1a81" category="list-text">Stage4Critical (Fehler): Es gibt nicht genügend Speicherplatz zur Wiederherstellung nach einem Ausfall eines 1 Node. Das Erstellen von Volumes, Snapshots und Klonen ist nicht zulässig.</block>
-  <block id="6dd7d6f50201f92efca3955b56977f59" category="list-text">Stage5CompletelyConsumed (kritisch)1; es sind keine Schreibzugriffe oder neue iSCSI-Verbindungen zulässig. Aktuelle iSCSI-Verbindungen werden beibehalten. Schreibzugriffe scheitern, bis mehr Kapazität dem Cluster hinzugefügt wird. Löschen oder löschen Sie Volumes, um diesen Fehler zu beheben, oder fügen Sie dem Storage-Cluster einen weiteren Storage-Node hinzu.</block>
   <block id="d224dcc4acfd1590ca54fc5fcc706716" category="list-text">*BlocksDegradiert*</block>
   <block id="4121923b447abdbd7a192a5ef89111dc" category="paragraph">Blockdaten werden aufgrund eines Ausfalls nicht mehr vollständig repliziert.</block>
   <block id="0eaadb4fcb48a0a0ed7bc9868be9fbaa" category="paragraph">Warnung</block>
@@ -9793,7 +9792,6 @@
   <block id="76c3f3974c0bb69705ba25d138d9a599" category="paragraph">Ein Blockdienst wurde als fehlerhaft erkannt:</block>
   <block id="43f872680fd424e2b1762db257650751" category="list-text">Schweregrad = Warnung: Es werden keine Maßnahmen ergriffen. Dieser Warnzeitraum läuft in cTimeUntilBSIsKilledMSec=330000 Millisekunden ab.</block>
   <block id="1243ff1c26bd2b3dd66afd02705039aa" category="list-text">Schweregrad = Fehler: Das System setzt Daten automatisch zurück und repliziert seine Daten auf andere gesunde Laufwerke.</block>
-  <block id="f1b539b56aae2623dd1a1bb6034beea5" category="list-text">Schweregrad = kritisch: Es gibt fehlerhafte Blockdienste auf mehreren Knoten, die größer oder gleich der Replikationszahl sind (2 für Doppelhelix). Die Daten sind nicht verfügbar, und die bin-Synchronisierung wird nicht beendet. Prüfen Sie auf Probleme mit der Netzwerkverbindung und Hardwarefehler. Es gibt weitere Fehler, wenn bestimmte Hardwarekomponenten ausgefallen sind. Der Fehler wird gelöscht, wenn der Blockservice aufgerufen wird oder wenn der Dienst deaktiviert wurde.</block>
   <block id="efe7c0d4ed04341756689674a3fb46c4" category="list-text">*BmcSelfTestFailed*</block>
   <block id="e14ad5a8fd8d67543e771552b5287d65" category="paragraph">Der Baseboard Management Controller (BMC) hat einen Selbsttest nicht bestanden.</block>
   <block id="f13985a4689ae985836f2d3e56cd1a5f" category="paragraph">Wenden Sie sich an den NetApp Support, wenn Sie Hilfe benötigen.</block>
@@ -9816,14 +9814,10 @@
   <block id="550957ff4e127baf9356e53acd6bec29" category="paragraph">Das Cluster ist nicht für das Aktivieren der Laufwerksicherheit konfiguriert (Verschlüsselung im Ruhezustand), aber mindestens ein Laufwerk ist die Laufwerksicherheit aktiviert, was bedeutet, dass die Laufwerksicherheit auf diesen Laufwerken deaktiviert ist. Dieser Fehler wird mit dem Schweregrad „`Warnung`“ protokolliert.</block>
   <block id="9b7fe003823e01b6d191cd130cac6e23" category="paragraph">Um diesen Fehler zu beheben, überprüfen Sie die Fehlerdetails aus dem Grund, warum die Laufwerksicherheit nicht deaktiviert werden konnte. Mögliche Gründe sind:</block>
   <block id="87c8214c4d624147becc5521d4175136" category="list-text">Der Verschlüsselungsschlüssel konnte nicht erworben werden. Untersuchen Sie das Problem mit dem Zugriff auf den Schlüssel oder den externen Schlüsselserver.</block>
-  <block id="17d5d626f718f91ee043b656973c4202" category="list-text">Der Vorgang zum Deaktivieren des Laufwerks ist fehlgeschlagen. Stellen Sie fest, ob der falsche Schlüssel möglicherweise erfasst wurde. Wenn keiner dieser Gründe den Fehler Gründe hat, muss das Laufwerk möglicherweise ausgetauscht werden.</block>
   <block id="c7dbd3edb899d383f271fbaddff857c9" category="paragraph">Sie können versuchen, ein Laufwerk wiederherzustellen, das die Sicherheit nicht erfolgreich deaktiviert, selbst wenn der richtige Authentifizierungsschlüssel angegeben ist. Entfernen Sie die Laufwerke aus dem System, indem Sie sie auf verfügbar verschieben, löschen Sie sie sicher auf dem Laufwerk, und verschieben Sie sie wieder in aktiv.</block>
   <block id="5f195070878aa77d5ab08b4ac4a54f3d" category="list-text">*DisconnectedClusterpaar*</block>
-  <block id="42344d5a7661ee02bc81824149e682ec" category="paragraph">Ein Cluster-Paar ist getrennt oder falsch konfiguriert. Überprüfen Sie die Netzwerkverbindung zwischen den Clustern.</block>
   <block id="3fd928a4db83d2fce8a6a22ae18c96e5" category="list-text">*Verbindung abschaltenRemoteNode*</block>
-  <block id="4df25837c8cec48ce5932444744985b2" category="paragraph">Ein Remote-Knoten ist entweder getrennt oder falsch konfiguriert. Überprüfen Sie die Netzwerkverbindung zwischen den Nodes.</block>
   <block id="c0ab26c4daa61064202eea521001fd78" category="list-text">*DemconnectedSnapMirrorEndpoint*</block>
-  <block id="49304f2e992199a7f758572f901ebd72" category="paragraph">Ein Remote-SnapMirror-Endpunkt wird getrennt oder falsch konfiguriert. Überprüfen Sie die Netzwerkverbindung zwischen dem Cluster und dem Remote-SnapMirrorEndpoint.</block>
   <block id="306920e20dd0fe16e804aba58ddd2916" category="list-text">*Auffahrt verfügbar*</block>
   <block id="ae53472bfa7653cba79cb2a0c97df1b7" category="paragraph">Ein oder mehrere Laufwerke sind im Cluster verfügbar. Im Allgemeinen sollten alle Cluster alle Laufwerke hinzugefügt werden und keine im Status „verfügbar“. Sollte dieser Fehler unerwartet auftreten, wenden Sie sich an den NetApp Support.</block>
   <block id="931adb816c53335ac4fa33d4806e546b" category="paragraph">Um diesen Fehler zu beheben, fügen Sie alle verfügbaren Laufwerke zum Speicher-Cluster hinzu.</block>
@@ -9834,19 +9828,15 @@
   <block id="fb3e817b0c8795e02aefa4556e7780dc" category="list-text">Das Laufwerk fehlt.</block>
   <block id="1bbb54812222b3924c6bf4c604fa345c" category="list-text">Der Master-Service für den Node ist nicht verfügbar (alle Laufwerke im Node gelten als fehlend/ausgefallen).</block>
   <block id="357055579aee5a54ad7a5eeeaff622af" category="list-text">Das Laufwerk ist gesperrt und der Authentifizierungsschlüssel für das Laufwerk kann nicht erworben werden.</block>
-  <block id="3d00feb87354cc29eeca71cb7c6337cb" category="list-text">Das Laufwerk ist gesperrt, und der Entsperrvorgang schlägt fehl. So lösen Sie dieses Problem:</block>
   <block id="d573f30ca912851cb2b018b5e162b81e" category="list-text">Überprüfen Sie die Netzwerkverbindung für den Node.</block>
   <block id="eb060d511b605e93f2a2a260b6dbc752" category="list-text">Ersetzen Sie das Laufwerk.</block>
   <block id="c6a23c02f7b414f5c0f52e9a7a75617a" category="list-text">Stellen Sie sicher, dass der Authentifizierungsschlüssel verfügbar ist.</block>
   <block id="e9d2d415045856f2ca7f232b17779252" category="list-text">*DriveHealthFault*</block>
   <block id="ed77497765047a5cf8d5a44d362b2e87" category="paragraph">Die SMART-Integritätsprüfung auf einem Laufwerk ist fehlgeschlagen, sodass die Funktionen des Laufwerks verringert werden. Es gibt einen kritischen Schweregrad für diesen Fehler:</block>
-  <block id="cf6c9b1c70a2c3988584cd35ab6553cf" category="list-text">Laufwerk mit serieller Verbindung: &lt;Seriennummer&gt; in Steckplatz: &lt;Node-Steckplatz&gt;&lt;Laufwerksfach&gt; hat die INTELLIGENTE allgemeine Integritätsprüfung nicht bestanden. Um diesen Fehler zu beheben, ersetzen Sie das Laufwerk.</block>
   <block id="56b8d37bfe2dd64bbdf23e1e3f2f7ea7" category="list-text">*DriveWearFault*</block>
   <block id="e675bb0d238256c785eec015e9bb8114" category="paragraph">Die Restlebensdauer eines Laufwerks ist unter die Schwellenwerte gesunken, funktioniert aber immer noch.Es gibt zwei mögliche Schweregrade für diesen Fehler: Kritisch und Warnung:</block>
   <block id="450f3e44340f787c8a2402d47b9d8839" category="list-text">Laufwerk mit serieller Verbindung: &lt;Seriennummer&gt; im Steckplatz: &lt;Node-Steckplatz&gt;&lt;Laufwerk-Steckplatz&gt; verfügt über einen kritischen Verschleiß.</block>
-  <block id="7c9f14461aa7585ef3cbd85404b200f3" category="list-text">Laufwerk mit serieller Verbindung: &lt;Seriennummer&gt; im Steckplatz: &lt;Node-Steckplatz&gt;&lt;Laufwerksfach&gt; verfügt über geringe Verschleißreserven. Um diesen Fehler zu beheben, tauschen Sie das Laufwerk bald aus.</block>
   <block id="6bb4a8aa55442d93640dd64e3af9591b" category="list-text">* DuplicateClusterMasterCandidates*</block>
-  <block id="02b81dbf521552655d4a2cd6aa0b1afb" category="paragraph">Es wurden mehr als ein Master-Kandidat für Speichercluster erkannt. Wenden Sie sich an den NetApp Support, um Hilfe zu erhalten.</block>
   <block id="3f881480536a97ff08a0d4e8479d95f8" category="list-text">*EnableDriveSecurityFailed*</block>
   <block id="6fade1bd2a365206b6a213e2b5b00c62" category="paragraph">Das Cluster ist so konfiguriert, dass es Laufwerkssicherheit (Verschlüsselung im Ruhezustand) benötigt, die Laufwerkssicherheit konnte jedoch auf mindestens einem Laufwerk nicht aktiviert werden. Dieser Fehler wird mit dem Schweregrad „`Warnung`“ protokolliert.</block>
   <block id="8019ecfd9e8dbe87d5f5d4dc8e47f11d" category="paragraph">Um diesen Fehler zu beheben, überprüfen Sie die Fehlerdetails aus dem Grund, warum die Laufwerksicherheit nicht aktiviert werden konnte. Mögliche Gründe sind:</block>
@@ -9856,7 +9846,6 @@
   <block id="3b3e099ccd971f57b43b46533613607d" category="paragraph">Die Netzwerk-Konnektivität oder -Stromversorgung wurde auf einen oder mehrere der Ensemble-Knoten verloren.</block>
   <block id="56c3dd0e50c6cf4993350d6aeac7f9bd" category="paragraph">Um diesen Fehler zu beheben, stellen Sie die Netzwerkverbindung oder den Netzstrom wieder her.</block>
   <block id="9a7ee3317b3f58ab912aa398126464fc" category="list-text">*Ausnahme*</block>
-  <block id="edb1590e58bd9eec8435f60fcb5260ad" category="paragraph">Ein Fehler wurde gemeldet, der sich nicht auf einen Routinefehler ausstellt. Diese Fehler werden nicht automatisch aus der Fehlerwarteschlange gelöscht. Wenden Sie sich an den NetApp Support, um Hilfe zu erhalten.</block>
   <block id="1252af204b6a81b333395f05ae66d195" category="list-text">*AusfallenSpaceTooFull*</block>
   <block id="2fd17e6f1ee2875e5116bdddb35a4bdb" category="paragraph">Ein Blockservice reagiert nicht auf Datenschreibanfragen. Dadurch verfügt der Slice Service über keinen freien Speicherplatz zum Speichern ausgefallener Schreibvorgänge.</block>
   <block id="7d5092acb3ccf2843e39faff0e6f93c8" category="paragraph">Um diesen Fehler zu beheben, stellen Sie die Funktion zur Wiederherstellung von Blockdiensten wieder her, damit Schreibvorgänge normal fortgesetzt werden und der fehlerhafte Speicherplatz aus dem Schichtdienst entfernt werden kann.</block>
@@ -9864,30 +9853,24 @@
   <block id="f027e93cb191c3a34b63d2380336aa2f" category="paragraph">Ein Lüftersensor ist ausgefallen oder fehlt.</block>
   <block id="7820c1d9ad4697a94c323676b62aef9c" category="paragraph">Um diesen Fehler zu beheben, ersetzen Sie eine fehlerhafte Hardware.</block>
   <block id="d46186bf1074b548dc7e656292fe9d79" category="list-text">*Fiber ChannelAccessDegraded*</block>
-  <block id="df103158c18b8fbdbb3a080a5551cd33" category="paragraph">Ein Fibre Channel-Node reagiert nicht auf andere Nodes im Storage-Cluster über einen bestimmten Zeitraum. In diesem Status gilt der Node als nicht ansprechbar und generiert einen Cluster-Fehler. Überprüfen Sie die Netzwerkverbindung.</block>
   <block id="010012bcf587a096a5299b7b1a55e19e" category="list-text">*FaserChannelAccessUnverfügbar*</block>
-  <block id="350260c827d22bf266542d0329507824" category="paragraph">Alle Fibre-Channel-Nodes reagieren nicht mehr. Die Node-IDs werden angezeigt. Überprüfen Sie die Netzwerkverbindung.</block>
   <block id="9a239bb37b76456edd6beae3f86996bf" category="list-text">*FiberChannelActiveIxL*</block>
   <block id="7b1e90f542ce632a3d53bd8584b6d818" category="paragraph">Die Anzahl der iXL-Nexus nähert sich dem unterstützten Limit von 8000 aktiven Sitzungen pro Fibre-Channel-Node.</block>
   <block id="afde178f3cdc76e86b358a735370a4ee" category="list-text">Best Practice-Grenze ist 5500.</block>
   <block id="2a89b8bd6f61acaa29e36c53507cdcd9" category="list-text">Warngrenze ist 7500.</block>
-  <block id="6c56e1741b1b70da8687046bccdd9219" category="list-text">Die maximale Obergrenze (nicht erzwungen) beträgt 8192. Um diesen Fehler zu beheben, reduzieren Sie die Anzahl der iXL Nexus unter dem Best Practice Limit von 5500.</block>
   <block id="bb8e93e925fd43a4aea012f3ee50c111" category="list-text">*Fiber ChannelConfig*</block>
   <block id="6894d61b116b1aed9a5f537bbf47060f" category="paragraph">Dieser Cluster-Fehler gibt eine der folgenden Bedingungen an:</block>
   <block id="eea8c17dfc94cc47441f5d76cd656589" category="list-text">An einem PCI-Steckplatz befindet sich ein unerwarteter Fibre Channel-Port.</block>
   <block id="77f0a06c22e15fd19ec507cc798e4687" category="list-text">Es gibt ein unerwartetes Fibre Channel HBA-Modell.</block>
   <block id="9081496d4343ff2942d3a7ace8927753" category="list-text">Ein Problem mit der Firmware eines Fibre Channel HBA ist aufgetreten.</block>
   <block id="9b6b174ad1439ca86267072c96c6a708" category="list-text">Ein Fibre-Channel-Port ist nicht online.</block>
-  <block id="284b15d95b9022c777da88ba199d8d99" category="list-text">Bei der Konfiguration von Fibre Channel Passthrough müssen hartnäckige Probleme aufgetreten sein. Wenden Sie sich an den NetApp Support, um Hilfe zu erhalten.</block>
   <block id="b9e3ca72a9c87848342ca9f2c269ea2d" category="list-text">*FiberChannelIOPS*</block>
   <block id="1920210ab5977cb3b8fbce0d869553e7" category="paragraph">Die IOPS-Gesamtzahl nähert sich dem IOPS-Limit für Fibre Channel Nodes im Cluster. Die Grenzen sind:</block>
   <block id="30df86760d85d6e2bce14a346d935d23" category="list-text">FC0025: 50.000 IOPS bei 4-KB-Blockgröße pro Fibre Channel Node.</block>
-  <block id="736f0c444dc6d16da36825884a13b439" category="list-text">FCN001: Grenzwert von 625.000 OPS bei einer Blockgröße von 4 KB pro Fibre Channel Node. Um diesen Fehler zu beheben, verteilen Sie die Last auf alle verfügbaren Fibre Channel Nodes.</block>
   <block id="6675d019f3da60337f04e5cbade63637" category="list-text">*FiberChannelStaticIxL*</block>
   <block id="fcebb97bf64928933388bc235f02631d" category="paragraph">Die Anzahl der iXL-Nexus nähert sich dem unterstützten Limit von 16000 statischen Sitzungen pro Fibre-Channel-Node.</block>
   <block id="d85f1b7e325152ab8b9dc4987156513c" category="list-text">Best Practice-Grenze ist 11000.</block>
   <block id="ecba663b07684c482e30930dbc2c5447" category="list-text">Warngrenze ist 15000.</block>
-  <block id="be7907804b39f6bb8eb8f693b3948133" category="list-text">Die maximale Obergrenze (erzwungen) ist 16384. Um diesen Fehler zu beheben, reduzieren Sie die Anzahl der iXL Nexus unter dem Best Practice Limit von 11000.</block>
   <block id="1732cf9a398a21acc054d31275c3e4bb" category="list-text">*DateiSystemkapazitätNiedrig*</block>
   <block id="813d286021d5006aabfe635f27b246a1" category="paragraph">Auf einem der Dateisysteme ist nicht genügend Platz vorhanden.</block>
   <block id="fe98c55781fece742fe24f76102b689e" category="paragraph">Um diesen Fehler zu beheben, fügen Sie dem Dateisystem mehr Kapazität hinzu.</block>
@@ -9906,7 +9889,6 @@
   <block id="71af532c4c9766361e01036327838cdd" category="list-text">Für diesen Node-Typ gibt es eine falsche Laufwerksgröße.</block>
   <block id="f37083c72cc95f714c6dcccbf50fbae6" category="list-text">Es wurde ein nicht unterstütztes Laufwerk erkannt. Ein möglicher Grund ist, dass die installierte Element-Version dieses Laufwerk nicht erkennt. Es wird empfohlen, die Element Software auf diesem Node zu aktualisieren.</block>
   <block id="7adda67a2bab68e6354d45fbda56172d" category="list-text">Es stimmt nicht überein, dass die Laufwerk-Firmware nicht stimmt.</block>
-  <block id="b346b0ec45c209c42645dd9f78da6721" category="list-text">Der Status für die Laufwerksverschlüsselung stimmt nicht mit dem Node überein. Wenden Sie sich an den NetApp Support, um Hilfe zu erhalten.</block>
   <block id="f333ac88b43f31babae53274c15bc06a" category="list-text">*IdPCertificateExpiration*</block>
   <block id="a17d48e8302e765f05d40934bd23fb08" category="paragraph">Das SSL-Zertifikat des Dienstanbieters des Clusters zur Verwendung mit einem Drittanbieter-Identitätsanbieter (IdP) nähert sich dem Ablaufdatum oder ist bereits abgelaufen. Dieser Fehler nutzt die folgenden Schweregrade auf der Grundlage der Dringlichkeit:</block>
   <block id="76664c0be6648ca07148b71896d0b43f" category="paragraph">Das Zertifikat läuft innerhalb von 30 Tagen ab.</block>
@@ -9917,7 +9899,6 @@
   <block id="b475deeed44bd779162bd430e996d375" category="paragraph">Die Bond-Modi auf dem VLAN-Gerät fehlen. Dieser Fehler zeigt den erwarteten Bond-Modus und den derzeit verwendeten Bond-Modus an.</block>
   <block id="fda27fd12d2000d1a0b9936573376fa0" category="list-text">*Inkonsistent Mtus*</block>
   <block id="9c1485d86c325377a29a8d89037f06b2" category="list-text">Bond1G-Diskrepanz: Inkonsistente MTUs wurden an Bond1G-Schnittstellen erkannt.</block>
-  <block id="b58eb7f90dba2f54452894923240eadb" category="list-text">Bond10G-Diskrepanz: Inkonsistente MTUs wurden an Bond10G-Schnittstellen erkannt. Dieser Fehler zeigt den betreffenden Node oder die betreffenden Knoten zusammen mit dem zugehörigen MTU-Wert an.</block>
   <block id="c11e78a17f64007d25b6de5ae396d1d4" category="list-text">*UnstimmigeDie Routenregeln*</block>
   <block id="af06857975f05b4ba140f81c535ca3ca" category="paragraph">Die Routingregeln für diese Schnittstelle sind inkonsistent.</block>
   <block id="926a2c4cb3cf87fae9e13dfa3e2caa73" category="list-text">*Inkonsistent SubnetMasken*</block>
@@ -9973,7 +9954,6 @@
   <block id="f0c41738998b4e7c8da03ee30be0e125" category="paragraph">Der Systemspeicher wird vollständig verbraucht.</block>
   <block id="de54af49388227db08b3aed3c76f21b2" category="list-text">* MetadataClusterFull*</block>
   <block id="a6e65ad071757627d1787887e0f732ed" category="paragraph">Es ist nicht ausreichend freier Speicherplatz für Metadaten vorhanden, um einen Ausfall eines einzelnen Nodes zu unterstützen. Weitere Informationen zu Cluster-Auslastungsstufen finden Sie in der GetClusterFullThreshold API-Methode. Dieser Cluster-Fehler gibt eine der folgenden Bedingungen an:</block>
-  <block id="348ab1889b814efd0359a5dfe10a8a81" category="list-text">Stage5CompletelyConsumed (kritisch)1; es sind keine Schreibzugriffe oder neue iSCSI-Verbindungen zulässig. Aktuelle iSCSI-Verbindungen werden beibehalten. Schreibzugriffe scheitern, bis mehr Kapazität dem Cluster hinzugefügt wird. Löschen oder Löschen von Daten oder Hinzufügen weiterer Nodes Löschen oder löschen Sie Volumes, um diesen Fehler zu beheben, oder fügen Sie dem Storage-Cluster einen weiteren Storage-Node hinzu.</block>
   <block id="e71f12b026ae4fcf06c49eb9f0469a1f" category="list-text">*MtuCheckFailure*</block>
   <block id="ac9e3e7c4730a02619836ba5e86f7e87" category="paragraph">Ein Netzwerkgerät ist nicht für die richtige MTU-Größe konfiguriert.</block>
   <block id="6b5c51f1e1330cd58c5c189b5c3cd67a" category="paragraph">Um diesen Fehler zu beheben, stellen Sie sicher, dass alle Netzwerkschnittstellen und Switch-Ports für Jumbo Frames konfiguriert sind (MTUs mit einer Größe von bis zu 9000 Byte).</block>
@@ -9981,10 +9961,8 @@
   <block id="9f7d0d58efdf92487c79aa73770cf27a" category="list-text">Eine erwartete Schnittstelle ist nicht vorhanden.</block>
   <block id="1034f427f692ffaeb3c342ef7af5a6d1" category="list-text">Es ist eine doppelte Schnittstelle vorhanden.</block>
   <block id="b8edcaaaa4084c689bfac36d5cb428a6" category="list-text">Eine konfigurierte Schnittstelle ist ausgefallen.</block>
-  <block id="d5e6f85254ff923ed2fdf9f9d1972674" category="list-text">Ein Netzwerkneustart ist erforderlich. Wenden Sie sich an den NetApp Support, um Hilfe zu erhalten.</block>
   <block id="c8dfa7e973e5dfd88b07c9ea8f39d5c1" category="list-text">*NoVerfügbarVirtualNetzwerkIPAddresses*</block>
   <block id="5a1b0770161278deb085c70d18081459" category="paragraph">Im Block der IP-Adressen sind keine virtuellen Netzwerkadressen verfügbar.</block>
-  <block id="7b3dc932f6f5617b82c2df4a26203725" category="list-text">VirtualNetworkID # TAG(###) hat keine Speicher-IP-Adressen. Dem Cluster können keine weiteren Nodes hinzugefügt werden. Um diesen Fehler zu beheben, fügen Sie dem Block der virtuellen Netzwerkadressen weitere IP-Adressen hinzu.</block>
   <block id="2c351c3e6b16ecda4ee3c5b07bf92f86" category="list-text">*NodeHardwareFault (Netzwerkschnittstelle &lt;Name&gt; ist ausgefallen oder das Kabel ist nicht angeschlossen)*</block>
   <block id="550b9a0d94cd045f1d5953d97983f335" category="paragraph">Eine Netzwerkschnittstelle ist entweder ausgefallen oder das Kabel ist nicht angeschlossen.</block>
   <block id="6cc9733e0e3716a18c7fe043f52abced" category="paragraph">Um diesen Fehler zu beheben, überprüfen Sie die Netzwerkverbindung für den Knoten oder Knoten.</block>
@@ -10032,7 +10010,6 @@
   <block id="106147765d484e9d580a4ffb4aecd320" category="list-text">*PowerSupplyError*</block>
   <block id="1aada3eca1e3ebdad5bf568c00f6618a" category="list-text">Es ist kein Netzteil vorhanden.</block>
   <block id="e3843a30f99965f6bf0fe2f2727273d3" category="list-text">Ein Netzteil ist fehlgeschlagen.</block>
-  <block id="9475afd968f0ca7555d0c65ee2d7153a" category="list-text">Ein Netzteileingang fehlt oder außerhalb des zulässigen Bereichs liegt. Um diesen Fehler zu beheben, überprüfen Sie, ob alle Knoten mit redundanter Stromversorgung versorgt werden. Wenden Sie sich an den NetApp Support, um Hilfe zu erhalten.</block>
   <block id="173645bdc5529260f13137fc1a0b972e" category="list-text">*ProvisionedSpaceTooFull*</block>
   <block id="64c6b1920eb7741d6bfcc0679fbd5ad6" category="paragraph">Die insgesamt bereitgestellte Kapazität des Clusters ist zu voll.</block>
   <block id="3412e2f46d96ab7c4a5565eaf7540202" category="paragraph">Um diesen Fehler zu beheben, fügen Sie mehr bereitgestellten Speicherplatz hinzu oder löschen und löschen Sie Volumes.</block>
@@ -10058,7 +10035,6 @@
   <block id="b0537d36b3091b7e8e1d1a8f59a8f8eb" category="list-text">*SchliceServiceUngesund*</block>
   <block id="abe34aeb4fb1207c0198415cbbaa59f2" category="paragraph">Das System hat erkannt, dass ein Schichtdienst ungesund ist und ihn automatisch stillsetzt.</block>
   <block id="37b556315ca9e4d0bf96bfbb72a90068" category="list-text">Schweregrad = Warnung: Es werden keine Maßnahmen ergriffen. Dieser Warnzeitraum läuft in 6 Minuten ab.</block>
-  <block id="211bd79997a55288a61ce77e3f0294d5" category="list-text">Schweregrad = Fehler: Das System setzt Daten automatisch zurück und repliziert seine Daten auf andere gesunde Laufwerke. Prüfen Sie auf Probleme mit der Netzwerkverbindung und Hardwarefehler. Es gibt weitere Fehler, wenn bestimmte Hardwarekomponenten ausgefallen sind. Der Fehler wird gelöscht, wenn der Schichtdienst verfügbar ist oder wenn der Dienst deaktiviert wurde.</block>
   <block id="77a9bdbc36212768a8fa68cd2fa5b2df" category="list-text">*Sshenenabled*</block>
   <block id="c0dcf8bdd514b88aa2f4e08c9146ee43" category="paragraph">Der SSH-Service ist auf einem oder mehreren Nodes im Storage-Cluster aktiviert.</block>
   <block id="08859561c22bfd25c836ab28ea73e205" category="paragraph">Um diesen Fehler zu beheben, deaktivieren Sie den SSH-Service auf dem entsprechenden Node oder Nodes oder wenden Sie sich an den NetApp Support, um Unterstützung zu erhalten.</block>
@@ -10074,7 +10050,6 @@
   <block id="c4db6be37f68c3d45398133d7edc70d0" category="paragraph">Um diesen Fehler zu beheben, prüfen Sie, ob Luftstrombehinderungen in der Nähe des Storage-Clusters vorhanden sind. Wenden Sie sich bei Bedarf an den NetApp Support, um Hilfe zu erhalten.</block>
   <block id="92018782133eb660d9128d1342172fb9" category="list-text">*Upgrade*</block>
   <block id="fd406b4623b781b31f258a0879276c93" category="paragraph">Ein Upgrade läuft seit mehr als 24 Stunden.</block>
-  <block id="c20d3b325dabe9dc4b42e3e85097a989" category="paragraph">Setzen Sie das Upgrade fort, oder wenden Sie sich an den NetApp Support, um Hilfe zu erhalten.</block>
   <block id="ee6e3166109a6358fc272981bf9bd6cb" category="list-text">*UnresponsiveService*</block>
   <block id="5e4d14c3be61157b20827e4a7845df94" category="paragraph">Ein Dienst reagiert nicht mehr.</block>
   <block id="732cb524681f74d8b6ed83b31dd8fdfb" category="list-text">*VirtualNetworkConfig*</block>
@@ -10083,7 +10058,6 @@
   <block id="48766e2b79a5b9849011f867e2a4543b" category="list-text">Eine falsche Netzmaske ist vorhanden.</block>
   <block id="9ade69268a715c1a417af433fedcd21e" category="list-text">Eine falsche IP-Adresse ist vorhanden.</block>
   <block id="0a2b48020b48f8fbcf311a98dace5d74" category="list-text">Eine Schnittstelle ist nicht verfügbar und wird nicht ausgeführt.</block>
-  <block id="5109af461c73b502ce6b072e4cc0a0c9" category="list-text">Es gibt eine überflüssige Schnittstelle auf einem Knoten. Wenden Sie sich an den NetApp Support, um Hilfe zu erhalten.</block>
   <block id="85a491c87fd77350bc3bd38a726fd168" category="list-text">*VolumesDegradiert*</block>
   <block id="9451a3dfb762350c7cbcbe9ee518b8af" category="paragraph">Die Replikation und Synchronisierung der sekundären Volumes ist nicht abgeschlossen. Die Meldung wird gelöscht, wenn die Synchronisierung abgeschlossen ist.</block>
   <block id="f18e735235d5a307ceb3e60d3161fa15" category="list-text">*VolumesOffline*</block>
@@ -12710,4 +12684,45 @@
   <block id="6232a2f1b30c3036b5c008529bc21aef" category="paragraph"><block ref="cfc64b55d03850e2ab017f7286375f5d" prefix="" category="inline-code"></block></block>
   <block id="01e67269f053fa497a470b13c81ac40c" category="paragraph"><block ref="9ed39e2ea931586b6a985a6942ef573e" prefix="" category="inline-code"></block></block>
   <block id="7877022c956918624cc0373ff564cad4" category="paragraph"><block ref="2af72f100c356273d46284f6fd1dfc08" prefix="" category="inline-code"></block></block>
+  <block id="0e9854d5683c94e98eff290cc17a418d" category="list-text">Stage5CompletelyConsumed (kritisch)1; es sind keine Schreibzugriffe oder neue iSCSI-Verbindungen zulässig. Aktuelle iSCSI-Verbindungen werden beibehalten. Schreibzugriffe scheitern, bis mehr Kapazität dem Cluster hinzugefügt wird.</block>
+  <block id="3db1b2b278c0d698957be3ed18d42de5" category="paragraph">Löschen oder löschen Sie Volumes, um diesen Fehler zu beheben, oder fügen Sie dem Storage-Cluster einen weiteren Storage-Node hinzu.</block>
+  <block id="2ae0b813312f2044fb0000c93b743c18" category="list-text">Schweregrad = kritisch: Es gibt fehlerhafte Blockdienste auf mehreren Knoten, die größer oder gleich der Replikationszahl sind (2 für Doppelhelix). Die Daten sind nicht verfügbar, und die bin-Synchronisierung wird nicht beendet.</block>
+  <block id="5f0cbed0ef8a3bd7e904fa0b7d66df2a" category="paragraph">Prüfen Sie auf Probleme mit der Netzwerkverbindung und Hardwarefehler. Es gibt weitere Fehler, wenn bestimmte Hardwarekomponenten ausgefallen sind. Der Fehler wird gelöscht, wenn der Blockservice aufgerufen wird oder wenn der Dienst deaktiviert wurde.</block>
+  <block id="c12520b146934cca9f0563beb6c4b386" category="list-text">Der Vorgang zum Deaktivieren des Laufwerks ist fehlgeschlagen. Stellen Sie fest, ob der falsche Schlüssel möglicherweise erfasst wurde.</block>
+  <block id="e8bd7f29873c064c3b0afe30143a9400" category="paragraph">Wenn keiner dieser Gründe den Fehler Gründe hat, muss das Laufwerk möglicherweise ausgetauscht werden.</block>
+  <block id="ca505a259b750fe5a33a46d3a0b1380e" category="paragraph">Ein Cluster-Paar ist getrennt oder falsch konfiguriert.</block>
+  <block id="0e5226fbc6080c457c2049fae2c59580" category="paragraph">Überprüfen Sie die Netzwerkverbindung zwischen den Clustern.</block>
+  <block id="19fc4b6eefc66be47a1245164a1e0a30" category="paragraph">Ein Remote-Knoten ist entweder getrennt oder falsch konfiguriert.</block>
+  <block id="bda8d7e202992031643b7f0dd34f95b6" category="paragraph">Überprüfen Sie die Netzwerkverbindung zwischen den Nodes.</block>
+  <block id="d295ddb65575ec2f7c53600c865abb3f" category="paragraph">Ein Remote-SnapMirror-Endpunkt wird getrennt oder falsch konfiguriert.</block>
+  <block id="20d0ab0df11b1d6b1906d3ba602b7a60" category="paragraph">Überprüfen Sie die Netzwerkverbindung zwischen dem Cluster und dem Remote-SnapMirrorEndpoint.</block>
+  <block id="5b0e7d9573ad0e308cbbcaa692388ffa" category="list-text">Das Laufwerk ist gesperrt, und der Entsperrvorgang schlägt fehl.</block>
+  <block id="4d76376d1fdfa802843702a2b8cfb46f" category="paragraph">So lösen Sie dieses Problem:</block>
+  <block id="6b6ada126074585acbda3e3e706375bf" category="list-text">Laufwerk mit serieller Verbindung: &lt;Seriennummer&gt; in Steckplatz: &lt;Node-Steckplatz&gt;&lt;Laufwerksfach&gt; hat die INTELLIGENTE allgemeine Integritätsprüfung nicht bestanden.</block>
+  <block id="58b8e7725ad2228baeb985d92f7b7d73" category="paragraph">Um diesen Fehler zu beheben, ersetzen Sie das Laufwerk.</block>
+  <block id="bc85c300d6a6164fbbdb72d6f4ad2e6c" category="list-text">Laufwerk mit serieller Verbindung: &lt;Seriennummer&gt; im Steckplatz: &lt;Node-Steckplatz&gt;&lt;Laufwerksfach&gt; verfügt über geringe Verschleißreserven.</block>
+  <block id="8f0cd9a07c4f987dbf40bc8ac46d0623" category="paragraph">Um diesen Fehler zu beheben, tauschen Sie das Laufwerk bald aus.</block>
+  <block id="6c6cd406a169110c850887e787bf23b5" category="paragraph">Es wurden mehr als ein Master-Kandidat für Speichercluster erkannt.</block>
+  <block id="f876d0eee683cd78e680d10a4e6544ac" category="paragraph">Ein Fehler wurde gemeldet, der sich nicht auf einen Routinefehler ausstellt. Diese Fehler werden nicht automatisch aus der Fehlerwarteschlange gelöscht.</block>
+  <block id="c1dbe321100df10efa6ed1cb882091dc" category="paragraph">Ein Fibre Channel-Node reagiert nicht auf andere Nodes im Storage-Cluster über einen bestimmten Zeitraum. In diesem Status gilt der Node als nicht ansprechbar und generiert einen Cluster-Fehler.</block>
+  <block id="92f4ebeef8956a175af4d3e1ec7b1c15" category="paragraph">Überprüfen Sie die Netzwerkverbindung.</block>
+  <block id="bf67c87d37b9233d02e142302836fd57" category="paragraph">Alle Fibre-Channel-Nodes reagieren nicht mehr. Die Node-IDs werden angezeigt.</block>
+  <block id="87cec377fddbc2b343c523b1f948a6e2" category="list-text">Die maximale Obergrenze (nicht erzwungen) beträgt 8192.</block>
+  <block id="7d8bc88f1f8ee937dacd85baa429de19" category="paragraph">Um diesen Fehler zu beheben, reduzieren Sie die Anzahl der iXL Nexus unter dem Best Practice Limit von 5500.</block>
+  <block id="1a8b25bc838c0110139358395735d6f5" category="list-text">Bei der Konfiguration von Fibre Channel Passthrough müssen hartnäckige Probleme aufgetreten sein.</block>
+  <block id="0601c36d5a717978b7c215c94c397752" category="list-text">FCN001: Grenzwert von 625.000 OPS bei einer Blockgröße von 4 KB pro Fibre Channel Node.</block>
+  <block id="0bcb81681e0f1dd4a80519a70edf9f0e" category="paragraph">Um diesen Fehler zu beheben, verteilen Sie die Last auf alle verfügbaren Fibre Channel Nodes.</block>
+  <block id="0164a04bfac1ebbda38a2e22844ed405" category="list-text">Die maximale Obergrenze (erzwungen) ist 16384.</block>
+  <block id="2d89e20951d3587ba7465143c06aaed8" category="paragraph">Um diesen Fehler zu beheben, reduzieren Sie die Anzahl der iXL Nexus unter dem Best Practice Limit von 11000.</block>
+  <block id="84235cc0ee8b4a1704e15c4682efed21" category="list-text">Der Status für die Laufwerksverschlüsselung stimmt nicht mit dem Node überein.</block>
+  <block id="b9c6a0b1df2e02b3cef9f3c2de4ae589" category="list-text">Bond10G-Diskrepanz: Inkonsistente MTUs wurden an Bond10G-Schnittstellen erkannt.</block>
+  <block id="59634c985623b38ef29cbc5c41cdcd71" category="paragraph">Dieser Fehler zeigt den betreffenden Node oder die betreffenden Knoten zusammen mit dem zugehörigen MTU-Wert an.</block>
+  <block id="cb5b46f0ba19f5a116bf29e63d30a1cc" category="list-text">Stage5CompletelyConsumed (kritisch)1; es sind keine Schreibzugriffe oder neue iSCSI-Verbindungen zulässig. Aktuelle iSCSI-Verbindungen werden beibehalten. Schreibzugriffe scheitern, bis mehr Kapazität dem Cluster hinzugefügt wird. Löschen oder Löschen von Daten oder Hinzufügen weiterer Nodes</block>
+  <block id="e475633cda3cbb184cee43276947ca84" category="list-text">Ein Netzwerkneustart ist erforderlich.</block>
+  <block id="4eda4adc3d0ab81d7babf172a3dff251" category="list-text">VirtualNetworkID # TAG(\###) hat keine Speicher-IP-Adressen. Dem Cluster können keine weiteren Nodes hinzugefügt werden.</block>
+  <block id="a23d1fa9eb45a4686b769b2b24c1ad79" category="list-text">Ein Netzteileingang fehlt oder außerhalb des zulässigen Bereichs liegt.</block>
+  <block id="9fe5420d18a5c8643739c1442185b688" category="paragraph">Um diesen Fehler zu beheben, überprüfen Sie, ob alle Knoten mit redundanter Stromversorgung versorgt werden. Wenden Sie sich an den NetApp Support, um Hilfe zu erhalten.</block>
+  <block id="2f2028a01cc26368c3f4daa01753e427" category="paragraph">Prüfen Sie auf Probleme mit der Netzwerkverbindung und Hardwarefehler. Es gibt weitere Fehler, wenn bestimmte Hardwarekomponenten ausgefallen sind. Der Fehler wird gelöscht, wenn der Schichtdienst verfügbar ist oder wenn der Dienst deaktiviert wurde.</block>
+  <block id="19ea2f91b3ae961be9e609088755c628" category="paragraph">Setzen Sie das Upgrade fort, oder wenden Sie sich an den NetApp Support, um Hilfe zu erhalten.</block>
+  <block id="9672f91e71f82d57d55bef9837c3723c" category="list-text">Es gibt eine überflüssige Schnittstelle auf einem Knoten.</block>
 </blocks>
