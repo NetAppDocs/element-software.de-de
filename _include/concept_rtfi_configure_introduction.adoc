@@ -17,9 +17,9 @@ WARNING: Der RTFI-Prozess ist datenzerstörend und löscht sicher alle Daten und
 
 Implementieren und Installieren des ISO-Image (RTFI International Organization for Standardization) und Durchführen des RTFI-Prozesses:
 
-* xref:task_rtfi_deployment_and_install_options.html[RTFI-Bereitstellungs- und Installationsoptionen]
-* xref:task_rtfi_process.html[Führen Sie den RTFI-Prozess aus]
-* xref:task_rtfi_options_menu.html[Menü RTFI-Optionen]
+* xref:task_rtfi_deployment_and_install_options.adoc[RTFI-Bereitstellungs- und Installationsoptionen]
+* xref:task_rtfi_process.adoc[Führen Sie den RTFI-Prozess aus]
+* xref:task_rtfi_options_menu.adoc[Menü RTFI-Optionen]
 
 
 

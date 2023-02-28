@@ -40,7 +40,7 @@ Informationen zum Konfigurieren des Knotens nach erfolgreichem Abschluss des RTF
 
 Gehen Sie folgendermaßen vor, um die Element Software auf dem SolidFire-Knoten wiederherzustellen.
 
-Informationen zum Erstellen eines USB-Schlüssels oder zur Verwendung des BMC für den RTFI-Prozess finden Sie unter xref:task_rtfi_deployment_and_install_options.html[RTFI-Bereitstellungs- und Installationsoptionen].
+Informationen zum Erstellen eines USB-Schlüssels oder zur Verwendung des BMC für den RTFI-Prozess finden Sie unter xref:task_rtfi_deployment_and_install_options.adoc[RTFI-Bereitstellungs- und Installationsoptionen].
 
 .Bevor Sie beginnen
 Vergewissern Sie sich, dass Sie die folgenden Anforderungen erfüllen:
