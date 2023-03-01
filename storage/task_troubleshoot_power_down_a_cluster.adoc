@@ -11,12 +11,12 @@ summary: Sie können ein gesamtes Cluster herunterfahren, nachdem Sie den NetApp
 
 
 [role="lead"]
-Sie können ein gesamtes Cluster herunterfahren, nachdem Sie den NetApp Support kontaktiert und erste Schritte durchgeführt haben.
+Gehen Sie wie folgt vor, um ein gesamtes Cluster herunterzufahren.
 
-Bereiten Sie den Cluster für das Herunterfahren vor, indem Sie folgende Schritte durchführen:
-
-* Beenden Sie alle E/A-Vorgänge
-* Trennen Sie alle iSCSI-Sitzungen.
+.Schritte
+. (Optional) Wenden Sie sich an den NetApp Support, um Hilfe beim Abschluss der ersten Schritte zu erhalten.
+. Vergewissern Sie sich, dass alle I/O-Vorgänge angehalten wurden.
+. Trennen Sie alle iSCSI-Sitzungen:
 +
 .. Navigieren Sie zur Management Virtual IP (MVIP)-Adresse auf dem Cluster, um die Element-UI zu öffnen.
 .. Beachten Sie die in der Liste Knoten aufgeführten Knoten.
@@ -24,3 +24,21 @@ Bereiten Sie den Cluster für das Herunterfahren vor, indem Sie folgende Schritt
 
 
 
+
+[NOTE]
+====
+Wenn Sie das Cluster neu starten, müssen Sie bestimmte Schritte durchführen, um zu überprüfen, ob alle Nodes online sind:
+
+. Stellen Sie sicher, dass alle kritischen Schweregrad und `volumesOffline` Clusterfehler wurden behoben.
+. Warten Sie 10 bis 15 Minuten, bis sich das Cluster absetzen lässt.
+. Starten Sie, um die Hosts für den Zugriff auf die Daten aufzurufen.
+
+
+Wenn Sie beim Einschalten der Knoten mehr Zeit einplanen und überprüfen möchten, ob sie nach der Wartung ordnungsgemäß sind, wenden Sie sich an den technischen Support, um Hilfe bei der Verzögerung der Datensynchronisierung zu erhalten, um unnötige bin-Synchronisierung zu vermeiden.
+
+====
+
+
+== Weitere Informationen
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Element_Software/How_to_gracefully_shut_down_and_power_on_a_NetApp_Solidfire_HCI_storage_cluster["Ordnungsgemäß Herunterfahren und Einschalten eines NetApp SolidFire/HCI Storage-Clusters"^]
