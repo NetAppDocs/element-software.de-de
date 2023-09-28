@@ -14,6 +14,9 @@ summary: Sie können die Methode SetNodeSSLCertificate verwenden, um ein Benutze
 Sie können das verwenden `SetNodeSSLCertificate` Methode zum Festlegen eines Benutzer-SSL-Zertifikats und eines privaten Schlüssels für den Management-Node.
 
 
+NOTE: Nach Verwendung der API müssen Sie den Management-Node neu booten.
+
+
 
 == Parameter
 

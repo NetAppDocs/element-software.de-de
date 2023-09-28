@@ -13,9 +13,6 @@ summary: 'Externes Verschlüsselungsmanagement \(EKM\) bietet sichere Authentifi
 [role="lead"]
 EKM (External Key Management) bietet eine sichere Verwaltung des Authentifizierungsschlüssels (AK) in Verbindung mit einem externen EKS-Server (Off-Cluster). Die AKS werden verwendet, um Self-Encrypting Drives (SEDs) zu sperren und zu entsperren link:../concepts/concept_solidfire_concepts_security.html["Verschlüsselung für Daten im Ruhezustand"] Ist auf dem Cluster aktiviert. Der EKS sorgt für die sichere Erzeugung und Lagerung der AKS. Der Cluster verwendet für die Kommunikation mit dem EKS das Key Management Interoperability Protocol (KMIP), ein OASIS-definiertes Standardprotokoll.
 
-
-NOTE: Nur Softwareverschlüsselung im Ruhezustand ist für SolidFire Enterprise SDS Cluster verfügbar.
-
 * link:task_system_manage_key_set_up_external_key_management.html["Externe Verwaltung einrichten"]
 * link:task_system_manage_rekey_software_ear_master_key.html["Verschlüsselung der Software beim Rest-Master-Schlüssel"]
 * link:concept_system_manage_key_recover_inaccessible_or_invalid_authentication_keys["Wiederherstellen von nicht zugänglichen oder ungültigen Authentifizierungsschlüsseln"]

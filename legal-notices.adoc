@@ -17,7 +17,7 @@ Rechtliche Hinweise ermöglichen den Zugriff auf Copyright-Erklärungen, Marken,
 
 == Urheberrecht
 
-http://www.netapp.com/us/legal/copyright.aspx[]
+link:https://www.netapp.com/company/legal/copyright/["https://www.netapp.com/company/legal/copyright/"^]
 
 
 
@@ -25,7 +25,7 @@ http://www.netapp.com/us/legal/copyright.aspx[]
 
 NetApp, das NETAPP Logo und die auf der NetApp Markenseite aufgeführten Marken sind Marken von NetApp Inc. Andere Firmen- und Produktnamen können Marken der jeweiligen Eigentümer sein.
 
-http://www.netapp.com/us/legal/netapptmlist.aspx[]
+link:https://www.netapp.com/company/legal/trademarks/["https://www.netapp.com/company/legal/trademarks/"^]
 
 
 
@@ -33,13 +33,13 @@ http://www.netapp.com/us/legal/netapptmlist.aspx[]
 
 Eine aktuelle Liste der NetApp Patente finden Sie unter:
 
-https://www.netapp.com/us/media/patents-page.pdf[]
+link:https://www.netapp.com/pdf.html?item=/media/11887-patentspage.pdf["https://www.netapp.com/pdf.html?item=/media/11887-patentspage.pdf"^]
 
 
 
 == Datenschutzrichtlinie
 
-https://www.netapp.com/us/legal/privacypolicy/index.aspx[]
+link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.com/company/legal/privacy-policy/"^]
 
 
 
@@ -51,10 +51,10 @@ In den Benachrichtigungsdateien finden Sie Informationen zu Urheberrechten und L
 * link:./media/Ember_OS_12.7.pdf["Hinweis für Ember OS 12.7"^]
 * link:./media/mNode_12.7.pdf["Hinweis für Management-Node 12.7"^]
 * link:./media/Element_Software_12.5.pdf["Hinweis zu Element Software 12.5"^]
-* link:./media/SolidFire_eSDS_12.5.pdf["Hinweis zu NetApp SolidFire-Enterprise-SDS 12.5"^]
 * link:./media/mNode_12.5.pdf["Hinweis für Management-Node 12.5"^]
-* link:media/mgmt_svcs_2.22_notice.pdf["Hinweis zu Management Services 2.22.7 (NetApp Element-Plug-in für VMware vCenter Server 5.0.37)"^]
-* link:media/mgmt_svcs_2.21_notice.pdf["Hinweis zu Management Services 2.21.61 (NetApp Element Plug-in für VMware vCenter Server 4.10.12)"^]
+* link:./media/mgmt_svcs_2.23_notice.pdf["Hinweis zu Managementservices 2.23.64 (NetApp Element-Plug-in für VMware vCenter Server 5.1.12)"^]
+* link:./media/mgmt_svcs_2.22_notice.pdf["Hinweis zu Management Services 2.22.7 (NetApp Element-Plug-in für VMware vCenter Server 5.0.37)"^]
+* link:./media/mgmt_svcs_2.21_notice.pdf["Hinweis zu Management Services 2.21.61 (NetApp Element Plug-in für VMware vCenter Server 4.10.12)"^]
 * link:./media/mgmt_2.20_notice.pdf["Hinweis zu Managementservices 2.20.69 (NetApp Element-Plug-in für vCenter Server 4.9.14)"^]
 * link:./media/mgmt_2.19_notice.pdf["Hinweis zu Managementservices 2.19.48 (NetApp Element-Plug-in für vCenter Server 4.8.34)"^]
 * link:./media/mgmt_svcs_2.18.pdf["Hinweis zu Managementservices 2.18.91 (NetApp Element-Plug-in für vCenter Server 4.7.10)"^]
@@ -63,7 +63,7 @@ In den Benachrichtigungsdateien finden Sie Informationen zu Urheberrechten und L
 * link:./media/mgmt-216.pdf["Hinweis zu Managementservices 2.16 (NetApp Element-Plug-in für vCenter Server 4.6.29)"^]
 * link:./media/mgmt-214.pdf["Hinweis zu Managementservices 2.14 (NetApp Element-Plug-in für vCenter Server 4.5.42)"^]
 * link:./media/mgmt-213.pdf["Hinweis zu Managementservices 2.13 (NetApp Element-Plug-in für vCenter Server 4.5.42)"^]
-* link:./media/SolidFire_eSDS_12.5.pdf["Hinweis zu NetApp SolidFire-Enterprise-SDS"^]
+* link:./media/storage_firmware_bundle_2.175.0_notices.pdf["Hinweis zum Speicher-Firmware-Paket 2.175.0"^]
 * link:./media/storage_firmware_bundle_2.164.0_notices.pdf["Hinweis zum Storage Firmware Bundle 2.164.0"^]
 * link:./media/storage_firmware_bundle_2.150_notices.pdf["Hinweis zum Storage Firmware Bundle 2.150"^]
 * link:./media/storage_firmware_bundle_2.146_notices.pdf["Hinweis zum Storage Firmware Bundle 2.146"^]

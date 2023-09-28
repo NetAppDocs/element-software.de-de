@@ -15,22 +15,6 @@ Möglicherweise müssen Sie die folgenden TCP-Ports über die Edge-Firewall Ihre
 
 Alle Ports sind sofern nicht anders angegeben TCP. Alle Ports sollten eine bidirektionale Kommunikation zwischen dem NetApp Support Server, dem Management-Node und den Nodes zulassen, auf denen die Element Software ausgeführt wird.
 
-[NOTE]
-====
-Die Web-UI und die API von NetApp Hybrid Cloud Control laden Softwarepakete aus dem Online-Software-Repository von NetApp herunter. Aus diesem Grund können einige URLs oder IP-Adressen auf der Grundlage des Inhaltszustellungsnetzwerks auf andere URLs oder IP-Adressen auflösen. Wenn möglich, sollten Sie mit einem Netzwerktechniker zusammenarbeiten, um diese URLs oder IP-Adressen den Firewall-Regeln hinzuzufügen. Gehen Sie dazu wie folgt vor:
-
-.Schritte
-. Verwenden Sie die Wget- oder Curl-Dienstprogramme, um auf eine URL zuzugreifen (z. B. support-sg-nawest.netapp.com).
-. Überprüfen Sie die Konnektivität, wie im folgenden Beispiel gezeigt:
-+
-image::network_ports.PNG[Überprüfen Sie die Anschlusskonnektivität]
-
-. Empfangen Sie einen fehlgeschlagene Zugriffe auf die URL (anders als support-sg-nawest.netapp.com).
-. Bearbeiten Sie die Firewall-Regeln, um die neue URL zuzulassen.
-. Wiederholen Sie die obigen Schritte, bis der Zugriffsversuch erfolgreich war.
-
-
-====
 
 TIP: Aktivieren Sie ICMP zwischen dem Managementknoten, Knoten mit Element Software und Cluster MVIP.
 
@@ -132,27 +116,6 @@ Storage Cluster MVIP
 442
  a| 
 UI- und API-Zugriff auf Upgrades von Storage-Node und Element Software
-
-
-
- a| 
-Management-Node
- a| 
-Benachrichtigung über neue Version:
-
-* `https://support.netapp.com/aods/`
-
-
-Software-Download:
-
-* `https://support-sg-emea.netapp.com`
-* `https://support-sg-naeast.netapp.com`
-* `https://support-sg-nawest.netapp.com`
-
- a| 
-443
- a| 
-Service-Upgrades für Management-Nodes
 
 
 

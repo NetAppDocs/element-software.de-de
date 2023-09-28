@@ -14,9 +14,6 @@ summary: Sie können die SetConfig-Methode verwenden, um die Netzwerk- und Clust
 Sie können das verwenden `SetConfig` Methode zum Festlegen der Netzwerk- und Cluster-Informationen für den Node. Diese Methode umfasst die gleichen Einstellungen in einer einzelnen API-Methode, die mit beiden zur Verfügung stehen `SetClusterConfig` Und `SetNetworkConfig` Methoden Nur die Felder, die geändert werden sollen, müssen mit dieser Methode enthalten sein.
 
 
-NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
-
-
 
 == Parameter
 

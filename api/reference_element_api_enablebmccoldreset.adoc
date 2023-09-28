@@ -14,9 +14,6 @@ summary: 'Sie können die Methode EnableBmcColdReset verwenden, um eine Hintergr
 Sie können das verwenden `EnableBmcColdReset` Methode zum Aktivieren einer Hintergrundaufgabe, bei der der Baseboard Management Controller (BMC) regelmäßig für alle Knoten im Cluster zurückgesetzt wird.
 
 
-NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
-
-
 
 == Parameter
 

@@ -14,9 +14,6 @@ summary: 'Sie können die GetIpmiInfo-Methode verwenden, um eine detaillierte Me
 Sie können das verwenden `GetIpmiInfo` Methode zur Anzeige einer detaillierten Meldung von Sensoren (Objekten) für Knotenlüfter, ein- und Auspufftemperaturen sowie von dem System überwachte Netzteile.
 
 
-NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
-
-
 
 == Parameter
 

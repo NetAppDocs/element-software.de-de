@@ -17,9 +17,13 @@ Der neue Snapshot wird aktiv und der vorhandene Snapshot bleibt erhalten, bis er
 
 *CLUSTER_FÜLLE*
 
+[NOTE]
+====
+* Sie können Snapshots erstellen, wenn die Cluster-Fülle sich an Phase 1, 2 oder 3 befindet. Sie können keine Snapshots erstellen, wenn die Cluster-Fülle die Phase 4 oder 5 erreicht.
+* Das Rollback eines Volumes auf einen Snapshot kann fehlschlagen, wenn die Slice-Synchronisierung ausgeführt wird. Wiederholen `RollbackToSnapshot` Nach Abschluss der Synchronisierung.
 
-NOTE: Sie können Snapshots erstellen, wenn die Cluster-Fülle sich an Phase 1, 2 oder 3 befindet. Sie können keine Snapshots erstellen, wenn die Cluster-Fülle die Phase 4 oder 5 erreicht.
 
+====
 
 
 == Parameter

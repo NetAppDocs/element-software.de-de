@@ -28,9 +28,6 @@ link:../storage/task_system_manage_cluster_enable_and_disable_encryption_for_a_c
 Bei einem anderen Verschlüsselungstyp, der Softwareverschlüsselung im Ruhezustand, können alle Daten, die in einem Storage-Cluster auf SSDs geschrieben wurden, verschlüsselt werden. link:../storage/task_system_manage_cluster_enable_and_disable_encryption_for_a_cluster.html["Wenn aktiviert"^], Es verschlüsselt alle Daten geschrieben und entschlüsselt alle Daten automatisch in der Software gelesen. Softwareverschlüsselung im Ruhezustand spiegelt die SED-Implementierung (Self-Encrypting Drive) in der Hardware, um Datensicherheit ohne SED zu gewährleisten.
 
 
-NOTE: Die Softwareverschlüsselung für Daten im Ruhezustand ist in allen SolidFire Enterprise SDS Nodes standardmäßig aktiviert. Die Softwareverschlüsselung im Ruhezustand bietet eine primäre Softwareschicht zur Datenverschlüsselung in SolidFire SDS-Nodes ohne Self-Encrypting Drives (SEDs).
-
-
 WARNING: Bei SolidFire All-Flash-Storage-Clustern muss die Softwareverschlüsselung im Ruhezustand während der Cluster-Erstellung aktiviert sein und nach dem Erstellen des Clusters nicht deaktiviert werden können.
 
 Sowohl die Software- als auch die Hardware-basierte Verschlüsselung im Ruhezustand können unabhängig voneinander oder kombiniert werden.

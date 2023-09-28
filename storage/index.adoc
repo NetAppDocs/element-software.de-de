@@ -19,7 +19,7 @@ Die Softwareschnittstelle basiert auf der Element API.
 
 * link:task_post_deploy_access_the_element_software_user_interface.html["Greifen Sie auf die Benutzeroberfläche der Element Software zu"]
 * link:task_post_deploy_configure_system_options.html["Konfigurieren Sie nach der Bereitstellung die SolidFire Systemoptionen"]
-* link:concept_upgrade_storage_components.html["Aktualisieren von Komponenten des Storage-Systems"]
+* link:../upgrade/concept_element_upgrade_overview.html["Aktualisieren von Komponenten des Storage-Systems"]
 * link:task_intro_use_basic_options_in_the_element_software_ui.html["Verwenden Sie grundlegende Optionen in der UI für Element Software"]
 * link:concept_system_manage_accounts_overview.html["Konten verwalten"]
 * link:concept_system_manage_system_management.html["Management des Systems"]

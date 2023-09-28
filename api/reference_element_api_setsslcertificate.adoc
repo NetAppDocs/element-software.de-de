@@ -14,6 +14,9 @@ summary: Mithilfe der Methode SetSSLCertificate können Sie ein Benutzer-SSL-Zer
 Sie können das verwenden `SetSSLCertificate` Methode zum Festlegen eines Benutzer-SSL-Zertifikats und eines privaten Schlüssels für die Storage-Nodes im Cluster.
 
 
+NOTE: Nach Verwendung der API müssen Sie den Management-Node neu booten.
+
+
 
 == Parameter
 

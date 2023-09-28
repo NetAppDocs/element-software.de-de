@@ -14,6 +14,3 @@ summary: 'Das Einrichten des Network Time Protocol \ (NTP\) kann auf zwei Arten 
 Das Einrichten des Network Time Protocol (NTP) lässt sich auf zwei Arten erreichen: Entweder weisen Sie jeden Knoten in einem Cluster an, nach Broadcasts zu hören, oder weisen Sie jeden Knoten an, einen NTP-Server nach Updates abzufragen.
 
 Mit NTP werden Uhren über ein Netzwerk synchronisiert. Die Verbindung zu einem internen oder externen NTP-Server sollte Teil der ersten Cluster-Einrichtung sein.
-
-
-NOTE: Diese Funktion ist in SolidFire Enterprise SDS-Clustern nicht verfügbar.

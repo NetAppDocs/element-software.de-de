@@ -18,7 +18,7 @@ Die Hardware-Verschlüsselung im Ruhezustand wird über die Element UI oder API 
 Die hardwarebasierte Verschlüsselung für Daten im Ruhezustand ist bei der Cluster-Erstellung standardmäßig nicht aktiviert und kann von der Element UI aktiviert und deaktiviert werden.
 
 
-WARNING: Bei SolidFire All-Flash-Storage-Clustern muss die Softwareverschlüsselung im Ruhezustand während der Cluster-Erstellung aktiviert sein und nach dem Erstellen des Clusters nicht deaktiviert werden können. Für ESDS-Cluster (SolidFire Enterprise SDS) ist die Softwareverschlüsselung im Ruhezustand standardmäßig aktiviert.
+WARNING: Bei SolidFire All-Flash-Storage-Clustern muss die Softwareverschlüsselung im Ruhezustand während der Cluster-Erstellung aktiviert sein und nach dem Erstellen des Clusters nicht deaktiviert werden können.
 
 .Was Sie benötigen
 * Sie verfügen über Cluster-Administratorrechte zum Aktivieren oder Ändern von Verschlüsselungseinstellungen.

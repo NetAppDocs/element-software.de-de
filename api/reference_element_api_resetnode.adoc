@@ -14,9 +14,6 @@ summary: 'Mit der Methode „ResetNode“ können Sie einen Knoten auf die Werks
 Sie können das verwenden `ResetNode` Methode zum Zurücksetzen eines Knotens auf die Werkseinstellungen. Alle Daten, Pakete (Software-Upgrades usw.), Konfigurationen und Protokolldateien werden vom Knoten gelöscht, wenn Sie diese Methode aufrufen. Während dieses Vorgangs werden jedoch die Netzwerkeinstellungen für den Node beibehalten. Nodes, die an einem Cluster beteiligt sind, können nicht auf die Werkseinstellungen zurückgesetzt werden.
 
 
-NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
-
-
 
 == Parameter
 

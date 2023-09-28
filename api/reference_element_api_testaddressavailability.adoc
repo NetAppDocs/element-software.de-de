@@ -14,9 +14,6 @@ summary: Sie können mithilfe der TestAddressAvailability-Methode überprüfen, 
 Sie können das verwenden `TestAddressAvailability` Methode, um zu überprüfen, ob eine bestimmte IP-Adresse auf einer Schnittstelle innerhalb des Storage-Clusters verwendet wird.
 
 
-NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
-
-
 
 == Parameter
 

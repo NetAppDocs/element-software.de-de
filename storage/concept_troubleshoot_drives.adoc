@@ -39,6 +39,6 @@ IMPORTANT: SolidFire Storage-Systeme unterstützen das Entfernen eines Laufwerks
 * xref:task_troubleshoot_remove_mdss_drives.adoc[Entfernen Sie MDSS-Laufwerke]
 * https://library.netapp.com/ecm/ecm_download_file/ECMLP2844771["Austausch von Laufwerken für SolidFire Storage-Nodes"]
 * https://library.netapp.com/ecm/ecm_download_file/ECMLP2846859["Austausch von Laufwerken für Storage-Nodes der Serie H600S"]
-* link:hardware/concept_h410s_h610s_info.html["H410S und H610S Hardware-Informationen"]
-* link:hardware/concept_sfseries_info.html["Hardwareinformationen zur SF-Series"]
+* link:../hardware/concept_h410s_h610s_info.html["H410S und H610S Hardware-Informationen"]
+* link:../hardware/concept_sfseries_info.html["Hardwareinformationen zur SF-Series"]
 

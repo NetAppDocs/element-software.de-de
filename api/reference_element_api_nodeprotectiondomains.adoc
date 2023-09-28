@@ -37,6 +37,6 @@ ProtectionDomains
  a| 
 Liste der Schutzdomänen, deren Mitglied der Knoten ist.
  a| 
-link:reference_element_api_protectiondomain.md#GUID-96388C5C-ACA2-44D9-86CE-19FEF0825A11["ProtectionDomain"]
+link:reference_element_api_protectiondomain.html["ProtectionDomain"]
 
 |===

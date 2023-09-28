@@ -18,8 +18,6 @@ Sie können Ihre Storage-Ressourcen in Ihrem System anzeigen und ihre IP-Adresse
 
 Sie können Storage-Informationen für Ihre Systeme mit mehreren Nodes anzeigen. Wenn link:../concepts/concept_solidfire_concepts_data_protection.html#custom_pd["Benutzerdefinierte Sicherungsdomänen"] Bei Zuordnung sehen Sie, welche Sicherungsdomänen spezifischen Nodes zugewiesen sind.
 
-Bei SolidFire-SDS-Knoten können Sie auf der Registerkarte Speicher den Bestand überwachen.
-
 .Schritte
 . Öffnen Sie die IP-Adresse des Management-Node in einem Webbrowser. Beispiel:
 +

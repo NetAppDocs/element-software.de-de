@@ -14,9 +14,6 @@ summary: Mit der ListNodeStats-Methode können Sie die allgemeinen Aktivitätsme
 Sie können das verwenden `ListNodeStats` Methode zur Anzeige der allgemeinen Aktivitätsmessungen für alle Storage-Nodes in einem Storage-Cluster
 
 
-NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
-
-
 
 == Parameter
 

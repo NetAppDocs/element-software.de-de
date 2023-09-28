@@ -14,9 +14,6 @@ summary: Sie können die Methode GetIpmiConfig verwenden, um Hardware-Sensorinfo
 Sie können das verwenden `GetIpmiConfig` Methode zum Abrufen von Hardware-Sensorinformationen von Sensoren, die sich im Node befinden.
 
 
-NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
-
-
 
 == Parameter
 

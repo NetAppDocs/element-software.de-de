@@ -102,5 +102,5 @@ Nachdem das System eine Meldung beseitigt hat, werden alle Informationen über d
 == Weitere Informationen
 
 * xref:reference_monitor_cluster_fault_codes.adoc[Cluster-Fehlercodes]
-* link:api/index.html["Storage-Management mit der Element API"]
+* link:../api/index.html["Storage-Management mit der Element API"]
 

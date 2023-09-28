@@ -119,7 +119,7 @@ KmSchlüsselserver
  a| 
 Ein Objekt, das Details zum neu geänderten Schlüsselserver enthält.
  a| 
-link:reference_element_api_keyserverkmip.md#["KeyServerkmip"]
+link:reference_element_api_keyserverkmip.html["KeyServerkmip"]
 
 |===
 

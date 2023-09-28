@@ -31,7 +31,7 @@ Wenn Sie beispielsweise eine benutzerdefinierte Portnummer hinzufügen möchten,
 . Wählen Sie *LDAPS-Protokoll verwenden*.
 . Geben Sie die erforderlichen Informationen unter *Allgemeine Einstellungen* ein.
 +
-link:reference_system_manage_ldap_details.md#["LDAP-Details"]
+link:concept_system_manage_manage_ldap.html#view_ldap_details["LDAP-Details"]
 
 +
 image::../media/element_new_ldap_servers.jpg[Element neuer ldap-Server]
@@ -59,8 +59,10 @@ Jetzt haben Sie einen Benutzer mit dem Wert einer Active Directory-Gruppe.
 
 Um dies zu testen, melden Sie sich von der Element UI ab und melden Sie sich als Benutzer in dieser Gruppe an.
 
-*Verwandte Informationen*
 
-xref:task_system_manage_create_a_cluster_administrator_account.adoc[Erstellen eines Cluster-Administratorkontos]
 
-xref:reference_system_manage_ldap_details.adoc[LDAP-Details]
+== Verwandte Informationen
+
+* link:concept_system_manage_manage_cluster_administrator_users.html#create_cluster_admin_account["Erstellen eines Cluster-Administratorkontos"]
+* link:concept_system_manage_manage_ldap.html#view_ldap_details["LDAP-Details"]
+

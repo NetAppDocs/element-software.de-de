@@ -13,9 +13,6 @@ summary: Sie können die Methode „Neustart“ verwenden, um die Netzwerkdienst
 [role="lead"]
 Sie können das verwenden `RestartNetworking` Methode zum Neustart der Netzwerkdienste auf einem Knoten.
 
-
-NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
-
 ACHTUNG:
 
 Mit dieser Methode werden alle Netzwerkdienste auf einem Node neu gestartet, was zu einem vorübergehenden Verlust der Netzwerkverbindung führt.

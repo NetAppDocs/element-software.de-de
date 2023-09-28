@@ -15,7 +15,7 @@ Sie müssen einzelne Nodes konfigurieren, bevor Sie sie einem Cluster hinzufüge
 
 Es gibt zwei Optionen für die Konfiguration von Speicher-Nodes:
 
-* <<Konfigurieren Sie einen Storage-Node über die UI pro Node,UI pro Node>>: Verwenden Sie die Pro-Node-Benutzeroberfläche (https://<node_management_IP>:442)[] So konfigurieren Sie die Node-Netzwerkeinstellungen.
+* <<Konfigurieren Sie einen Storage-Node über die UI pro Node,UI pro Node>>: Verwenden Sie die Pro-Node-Benutzeroberfläche  So konfigurieren Sie die Node-Netzwerkeinstellungen.
 * <<Konfigurieren Sie über die TUI einen Storage-Node,TUI>>: Verwenden Sie die Node Terminal User Interface (TUI), um den Knoten zu konfigurieren.
 
 

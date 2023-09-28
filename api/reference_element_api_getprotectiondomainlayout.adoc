@@ -34,7 +34,7 @@ SchutzDomainLayout
  a| 
 Liste der Nodes mit jeweils zugehörigen Sicherungsdomänen.
  a| 
-JSON-Liste von link:reference_element_api_nodeprotectiondomains.md#GUID-3750B3B8-6A66-402F-85F1-E828005084BB["NodeProtectionDomains"] Objekte:
+JSON-Liste von link:reference_element_api_nodeprotectiondomains.html["NodeProtectionDomains"] Objekte:
 
 |===
 

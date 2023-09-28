@@ -20,20 +20,18 @@ Sie können einem vorhandenen Cluster Nodes mit kleineren oder größeren Kapazi
 
 NOTE: Wenn ein neu hinzugefügter Node mehr als 50 % der gesamten Cluster-Kapazität beträgt, wird einige der Kapazitäten dieses Node unbrauchbar („ungenutzt“) gemacht, sodass die Kapazitätsregel eingehalten wird. Dies bleibt der Fall, bis mehr Storage hinzugefügt wird. Wenn ein sehr großer Node hinzugefügt wird, der auch die Kapazitätsregel nicht befolgt, kann der zuvor isolierte Node nicht mehr ungenutzt bleiben, während der neu hinzugefügte Node ungenutzt ist. Um dies zu vermeiden, sollte immer paarweise Kapazität hinzugefügt werden. Wenn ein Node gestrandet wird, wird der stranddecacity-Cluster-Fehler geworfen.
 
-https://www.youtube.com/embed/2smVHWkikXY?rel=0["NetApp Video: Skalieren nach eigenen Regeln: Erweitern eines SolidFire-Clusters"]
+https://www.youtube.com/embed/2smVHWkikXY?rel=0["NetApp Video: Skalieren nach eigenen Regeln: Erweitern eines SolidFire-Clusters"^]
 
-Nodes können zu SolidFire Enterprise SDS-Clustern (SolidFire ESDS) oder zu NetApp HCI Appliances hinzugefügt werden.
-
-SolidFire ESDS-Knoten werden mit einem Node-Typ-Präfix von „`SFC`“ gekennzeichnet, z. B. „`s F.c100.`“
+Sie können NetApp HCI Appliances Nodes hinzufügen.
 
 .Schritte
 . Wählen Sie *Cluster* > *Knoten*.
 . Klicken Sie auf *Ausstehend*, um die Liste der ausstehenden Knoten anzuzeigen.
 +
-Wenn der Vorgang zum Hinzufügen von Knoten (sowohl SolidFire-ESDS als auch nicht-SolidFire-ESDS-Knoten) abgeschlossen ist, werden sie in der Liste Aktive Knoten angezeigt. Bis dahin werden die ausstehenden Knoten in der Liste „Ausstehend aktiv“ angezeigt.
+Wenn der Vorgang zum Hinzufügen von Nodes abgeschlossen ist, werden diese in der Liste der aktiven Nodes angezeigt. Bis dahin werden die ausstehenden Knoten in der Liste „Ausstehend aktiv“ angezeigt.
 
 +
-Bei Knoten, die keine SolidFire ESDS-Knoten sind, installiert SolidFire die Element Softwareversion des Clusters auf den ausstehenden Knoten, wenn Sie sie einem Cluster hinzufügen. Dies kann einige Minuten dauern.
+SolidFire installiert die Element Softwareversion des Clusters auf den ausstehenden Nodes, wenn Sie sie einem Cluster hinzufügen. Dies kann einige Minuten dauern.
 
 . Führen Sie einen der folgenden Schritte aus:
 +

@@ -31,19 +31,11 @@ Ein SolidFire System umfasst folgende Funktionen:
 
 
 
-== Implementierungsoptionen von SolidFire –
+== SolidFire Implementierung
 
-SolidFire bietet verschiedene Implementierungsoptionen:
+Verwenden Sie von NetApp bereitgestellte und in NetApp Element Software integrierte Storage-Nodes.
 
-* Verwenden Sie die von NetApp bereitgestellten Storage-Nodes und sind in die NetApp Element Software integriert
-+
 link:../concepts/concept_solidfire_concepts_solidfire_architecture_overview.html["Übersicht über die All-Flash-Storage-Architektur von SolidFire"]
-
-* Verwenden Sie Ihren eigenen Server zur Ausführung von Element Software mithilfe von Container-SolidFire Enterprise SDS
-+
-link:../esds/concept_get_started_esds.html["Erste Schritte mit NetApp SolidFire Enterprise SDS"]
-
-
 
 
 

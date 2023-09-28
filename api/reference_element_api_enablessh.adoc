@@ -14,9 +14,6 @@ summary: Sie können die EnableSsh-Methode verwenden, um den SSH-Dienst für ein
 Sie können das verwenden `EnableSsh` Methode zum Aktivieren des SSH-Dienstes (Secure Shell) für einen einzelnen Node. Diese Methode wirkt sich nicht auf die Cluster-weite SSH-Zeitüberschreitungsdauer aus und befreit den Node nicht davon, SSH durch das globale SSH-Timeout deaktiviert zu haben.
 
 
-NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
-
-
 
 == Parameter
 

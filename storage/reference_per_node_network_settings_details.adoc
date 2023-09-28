@@ -15,9 +15,6 @@ Sie können die Netzwerkeinstellungen des Storage-Nodes ändern, um dem Node ein
 
 Wenn Sie sich beim Knoten anmelden, werden auf der Seite *Netzwerkeinstellungen* die Netzwerkeinstellungen für einen Speicherknoten angezeigt (https://<node[] IP>:442/hcc/Node/Network-settings). Sie können entweder *Bond1G* (Management) oder *Bond10G* (Storage) Einstellungen auswählen. In der folgenden Liste werden die Einstellungen beschrieben, die Sie ändern können, wenn sich ein Speicherknoten im Status „verfügbar“, „Ausstehend“ oder „aktiv“ befindet:
 
-
-NOTE: Wenn Sie einen SolidFire Enterprise SDS-Cluster ausführen, können die meisten Netzwerkeinstellungen in der Node-UI nach der Node-Implementierung nicht mehr geändert werden.
-
 * *Methode*
 +
 Die Methode zum Konfigurieren der Schnittstelle. Mögliche Methoden:

@@ -15,9 +15,6 @@ Sie können die Cluster-Einstellungen für einen Storage-Node nach der Cluster-K
 
 In der folgenden Liste werden die Clustereinstellungen für einen Speicherknoten beschrieben, die auf der Seite *Cluster-Einstellungen* der Benutzeroberfläche pro Node angezeigt werden (https://<node[] IP>:442/hcc/Node/Cluster-settings).
 
-
-NOTE: Wenn Sie einen SolidFire Enterprise SDS-Cluster ausführen, können die meisten Netzwerkeinstellungen in der Node-UI nach der Node-Implementierung nicht mehr geändert werden.
-
 * * Rolle*
 +
 Rolle, die der Node im Cluster hat. Mögliche Werte:

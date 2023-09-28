@@ -14,9 +14,6 @@ summary: Mit der ListClusterInterface Preference-Methode können in Storage-Clus
 Der `ListClusterInterfacePreference` Die Methode ermöglicht in Storage-Cluster integrierte Systeme, auf denen Element Software ausgeführt wird, um die im System gespeicherten Voreinstellungen für die Cluster-Schnittstelle aufzulisten. Diese Methode ist für den internen Gebrauch bestimmt.
 
 
-NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
-
-
 
 == Parameter
 

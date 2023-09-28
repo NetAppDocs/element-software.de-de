@@ -55,7 +55,7 @@ Nein
  a| 
 EnableSoftwareVerschlüsselungAtest
  a| 
-Aktivieren Sie diesen Parameter, um eine softwarebasierte Verschlüsselung im Ruhezustand zu verwenden. Standardmäßig auf SolidFire-SDS-Clustern auf „true“ gesetzt. Standardmäßig auf allen anderen Clustern auf false gesetzt. Nach Aktivierung der Softwareverschlüsselung im Ruhezustand kann sie nicht auf dem Cluster deaktiviert werden.
+Aktivieren Sie diesen Parameter, um eine softwarebasierte Verschlüsselung im Ruhezustand zu verwenden. Bei allen Clustern ist der Standardwert FALSE. Nach Aktivierung der Softwareverschlüsselung im Ruhezustand kann sie nicht auf dem Cluster deaktiviert werden.
  a| 
 boolesch
  a| 

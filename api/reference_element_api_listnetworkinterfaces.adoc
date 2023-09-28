@@ -14,9 +14,6 @@ summary: Sie können die Methode ListNetworkInterfaces verwenden, um Information
 Sie können das verwenden `ListNetworkInterfaces` Methode zum Auflisten von Informationen zu jeder Netzwerkschnittstelle auf einem Node. Diese API-Methode ist für die Verwendung auf einzelnen Nodes gedacht. Für den Zugriff auf einzelne Nodes ist eine Benutzer-ID und Passwort-Authentifizierung erforderlich. Sie können diese Methode jedoch im Cluster verwenden, wenn der Parameter Force im Methodenaufruf den Wert „true“ angegeben hat. Wenn der Parameter auf dem Cluster verwendet wird, werden alle Schnittstellen aufgeführt.
 
 
-NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
-
-
 
 == Parameter
 

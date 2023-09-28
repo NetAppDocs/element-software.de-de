@@ -14,9 +14,6 @@ summary: Sie können die DisableSsh-Methode verwenden, um den SSH-Dienst für ei
 Sie können das verwenden `DisableSsh` Methode zum Deaktivieren des SSH-Service für einen einzelnen Storage-Node Diese Methode hat keine Auswirkungen auf die Dauer der Zeitüberschreitung des Cluster-weiten SSH-Service.
 
 
-NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
-
-
 
 == Parameter
 

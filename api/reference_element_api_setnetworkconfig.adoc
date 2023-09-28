@@ -14,9 +14,6 @@ summary: Sie können die Methode SetNetworkConfig verwenden, um die Netzwerkkonf
 Sie können das verwenden `SetNetworkConfig` Methode zum Festlegen der Netzwerkkonfiguration für einen Knoten. Um die aktuellen Netzwerkeinstellungen für einen Node anzuzeigen, führen Sie den aus `GetNetworkConfig` API-Methode.
 
 
-NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
-
-
 
 == Parameter
 

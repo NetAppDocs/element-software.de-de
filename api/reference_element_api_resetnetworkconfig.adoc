@@ -14,9 +14,6 @@ summary: Sie können die Methode „ResetNetworkConfig“ verwenden, um bei der 
 Sie können das verwenden `ResetNetworkConfig` Methode zur Behebung von Problemen bei der Netzwerkkonfiguration für einen einzelnen Knoten. Mit dieser Methode wird die Netzwerkkonfiguration eines einzelnen Knotens auf die werkseitigen Standardeinstellungen zurückgesetzt.
 
 
-NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
-
-
 
 == Parameter
 

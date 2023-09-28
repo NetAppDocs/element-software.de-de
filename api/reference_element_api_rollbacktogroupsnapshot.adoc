@@ -15,9 +15,13 @@ Verwenden Sie können `RollbackToGroupSnapshot` Um alle einzelnen Volumen in ein
 
 Bei einem Rollback zu einem Gruppen-Snapshot wird ein temporärer Snapshot jedes Volumes innerhalb des Gruppen-Snapshots erstellt.
 
+[NOTE]
+====
+* Das Erstellen eines Snapshots ist zulässig, wenn die Cluster-Fülle an Phase 1, 2 oder 3 liegt. Snapshots werden nicht erstellt, wenn die Cluster-Fülle in Phase 4 oder 5 liegt.
+* Das Rollback von Volumes auf einen Gruppen-Snapshot kann fehlschlagen, wenn die Slice-Synchronisierung ausgeführt wird. Wiederholen `RollbackToGroupSnapshot` Nach Abschluss der Synchronisierung.
 
-NOTE: Das Erstellen eines Snapshots ist zulässig, wenn die Cluster-Fülle an Phase 1, 2 oder 3 liegt. Snapshots werden nicht erstellt, wenn die Cluster-Fülle in Phase 4 oder 5 liegt.
 
+====
 
 
 == Parameter

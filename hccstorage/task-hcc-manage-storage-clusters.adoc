@@ -18,8 +18,6 @@ Sie können Storage-Cluster zur Bestandsaufnahme der Management-Node-Ressourcen 
 
 Nach dem Hinzufügen eines Speicher-Clusters können Sie die Cluster-Performance überwachen, die Anmeldeinformationen für das Storage-Cluster für die verwaltete Ressource ändern oder ein Storage-Cluster aus der Asset-Bestandsaufnahme des Management-Nodes entfernen, wenn dieses nicht mehr mit HCC verwaltet werden muss.
 
-Ab Element 12.2 können Sie den verwenden link:../esds/reference_esds_use_maintenance_mode.html["Wartungsmodus"] Funktionsoptionen zum Aktivieren und Deaktivieren des Wartungsmodus für Ihre Storage-Cluster-Nodes
-
 .Was Sie benötigen
 * *Clusteradministrator-Berechtigungen*: Sie haben Berechtigungen als Administrator auf dem link:../concepts/concept_intro_clusters.html#authoritative-storage-clusters["Autorisierende Storage-Cluster"]. Das autoritäre Cluster ist das erste Cluster, das während der Systemeinrichtung zur Inventarisierung der Managementknoten hinzugefügt wird.
 * *Element Software*: Die NetApp Element Software 11.3 oder höher wird in Ihrer Speichercluster-Version ausgeführt.
@@ -61,7 +59,6 @@ NOTE: Es können nur Remote-Storage-Cluster hinzugefügt werden, die derzeit nic
 
 NOTE: Nachdem Sie das Storage-Cluster hinzugefügt haben, kann der Cluster-Bestand bis zu 2 Minuten dauern, bis die neue Ergänzung angezeigt wird. Möglicherweise müssen Sie die Seite in Ihrem Browser aktualisieren, um die Änderungen anzuzeigen.
 
-. Wenn Sie Element ESDS-Cluster hinzufügen, geben Sie Ihren SSH-privaten Schlüssel und das SSH-Benutzerkonto ein oder laden Sie es hoch.
 
 
 
@@ -118,8 +115,6 @@ CAUTION: Durch die Auswahl von *Ja* wird der Cluster aus der Installation entfer
 == Aktivieren und deaktivieren Sie den Wartungsmodus
 
 Wenn Sie einen Storage-Node für Wartungsarbeiten, wie z. B. Software-Upgrades oder Host-Reparaturen, offline schalten müssen, können Sie die Auswirkungen auf den Rest des Storage-Clusters durch auf ein Minimum minimieren <<enable_main_mode,Aktivieren>> Wartungsmodus für diesen Node. Wenn Sie <<disable_main_mode,Deaktivieren>> Im Wartungsmodus wird der Node überwacht, um sicherzustellen, dass bestimmte Kriterien erfüllt werden, bevor der Node aus dem Wartungsmodus wechselt.
-
-Informationen finden Sie auf der link:../esds/reference_esds_use_maintenance_mode.html["Wartungsmodus"] Aktivieren und deaktivieren Sie die Funktionsoptionen und das link:../esds/reference_esds_use_maintenance_mode.html#possible-scenarios-while-using-maintenance-mode["Mögliche Szenarien bei Verwendung des Wartungsmodus"].
 
 .Was Sie benötigen
 * *Element Software*: Die NetApp Element Software 12.2 oder höher wird in Ihrer Speichercluster-Version ausgeführt.

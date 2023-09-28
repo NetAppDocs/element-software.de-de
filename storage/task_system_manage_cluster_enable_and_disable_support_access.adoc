@@ -15,9 +15,6 @@ Sie können den Support-Zugriff für die Fehlerbehebung vorübergehend für den 
 
 Um den Support-Zugriff zu ändern, müssen Sie über Berechtigungen für Cluster-Administratoren verfügen.
 
-
-NOTE: Diese Funktion ist in SolidFire Enterprise SDS-Clustern nicht verfügbar.
-
 . Klicken Sie Auf *Cluster* > *Einstellungen*.
 . Geben Sie im Abschnitt Support-Zugriff aktivieren/deaktivieren die Dauer (in Stunden) ein, die Sie dem Support Zugriff gewähren möchten.
 . Klicken Sie Auf *Support-Zugriff Aktivieren*.

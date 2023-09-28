@@ -52,7 +52,7 @@ KmSchlüsselanbieter
  a| 
 Ein Objekt, das Details zum neu erstellten Schlüsselanbieter enthält.
  a| 
-link:reference_element_api_keyproviderkmip.md#["KeyProviderKmip"]
+link:reference_element_api_keyproviderkmip.html["KeyProviderKmip"]
 
 |===
 

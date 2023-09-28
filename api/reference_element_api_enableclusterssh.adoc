@@ -14,9 +14,6 @@ summary: Sie können die EnableClusterSsh-Methode verwenden, um den SSH-Dienst a
 Sie können das verwenden `EnableClusterSsh` Methode zum Aktivieren des SSH-Service auf allen Nodes im Storage-Cluster.
 
 
-NOTE: SolidFire Enterprise SDS unterstützt diese Methode nicht. Wenn Sie diese Methode auf einem SolidFire ESDS-System verwenden, gibt die Methode einen Fehler aus.
-
-
 
 == Parameter
 
