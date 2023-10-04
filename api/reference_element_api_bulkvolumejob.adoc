@@ -64,8 +64,8 @@ Zeichenfolge
  a| 
 Das Format des Massenvolumes-Vorgangs. Mögliche Werte:
 
-* Komprimiert
 * Nativ
+* Unkomprimiert
 
  a| 
 Zeichenfolge

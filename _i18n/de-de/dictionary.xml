@@ -3339,7 +3339,6 @@
   <block id="f4c609fc8cfe4b4af500d9b32efdeef8" category="paragraph">Zeitstempel, der für den Massenvolumenauftrag im UTC+0-Format erstellt wurde.</block>
   <block id="11e18bb72465b19d35f1a1fb2d9a5ccc" category="paragraph">Die Anzahl der Sekunden seit Beginn des Jobs.</block>
   <block id="e553196c9c6aca88c9d5001211caacb9" category="paragraph">Das Format des Massenvolumes-Vorgangs. Mögliche Werte:</block>
-  <block id="2b98a4ad988a18c42682f388901f2672" category="list-text">Komprimiert</block>
   <block id="8e5f3adee38c8fccc13c1f3be0143796" category="list-text">Nativ</block>
   <block id="7a5bc9d962882cb35fcea421f3f78bd9" category="paragraph">Der eindeutige Schlüssel, der von der Massenvolumensitzung erstellt wird.</block>
   <block id="4405decce4419ff5443fb20a6d7efbb6" category="paragraph">Der vom Vorgang gemeldete Prozentsatz des Abgeschlossen.</block>
@@ -6537,7 +6536,6 @@
   <block id="e73f633d7130bda90fdf8bdfb25a7568" category="paragraph">ISCSI-Clients</block>
   <block id="dc00b10af56d2a7366b04770c01c14c2" category="paragraph">Storage Cluster MVIP</block>
   <block id="9d1964604a628a56c31d007f1f2340fb" category="paragraph">(Optional) UI- und API-Zugriff</block>
-  <block id="00a55ff76496c3c45ca20071f6151bfc" category="paragraph">monitoring.solidfire.com</block>
   <block id="6ac181854a8b48c5ac6018a305f6ae7c" category="paragraph">Berichterstellung für den Storage-Cluster an Active IQ</block>
   <block id="5ee0194e49d16c87d081efc156fb0d74" category="paragraph">Remote Storage Cluster MVIP</block>
   <block id="75a4d5a956df2844befb13a89867e179" category="paragraph">Kommunikation über die Verbindung des Remote-Replikationsclusters</block>
@@ -9856,7 +9854,6 @@
   <block id="c51558c5b0e3376ab979005c0eadcc9e" category="list-text">SVIP: Virtuelle Speicher-IP-Adresse</block>
   <block id="d54ce9de9df77c579775a7b6b1a4bdc0" category="paragraph">3260</block>
   <block id="980b3703717b76269490b885f315bb88" category="paragraph">Speicherknoten SIP</block>
-  <block id="43638993383f845bcd8925bd4e266bc9" category="paragraph">sfsupport.solidfire.com</block>
   <block id="54ea06f86e263d9bc3ed3b50598bbf94" category="paragraph">Reverse-SSH-Tunnel für den Support-Zugriff</block>
   <block id="96cfb6e2eafa2acea9be9443ff8808e3" category="paragraph">SSH-Zugriff für die Unterstützung</block>
   <block id="8cb02e0989a55415d84d6a664ebaa9c7" category="paragraph">DNS-Server</block>
@@ -10529,7 +10526,6 @@
   <block id="9b50fd8de96fcf38bc35a026df14fbc4" category="paragraph">Bei bestehenden vSphere Umgebungen mit einem registrierten NetApp Element Plug-in für VMware vCenter Server können Sie Ihre Plug-in-Registrierung aktualisieren, nachdem Sie das Management-Services-Paket, das den Plug-in-Service enthält, aktualisiert haben.</block>
   <block id="e6c04958395a323ddbc02c929b4dfdf0" category="paragraph">Sie können die Plug-in-Registrierung auf der vCenter Server Virtual Appliance (vCSA) oder Windows mithilfe des Registrierungsprogramms aktualisieren. Sie müssen Ihre Registrierung für das vCenter Plug-in auf jedem vCenter Server ändern, auf dem Sie das Plug-in verwenden müssen.</block>
   <block id="1ec8160ad002d3b57b0367c162c7e579" category="open-title">Element vCenter Plug-in 5.0 oder höher</block>
-  <block id="787e0e54cc17d9dd6bbd7cf4c4fbc14d" category="admonition">Das Element Plug-in für vCenter 5.0 und höher ist nicht mit vCenter Server 6.7 und 6.5 kompatibel.</block>
   <block id="e6d87bbd73a5a86fcf1e6cbc75296808" category="open-title">Element vCenter Plug-in 4.10 oder früher</block>
   <block id="524f8acc9609df7272285a19757aefcb" category="list-text">Sie aktualisieren gerade auf Element Plug-in für vCenter Server 4.10, 4.9, 4.8, 4.7, 4.6 4.5, oder 4.4.</block>
   <block id="a6a18366932bfeffc2341cc7aa5fe09d" category="list-text">Sie aktualisieren gerade auf einen 7.0, 6.7 oder 6.5 HTML5 vSphere Web Client.</block>
@@ -12017,4 +12013,8 @@
   <block id="eea7cb3a63edf642e1f15162351dfce7" category="list-text">Sie führen ein Upgrade auf Element Plug-in für vCenter Server 5.2, 5.1 oder 5.0 durch.</block>
   <block id="c9c6a2f6fa07c1f8c580586914c37e79" category="image-alt">Zeigt die Plug-in-Erweiterungspunkte nach einem erfolgreichen Upgrade oder einer erfolgreichen Installation für Element Plug-in 5.1 oder höher</block>
   <block id="f35f89119a6374d18bd89e0103590c61" category="image-alt">Zeigt die Plug-in-Erweiterungspunkte nach einem erfolgreichen Upgrade oder einer erfolgreichen Installation für Element Plug-in 4.10 oder früher</block>
+  <block id="1583ff28675a9e24a50fa1079a5dd985" category="paragraph"><block ref="43638993383f845bcd8925bd4e266bc9" prefix="" category="inline-code"></block></block>
+  <block id="86eccd8202a873aee7f9acfbe920bb59" category="paragraph"><block ref="00a55ff76496c3c45ca20071f6151bfc" prefix="" category="inline-code"></block></block>
+  <block id="474ed7ffbbc0fc1d58ad983e7ef700f6" category="admonition">Das Element Plug-in für vCenter 5.0 oder höher ist nicht mit vCenter Server 6.7 und 6.5 kompatibel.</block>
+  <block id="dfd25ff244b001be7beece9729517779" category="list-text">Unkomprimiert</block>
 </blocks>
