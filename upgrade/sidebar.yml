@@ -1,7 +1,6 @@
 ---
 section: upgrade
-title: Aktualisieren Sie Ihr NetApp SolidFire All-Flash-Storage-System für Element
-  Software 12.5 oder höher
+title: Upgrade für Ihr NetApp SolidFire All-Flash-Storage-System
 entries:
 - title: Übersicht der Aktualisierungssequenz
   url: "/upgrade/concept_element_upgrade_overview.html"

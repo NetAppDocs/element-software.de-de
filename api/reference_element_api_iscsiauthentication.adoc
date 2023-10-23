@@ -58,4 +58,5 @@ Die Authentifizierungsrichtung z. B. one-way (nur Initiator) oder Two-Way (Initi
 Zeichenfolge
 
 |===
-*Erhältlich ab Element 12.7.
+* Verfügbar ab Element 12.7.
+

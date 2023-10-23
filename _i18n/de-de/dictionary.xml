@@ -4107,7 +4107,6 @@
   <block id="e4129684446aea2a0364c5466dc85146" category="paragraph">Der vom Initiator während einer iSCSI-Sitzungsanmeldung angegebene CHAP-Benutzername.</block>
   <block id="ef72c37be9d1b9e6e5bbd6ef09448abe" category="paragraph">Richtung</block>
   <block id="e7eefd9834440f0ab15e111471053cf0" category="paragraph">Die Authentifizierungsrichtung z. B. one-way (nur Initiator) oder Two-Way (Initiator und Ziel).</block>
-  <block id="cd6217be1698a09a848043a5d6c72040" category="paragraph">*Erhältlich ab Element 12.7.</block>
   <block id="d75770a94c059a1d35360e5ac1f6153f" category="summary">Sie können die Multi-Faktor-Authentifizierung \ (MFA\) verwenden, um Benutzersitzungen mit einem Drittanbieter \ (IdP\) über die Security Assertion Markup Language \ (SAML\) zu verwalten.</block>
   <block id="9fba87d16629109ef300e4ed7ad24d7f" category="paragraph">Sie können Multi-Faktor-Authentifizierung (MFA) verwenden, um Benutzersitzungen über einen Drittanbieter-Identitätsanbieter (IdP) über die Security Assertion Markup Language (SAML) zu verwalten.</block>
   <block id="993977e3f068bdc36dab7b26598cb224" category="list-text"><block ref="993977e3f068bdc36dab7b26598cb224" category="inline-xref-macro-rx"></block></block>
@@ -5123,7 +5122,6 @@
   <block id="9440025bb9d633cec83a85e7a9cb4ba8" category="paragraph">OperationalState</block>
   <block id="9657129e12fbfe99a53283bf6ea49124" category="paragraph">Der grundlegende Betriebsstatus des vServers. Mögliche Werte:</block>
   <block id="c6ad545ed5197a02a4f86759e091d934" category="summary">Ein SolidFire All-Flash-Storage-System besteht aus Hardwarekomponenten wie Laufwerken und Nodes, die in einem Pool von Storage-Ressourcen kombiniert werden. Dieser Unified Cluster wird als einzelnes Storage-System mit NetApp Element Software gemanagt.</block>
-  <block id="b7faeba39aadbf9af836a1e70f5708d7" category="doc">SolidFire und Element Software 12.5 und höher die Dokumentation</block>
   <block id="474c6800f0719d621f24fc2682a27460" category="summary">Mit der Management-Node (mNode)-API können Sie Systemdienste aktualisieren, Cluster-Ressourcen und -Einstellungen managen, Systemtests und Dienstprogramme ausführen, Active IQ für die Systemüberwachung konfigurieren und den NetApp Support SSH-Zugriff zur Fehlerbehebung aktivieren oder deaktivieren.</block>
   <block id="b2fc999fbccff4aaaffa26387ba2644f" category="doc">Übersicht über DIE REST-API-UI für den Management-Node</block>
   <block id="f092926fa32883d124eb34471b6d25b2" category="paragraph">Über die integrierte REST-API-UI <block ref="c65dd28928a2f354717971258c7d9ec8" prefix="(" category="inline-code"></block>) Können Sie APIs ausführen oder verstehen, die mit den Management-Knoten-Services verbunden sind, einschließlich Proxy-Server-Konfiguration, Service-Level-Updates oder Asset-Management.</block>
@@ -11472,7 +11470,6 @@
   <block id="27f2e04c96b5ac3b10c4de8069658227" category="sidebar">Verwenden Sie Gruppen-Snapshots für die Datensicherung</block>
   <block id="cf35d1bd4f63afd1c731729075f91d65" category="sidebar">ROL Volumes in einen Gruppen-Snapshot zurück</block>
   <block id="e9c9178d0dcc22e83ce4dafbccebece2" category="sidebar">Konfigurieren Sie individuelle Schutzdomänen</block>
-  <block id="a3fc65b85282a6a88ae5d5d3defca6e5" category="sidebar">Aktualisieren Sie Ihr NetApp SolidFire All-Flash-Storage-System für Element Software 12.5 oder höher</block>
   <block id="b837bae0f441ebacd86887d737939282" category="sidebar">Verfahren für System-Upgrades</block>
   <block id="2e531c00d20727b760f0fefbb4c65c82" category="sidebar">Zeigen Sie Ihre Inventar auf der Seite Nodes von NetApp Hybrid Cloud Control an</block>
   <block id="767682e703a28fefdc1067e1fcf04243" category="sidebar">Überwachen Sie Volumes auf Ihrem Storage-Cluster mit NetApp Hybrid Cloud Control</block>
@@ -12017,4 +12014,6 @@
   <block id="86eccd8202a873aee7f9acfbe920bb59" category="paragraph"><block ref="00a55ff76496c3c45ca20071f6151bfc" prefix="" category="inline-code"></block></block>
   <block id="474ed7ffbbc0fc1d58ad983e7ef700f6" category="admonition">Das Element Plug-in für vCenter 5.0 oder höher ist nicht mit vCenter Server 6.7 und 6.5 kompatibel.</block>
   <block id="dfd25ff244b001be7beece9729517779" category="list-text">Unkomprimiert</block>
+  <block id="54b283655ec8649a11478759bf661650" category="list-text">Verfügbar ab Element 12.7.</block>
+  <block id="909a1c829d29d09da00949e5c8b87a0e" category="sidebar">Upgrade für Ihr NetApp SolidFire All-Flash-Storage-System</block>
 </blocks>
