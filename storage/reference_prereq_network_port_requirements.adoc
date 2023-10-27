@@ -2,7 +2,7 @@
 permalink: storage/reference_prereq_network_port_requirements.html 
 sidebar: sidebar 
 keywords: network port requirements, TCP ports, firewall, utilities, URL, access attempt, ICMP, MIP, SIP, MVIP, SVIP 
-summary: Möglicherweise müssen Sie die folgenden TCP-Ports über die Edge-Firewall Ihres Rechenzentrums zulassen, damit Sie das System Remote verwalten können und Clients außerhalb Ihres Rechenzentrums eine Verbindung zu Ressourcen herstellen können. Einige dieser Ports sind je nach Nutzung des Systems möglicherweise nicht erforderlich. 
+summary: Unter Umständen müssen die folgenden TCP-Ports durch die Edge-Firewall Ihres Datacenters aktiviert werden, damit das System Remote gemanagt werden kann und Clients außerhalb Ihres Datacenters Verbindungen zu Ressourcen herstellen können. Einige dieser Ports sind je nach Nutzung des Systems möglicherweise nicht erforderlich. 
 ---
 = Anforderungen an Netzwerk-Ports
 :allow-uri-read: 
