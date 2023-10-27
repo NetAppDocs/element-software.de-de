@@ -11,9 +11,9 @@ summary: Möglicherweise müssen Sie die folgenden TCP-Ports über die Edge-Fire
 
 
 [role="lead"]
-Möglicherweise müssen Sie die folgenden TCP-Ports über die Edge-Firewall Ihres Datacenters zulassen, sodass Sie das System Remote managen und Clients außerhalb Ihres Datacenters eine Verbindung zu Ressourcen herstellen können. Einige dieser Ports sind je nach Nutzung des Systems möglicherweise nicht erforderlich.
+Möglicherweise müssen Sie die folgenden TCP- und UDP-Ports über die Edge-Firewall Ihres Rechenzentrums zulassen, damit Sie das System Remote verwalten und Clients außerhalb Ihres Rechenzentrums die Verbindung zu Ressourcen ermöglichen können. Einige dieser Ports sind je nach Nutzung des Systems möglicherweise nicht erforderlich.
 
-Alle Ports sind sofern nicht anders angegeben TCP. Alle Ports sollten eine bidirektionale Kommunikation zwischen dem NetApp Support Server, dem Management-Node und den Nodes zulassen, auf denen die Element Software ausgeführt wird.
+Alle Ports sind TCP, sofern nicht anders angegeben, und alle TCP-Ports müssen die Dreiwege-Handshake-Kommunikation zwischen dem NetApp-Supportserver, dem Verwaltungsknoten und den Knoten unterstützen, auf denen die Element-Software ausgeführt wird. Beispielsweise kommuniziert der Host auf einem Management-Knoten über TCP-Port 443 mit dem Host auf einem Speicher-Cluster-MVIP-Ziel, und der Ziel-Host kommuniziert über einen beliebigen Port zurück zum Quellhost.
 
 
 TIP: Aktivieren Sie ICMP zwischen dem Managementknoten, Knoten mit Element Software und Cluster MVIP.
