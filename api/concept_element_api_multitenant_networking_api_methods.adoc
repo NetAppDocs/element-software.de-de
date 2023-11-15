@@ -49,6 +49,6 @@ Nachdem Sie ein virtuelles Netzwerk hinzugefügt haben, führt der Cluster autom
 * xref:reference_element_api_modifyvirtualnetwork.adoc[ModifyVirtualNetwork]
 * xref:reference_element_api_listvirtualnetworks.adoc[ListVirtualNetworks]
 * xref:reference_element_api_removevirtualnetwork.adoc[RemoveVirtualNetwork]
-* https://www.netapp.com/data-storage/solidfire/documentation/["Ressourcen-Seite zu NetApp SolidFire"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Dokumentation von SolidFire und Element Software"]
 * https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["Dokumentation für frühere Versionen von NetApp SolidFire und Element Produkten"^]
 

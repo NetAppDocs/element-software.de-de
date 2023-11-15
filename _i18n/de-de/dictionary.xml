@@ -391,8 +391,6 @@
   <block id="6ab62d383908172ba1559c687cc9e79d" category="list-text"><block ref="6ab62d383908172ba1559c687cc9e79d" category="inline-xref-macro-rx"></block></block>
   <block id="fe0ac658f2ed85de2fb9de9021e54f11" category="inline-xref-macro">ResyncSnapMirrorRelationship</block>
   <block id="141218207edca3157cfd1fdfb14ea44d" category="list-text"><block ref="141218207edca3157cfd1fdfb14ea44d" category="inline-xref-macro-rx"></block></block>
-  <block id="1c1519037df87ff4dd08fe6e757ff03f" category="inline-link">Ressourcen-Seite zu NetApp SolidFire</block>
-  <block id="abc0c04174a58217258765895984ed4e" category="list-text"><block ref="abc0c04174a58217258765895984ed4e" category="inline-link-rx"></block></block>
   <block id="89e3bb4cf03209dcb9c85e2455cde9c3" category="inline-link">Dokumentation für frühere Versionen von NetApp SolidFire und Element Produkten</block>
   <block id="461166164223a1234073a2c9d388d33a" category="list-text"><block ref="461166164223a1234073a2c9d388d33a" category="inline-link-rx"></block></block>
   <block id="5bca61520bd936a82d1e115d323d5a60" category="summary">Mit der TestLdapAuthentication-Methode können Sie die derzeit aktivierten LDAP-Authentifizierungseinstellungen validieren. Wenn die Konfiguration korrekt ist, gibt der API-Aufruf die Gruppenmitgliedschaft des getesteten Benutzers zurück.</block>
@@ -12016,4 +12014,6 @@
   <block id="331d6d490990c63b2cee0dc04fe2589b" category="paragraph">Alle Ports sind TCP, sofern nicht anders angegeben, und alle TCP-Ports müssen die Dreiwege-Handshake-Kommunikation zwischen dem NetApp-Supportserver, dem Verwaltungsknoten und den Knoten unterstützen, auf denen die Element-Software ausgeführt wird. Beispielsweise kommuniziert der Host auf einem Management-Knoten über TCP-Port 443 mit dem Host auf einem Speicher-Cluster-MVIP-Ziel, und der Ziel-Host kommuniziert über einen beliebigen Port zurück zum Quellhost.</block>
   <block id="f814466eb9bcf561b354422b41f381f3" category="summary">Unter Umständen müssen die folgenden TCP-Ports durch die Edge-Firewall Ihres Datacenters aktiviert werden, damit das System Remote gemanagt werden kann und Clients außerhalb Ihres Datacenters Verbindungen zu Ressourcen herstellen können. Einige dieser Ports sind je nach Nutzung des Systems möglicherweise nicht erforderlich.</block>
   <block id="c04c3f3380a29245247f6e8a6c77a880" category="paragraph">Möglicherweise müssen Sie die folgenden TCP- und UDP-Ports über die Edge-Firewall Ihres Rechenzentrums zulassen, damit Sie das System Remote verwalten und Clients außerhalb Ihres Rechenzentrums die Verbindung zu Ressourcen ermöglichen können. Einige dieser Ports sind je nach Nutzung des Systems möglicherweise nicht erforderlich.</block>
+  <block id="5858de35bb153f56bdb4f3fbd003b515" category="list-text"><block ref="5858de35bb153f56bdb4f3fbd003b515" category="inline-link-rx"></block></block>
+  <block id="591c130bf36c26fe5946fac7eeba4c11" category="list-text"><block ref="5858de35bb153f56bdb4f3fbd003b515" category="inline-link-rx"></block>Einbuchtung]</block>
 </blocks>
