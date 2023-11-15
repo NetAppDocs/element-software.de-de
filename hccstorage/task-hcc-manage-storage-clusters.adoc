@@ -198,5 +198,5 @@ Falls beim Aktivieren oder Deaktivieren des Wartungsmodus Fehler auftreten, wird
 == Weitere Informationen
 
 * link:../mnode/task_mnode_manage_storage_cluster_assets.html["Erstellen und Managen von Storage-Cluster-Assets"]
-* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Dokumentation von SolidFire und Element Software"]
 

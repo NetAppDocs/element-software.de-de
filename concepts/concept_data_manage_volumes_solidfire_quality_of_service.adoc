@@ -103,5 +103,5 @@ NOTE: Der ausgewählte Cluster muss zur Verwendung von QoS-Richtlinien Element 1
 
 == Weitere Informationen
 
-* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Dokumentation von SolidFire und Element Software"]
 

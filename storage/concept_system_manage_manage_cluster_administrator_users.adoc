@@ -158,6 +158,6 @@ Mithilfe der Element-UI können Sie die Kennwörter für den Cluster-Administrat
 
 * link:task_system_manage_enable_ldap_authentication.html["Aktivieren Sie die LDAP-Authentifizierung über die Benutzeroberfläche von Element"]
 * link:concept_system_manage_manage_ldap.html["Deaktivieren Sie LDAP"]
-* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Dokumentation von SolidFire und Element Software"]
 * https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
 

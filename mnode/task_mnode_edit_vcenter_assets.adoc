@@ -106,5 +106,5 @@ Die API gibt aktualisierte Controller-Informationen zurück.
 
 * link:task_mnode_add_assets.html["Fügen Sie dem Management-Node eine Controller-Ressource hinzu"]
 * https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
-* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Dokumentation von SolidFire und Element Software"]
 

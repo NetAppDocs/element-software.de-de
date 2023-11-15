@@ -198,5 +198,5 @@ NOTE: Persistente Volumes, die mit Managementservices verbunden sind, werden ein
 * link:../concepts/concept_solidfire_concepts_accounts_and_permissions.html["Informationen zu Accounts"]
 * link:../storage/task_data_manage_accounts_work_with_accounts_task.html["Arbeiten Sie mit Konten, die CHAP verwenden"]
 * https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
-* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Dokumentation von SolidFire und Element Software"]
 

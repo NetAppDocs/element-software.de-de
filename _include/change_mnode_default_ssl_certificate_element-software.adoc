@@ -31,6 +31,6 @@ NOTE: Das Cluster-SSL-Zertifikat wird automatisch auf alle neuen Nodes angewende
 
 * link:../mnode/reference_change_mnode_default_ssl_certificate.html["Ändern Sie das Standard-SSL-Zertifikat für den Management-Node"]
 * https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Element_Software/What_are_the_requirements_around_setting_custom_SSL_certificates_in_Element_Software%3F["Welche Anforderungen gelten für das Festlegen benutzerdefinierter SSL-Zertifikate in der Element Software?"^]
-* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Dokumentation von SolidFire und Element Software"]
 * https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
 

@@ -27,6 +27,6 @@ NOTE: Wenn das Cluster ein Zertifikat verwendet, das vor dem Upgrade weniger als
 == Weitere Informationen
 
 * link:../api/index.html["Storage-Management mit der Element API"]
-* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Dokumentation von SolidFire und Element Software"]
 * https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
 

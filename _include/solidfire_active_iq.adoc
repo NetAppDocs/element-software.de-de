@@ -18,7 +18,7 @@ Weitere Informationen zu SolidFire Active IQ finden Sie im https://docs.netapp.c
 
 == Finden Sie weitere Informationen
 
-* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Dokumentation von SolidFire und Element Software"]
 * https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
 * https://mysupport.netapp.com/site/tools/tool-eula/5ddb829ebd393e00015179b2["NetApp Support-Website  gt; Tools für Active IQ"^]
 

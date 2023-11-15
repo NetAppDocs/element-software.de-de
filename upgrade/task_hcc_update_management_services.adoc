@@ -147,6 +147,6 @@ Ein erfolgreiches Update liefert ein Ergebnis, das dem folgenden Beispiel ähnel
 [discrete]
 == Weitere Informationen
 
-* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Dokumentation von SolidFire und Element Software"]
 * https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
 

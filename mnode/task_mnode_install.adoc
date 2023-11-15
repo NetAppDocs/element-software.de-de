@@ -343,5 +343,5 @@ NOTE: Sie sollten eine neue NetApp HCC-Rolle in vCenter erstellen, um eine Contr
 * link:task_mnode_add_assets.html["Fügen Sie dem Management-Node eine Controller-Ressource hinzu"]
 * link:task_mnode_install_add_storage_NIC.html["Konfigurieren Sie eine Speicher-NIC"]
 * https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
-* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Dokumentation von SolidFire und Element Software"]
 

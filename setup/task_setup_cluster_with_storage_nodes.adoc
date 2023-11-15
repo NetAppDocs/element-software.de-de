@@ -26,5 +26,5 @@ Sie können ein Cluster mit Storage-Nodes einrichten und mithilfe von Element So
 
 == Weitere Informationen
 
-* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Dokumentation von SolidFire und Element Software"]
 

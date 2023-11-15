@@ -84,5 +84,5 @@ Sie können eine Volume-Zugriffsgruppe mithilfe von NetApp Hybrid Cloud Control 
 * link:../concepts/concept_solidfire_concepts_volume_access_groups.html["Erfahren Sie mehr über Volume Access Groups"]
 * link:task-hcc-manage-initiators.html#add-initiators-to-a-volume-access-group["Hinzufügen eines Initiators zu einer Volume-Zugriffsgruppe"]
 * https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
-* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Dokumentation von SolidFire und Element Software"]
 

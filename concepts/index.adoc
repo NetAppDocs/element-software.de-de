@@ -29,5 +29,5 @@ Lernen Sie grundlegende Konzepte in Bezug auf Element Software kennen.
 == Weitere Informationen
 
 * https://www.netapp.com/data-storage/solidfire/["SolidFire All-Flash-Storage im Überblick"^]
-* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Dokumentation von SolidFire und Element Software"]
 

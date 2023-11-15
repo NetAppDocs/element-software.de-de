@@ -78,6 +78,6 @@ NOTE: Wenn Sie versuchen, die Zuordnung eines Volumes zu einer QoS-Richtlinie au
 == Weitere Informationen
 
 * link:task_data_manage_volumes_remove_a_qos_policy_association_of_a_volume.html["Entfernen Sie die QoS-Richtlinienzuordnung eines Volumes"]
-* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Dokumentation von SolidFire und Element Software"]
 * https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
 

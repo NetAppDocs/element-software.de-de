@@ -27,5 +27,5 @@ Sie können ein Cluster mit Fibre Channel Nodes einrichten und es mithilfe der E
 
 == Weitere Informationen
 
-* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Dokumentation von SolidFire und Element Software"]
 

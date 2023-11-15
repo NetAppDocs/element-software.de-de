@@ -44,5 +44,5 @@ Erfahren Sie, wie Sie ein Storage-System für Ihre Umgebung einrichten.
 == Weitere Informationen
 
 * https://www.netapp.com/data-storage/solidfire/["SolidFire All-Flash-Storage im Überblick"^]
-* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Dokumentation von SolidFire und Element Software"]
 

@@ -19,6 +19,6 @@ Das Netzwerk-Setup für ein SolidFire System besteht aus Switch- und Port-Anford
 
 * link:../storage/concept_prereq_switch_configuration_for_solidfire_clusters.html["Switch-Konfiguration für Cluster mit Element Software"]
 * link:../storage/reference_prereq_network_port_requirements.html["Anforderungen an Netzwerk-Ports"]
-* https://www.netapp.com/data-storage/solidfire/documentation["Seite „SolidFire und Element Ressourcen“"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Dokumentation von SolidFire und Element Software"]
 * https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
 
