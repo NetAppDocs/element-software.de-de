@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade/task_hcc_upgrade_element_software.html 
 summary: Im Rahmen eines Upgrades des NetApp SolidFire Systems führen Sie ein Upgrade der NetApp Element Software durch. 
-keywords: netapp, solidfire, cluster, element, H610S upgrade, hcc, ansible upgrades, upgrade role 
+keywords: netapp, solidfire, cluster, element, H610S upgrade, hcc, upgrade role 
 ---
 = Upgrade der Element Software
 :hardbreaks:
