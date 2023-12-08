@@ -21,6 +21,7 @@ Zu diesen Komponenten gehören Managementservices, NetApp Hybrid Cloud Control, 
 
 [NOTE]
 ====
+* Ab dem 2023. November können Sie ein Komponenten-Upgrade nicht mit NetApp Hybrid Cloud Control oder REST API starten, da die (privaten und öffentlichen) Signaturschlüsselzertifikate am 5. November 2023 abgelaufen sind. Sie können dieses Problem beheben, indem Sie die im Knowledge Base-Artikel dokumentierte Problemumgehung befolgen https://kb.netapp.com/onprem/solidfire/Element_OS/SolidFire_and_HCI_upgrades_unable_to_start_due_to_upgrade_package_upload_error["SolidFire- und HCI-Upgrades können nicht gestartet werden, da Fehler beim Hochladen der Upgradepakete aufgetreten ist"^].
 * Ab Element 12.7 werden die Storage-Nodes SF2405 und SF9608 sowie FC0025 und SF-FCN-01 FC nicht unterstützt. Wenn Sie versuchen, einen dieser Knoten auf Element 12.7 zu aktualisieren, wird ein Fehler angezeigt, der angibt, dass dieser Knoten nicht von Element 12.7 unterstützt wird.
 * Ab Element 12.5 werden NetApp HealthTools bei Upgrades der Element Software nicht mehr unterstützt. Wenn Sie Element 11.0 oder 11.1 ausführen, müssen Sie zuerst https://docs.netapp.com/us-en/element-software-123/upgrade/task_hcc_upgrade_element_software.html#upgrade-element-software-at-connected-sites-using-healthtools["Upgrade auf Element 12.3 mit HealthTools"^] Und dann upgraden Sie mithilfe von NetApp Hybrid Cloud Control auf Element 12.5 oder höher.
 
