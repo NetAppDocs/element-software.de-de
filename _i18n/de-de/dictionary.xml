@@ -11426,26 +11426,6 @@
   <block id="f0e8a2f025f562374fa58233f9f7cd01" category="sidebar">Management von Storage mit dem Element Plug-in für vCenter Server</block>
   <block id="45f40a7365f71f3eafc4489e01e9aa82" category="sidebar">Monitoring von Storage mit NetApp SolidFire Active IQ</block>
   <block id="93168a8084b3e838d2932c4734bd234e" category="sidebar">Frühere Versionen</block>
-  <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">Los geht's</block>
-  <block id="01064f33f360eefba819bf9542c0486b" category="sidebar">Hardware warten</block>
-  <block id="111c5671bddfca211130815e5d97e7bc" category="sidebar">Unterstützte Firmware-Versionen für NetApp H-Series Storage Nodes</block>
-  <block id="f54101aa6702c025c4f74ec5ada7bae3" category="sidebar">Storage-Management</block>
-  <block id="bfd78ad06fdbded1393f2f3c6bce1cdb" category="sidebar">UI für die Element Software</block>
-  <block id="ed4186f75217d239b68544e14bbe38c9" category="sidebar">Nutzen Sie NetApp Hybrid Cloud Control</block>
-  <block id="1d5eadee8dd359da135590100c405785" category="sidebar">Verwenden Sie die Element Software-API</block>
-  <block id="b16427ba775ee26e7f5fa22679a4a605" category="sidebar">Verwenden Sie das Element Plug-in für vCenter Server</block>
-  <block id="d8d2cf4b5fd1196b5be39dd3b93ba995" category="sidebar">Nutzen Sie die NetApp SolidFire Active IQ</block>
-  <block id="6216a3b9e8c46cd0635bc8d3f9c8cf4f" category="sidebar">Nutzung von Integrations-Tools (Anmeldung erforderlich)</block>
-  <block id="52e27f272b7f3c0cd5623309ba926677" category="sidebar">Element-SDKs (Java, .NET, Python)</block>
-  <block id="2a9dbfa4b74c53d7304fc8b79a1874d3" category="sidebar">Verbessern Lassen</block>
-  <block id="fcf140abed196b8eba71c45f21312bce" category="sidebar">NetApp Lösungen</block>
-  <block id="81a123ccab93cd947289b672b0e50348" category="sidebar">Demos Tutorials</block>
-  <block id="a3306879b2c1b46c3e6e86a4c65d51bc" category="sidebar">NetApp University SolidFire-Training (Anmeldung erforderlich)</block>
-  <block id="ab1cf947f75ab4705fc3fcf084c10a01" category="sidebar">Installieren und Skalieren Ihres NetApp SolidFire Clusters (Video)</block>
-  <block id="483b680d14606131d42c44dbca0bb4f2" category="sidebar">NetApp SolidFire Installation (Video)</block>
-  <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">Blogs Community</block>
-  <block id="a310588c148d934b9b30c31802d4a30b" category="sidebar">NetApp Community</block>
-  <block id="213686afc3803be7caa09348765467fe" category="sidebar">Wo Sie Hilfe erhalten</block>
   <block id="e558a93d8af634916bae37b7136be1d2" category="sidebar">GetSoftwareVerschlüsselungatRestInfo</block>
   <block id="19d0a846033170bad30679c08c8ddf47" category="sidebar">Installation oder Wiederherstellung eines Management-Node</block>
   <block id="01f85930b405f5ff6ea401b95fb623af" category="sidebar">Arbeiten Sie mit der Management-Node-UI</block>
@@ -11701,7 +11681,6 @@
   <block id="a869730ec0116e46159bbff419d5cc17" category="list-text"><block ref="2a166fd6597dedff39b139e3ce76f82b" category="inline-link-rx"></block></block>
   <block id="bec35bb5875234837858b1ccdd637fca" category="inline-link">Dokumentation zu Element 11.1 und frühere Versionen</block>
   <block id="724428733630050ab3140356839e2af1" category="list-text"><block ref="724428733630050ab3140356839e2af1" category="inline-link-rx"></block></block>
-  <block id="b47307258c4d85ffb5f4141d7a660a9b" category="sidebar">Element 11.8.2 und frühere Dokumentation</block>
   <block id="cf459a4467554220e1dd70f653a8cf43" category="list-text">Für Managementservices ab Version 2.18 ist die Möglichkeit für den Remote-Zugriff auf dem Management-Node standardmäßig deaktiviert. Informationen zum Aktivieren der Fernzugriffsfunktionen finden Sie unter<block ref="9a48ac510c43b73ee86c7be400c5025f" category="inline-link-rx"></block>.</block>
   <block id="c9621c561bd7ae37e9a7ee7358f4f792" category="list-text">(Optional) Deaktivieren<block ref="2ec0ebe378e4a0f1bbb70e72c3942887" category="inline-link-rx"></block> Ein weiteres Jahr in der</block>
   <block id="c046b7ab02983ed5bb8f1b18c0c2c477" category="summary">Laden Sie das RTFI ISO-Image spezifisch für Ihre Element Software-Version von der NetApp Support Site herunter und implementieren Sie es mit einem bootfähigen, installierbaren Medium.</block>
@@ -12013,4 +11992,5 @@
   <block id="df0f8acf74958be223bdd3dabcce5038" category="inline-link">SolidFire- und HCI-Upgrades können nicht gestartet werden, da Fehler beim Hochladen der Upgradepakete aufgetreten ist</block>
   <block id="b9bbae8efe5c0f15ffba3f05d619b861" category="list-text">Ab dem 2023. November können Sie ein Komponenten-Upgrade nicht mit NetApp Hybrid Cloud Control oder REST API starten, da die (privaten und öffentlichen) Signaturschlüsselzertifikate am 5. November 2023 abgelaufen sind. Sie können dieses Problem beheben, indem Sie die im Knowledge Base-Artikel dokumentierte Problemumgehung befolgen<block ref="43e83b9864cac922c7475bad0e74a40f" category="inline-link-rx"></block>.</block>
   <block id="9f94ad22fed97f22703d9d145f565bfb" category="paragraph">Sie können das verwenden<block ref="e7d385ef5ac889916654bf5f865952f1" prefix=" " category="inline-code"></block> Methode zum proaktiven Entfernen von Laufwerken, die Teil des Clusters sind Sie können diese Methode verwenden, wenn Sie die Cluster-Kapazität verringern oder Laufwerke ersetzen möchten, die sich dem Ende ihrer Lebensdauer nähern.<block ref="e7d385ef5ac889916654bf5f865952f1" prefix=" " category="inline-code"></block> Erstellt eine dritte Kopie der Blockdaten auf den anderen Nodes im Cluster und wartet auf den Abschluss der Synchronisierung, bevor die Laufwerke in die Liste „verfügbar“ verschoben werden. Laufwerke in der Liste „verfügbar“ werden vollständig aus dem System entfernt und verfügen nicht über laufende Dienste oder aktive Daten.</block>
+  <block id="f9beecbb3d1ea8584ca694bab8a73de7" category="sidebar">Unterstützte Firmware-Versionen für Storage-Nodes</block>
 </blocks>
