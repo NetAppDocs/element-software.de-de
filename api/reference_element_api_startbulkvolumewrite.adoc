@@ -84,7 +84,7 @@ Nein
  a| 
 Merkmale
  a| 
-JSON-Attribute für den Massenvolumenjob.
+Liste von Name-Wert-Paaren im JSON-Objektformat. link:reference_element_api_attributes.html["Weitere Informationen ."].
  a| 
 JSON-Objekt
  a| 
