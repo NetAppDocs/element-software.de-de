@@ -24,6 +24,19 @@ Dieses Objekt enthält die folgenden Mitglieder:
 
 
  a| 
+BlocksUpgrade
+ a| 
+Der Fehler blockiert ein Upgrade. Mögliche Werte:
+
+* Wahr: Der Fehler blockiert ein Upgrade.
+* False: Der Fehler blockiert kein Upgrade.
+
+ a| 
+boolesch
+
+
+
+ a| 
 ClusterFaultID
  a| 
 Die eindeutige ID, die jedem Cluster-Fehler zugeordnet ist.

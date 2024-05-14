@@ -102,7 +102,7 @@ Nein
  a| 
 Merkmale
  a| 
-Liste von Name-Wert-Paaren im JSON-Objektformat. link:reference_element_api_attributes.html["Weitere Informationen ."].
+Liste der Name-Wert-Paare im JSON-Objektformat. link:reference_element_api_attributes.html["Weitere Informationen ."].
  a| 
 JSON-Objekt
  a| 
