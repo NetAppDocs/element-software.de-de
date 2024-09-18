@@ -14,7 +14,7 @@ settings:
   langs: de-de,us-en,ja-jp,ko-kr,zh-cn,zh-tw,es-es,fr-fr,it-it
 sidebar:
   entries:
-  - title: Dokumentation von SolidFire und Element Software
+  - title: Dokumentation zu SolidFire und Element Software 12.5 und 12.7
     url: "/index.html"
   - title: Versionshinweise
     url: "/concepts/concept_rn_relatedrn_element.html"
