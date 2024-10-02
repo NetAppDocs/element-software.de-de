@@ -14,6 +14,7 @@ summary: Für den Fall, dass die neueste Version nicht ausgeführt wird, steht D
 [role="lead"]
 Die Dokumentation für vorherige Versionen steht auf der NetApp Support Site zur Verfügung.
 
+* https://docs.netapp.com/us-en/element-software-125/index.html["Dokumentation zu Element 12.5"^]
 * https://docs.netapp.com/us-en/element-software-123/index.html["Dokumentation zu Element 12.3.x"^]
 * https://mysupport.netapp.com/documentation/docweb/index.html?productID=63945&language=en-US["Dokumentation zu Element 12.2.1"^]
 * https://mysupport.netapp.com/documentation/docweb/index.html?productID=63593&language=en-US["Dokumentation zu Element 12.2"^]
