@@ -1,7 +1,7 @@
 ---
 permalink: storage/task_snapmirror_perform_failback_when_source_volume_exists.html 
 sidebar: sidebar 
-keywords: failback, perform, source volume, snapmirror, ui 
+keywords: element, ui, failback, perform, source volume, snapmirror 
 summary: Sie können das ursprüngliche Quell-Volume neu synchronisieren und mit der NetApp Element Benutzeroberfläche zurück sichern. Dieses Verfahren gilt für Szenarien, in denen das ursprüngliche Quell-Volume noch vorhanden ist. 
 ---
 = Führen Sie ein Failback durch, wenn das Quell-Volume noch vorhanden ist

@@ -105,7 +105,7 @@ Systeme mit Element 10.1 und höher beinhalten Code, der direkt mit SnapMirror a
 
 Beginnend mit Element 10.3 und ONTAP 9.4 Systemen können ONTAP-basierte Volumes in Element Volumes repliziert werden, und zwar in bestimmten Anwendungsfällen mit eingeschränkter Funktionalität.
 
-Weitere Informationen finden Sie in der ONTAP-Dokumentation.
+Weitere Informationen finden Sie unter link:../storage/element-replication-index.html["Replizierung zwischen NetApp Element Software und ONTAP (ONTAP CLI)"].
 
 
 

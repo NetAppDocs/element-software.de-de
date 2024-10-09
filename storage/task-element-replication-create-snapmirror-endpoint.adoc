@@ -1,0 +1,25 @@
+---
+permalink: storage/task-element-replication-create-snapmirror-endpoint.html 
+sidebar: sidebar 
+keywords: ontap, cli, create, snapmirror, endpoint 
+summary: Sie müssen einen SnapMirror Endpunkt erstellen, bevor Sie eine Replizierungsbeziehung erstellen können. Sie können diese Aufgabe nur in der Webbenutzeroberfläche der Element-Software oder mit den API-Methoden ausführen. 
+---
+= Erstellen eines SnapMirror Endpunkts
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen einen SnapMirror Endpunkt erstellen, bevor Sie eine Replizierungsbeziehung erstellen können. Sie können diese Aufgabe nur in der Web-Benutzeroberfläche der Element-Software oder über die ausführenlink:../api/concept_element_api_snapmirror_api_methods.html["SnapMirror API-Methoden"].
+
+.Bevor Sie beginnen
+SnapMirror muss auf dem Element Cluster aktiviert sein.
+
+.Schritte
+. Klicken Sie auf *Datensicherung* > *SnapMirror Endpunkte*.
+. Klicken Sie Auf *Endpunkt Erstellen*.
+. Geben Sie im Dialogfeld *Neuen Endpunkt erstellen* die IP-Adresse für die ONTAP-Clusterverwaltung ein.
+. Geben Sie die Benutzer-ID und das Passwort des ONTAP Cluster-Administrators ein.
+. Klicken Sie Auf *Endpunkt Erstellen*.
+

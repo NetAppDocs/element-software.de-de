@@ -1,7 +1,7 @@
 ---
 permalink: storage/task_snapmirror_add_labels_to_snapshot_schedules.html 
 sidebar: sidebar 
-keywords: snapmirror labels, add labels to snapshot schedules, snapmirror policies 
+keywords: element, ui, snapmirror, labels, schedules, policies 
 summary: Sie können SnapMirror Beschriftungen zu Snapshot-Zeitplänen hinzufügen, um sicherzustellen, dass eine SnapMirror-Richtlinie angewendet wird. Sie können verfügbare Labels aus einem vorhandenen SnapMirror-Beziehungsdialogfeld oder NetAppONTAP System Manager anzeigen. 
 ---
 = Fügen Sie SnapMirror-Beschriftungen zu Snapshot-Zeitplänen hinzu

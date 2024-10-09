@@ -1,7 +1,7 @@
 ---
 permalink: storage/task_snapmirror_performing_failback_when_source_volume_no_longer_exists.html 
 sidebar: sidebar 
-keywords: failback, perform, source volume, snapmirror, dr, disaster recovery 
+keywords: element, ui, failback, perform, source, volume, snapmirror, dr, disaster, recovery 
 summary: Sie können das ursprüngliche Quell-Volume neu synchronisieren und mit der NetApp Element Benutzeroberfläche zurück sichern. Dieser Abschnitt gilt für Szenarien, in denen das ursprüngliche Quell-Volume verloren wurde, das ursprüngliche Cluster jedoch weiterhin intakt ist. Anweisungen zur Wiederherstellung eines neuen Clusters finden Sie in der Dokumentation auf der NetApp Support Site. 
 ---
 = Führen Sie ein Failback durch, wenn das Quell-Volume nicht mehr vorhanden ist

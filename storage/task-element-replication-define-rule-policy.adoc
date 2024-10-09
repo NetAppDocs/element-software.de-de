@@ -1,0 +1,108 @@
+---
+permalink: storage/task-element-replication-define-rule-policy.html 
+sidebar: sidebar 
+keywords: ontap, cli, define, rule, policy 
+summary: Für benutzerdefinierte Richtlinien mit dem Richtlinientyp „Mirror-Vault“ müssen Sie mindestens eine Regel definieren, die festlegt, welche Snapshot Kopien während der Initialisierung und Aktualisierung übertragen werden. Sie können auch Regeln für Standardrichtlinien mit dem Richtlinientyp „Mirror-Vault“ definieren. 
+---
+= Definieren Sie eine Regel für eine Richtlinie
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Für benutzerdefinierte Richtlinien mit dem Richtlinientyp „`mmirror-Vault`“ müssen Sie mindestens eine Regel definieren, die festlegt, welche Snapshot-Kopien während der Initialisierung und Aktualisierung übertragen werden. Sie können auch Regeln für Standardrichtlinien mit dem Richtlinientyp „`mmirror-Vault`“ definieren.
+
+.Über diese Aufgabe
+Für jede Richtlinie mit dem Richtlinientyp „`mmirror-Vault`“ muss eine Regel gelten, die angibt, welche Snapshot Kopien repliziert werden sollen. Die Regel „`bi-monthly`“ gibt beispielsweise an, dass nur Snapshot Kopien, denen das SnapMirror-Label „`bi-monthly`“ zugewiesen ist, repliziert werden sollen. Sie weisen das SnapMirror-Label zu, wenn Sie Element Snapshot Kopien konfigurieren.
+
+Jeder Richtlinientyp ist einer oder mehreren systemdefinierten Regeln zugeordnet. Diese Regeln werden einer Richtlinie automatisch zugewiesen, wenn Sie ihren Richtlinientyp angeben. Die folgende Tabelle zeigt die systemdefinierten Regeln.
+
+|===
+
+
+| Systemdefinierte Regel | Wird in Richtlinientypen verwendet | Ergebnis 
+
+
+ a| 
+sm_erstellt
+ a| 
+Asynchrone Spiegelung, Spiegelung/Vaulting
+ a| 
+Bei der Initialisierung und Aktualisierung wird eine von SnapMirror erstellte Snapshot Kopie übertragen.
+
+
+
+ a| 
+Täglich
+ a| 
+Mirror-Vault
+ a| 
+Neue Snapshot-Kopien auf der Quelle mit dem SnapMirror-Label "`daily`" werden bei Initialisierung und Aktualisierung übernommen.
+
+
+
+ a| 
+Wöchentlich
+ a| 
+Mirror-Vault
+ a| 
+Neue Snapshot-Kopien auf der Quelle mit dem SnapMirror-Label „`Weekly`“ werden bei der Initialisierung und Aktualisierung übertragen.
+
+
+
+ a| 
+Monatlich
+ a| 
+Mirror-Vault
+ a| 
+Neue Snapshot-Kopien auf der Quelle mit dem SnapMirror-Label „`mmonthly`“ werden bei der Initialisierung und dem Update übertragen.
+
+|===
+Sie können bei Bedarf zusätzliche Regeln für Standard- oder benutzerdefinierte Richtlinien festlegen. Beispiel:
+
+* Für die Standardrichtlinie `MirrorAndVault` können Sie eine Regel mit dem Namen „`bi-monthly`“ erstellen, um die Snapshot-Kopien der Quelle mit dem SnapMirror-Label „`bi-monthly`“ abzugleichen.
+* Für eine benutzerdefinierte Richtlinie mit dem Richtlinientyp „`mmirror-Vault`“ können Sie eine Regel mit dem Namen „`bi-Weekly`“ erstellen, um Snapshot-Kopien auf der Quelle mit dem SnapMirror-Label „`bi-Weekly`“ abzugleichen.
+
+
+.Schritt
+. Definieren Sie eine Regel für eine Richtlinie:
++
+`snapmirror policy add-rule -vserver _SVM_ -policy _policy_for_rule_ -snapmirror-label _snapmirror-label_ -keep _retention_count_`
+
++
+Eine vollständige Befehlssyntax finden Sie in der man-Page.
+
++
+Im folgenden Beispiel wird `bi-monthly` der Standardrichtlinie eine Regel mit dem Label SnapMirror hinzugefügt `MirrorAndVault`:
+
++
+[listing]
+----
+cluster_dst::> snapmirror policy add-rule -vserver svm1 -policy MirrorAndVault -snapmirror-label bi-monthly -keep 6
+----
++
+Im folgenden Beispiel wird `bi-weekly` der benutzerdefinierten `my_snapvault` Richtlinie eine Regel mit der Beschriftung „SnapMirror“ hinzugefügt:
+
++
+[listing]
+----
+cluster_dst::> snapmirror policy add-rule -vserver svm1 -policy my_snapvault -snapmirror-label bi-weekly -keep 26
+----
++
+Im folgenden Beispiel wird `app_consistent` der benutzerdefinierten `Sync` Richtlinie eine Regel mit der Beschriftung „SnapMirror“ hinzugefügt:
+
++
+[listing]
+----
+cluster_dst::> snapmirror policy add-rule -vserver svm1 -policy Sync -snapmirror-label app_consistent -keep 1
+----
++
+Sie können dann Snapshot-Kopien vom Quell-Cluster replizieren, die mit dem SnapMirror-Label übereinstimmen:
+
++
+[listing]
+----
+cluster_src::> snapshot create -vserver vs1 -volume vol1 -snapshot snapshot1 -snapmirror-label app_consistent
+----
+

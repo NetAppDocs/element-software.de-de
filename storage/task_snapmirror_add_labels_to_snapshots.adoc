@@ -1,7 +1,7 @@
 ---
 permalink: storage/task_snapmirror_add_labels_to_snapshots.html 
 sidebar: sidebar 
-keywords: snapmirror labels, add labels to snapshots, specify retention policies, group snapshots 
+keywords: element, ui, snapmirror, labels, retention, policies, group, snapshots 
 summary: Die SnapMirror-Beschriftungen geben die Snapshot-Aufbewahrungsrichtlinie auf dem SnapMirror-Endpunkt an. Sie können Snapshots mit Beschriftungen hinzufügen und sie gruppieren. 
 ---
 = Fügen Sie SnapMirror-Beschriftungen zu Snapshots hinzu

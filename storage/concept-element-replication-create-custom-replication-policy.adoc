@@ -1,0 +1,73 @@
+---
+permalink: storage/concept-element-replication-create-custom-replication-policy.html 
+sidebar: sidebar 
+keywords: ontap, cli, create, custom, replication, policy, relationship, 
+summary: Sie können eine benutzerdefinierte Replikationsrichtlinie erstellen, wenn die Standardrichtlinie für eine Beziehung nicht geeignet ist. 
+---
+= Erstellen Sie eine benutzerdefinierte Replikationsrichtlinie
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine Standard- oder benutzerdefinierte Richtlinie verwenden, wenn Sie eine Replikationsbeziehung erstellen. Für eine benutzerdefinierte einheitliche Replikationsrichtlinie müssen Sie eine oder mehrere _rules_ definieren, die festlegen, welche Snapshot-Kopien während der Initialisierung und Aktualisierung übertragen werden.
+
+Sie können eine benutzerdefinierte Replikationsrichtlinie erstellen, wenn die Standardrichtlinie für eine Beziehung nicht geeignet ist. Möglicherweise möchten Sie Daten z. B. in einer Netzwerkübertragung komprimieren oder die Anzahl der Versuche, die SnapMirror unternimmt, um Snapshot-Kopien zu übertragen, ändern.
+
+.Über diese Aufgabe
+Der Typ_Policy_ der Replikationsrichtlinie bestimmt die Art der von ihr unterstützten Beziehung. In der folgenden Tabelle sind die verfügbaren Richtlinientypen aufgeführt.
+
+[cols="2*"]
+|===
+
+
+| Richtlinientyp | Beziehungstyp 
+
+
+ a| 
+Asynchrone Spiegelung
+ a| 
+SnapMirror DR
+
+
+
+ a| 
+Mirror-Vault
+ a| 
+Einheitliche Replizierung
+
+|===
+.Schritt
+. Erstellen einer benutzerdefinierten Replizierungsrichtlinie:
++
+`snapmirror policy create -vserver _SVM_ -policy policy -type async-mirror|mirror-vault -comment _comment_ -tries _transfer_tries_ -transfer-priority low|normal -is-network-compression-enabled true|false`
+
++
+Eine vollständige Befehlssyntax finden Sie in der man-Page.
+
++
+Ab ONTAP 9.5 können Sie mithilfe des Parameters den Zeitplan für die Erstellung eines gemeinsamen Zeitplans für Snapshot-Kopien für synchrone SnapMirror-Beziehungen festlegen `-common-snapshot-schedule`. Standardmäßig beträgt der allgemeine Zeitplan für synchrone SnapMirror Beziehungen für Snapshot Kopien eine Stunde. Sie können einen Wert zwischen 30 Minuten und zwei Stunden für den Zeitplan für Snapshot-Kopien für synchrone SnapMirror-Beziehungen angeben.
+
++
+Im folgenden Beispiel wird eine benutzerdefinierte Replizierungsrichtlinie für SnapMirror DR erstellt, die Netzwerkkomprimierung für Datentransfers ermöglicht:
+
++
+[listing]
+----
+cluster_dst::> snapmirror policy create -vserver svm1 -policy DR_compressed -type async-mirror -comment “DR with network compression enabled” -is-network-compression-enabled true
+----
++
+Im folgenden Beispiel wird eine benutzerdefinierte Replizierungsrichtlinie für einheitliche Replizierung erstellt:
+
++
+[listing]
+----
+cluster_dst::> snapmirror policy create -vserver svm1 -policy my_unified -type mirror-vault
+----
+
+
+.Nachdem Sie fertig sind
+Für die Richtlinienarten „`mmirror-Vault`“ müssen Sie Regeln definieren, die festlegen, welche Snapshot-Kopien während der Initialisierung und Aktualisierung übertragen werden.
+
+ `snapmirror policy show`Überprüfen Sie mit dem Befehl, ob die SnapMirror-Richtlinie erstellt wurde. Eine vollständige Befehlssyntax finden Sie in der man-Page.

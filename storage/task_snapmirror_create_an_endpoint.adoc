@@ -1,7 +1,7 @@
 ---
 permalink: storage/task_snapmirror_create_an_endpoint.html 
 sidebar: sidebar 
-keywords: endpoints, create, snapmirror, ui 
+keywords: element, endpoints, create, snapmirror, ui 
 summary: Sie müssen einen SnapMirror Endpunkt in der NetApp Element-Benutzeroberfläche erstellen, bevor Sie eine Beziehung erstellen können. 
 ---
 = Erstellen eines SnapMirror Endpunkts
