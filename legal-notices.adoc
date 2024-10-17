@@ -65,6 +65,7 @@ In den Benachrichtigungsdateien finden Sie Informationen zu Urheberrechten und L
 * link:./media/mgmt-216.pdf["Hinweis zu Managementservices 2.16 (NetApp Element-Plug-in für vCenter Server 4.6.29)"^]
 * link:./media/mgmt-214.pdf["Hinweis zu Managementservices 2.14 (NetApp Element-Plug-in für vCenter Server 4.5.42)"^]
 * link:./media/mgmt-213.pdf["Hinweis zu Managementservices 2.13 (NetApp Element-Plug-in für vCenter Server 4.5.42)"^]
+* link:./media/storage_firmware_bundle_2.182.0_notices.pdf["Hinweis zum Speicher-Firmware-Paket 2.182.0"^]
 * link:./media/storage_firmware_bundle_2.175.0_notices.pdf["Hinweis zum Speicher-Firmware-Paket 2.175.0"^]
 * link:./media/storage_firmware_bundle_2.164.0_notices.pdf["Hinweis zum Storage Firmware Bundle 2.164.0"^]
 * link:./media/storage_firmware_bundle_2.150_notices.pdf["Hinweis zum Storage Firmware Bundle 2.150"^]
