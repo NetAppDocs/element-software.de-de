@@ -2,7 +2,7 @@
 permalink: storage/task-element-replication-enable-snapmirror-cluster.html 
 sidebar: sidebar 
 keywords: ontap, cli, enable, snapmirror, element, cluster 
-summary: Sie müssen SnapMirror auf dem Element-Cluster aktivieren, bevor Sie eine Replizierungsbeziehung erstellen können. Sie können diese Aufgabe nur in der Webbenutzeroberfläche der Element-Software oder mit den API-Methoden ausführen. 
+summary: Sie müssen SnapMirror auf dem Element-Cluster aktivieren, bevor Sie eine Replizierungsbeziehung erstellen können. Sie können diese Aufgabe nur in der Webbenutzeroberfläche der Element-Software oder mit der API-Methode ausführen. 
 ---
 = Aktivieren Sie SnapMirror auf dem Element Cluster
 :allow-uri-read: 
