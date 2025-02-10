@@ -21,7 +21,6 @@ Sie können Details für einzelne Nodes wie Service-Tags, Laufwerkdetails und Gr
 +
 ** *Knoten-ID*: Die vom System generierte ID für den Knoten.
 ** *Knotenname*: Der Hostname des Knotens.
-** *Verfügbare 4.000 IOPS*: Die für den Knoten konfigurierten IOPS.
 ** *Knotenrolle*: Die Rolle, die der Knoten im Cluster hat. Mögliche Werte:
 +
 *** Cluster Master: Der Knoten, der clusterweite administrative Aufgaben ausführt und MVIP und SVIP enthält.
@@ -31,6 +30,7 @@ Sie können Details für einzelne Nodes wie Service-Tags, Laufwerkdetails und Gr
 
 ** *Node Typ*: Der Modelltyp des Knotens.
 ** *Aktive Laufwerke*: Die Anzahl der aktiven Laufwerke im Knoten.
+** *Knotenauslastung*: Der Prozentsatz der Knotenauslastung basierend auf nodeHeat. Der angezeigte Wert ist recentPrimaryTotalHeat als Prozentsatz. Verfügbar ab Element 12.8.
 ** *Management IP*: Die Management-IP-Adresse (MIP), die dem Knoten für 1GbE- oder 10GbE-Netzwerkadministratoraufgaben zugewiesen wurde.
 ** *Cluster IP*: Die Cluster IP (CIP) Adresse, die dem Knoten zugewiesen wurde, der für die Kommunikation zwischen Knoten im selben Cluster verwendet wurde.
 ** *Speicher-IP*: Die Speicher-IP (SIP)-Adresse, die dem Knoten zugewiesen ist, der für die iSCSI-Netzwerkerkennung und den gesamten Datenverkehr im Datennetz verwendet wird.
@@ -39,6 +39,7 @@ Sie können Details für einzelne Nodes wie Service-Tags, Laufwerkdetails und Gr
 ** *Version*: Die Version der Software, die auf jedem Knoten ausgeführt wird.
 ** *Replication Port*: Der Port, der auf Knoten für die Remote-Replikation verwendet wird.
 ** *Service-Tag*: Die dem Knoten zugewiesene eindeutige Service-Tag-Nummer.
+** *Benutzerdefinierte Schutzdomäne*: Die benutzerdefinierte Schutzdomäne, die dem Knoten zugewiesen ist.
 
 
 

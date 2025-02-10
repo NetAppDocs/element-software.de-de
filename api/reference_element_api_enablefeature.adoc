@@ -22,6 +22,7 @@ Diese Methode verfügt über den folgenden Eingabeparameter.
 
 NOTE: Bei Systemen mit Element Software 11.x funktioniert die Funktion virtueller Volumes vor oder nach dem Festlegen der Schutzdomäne-Überwachung nur auf Node-Ebene.
 
+[cols="1a,3a,1a,1a,1a"]
 |===
 | Name | Beschreibung | Typ | Standardwert | Erforderlich 
 
@@ -34,6 +35,7 @@ Aktivieren einer Cluster-Funktion Mögliche Werte:
 * `fips`: Aktivierung von FIPS 140-2-2-zertifizierter Verschlüsselung für HTTPS-Kommunikation.
 * `FipsDrives`: Aktivierung der FIPS 140-2-Laufwerksunterstützung für den Speicher-Cluster.
 * `SnapMirror`: Aktivieren Sie die SnapMirror Replikation-Cluster-Funktion.
+* `VolumeLoadBalanceOnActualIOPS`: Aktivieren Sie den Slice-Balancing auf tatsächlichen IOPS statt auf Min IOPS. Verfügbar ab Element 12.8.
 * `vvols`: Aktivieren Sie die Element Software VVols Cluster Feature.
 
  a| 

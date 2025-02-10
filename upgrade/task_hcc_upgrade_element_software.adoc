@@ -55,7 +55,12 @@ IMPORTANT: Sie müssen ein Upgrade auf das neueste Management Services Bundle du
 ^2^Wenn Sie ein Cluster mit einer hohen Lese-IOPS-Last und einer längeren Firmware-Update-Zeit kombinieren, erhöht sich die Zeit für die Datensynchronisierung.
 
 +
-^3^ab Element 12.7 werden die SF2405 und SF9608 Storage Nodes sowie FC0025 und SF-FCN-01 FC Nodes nicht unterstützt. Wenn Sie versuchen, einen dieser Knoten auf Element 12.7 zu aktualisieren, wird ein Fehler angezeigt, der angibt, dass dieser Knoten nicht von Element 12.7 unterstützt wird.
+^3^ die folgenden Nodes werden nicht unterstützt. Wenn Sie versuchen, einen dieser Knoten auf eine nicht unterstützte Elementversion zu aktualisieren, wird eine Fehlermeldung angezeigt, die besagt, dass der Knoten nicht von Element 12.x unterstützt wird:
+
++
+** Ab Element 12.8, SF4805, SF9605, SF19210 und SF38410 Storage-Nodes
+** Ab Element 12.7, SF2405 und SF9608 Storage-Nodes und FC-Nodes FC0025 und SF-FCN-01
+
 
 * *Endbenutzer-Lizenzvereinbarung (EULA)*: Ab Management Services 2.20.69 müssen Sie die EULA akzeptieren und speichern, bevor Sie die NetApp Hybrid Cloud Control UI oder API zum Upgrade von Element Software verwenden:
 +

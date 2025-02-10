@@ -19,6 +19,7 @@ Einige Cluster-API-Methoden werden auf Nodes ausgeführt, die Teil eines Cluster
 * xref:reference_element_api_clearclusterfaults.adoc[ClearClusterStandards]
 * xref:reference_element_api_createclusterinterfacepreference.adoc[CreateClusterSchnittstellenPräferenz]
 * xref:reference_element_api_deleteclusterinterfacepreference.adoc[DeleteClusterSchnittstellenPräferenz]
+* xref:reference_element_api_disablefeature.adoc[DisableFeature]
 * xref:reference_element_api_enablefeature.adoc[EnableFeature]
 * xref:reference_element_api_getclustercapacity.adoc[GetClusterCapacity]
 * xref:reference_element_api_getclusterfullthreshold.adoc[GetClusterFullThreshold]

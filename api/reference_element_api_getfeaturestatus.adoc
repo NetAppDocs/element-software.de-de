@@ -19,6 +19,7 @@ Sie können das verwenden `GetFeatureStatus` Methode zum Abrufen des Status eine
 
 Diese Methode verfügt über den folgenden Eingabeparameter:
 
+[cols="1a,3a,1a,1a,1a"]
 |===
 | Name | Beschreibung | Typ | Standardwert | Erforderlich 
 
@@ -28,10 +29,11 @@ Merkmal
  a| 
 Der Status einer Cluster-Funktion. Wenn kein Wert angegeben wird, gibt das System den Status aller Funktionen zurück. Mögliche Werte:
 
-* VVols: Status für die VVols-Cluster-Funktion abrufen.
-* SnapMirror: Abrufen des Status für die SnapMirror Replikation-Cluster-Funktion.
-* FIPS: Abrufen des Status der Verschlüsselung nach FIPS 140-2 für die HTTPS-Kommunikationsfunktion.
-* FipsDrives: Status abrufen für die FIPS 140-2 Laufwerksverschlüsselungsfunktion.
+* `Vvols`: Status der VVols Cluster-Funktion abrufen.
+* `SnapMirror`: Status der SnapMirror-Replikationscluster-Funktion abrufen.
+* `Fips`: Status der Verschlüsselung nach FIPS 140-2 für HTTPS-Kommunikation abrufen.
+* `FipsDrives`: Status der FIPS 140-2-Laufwerksverschlüsselung abrufen.
+* `VolumeLoadBalanceOnActualIOPS`: Status für den Slice-Balancing auf tatsächlichen IOPS statt auf Min IOPS-Funktion abrufen. Verfügbar ab Element 12.8.
 
  a| 
 Zeichenfolge
@@ -105,6 +107,10 @@ Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
             {
                 "enabled": true,
                 "feature": "FipsDrives"
+            },
+            {
+                "enabled": true,
+                "feature": "VolumeLoadBalanceOnActualIOPS"
             }
         ]
     }

@@ -123,6 +123,21 @@ Ganzzahl
 
 
  a| 
+NodeHat
+ a| 
+Informationen zur Node-Auslastung. Verfügbar ab Element 12.8. Mitglieder:
+
+* PrimärTotalHeat: Primärer Node IOPS insgesamt/konfigurierter Node IOPS durchschnittlich über 24 Stunden
+* RecentPrimaryTotalHeat: IOPS pro Node, der insgesamt für den primären Node konfiguriert wurde, durchschnittlich über eine Stunde
+* RecentTotalHeat: IOPS pro Node, konfiguriert per Node, durchschnittlich über eine Stunde
+* TotalHeat: IOPS pro Node mit konfiguriertem IOPS, durchschnittlich über 24 Stunden
+
+ a| 
+JSON-Objekt
+
+
+
+ a| 
 ReadLatencyUSecTotal
  a| 
 Der monoton Mehrwert der Gesamtzeit, die für die Durchführung von Leseoperationen auf dem Node aufgewendet wurde.

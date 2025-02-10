@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: netapp, solidfire, element, storage, solidfire enterprise sds 
 summary: NetApp aktualisiert regelmäßig SolidFire und Element Software, um Ihnen neue Funktionen, Verbesserungen und Fehlerkorrekturen zu bieten. 
 ---
-= Was ist neu in Element Software 12.5 und später
+= Neuerungen bei Element Software
 :allow-uri-read: 
 :url-peak: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Element_Software/Element_Software_-_Apache_Log4j_Vulnerability_-_Workaround
 :icons: font
@@ -12,16 +12,54 @@ summary: NetApp aktualisiert regelmäßig SolidFire und Element Software, um Ihn
 
 
 [role="lead"]
-NetApp aktualisiert regelmäßig SolidFire und Element Software, um Ihnen neue Funktionen, Verbesserungen und Fehlerkorrekturen zu bieten. Element 12.7 ist die neueste Version und beinhaltet Sicherheits- und Systemkomponenten-Updates, Verbesserungen der Betriebsabläufe sowie behobene Probleme.
+NetApp aktualisiert regelmäßig SolidFire und Element Software, um Ihnen neue Funktionen, Verbesserungen und Fehlerkorrekturen zu bieten. Element 12.8 ist die neueste Version und beinhaltet Sicherheits- und Systemkomponenten-Updates, Verbesserungen der Betriebsabläufe sowie behobene Probleme.
 
 
-NOTE: Die kumulativen Software- und Firmware-Updates werden im Rahmen eines Upgrades von Element 12.7 auf Basis der aktuellen Element-Version installiert, die auf einem Storage-Cluster ausgeführt wird. Wenn beispielsweise aktuell in einem Cluster Element 12.3.x ausgeführt wird, können Sie ein Upgrade direkt auf Element 12.7 durchführen, um die kumulativen Updates von Element 12.5 und 12.7 zu erhalten. Weitere Informationen zu unterstützten Upgrade-Pfaden finden Sie unter https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Element_Software/What_is_the_upgrade_matrix_for_storage_clusters_running_NetApp_Element_software["KB-Artikel"^]
+NOTE: Die kumulativen Software- und Firmware-Updates werden im Rahmen eines Upgrades von Element 12.8 auf Basis der aktuellen Element-Version installiert, die auf einem Storage-Cluster ausgeführt wird. Wenn in einem Cluster z. B. Element 12.5 ausgeführt wird, können Sie direkt auf Element 12.8 aktualisieren, um die kumulativen Updates von Element 12.7 und 12.8 zu erhalten. Informationen zu unterstützten Upgrade-Pfaden finden Sie im Knowledge Base-Artikel https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Element_Software/What_is_the_upgrade_matrix_for_storage_clusters_running_NetApp_Element_software["Welche Upgrade-Matrix enthält die Storage Cluster, auf denen NetApp Element Software ausgeführt wird"^].
+
+
+
+== Element 12.8
+
+Erfahren Sie mehr über die Neuerungen in Element 12.8.
+
+
+
+=== Volume-Lastausgleich
+
+In Element 12.8 wird die Funktion zum Lastausgleich von Volumes eingeführt. Mithilfe dieser Funktion können Sie Volumes über Nodes hinweg basierend auf dem tatsächlichen IOPS-Level jedes Volumes ausgleichen, anstatt wie in der QoS-Richtlinie konfiguriert zu sein. Sie können die Volume Load Balancing-Funktion nur zum Ausgleich von Volumes verwenden. Sie können es nicht zum Ausbalancieren virtueller Volumes verwenden. Die Volume Load Balancing-Funktion ist standardmäßig deaktiviert. Sie können sie aktivieren und deaktivieren, indem Sie den API-Parameter mit den link:../api/reference_element_api_enablefeature.html["EnableFeature"]Methoden und link:../api/reference_element_api_disablefeature.html["DisableFeature"] API oder die link:../storage/task_system_manage_cluster_volume_load_balancing.html["Volume-Lastausgleich"] Option in der Element UI verwenden `VolumeLoadBalanceOnActualIOPS`.
+
+
+
+=== Zeigt Informationen zur Node-Auslastung an
+
+Mit Element 12.8 können Sie Informationen zur Node-Auslastung mithilfe der `GetNodeStats` und `ListNodeStats` API-Methoden anzeigen `nodeHeat`. Das `nodeHeat` Objekt ist Mitglied des `nodeStats` Objekts und zeigt Informationen zur Node-Auslastung basierend auf dem Verhältnis der primären gesamten IOPS oder der gesamten IOPS zu den im Zeitverlauf konfigurierten IOPS an.
+
+Darüber hinaus können Sie die Node-Auslastung als Prozentsatz von `recentPrimaryTotalHeat` in der Anzeige Details anzeigen für einen Node in der Element-Benutzeroberfläche anzeigen.
+
+
+
+=== Anzeigen von I/O-Statistiken für ein Volume
+
+Mit Element 12.8 können Sie Statistiken zur I/O-Nutzung für ein Volume anhand der `GetVolumeStats` API-Methoden und `ListVolumeStatsByVolume` anzeigen `sliceIopsStats`. Die I/O-Statistiken werden mithilfe der Lese- und Schreib-IOPS-Informationen für das Volume berechnet und über zwei Zeiträume, die letzten 24 Stunden und die letzte Stunde, gemessen. link:../api/reference_element_api_volumestats.html#object-members["Weitere Informationen ."].
+
+
+
+=== CHAP-Algorithmus für iSCSI-Sitzung
+
+Ein Host-iSCSI-Initiator fordert eine Liste der CHAP-Algorithmen (Challenge-Handshake Authentication Protocol) an, die verwendet werden sollen, wenn eine iSCSI-Sitzung mit einem Element-iSCSI-Ziel erstellt wird. Ab Element 12.8 können Sie den unterstützten CHAP-Algorithmus anzeigen, den das Element iSCSI-Ziel für eine iSCSI-Sitzung verwendet.
+
+
+
+=== Upgrade der VM-Hardwareversion
+
+Wenn Sie ein in-Place-Upgrade eines vorhandenen Management-Node auf Element 12.8 durchführen, müssen Sie vor dem Upgrade sicherstellen, dass die VM-Hardwareversion auf dem Management-Node je nach Umgebung mit ESXi 6.7 (VM-Hardwareversion 14) oder höher kompatibel ist. link:../upgrade/task_hcc_upgrade_management_node.html#step-1-upgrade-vm-hardware-version-on-a-management-node["Weitere Informationen ."].
 
 
 
 == Element 12.7
 
-Informieren Sie sich über die Neuerungen in Element 12.7.
+Erfahren Sie mehr über die Neuerungen in Element 12.7.
 
 
 
@@ -80,7 +118,7 @@ Gelöste und bekannte Probleme sind im NetApp Bugs Online-Tool aufgeführt. Sie 
 
 == Element 12.5
 
-Element 12.5 bietet einen verbesserten Zugriff auf Speicherknoten, eine verbesserte Verwaltung benutzerdefinierter Schutzdomänen, neue und verbesserte Clusterfehler und -Ereignisse, erweiterte Funktionen zur Cluster-Benutzeroberfläche erstellen und verbesserte Sicherheit.
+Erfahren Sie mehr über die Neuerungen in Element 12.5.
 
 
 
@@ -128,9 +166,7 @@ Element 12.5 umfasst außerdem mehr als 120 CVE-Sicherheitsvorkehrungen.
 
 * https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/Management_Services_Release_Notes["Versionshinweise zu NetApp Hybrid Cloud Control and Management Services"^]
 * https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
-* https://docs.netapp.com/us-en/element-software/index.html["Dokumentation von SolidFire und Element Software"]
-* https://docs.netapp.com/us-en/element-software/index.html["Dokumentation von SolidFire und Element Software"^]
 * http://docs.netapp.com/sfe-122/index.jsp["SolidFire und Element Software Dokumentationszentrum für frühere Versionen"^]
-* https://www.netapp.com/us/documentation/hci.aspx["Ressourcen-Seite zu NetApp HCI"^]
+* https://docs.netapp.com/us-en/hci/index.html["NetApp HCI-Dokumentation"^]
 * link:../hardware/fw_storage_nodes.html["Unterstützte Storage-Firmware-Versionen für SolidFire Storage-Nodes"]
 

@@ -27,6 +27,7 @@ Mithilfe der folgenden Methoden können Sie VolumeStats-Objekte für einige oder
 
 Dieses Objekt enthält die folgenden Mitglieder:
 
+[cols="20,50,15,15"]
 |===
 | Name | Beschreibung | Berechnung | Typ 
 
@@ -231,6 +232,33 @@ Die Länge des Probenzeitraums in Millisekunden.
 K. A.
  a| 
 Ganzzahl
+
+
+
+ a| 
+SliceIopsStats
+ a| 
+Die Statistiken zur I/O-Nutzung für ein Volume. Verfügbar ab Element 12.8. Mögliche Werte für sliceIopsStats:
+
+* LargeStatistics: Die I/O-Statistiken für das Volumen, die über einen längeren Zeitraum gemessen werden, in der Regel die letzten 24 Stunden.
+* SmallStatistics: Die I/O-Statistiken für das Volumen, die über einen kürzeren Zeitraum gemessen werden, in der Regel in der letzten Stunde.
+
+
+Mögliche Werte für largeStatistics und smallStatistics:
+
+* AverageReadIops: Die durchschnittlichen Lese-IOPS für das Volume.
+* AverageTotalIops: Die durchschnittliche Summe (lesen + schreiben) IOPS für das Volume.
+* AverageWriteIops: Die durchschnittlichen Schreib-IOPS für das Volume.
+* NSamples: Die Anzahl der Proben, die in der statistischen Berechnung enthalten sind.
+* PeakReadIops: Die maximale Lese-IOPS, die über ein statistisches Intervall beobachtet werden.
+* PeakTotalIops: Die maximale Summe der über ein statistisches Intervall beobachteten IOPS.
+* PeakWriteIops: Die maximale Anzahl der über ein statistisches Intervall beobachteten Schreib-IOPS.
+* SliceID: Volume-ID oder Slice-ID
+
+ a| 
+Zeitpunktgenau
+ a| 
+JSON-Objekt
 
 
 

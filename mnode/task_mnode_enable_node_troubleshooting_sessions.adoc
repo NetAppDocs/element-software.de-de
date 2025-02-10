@@ -235,5 +235,5 @@ NOTE: SSH bleibt auf dem Management-Node aktiviert, wenn Sie ihn nicht deaktivie
 == Weitere Informationen
 
 * https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["Seite „NetApp HCI Ressourcen“"^]
+* https://docs.netapp.com/us-en/hci/index.html["NetApp HCI-Dokumentation"^]
 

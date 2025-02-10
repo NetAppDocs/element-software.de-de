@@ -55,6 +55,10 @@ Die IP-Adresse des Node, der das Volume hostet.
 +
 Der IQN des Volumes.
 
+* *CHAP*
++
+Der CHAP-Algorithmus für eine iSCSI-Sitzung. Wenn kein CHAP-Algorithmus verwendet wird, wird ein Bindestrich (-) angezeigt. Verfügbar ab Element 12.8.
+
 * *Erstellt Am*
 +
 Datum, an dem die Sitzung eingerichtet wurde.

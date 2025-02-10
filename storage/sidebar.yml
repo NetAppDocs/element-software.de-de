@@ -54,6 +54,8 @@ entries:
       url: "/storage/task_system_manage_cluster_enable_and_disable_encryption_for_a_cluster.html"
     - title: Legen Sie den Schwellenwert für den vollen Cluster fest
       url: "/storage/task_system_manage_cluster_set_the_cluster_full_threshold.html"
+    - title: Aktivieren und Deaktivieren des Volume Load Balancing
+      url: "/storage/task_system_manage_cluster_volume_load_balancing.html"
     - title: Aktivieren und deaktivieren Sie den Zugriff auf den Support
       url: "/storage/task_system_manage_cluster_enable_and_disable_support_access.html"
     - title: Banner für Nutzungsbedingungen verwalten

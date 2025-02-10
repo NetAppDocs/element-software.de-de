@@ -133,6 +133,4 @@ Element Demo Node ist für freiwillige Helfer verfügbar. Stellen Sie Ihre Frage
 
 == Weitere Informationen
 
-* https://www.netapp.com/data-storage/solidfire/documentation/["Ressourcen Seite „SolidFire All-Flash-Storage“"^]
-* https://mysupport.netapp.com/site/tools/tool-eula/element-demonode/download["Download-Seite für Element Demo-Node (Anmeldung erforderlich)"^]
-
+https://mysupport.netapp.com/site/tools/tool-eula/element-demonode/download["Download-Seite für Element Demo-Node (Anmeldung erforderlich)"^]

@@ -1,0 +1,90 @@
+---
+permalink: api/reference_element_api_disablefeature.html 
+sidebar: sidebar 
+keywords: SNMP,disable,disabling,DisableFeature,vvols,virtual volumes 
+summary: Sie können die DisableFeature-Methode verwenden, um die VolumeLoadBalanceOnActualIOPS zu deaktivieren. 
+---
+= DisableFeature
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Methode verwenden `DisableFeature`, um die Funktion zu deaktivieren `VolumeLoadBalanceOnActualIOPS`. `VolumeLoadBalanceOnActualIOPS` Ist standardmäßig deaktiviert.
+
+[NOTE]
+====
+Wenn Sie versuchen, eine andere Funktion, z. B. VVols, zu deaktivieren, wird die folgende Fehlermeldung angezeigt:
+
+[listing]
+----
+{"error":{"code":500,"message":"VolumeLoadBalanceOnActualIOPS is the only feature that can be disabled","name":"xAPINotPermitted"},"id":null}
+----
+====
+
+
+== Parameter
+
+Diese Methode verfügt über den folgenden Eingabeparameter.
+
+[cols="1a,3a,1a,1a,1a"]
+|===
+| Name | Beschreibung | Typ | Standardwert | Erforderlich 
+
+
+ a| 
+Merkmal
+ a| 
+Deaktivieren einer Cluster-Funktion. Möglicher Wert:
+
+* `VolumeLoadBalanceOnActualIOPS`: Deaktivieren Sie den Slice-Balancing auf tatsächlichen IOPS statt auf Min IOPS.
+
+ a| 
+Zeichenfolge
+ a| 
+Keine
+ a| 
+Ja.
+
+|===
+
+
+== Rückgabewert
+
+Diese Methode hat keine Rückgabewerte.
+
+
+
+== Anforderungsbeispiel
+
+Anforderungen für diese Methode sind ähnlich wie das folgende Beispiel:
+
+[listing]
+----
+{
+  "method": "DisableFeature",
+    "params": {
+        "feature" : "VolumeLoadBalanceOnActualIOPS"
+    },
+    "id": 1
+}
+----
+
+
+== Antwortbeispiel
+
+Diese Methode gibt eine Antwort zurück, die dem folgenden Beispiel ähnelt:
+
+[listing]
+----
+{
+  "id": 1,
+  "result": {}
+}
+----
+
+
+== Neu seit Version
+
+12,8

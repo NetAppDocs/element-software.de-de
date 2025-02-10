@@ -24,6 +24,15 @@ Je nach Element Softwareversion werden die folgenden SF-Series Storage-Nodes nic
 | Beginnt mit... | Storage-Node nicht unterstützt... 
 
 
+| Element 12.8  a| 
+* SF4805
+* SF9605
+* SF19210
+* SF38410
+
+
+
+
 | Element 12.7  a| 
 * SF2405
 * SF9608
@@ -38,4 +47,4 @@ Je nach Element Softwareversion werden die folgenden SF-Series Storage-Nodes nic
 
 
 |===
-Wenn Sie versuchen, einen dieser Knoten auf eine nicht unterstützte Elementversion zu aktualisieren, wird ein Fehler angezeigt, der angibt, dass dieser Knoten nicht von Element 12.x unterstützt wird
+Wenn Sie versuchen, einen dieser Knoten auf eine nicht unterstützte Elementversion zu aktualisieren, wird eine Fehlermeldung angezeigt, die besagt, dass der Knoten nicht von Element 12.x unterstützt wird

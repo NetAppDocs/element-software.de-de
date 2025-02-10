@@ -115,7 +115,7 @@ NOTE: Wenn Sie eine zusätzliche NIC benötigen, um den Speicherdatenverkehr zu 
 
 == Konfigurieren Sie die Zeitsynchronisierung
 
-. Stellen Sie sicher, dass die Zeit zwischen dem Management-Node und dem Storage-Cluster mit NTP synchronisiert wird:
+. Überprüfen Sie mithilfe von NTP, ob die Zeit zwischen dem Management-Node und dem Storage-Cluster synchronisiert ist:
 
 
 

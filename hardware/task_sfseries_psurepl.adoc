@@ -37,7 +37,8 @@ Die Anleitung gilt, wenn Sie ein 1-HE-Chassis (One-Rack Unit) mit einem der folg
 ====
 Je nach Version der Element Software werden die folgenden Nodes nicht unterstützt:
 
-* Ab Element 12.7, SF2405 und SF9608 Storage-Nodes und FC-Nodes FC0025 und SF-FCN-01
+* Ab Element 12.8, SF4805, SF9605, SF19210 und SF38410 Storage-Nodes
+* Ab Element 12.7, SF2405 und SF9608 Storage-Nodes und FC0025 und SF-FCN-01 FC-Nodes.
 * Ab Element 12.0, SF3010, SF6010 und SF9010 Storage-Nodes
 
 
