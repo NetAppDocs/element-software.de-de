@@ -61,6 +61,7 @@ Bevor Sie dieses Verfahren befolgen, sollten Sie verstehen, link:../concepts/con
 
 Laden Sie das entsprechende ISO oder OVA von der NetApp-Support-Website herunter, und installieren Sie die VM.
 
+.Schritte
 . Laden Sie die OVA oder ISO für Ihre Installation von der  Seite auf der NetApp Support-Website herunterlink:https://mysupport.netapp.com/site/products/all/details/element-software/downloads-tab["Element Software"^]. Die neue OVA enthält ein aktualisiertes SSL-Zertifikat.
 +
 .. Wählen Sie *Letzte Version herunterladen* und akzeptieren Sie die EULA.

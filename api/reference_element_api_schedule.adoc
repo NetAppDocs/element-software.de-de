@@ -150,7 +150,20 @@ Ganzzahl
  a| 
 ScheduleInfo
  a| 
-Enthält den eindeutigen Namen des Zeitplans, den Aufbewahrungszeitraum für den erstellten Snapshot und die Volume-ID des Volumes, aus dem der Snapshot erstellt wurde.
+Enthält den eindeutigen Namen des Zeitplans, den Aufbewahrungszeitraum für den erstellten Snapshot und die Volume-ID des Volumes, aus dem der Snapshot erstellt wurde. Gültige Werte:
+
+* `enableRemoteReplication`: Gibt an, ob der Snapshot in die Remote-Replikation aufgenommen werden soll. (boolesch)
+* `ensureSerialCreation`: Legt fest, ob eine neue Snapshot-Erstellung zulässig sein soll, wenn eine vorherige Snapshot-Replikation ausgeführt wird. (boolesch)
+* `name`: Der zu verwendenden Snapshot-Name. (Zeichenfolge)
+* `retention`: Die Zeit, die der Snapshot aufbewahrt wird. Je nach Uhrzeit wird es in einem der folgenden Formate angezeigt:
++
+** fifo: Der Snapshot wird auf First-in-First-Out (FIFO)-Basis beibehalten. Wenn leer, wird der Snapshot für immer aufbewahrt. (Zeichenfolge)
+** HH:mm:ss
+
+
+* `volumeID`: Die ID des Volumens, das in den Schnappschuss aufgenommen werden soll. (Ganze Zahl)
+* `volumes`: Eine Liste der Volume-IDs, die in den Gruppen-Snapshot aufgenommen werden sollen. (Ganzzahliges Array)
+
  a| 
 JSON-Objekt
 

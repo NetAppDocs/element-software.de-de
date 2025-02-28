@@ -30,7 +30,7 @@ BlockenPerSecond
  a| 
 Die Anzahl der Datenblöcke, die pro Sekunde vom Quell-Cluster zum Ziel-Cluster übertragen werden. Nur vorhanden, wenn das Typmitglied auf Remote gesetzt ist.
  a| 
-Schweben
+Ganzzahl
 
 
 
@@ -97,7 +97,7 @@ Verstrichene Zeit
  a| 
 Die verstrichene Zeit in Sekunden seit dem Start des Synchronisierungsjobs.
  a| 
-Schweben
+Float oder Integer abhängig von der Art des Synchronisierungsvorgangs
 
 
 
@@ -124,7 +124,7 @@ Ganzzahl
  a| 
 Der Prozentsatz des Synchronisierungsauftrags.
  a| 
-Ganzzahl
+Float oder Integer abhängig von der Art des Synchronisierungsvorgangs
 
 
 
@@ -133,7 +133,7 @@ RestiningTime
  a| 
 Die geschätzte Zeit in Sekunden, um den Vorgang abzuschließen.
  a| 
-Ganzzahl
+Schweben
 
 
 

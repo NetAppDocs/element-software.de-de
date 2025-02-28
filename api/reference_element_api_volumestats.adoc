@@ -99,17 +99,6 @@ Ganzzahl
 
 
  a| 
-ClusterAuslastung
- a| 
-Die Menge der genutzten Cluster-Kapazität.
- a| 
-K. A.
- a| 
-Schweben
-
-
-
- a| 
 DesiredMetadataHosts
  a| 
 Die Metadaten-Services (Slice), auf die migriert werden, wenn die Volume-Metadaten zwischen den Metadaten-Services migriert werden. Ein Wert von „null“ bedeutet, dass das Volume nicht migriert wird.
@@ -144,6 +133,17 @@ Die Metadaten-Services (Slice), auf denen sich die Volume-Metadaten befinden. M�
 K. A.
  a| 
 JSON-Objekt
+
+
+
+ a| 
+NormalisiertIOPS
+ a| 
+Durchschnittliche IOPS-Anzahl des gesamten Clusters in den letzten 500 Millisekunden.
+ a| 
+Zeitpunktgenau
+ a| 
+Ganzzahl
 
 
 

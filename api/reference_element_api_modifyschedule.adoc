@@ -182,13 +182,17 @@ Ja.
  a| 
 Der eindeutige Name, der dem Zeitplan, den Aufbewahrungszeitraum für den erstellten Snapshot und die Volume-ID des Volumes, aus dem der Snapshot erstellt wurde, gegeben wurde. Gültige Werte:
 
+* `enableRemoteReplication`: Gibt an, ob der Snapshot in die Remote-Replikation aufgenommen werden soll. (boolesch)
+* `ensureSerialCreation`: Legt fest, ob eine neue Snapshot-Erstellung zulässig sein soll, wenn eine vorherige Snapshot-Replikation ausgeführt wird. (boolesch)
+* `name`: Der zu verwendenden Snapshot-Name. (Zeichenfolge)
+* `retention`: Die Zeit, die der Snapshot aufbewahrt wird. Je nach Uhrzeit wird es in einem der folgenden Formate angezeigt:
++
+** fifo: Der Snapshot wird auf First-in-First-Out (FIFO)-Basis beibehalten. Wenn leer, wird der Snapshot für immer aufbewahrt. (Zeichenfolge)
+** HH:mm:ss
+
+
 * `volumeID`: Die ID des Volumens, das in den Schnappschuss aufgenommen werden soll. (Ganze Zahl)
 * `volumes`: Eine Liste der Volume-IDs, die in den Gruppen-Snapshot aufgenommen werden sollen. (Ganzzahliges Array)
-* `name`: Der zu verwendenden Snapshot-Name. (Zeichenfolge)
-* `enableRemoteReplication`: Gibt an, ob der Snapshot in die Remote-Replikation aufgenommen werden soll. (boolesch)
-* `retention`: Die Zeit, die der Schnappschuss in HH:mm:ss beibehalten wird Wenn leer, wird der Snapshot für immer aufbewahrt. (Zeichenfolge)
-* `fifo`: Die Momentaufnahme wird auf First-in-First-Out-Basis (FIFO) beibehalten. (Zeichenfolge)
-* `ensureSerialCreation`: Geben Sie an, ob eine neue Snapshot-Erstellung erlaubt werden soll, wenn eine vorherige Snapshot-Replikation durchgeführt wird. (boolesch)
 
  a| 
 link:reference_element_api_schedule.html["Zeitplan"^]

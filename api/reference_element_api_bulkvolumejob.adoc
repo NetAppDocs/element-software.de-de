@@ -114,8 +114,8 @@ Ganzzahl
 Der Status des Vorgangs. Mögliche Werte:
 
 * Vorbereitung
-* Aktiv
-* Fertig
+* Wird ausgeführt
+* Abgeschlossen
 * Fehlgeschlagen
 
  a| 

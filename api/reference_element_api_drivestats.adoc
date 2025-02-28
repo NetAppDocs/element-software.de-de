@@ -51,6 +51,15 @@ Ganzzahl
 
 
  a| 
+IosInProgress
+ a| 
+Die Anzahl der laufenden I/O-Vorgänge für dieses Laufwerk.
+ a| 
+Ganzzahl
+
+
+
+ a| 
 LebensRemainingPercent
  a| 
 Anzeige der Laufwerksverschleißanzeige.
@@ -87,9 +96,36 @@ Ganzzahl
 
 
  a| 
+Lesevorgänge
+ a| 
+Die Anzahl der Read() Aufrufe pro Sekunde zu diesem Laufwerk.
+ a| 
+Ganzzahl
+
+
+
+ a| 
 ReadBytes
  a| 
 Insgesamt gelesene Bytes vom Laufwerk aufgrund von Client-Operationen.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+ReadsKombiniert
+ a| 
+Die Anzahl der Read() Aufrufe zu benachbarten Sektoren, die zu einem größeren Read kombiniert werden könnten.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+ReadMsec
+ a| 
+Die Anzahl der Millisekunden, die gelesen wurden.
  a| 
 Ganzzahl
 
@@ -168,9 +204,36 @@ Ganzzahl
 
 
  a| 
+Schreibvorgänge
+ a| 
+Die Anzahl der Write() Aufrufe pro Sekunde zu diesem Laufwerk.
+ a| 
+Ganzzahl
+
+
+
+ a| 
 WriteBytes
  a| 
 Gesamtzahl der Bytes, die aufgrund der Client-Aktivität auf das Laufwerk geschrieben wurden.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+WritesKombiniert
+ a| 
+Die Anzahl der Write() Aufrufe in benachbarte Sektoren, die zu einem größeren Schreibvorgang kombiniert werden können.
+ a| 
+Ganzzahl
+
+
+
+ a| 
+Schreibgeschwindigkeit
+ a| 
+Die Anzahl der Millisekunden, die geschrieben wurden.
  a| 
 Ganzzahl
 
@@ -189,3 +252,5 @@ Ganzzahl
 == Weitere Informationen
 
 xref:reference_element_api_getdrivestats.adoc[GetDriveStats]
+
+ // 2025 FEB 27, DOC-4778
