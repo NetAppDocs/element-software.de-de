@@ -157,7 +157,7 @@ Enthält den eindeutigen Namen des Zeitplans, den Aufbewahrungszeitraum für den
 * `name`: Der zu verwendenden Snapshot-Name. (Zeichenfolge)
 * `retention`: Die Zeit, die der Snapshot aufbewahrt wird. Je nach Uhrzeit wird es in einem der folgenden Formate angezeigt:
 +
-** fifo: Der Snapshot wird auf First-in-First-Out (FIFO)-Basis beibehalten. Wenn leer, wird der Snapshot für immer aufbewahrt. (Zeichenfolge)
+** `fifo`: Der Snapshot wird auf First-in-First-Out-Basis (FIFO) beibehalten. Wenn leer, wird der Snapshot für immer aufbewahrt. (Zeichenfolge)
 ** HH:mm:ss
 
 

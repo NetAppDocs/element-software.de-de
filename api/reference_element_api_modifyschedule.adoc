@@ -20,8 +20,6 @@ Verwenden Sie können `ModifySchedule` Um die Intervalle zu ändern, in denen ei
 Diese Methode verfügt über die folgenden Eingabeparameter:
 
 |===
-
-
 | Name | Beschreibung | Typ | Standardwert | Erforderlich 
 
 
@@ -187,7 +185,7 @@ Der eindeutige Name, der dem Zeitplan, den Aufbewahrungszeitraum für den erstel
 * `name`: Der zu verwendenden Snapshot-Name. (Zeichenfolge)
 * `retention`: Die Zeit, die der Snapshot aufbewahrt wird. Je nach Uhrzeit wird es in einem der folgenden Formate angezeigt:
 +
-** fifo: Der Snapshot wird auf First-in-First-Out (FIFO)-Basis beibehalten. Wenn leer, wird der Snapshot für immer aufbewahrt. (Zeichenfolge)
+** `fifo`: Der Snapshot wird auf First-in-First-Out-Basis (FIFO) beibehalten. Wenn leer, wird der Snapshot für immer aufbewahrt. (Zeichenfolge)
 ** HH:mm:ss
 
 
