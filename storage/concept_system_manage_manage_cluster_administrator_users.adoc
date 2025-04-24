@@ -61,9 +61,13 @@ NOTE: Ein lokales (nicht-LDAP)-Cluster-Administratorkonto ist erforderlich, um �
 
 
 +
+[NOTE]
+====
+Alle Berechtigungen sind für den Zugriffstyp des Administrators verfügbar.
 
-NOTE: Alle Berechtigungen sind für den Zugriffstyp des Administrators verfügbar.
+Über die API sind Zugriffstypen verfügbar, die in der Element UI nicht verfügbar sind.
 
+====
 +
 ** *Typ*: Der Typ des Clusteradministrators. Mögliche Werte:
 +
@@ -152,12 +156,9 @@ Mithilfe der Element-UI können Sie die Kennwörter für den Cluster-Administrat
 . Klicken Sie Auf *Änderungen Speichern*.
 
 
-
-
-== Weitere Informationen
-
+.Verwandte Informationen
+* link:../api/reference_element_api_app_b_access_control.html["Informieren Sie sich über die für Element APIs verfügbaren Zugriffstypen"]
 * link:task_system_manage_enable_ldap_authentication.html["Aktivieren Sie die LDAP-Authentifizierung über die Benutzeroberfläche von Element"]
 * link:concept_system_manage_manage_ldap.html["Deaktivieren Sie LDAP"]
-* https://docs.netapp.com/us-en/element-software/index.html["Dokumentation von SolidFire und Element Software"]
 * https://docs.netapp.com/us-en/vcp/index.html["NetApp Element Plug-in für vCenter Server"^]
 
