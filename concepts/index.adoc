@@ -23,11 +23,3 @@ Lernen Sie grundlegende Konzepte in Bezug auf Element Software kennen.
 * xref:concept_solidfire_concepts_data_protection.adoc[Datensicherung]
 * xref:concept_data_manage_volumes_solidfire_quality_of_service.adoc[Leistung und Servicequalität]
 
-
-
-
-== Weitere Informationen
-
-* https://www.netapp.com/data-storage/solidfire/["SolidFire All-Flash-Storage im Überblick"^]
-* https://docs.netapp.com/us-en/element-software/index.html["Dokumentation von SolidFire und Element Software"]
-

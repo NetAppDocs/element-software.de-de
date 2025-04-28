@@ -29,12 +29,17 @@ Wenn Sie ein in-Place-Upgrade eines vorhandenen Management-Node auf Element 12.8
 
 .Schritte
 . Melden Sie sich beim vSphere Web Client als vCenter Administrator an.
-. Wählen Sie im vSphere Client-Menü *VMs* > *Templates* aus.
-. Klicken Sie mit der rechten Maustaste auf die virtuelle Maschine, und wählen Sie *Kompatibilität* > *VM-Kompatibilität aktualisieren*.
+. Wählen Sie im vSphere Client-Menü *VMs und Vorlagen* aus.
+. Klicken Sie mit der rechten Maustaste auf die virtuelle Maschine (VM), und wählen Sie *Power* > *Gastbetriebssystem herunterfahren*.
++
+Warten Sie, bis die VM ausgeschaltet ist.
+
+. Klicken Sie mit der rechten Maustaste auf die VM, und wählen Sie *Kompatibilität* > *VM-Kompatibilität aktualisieren*.
 . Wählen Sie *Ja*.
 . Wählen Sie je nach Version Ihrer vSphere-Umgebung ESXi 6.7 oder eine höhere Version aus.
 . Wählen Sie *OK*.
-. Wählen Sie nach Abschluss des Upgrades *vSphere Client Refresh* aus, und überprüfen Sie, ob die VM-Kompatibilität die gewünschte Version hat.
+. Klicken Sie nach Abschluss des Upgrades mit der rechten Maustaste auf die VM, und wählen Sie *Power* > *Power On*.
+. Wählen Sie *vSphere Client refresh* aus, und überprüfen Sie, ob die VM-Kompatibilität die gewünschte Version hat.
 
 
 
@@ -57,7 +62,7 @@ NOTE: Wenn Sie Ihre Managementservices, gefolgt vom Element Storage, nicht nache
 
 === Aktualisieren Sie einen Management-Node von Version 12.3.x oder höher auf Version 12.5 oder höher
 
-Sie können ein Upgrade des Management-Node von Version 12.3.x oder höher auf Version 12.5 oder höher durchführen, ohne dass eine neue Management Node Virtual Machine bereitgestellt werden muss.
+Sie können ein in-Place-Upgrade des Management-Node von Version 12.3.x oder höher auf Version 12.5 oder höher durchführen, ohne eine neue Management-Node-VM bereitstellen zu müssen.
 
 
 NOTE: Der Element 12.5 oder höher ist ein optionales Upgrade. Bei bestehenden Implementierungen wird dieser Bedarf nicht benötigt.
@@ -80,8 +85,8 @@ NOTE: Für persistente Volumes ist möglicherweise ein zusätzlicher Netzwerkada
 
 
 .Schritte
-. Melden Sie sich bei der Virtual Machine des Management-Node über SSH oder Konsolenzugriff an.
-. Laden Sie die herunter https://mysupport.netapp.com/site/products/all/details/element-software/downloads-tab["ISO für den Management-Node"^] Für Element Software von der NetApp Support Site bis zur Management-Node Virtual Machine.
+. Melden Sie sich bei der Management-Node-VM über SSH oder Konsolenzugriff an.
+. Laden Sie die for Element Software von der NetApp Support-Website auf die Management-Node-VM herunter https://mysupport.netapp.com/site/products/all/details/element-software/downloads-tab["ISO für den Management-Node"^].
 +
 
 NOTE: Der Name der ISO ist ähnlich wie `solidfire-fdva-<Element release>-patchX-XX.X.X.XXXX.iso`

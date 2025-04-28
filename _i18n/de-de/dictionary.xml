@@ -5942,8 +5942,6 @@
   <block id="ddaa5fe2d426a2a7c85d0912d4c4150d" category="list-text"><block ref="ddaa5fe2d426a2a7c85d0912d4c4150d" category="inline-xref-macro-rx"></block></block>
   <block id="35beb39012d21be6ba566219e99021b9" category="inline-xref-macro">Leistung und Servicequalität</block>
   <block id="18c3954973025e7d4855c26a9bff4989" category="list-text"><block ref="18c3954973025e7d4855c26a9bff4989" category="inline-xref-macro-rx"></block></block>
-  <block id="e2291d0b9bc2d41bc343cf77cf0a1a87" category="inline-link">SolidFire All-Flash-Storage im Überblick</block>
-  <block id="e2c85d417b263e570fcb0b7027cad0ba" category="list-text"><block ref="e2c85d417b263e570fcb0b7027cad0ba" category="inline-link-rx"></block></block>
   <block id="4dd431f4f9c3cfe9f60b1eba53c0f1d0" category="summary">Beim Einsatz der NetApp Element Software werden Ihre Daten durch branchenübliche Sicherheitsprotokolle gesichert.</block>
   <block id="617dd9340d4c81aec320813ec2b82b78" category="paragraph">Wenn Sie Ihr SolidFire All-Flash-Storage-System nutzen, werden Ihre Daten durch branchenübliche Sicherheitsprotokolle geschützt.</block>
   <block id="1a75005c83ba0c4856d5a0dc8856e732" category="section-title">Verschlüsselung für Daten im Ruhezustand (Hardware)</block>
@@ -10242,7 +10240,6 @@
   <block id="f3bac24ec8b72ab99e38f7ecb167cc25" category="paragraph">Wählen Sie diese Option, wenn Sie *sequenziell* aktualisiert haben (1) die Version der Managementservices und (2) Ihre Element Speicherversion und Ihren vorhandenen Management-Node *beibehalten* möchten:</block>
   <block id="1edc36bdf08bca8bac4f78d104c92780" category="admonition">Wenn Sie Ihre Managementservices, gefolgt vom Element Storage, nicht nacheinander aktualisieren, können Sie die erneute Authentifizierung mit diesem Verfahren nicht neu konfigurieren. Befolgen Sie stattdessen das entsprechende Upgrade-Verfahren.</block>
   <block id="2a67edcd39483da3b7c2244d1a853ca7" category="section-title">Aktualisieren Sie einen Management-Node von Version 12.3.x oder höher auf Version 12.5 oder höher</block>
-  <block id="00986f242d79556b370e046857ac478c" category="paragraph">Sie können ein Upgrade des Management-Node von Version 12.3.x oder höher auf Version 12.5 oder höher durchführen, ohne dass eine neue Management Node Virtual Machine bereitgestellt werden muss.</block>
   <block id="162101c4a12e19388bdcdc0495ccc2ae" category="admonition">Der Element 12.5 oder höher ist ein optionales Upgrade. Bei bestehenden Implementierungen wird dieser Bedarf nicht benötigt.</block>
   <block id="ec29698b029ebdc0e8d965b404b70339" category="list-text">Der RAM der Management-Node-VM ist 24 GB.</block>
   <block id="cd847f70c9955e37a7a701eee9f2cd67" category="list-text">Der Management-Node, den Sie aktualisieren möchten, ist die Version 12.0 und verwendet IPv4-Netzwerke. Der Management-Node Version 12.5 oder höher unterstützt IPv6 nicht.</block>
@@ -10253,9 +10250,7 @@
   <block id="4733d6f93dbca188e79e25900eaeacb7" category="list-text">Sie haben (falls erforderlich) einen zusätzlichen Netzwerkadapter mit den Anweisungen für konfiguriert <block ref="1f5ebd4d6fe6b214007c2692b1a22cfb" category="inline-link-macro-rx"></block>.</block>
   <block id="97badad042e3a18dd496d204994f3a2f" category="admonition">Für persistente Volumes ist möglicherweise ein zusätzlicher Netzwerkadapter erforderlich, wenn eth0 nicht an das SVIP weitergeleitet werden kann. Konfigurieren Sie einen neuen Netzwerkadapter im iSCSI-Speichernetzwerk zur Konfiguration von persistenten Volumes.</block>
   <block id="b529479350602e9be1d9caa1838edb9b" category="list-text">Auf Storage-Nodes ist Element 12.3.x oder höher ausgeführt.</block>
-  <block id="1a6ffd97834fd7495156f52f3058e50b" category="list-text">Melden Sie sich bei der Virtual Machine des Management-Node über SSH oder Konsolenzugriff an.</block>
   <block id="303c7d52b5c18e714947ecd4996594a2" category="inline-link">ISO für den Management-Node</block>
-  <block id="bc6733dc102d98376848617102ed0352" category="list-text">Laden Sie die herunter<block ref="ef86b20d3f4c031a449af5dec98fb6d8" category="inline-link-rx"></block> Für Element Software von der NetApp Support Site bis zur Management-Node Virtual Machine.</block>
   <block id="e097e26564fa470c938b5aa9cb375497" category="admonition">Der Name der ISO ist ähnlich wie<block ref="6d2621b65437e9daea4c85caf8ee22ac" prefix=" " category="inline-code"></block></block>
   <block id="7af3e8bcf74bc743e6d42428a1ef8e84" category="list-text">Prüfen Sie die Integrität des Downloads, indem Sie md5sum auf der heruntergeladenen Datei ausführen und vergleichen Sie die Ausgabe mit den verfügbaren Ressourcen der NetApp Support Site für Element Software wie im folgenden Beispiel:</block>
   <block id="4e82f8cfbdbaab82d0c8c7e65d59b756" category="paragraph"><block ref="b2c4a82594dbf4c4ad269ec26ad77e05" prefix="" category="inline-code"></block></block>
@@ -12357,11 +12352,8 @@
   <block id="b036ebb7aa6b63db449d4df71f28c3cd" category="section-title">Schritt: Upgrade der VM-Hardwareversion auf einem Management-Node</block>
   <block id="6bdecd9b5d3ab973ac36df911f986fc3" category="paragraph">Wenn Sie ein in-Place-Upgrade eines vorhandenen Management-Node auf Element 12.8 durchführen, müssen Sie vor dem Upgrade sicherstellen, dass die VM-Hardwareversion auf dem Management-Node je nach Umgebung mit ESXi 6.7 (VM-Hardwareversion 14) oder höher kompatibel ist.</block>
   <block id="da356a9209429c8cb4f06565d719d2b8" category="list-text">Melden Sie sich beim vSphere Web Client als vCenter Administrator an.</block>
-  <block id="7936b082e6a3d2167a2478cee0772514" category="list-text">Wählen Sie im vSphere Client-Menü *VMs* &gt; *Templates* aus.</block>
-  <block id="ad4062bf296d686c04c351f026e2400d" category="list-text">Klicken Sie mit der rechten Maustaste auf die virtuelle Maschine, und wählen Sie *Kompatibilität* &gt; *VM-Kompatibilität aktualisieren*.</block>
   <block id="cf8716d5690805e881fbd8fa22fb282a" category="list-text">Wählen Sie je nach Version Ihrer vSphere-Umgebung ESXi 6.7 oder eine höhere Version aus.</block>
   <block id="3d1c64d2c8b1e4058225a78c3ef09fa6" category="list-text">Wählen Sie *OK*.</block>
-  <block id="43c3c8c2f75e6064714e6ec942f1e916" category="list-text">Wählen Sie nach Abschluss des Upgrades *vSphere Client Refresh* aus, und überprüfen Sie, ob die VM-Kompatibilität die gewünschte Version hat.</block>
   <block id="6b17900bf8b7a52b1be75bbe68b2d77e" category="section-title">Schritt 2: Aktualisieren Sie einen Management-Node auf Element 12.5 oder höher</block>
   <block id="d5bdcd035d3751961b201dd1c2261aa3" category="paragraph">Wählen Sie eine der folgenden Upgrade-Optionen:</block>
   <block id="8c5a891df58bfda1762ec23302a952b6" category="sidebar">Ein SolidFire All-Flash-Storage-System besteht aus Hardwarekomponenten wie Laufwerken und Nodes, die in einem Pool von Storage-Ressourcen kombiniert werden. Über die Element Schnittstelle, die API oder andere Managementtools können Sie diese Storage-Ressourcen-Cluster mit der NetApp Element Software managen. Diese Site enthält die Dokumentation für Element Software 12.8.</block>
@@ -12393,4 +12385,13 @@
   <block id="e3ae42684db77c59ef80c04aae526de5" category="paragraph"><block ref="e3ae42684db77c59ef80c04aae526de5" category="inline-link-macro-rx"></block></block>
   <block id="f72c81a1158d9efb9bad238e3c497a6c" category="inline-link-macro">Informieren Sie sich über die für Element APIs verfügbaren Zugriffstypen</block>
   <block id="c858f3d30df8c552799df529153c0e44" category="list-text"><block ref="c858f3d30df8c552799df529153c0e44" category="inline-link-macro-rx"></block></block>
+  <block id="6e93fbac14e98fd4eee5f4f560e1d580" category="list-text">Wählen Sie im vSphere Client-Menü *VMs und Vorlagen* aus.</block>
+  <block id="be19667c20f2f3c6b932b48a9c488774" category="list-text">Klicken Sie mit der rechten Maustaste auf die virtuelle Maschine (VM), und wählen Sie *Power* &gt; *Gastbetriebssystem herunterfahren*.</block>
+  <block id="6f5f678ae471ecc070cea185b3d40ed4" category="paragraph">Warten Sie, bis die VM ausgeschaltet ist.</block>
+  <block id="b58c4fe6ac8a2dffa0fb94c9d1de7556" category="list-text">Klicken Sie mit der rechten Maustaste auf die VM, und wählen Sie *Kompatibilität* &gt; *VM-Kompatibilität aktualisieren*.</block>
+  <block id="eeb196c0a77fbb85f8908ae3cca16bfc" category="list-text">Klicken Sie nach Abschluss des Upgrades mit der rechten Maustaste auf die VM, und wählen Sie *Power* &gt; *Power On*.</block>
+  <block id="917268d8045dd1bb18e5f8cc7caf9359" category="list-text">Wählen Sie *vSphere Client refresh* aus, und überprüfen Sie, ob die VM-Kompatibilität die gewünschte Version hat.</block>
+  <block id="a879c8e657832d392ef358d2440c3faf" category="paragraph">Sie können ein in-Place-Upgrade des Management-Node von Version 12.3.x oder höher auf Version 12.5 oder höher durchführen, ohne eine neue Management-Node-VM bereitstellen zu müssen.</block>
+  <block id="6a309ddf9d0a46d94d5772dacb71dbc0" category="list-text">Melden Sie sich bei der Management-Node-VM über SSH oder Konsolenzugriff an.</block>
+  <block id="7258351fe62749f68f4b75a51c56912b" category="list-text">Laden Sie die for Element Software von der NetApp Support-Website auf die Management-Node-VM herunter<block ref="ef86b20d3f4c031a449af5dec98fb6d8" category="inline-link-rx"></block>.</block>
 </blocks>
