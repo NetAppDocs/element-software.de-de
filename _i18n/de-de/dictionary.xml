@@ -12311,7 +12311,6 @@
   <block id="906ea05443e4b488a42f3f06305353ee" category="paragraph">Bevor Sie dieses Verfahren befolgen, sollten Sie verstehen, <block ref="6cc910c0977361227d631be0efac7242" category="inline-link-macro-rx"></block>ob Sie sie verwenden möchten oder nicht. Persistente Volumes sind optional, jedoch im Falle eines Datenverlusts bei der Management-Node-Konfiguration empfohlen.</block>
   <block id="6d8cd87a85946daeae42cb54aade3baa" category="section-title">Schritt 1: ISO oder OVA herunterladen und VM bereitstellen</block>
   <block id="90c4d8ddd76d9f5f86c144316cec5657" category="paragraph">Laden Sie das entsprechende ISO oder OVA von der NetApp-Support-Website herunter, und installieren Sie die VM.</block>
-  <block id="4aee9657f267c579c49541b5f19ca32c" category="list-text">Laden Sie die OVA oder ISO für Ihre Installation von der  Seite auf der NetApp Support-Website herunter<block ref="00b11b6abe7f0003872aa657422c59ae" category="inline-link-macro-rx"></block>. Die neue OVA enthält ein aktualisiertes SSL-Zertifikat.</block>
   <block id="c6913d34fefabb7329dba971ad99632d" category="section-title">Schritt 2: Erstellen Sie den Verwaltungsknoten admin und konfigurieren Sie das Netzwerk</block>
   <block id="8e1cc7b20e9f183452b777f8a4fb586d" category="paragraph">Erstellen Sie nach Abschluss der VM-Installation den Admin-Benutzer des Management-Nodes, und konfigurieren Sie das Management-Node-Netzwerk.</block>
   <block id="5e0472334bca93d0d28d3eeaaf723518" category="section-title">Schritt 3: Konfigurieren der Zeitsynchronisierung</block>
@@ -12394,4 +12393,5 @@
   <block id="a879c8e657832d392ef358d2440c3faf" category="paragraph">Sie können ein in-Place-Upgrade des Management-Node von Version 12.3.x oder höher auf Version 12.5 oder höher durchführen, ohne eine neue Management-Node-VM bereitstellen zu müssen.</block>
   <block id="6a309ddf9d0a46d94d5772dacb71dbc0" category="list-text">Melden Sie sich bei der Management-Node-VM über SSH oder Konsolenzugriff an.</block>
   <block id="7258351fe62749f68f4b75a51c56912b" category="list-text">Laden Sie die for Element Software von der NetApp Support-Website auf die Management-Node-VM herunter<block ref="ef86b20d3f4c031a449af5dec98fb6d8" category="inline-link-rx"></block>.</block>
+  <block id="e43f2538484fde027e53efbedb634fce" category="list-text">Laden Sie die OVA oder ISO für Ihre Installation von der  Seite auf der NetApp Support-Website herunter<block ref="00b11b6abe7f0003872aa657422c59ae" category="inline-link-macro-rx"></block>.</block>
 </blocks>
